@@ -1,0 +1,566 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+        name="viewport">
+  <meta content="ie=edge" http-equiv="X-UA-Compatible">
+  <title>Document</title>
+</head>
+<body>
+<div id="app">
+  <header class="header">
+    <div class="header-container">
+      <div class="header-links">
+        <a class="header-link" href="#"> Новинки </a>
+        <a class="header-link" data-header="catalog" href="/catalog"> Каталог </a>
+        <a class="header-link" href="#"> SALE </a>
+        <a class="header-link" href="#"> Магазины </a>
+        <a class="header-link" href="#"> Информация</a>
+      </div>
+      <a class="header-logo" href="/">
+        <img alt="logo" class="header-logo-img" src="src/assets/img/header-logo.png">
+      </a>
+      <div class="header-buttons">
+        <button class="header-button-purple" type="button">
+          <span>Записаться к стилисту</span>
+        </button>
+        <a class="header-button" href="#">
+          <img alt="img" loading="lazy" src="src/assets/img/icons/search.png">
+          <span class="iconfont icon-search"></span>
+        </a>
+        <a class="header-button" href="#">
+          <img alt="img" loading="lazy" src="src/assets/img/icons/person.png">
+          <span class="iconfont icon-person"></span>
+        </a>
+        <a class="header-button" href="#">
+          <img alt="img" loading="lazy" src="src/assets/img/icons/heart.png">
+          <span class="iconfont icon-heart"></span>
+        </a>
+        <a class="header-button" href="#">
+          <img alt="img" loading="lazy" src="src/assets/img/icons/suitcase.png">
+          <span class="iconfont icon-suitcase"></span>
+        </a>
+      </div>
+    </div>
+  </header>
+  <nav class="menu">
+    <div class="menu-container">
+      <div class="menu-left">
+        <div class="menu-columns">
+          <div class="menu-column">
+            <a class="menu-link" href="#">Платья</a>
+            <a class="menu-link" href="#">Нарядная одежда</a>
+            <a class="menu-link" href="#">Блузы и рубашки</a>
+            <a class="menu-link" href="#">Брюки и юбки</a>
+            <a class="menu-link" href="#">Верхняя одежда</a>
+          </div>
+          <div class="menu-column">
+            <a class="menu-link" href="#">Джемперы и кардиганы</a>
+            <a class="menu-link" href="#">Костюмы и жакеты</a>
+            <a class="menu-link" href="#">Футболки и топы</a>
+            <a class="menu-link" href="#">Аксессуары</a>
+            <a class="menu-link" href="#">Смотреть всё</a>
+          </div>
+        </div>
+        <form class="form menu-form">
+          <label class="menu-form-label form-label" for="menu-input"> Подписка на новости </label>
+          <div class="menu-form-layout">
+            <div class="form-main">
+              <input
+                autocomplete="off"
+                class="form-input"
+                id="menu-input"
+                name="email"
+                placeholder="Введите ваш e-mail"
+                required
+                type="text"
+              >
+              <button class="form-button" type="submit">
+                <span class="iconfont icon-arrow-right"></span>
+              </button>
+            </div>
+            <div class="form-warning">
+              Подписываясь на рассылку, вы соглашаетесь <br>
+              с условиями <a href="#">политики конфиденциальности</a>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="menu-categories">
+        <article class="menu-category">
+          <a href="#">
+            <img alt="Вечерние платья" class="menu-category-img" loading="lazy"
+                 src="src/assets/img/menu/category-1.jpg">
+          </a>
+          <h2 class="menu-category-title">Вечерние платья</h2>
+        </article>
+        <article class="menu-category">
+          <a href="#">
+            <img alt="Вечерние платья" class="menu-category-img" loading="lazy"
+                 src="src/assets/img/menu/category-2.jpg">
+          </a>
+          <h2 class="menu-category-title">Верхняя одежда</h2>
+        </article>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero">
+      <div class="hero-container">
+        <div class="swiper hero-slider">
+          <div class="swiper-wrapper">
+            repeat 3 times:
+            <div class="swiper-slide">
+              <div class="hero-slide">
+                <img alt="img" class="hero-slide-img" loading="lazy" src="src/assets/img/hero-1.jpg">
+                <div class="swiper-lazy-preloader"></div>
+              </div>
+            </div>
+            end;
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </section>
+    <section class="promo">
+      <div class="promo-container">
+        <div class="promo-main">
+          <div>
+            <h2 class="promo-title">
+              <a href="#">
+                MOKKO — БРЕНД ОДЕЖДЫ, <br>
+                СОЗДАННЫЙ СПЕЦИАЛЬНО <br>
+                ДЛЯ ЖЕНЩИН
+              </a>
+            </h2>
+            <div class="promo-description">
+              Мы учитываем все особенности фигур наших <br>
+              покупательниц. Каждая модель адаптирована для всех <br>
+              размеров, вплоть до 54-го
+            </div>
+          </div>
+
+          <a href="#">
+            <img alt="img" class="promo-img" loading="lazy" src="src/assets/img/promo/promo-1.jpg">
+          </a>
+        </div>
+
+        <div class="section-header">
+          <h2 class="section-title">
+            <a href="/stories">Истории</a>
+          </h2>
+          <div class="section-button">
+            <a href="/stories">Все</a>
+          </div>
+        </div>
+        <div class="swiper slider-small stories-slider">
+          <div class="swiper-wrapper">
+            repeat 2 times:
+            <div class="swiper-slide">
+              <article class="section-product">
+                <div class="stories-slide-overlay">
+                  <img alt="img" loading="lazy" src="src/assets/img/icons/play.png">
+                </div>
+                <img alt="img" class="section-product-img" loading="lazy" src="src/assets/img/stories/story-1.jpg">
+                <div class="swiper-lazy-preloader"></div>
+              </article>
+            </div>
+            <div class="swiper-slide">
+              <article class="section-product">
+                <div class="stories-slide-overlay">
+                  <h2 class="stories-slide-title">
+                    Волшебная <br>
+                    ночь
+                  </h2>
+                </div>
+                <img alt="img" class="section-product-img" loading="lazy" src="src/assets/img/stories/story-2.jpg">
+                <div class="swiper-lazy-preloader"></div>
+              </article>
+            </div>
+            <div class="swiper-slide">
+              <article class="section-product">
+                <div class="stories-slide-overlay">
+                  <img alt="img" loading="lazy" src="src/assets/img/icons/play.png">
+                </div>
+                <img alt="img" class="section-product-img" loading="lazy" src="src/assets/img/stories/story-3.jpg">
+                <div class="swiper-lazy-preloader"></div>
+              </article>
+            </div>
+            <div class="swiper-slide">
+              <article class="section-product">
+                <div class="stories-slide-overlay">
+                  <h2 class="stories-slide-title">
+                    Волшебная <br>
+                    ночь
+                  </h2>
+                </div>
+                <img alt="img" class="section-product-img" loading="lazy" src="src/assets/img/stories/story-4.jpg">
+                <div class="swiper-lazy-preloader"></div>
+              </article>
+            </div>
+            <div class="swiper-slide">
+              <article class="section-product">
+                <div class="stories-slide-overlay">
+                  <h2 class="stories-slide-title">
+                    Элегантность <br>
+                    чёрного
+                  </h2>
+                </div>
+                <img alt="img" class="section-product-img" loading="lazy" src="src/assets/img/stories/story-5.jpg">
+                <div class="swiper-lazy-preloader"></div>
+              </article>
+            </div>
+            <div class="swiper-slide">
+              <article class="section-product">
+                <div class="stories-slide-overlay">
+                  <h2 class="stories-slide-title">
+                    Сияй!
+                  </h2>
+                </div>
+                <img alt="img" class="section-product-img" loading="lazy" src="src/assets/img/stories/story-6.jpg">
+                <div class="swiper-lazy-preloader"></div>
+              </article>
+            </div>
+            end;
+          </div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+      </div>
+    </section>
+    <a class="banner" href="#">
+      <img alt="img" class="banner-img" loading="lazy" src="src/assets/img/banners/banner-1.jpg">
+    </a>
+
+    <section class="section">
+      <div class="section-container">
+        <div class="section-header">
+          <h2 class="section-title">
+            <a href="/catalog">Нарядная одежда</a>
+          </h2>
+          <div class="section-button">
+            <a href="/catalog">
+              <span>Все</span> <span class="iconfont icon-arrow-right"></span>
+            </a>
+          </div>
+        </div>
+        <div class="swiper section-layout">
+          <div class="swiper-wrapper">
+            repeat 3 times:
+            <div class="swiper-slide">
+              <article class="section-product">
+                <button class="section-product-favourite" type="button">
+                  <img alt="img" loading="lazy" src="src/assets/img/icons/heart.png">
+                  <span class="iconfont icon-heart"></span>
+                </button>
+                <h2 class="section-product-title">Название продукта</h2>
+                <img alt="img" class="section-product-img" loading="lazy" src="src/assets/img/section/product-5.jpg">
+                <div class="swiper-lazy-preloader"></div>
+              </article>
+            </div>
+            <div class="swiper-slide">
+              <article class="section-product">
+                <button class="section-product-favourite" type="button">
+                  <img alt="img" loading="lazy" src="src/assets/img/icons/heart.png">
+                  <span class="iconfont icon-heart"></span>
+                </button>
+                <h2 class="section-product-title">Название продукта</h2>
+                <img alt="img" class="section-product-img" loading="lazy" src="src/assets/img/section/product-6.jpg">
+                <div class="swiper-lazy-preloader"></div>
+              </article>
+            </div>
+            <div class="swiper-slide">
+              <article class="section-product">
+                <button class="section-product-favourite" type="button">
+                  <img alt="img" loading="lazy" src="src/assets/img/icons/heart.png">
+                  <span class="iconfont icon-heart"></span>
+                </button>
+                <h2 class="section-product-title">Название продукта</h2>
+                <img alt="img" class="section-product-img" loading="lazy" src="src/assets/img/section/product-7.jpg">
+                <div class="swiper-lazy-preloader"></div>
+              </article>
+            </div>
+            end;
+          </div>
+          <div class="swiper-button-prev">
+            <span class="iconfont icon-arrow-left"></span>
+          </div>
+          <div class="swiper-button-next">
+            <span class="iconfont icon-arrow-right"></span>
+          </div>
+        </div>
+
+        <div class="section-header">
+          <h2 class="section-title">
+            <a href="/catalog">Вечерние платья</a>
+          </h2>
+          <div class="section-button">
+            <a href="/catalog">Все</a>
+          </div>
+        </div>
+        <div class="swiper slider-small">
+          <div class="swiper-wrapper">
+            repeat 3 times:
+            <div class="swiper-slide">
+              <article class="section-product">
+                <button class="section-product-favourite" type="button">
+                  <img alt="img" loading="lazy" src="src/assets/img/icons/heart.png">
+                  <span class="iconfont icon-heart"></span>
+                </button>
+                <h2 class="section-product-title">Название продукта</h2>
+                <img alt="img" class="section-product-img" loading="lazy" src="src/assets/img/section/product-5.jpg">
+                <div class="swiper-lazy-preloader"></div>
+              </article>
+            </div>
+            <div class="swiper-slide">
+              <article class="section-product">
+                <button class="section-product-favourite" type="button">
+                  <img alt="img" loading="lazy" src="src/assets/img/icons/heart.png">
+                  <span class="iconfont icon-heart"></span>
+                </button>
+                <h2 class="section-product-title">Название продукта</h2>
+                <img alt="img" class="section-product-img" loading="lazy" src="src/assets/img/section/product-6.jpg">
+                <div class="swiper-lazy-preloader"></div>
+              </article>
+            </div>
+            <div class="swiper-slide">
+              <article class="section-product">
+                <button class="section-product-favourite" type="button">
+                  <img alt="img" loading="lazy" src="src/assets/img/icons/heart.png">
+                  <span class="iconfont icon-heart"></span>
+                </button>
+                <h2 class="section-product-title">Название продукта</h2>
+                <img alt="img" class="section-product-img" loading="lazy" src="src/assets/img/section/product-7.jpg">
+                <div class="swiper-lazy-preloader"></div>
+              </article>
+            </div>
+            end;
+          </div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+      </div>
+    </section>
+    <a class="banner" href="#">
+      <img alt="img" class="banner-img" loading="lazy" src="src/assets/img/banners/banner-2.jpg">
+    </a>
+
+    <section class="section">
+      <div class="section-container">
+        <div class="section-header">
+          <h2 class="section-title">
+            <a href="/catalog">Верхняя одежда</a>
+          </h2>
+          <div class="section-button">
+            <a href="/catalog">
+              <span>Все</span> <span class="iconfont icon-arrow-right"></span>
+            </a>
+          </div>
+        </div>
+        <div class="swiper section-layout">
+          <div class="swiper-wrapper">
+            repeat 3 times:
+            <div class="swiper-slide">
+              <article class="section-product">
+                <button class="section-product-favourite" type="button">
+                  <img alt="img" loading="lazy" src="src/assets/img/icons/heart.png">
+                  <span class="iconfont icon-heart"></span>
+                </button>
+                <h2 class="section-product-title">Название продукта</h2>
+                <img alt="img" class="section-product-img" loading="lazy" src="src/assets/img/section/product-1.jpg">
+                <div class="swiper-lazy-preloader"></div>
+              </article>
+            </div>
+            <div class="swiper-slide">
+              <article class="section-product">
+                <button class="section-product-favourite" type="button">
+                  <img alt="img" loading="lazy" src="src/assets/img/icons/heart.png">
+                  <span class="iconfont icon-heart"></span>
+                </button>
+                <h2 class="section-product-title">Название продукта</h2>
+                <img alt="img" class="section-product-img" loading="lazy" src="src/assets/img/section/product-2.jpg">
+                <div class="swiper-lazy-preloader"></div>
+              </article>
+            </div>
+            <div class="swiper-slide">
+              <article class="section-product">
+                <button class="section-product-favourite" type="button">
+                  <img alt="img" loading="lazy" src="src/assets/img/icons/heart.png">
+                  <span class="iconfont icon-heart"></span>
+                </button>
+                <h2 class="section-product-title">Название продукта</h2>
+                <img alt="img" class="section-product-img" loading="lazy" src="src/assets/img/section/product-3.jpg">
+                <div class="swiper-lazy-preloader"></div>
+              </article>
+            </div>
+            <div class="swiper-slide">
+              <article class="section-product">
+                <button class="section-product-favourite" type="button">
+                  <img alt="img" loading="lazy" src="src/assets/img/icons/heart.png">
+                  <span class="iconfont icon-heart"></span>
+                </button>
+                <h2 class="section-product-title">Название продукта</h2>
+                <img alt="img" class="section-product-img" loading="lazy" src="src/assets/img/section/product-4.jpg">
+                <div class="swiper-lazy-preloader"></div>
+              </article>
+            </div>
+            end;
+          </div>
+          <div class="swiper-button-prev">
+            <span class="iconfont icon-arrow-left"></span>
+          </div>
+          <div class="swiper-button-next">
+            <span class="iconfont icon-arrow-right"></span>
+          </div>
+        </div>
+
+        <div class="section-header">
+          <h2 class="section-title">
+            <a href="/catalog">Товары со скидками</a>
+          </h2>
+          <div class="section-button">
+            <a href="/catalog">Все</a>
+          </div>
+        </div>
+        <div class="swiper slider-small">
+          <div class="swiper-wrapper">
+            repeat 3 times:
+            <div class="swiper-slide">
+              <article class="section-product">
+                <button class="section-product-favourite" type="button">
+                  <img alt="img" loading="lazy" src="src/assets/img/icons/heart.png">
+                  <span class="iconfont icon-heart"></span>
+                </button>
+                <h2 class="section-product-title">Название продукта</h2>
+                <img alt="img" class="section-product-img" loading="lazy" src="src/assets/img/section/product-1.jpg">
+                <div class="swiper-lazy-preloader"></div>
+              </article>
+            </div>
+            <div class="swiper-slide">
+              <article class="section-product">
+                <button class="section-product-favourite" type="button">
+                  <img alt="img" loading="lazy" src="src/assets/img/icons/heart.png">
+                  <span class="iconfont icon-heart"></span>
+                </button>
+                <h2 class="section-product-title">Название продукта</h2>
+                <img alt="img" class="section-product-img" loading="lazy" src="src/assets/img/section/product-2.jpg">
+                <div class="swiper-lazy-preloader"></div>
+              </article>
+            </div>
+            <div class="swiper-slide">
+              <article class="section-product">
+                <button class="section-product-favourite" type="button">
+                  <img alt="img" loading="lazy" src="src/assets/img/icons/heart.png">
+                  <span class="iconfont icon-heart"></span>
+                </button>
+                <h2 class="section-product-title">Название продукта</h2>
+                <img alt="img" class="section-product-img" loading="lazy" src="src/assets/img/section/product-3.jpg">
+                <div class="swiper-lazy-preloader"></div>
+              </article>
+            </div>
+            <div class="swiper-slide">
+              <article class="section-product">
+                <button class="section-product-favourite" type="button">
+                  <img alt="img" loading="lazy" src="src/assets/img/icons/heart.png">
+                  <span class="iconfont icon-heart"></span>
+                </button>
+                <h2 class="section-product-title">Название продукта</h2>
+                <img alt="img" class="section-product-img" loading="lazy" src="src/assets/img/section/product-4.jpg">
+                <div class="swiper-lazy-preloader"></div>
+              </article>
+            </div>
+            end;
+          </div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+      </div>
+    </section>
+    <a class="banner" href="#">
+      <img alt="img" class="banner-img" loading="lazy" src="src/assets/img/banners/banner-3.jpg">
+    </a>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-mobile">
+      <div class="footer-container">
+
+      </div>
+    </div>
+    <div class="footer-tablet">
+      <div class="footer-container"></div>
+    </div>
+    <div class="footer-desktop">
+      <div class="footer-container">
+        <form class="footer-form">
+          <label class="footer-label" for="footer-input">Подписка на новости</label>
+          <div class="footer-inputWrapper">
+            <input
+              autocomplete="off"
+              class="footer-input"
+              id="footer-input"
+              name="email"
+              placeholder="Введите ваш e-mail"
+              required
+              type="text"
+            >
+            <button class="footer-button" type="submit">
+              <span class="iconfont icon-arrow-right"></span>
+            </button>
+          </div>
+          <div class="footer-warning">
+            Подписываясь на рассылку, вы соглашаетесь с условиями <a href="#">политики конфиденциальности</a>
+          </div>
+        </form>
+        <div class="details">
+          <div class="details-summary">
+            <button class="details-button" type="button">
+              <span class="iconfont icon-button-down"></span>
+            </button>
+            <span>О компании</span>
+          </div>
+          <div class="details-body">
+            <a href="#">Отзывы</a>
+            <a href="#">Оптовые продажи</a>
+            <a href="#">Магазины</a>
+            <a href="#">Контакты</a>
+            <a href="#">Договор-оферта</a>
+          </div>
+        </div>
+        <div class="details">
+          <div class="details-summary">
+            <button class="details-button" type="button">
+              <span class="iconfont icon-button-down"></span>
+            </button>
+            <span>Покупателям</span>
+          </div>
+          <div class="details-body">
+            <button type="button">Записаться к стилисту</button>
+            <a href="#">Доставка</a>
+            <a href="#">Оплата</a>
+            <a href="#">Возврат</a>
+            <a href="#">Таблица размеров</a>
+            <a href="#">Политика <br> конфиденциальности</a>
+          </div>
+        </div>
+        <div class="details details_feedback">
+          <div class="details-summary">
+            <button class="details-button" type="button">
+              <span class="iconfont icon-button-down"></span>
+            </button>
+            <span>Связаться с нами</span>
+          </div>
+          <div class="details-body">
+            <a href="tel:89219449914">8 921 944-99-14</a>
+            <a href="mailto:hello@mokko-brand.ru">hello@mokko-brand.ru</a>
+            <a href="https://vk.com">Vkontakte</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
+</body>
+</html>

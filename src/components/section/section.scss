@@ -1,0 +1,134 @@
+@import "src/styles/shared";
+
+.section {
+  overflow: hidden;
+  padding: 30px 0 60px;
+  @include mediaTablet {
+    padding: 50px 0 80px
+  }
+  @include mediaTabletBg {
+  }
+  @include mediaLaptop {
+    padding: 80px 0 110px;
+  }
+  @include mediaDesktop {
+    // padding: 110px 0;
+  }
+
+  &-container {
+    @extend .container;
+  }
+
+  &-header {
+    @include flex(center, space-between);
+    margin-bottom: 14px;
+    @include mediaLaptop {
+      margin-bottom: 20px;
+    }
+  }
+
+  &-title, &-button {
+    color: #80756e;
+    font-size: 16px;
+    line-height: 54 / 18;
+
+    @include mediaTablet {
+      font-size: 18px;
+    }
+  }
+
+  &-layout {
+    margin-bottom: 30px;
+    @include mediaTablet {
+      margin-bottom: 50px;
+    }
+    @include mediaTabletBg {
+    }
+    @include mediaLaptop {
+      margin-bottom: 80px;
+    }
+    @include mediaDesktop {
+    }
+  }
+
+  &-product {
+    position: relative;
+    z-index: 0;
+    border-radius: 8px;
+    overflow: hidden;
+
+    &-favourite {
+      position: absolute;
+      z-index: 1;
+      // background: white;
+      opacity: 0.75;
+
+      top: 5px;
+      right: 5px;
+      width: 18px;
+      height: 18px;
+
+      @include mediaTablet {
+        top: 10px;
+        right: 10px;
+        width: 20px;
+        height: 20px;
+      }
+    }
+
+    &-title {
+      display: none;
+    }
+
+    &-img {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.swiper {
+  overflow: unset;
+  @include mediaTabletBg {
+    overflow: hidden;
+  }
+
+  &-button {
+    &-prev, &-next {
+      position: absolute;
+      z-index: 1;
+      top: 50%;
+      cursor: pointer;
+      width: 30px;
+      height: 34px;
+      background: white;
+      opacity: 0.75;
+      transform: translate(0, -50%);
+
+      display: none;
+      @include mediaTabletBg {
+        display: flex;
+      }
+
+      &:disabled {
+        opacity: 0.25;
+        cursor: not-allowed;
+      }
+    }
+
+    &-disabled {
+      opacity: 0;
+    }
+
+    &-prev {
+      left: 0;
+      border-radius: 0 8px 8px 0;
+    }
+
+    &-next {
+      right: 0;
+      border-radius: 8px 0 0 8px;
+    }
+  }
+}

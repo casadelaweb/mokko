@@ -1,0 +1,8 @@
+import 'src/components/header'
+import 'src/components/footer'
+import 'src/components/menu'
+import 'src/components/hero'
+import 'src/components/section'
+import 'src/components/forms'
+import 'src/components/banners'
+import 'src/components/promo'

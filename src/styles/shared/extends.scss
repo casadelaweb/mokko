@@ -1,0 +1,20 @@
+@import "src/styles/shared/variables.scss";
+@import "src/styles/shared/mixins.scss";
+
+.container {
+  margin: 0 auto;
+  max-width: $containerWidthMobile;
+  padding: 0 $containerPaddingMobile;
+
+  @include mediaTablet {
+    padding: 0 $containerPaddingTablet;
+  }
+  @include mediaLaptop {
+    padding: 0 $containerPaddingLaptop;
+    max-width: $containerWidthLaptop;
+  }
+  @include mediaDesktop {
+    padding: 0 $containerPaddingDesktop;
+    max-width: $containerWidthDesktop;
+  }
+}

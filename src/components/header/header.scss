@@ -1,0 +1,76 @@
+@import "src/styles/shared";
+
+.header {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  width: 100%;
+  color: white;
+  padding: 20px 0;
+  transition: background-color 0.5s, backdrop-filter 0.5s, border-color 0.5s;
+  border-bottom: 2px solid transparent;
+
+  &.hovered, &.scrolled {
+    background: white;
+    color: #938781;
+    border-color: #f2f2f2;
+  }
+
+  //&.scrolled {
+  //  background: rgba(black, 0.33);
+  //  backdrop-filter: blur(8px);
+  //}
+
+  &-container {
+    @include flex(center);
+    margin: 0 auto;
+    padding: 0 48px;
+  }
+
+  &-links {
+    font-size: 17px;
+    letter-spacing: 0.34px;
+    margin-right: auto;
+  }
+
+  &-link {
+    display: inline-block;
+    margin-right: 1em;
+
+    &:hover {
+      color: #6f6e6d;
+    }
+  }
+
+  &-logo {
+    display: inline-block;
+    margin: 0 auto;
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &-buttons {
+    margin-left: auto;
+    // margin-right: -20px;
+  }
+
+  &-button-purple {
+    width: 228px;
+    height: 43px;
+    border-radius: 4px;
+    background: #766cff;
+    color: white;
+    font-size: 17px;
+    letter-spacing: 0.34px;
+    margin-right: 36px;
+  }
+
+  &-button {
+    // margin-right: 20px;
+    margin-left: 20px;
+  }
+}

@@ -1,0 +1,42 @@
+@import "src/styles/shared";
+
+.hero {
+  &-container {
+  }
+
+  &-slider {
+  }
+
+  &-slide {
+    position: relative;
+    z-index: 0;
+
+    &-img {
+    }
+  }
+}
+
+.swiper-pagination {
+  @include flex(center, center);
+  position: absolute;
+  z-index: 1;
+  bottom: 30px;
+  left: 50%;
+  transform: translate(-50%, 0);
+
+  &-bullet {
+    display: inline-block;
+    width: 80px;
+    height: 2px;
+    background: white;
+    opacity: 0.8;
+    transition: background-color 0.5s, opacity 0.5s;
+    margin: 0 10px;
+    cursor: pointer;
+
+    &-active {
+      background: #82756e;
+      opacity: 1;
+    }
+  }
+}
