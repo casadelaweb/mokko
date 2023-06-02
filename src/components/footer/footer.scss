@@ -3,6 +3,7 @@
 .footer {
   // padding-top: 46px;
   color: #80756e;
+  overflow: hidden;
 
   &-container {
     @extend .container;
@@ -60,6 +61,12 @@
     @include mediaTablet {
       // @include flex(center);
       max-width: 300px;
+    }
+
+    &-main {
+      @include mediaLaptop {
+        margin-bottom: 20px;
+      }
     }
   }
 

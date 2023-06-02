@@ -11,66 +11,210 @@
 <div id="app">
   <header class="header">
     <div class="header-container">
-      <div class="header-links">
-        <a class="header-link" href="#"> Новинки </a>
-        <a class="header-link" data-header="catalog" href="/catalog"> Каталог </a>
-        <a class="header-link" href="#"> SALE </a>
-        <a class="header-link" href="#"> Магазины </a>
-        <a class="header-link" href="#"> Информация</a>
+      <div class="header-desktop">
+        <div class="header-links">
+          <a class="header-link" href="#"> Новинки </a>
+          <a class="header-link" data-header="catalog" href="/catalog"> Каталог </a>
+          <a class="header-link" href="#"> SALE </a>
+          <a class="header-link" href="#"> Магазины </a>
+          <a class="header-link" href="#"> Информация</a>
+        </div>
+        <a class="header-logo" href="/">
+          <img alt="logo" class="header-logo-img" src="src/assets/img/header-logo.png">
+        </a>
+        <div class="header-buttons">
+          <button class="header-button-purple" type="button">
+            <span>Записаться к стилисту</span>
+          </button>
+          <a class="header-button" href="#">
+            <img alt="img" loading="lazy" src="src/assets/img/icons/search.png">
+            <span class="iconfont icon-search"></span>
+          </a>
+          <a class="header-button" href="#">
+            <img alt="img" loading="lazy" src="src/assets/img/icons/person.png">
+            <span class="iconfont icon-person"></span>
+          </a>
+          <a class="header-button" href="#">
+            <img alt="img" loading="lazy" src="src/assets/img/icons/heart.png">
+            <span class="iconfont icon-heart"></span>
+          </a>
+          <a class="header-button" href="#">
+            <img alt="img" loading="lazy" src="src/assets/img/icons/suitcase.png">
+            <span class="iconfont icon-suitcase"></span>
+          </a>
+        </div>
       </div>
-      <a class="header-logo" href="/">
-        <img alt="logo" class="header-logo-img" src="src/assets/img/header-logo.png">
-      </a>
-      <div class="header-buttons">
-        <button class="header-button-purple" type="button">
-          <span>Записаться к стилисту</span>
+
+      <div class="header-mobile">
+        <button class="header-mobile-button" data-menu="open" type="button">
+          <img alt="img" loading="lazy" src="src/assets/img/icons/menu.png">
         </button>
-        <a class="header-button" href="#">
+        <a class="header-mobile-button" href="#">
           <img alt="img" loading="lazy" src="src/assets/img/icons/search.png">
-          <span class="iconfont icon-search"></span>
         </a>
-        <a class="header-button" href="#">
-          <img alt="img" loading="lazy" src="src/assets/img/icons/person.png">
-          <span class="iconfont icon-person"></span>
+        <a class="header-logo" href="#">
+          <img alt="img" class="header-logo-img" loading="lazy" src="src/assets/img/header-logo.png">
         </a>
-        <a class="header-button" href="#">
+        <a class="header-mobile-button" href="#">
           <img alt="img" loading="lazy" src="src/assets/img/icons/heart.png">
-          <span class="iconfont icon-heart"></span>
         </a>
-        <a class="header-button" href="#">
+        <a class="header-mobile-button" href="#">
           <img alt="img" loading="lazy" src="src/assets/img/icons/suitcase.png">
-          <span class="iconfont icon-suitcase"></span>
         </a>
       </div>
     </div>
   </header>
   <nav class="menu">
     <div class="menu-container">
-      <div class="menu-left">
-        <div class="menu-columns">
-          <div class="menu-column">
-            <a class="menu-link" href="#">Платья</a>
-            <a class="menu-link" href="#">Нарядная одежда</a>
-            <a class="menu-link" href="#">Блузы и рубашки</a>
-            <a class="menu-link" href="#">Брюки и юбки</a>
-            <a class="menu-link" href="#">Верхняя одежда</a>
+
+      <div class="menu-desktop">
+        <div class="menu-left">
+          <div class="menu-columns">
+            <div class="menu-column">
+              <a class="menu-link" href="#">Платья</a>
+              <a class="menu-link" href="#">Нарядная одежда</a>
+              <a class="menu-link" href="#">Блузы и рубашки</a>
+              <a class="menu-link" href="#">Брюки и юбки</a>
+              <a class="menu-link" href="#">Верхняя одежда</a>
+            </div>
+            <div class="menu-column">
+              <a class="menu-link" href="#">Джемперы и кардиганы</a>
+              <a class="menu-link" href="#">Костюмы и жакеты</a>
+              <a class="menu-link" href="#">Футболки и топы</a>
+              <a class="menu-link" href="#">Аксессуары</a>
+              <a class="menu-link" href="#">Смотреть всё</a>
+            </div>
           </div>
-          <div class="menu-column">
-            <a class="menu-link" href="#">Джемперы и кардиганы</a>
-            <a class="menu-link" href="#">Костюмы и жакеты</a>
-            <a class="menu-link" href="#">Футболки и топы</a>
-            <a class="menu-link" href="#">Аксессуары</a>
-            <a class="menu-link" href="#">Смотреть всё</a>
+          <form class="form menu-form">
+            <label class="menu-form-label form-label" for="menu-input"> Подписка на новости </label>
+            <div class="menu-form-layout">
+              <div class="form-main">
+                <input
+                  autocomplete="off"
+                  class="form-input"
+                  id="menu-input"
+                  name="email"
+                  placeholder="Введите ваш e-mail"
+                  required
+                  type="text"
+                >
+                <button class="form-button" type="submit">
+                  <span class="iconfont icon-arrow-right"></span>
+                </button>
+              </div>
+              <div class="form-warning">
+                Подписываясь на рассылку, вы соглашаетесь <br>
+                с условиями <a href="#">политики конфиденциальности</a>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="menu-categories">
+          <article class="menu-category">
+            <a href="#">
+              <img alt="Вечерние платья" class="menu-category-img" loading="lazy"
+                   src="src/assets/img/menu/category-1.jpg">
+            </a>
+            <h2 class="menu-category-title">Вечерние платья</h2>
+          </article>
+          <article class="menu-category">
+            <a href="#">
+              <img alt="Вечерние платья" class="menu-category-img" loading="lazy"
+                   src="src/assets/img/menu/category-2.jpg">
+            </a>
+            <h2 class="menu-category-title">Верхняя одежда</h2>
+          </article>
+        </div>
+      </div>
+
+      <div class="menu-mobile">
+        <div class="menu-mobile-top">
+          <button class="menu-mobile-button-close" data-menu="close" type="button">
+            <img alt="img" loading="lazy" src="src/assets/img/icons/close.png">
+          </button>
+        </div>
+        <button class="header-button-purple" type="button">
+          <span>Записаться к стилисту</span>
+        </button>
+        <div class="menu-mobile-main">
+          <a class="menu-mobile-link" href="#">Новинки</a>
+
+          <!-- Для элементов со вложенными элементами -->
+          <div class="menu-mobile-list">
+            <div class="menu-mobile-list-summary">
+              <button class="menu-mobile-list-button" type="button">
+                <img alt="img" loading="lazy" src="src/assets/img/icons/arrow-down.png">
+              </button>
+              <a class="menu-mobile-link" href="#">Каталог</a>
+            </div>
+            <div class="menu-mobile-list-body">
+              <a class="menu-mobile-list-link" href="#">Платья</a>
+              <a class="menu-mobile-list-link" href="#">Нарядная одежда</a>
+              <a class="menu-mobile-list-link" href="#">Блузы и рубашки</a>
+              <a class="menu-mobile-list-link" href="#">Брюки и юбки</a>
+              <a class="menu-mobile-list-link" href="#">Верхняя одежда</a>
+              <a class="menu-mobile-list-link" href="#">Джемперы и кардиганы</a>
+              <a class="menu-mobile-list-link" href="#">Костюмы и жакеты</a>
+              <a class="menu-mobile-list-link" href="#">Футболки и топы</a>
+              <a class="menu-mobile-list-link" href="#">Аксессуары</a>
+              <a class="menu-mobile-list-link" href="#">Смотреть всё</a>
+            </div>
+          </div>
+
+          <a class="menu-mobile-link" href="#">SALE</a>
+          <a class="menu-mobile-link" href="#">Магазины</a>
+
+          <div class="menu-mobile-list">
+            <div class="menu-mobile-list-summary">
+              <button class="menu-mobile-list-button" type="button">
+                <img alt="img" loading="lazy" src="src/assets/img/icons/arrow-down.png">
+              </button>
+              <a class="menu-mobile-link" href="#">Информация</a>
+            </div>
+            <div class="menu-mobile-list-body">
+              <a class="menu-mobile-list-link" href="#">Ссылка с коротким текстом</a>
+              <a class="menu-mobile-list-link" href="#">
+                Ссылка с относительно длинным текстом длиной в несколько строк
+              </a>
+            </div>
+          </div>
+          <div class="menu-mobile-list">
+            <div class="menu-mobile-list-summary">
+              <button class="menu-mobile-list-button" type="button">
+                <img alt="img" loading="lazy" src="src/assets/img/icons/arrow-down.png">
+              </button>
+              <a class="menu-mobile-link" href="#">Личный кабинет</a>
+            </div>
+            <div class="menu-mobile-list-body">
+              <a class="menu-mobile-list-link" href="#">Ссылка с коротким текстом</a>
+              <a class="menu-mobile-list-link" href="#">
+                Ссылка с относительно длинным текстом длиной в несколько строк
+              </a>
+            </div>
+          </div>
+          <div class="menu-mobile-list">
+            <div class="menu-mobile-list-summary">
+              <button class="menu-mobile-list-button" type="button">
+                <img alt="img" loading="lazy" src="src/assets/img/icons/arrow-down.png">
+              </button>
+              <a class="menu-mobile-link" href="#">Связаться с нами</a>
+            </div>
+            <div class="menu-mobile-list-body">
+              <a class="menu-mobile-list-link" href="#">Ссылка с коротким текстом</a>
+              <a class="menu-mobile-list-link" href="#">
+                Ссылка с относительно длинным текстом длиной в несколько строк
+              </a>
+            </div>
           </div>
         </div>
         <form class="form menu-form">
-          <label class="menu-form-label form-label" for="menu-input"> Подписка на новости </label>
+          <label class="menu-form-label form-label" for="menu-mobile-input"> Подписка на новости </label>
           <div class="menu-form-layout">
             <div class="form-main">
               <input
                 autocomplete="off"
                 class="form-input"
-                id="menu-input"
+                id="menu-mobile-input"
                 name="email"
                 placeholder="Введите ваш e-mail"
                 required
@@ -87,22 +231,7 @@
           </div>
         </form>
       </div>
-      <div class="menu-categories">
-        <article class="menu-category">
-          <a href="#">
-            <img alt="Вечерние платья" class="menu-category-img" loading="lazy"
-                 src="src/assets/img/menu/category-1.jpg">
-          </a>
-          <h2 class="menu-category-title">Вечерние платья</h2>
-        </article>
-        <article class="menu-category">
-          <a href="#">
-            <img alt="Вечерние платья" class="menu-category-img" loading="lazy"
-                 src="src/assets/img/menu/category-2.jpg">
-          </a>
-          <h2 class="menu-category-title">Верхняя одежда</h2>
-        </article>
-      </div>
+
     </div>
   </nav>
 
@@ -114,7 +243,13 @@
             repeat 3 times:
             <div class="swiper-slide">
               <div class="hero-slide">
-                <img alt="img" class="hero-slide-img" loading="lazy" src="src/assets/img/hero-1.jpg">
+                <picture>
+                  <source media="(min-width: 1920px)" srcset="src/assets/img/hero/hero-1920.jpg">
+                  <source media="(min-width: 1280px)" srcset="src/assets/img/hero/hero-1280.jpg">
+                  <source media="(min-width: 1024px)" srcset="src/assets/img/hero/hero-1024.jpg">
+                  <source media="(min-width: 768px)" srcset="src/assets/img/hero/hero-768.jpg">
+                  <img alt="img" class="hero-slide-img" loading="lazy" src="src/assets/img/hero/hero-320.jpg">
+                </picture>
                 <div class="swiper-lazy-preloader"></div>
               </div>
             </div>
@@ -124,10 +259,11 @@
         </div>
       </div>
     </section>
+
     <section class="promo">
       <div class="promo-container">
         <div class="promo-main">
-          <div>
+          <div class="promo-text">
             <h2 class="promo-title">
               <a href="#">
                 MOKKO — БРЕНД ОДЕЖДЫ, <br>
@@ -136,14 +272,20 @@
               </a>
             </h2>
             <div class="promo-description">
-              Мы учитываем все особенности фигур наших <br>
-              покупательниц. Каждая модель адаптирована для всех <br>
+              Мы учитываем все особенности фигур наших
+              покупательниц. Каждая модель адаптирована для всех
               размеров, вплоть до 54-го
             </div>
           </div>
 
           <a href="#">
-            <img alt="img" class="promo-img" loading="lazy" src="src/assets/img/promo/promo-1.jpg">
+            <picture>
+              <source media="(min-width: 1920px)" srcset="src/assets/img/promo/promo-1920.jpg">
+              <source media="(min-width: 1280px)" srcset="src/assets/img/promo/promo-1280.jpg">
+              <source media="(min-width: 1024px)" srcset="src/assets/img/promo/promo-1024.jpg">
+              <source media="(min-width: 768px)" srcset="src/assets/img/promo/promo-768.jpg">
+              <img alt="img" class="promo-img" loading="lazy" src="src/assets/img/promo/promo-320.jpg">
+            </picture>
           </a>
         </div>
 
@@ -230,8 +372,15 @@
         </div>
       </div>
     </section>
+
     <a class="banner" href="#">
-      <img alt="img" class="banner-img" loading="lazy" src="src/assets/img/banners/banner-1.jpg">
+      <picture>
+        <source media="(min-width: 1920px)" srcset="src/assets/img/banners/banner-1-1920.jpg">
+        <source media="(min-width: 1280px)" srcset="src/assets/img/banners/banner-1-1280.jpg">
+        <source media="(min-width: 1024px)" srcset="src/assets/img/banners/banner-1-1024.jpg">
+        <source media="(min-width: 768px)" srcset="src/assets/img/banners/banner-1-768.jpg">
+        <img alt="img" class="banner-img" loading="lazy" src="src/assets/img/banners/banner-1-320.jpg">
+      </picture>
     </a>
 
     <section class="section">
@@ -343,8 +492,15 @@
         </div>
       </div>
     </section>
+
     <a class="banner" href="#">
-      <img alt="img" class="banner-img" loading="lazy" src="src/assets/img/banners/banner-2.jpg">
+      <picture>
+        <source media="(min-width: 1920px)" srcset="src/assets/img/banners/banner-2-1920.jpg">
+        <source media="(min-width: 1280px)" srcset="src/assets/img/banners/banner-2-1280.jpg">
+        <source media="(min-width: 1024px)" srcset="src/assets/img/banners/banner-2-1024.jpg">
+        <source media="(min-width: 768px)" srcset="src/assets/img/banners/banner-2-768.jpg">
+        <img alt="img" class="banner-img" loading="lazy" src="src/assets/img/banners/banner-2-320.jpg">
+      </picture>
     </a>
 
     <section class="section">
@@ -478,8 +634,15 @@
         </div>
       </div>
     </section>
+
     <a class="banner" href="#">
-      <img alt="img" class="banner-img" loading="lazy" src="src/assets/img/banners/banner-3.jpg">
+      <picture>
+        <source media="(min-width: 1920px)" srcset="src/assets/img/banners/banner-3-1920.jpg">
+        <source media="(min-width: 1280px)" srcset="src/assets/img/banners/banner-3-1280.jpg">
+        <source media="(min-width: 1024px)" srcset="src/assets/img/banners/banner-3-1024.jpg">
+        <source media="(min-width: 768px)" srcset="src/assets/img/banners/banner-3-768.jpg">
+        <img alt="img" class="banner-img" loading="lazy" src="src/assets/img/banners/banner-3-320.jpg">
+      </picture>
     </a>
   </main>
 
@@ -491,7 +654,7 @@
       <div class="footer-desktop-container">
         <form class="footer-form form">
           <label class="footer-label form-label" for="footer-input">Подписка на новости</label>
-          <div class="footer-inputWrapper form-main">
+          <div class="footer-form-main form-main">
             <input
               autocomplete="off"
               class="footer-input form-input"

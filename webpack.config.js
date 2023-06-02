@@ -134,14 +134,15 @@ module.exports = {
                 'src',
                 'data-src',
                 'data-bg',
+                'srcset',
               ]
               if (attributesToMatch.includes(attribute)) {
-                match = match.replace(/(src|href|data-src|data-bg)="src/gmi, attribute + '="' + path.resolve(__dirname, './src') + '')
+                match = match.replace(/(src|href|data-src|data-bg|srcset)="src/gmi, attribute + '="' + path.resolve(__dirname, './src') + '')
               }
               return match
             }
 
-            result = result.replace(/(src|href|data-src|data-bg)="(.*?)"/gmi, processAliases)
+            result = result.replace(/(src|href|data-src|data-bg|srcset)="(.*?)"/gmi, processAliases)
 
             function processImports(match, source) {
               source = source.replace(/^src\//gmi, '../src/')

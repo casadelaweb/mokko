@@ -2,14 +2,15 @@
 
 .promo {
   overflow: hidden;
-  padding: 30px 0 60px;
+  padding: 60px 0;
   @include mediaTablet {
-    padding: 50px 0 80px
+    padding: 72px 0 80px
   }
   @include mediaTabletBg {
+    padding: 80px 0;
   }
   @include mediaLaptop {
-    padding: 80px 0 110px;
+    padding: 110px 0;
   }
   @include mediaDesktop {
     padding: 110px 0;
@@ -20,24 +21,67 @@
   }
 
   &-main {
-    @include flex(center, space-between);
-    margin-bottom: 80px;
+    margin-bottom: 30px;
+    @include mediaTabletBg {
+      @include flex(center, space-between);
+      margin-bottom: 60px;
+    }
+    @include mediaLaptop {
+      margin-bottom: 80px;
+    }
+  }
+
+  &-text {
+    margin-bottom: 58px;
+    @include mediaTablet {
+      margin-bottom: 80px;
+    }
+    @include mediaTabletBg {
+      margin-bottom: 0;
+    }
+    @include mediaLaptop {
+      padding-left: 40px;
+    }
   }
 
   &-title {
     color: #505050;
-    font-size: 32px;
     text-transform: uppercase;
-    letter-spacing: 1.6px;
-    margin-bottom: 32px;
+    font-size: 16px;
+    margin-bottom: 1em;
+    letter-spacing: 0.05em;
+    @include mediaTablet {
+      font-size: 26px;
+      margin-bottom: 30px;
+    }
+    @include mediaTabletBg {
+      line-height: 38 / 26;
+    }
+    @include mediaLaptop {
+      font-size: 32px;
+      line-height: 44 / 32;
+    }
   }
 
   &-description {
     color: #82756e;
-    font-size: 18px;
+    font-size: 14px;
+    @include mediaTablet {
+      font-size: 16px;
+      max-width: 520px;
+    }
+    @include mediaTabletBg {
+      max-width: 360px;
+    }
+    @include mediaLaptop {
+      font-size: 18px;
+      max-width: 488px;
+    }
   }
 
   &-img {
+    display: block;
+    width: 100%;
   }
 }
 
@@ -63,9 +107,14 @@
 
     &-title {
       color: white;
-      font-size: 20px;
       text-align: center;
-      letter-spacing: 1px;
+      font-size: 16px;
+      @include mediaTablet {
+        font-size: 18px;
+        letter-spacing: 0.05em;
+      }
+      @include mediaDesktop {
+      }
     }
   }
 }

@@ -22,6 +22,12 @@
   }
 }
 
+@mixin mediaOnlyTablet {
+  @media (min-width: $breakpointTablet) and (max-width: $breakpointTabletBg - 1px) {
+    @content;
+  }
+}
+
 @mixin mediaTabletBg {
   @media (min-width: $breakpointTabletBg) {
     @content;
