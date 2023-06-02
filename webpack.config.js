@@ -150,7 +150,7 @@ module.exports = {
               const filePath = path.resolve(loaderContext.context, source)
               let fileContent = fs.readFileSync(filePath, 'utf8')
 
-              fileContent = fileContent.replace(/(src|href|data-src)="(.*?)"/gmi, processAliases)
+              fileContent = fileContent.replace(/(src|href|data-src|data-bg|srcset)="(.*?)"/gmi, processAliases)
 
               return fileContent
             }
