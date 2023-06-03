@@ -3,15 +3,12 @@ const path = require('path')
 const pathRoot = (directory) => path.resolve(__dirname, directory)
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-// const postCssPresetEnv = require('postcss-preset-env')
 
 const mode = process.env.NODE_ENV || 'development'
 const isDevelopmentMode = mode === 'development'
 const isProductionMode = !isDevelopmentMode
 
-const processAliases = require('./webpack/process-aliases')
-const processImports = require('./webpack/process-imports')
-const processRepeat = require('./webpack/process-repeat')
+const htmlLoaderPipeline = require('./webpack/html-loader-pipeline')
 
 const stylesPipeline = {
   development: [
@@ -118,14 +115,7 @@ module.exports = {
             ],
           },
           minimize: false,
-          preprocessor: (content, loaderContext) => {
-            let result = content
-
-            result = result.replace(/ *?repeat +(\d\d?) +times:([\s\S]*?)end;/gmi, processRepeat)
-            result = result.replace(/(src|href|data-src|data-bg|srcset)="(.*?)"/gmi, processAliases)
-            result = result.replace(/ *?import +'?"?(.*?)'?"? *?;/gmi, processImports.bind(loaderContext))
-            return result
-          },
+          preprocessor: (content, loaderContext) => htmlLoaderPipeline(content, loaderContext),
         },
       },
       {
@@ -140,11 +130,6 @@ module.exports = {
       },
       {
         test: /(jpg|jpeg|png|webp|gif|svg)$/i,
-        // include: [
-        //   pathRoot('src/assets/img'),
-        //   pathRoot('src/components'),
-        //   pathRoot('src/modules'),
-        // ],
         exclude: pathRoot('src/assets/favicon'),
         type: 'asset/resource',
         generator: {
