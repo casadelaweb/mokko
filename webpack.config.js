@@ -149,6 +149,8 @@ module.exports = {
 
               const filePath = path.resolve(loaderContext.context, source)
               let fileContent = fs.readFileSync(filePath, 'utf8')
+              
+              fileContent = fileContent.replace(/ *?repeat +(\d\d?) +times:([\s\S]*?)end;/gmi, processRepeat)
 
               fileContent = fileContent.replace(/(src|href|data-src|data-bg|srcset)="(.*?)"/gmi, processAliases)
 

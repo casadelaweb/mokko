@@ -96,6 +96,22 @@
       width: 156px;
       height: 32px;
     }
+
+    &-img {
+      display: block;
+
+      .scrolled &, .hovered & {
+        display: none;
+      }
+
+      &_color {
+        display: none;
+
+        .scrolled &, .hovered & {
+          display: block;
+        }
+      }
+    }
   }
 
   &-buttons {
@@ -122,5 +138,21 @@
   &-button {
     // margin-right: 20px;
     margin-left: 20px;
+
+    &-img {
+      display: block;
+
+      .scrolled &, .hovered & {
+        display: none;
+      }
+
+      &_color {
+        display: none;
+
+        .scrolled &, .hovered & {
+          display: block;
+        }
+      }
+    }
   }
 }
