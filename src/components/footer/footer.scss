@@ -18,6 +18,10 @@
 
   &-desktop {
     padding: 48px 0 72px;
+    display: none;
+    @include mediaLaptop {
+      display: block;
+    }
 
     &-container {
       @extend .container;
@@ -49,6 +53,16 @@
         color: #766cff;
         text-align: left;
       }
+    }
+  }
+
+  &-tablet {
+  }
+
+  &-mobile {
+    padding: 46px 0;
+    @include mediaTablet {
+      display: none;
     }
   }
 

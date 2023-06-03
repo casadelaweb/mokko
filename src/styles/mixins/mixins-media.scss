@@ -1,0 +1,37 @@
+@import "src/styles/variables";
+
+@mixin mediaOnlyMobile {
+  @media (max-width: $breakpointTablet - 1px) {
+    @content;
+  }
+}
+
+@mixin mediaTablet {
+  @media (min-width: $breakpointTablet) {
+    @content;
+  }
+}
+
+@mixin mediaOnlyTablet {
+  @media (min-width: $breakpointTablet) and (max-width: $breakpointTabletBg - 1px) {
+    @content;
+  }
+}
+
+@mixin mediaTabletBg {
+  @media (min-width: $breakpointTabletBg) {
+    @content;
+  }
+}
+
+@mixin mediaLaptop {
+  @media (min-width: $breakpointLaptop) {
+    @content;
+  }
+}
+
+@mixin mediaDesktop {
+  @media (min-width: $breakpointDesktop) {
+    @content;
+  }
+}
