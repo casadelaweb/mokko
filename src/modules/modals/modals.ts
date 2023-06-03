@@ -14,6 +14,8 @@ class Modals {
   private readonly hooks: Hooks
   private readonly onOpen: any
   private readonly onClose: any
+  private readonly onBeforeOpen: any
+  private readonly onBeforeClose: any
 
   constructor({ hooks, }) {
     this.options = {
@@ -31,10 +33,22 @@ class Modals {
         },
       },
     }
-    this.hooks = hooks
+    this.hooks = {
+      beforeOpen() {
+      },
+      open() {
+      },
+      beforeClose() {
+      },
+      close() {
+      },
+      ...hooks,
+    }
 
     this.onOpen = this.hooks.open.bind(this)
     this.onClose = this.hooks.close.bind(this)
+    this.onBeforeOpen = this.hooks.beforeOpen.bind(this)
+    this.onBeforeClose = this.hooks.beforeClose.bind(this)
 
     this.parameters = {
       counter: 0,
@@ -50,6 +64,7 @@ class Modals {
 
   public activateModal(modal: any, trigger?: any): void {
     throwEvent(modal, Modals.events.beforeOpen, { trigger: trigger, })
+    this.onBeforeOpen()
 
     modal.classList.add('active')
     this.parameters.all.push(modal)
@@ -63,6 +78,7 @@ class Modals {
 
   public deactivateModal(modal: any, trigger?: any): void {
     throwEvent(modal, Modals.events.beforeClose, { trigger: trigger, })
+    this.onBeforeClose()
 
     modal.classList.remove('active')
 

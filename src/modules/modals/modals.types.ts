@@ -22,4 +22,8 @@ export interface Hooks {
   open(): void
 
   close(): void
+
+  beforeOpen(): void
+
+  beforeClose(): void
 }

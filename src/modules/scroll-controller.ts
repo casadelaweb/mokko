@@ -17,6 +17,7 @@ export class scrollController {
     const { documentElement: html, body, } = document
     disableBodyScroll(body)
     this.isLocked = true
+    html.classList.add('locked')
     html.style.paddingRight = this.scrollBarWidth + 'px'
 
     if (this.header) {
@@ -29,6 +30,7 @@ export class scrollController {
     const { documentElement: html, body, } = document
     enableBodyScroll(body)
     this.isLocked = false
+    html.classList.remove('locked')
     html.style.paddingRight = ''
 
     if (this.header) {
@@ -45,12 +47,12 @@ export class scrollController {
     }
   }
 
-  private listen(): void {
+  public listen(): void {
     document.addEventListener('DOMContentLoaded', this.updateDynamicSettings)
     window.addEventListener('resize', this.updateDynamicSettings)
   }
 
-  private updateDynamicSettings(): void {
+  public updateDynamicSettings(): void {
     const { documentElement: html, body, } = document
     this.scrollBarWidth = window.innerWidth - html.clientWidth
     this.header = body.querySelector('header')

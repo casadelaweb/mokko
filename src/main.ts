@@ -12,12 +12,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const modals = new Modals({
     hooks: {
       open() {
-        console.log(this)
+        globalScrollController.updateDynamicSettings()
         globalScrollController.lock()
+        globalScrollController.updateDynamicSettings()
       },
       close() {
-        console.log(this)
+        globalScrollController.updateDynamicSettings()
         if (this.parameters.counter === 0) globalScrollController.unlock()
+        globalScrollController.updateDynamicSettings()
       },
     },
   })
