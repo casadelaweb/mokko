@@ -64,17 +64,14 @@ module.exports = {
   target: 'browserslist',
   devtool: isDevelopmentMode ? 'source-map' : false,
   optimization: { minimize: isProductionMode, },
-  entry: { bundle: pathRoot('src/main.ts'), },
+  entry: { main: pathRoot('src/main.ts'), },
   output: {
-    path: pathRoot('dist/assets'),
-    filename: 'js/[name].js',
+    path: pathRoot('dist/'),
+    filename: 'assets/js/[name].[contenthash:4].js',
     clean: isProductionMode,
   },
   resolve: {
-    alias: {
-      'src': pathRoot('./src'),
-      // 'src': path.resolve(__dirname, './src'),
-    },
+    alias: { 'src': pathRoot('./src'), },
     extensions: [
       '.ts',
       '.js',
@@ -85,8 +82,8 @@ module.exports = {
   plugins: [
     ...htmlPagesRegistered,
     new MiniCssExtractPlugin({
-      filename: 'css/[name].css',
-      chunkFilename: 'css/[name].css',
+      filename: 'assets/css/[name].[contenthash:4].css',
+      chunkFilename: 'assets/css/[name].[contenthash:4].css',
     }),
   ],
   module: {
@@ -149,7 +146,7 @@ module.exports = {
 
               const filePath = path.resolve(loaderContext.context, source)
               let fileContent = fs.readFileSync(filePath, 'utf8')
-              
+
               fileContent = fileContent.replace(/ *?repeat +(\d\d?) +times:([\s\S]*?)end;/gmi, processRepeat)
 
               fileContent = fileContent.replace(/(src|href|data-src|data-bg|srcset)="(.*?)"/gmi, processAliases)
@@ -170,7 +167,7 @@ module.exports = {
       {
         test: /(.*?iconfont.svg)|.(woff|woff2|eot|ttf|otf)$/i,
         type: 'asset/resource',
-        generator: { filename: 'fonts/[name][ext]', },
+        generator: { filename: 'assets/fonts/[name][ext]', },
       },
       {
         test: /(jpg|jpeg|png|webp|gif|svg)$/i,
@@ -181,30 +178,30 @@ module.exports = {
         // ],
         exclude: pathRoot('src/assets/favicon'),
         type: 'asset/resource',
-        // generator: {
-        //   filename: (pathData) => {
-        //     const { filename, } = pathData
-        //     let result = filename
-        //     const queries = [
-        //       {
-        //         searchFor: 'src/assets/',
-        //         replaceWith: '',
-        //       },
-        //       {
-        //         searchFor: 'src/modules/',
-        //         replaceWith: 'img/',
-        //       },
-        //       {
-        //         searchFor: 'src/components/',
-        //         replaceWith: 'img/',
-        //       },
-        //     ]
-        //     queries.forEach((query) => {
-        //       result = result.replace(query.searchFor, query.replaceWith)
-        //     })
-        //     return result
-        //   },
-        // },
+        generator: {
+          filename: (pathData) => {
+            const { filename, } = pathData
+            let result = filename
+            const queries = [
+              {
+                searchFor: 'src/assets/',
+                replaceWith: 'assets/',
+              },
+              {
+                searchFor: 'src/modules/',
+                replaceWith: 'assets/img/',
+              },
+              {
+                searchFor: 'src/components/',
+                replaceWith: 'assets/img/',
+              },
+            ]
+            queries.forEach((query) => {
+              result = result.replace(query.searchFor, query.replaceWith)
+            })
+            return result
+          },
+        },
       },
       {
         test: /(ico|png|webmanifest|svg|xml)$/i,

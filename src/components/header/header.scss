@@ -1,5 +1,24 @@
 @import "src/styles/shared";
 
+
+@mixin supportColorImg {
+  &-img {
+    display: block;
+
+    .scrolled &, .hovered & {
+      display: none;
+    }
+
+    &_color {
+      display: none;
+
+      .scrolled &, .hovered & {
+        display: block;
+      }
+    }
+  }
+}
+
 .header {
   position: fixed;
   z-index: 100;
@@ -97,21 +116,7 @@
       height: 32px;
     }
 
-    &-img {
-      display: block;
-
-      .scrolled &, .hovered & {
-        display: none;
-      }
-
-      &_color {
-        display: none;
-
-        .scrolled &, .hovered & {
-          display: block;
-        }
-      }
-    }
+    @include supportColorImg;
   }
 
   &-buttons {
@@ -136,23 +141,8 @@
   }
 
   &-button {
-    // margin-right: 20px;
     margin-left: 20px;
 
-    &-img {
-      display: block;
-
-      .scrolled &, .hovered & {
-        display: none;
-      }
-
-      &_color {
-        display: none;
-
-        .scrolled &, .hovered & {
-          display: block;
-        }
-      }
-    }
+    @include supportColorImg;
   }
 }
