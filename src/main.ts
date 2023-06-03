@@ -11,13 +11,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const modals = new Modals({
     hooks: {
-      open() {
+      beforeOpen() {
         globalScrollController.updateDynamicSettings()
+      },
+      open() {
         globalScrollController.lock()
         globalScrollController.updateDynamicSettings()
       },
-      close() {
+      beforeClose() {
         globalScrollController.updateDynamicSettings()
+      },
+      close() {
         if (this.parameters.counter === 0) globalScrollController.unlock()
         globalScrollController.updateDynamicSettings()
       },
