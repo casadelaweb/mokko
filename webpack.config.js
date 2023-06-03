@@ -3,10 +3,15 @@ const path = require('path')
 const pathRoot = (directory) => path.resolve(__dirname, directory)
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+// const postCssPresetEnv = require('postcss-preset-env')
 
 const mode = process.env.NODE_ENV || 'development'
 const isDevelopmentMode = mode === 'development'
 const isProductionMode = !isDevelopmentMode
+
+const processAliases = require('./webpack/process-aliases')
+const processImports = require('./webpack/process-imports')
+const processRepeat = require('./webpack/process-repeat')
 
 const stylesPipeline = {
   development: [
@@ -116,45 +121,9 @@ module.exports = {
           preprocessor: (content, loaderContext) => {
             let result = content
 
-            function processRepeat(match, number, content) {
-              const times = Number(number)
-              match = content.repeat(times)
-              return match
-            }
-
             result = result.replace(/ *?repeat +(\d\d?) +times:([\s\S]*?)end;/gmi, processRepeat)
-
-            // src alias для папки ../src
-            function processAliases(match, attribute) {
-              const attributesToMatch = [
-                'href',
-                'src',
-                'data-src',
-                'data-bg',
-                'srcset',
-              ]
-              if (attributesToMatch.includes(attribute)) {
-                match = match.replace(/(src|href|data-src|data-bg|srcset)="src/gmi, attribute + '="' + path.resolve(__dirname, './src') + '')
-              }
-              return match
-            }
-
             result = result.replace(/(src|href|data-src|data-bg|srcset)="(.*?)"/gmi, processAliases)
-
-            function processImports(match, source) {
-              source = source.replace(/^src\//gmi, '../src/')
-
-              const filePath = path.resolve(loaderContext.context, source)
-              let fileContent = fs.readFileSync(filePath, 'utf8')
-
-              fileContent = fileContent.replace(/ *?repeat +(\d\d?) +times:([\s\S]*?)end;/gmi, processRepeat)
-
-              fileContent = fileContent.replace(/(src|href|data-src|data-bg|srcset)="(.*?)"/gmi, processAliases)
-
-              return fileContent
-            }
-
-            result = result.replace(/ *?import +'?"?(.*?)'?"? *?;/gmi, processImports)
+            result = result.replace(/ *?import +'?"?(.*?)'?"? *?;/gmi, processImports.bind(loaderContext))
             return result
           },
         },

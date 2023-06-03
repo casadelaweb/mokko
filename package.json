@@ -5,10 +5,13 @@
   "main": "dist/index.html",
   "scripts": {
     "open": "start dist/index.html",
-    "start": "webpack serve --node-env=development",
-    "watch": "npm run open && webpack watch --node-env=development",
+    "start": "webpack serve --node-env=development --progress",
+    "watch": "webpack watch --node-env=development --progress",
     "dev": "webpack --node-env=development --progress",
     "build": "webpack --node-env=production --progress",
+    "watch-open": "npm run dev && npm run open && npm run watch",
+    "dev-open": "npm run dev && npm run open",
+    "build-open": "npm run build && npm run open",
     "lint": "eslint . --ext .ts,.js, --fix --ignore-path .gitignore"
   },
   "author": "cdlw.ru",
