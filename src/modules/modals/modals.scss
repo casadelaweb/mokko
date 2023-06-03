@@ -1,0 +1,42 @@
+@import "src/styles/shared";
+
+:root {
+  --modal-transition: transform 0.5s;
+}
+
+.modal {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  // padding-right: var(--scrollbar-offset);
+  pointer-events: none;
+  transform: translate(0, -100%);
+  transition: var(--modal-transition);
+  overflow-y: auto;
+  @include flex(center, center, column);
+
+  &.active {
+    pointer-events: auto;
+    transform: none;
+  }
+
+  &-content {
+    position: relative;
+    @include flex(center, center, column);
+    background: rgba(white, 0.5);
+    backdrop-filter: blur(10px);
+    width: 400px;
+    height: 400px;
+    padding: 20px;
+  }
+
+  &-close {
+    position: absolute;
+    z-index: 1;
+    top: 20px;
+    right: 20px;
+  }
+}

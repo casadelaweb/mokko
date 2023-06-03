@@ -2,8 +2,8 @@ import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock'
 
 export class scrollController {
   public isLocked: boolean
-  private header: HTMLElement
-  private scrollBarWidth: number
+  public scrollBarWidth: number
+  public header: HTMLElement
 
   constructor() {
     this.header = null
@@ -11,11 +11,6 @@ export class scrollController {
     this.isLocked = false
 
     this.listen()
-  }
-
-  public listen(): void {
-    document.addEventListener('DOMContentLoaded', this.updateDynamicSettings)
-    window.addEventListener('resize', this.updateDynamicSettings)
   }
 
   public lock(): void {
@@ -48,6 +43,11 @@ export class scrollController {
     } else {
       this.lock()
     }
+  }
+
+  private listen(): void {
+    document.addEventListener('DOMContentLoaded', this.updateDynamicSettings)
+    window.addEventListener('resize', this.updateDynamicSettings)
   }
 
   private updateDynamicSettings(): void {
