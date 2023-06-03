@@ -29,7 +29,7 @@ class Modals {
       transition: {
         duration: 333,
         style: () => {
-          return 'transform ' + this.options.transition.duration + 'ms'
+          return 'all ' + this.options.transition.duration + 'ms'
         },
       },
     }
@@ -57,7 +57,7 @@ class Modals {
     }
   }
 
-  public updateDynamicSettings(): void {
+  public update(): void {
     const { documentElement: html, } = document
     html.style.setProperty('--modal-transition', this.options.transition.style())
   }
@@ -108,7 +108,7 @@ class Modals {
   }
 
   public init(): void {
-    this.updateDynamicSettings()
+    this.update()
 
     const { body, } = document
     const { selectors, } = this.options

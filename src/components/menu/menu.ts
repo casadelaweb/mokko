@@ -7,8 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const headerHeight: number = header.offsetHeight
 
   function updateMenuStyles() {
-    const mediaQuery = window.matchMedia('(min-width: 1280px)')
-    if (mediaQuery.matches) {
+    if (window.matchMedia('(min-width: 1280px)').matches) {
       menu.style.top = headerHeight + 'px'
     } else {
       menu.style.top = '0px'
@@ -27,35 +26,37 @@ document.addEventListener('DOMContentLoaded', () => {
   headerLinks.forEach((button) => {
     if (!button.matches('[data-header=catalog]')) {
       button.addEventListener('mouseenter', () => {
-        menu.classList.remove('active')
+        if (window.matchMedia('(min-width: 1280px)').matches) {
+          menu.classList.remove('active')
+        }
       })
     }
   })
 
   catalogLink.addEventListener('mouseenter', () => {
-    header.classList.add('hovered')
-    menu.classList.add('active')
+    if (window.matchMedia('(min-width: 1280px)').matches) {
+      header.classList.add('hovered')
+      menu.classList.add('active')
+    }
   })
   menu.addEventListener('mouseleave', () => {
-    menu.classList.remove('active')
+    if (window.matchMedia('(min-width: 1280px)').matches) {
+      menu.classList.remove('active')
+    }
   })
 
   document.addEventListener('click', (event: MouseEvent) => {
     const target = event.target as HTMLElement
+
     if (target.closest('[data-menu=open]')) {
       menu.classList.add('active')
+      globalScrollController.update()
       globalScrollController.lock()
     }
     if (target.closest('[data-menu=close]')) {
       menu.classList.remove('active')
+      globalScrollController.update()
       globalScrollController.unlock()
-    }
-    if (target.closest('.menu-mobile-list-button')) {
-      const button = target.closest('.menu-mobile-list-button')
-      const list = button.closest('.menu-mobile-list')
-      const listBody = list.querySelector('.menu-mobile-list-body')
-      list.classList.toggle('active')
-      listBody.classList.toggle('active')
     }
   })
 })

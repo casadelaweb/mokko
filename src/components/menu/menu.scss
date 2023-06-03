@@ -17,8 +17,22 @@
   max-height: 100%;
   min-height: 100%;
 
-  @include mediaOnlyTablet {
+  @include mediaOnlyTablets {
+    padding: 0;
+    height: 100%;
     max-width: 320px;
+    @media screen and (any-hover: hover) {
+      &::-webkit-scrollbar {
+        width: 10px
+      }
+      &::-webkit-scrollbar-track {
+        background: white;
+      }
+      &::-webkit-scrollbar-thumb {
+        background: #51504f;
+        border: 3px solid white;
+      }
+    }
   }
 
   @include mediaLaptop {
@@ -30,9 +44,6 @@
     padding: 56px 0;
   }
 
-  //pointer-events: auto;
-  //transform: none;
-
   &.active {
     pointer-events: auto;
     transform: none;
@@ -40,8 +51,9 @@
 
   &-container {
     @extend .container;
-    @include mediaOnlyTablet {
-      padding: 0 14px;
+    @include mediaOnlyTablets {
+      padding: 0 $containerPaddingMobile;
+      height: 100%;
     }
   }
 
@@ -54,6 +66,9 @@
 
   &-mobile {
     @include flex($d: column);
+    @include mediaOnlyTablets {
+      min-height: 100%;
+    }
     @include mediaLaptop {
       display: none;
     }
@@ -62,6 +77,9 @@
       padding-bottom: 10px;
       border-bottom: 2px solid #e9e9e9;
       margin-bottom: 14px;
+      @include mediaOnlyTablets {
+        padding: 15px 0;
+      }
     }
 
     &-button-close {
@@ -87,33 +105,12 @@
       font-size: 17px;
     }
 
-    &-list {
-      &-summary {
-        @include flex(center);
+    .form {
+      @include mediaOnlyTablets {
+        padding: 28px 0;
       }
 
-      &-button {
-        padding-right: 14px;
-      }
-
-      &-body {
-        display: none;
-        grid-template-columns: 1fr;
-        row-gap: 15px;
-        padding-left: 24px;
-        margin: 20px 0;
-
-        &.active {
-          display: grid;
-        }
-      }
-
-      &-link {
-        display: inline-block;
-        width: fit-content;
-        color: #82756e;
-        font-size: 14px;
-        letter-spacing: 0.02em;
+      &-main {
       }
     }
   }

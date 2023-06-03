@@ -4,6 +4,9 @@
   &-label {
     display: inline-block;
     margin-bottom: 18px;
+    @include mediaTablet {
+      font-size: 18px;
+    }
     @include mediaLaptop {
       font-size: 20px;
       margin-bottom: 36px;
@@ -12,16 +15,6 @@
 
   &-main {
     @include flex(center);
-    //для footer
-    //margin-bottom: 18px;
-    //@include mediaTablet {
-    //  max-width: 380px;
-    //  margin-right: 26px;
-    //}
-    //@include mediaLaptop {
-    //  max-width: 300px;
-    //  margin-bottom: 20px;
-    //}
   }
 
   &-input {

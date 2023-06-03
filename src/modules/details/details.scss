@@ -1,0 +1,40 @@
+@import "src/styles/shared";
+
+.details {
+  &-summary {
+    @include flex(center);
+
+    a {
+      font-size: 18px;
+    }
+  }
+
+  &-button {
+    @include flex(center, center);
+    margin-right: 14px;
+  }
+
+  &-body {
+    display: none;
+    grid-template-columns: 1fr;
+    row-gap: 15px;
+    padding-left: 24px;
+    margin: 20px 0;
+
+    &.active {
+      display: grid;
+    }
+
+    a, button {
+      display: inline-block;
+      width: fit-content;
+      color: #82756e;
+      font-size: 14px;
+      letter-spacing: 0.02em;
+    }
+
+    button {
+      color: #766cff;
+    }
+  }
+}

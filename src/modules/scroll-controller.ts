@@ -9,8 +9,6 @@ export class scrollController {
     this.header = null
     this.scrollBarWidth = null
     this.isLocked = false
-
-    this.listen()
   }
 
   public lock(): void {
@@ -22,7 +20,7 @@ export class scrollController {
 
     if (this.header) {
       this.header.style.marginRight = this.scrollBarWidth + 'px'
-      this.header.style.maxWidth = 'calc(100vw - ' + this.scrollBarWidth + 'px)'
+      this.header.style.maxWidth = 'calc(100% - ' + this.scrollBarWidth + 'px)'
     }
   }
 
@@ -48,11 +46,11 @@ export class scrollController {
   }
 
   public listen(): void {
-    document.addEventListener('DOMContentLoaded', this.updateDynamicSettings)
-    window.addEventListener('resize', this.updateDynamicSettings)
+    document.addEventListener('DOMContentLoaded', this.update)
+    window.addEventListener('resize', this.update)
   }
 
-  public updateDynamicSettings(): void {
+  public update(): void {
     const { documentElement: html, body, } = document
     this.scrollBarWidth = window.innerWidth - html.clientWidth
     this.header = body.querySelector('header')

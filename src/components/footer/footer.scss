@@ -1,164 +1,167 @@
 @import "src/styles/shared";
 
 .footer {
-  // padding-top: 46px;
-  color: #80756e;
   overflow: hidden;
+  color: #82756e;
+}
 
-  &-container {
-    @extend .container;
-  }
-
-  &-layout {
-    @include mediaLaptop {
-      display: grid;
-      grid-template-columns: 1fr 3fr;
-    }
-  }
-
-  &-desktop {
-    padding: 48px 0 72px;
+.fm {
+  @include mediaTablet {
     display: none;
-    @include mediaLaptop {
-      display: block;
-    }
-
-    &-container {
-      @extend .container;
-      @include flex($j: space-between);
-    }
-
-    &-col {
-    }
-
-    &-title {
-      display: inline-block;
-      color: #82756e;
-      font-size: 20px;
-      margin-bottom: 36px;
-    }
-
-    &-links {
-      @include flex($d: column);
-      color: #82756e;
-      font-size: 17px;
-
-      a, button {
-        display: inline-block;
-        width: fit-content;
-        margin-bottom: 16px;
-      }
-
-      button {
-        color: #766cff;
-        text-align: left;
-      }
-    }
   }
 
-  &-tablet {
-  }
-
-  &-mobile {
-    padding: 46px 0;
-    @include mediaTablet {
-      display: none;
-    }
-  }
-
-  &-form, &-menu, &-copyright {
+  &-top, &-middle, &-bottom {
     border-top: 1px solid #e9e9e9;
   }
 
-  &-form {
-    // padding: 46px 0;
-    @include mediaTablet {
-      // @include flex(center);
-      max-width: 300px;
+  &-top {
+    @extend .container;
+    padding-top: 46px;
+    padding-bottom: 46px;
+  }
+
+  &-middle {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 28px;
+  }
+
+  &-middle, &-bottom {
+    @extend .container;
+    padding-top: 28px;
+    padding-bottom: 28px;
+  }
+
+  .form-main {
+    margin-bottom: 18px;
+  }
+}
+
+.ft {
+  display: none;
+  @include mediaTablet {
+    display: block;
+  }
+  @include mediaLaptop {
+    display: none;
+  }
+
+  &-top, &-middle, &-bottom {
+    @extend .container;
+    border-top: 1px solid #e9e9e9;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  &-top {
+  }
+
+  &-middle {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &-title {
+    display: inline-block;
+    width: fit-content;
+    color: #82756e;
+    font-size: 18px;
+    margin-bottom: 36px;
+  }
+
+  &-links {
+    color: #82756e;
+    font-size: 16px;
+    text-align: left;
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 16px;
+
+    a, button {
+      display: inline-block;
+      width: fit-content;
+      color: #82756e;
+      font-size: 14px;
+      letter-spacing: 0.02em;
+    }
+
+    button {
+      color: #766cff;
+    }
+  }
+
+  .form {
+    @include flex($w: wrap);
+
+    &-label, &-main {
+      flex: 0 0 auto;
+    }
+
+    &-label {
+      width: 100%;
+      line-height: 1;
+      margin-bottom: 32px;
     }
 
     &-main {
-      @include mediaLaptop {
-        margin-bottom: 20px;
-      }
-    }
-  }
-
-  &-menu {
-    padding: 32px 0;
-    display: grid;
-    grid-template-columns: 1fr;
-    row-gap: 32px;
-
-    @include mediaTablet {
-      @include flex;
-    }
-    @include mediaLaptop {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-    }
-  }
-
-  &-copyright {
-    padding: 28px 0;
-  }
-
-  .details {
-    font-size: 18px;
-    @include mediaTablet {
-      margin-right: 40px;
-    }
-    @include mediaLaptop {
-      margin-right: 0;
-    }
-
-    &_feedback {
-      font-size: 20px;
-      @include mediaTablet {
-        margin-left: auto;
-        margin-right: 0;
-      }
-      @include mediaLaptop {
-        margin-left: 0;
+      width: 380px;
+      margin-right: 24px;
+      @include mediaTabletBg {
+        margin-right: 28px;
       }
     }
 
-    &-summary {
-      font-size: 18px;
-
-      @include mediaLaptop {
-        font-size: 20px;
-      }
-    }
-
-    &-body {
-      display: grid;
-      grid-template-columns: 1fr;
-      row-gap: 16px;
-      @include mediaTablet {
-        margin-top: 32px;
-      }
-      @include mediaLaptop {
-        font-size: 17px;
-      }
-
-      button {
-        text-align: left;
-        color: #766cff;
-      }
+    &-warning {
+      max-width: 280px;
     }
   }
 }
 
-.footer {
-  &-desktop {
-    .footer-container {
-      @include flex($j: space-between);
+.fd {
+  @extend .container;
+  display: none;
+  @include mediaLaptop {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 100px;
+    padding-top: 48px;
+    padding-bottom: 72px;
+  }
 
-      & > * {
-        flex: 0 0 auto;
-        width: fit-content;
-      }
+  &-col {
+  }
+
+  &-title {
+    display: inline-block;
+    color: #82756e;
+    font-size: 20px;
+    margin-bottom: 36px;
+  }
+
+  &-links {
+    @include flex($d: column);
+    color: #82756e;
+    font-size: 17px;
+
+    a, button {
+      display: inline-block;
+      width: fit-content;
+      margin-bottom: 16px;
+    }
+
+    button {
+      color: #766cff;
+      text-align: left;
+    }
+  }
+
+  .form {
+    &-main, &-warning {
+      width: 300px;
+    }
+
+    &-main {
+      margin-bottom: 20px;
     }
   }
 }

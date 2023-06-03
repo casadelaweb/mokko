@@ -1,6 +1,5 @@
 @import "src/styles/shared";
 
-
 @mixin supportColorImg {
   &-img {
     display: block;
@@ -30,6 +29,9 @@
   border-bottom: 2px solid transparent;
 
   padding: 10px 0;
+  @include mediaTablet {
+    padding: 20px 0;
+  }
   @include mediaLaptop {
     padding: 20px 0;
   }
@@ -44,13 +46,11 @@
     border-color: #f2f2f2;
   }
 
-  //&.scrolled {
-  //  background: rgba(black, 0.33);
-  //  backdrop-filter: blur(8px);
-  //}
-
   &-container {
-    padding: 0 6px;
+    padding: 0 ($containerPaddingMobile - 9px);
+    @include mediaTablet {
+      padding: 0 ($containerPaddingTablet - 11px);
+    }
     @include mediaLaptop {
       padding: 0;
     }
@@ -81,7 +81,15 @@
       flex: 0 0 auto;
       width: 18px;
       height: 18px;
-      margin: 0 8px;
+      margin: 0 9px;
+
+      @include mediaTablet {
+        width: 22px;
+        height: 22px;
+        margin: 0 11px;
+      }
+
+      @include supportColorImg;
     }
   }
 
@@ -105,6 +113,11 @@
     margin: 0 auto;
     height: 20px;
     width: 100px;
+
+    @include mediaTablet {
+      width: 126px;
+      height: 26px;
+    }
 
     @include mediaLaptop {
       position: absolute;
