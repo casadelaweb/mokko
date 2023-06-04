@@ -29,17 +29,20 @@
 
     <div class="section-header">
       <h2 class="section-title">
-        <a href="/stories">Истории</a>
+        <a data-modal-open="stories" href="#">Истории</a>
       </h2>
       <div class="section-button">
-        <a href="/stories">Все</a>
+        <a data-modal-open="stories" href="#">
+          <span>Все</span>
+          <img alt="img" class="icon-arrow-right" loading="lazy" src="src/assets/img/icons/arrow-right.png">
+        </a>
       </div>
     </div>
     <div class="swiper slider-small stories-slider">
       <div class="swiper-wrapper">
         repeat 2 times:
         <div class="swiper-slide">
-          <article class="section-product">
+          <article class="section-product" data-modal-open="stories">
             <div class="stories-slide-overlay">
               <img alt="img" loading="lazy" src="src/assets/img/icons/play.png">
             </div>
@@ -48,7 +51,7 @@
           </article>
         </div>
         <div class="swiper-slide">
-          <article class="section-product">
+          <article class="section-product" data-modal-open="stories">
             <div class="stories-slide-overlay">
               <h2 class="stories-slide-title">
                 Волшебная <br>
@@ -60,7 +63,7 @@
           </article>
         </div>
         <div class="swiper-slide">
-          <article class="section-product">
+          <article class="section-product" data-modal-open="stories">
             <div class="stories-slide-overlay">
               <img alt="img" loading="lazy" src="src/assets/img/icons/play.png">
             </div>
@@ -69,7 +72,7 @@
           </article>
         </div>
         <div class="swiper-slide">
-          <article class="section-product">
+          <article class="section-product" data-modal-open="stories">
             <div class="stories-slide-overlay">
               <h2 class="stories-slide-title">
                 Волшебная <br>
@@ -81,7 +84,7 @@
           </article>
         </div>
         <div class="swiper-slide">
-          <article class="section-product">
+          <article class="section-product" data-modal-open="stories">
             <div class="stories-slide-overlay">
               <h2 class="stories-slide-title">
                 Элегантность <br>
@@ -93,7 +96,7 @@
           </article>
         </div>
         <div class="swiper-slide">
-          <article class="section-product">
+          <article class="section-product" data-modal-open="stories">
             <div class="stories-slide-overlay">
               <h2 class="stories-slide-title">
                 Сияй!
@@ -105,8 +108,12 @@
         </div>
         end;
       </div>
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev">
+        <img alt="img" class="icon-arrow-left" loading="lazy" src="src/assets/img/icons/arrow-left.png">
+      </div>
+      <div class="swiper-button-next">
+        <img alt="img" class="icon-arrow-right" loading="lazy" src="src/assets/img/icons/arrow-right.png">
+      </div>
     </div>
   </div>
 </section>

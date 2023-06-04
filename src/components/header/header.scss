@@ -47,7 +47,7 @@
   }
 
   &-container {
-    padding: 0 ($containerPaddingMobile - 9px);
+    padding: 0 ($containerPaddingMobile - 6px);
     @include mediaTablet {
       padding: 0 ($containerPaddingTablet - 11px);
     }
@@ -77,11 +77,15 @@
       display: none;
     }
 
+    &-left, &-right {
+      @include flex(center);
+    }
+
     &-button {
       flex: 0 0 auto;
       width: 18px;
       height: 18px;
-      margin: 0 9px;
+      margin: 0 6px;
 
       @include mediaTablet {
         width: 22px;
@@ -113,6 +117,11 @@
     margin: 0 auto;
     height: 20px;
     width: 100px;
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 
     @include mediaTablet {
       width: 126px;
@@ -120,11 +129,6 @@
     }
 
     @include mediaLaptop {
-      position: absolute;
-      z-index: 1;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
       width: 156px;
       height: 32px;
     }
