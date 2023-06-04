@@ -14,7 +14,7 @@ module.exports = function processImports(match, source) {
 
   fileContent = fileContent.replace(/ *?repeat +(\d\d?) +times:([\s\S]*?)end;/gmi, processRepeat)
 
-  fileContent = fileContent.replace(/(src|href|data-src|data-bg|srcset)="(.*?)"/gmi, processAliases)
+  fileContent = fileContent.replace(/(src|href|data-src|data-bg|srcset|poster)="(.*?)"/gmi, processAliases)
 
   return fileContent
 }
