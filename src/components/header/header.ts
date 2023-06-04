@@ -5,10 +5,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const menu: HTMLElement = body.querySelector('.menu')
 
   header.addEventListener('mouseenter', () => {
-    header.classList.add('hovered')
+    if (window.matchMedia('(min-width: 1280px)').matches) {
+      header.classList.add('hovered')
+    }
   })
   header.addEventListener('mouseleave', () => {
-    if (!menu.matches('.active')) {
+    if (window.matchMedia('(min-width: 1280px)').matches && !menu.matches('.active')) {
       header.classList.remove('hovered')
     }
   })

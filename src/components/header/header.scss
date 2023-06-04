@@ -35,10 +35,10 @@
   @include mediaLaptop {
     padding: 20px 0;
   }
-  @include mediaDesktop {
-    left: 50%;
-    transform: translate(-50%, 0);
-  }
+  //@include mediaDesktop {
+  //  left: 50%;
+  //  transform: translate(-50%, 0);
+  //}
 
   &.hovered, &.scrolled {
     background: white;

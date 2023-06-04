@@ -30,6 +30,12 @@
   }
 }
 
+@mixin mediaOnlyMobileAndTablets {
+  @media (max-width: $breakpointLaptop - 1px) {
+    @content;
+  }
+}
+
 @mixin mediaLaptop {
   @media (min-width: $breakpointLaptop) {
     @content;
