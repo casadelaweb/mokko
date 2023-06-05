@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+        name="viewport">
+  <meta content="ie=edge" http-equiv="X-UA-Compatible">
+  <title>Mokko Brand | Каталог</title>
+</head>
+<body>
+<div id="app">
+  import ./includes/header.html;
+  import ./includes/menu.html;
+
+  <main>
+    <section class="catalog">
+      <div class="catalog-container">
+        <h1 class="catalog-title">Каталог</h1>
+        <div class="catalog-layout">
+          repeat 10 times:
+          <article class="catalog-card">
+            <button class="catalog-card-favourite" type="button">
+              <img alt="img" loading="lazy" src="src/assets/img/icons/heart.png">
+            </button>
+            <div class="catalog-card-slider">
+              <img alt="img" class="catalog-card-img" loading="lazy" src="src/assets/img/placeholder.jpg">
+
+              <div class="catalog-card-sizes">
+                <div class="catalog-card-size">S</div>
+                <div class="catalog-card-size">M</div>
+                <div class="catalog-card-size">L</div>
+                <div class="catalog-card-size">XL</div>
+                <div class="catalog-card-size">XXL</div>
+                <div class="catalog-card-size">3XL</div>
+
+                <button class="catalog-card-cart" type="button">
+                  <img alt="img" loading="lazy" src="src/assets/img/icons/suitcase-color.png">
+                </button>
+              </div>
+            </div>
+            <h2 class="catalog-card-title">
+              <a href="#"> Относительно длинное название товара длинной в одну, две или три строки </a>
+            </h2>
+            <div class="catalog-card-price">
+              <div class="catalog-card-price-previous">
+                <span>7 999</span> <span>₽</span>
+              </div>
+              <div class="catalog-card-price-current">
+                <span>5 000</span> <span>₽</span>
+              </div>
+            </div>
+            <div class="catalog-card-colors">
+              <div class="catalog-card-color" style="background: lightcoral;"></div>
+              <div class="catalog-card-color" style="background: lightgreen;"></div>
+              <div class="catalog-card-color" style="background: lightsalmon;"></div>
+            </div>
+          </article>
+          end;
+        </div>
+      </div>
+    </section>
+  </main>
+
+  import ./includes/footer.html;
+</div>
+</body>
+</html>
