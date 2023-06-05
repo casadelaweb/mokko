@@ -6,6 +6,30 @@
   src: url("src/assets/fonts/rubik/Rubik-Regular.ttf") format("truetype");
 }
 
+@font-face {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("src/assets/fonts/rubik/Rubik-Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("src/assets/fonts/rubik/Rubik-SemiBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("src/assets/fonts/rubik/Rubik-Bold.ttf") format("truetype");
+}
+
 body {
   font-family: 'Rubik', sans-serif;
 }

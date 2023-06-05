@@ -7,11 +7,23 @@
     @extend .container;
   }
 
+  &-header {
+    @include flex(center);
+    margin-bottom: 32px;
+
+    &-button {
+      width: 18px;
+      height: 18px;
+      margin-left: 0.5em;
+    }
+  }
+
   &-title {
     color: #82756e;
     font-size: 12px;
     letter-spacing: 0.02em;
     text-transform: uppercase;
+    margin-right: auto;
   }
 
   &-layout {
@@ -24,6 +36,18 @@
   }
 
   &-card {
+    position: relative;
+    z-index: 0;
+
+    &-favourite {
+      position: absolute;
+      z-index: 1;
+      top: 5px;
+      right: 5px;
+      width: 18px;
+      height: 18px;
+    }
+
     &-slider {
       position: relative;
       z-index: 0;
