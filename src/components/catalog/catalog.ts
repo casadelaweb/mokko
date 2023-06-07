@@ -18,6 +18,15 @@ class Catalog {
 
         this.changeLayoutMode(mode)
       }
+
+      if (target.closest('[data-catalog-card=slider]')) {
+        const card = target.closest('[data-catalog=card]')
+        const controls = card.querySelector('[data-catalog-card=controls]')
+        controls.classList.toggle('active')
+      } else {
+        const controls = document.body.querySelectorAll('[data-catalog-card=controls]')
+        controls.forEach((element) => element.classList.remove('active'))
+      }
     })
   }
 

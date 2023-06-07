@@ -31,16 +31,18 @@
         </div>
 
         <div class="catalog-layout" data-catalog="layout">
+
           repeat 10 times:
-          <article class="catalog-card">
+
+          <article class="catalog-card" data-catalog="card">
             <div class="catalog-card-discount"> -30%</div>
             <button class="catalog-card-favourite" type="button">
               <img alt="img" loading="lazy" src="src/assets/img/icons/heart.png">
             </button>
-            <div class="catalog-card-slider">
-              <img alt="img" class="catalog-card-img" loading="lazy" src="src/assets/img/placeholder.jpg">
+            <div class="catalog-card-slider" data-catalog-card="slider">
+              <img alt="img" class="catalog-card-img" loading="lazy" src="src/assets/img/section/product-1.jpg">
 
-              <div class="catalog-card-sizes">
+              <div class="catalog-card-sizes" data-catalog-card="controls">
                 <div class="catalog-card-size">S</div>
                 <div class="catalog-card-size">M</div>
                 <div class="catalog-card-size">L</div>
@@ -53,6 +55,7 @@
                 </button>
               </div>
             </div>
+
             <h2 class="catalog-card-title">
               <a href="catalog-detail.html"> Относительно длинное название товара длинной в одну, две или три
                 строки </a>
@@ -71,7 +74,9 @@
               <div class="catalog-card-color" style="background: lightsalmon;"></div>
             </div>
           </article>
+
           end;
+
         </div>
 
         <button class="catalog-more" type="button">

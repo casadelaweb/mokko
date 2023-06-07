@@ -80,6 +80,7 @@
       z-index: 0;
       overflow: hidden;
       border-radius: 12px;
+      margin-bottom: 4px;
     }
 
     &-img {
@@ -102,12 +103,19 @@
       color: #82756e;
       font-size: 10px;
       text-transform: uppercase;
+      transform: translate(0, 125%);
+      pointer-events: none;
+      transition: transform 0.5s;
 
       .mode-row & {
         font-size: 14px;
         padding: 20px 14px;
       }
 
+      &.active {
+        transform: none;
+        pointer-events: auto;
+      }
     }
 
     &-size {
