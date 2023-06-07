@@ -22,15 +22,15 @@
           <button class="catalog-header-button" type="button">
             <img alt="img" loading="lazy" src="src/assets/img/icons/filters.png">
           </button>
-          <button class="catalog-header-button" type="button">
+          <button class="catalog-header-button" data-catalog-layout="row" type="button">
             <img alt="img" loading="lazy" src="src/assets/img/icons/square.png">
           </button>
-          <button class="catalog-header-button" type="button">
+          <button class="catalog-header-button" data-catalog-layout="grid" type="button">
             <img alt="img" loading="lazy" src="src/assets/img/icons/squares.png">
           </button>
         </div>
 
-        <div class="catalog-layout">
+        <div class="catalog-layout" data-catalog="layout">
           repeat 10 times:
           <article class="catalog-card">
             <button class="catalog-card-favourite" type="button">
@@ -53,7 +53,8 @@
               </div>
             </div>
             <h2 class="catalog-card-title">
-              <a href="#"> Относительно длинное название товара длинной в одну, две или три строки </a>
+              <a href="catalog-detail.html"> Относительно длинное название товара длинной в одну, две или три
+                строки </a>
             </h2>
             <div class="catalog-card-price">
               <div class="catalog-card-price-previous">
