@@ -12,10 +12,6 @@ document.addEventListener('DOMContentLoaded', () => {
       type: 'bullets',
       clickable: true,
     },
-    breakpoints: {
-      768: {
-        enabled: false,
-      },
-    },
+    breakpoints: { 768: { enabled: false, }, },
   })
 })

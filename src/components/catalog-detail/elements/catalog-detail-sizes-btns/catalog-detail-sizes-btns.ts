@@ -1,8 +1,8 @@
-import toogle from "src/modules/toogle/toogle";
+import toogle from 'src/modules/toogle/toogle'
 
 document.addEventListener('DOMContentLoaded', () => {
   toogle('.catalog-detail-btn-size')
-  const {body,} = document
+  const { body, } = document
   const sizeBtnsItems: NodeList = body.querySelectorAll('.catalog-detail-sizes-item')
   const sizeBtn: HTMLElement = body.querySelector('.catalog-detail-btn-size')
   const catalogDetailSizesInfo: HTMLElement = body.querySelector('.catalog-detail-sizes-info')
