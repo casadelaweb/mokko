@@ -22,24 +22,27 @@
           <button class="catalog-header-button" type="button">
             <img alt="img" loading="lazy" src="src/assets/img/icons/filters.png">
           </button>
-          <button class="catalog-header-button" type="button">
+          <button class="catalog-header-button" data-catalog-layout="row" type="button">
             <img alt="img" loading="lazy" src="src/assets/img/icons/square.png">
           </button>
-          <button class="catalog-header-button" type="button">
+          <button class="catalog-header-button" data-catalog-layout="grid" type="button">
             <img alt="img" loading="lazy" src="src/assets/img/icons/squares.png">
           </button>
         </div>
 
-        <div class="catalog-layout">
+        <div class="catalog-layout" data-catalog="layout">
+
           repeat 10 times:
-          <article class="catalog-card">
+
+          <article class="catalog-card" data-catalog="card">
+            <div class="catalog-card-discount"> -30%</div>
             <button class="catalog-card-favourite" type="button">
               <img alt="img" loading="lazy" src="src/assets/img/icons/heart.png">
             </button>
-            <div class="catalog-card-slider">
-              <img alt="img" class="catalog-card-img" loading="lazy" src="src/assets/img/placeholder.jpg">
+            <div class="catalog-card-slider" data-catalog-card="slider">
+              <img alt="img" class="catalog-card-img" loading="lazy" src="src/assets/img/section/product-1.jpg">
 
-              <div class="catalog-card-sizes">
+              <div class="catalog-card-sizes" data-catalog-card="controls">
                 <div class="catalog-card-size">S</div>
                 <div class="catalog-card-size">M</div>
                 <div class="catalog-card-size">L</div>
@@ -52,8 +55,10 @@
                 </button>
               </div>
             </div>
+
             <h2 class="catalog-card-title">
-              <a href="#"> Относительно длинное название товара длинной в одну, две или три строки </a>
+              <a href="catalog-detail.html"> Относительно длинное название товара длинной в одну, две или три
+                строки </a>
             </h2>
             <div class="catalog-card-price">
               <div class="catalog-card-price-previous">
@@ -69,8 +74,48 @@
               <div class="catalog-card-color" style="background: lightsalmon;"></div>
             </div>
           </article>
+
           end;
+
         </div>
+
+        <button class="catalog-more" type="button">
+          <span>Показать еще</span>
+        </button>
+
+        <div class="catalog-pagination">
+
+          <a class="catalog-pagination-prev" href="catalog.html">
+            <img alt="img" loading="lazy" src="src/assets/img/icons/arrow-left.png">
+          </a>
+
+          <div class="catalog-pagination-list">
+            <a class="catalog-pagination-item" href="catalog.html">
+              <span>1</span>
+            </a>
+            <a class="catalog-pagination-item" href="catalog.html">
+              <span>2</span>
+            </a>
+            <a class="catalog-pagination-item" href="catalog.html">
+              <span>3</span>
+            </a>
+            <a class="catalog-pagination-item" href="catalog.html">
+              <span>4</span>
+            </a>
+
+            <span class="catalog-pagination-item">...</span>
+
+            <a class="catalog-pagination-item" href="catalog.html">
+              <span>18</span>
+            </a>
+          </div>
+
+          <a class="catalog-pagination-next" href="catalog.html">
+            <img alt="img" loading="lazy" src="src/assets/img/icons/arrow-right.png">
+          </a>
+
+        </div>
+
       </div>
     </section>
   </main>
