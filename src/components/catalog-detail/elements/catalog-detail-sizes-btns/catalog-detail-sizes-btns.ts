@@ -1,23 +1,23 @@
-import toogle from 'src/modules/toogle/toogle'
+import toggle from 'src/modules/toggle/toggle'
 
 document.addEventListener('DOMContentLoaded', () => {
-  toogle('.catalog-detail-btn-size')
+  toggle('.catalog-detail-btn-size')
   const { body, } = document
-  const sizeBtnsItems: NodeList = body.querySelectorAll('.catalog-detail-sizes-item')
+  const sizeBtnsItems: HTMLElement[] = Array.from(body.querySelectorAll('.catalog-detail-sizes-item'))
   const sizeBtn: HTMLElement = body.querySelector('.catalog-detail-btn-size')
   const catalogDetailSizesInfo: HTMLElement = body.querySelector('.catalog-detail-sizes-info')
   const catalogDetailBtns: HTMLElement = body.querySelector('.catalog-detail-btns')
   const activeClass: string = 'catalog-detail-sizes-item-active'
 
 
-  sizeBtnsItems.forEach(btn => {
+  sizeBtnsItems.forEach((btn: HTMLElement) => {
     console.log(btn)
     btn.addEventListener(('click'), () => {
-      sizeBtnsItems.forEach(el => {
-        el.classList.remove(activeClass)
+      sizeBtnsItems.forEach((element: HTMLElement) => {
+        element.classList.remove(activeClass)
       })
       btn.classList.add(activeClass)
-      const textArr: [] = btn.textContent.trim().split(' ')
+      const textArr: string[] = btn.textContent.trim().split(' ')
       sizeBtn.children[0].textContent = `${textArr[0]} (${textArr[1]})`
     })
   })

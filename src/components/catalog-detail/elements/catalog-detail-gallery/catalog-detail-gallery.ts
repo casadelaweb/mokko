@@ -4,7 +4,7 @@ import 'swiper/scss'
 
 
 document.addEventListener('DOMContentLoaded', () => {
-  new Swiper('.catalog-detail-galery-slider', {
+  new Swiper('.catalog-detail-gallery-slider', {
     enabled: true,
     slidesPerView: 1,
     pagination: {

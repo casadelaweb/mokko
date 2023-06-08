@@ -82,11 +82,11 @@
 
       svg {
         margin-left: 10px;
-        transition: transform $toogleBtnTransition;
+        transition: transform $toggleBtnTransition;
       }
 
 
-      &.krel-toogle-active {
+      &.krel-toggle-active {
         svg {
           transform: rotate(180deg);
         }

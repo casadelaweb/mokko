@@ -1,0 +1,14 @@
+.krel-toggle {
+  &-content {
+    height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: height 0.5s, opacity 0.5s;
+  }
+
+  &-btn {
+    cursor: pointer
+  }
+}
+
+

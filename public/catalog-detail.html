@@ -1,52 +1,36 @@
 <!doctype html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
-          name="viewport">
-    <meta content="ie=edge" http-equiv="X-UA-Compatible">
-    <title>Mokko Brand | Каталог детальная</title>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+        name="viewport">
+  <meta content="ie=edge" http-equiv="X-UA-Compatible">
+  <title>Mokko Brand | Каталог детальная</title>
 </head>
 <body>
 <div id="app">
-    import ./includes/header.html;
-    import ./includes/menu.html;
+  import ./includes/header.html;
+  import ./includes/menu.html;
 
-    <main>
+  <main>
 
-        <section class="catalog-detail">
-            <div class="catalog-detail-container">
-                <div class="catalog-detail-left">
-                    import ./includes/catalog-detail-elements/catalog-detail-galery.html;
-
-                </div>
-                <div class="catalog-detail-right">
-                    import ./includes/catalog-detail-elements/catalog-detail-btns.html;
-                    import ./includes/catalog-detail-elements/catalog-detail-info.html;
-
-
-                </div>
-
-            </div>
-        </section>
-
-    </main>
-
-    import ./includes/footer.html;
-
-    <div id="modals">
-        <div class="modal" data-modal="make-an-appointment">
-
-            <div class="modal-content">
-                <button class="modal-close" data-modal-close type="button">закрыть</button>
-                Здесь будет модальное окно.
-            </div>
+    <section class="catalog-detail">
+      <div class="catalog-detail-container">
+        <div class="catalog-detail-left">
+          import ./includes/catalog-detail-elements/catalog-detail-gallery.html;
         </div>
-        <!--    <div class="modal" data-modal="stories">-->
-        <!--      <button class="modal-close" data-modal-close type="button">закрыть</button>-->
-        <!--      stories-->
-        <!--    </div>-->
-    </div>
+        <div class="catalog-detail-right">
+          import ./includes/catalog-detail-elements/catalog-detail-btns.html;
+          import ./includes/catalog-detail-elements/catalog-detail-info.html;
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  import ./includes/footer.html;
+  import ./includes/modals.html;
 </div>
 </body>
 </html>

@@ -1,5 +1,5 @@
-import toogle from 'src/modules/toogle/toogle'
+import toggle from 'src/modules/toggle/toggle'
 
 document.addEventListener('DOMContentLoaded', () => {
-  toogle('.catalog-detail-info-item-btn')
+  toggle('.catalog-detail-info-item-btn')
 })
