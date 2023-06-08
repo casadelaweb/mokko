@@ -51,12 +51,12 @@
     @include mediaTablet {
       padding: 0 ($containerPaddingTablet - 11px);
     }
-    @include mediaLaptop {
-      padding: 0;
-    }
+
     @include mediaDesktop {
       margin: 0 auto;
       max-width: 1920px;
+      padding: 0 $containerPaddingDesktop;
+
     }
   }
 

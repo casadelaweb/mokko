@@ -1,0 +1,49 @@
+@import 'src/styles/shared';
+
+.catalog-detail {
+  margin-top: 85px;
+
+  &-container {
+    @extend .container;
+
+    @include mediaOnlyMobile {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+
+    @include mediaTablet {
+      display: flex;
+    }
+
+  }
+
+  &-left {
+    width: 100%;
+    overflow: hidden;
+
+    @include mediaTablet {
+      width: 337px;
+      margin-right: 47px;
+    }
+    @include mediaLaptop {
+      width: 626px;
+    }
+    @include mediaDesktop {
+      width: 1106px;
+      margin-right: 77px;
+    }
+
+
+  }
+
+  &-right {
+    @include mediaOnlyMobile {
+      padding: 0 $containerPaddingTablet;
+    }
+  }
+
+
+}
+
+

@@ -1,0 +1,27 @@
+@import 'src/styles/shared'
+
+.catalog-detail-info-item
+  margin-bottom: 31px
+
+.catalog-detail-info-item-btn
+  color: #82756e
+  font-size: 16px
+  line-height: 16px
+
+  display: flex
+  flex-wrap: wrap
+  align-items: center
+
+  &:before
+    content: ''
+    display: block
+    width: 10px
+    height: 6px
+    margin-right: 15px
+    background: url('src/assets/img/catalog-detail/catalog-detail-btn-arrow-icon.svg')
+    background-size: cover
+    transition: transform $toogleBtnTransition
+
+  &.krel-toogle-active
+    &:before
+      transform: rotate(180deg)
