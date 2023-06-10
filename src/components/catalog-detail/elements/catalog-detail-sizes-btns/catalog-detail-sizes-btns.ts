@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.addEventListener('click', (event) => {
     const target = event as HTMLElement
+
     if (target.closest('.catalog-detail-sizes-item')) {
       const button = target.closest('.catalog-detail-sizes-item')
 
