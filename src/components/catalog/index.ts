@@ -1,2 +1,2 @@
-import './catalog'
+import './catalog.init'
 import './catalog.scss'

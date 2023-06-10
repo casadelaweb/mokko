@@ -1,6 +1,6 @@
 import { catalogElements } from 'src/components/catalog/catalog.types'
 
-class Catalog {
+export class Catalog {
   private elements: catalogElements
 
   public init(): void {
@@ -48,8 +48,3 @@ class Catalog {
     return { layout, }
   }
 }
-
-document.addEventListener('DOMContentLoaded', () => {
-  const catalog = new Catalog()
-  catalog.init()
-})
