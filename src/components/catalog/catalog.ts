@@ -1,7 +1,7 @@
 import { card, catalogElements, selectors } from 'src/components/catalog/catalog.types'
 
 export class Catalog {
-  public elements: catalogElements | false
+  public elements: catalogElements | undefined
   private isDesktop: boolean
   private readonly selectors: selectors
   // eslint-disable-next-line no-unused-vars
@@ -22,7 +22,6 @@ export class Catalog {
       },
     }
     this.isDesktop = false
-    this.elements = false
 
     // cоздаем обертку для методов чтобы привязать контекст вызова
     // так эта хрень нормально работает с removeEventListener
