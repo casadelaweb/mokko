@@ -1,11 +1,14 @@
-import { catalogElements, selectors } from 'src/components/catalog/catalog.types'
+import { card, catalogElements, selectors } from 'src/components/catalog/catalog.types'
 
 export class Catalog {
+  public elements: catalogElements | false
   private isDesktop: boolean
-  private selectors: selectors
-  private elements: catalogElements
+  private readonly selectors: selectors
+  // eslint-disable-next-line no-unused-vars
   private readonly onClick: (event) => void
+  // eslint-disable-next-line no-unused-vars
   private readonly onMouseEnter: (event) => void
+  // eslint-disable-next-line no-unused-vars
   private readonly onMouseLeave: (event) => void
 
   constructor() {
@@ -19,6 +22,7 @@ export class Catalog {
       },
     }
     this.isDesktop = false
+    this.elements = false
 
     // cоздаем обертку для методов чтобы привязать контекст вызова
     // так эта хрень нормально работает с removeEventListener
@@ -28,12 +32,16 @@ export class Catalog {
   }
 
   public init(): void {
+    this.update()
+  }
+
+  public update(): void {
     this.isDesktop = window.matchMedia('(min-width: 1280px)').matches
     this.elements = this.updateElements()
     this.listen()
   }
 
-  public updateMouseListeners(): void {
+  private updateMouseListeners(): void {
     const { body, } = document
 
     const cards: HTMLElement[] = Array.from(body.querySelectorAll(this.selectors.card))
@@ -48,8 +56,13 @@ export class Catalog {
   }
 
   private listen(): void {
-    document.addEventListener('click', this.onClick)
+    this.updateClickListeners()
     this.updateMouseListeners()
+  }
+
+  private updateClickListeners(): void {
+    document.removeEventListener('click', this.onClick)
+    document.addEventListener('click', this.onClick)
   }
 
   private handleClick(event): void {
@@ -70,8 +83,6 @@ export class Catalog {
   }
 
   private handleMouseEnter(event): void {
-    console.log(this)
-
     const card = event.target as HTMLElement
 
     if (this.isDesktop) {
@@ -114,6 +125,25 @@ export class Catalog {
     const { body, } = document
 
     const layout: HTMLElement = body.querySelector('[data-catalog=layout]')
-    return { layout, }
+    const cardsArray: HTMLElement[] = Array.from(body.querySelectorAll(this.selectors.card))
+    const cards = cardsArray.map((card: HTMLElement): card => {
+      const slider: HTMLElement = card.querySelector(this.selectors.slider)
+      const controls: HTMLElement = card.querySelector(this.selectors.controls)
+      const buttons: { prev: HTMLElement, next: HTMLElement } = {
+        prev: card.querySelector(this.selectors.buttons.prev),
+        next: card.querySelector(this.selectors.buttons.next),
+      }
+      return {
+        card,
+        slider,
+        controls,
+        buttons,
+      }
+    })
+
+    return {
+      layout,
+      cards,
+    }
   }
 }

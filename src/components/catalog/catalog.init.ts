@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const target = event.target as HTMLElement
 
     if (target.closest('.catalog-more')) {
-      catalog.updateMouseListeners()
+      catalog.update()
     }
   })
 

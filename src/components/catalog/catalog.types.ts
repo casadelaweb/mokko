@@ -1,5 +1,16 @@
+export interface card {
+  card: HTMLElement,
+  slider: HTMLElement,
+  controls: HTMLElement,
+  buttons: {
+    prev: HTMLElement,
+    next: HTMLElement
+  }
+}
+
 export interface catalogElements {
-  layout: HTMLElement | null
+  layout: HTMLElement,
+  cards: card[]
 }
 
 export interface selectors {
