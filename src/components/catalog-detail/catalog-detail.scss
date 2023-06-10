@@ -26,8 +26,12 @@
       width: 337px;
       margin-right: 47px;
     }
-    @include mediaLaptop {
+    @include mediaTabletBg {
       width: 626px;
+    }
+    @include mediaLaptop {
+      width: 787px;
+      margin-right: 57px;
     }
     @include mediaDesktop {
       width: 1106px;
@@ -39,7 +43,10 @@
 
   &-right {
     @include mediaOnlyMobile {
-      padding: 0 $containerPaddingTablet;
+      padding: 0 $containerPaddingMobile;
+    }
+    @include mediaTablet {
+      flex: 1;
     }
   }
 

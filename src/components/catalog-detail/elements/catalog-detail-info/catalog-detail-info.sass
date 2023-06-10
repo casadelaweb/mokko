@@ -1,10 +1,11 @@
 @import 'src/styles/shared'
 
-.catalog-detail-info-item
+.catalog-detail-info-block
   margin-bottom: 31px
-
-.catalog-detail-info-item-btn
   color: #82756e
+
+.catalog-detail-info-block-btn
+
   font-size: 16px
   line-height: 16px
 
@@ -25,3 +26,90 @@
   &.krel-toggle-active
     &:before
       transform: rotate(180deg)
+
+.catalog-detail-info-block
+  &-content
+    font-size: 15px
+
+.catalog-detail-info
+  &-title
+    color: #51504f
+    font-size: 17px
+    line-height: 38px
+    margin-bottom: 21px
+    margin-top: 30px
+
+
+    &:before
+      display: inline-block
+      content: ''
+      width: 16px
+      height: 21px
+      background: url('src/assets/img/catalog-detail/catalog-detail-info-title-icon.svg')
+      background-size: cover
+      margin-right: 9px
+      margin-bottom: -2px
+
+  &-item
+    border-bottom: 1px solid #e9e9e9
+    margin-bottom: 16px
+    padding-bottom: 16px
+    @include mediaOnlyMobile
+      padding-left: $containerPaddingMobile
+      padding-right: $containerPaddingMobile
+      margin-left: -$containerPaddingMobile
+      margin-right: -$containerPaddingMobile
+    @include mediaTablet
+      margin-bottom: 30px
+
+    &-noBorder
+      border-bottom: none
+      padding-bottom: 0
+
+    a
+      color: #82756e
+      display: block
+
+    &-sizes
+      margin-top: 16px
+      display: flex
+      font-size: 14px
+      @include mediaTablet
+        font-size: 15px
+
+
+      span
+        display: block
+        margin-right: 10px
+        font-size: 14px
+
+  &-text
+    color: #ada49e
+    font-size: 15px
+    line-height: 22px
+    padding-top: 32px
+    padding-bottom: 30px
+
+    &-border
+      border-bottom: 1px solid #e9e9e9
+      margin-bottom: 30px
+
+    span
+      color: #82756e
+
+    p
+      margin-bottom: 30px
+
+  &-more
+    display: flex
+    justify-content: space-between
+    max-width: 346px
+    flex-wrap: wrap
+
+    a
+      color: #ada49e
+      text-decoration: underline
+      @include mediaOnlyMobile
+      margin-bottom: 16px
+
+
