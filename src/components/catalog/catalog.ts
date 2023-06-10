@@ -4,6 +4,9 @@ export class Catalog {
   private isDesktop: boolean
   private selectors: selectors
   private elements: catalogElements
+  private readonly onClick: (event) => void
+  private readonly onMouseEnter: (event) => void
+  private readonly onMouseLeave: (event) => void
 
   constructor() {
     this.selectors = {
@@ -16,6 +19,12 @@ export class Catalog {
       },
     }
     this.isDesktop = false
+
+    // cоздаем обертку для методов чтобы привязать контекст вызова
+    // так эта хрень нормально работает с removeEventListener
+    this.onClick = this.handleClick.bind(this)
+    this.onMouseEnter = this.handleMouseEnter.bind(this)
+    this.onMouseLeave = this.handleMouseLeave.bind(this)
   }
 
   public init(): void {
@@ -28,21 +37,22 @@ export class Catalog {
     const { body, } = document
 
     const cards: HTMLElement[] = Array.from(body.querySelectorAll(this.selectors.card))
-    cards.forEach((card: HTMLElement) => {
-      card.removeEventListener('mouseenter', this.mouseEnterHandler.bind(this))
-      card.removeEventListener('mouseleave', this.mouseLeaveHandler.bind(this))
 
-      card.addEventListener('mouseenter', this.mouseEnterHandler.bind(this))
-      card.addEventListener('mouseleave', this.mouseLeaveHandler.bind(this))
+    cards.forEach((card: HTMLElement) => {
+      card.removeEventListener('mouseenter', this.onMouseEnter)
+      card.removeEventListener('mouseleave', this.onMouseLeave)
+
+      card.addEventListener('mouseenter', this.onMouseEnter)
+      card.addEventListener('mouseleave', this.onMouseLeave)
     })
   }
 
   private listen(): void {
-    document.addEventListener('click', this.clickHandler.bind(this))
+    document.addEventListener('click', this.onClick)
     this.updateMouseListeners()
   }
 
-  private clickHandler(event): void {
+  private handleClick(event): void {
     const target = event.target as HTMLElement
 
     if (target.closest('[data-catalog-layout]')) {
@@ -59,7 +69,9 @@ export class Catalog {
     }
   }
 
-  private mouseEnterHandler(event): void {
+  private handleMouseEnter(event): void {
+    console.log(this)
+
     const card = event.target as HTMLElement
 
     if (this.isDesktop) {
@@ -73,7 +85,7 @@ export class Catalog {
     }
   }
 
-  private mouseLeaveHandler(event): void {
+  private handleMouseLeave(event): void {
     const card = event.target as HTMLElement
 
     if (this.isDesktop) {
@@ -86,12 +98,6 @@ export class Catalog {
       buttonNext.classList.remove('active')
     }
   }
-
-  private handlers(event) {
-    const mouseLeave = () => {
-    }
-  }
-
 
   private changeLayoutMode(mode: string): void {
     switch (mode) {
