@@ -19,6 +19,24 @@
         <div class="catalog-header">
           <h1 class="catalog-title">Каталог</h1>
 
+          <div class="select">
+            <input class="select-input" name="size" type="text">
+            <div class="select-current">
+              <span class="select-current-text"> Размер </span>
+              <button class="select-button" type="button">
+                <img alt="img" loading="lazy" src="src/assets/img/icons/arrow-down.png">
+              </button>
+            </div>
+            <div class="select-options">
+              <label class="select-option">
+                <input class="select-checkbox" type="checkbox"> <span>XS</span>
+              </label>
+              <label class="select-option">
+                <input class="select-checkbox" type="checkbox"> <span>S</span>
+              </label>
+            </div>
+          </div>
+
           <button class="catalog-header-button" type="button">
             <img alt="img" loading="lazy" src="src/assets/img/icons/filters.png">
           </button>
@@ -32,15 +50,31 @@
 
         <div class="catalog-layout" data-catalog="layout">
 
-          repeat 10 times:
+          repeat 9 times:
 
           <article class="catalog-card" data-catalog="card">
             <div class="catalog-card-discount"> -30%</div>
             <button class="catalog-card-favourite" type="button">
               <img alt="img" loading="lazy" src="src/assets/img/icons/heart.png">
             </button>
-            <div class="catalog-card-slider" data-catalog-card="slider">
-              <img alt="img" class="catalog-card-img" loading="lazy" src="src/assets/img/section/product-1.jpg">
+
+            <div class="catalog-card-slider swiper" data-catalog-card="slider">
+
+              <div class="swiper-wrapper">
+
+                <div class="swiper-slide">
+                  <img alt="img" class="catalog-card-img" loading="lazy" src="src/assets/img/section/product-1.jpg">
+                </div>
+
+              </div>
+
+              <div class="swiper-button-prev">
+                <img alt="img" class="icon-arrow-left" loading="lazy" src="src/assets/img/icons/arrow-left.png">
+              </div>
+              <div class="swiper-button-next">
+                <img alt="img" class="icon-arrow-right" loading="lazy" src="src/assets/img/icons/arrow-right.png">
+              </div>
+              <div class="swiper-pagination"></div>
 
               <div class="catalog-card-sizes" data-catalog-card="controls">
                 <div class="catalog-card-size">S</div>

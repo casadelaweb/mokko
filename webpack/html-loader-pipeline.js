@@ -1,13 +1,21 @@
 const processRepeat = require('./process-repeat')
 const processAliases = require('./process-aliases')
 const processImports = require('./process-imports')
+const tests = require('./helpers')
 
 module.exports = function htmlLoaderPipeline(content, loaderContext) {
   let result = content
 
-  result = result.replace(/ *?repeat +(\d\d?) +times:([\s\S]*?)end;/gmi, processRepeat)
-  result = result.replace(/(src|href|data-src|data-bg|srcset|poster)="(.*?)"/gmi, processAliases)
-  result = result.replace(/ *?import +'?"?(.*?)'?"? *?;/gmi, processImports.bind(loaderContext))
+  if (tests.imports.test(result)) {
+    result = result.replace(tests.imports, processImports.bind(loaderContext))
+  }
+  if (tests.aliases.test(result)) {
+    result = result.replace(tests.aliases, processAliases)
+  }
+  if (tests.repeats.test(result)) {
+    result = result.replace(tests.repeats, processRepeat)
+  }
+
   return result
 }
 

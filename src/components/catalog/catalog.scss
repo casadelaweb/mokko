@@ -10,6 +10,9 @@
   &-header {
     @include flex(center);
     margin-bottom: 32px;
+    //@include mediaTablet {
+    //  margin-bottom: 24px;
+    //}
 
     &-button {
       width: 18px;
@@ -24,6 +27,12 @@
     letter-spacing: 0.02em;
     text-transform: uppercase;
     margin-right: auto;
+    @include mediaTablet {
+      font-size: 18px;
+    }
+    @include mediaLaptop {
+      font-size: 20px;
+    }
   }
 
   &-layout {
@@ -33,9 +42,21 @@
     row-gap: 20px;
     border-radius: 8px;
     margin-bottom: 60px;
+    @include mediaTablet {
+      column-gap: 13px;
+      row-gap: 56px;
+    }
+    @include mediaTabletBg {
+      grid-template-columns: repeat(4, 1fr);
+      margin-bottom: 72px;
+    }
 
     &.mode-row {
       grid-template-columns: 1fr;
+      @include mediaTabletBg {
+        grid-template-columns: repeat(3, 1fr);
+        row-gap: 32px;
+      }
     }
   }
 
@@ -140,13 +161,20 @@
       color: #82756e;
       font-size: 12px;
       margin-bottom: 0.5em;
+
+      @include mediaTabletBg {
+        font-size: 15px;
+      }
     }
 
     &-price {
       @include flex(center);
       color: #82756e;
       font-size: 14px;
-      margin-bottom: 8px;
+      margin-bottom: 0.6em;
+      @include mediaTabletBg {
+        font-size: 17px;
+      }
 
       &-previous {
         text-decoration: line-through;
@@ -188,6 +216,10 @@
     margin: 0 auto 46px;
     color: #82756e;
     font-size: 17px;
+
+    @include mediaTabletBg {
+      margin-bottom: 50px;
+    }
 
     &-list {
       @include flex(center);
