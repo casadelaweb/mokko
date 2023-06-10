@@ -1,4 +1,78 @@
 @import "src/styles/shared";
 
 .select {
+  position: relative;
+  z-index: 2;
+  display: inline-block;
+  width: fit-content;
+  color: #82756e;
+  font-size: 17px;
+  letter-spacing: 0.02em;
+  margin-right: 32px;
+
+  &-input {
+    display: none;
+  }
+
+  &-current {
+    @include flex(center);
+    cursor: pointer;
+
+    &-text {
+      display: inline-block;
+      margin-right: 0.5em;
+    }
+  }
+
+  &-button {
+    transform-origin: center;
+    transition: transform 0.5s;
+
+    &.active {
+      transform: rotate(180deg);
+    }
+  }
+
+  &-checkbox {
+    border-color: #82756e;
+    flex: 0 0 auto;
+    width: 16px;
+    height: 16px;
+    margin-right: 0.5em;
+
+    &:checked {
+      background: #82756e;
+    }
+
+    &::before {
+      background: none;
+      font-size: 0.6667em;
+    }
+  }
+
+  &-options {
+    position: absolute;
+    z-index: 1;
+    top: calc(100% + 10px);
+    left: 0;
+    min-width: 100%;
+    background: white;
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(0, 40px);
+    box-shadow: 4px 4px 16px 0 rgba(black, 0.25);
+    transition: opacity 0.5s, transform 0.5s;
+
+    &.active {
+      opacity: 1;
+      pointer-events: auto;
+      transform: none;
+    }
+  }
+
+  &-option {
+    @include flex(center);
+    cursor: pointer;
+    padding: 8px 12px;
+  }
 }
