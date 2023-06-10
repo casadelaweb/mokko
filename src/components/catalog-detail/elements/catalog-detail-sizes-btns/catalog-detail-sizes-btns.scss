@@ -104,9 +104,15 @@
 
 .catalog-detail-sizes {
   &-cont {
+    @include mediaOnlyMobile {
+      .catalog-detail-title {
+        display: none;
+      }
+    }
     @include mediaTablet {
       opacity: 1;
       height: auto;
+
     }
   }
 
