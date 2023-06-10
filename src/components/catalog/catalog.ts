@@ -24,9 +24,22 @@ export class Catalog {
     this.listen()
   }
 
+  public updateMouseListeners(): void {
+    const { body, } = document
+
+    const cards: HTMLElement[] = Array.from(body.querySelectorAll(this.selectors.card))
+    cards.forEach((card: HTMLElement) => {
+      card.removeEventListener('mouseenter', this.mouseEnterHandler.bind(this))
+      card.removeEventListener('mouseleave', this.mouseLeaveHandler.bind(this))
+
+      card.addEventListener('mouseenter', this.mouseEnterHandler.bind(this))
+      card.addEventListener('mouseleave', this.mouseLeaveHandler.bind(this))
+    })
+  }
+
   private listen(): void {
     document.addEventListener('click', this.clickHandler.bind(this))
-    this.updateListeners()
+    this.updateMouseListeners()
   }
 
   private clickHandler(event): void {
@@ -46,40 +59,39 @@ export class Catalog {
     }
   }
 
-  private updateListeners(): void {
-    const { body, } = document
-
-    const cards: HTMLElement[] = Array.from(body.querySelectorAll(this.selectors.card))
-    cards.forEach((card: HTMLElement) => {
-      card.removeEventListener('mouseenter', this.mouseEnterHandler)
-      card.removeEventListener('mouseleave', this.mouseLeaveHandler)
-
-      card.addEventListener('mouseenter', this.mouseEnterHandler.bind(this))
-      card.addEventListener('mouseleave', this.mouseLeaveHandler.bind(this))
-    })
-  }
-
   private mouseEnterHandler(event): void {
     const card = event.target as HTMLElement
-    const sizes: HTMLElement = card.querySelector(this.selectors.controls)
-    const buttonPrev: HTMLElement = card.querySelector(this.selectors.buttons.prev)
-    const buttonNext: HTMLElement = card.querySelector(this.selectors.buttons.next)
 
-    sizes.classList.add('active')
-    buttonPrev.classList.add('active')
-    buttonNext.classList.add('active')
+    if (this.isDesktop) {
+      const sizes: HTMLElement = card.querySelector(this.selectors.controls)
+      const buttonPrev: HTMLElement = card.querySelector(this.selectors.buttons.prev)
+      const buttonNext: HTMLElement = card.querySelector(this.selectors.buttons.next)
+
+      sizes.classList.add('active')
+      buttonPrev.classList.add('active')
+      buttonNext.classList.add('active')
+    }
   }
 
   private mouseLeaveHandler(event): void {
     const card = event.target as HTMLElement
-    const sizes: HTMLElement = card.querySelector(this.selectors.controls)
-    const buttonPrev: HTMLElement = card.querySelector(this.selectors.buttons.prev)
-    const buttonNext: HTMLElement = card.querySelector(this.selectors.buttons.next)
 
-    sizes.classList.remove('active')
-    buttonPrev.classList.remove('active')
-    buttonNext.classList.remove('active')
+    if (this.isDesktop) {
+      const sizes: HTMLElement = card.querySelector(this.selectors.controls)
+      const buttonPrev: HTMLElement = card.querySelector(this.selectors.buttons.prev)
+      const buttonNext: HTMLElement = card.querySelector(this.selectors.buttons.next)
+
+      sizes.classList.remove('active')
+      buttonPrev.classList.remove('active')
+      buttonNext.classList.remove('active')
+    }
   }
+
+  private handlers(event) {
+    const mouseLeave = () => {
+    }
+  }
+
 
   private changeLayoutMode(mode: string): void {
     switch (mode) {

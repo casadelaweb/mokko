@@ -8,6 +8,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const catalog = new Catalog()
   catalog.init()
 
+  document.addEventListener('click', (event) => {
+    const target = event.target as HTMLElement
+
+    if (target.closest('.catalog-more')) {
+      catalog.updateMouseListeners()
+    }
+  })
+
   new Swiper('[data-slider=catalog-card]', {
     modules: [
       Navigation,
@@ -32,6 +40,10 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     breakpoints: {
       1280: {
+        navigation: { enabled: true, },
+        pagination: { enabled: false, },
+      },
+      1920: {
         navigation: { enabled: true, },
         pagination: { enabled: false, },
       },
