@@ -38,8 +38,6 @@
       width: 1106px;
       margin-right: 77px;
     }
-
-
   }
 
   &-right {
@@ -48,8 +46,13 @@
     }
     @include mediaTablet {
       flex: 1;
-      position: sticky;
-      top: 0
+    }
+
+    &-sticky {
+      @include mediaTablet {
+        position: sticky;
+        top: 100px;
+      }
     }
   }
 

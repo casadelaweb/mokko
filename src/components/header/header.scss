@@ -4,14 +4,14 @@
   &-img {
     display: block;
 
-    .scrolled &, .hovered & {
+    .scrolled &, .hovered &, .active & {
       display: none;
     }
 
     &_color {
       display: none;
 
-      .scrolled &, .hovered & {
+      .scrolled &, .hovered &, .active & {
         display: block;
       }
     }
@@ -27,7 +27,6 @@
   color: white;
   transition: background-color 0.5s, backdrop-filter 0.5s, border-color 0.5s;
   border-bottom: 2px solid transparent;
-
   padding: 10px 0;
   @include mediaTablet {
     padding: 20px 0;
@@ -35,12 +34,8 @@
   @include mediaLaptop {
     padding: 20px 0;
   }
-  //@include mediaDesktop {
-  //  left: 50%;
-  //  transform: translate(-50%, 0);
-  //}
 
-  &.hovered, &.scrolled {
+  &.hovered, &.scrolled, &.active {
     background: white;
     color: #938781;
     border-color: #f2f2f2;

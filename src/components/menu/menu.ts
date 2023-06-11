@@ -2,7 +2,7 @@ import { globalScrollController } from 'src/scripts/global-scroll-controller'
 import { modals } from 'src/scripts/modals-instance'
 import { menuElements, menuSelectors } from 'src/components/menu/menu.types'
 
-class Menu {
+export class Menu {
   public elements: menuElements
   private readonly media: string
   private readonly selectors: menuSelectors
@@ -38,7 +38,7 @@ class Menu {
     this.listen()
   }
 
-  private open(): void {
+  public open(): void {
     const { overlay, menu, } = this.elements
 
     overlay.classList.add('active')
@@ -49,7 +49,7 @@ class Menu {
     modals.parameters.counter++
   }
 
-  private close(): void {
+  public close(): void {
     const { overlay, menu, } = this.elements
 
     overlay.classList.remove('active')
@@ -74,17 +74,24 @@ class Menu {
 
     buttonsDesktopClose.forEach((button) => {
       button.addEventListener('mouseenter', () => {
-        if (window.matchMedia(this.media).matches) menu.classList.remove('active')
+        if (window.matchMedia(this.media).matches) {
+          menu.classList.remove('active')
+          // this.elements.overlay.classList.remove('active')
+        }
       })
     })
     buttonDesktopOpen.addEventListener('mouseenter', () => {
       if (window.matchMedia(this.media).matches) {
         header.classList.add('hovered')
         menu.classList.add('active')
+        // this.elements.overlay.classList.add('active')
       }
     })
     menu.addEventListener('mouseleave', () => {
-      if (window.matchMedia(this.media).matches) menu.classList.remove('active')
+      if (window.matchMedia(this.media).matches) {
+        menu.classList.remove('active')
+        // this.elements.overlay.classList.remove('active')
+      }
     })
     window.addEventListener('resize', () => {
       this.updateElements()
@@ -130,7 +137,3 @@ class Menu {
     }
   }
 }
-
-document.addEventListener('DOMContentLoaded', () => {
-  new Menu().init()
-})

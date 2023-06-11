@@ -1,8 +1,9 @@
 import { card, catalogElements, selectors } from 'src/components/catalog/catalog.types'
+import { isMediaAboveLaptop } from 'src/scripts/helpers'
 
 export class Catalog {
   public elements: catalogElements | undefined
-  private isDesktop: boolean
+  private isMediaAboveLaptop: boolean
   private readonly selectors: selectors
   // eslint-disable-next-line no-unused-vars
   private readonly onClick: (event) => void
@@ -21,7 +22,7 @@ export class Catalog {
         next: '.swiper-button-next',
       },
     }
-    this.isDesktop = false
+    this.isMediaAboveLaptop = false
 
     // cоздаем обертку для методов чтобы привязать контекст вызова
     // так эта хрень нормально работает с removeEventListener
@@ -35,7 +36,7 @@ export class Catalog {
   }
 
   public update(): void {
-    this.isDesktop = window.matchMedia('(min-width: 1280px)').matches
+    this.isMediaAboveLaptop = isMediaAboveLaptop()
     this.elements = this.updateElements()
     this.listen()
   }
@@ -74,7 +75,7 @@ export class Catalog {
       this.changeLayoutMode(mode)
     }
 
-    if (target.closest(this.selectors.slider) && !this.isDesktop) {
+    if (target.closest(this.selectors.slider) && !this.isMediaAboveLaptop) {
       const card = target.closest(this.selectors.card)
       const controls = card.querySelector(this.selectors.controls)
       controls.classList.toggle('active')
@@ -84,7 +85,7 @@ export class Catalog {
   private handleMouseEnter(event): void {
     const card = event.target as HTMLElement
 
-    if (this.isDesktop) {
+    if (this.isMediaAboveLaptop) {
       const sizes: HTMLElement = card.querySelector(this.selectors.controls)
       const buttonPrev: HTMLElement = card.querySelector(this.selectors.buttons.prev)
       const buttonNext: HTMLElement = card.querySelector(this.selectors.buttons.next)
@@ -98,7 +99,7 @@ export class Catalog {
   private handleMouseLeave(event): void {
     const card = event.target as HTMLElement
 
-    if (this.isDesktop) {
+    if (this.isMediaAboveLaptop) {
       const sizes: HTMLElement = card.querySelector(this.selectors.controls)
       const buttonPrev: HTMLElement = card.querySelector(this.selectors.buttons.prev)
       const buttonNext: HTMLElement = card.querySelector(this.selectors.buttons.next)

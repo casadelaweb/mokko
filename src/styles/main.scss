@@ -18,6 +18,12 @@ html, body, #app {
   @include flex($d: column);
 }
 
+//.main {
+//  .has-offset {
+//
+//  }
+//}
+
 .form {
   &-warning {
     a {

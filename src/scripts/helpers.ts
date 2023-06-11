@@ -6,3 +6,7 @@ export function throwEvent(element: HTMLElement, name: string, detail: object) {
   })
   element.dispatchEvent(event)
 }
+
+export function isMediaAboveLaptop(): boolean {
+  return window.matchMedia('(min-width: 1280px)').matches
+}

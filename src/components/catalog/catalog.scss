@@ -108,6 +108,12 @@
       overflow: hidden;
       border-radius: 12px;
       margin-bottom: 4px;
+      @include mediaTablet {
+        margin-bottom: 8px;
+      }
+      @include mediaLaptop {
+        margin-bottom: 12px;
+      }
     }
 
     &-img {

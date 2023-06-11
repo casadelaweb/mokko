@@ -1,2 +1,2 @@
-import './menu'
+import './menu.init'
 import './menu.scss'
