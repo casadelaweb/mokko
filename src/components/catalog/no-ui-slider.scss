@@ -1,0 +1,39 @@
+.noUi {
+  &-horizontal {
+    width: calc(100% - 20px);
+    margin: 0 auto;
+    height: 4px !important;
+    border: 0 !important;
+    background: #f2f2f2 !important;
+  }
+
+  &-target {
+    border: 0;
+    box-shadow: none;
+  }
+
+  &-connect {
+    background: #51504f;
+    border: 0 !important;
+  }
+
+  &-handle {
+    width: 20px !important;
+    height: 20px !important;
+    border-radius: 50%;
+    background: white;
+    border: 2px solid #51504f !important;
+    top: -8px !important;
+    right: -10px !important;
+    cursor: grab;
+
+    &::before, &::after {
+      display: none !important;
+    }
+  }
+
+  &-touch-area {
+    background: white;
+    border-radius: 50%;
+  }
+}

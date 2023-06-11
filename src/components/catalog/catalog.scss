@@ -14,14 +14,43 @@
   }
 
   &-header {
-    overflow: hidden;
+    // overflow: hidden;
+    max-width: 100%;
     @include flex(center);
     margin-bottom: 32px;
 
     &-button {
+      flex: 0 0 auto;
       width: 18px;
       height: 18px;
       margin-left: 0.5em;
+    }
+
+    &.mobile {
+      display: flex;
+      @include mediaLaptop {
+        display: none;
+      }
+    }
+
+    &.desktop {
+      display: none;
+      @include mediaLaptop {
+        display: flex;
+        flex-wrap: wrap;
+      }
+    }
+  }
+
+  &-filters {
+    flex: 1 0 auto;
+    display: none;
+    @include mediaLaptop {
+      @include flex(center);
+    }
+
+    [data-select=sorting] {
+      margin-left: auto;
     }
   }
 
@@ -35,7 +64,10 @@
       font-size: 18px;
     }
     @include mediaLaptop {
+      flex: 0 0 auto;
+      width: 100%;
       font-size: 20px;
+      margin-bottom: 2em;
     }
   }
 
@@ -79,9 +111,9 @@
     margin-bottom: 0.75em;
   }
 
-  &-main {
-    overflow: hidden;
-  }
+  //&-main {
+  //  overflow: hidden;
+  //}
 
   &-cards {
     display: grid;

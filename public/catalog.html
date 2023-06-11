@@ -15,59 +15,10 @@
   <main class="main">
     <section class="catalog">
       <div class="catalog-container">
-
-        <div class="catalog-header" data-catalog="header">
+        <div class="catalog-header mobile">
           <h1 class="catalog-title">Каталог</h1>
 
-          <div class="select">
-            <div class="select-current">
-              <span class="select-current-text"> Размер </span>
-              <div class="select-current-value"></div>
-              <button class="select-current-button" type="button">
-                <img alt="img" loading="lazy" src="src/assets/img/icons/arrow-down.png">
-              </button>
-            </div>
-            <form class="select-options" name="sizes">
-              <label class="select-option">
-                <input class="select-checkbox" name="sizes" type="checkbox"> <span> XS </span>
-              </label>
-              <label class="select-option">
-                <input class="select-checkbox" name="sizes" type="checkbox"> <span> S </span>
-              </label>
-              <button class="select-button" type="button">
-                <span>Применить</span>
-              </button>
-            </form>
-          </div>
-
-          <div class="select">
-            <div class="select-current">
-              <!-- <span class="select-current-text"> По новизне </span> -->
-              <div class="select-current-value"></div>
-              <button class="select-current-button" type="button">
-                <img alt="img" loading="lazy" src="src/assets/img/icons/arrow-down.png">
-              </button>
-            </div>
-            <form class="select-options">
-              <label class="select-option active">
-                <input class="select-checkbox" name="sorting" type="radio"> <span> По новизне </span>
-              </label>
-              <label class="select-option">
-                <input class="select-checkbox" name="sorting" type="radio"> <span> По популярности </span>
-              </label>
-              <label class="select-option">
-                <input class="select-checkbox" name="sorting" type="radio"> <span> По возрастанию цены </span>
-              </label>
-              <label class="select-option">
-                <input class="select-checkbox" name="sorting" type="radio"> <span> По убыванию цены </span>
-              </label>
-              <label class="select-option">
-                <input class="select-checkbox" name="sorting" type="radio"> <span> Товары по скидке </span>
-              </label>
-            </form>
-          </div>
-
-          <button class="catalog-header-button" type="button">
+          <button class="catalog-header-button" data-modal-open="catalog-menu-mobile" type="button">
             <img alt="img" loading="lazy" src="src/assets/img/icons/filters.png">
           </button>
           <button class="catalog-header-button" data-catalog-layout="row" type="button">
@@ -77,8 +28,6 @@
             <img alt="img" loading="lazy" src="src/assets/img/icons/squares.png">
           </button>
         </div>
-
-
         <div class="catalog-layout" data-catalog="layout">
 
           <div class="catalog-categories">
@@ -98,6 +47,140 @@
           </div>
 
           <div class="catalog-main">
+
+            <div class="catalog-header desktop" data-catalog="header-desktop">
+              <h1 class="catalog-title">Каталог</h1>
+              <div class="catalog-filters">
+                <div class="select" data-select>
+                  <div class="select-current">
+                    <span class="select-current-text"> Размер </span>
+                    <div class="select-current-value"></div>
+                    <button class="select-current-button" type="button">
+                      <img alt="img" loading="lazy" src="src/assets/img/icons/arrow-down.png">
+                    </button>
+                  </div>
+                  <form class="select-options">
+                    <label class="select-option">
+                      <input class="select-checkbox" name="sizes" type="checkbox"> <span> XS </span>
+                    </label>
+                    <label class="select-option">
+                      <input class="select-checkbox" name="sizes" type="checkbox"> <span> S </span>
+                    </label>
+                    <label class="select-option">
+                      <input class="select-checkbox" name="sizes" type="checkbox"> <span> M </span>
+                    </label>
+                    <label class="select-option">
+                      <input class="select-checkbox" name="sizes" type="checkbox"> <span> L </span>
+                    </label>
+                    <label class="select-option">
+                      <input class="select-checkbox" name="sizes" type="checkbox"> <span> XL </span>
+                    </label>
+                    <label class="select-option">
+                      <input class="select-checkbox" name="sizes" type="checkbox"> <span> XXL </span>
+                    </label>
+                    <button class="select-button" type="button">
+                      <span>Применить</span>
+                    </button>
+                  </form>
+                </div>
+                <div class="select" data-select>
+                  <div class="select-current">
+                    <span class="select-current-text"> Цена </span>
+                    <div class="select-current-value"></div>
+                    <button class="select-current-button" type="button">
+                      <img alt="img" loading="lazy" src="src/assets/img/icons/arrow-down.png">
+                    </button>
+                  </div>
+                  <form class="select-options">
+                    <div class="select-prices">
+                      <input class="select-input" placeholder="от 1 999 ₽" type="text">
+                      <input class="select-input" placeholder="до 29 999 ₽" type="text">
+                    </div>
+                    <div id="prices"></div>
+
+                    <button class="select-button" type="button">
+                      <span>Применить</span>
+                    </button>
+                  </form>
+                </div>
+                <div class="select" data-select>
+                  <div class="select-current">
+                    <span class="select-current-text"> Цвет </span>
+                    <div class="select-current-value"></div>
+                    <button class="select-current-button" type="button">
+                      <img alt="img" loading="lazy" src="src/assets/img/icons/arrow-down.png">
+                    </button>
+                  </div>
+                  <form class="select-options">
+                    <label class="select-option">
+                      <input class="select-checkbox" name="color" type="checkbox"> <span> Белый и золотой</span>
+                    </label>
+                    <label class="select-option">
+                      <input class="select-checkbox" name="color" type="checkbox"> <span> Белый и молочный</span>
+                    </label>
+                    <label class="select-option">
+                      <input class="select-checkbox" name="color" type="checkbox"> <span> Черный </span>
+                    </label>
+                    <label class="select-option">
+                      <input class="select-checkbox" name="color" type="checkbox"> <span> Бежевый и золотой </span>
+                    </label>
+                    <label class="select-option">
+                      <input class="select-checkbox" name="color" type="checkbox"> <span> Зеленый и изумрудный </span>
+                    </label>
+                    <label class="select-option">
+                      <input class="select-checkbox" name="color" type="checkbox"> <span>Красный и бордовый </span>
+                    </label>
+                    <label class="select-option">
+                      <input class="select-checkbox" name="color" type="checkbox"> <span> Оливковый и хаки </span>
+                    </label>
+                    <label class="select-option">
+                      <input class="select-checkbox" name="color" type="checkbox">
+                      <span> Коричневый и шоколадный </span>
+                    </label>
+                    <button class="select-button" type="button">
+                      <span>Применить</span>
+                    </button>
+                  </form>
+                </div>
+
+                <div class="select" data-select="sorting">
+                  <div class="select-current">
+                    <!-- <span class="select-current-text"> По новизне </span> -->
+                    <div class="select-current-value"></div>
+                    <button class="select-current-button" type="button">
+                      <img alt="img" loading="lazy" src="src/assets/img/icons/arrow-down.png">
+                    </button>
+                  </div>
+                  <form class="select-options">
+                    <label class="select-option active">
+                      <input class="select-checkbox" name="sorting" type="radio"> <span> По новизне </span>
+                    </label>
+                    <label class="select-option">
+                      <input class="select-checkbox" name="sorting" type="radio"> <span> По популярности </span>
+                    </label>
+                    <label class="select-option">
+                      <input class="select-checkbox" name="sorting" type="radio"> <span> По возрастанию цены </span>
+                    </label>
+                    <label class="select-option">
+                      <input class="select-checkbox" name="sorting" type="radio"> <span> По убыванию цены </span>
+                    </label>
+                    <label class="select-option">
+                      <input class="select-checkbox" name="sorting" type="radio"> <span> Товары по скидке </span>
+                    </label>
+                  </form>
+                </div>
+              </div>
+
+              <button class="catalog-header-button" data-catalog-layout="row"
+                      style="height: auto; width: auto;" type="button">
+                <img alt="img" loading="lazy" src="src/assets/img/icons/squares-6.png">
+              </button>
+              <button class="catalog-header-button" data-catalog-layout="grid"
+                      style="height: auto; width: auto;" type="button">
+                <img alt="img" loading="lazy" src="src/assets/img/icons/squares-8.png">
+              </button>
+            </div>
+
             <div class="catalog-cards">
               repeat 9 times:
               <article class="catalog-card" data-catalog="card">
@@ -204,6 +287,32 @@
 
         </div>
 
+        <div class="catalog-menu-mobile modal" data-modal="catalog-menu-mobile">
+          <div class="modal-content">
+            <div class="catalog-menu-mobile-header">
+              <span>Фильтры</span>
+              <button data-modal-close>
+                <img alt="img" loading="lazy" src="src/assets/img/icons/close.png">
+              </button>
+            </div>
+            <div class="catalog-menu-mobile-body">
+              <div>Цвет</div>
+              <div>Цена</div>
+              <div>Размер</div>
+              <div>Сортировать</div>
+              <div>Категории</div>
+            </div>
+            <div class="catalog-menu-mobile-footer">
+              <button type="button">
+                <span>Сбросить всё</span>
+              </button>
+
+              <button type="button">
+                <span>Применить</span>
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   </main>
