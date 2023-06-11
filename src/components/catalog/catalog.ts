@@ -124,7 +124,9 @@ export class Catalog {
   private updateElements(): catalogElements {
     const { body, } = document
 
+    const header: HTMLElement = body.querySelector('.header')
     const layout: HTMLElement = body.querySelector('[data-catalog=layout]')
+    const catalogHeaderDesktop: HTMLElement = body.querySelector('[data-catalog=header-desktop]')
     const cardsArray: HTMLElement[] = Array.from(body.querySelectorAll(this.selectors.card))
     const cards = cardsArray.map((card: HTMLElement): card => {
       const slider: HTMLElement = card.querySelector(this.selectors.slider)
@@ -142,8 +144,10 @@ export class Catalog {
     })
 
     return {
+      header,
       layout,
       cards,
+      catalogHeaderDesktop,
     }
   }
 }

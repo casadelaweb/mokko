@@ -9,7 +9,9 @@ export interface card {
 }
 
 export interface catalogElements {
+  header: HTMLElement,
   layout: HTMLElement,
+  catalogHeaderDesktop: HTMLElement,
   cards: card[]
 }
 

@@ -7,6 +7,7 @@ import { Catalog } from 'src/components/catalog/catalog'
 import * as noUiSlider from 'nouislider'
 import 'nouislider/dist/nouislider.css'
 import './no-ui-slider.scss'
+import { isMediaAboveLaptop } from 'src/scripts/helpers'
 
 document.addEventListener('DOMContentLoaded', () => {
   const catalog = new Catalog()
@@ -14,8 +15,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const { body, } = document
 
-  const catalogHeader: HTMLElement = body.querySelector('[data-catalog=header-desktop]')
-  if (catalogHeader) catalogHeader.style.overflow = 'unset'
+  const catalogHeader: HTMLElement = catalog.elements.catalogHeaderDesktop
+  if (catalogHeader && isMediaAboveLaptop()) {
+    catalogHeader.style.overflow = 'unset'
+    catalogHeader.style.top = catalog.elements.header.offsetHeight + 'px'
+  }
+
+  window.addEventListener('scroll', () => {
+    const { scrollY, } = window
+
+    if (scrollY > catalog.elements.header.offsetHeight) {
+      catalogHeader.classList.add('scrolled')
+    } else {
+      catalogHeader.classList.remove('scrolled')
+    }
+  })
 
   noUiSlider.create(body.querySelector('#prices'), {
     start: [

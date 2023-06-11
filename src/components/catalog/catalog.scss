@@ -14,17 +14,8 @@
   }
 
   &-header {
-    // overflow: hidden;
-    max-width: 100%;
     @include flex(center);
     margin-bottom: 32px;
-
-    &-button {
-      flex: 0 0 auto;
-      width: 18px;
-      height: 18px;
-      margin-left: 0.5em;
-    }
 
     &.mobile {
       display: flex;
@@ -36,9 +27,30 @@
     &.desktop {
       display: none;
       @include mediaLaptop {
+        position: sticky;
+        z-index: 1;
+        top: 85px;
+        padding: 16px 0;
+        background: white;
         display: flex;
         flex-wrap: wrap;
       }
+      @include mediaDesktop {
+        padding: 20px 0;
+      }
+
+      &.scrolled {
+        .catalog-title {
+          display: none;
+        }
+      }
+    }
+
+    &-button {
+      flex: 0 0 auto;
+      width: 18px;
+      height: 18px;
+      margin-left: 0.5em;
     }
   }
 
