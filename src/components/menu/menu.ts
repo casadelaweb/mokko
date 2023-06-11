@@ -39,7 +39,6 @@ class Menu {
   }
 
   private open(): void {
-    console.log(this)
     const { overlay, menu, } = this.elements
 
     overlay.classList.add('active')

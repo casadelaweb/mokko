@@ -6,7 +6,7 @@ export default function toggle(selector: string) {
 
   if (allToggles.length) {
     allToggles.forEach(toggleBtn => {
-      console.log(toggleBtn)
+
       const content: HTMLElement = document.getElementById(toggleBtn.dataset.toggleHref)
       content.innerHTML = '<div>' + content.innerHTML + '</div>'
       content.classList.add('krel-toggle-content')
