@@ -2,6 +2,7 @@
 
 .catalog-detail {
   margin-top: 85px;
+  margin-bottom: 108px;
 
   &-container {
     @extend .container;
@@ -47,6 +48,8 @@
     }
     @include mediaTablet {
       flex: 1;
+      position: sticky;
+      top: 0
     }
   }
 
