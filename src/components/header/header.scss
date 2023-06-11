@@ -28,6 +28,7 @@
   transition: background-color 0.5s, backdrop-filter 0.5s, border-color 0.5s;
   border-bottom: 2px solid transparent;
   padding: 10px 0;
+  overflow: hidden;
   @include mediaTablet {
     padding: 20px 0;
   }

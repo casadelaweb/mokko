@@ -8,6 +8,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const catalog = new Catalog()
   catalog.init()
 
+  const catalogHeader: HTMLElement = document.body.querySelector('[data-catalog=header]')
+  if (catalogHeader) catalogHeader.style.overflow = 'unset'
+
   document.addEventListener('click', (event) => {
     const target = event.target as HTMLElement
 

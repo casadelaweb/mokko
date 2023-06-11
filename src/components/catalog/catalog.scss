@@ -1,18 +1,22 @@
 @import "src/styles/shared";
 
 .catalog {
-  padding-top: 100px;
+  padding-top: 40px;
+  @include mediaTablet {
+    padding-top: 60px;
+  }
+  @include mediaLaptop {
+    padding-top: 80px;
+  }
 
   &-container {
     @extend .container;
   }
 
   &-header {
+    overflow: hidden;
     @include flex(center);
     margin-bottom: 32px;
-    //@include mediaTablet {
-    //  margin-bottom: 24px;
-    //}
 
     &-button {
       width: 18px;
@@ -36,22 +40,67 @@
   }
 
   &-layout {
+    margin-bottom: 60px;
+    @include mediaTabletBg {
+      margin-bottom: 72px;
+    }
+    @include mediaLaptop {
+      display: grid;
+      grid-template-columns: 1fr 3fr;
+    }
+  }
+
+  &-categories {
+    display: none;
+    @include mediaLaptop {
+      display: block;
+    }
+
+    &-title {
+      color: #82756e;
+      font-size: 17px;
+      letter-spacing: 0.02em;
+      margin-bottom: 1.25em;
+    }
+
+    &-sticky {
+      @include flex($d: column);
+      position: sticky;
+      z-index: 0;
+      top: 100px;
+    }
+  }
+
+  &-category {
+    color: #82756e;
+    font-size: 15px;
+    letter-spacing: 0.02em;
+    display: inline-block;
+    margin-bottom: 0.75em;
+  }
+
+  &-main {
+    overflow: hidden;
+  }
+
+  &-cards {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     column-gap: 8px;
     row-gap: 20px;
-    border-radius: 8px;
-    margin-bottom: 60px;
+    margin-bottom: 48px;
     @include mediaTablet {
       column-gap: 14px;
       row-gap: 56px;
     }
     @include mediaTabletBg {
       grid-template-columns: repeat(4, 1fr);
+    }
+    @include mediaLaptop {
       margin-bottom: 72px;
     }
 
-    &.mode-row {
+    .mode-row & {
       grid-template-columns: 1fr;
       @include mediaTabletBg {
         grid-template-columns: repeat(3, 1fr);
@@ -292,13 +341,9 @@
   &-pagination {
     @include flex(center, center);
     width: fit-content;
-    margin: 0 auto 46px;
+    margin: 0 auto;
     color: #82756e;
     font-size: 17px;
-
-    @include mediaTabletBg {
-      margin-bottom: 50px;
-    }
 
     &-list {
       @include flex(center);

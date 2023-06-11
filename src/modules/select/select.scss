@@ -6,9 +6,15 @@
   display: inline-block;
   width: fit-content;
   color: #82756e;
-  font-size: 17px;
+  font-size: 13px;
   letter-spacing: 0.02em;
-  margin-right: 32px;
+  margin-right: 1.5em;
+  @include mediaTablet {
+    font-size: 15px;
+  }
+  @include mediaLaptop {
+    font-size: 17px;
+  }
 
   &-input {
     display: none;
@@ -18,18 +24,18 @@
     @include flex(center);
     cursor: pointer;
 
-    &-text {
+    &-text, &-value {
       display: inline-block;
       margin-right: 0.5em;
     }
-  }
 
-  &-button {
-    transform-origin: center;
-    transition: transform 0.5s;
+    &-button {
+      transform-origin: center;
+      transition: transform 0.5s;
 
-    &.active {
-      transform: rotate(180deg);
+      &.active {
+        transform: rotate(180deg);
+      }
     }
   }
 
@@ -40,11 +46,16 @@
     height: 16px;
     margin-right: 0.5em;
 
+    &[type=checkbox] {
+      border-radius: 4px;
+    }
+
     &:checked {
       background: #82756e;
     }
 
     &::before {
+      content: " ";
       background: none;
       font-size: 0.6667em;
     }
@@ -54,14 +65,18 @@
     position: absolute;
     z-index: 1;
     top: calc(100% + 10px);
-    left: 0;
-    min-width: 100%;
+    left: -20px;
+    min-width: 160px;
     background: white;
+    box-shadow: 4px 4px 16px 0 rgba(black, 0.25);
+    transition: opacity 0.25s, transform 0.25s;
+    border-radius: 12px;
+    overflow-x: hidden;
+    overflow-y: auto;
     opacity: 0;
     pointer-events: none;
     transform: translate(0, 40px);
-    box-shadow: 4px 4px 16px 0 rgba(black, 0.25);
-    transition: opacity 0.5s, transform 0.5s;
+    padding: 16px 12px 12px;
 
     &.active {
       opacity: 1;
@@ -74,5 +89,28 @@
     @include flex(center);
     cursor: pointer;
     padding: 8px 12px;
+    white-space: nowrap;
+    transition: background 0.5s, color 0.5s;
+    @include mediaLaptop {
+      padding: 12px 16px;
+    }
+
+    //&:hover {
+    //  background: #f2f2f2;
+    //}
+
+    &.active {
+      color: #51504f;
+    }
+  }
+
+  &-button {
+    @include flex(center, center);
+    background: #c7b29c;
+    color: white;
+    width: 200px;
+    height: 43px;
+    margin: 20px auto 0;
+    font-size: 17px;
   }
 }

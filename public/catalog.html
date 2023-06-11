@@ -16,25 +16,55 @@
     <section class="catalog">
       <div class="catalog-container">
 
-        <div class="catalog-header">
+        <div class="catalog-header" data-catalog="header">
           <h1 class="catalog-title">Каталог</h1>
 
           <div class="select">
-            <input class="select-input" name="size" type="text">
             <div class="select-current">
               <span class="select-current-text"> Размер </span>
-              <button class="select-button" type="button">
+              <div class="select-current-value"></div>
+              <button class="select-current-button" type="button">
                 <img alt="img" loading="lazy" src="src/assets/img/icons/arrow-down.png">
               </button>
             </div>
-            <div class="select-options">
+            <form class="select-options" name="sizes">
               <label class="select-option">
-                <input class="select-checkbox" type="checkbox"> <span>XS</span>
+                <input class="select-checkbox" name="sizes" type="checkbox"> <span> XS </span>
               </label>
               <label class="select-option">
-                <input class="select-checkbox" type="checkbox"> <span>S</span>
+                <input class="select-checkbox" name="sizes" type="checkbox"> <span> S </span>
               </label>
+              <button class="select-button" type="button">
+                <span>Применить</span>
+              </button>
+            </form>
+          </div>
+
+          <div class="select">
+            <div class="select-current">
+              <!-- <span class="select-current-text"> По новизне </span> -->
+              <div class="select-current-value"></div>
+              <button class="select-current-button" type="button">
+                <img alt="img" loading="lazy" src="src/assets/img/icons/arrow-down.png">
+              </button>
             </div>
+            <form class="select-options">
+              <label class="select-option active">
+                <input class="select-checkbox" name="sorting" type="radio"> <span> По новизне </span>
+              </label>
+              <label class="select-option">
+                <input class="select-checkbox" name="sorting" type="radio"> <span> По популярности </span>
+              </label>
+              <label class="select-option">
+                <input class="select-checkbox" name="sorting" type="radio"> <span> По возрастанию цены </span>
+              </label>
+              <label class="select-option">
+                <input class="select-checkbox" name="sorting" type="radio"> <span> По убыванию цены </span>
+              </label>
+              <label class="select-option">
+                <input class="select-checkbox" name="sorting" type="radio"> <span> Товары по скидке </span>
+              </label>
+            </form>
           </div>
 
           <button class="catalog-header-button" type="button">
@@ -48,111 +78,129 @@
           </button>
         </div>
 
+
         <div class="catalog-layout" data-catalog="layout">
 
-          repeat 9 times:
-
-          <article class="catalog-card" data-catalog="card">
-            <div class="catalog-card-discount"> -30%</div>
-            <button class="catalog-card-favourite" type="button">
-              <img alt="img" loading="lazy" src="src/assets/img/icons/heart.png">
-            </button>
-
-            <div class="catalog-card-slider swiper" data-catalog-card="slider" data-slider="catalog-card">
-
-              <div class="swiper-wrapper">
-
-                <div class="swiper-slide">
-                  <img alt="img" class="catalog-card-img" loading="lazy" src="src/assets/img/section/product-1.jpg">
-                </div>
-                <div class="swiper-slide">
-                  <img alt="img" class="catalog-card-img" loading="lazy" src="src/assets/img/section/product-2.jpg">
-                </div>
-                <div class="swiper-slide">
-                  <img alt="img" class="catalog-card-img" loading="lazy" src="src/assets/img/section/product-3.jpg">
-                </div>
-
-              </div>
-
-              <div class="swiper-button-prev">
-                <img alt="img" class="icon-arrow-left" loading="lazy" src="src/assets/img/icons/arrow-left.png">
-              </div>
-              <div class="swiper-button-next">
-                <img alt="img" class="icon-arrow-right" loading="lazy" src="src/assets/img/icons/arrow-right.png">
-              </div>
-              <div class="swiper-pagination"></div>
-
-              <div class="catalog-card-sizes" data-catalog-card="controls">
-                <div class="catalog-card-size">S</div>
-                <div class="catalog-card-size">M</div>
-                <div class="catalog-card-size">L</div>
-                <div class="catalog-card-size">XL</div>
-                <div class="catalog-card-size">XXL</div>
-                <div class="catalog-card-size">3XL</div>
-
-                <button class="catalog-card-cart" type="button">
-                  <img alt="img" loading="lazy" src="src/assets/img/icons/suitcase-color.png">
-                </button>
-              </div>
+          <div class="catalog-categories">
+            <div class="catalog-categories-sticky">
+              <div class="catalog-categories-title">Категории</div>
+              <a class="catalog-category" href="catalog.html">Смотреть всё</a>
+              <a class="catalog-category" href="catalog.html">Платья</a>
+              <a class="catalog-category" href="catalog.html">Нарядная одежда</a>
+              <a class="catalog-category" href="catalog.html">Блузы и рубашки</a>
+              <a class="catalog-category" href="catalog.html">Брюки и юбки</a>
+              <a class="catalog-category" href="catalog.html">Верхняя одежда</a>
+              <a class="catalog-category" href="catalog.html">Джемперы и кардиганы</a>
+              <a class="catalog-category" href="catalog.html">Костюмы и жакеты</a>
+              <a class="catalog-category" href="catalog.html">Футболки и топы</a>
+              <a class="catalog-category" href="catalog.html">Аксессуары</a>
             </div>
-
-            <h2 class="catalog-card-title">
-              <a href="catalog-detail.html"> Относительно длинное название товара длинной в одну, две или три
-                строки </a>
-            </h2>
-            <div class="catalog-card-price">
-              <div class="catalog-card-price-previous">
-                <span>7 999</span> <span>₽</span>
-              </div>
-              <div class="catalog-card-price-current">
-                <span>5 000</span> <span>₽</span>
-              </div>
-            </div>
-            <div class="catalog-card-colors">
-              <div class="catalog-card-color" style="background: lightcoral;"></div>
-              <div class="catalog-card-color" style="background: lightgreen;"></div>
-              <div class="catalog-card-color" style="background: lightsalmon;"></div>
-            </div>
-          </article>
-
-          end;
-
-        </div>
-
-        <button class="catalog-more" type="button">
-          <span>Показать еще</span>
-        </button>
-
-        <div class="catalog-pagination">
-
-          <a class="catalog-pagination-prev" href="catalog.html">
-            <img alt="img" loading="lazy" src="src/assets/img/icons/arrow-left.png">
-          </a>
-
-          <div class="catalog-pagination-list">
-            <a class="catalog-pagination-item" href="catalog.html">
-              <span>1</span>
-            </a>
-            <a class="catalog-pagination-item" href="catalog.html">
-              <span>2</span>
-            </a>
-            <a class="catalog-pagination-item" href="catalog.html">
-              <span>3</span>
-            </a>
-            <a class="catalog-pagination-item" href="catalog.html">
-              <span>4</span>
-            </a>
-
-            <span class="catalog-pagination-item">...</span>
-
-            <a class="catalog-pagination-item" href="catalog.html">
-              <span>18</span>
-            </a>
           </div>
 
-          <a class="catalog-pagination-next" href="catalog.html">
-            <img alt="img" loading="lazy" src="src/assets/img/icons/arrow-right.png">
-          </a>
+          <div class="catalog-main">
+            <div class="catalog-cards">
+              repeat 9 times:
+              <article class="catalog-card" data-catalog="card">
+                <div class="catalog-card-discount"> -30%</div>
+                <button class="catalog-card-favourite" type="button">
+                  <img alt="img" loading="lazy" src="src/assets/img/icons/heart.png">
+                </button>
+
+                <div class="catalog-card-slider swiper" data-catalog-card="slider" data-slider="catalog-card">
+
+                  <div class="swiper-wrapper">
+
+                    <div class="swiper-slide">
+                      <img alt="img" class="catalog-card-img" loading="lazy" src="src/assets/img/section/product-1.jpg">
+                    </div>
+                    <div class="swiper-slide">
+                      <img alt="img" class="catalog-card-img" loading="lazy" src="src/assets/img/section/product-2.jpg">
+                    </div>
+                    <div class="swiper-slide">
+                      <img alt="img" class="catalog-card-img" loading="lazy" src="src/assets/img/section/product-3.jpg">
+                    </div>
+
+                  </div>
+
+                  <div class="swiper-button-prev">
+                    <img alt="img" class="icon-arrow-left" loading="lazy" src="src/assets/img/icons/arrow-left.png">
+                  </div>
+                  <div class="swiper-button-next">
+                    <img alt="img" class="icon-arrow-right" loading="lazy" src="src/assets/img/icons/arrow-right.png">
+                  </div>
+                  <div class="swiper-pagination"></div>
+
+                  <div class="catalog-card-sizes" data-catalog-card="controls">
+                    <div class="catalog-card-size">S</div>
+                    <div class="catalog-card-size">M</div>
+                    <div class="catalog-card-size">L</div>
+                    <div class="catalog-card-size">XL</div>
+                    <div class="catalog-card-size">XXL</div>
+                    <div class="catalog-card-size">3XL</div>
+
+                    <button class="catalog-card-cart" type="button">
+                      <img alt="img" loading="lazy" src="src/assets/img/icons/suitcase-color.png">
+                    </button>
+                  </div>
+                </div>
+
+                <h2 class="catalog-card-title">
+                  <a href="catalog-detail.html"> Относительно длинное название товара длинной в одну, две или три
+                    строки </a>
+                </h2>
+                <div class="catalog-card-price">
+                  <div class="catalog-card-price-previous">
+                    <span>7 999</span> <span>₽</span>
+                  </div>
+                  <div class="catalog-card-price-current">
+                    <span>5 000</span> <span>₽</span>
+                  </div>
+                </div>
+                <div class="catalog-card-colors">
+                  <div class="catalog-card-color" style="background: lightcoral;"></div>
+                  <div class="catalog-card-color" style="background: lightgreen;"></div>
+                  <div class="catalog-card-color" style="background: lightsalmon;"></div>
+                </div>
+              </article>
+              end;
+            </div>
+
+            <button class="catalog-more" type="button">
+              <span>Показать еще</span>
+            </button>
+            <div class="catalog-pagination">
+
+              <a class="catalog-pagination-prev" href="catalog.html">
+                <img alt="img" loading="lazy" src="src/assets/img/icons/arrow-left.png">
+              </a>
+
+              <div class="catalog-pagination-list">
+                <a class="catalog-pagination-item" href="catalog.html">
+                  <span>1</span>
+                </a>
+                <a class="catalog-pagination-item" href="catalog.html">
+                  <span>2</span>
+                </a>
+                <a class="catalog-pagination-item" href="catalog.html">
+                  <span>3</span>
+                </a>
+                <a class="catalog-pagination-item" href="catalog.html">
+                  <span>4</span>
+                </a>
+
+                <span class="catalog-pagination-item">...</span>
+
+                <a class="catalog-pagination-item" href="catalog.html">
+                  <span>18</span>
+                </a>
+              </div>
+
+              <a class="catalog-pagination-next" href="catalog.html">
+                <img alt="img" loading="lazy" src="src/assets/img/icons/arrow-right.png">
+              </a>
+
+            </div>
+          </div>
 
         </div>
 
