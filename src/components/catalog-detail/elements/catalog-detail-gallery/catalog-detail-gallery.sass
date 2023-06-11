@@ -1,0 +1,39 @@
+@import 'src/styles/shared'
+
+.catalog-detail-gallery
+  &-item
+    width: 100%
+    overflow: hidden
+    height: 150vw
+    border-radius: 10px
+    @include mediaTablet
+      width: 337px
+      height: 505.5px
+    @include mediaTabletBg
+      width: 306px
+      height: 459px
+    @include mediaLaptop
+      width: 387px
+      height: 580px
+    @include mediaDesktop
+      width: 546px
+      height: 819px
+
+    img
+      width: 100%
+
+  .swiper-pagination-bullet
+    @include mediaTabletBg
+      display: none
+
+    .swiper-pagination-bullet
+      width: 32px
+      margin: 0 5px
+
+  .swiper-wrapper
+    @include mediaTabletBg
+      display: grid
+      gap: 14px
+      grid-template-columns: 1fr 1fr
+      .swiper-slide
+        width: max-content !important

@@ -41,4 +41,57 @@
   left: -4px
 
 
+.catalog-detail-price
+  display: flex
+  color: #505050
+  font-size: 18px
+  line-height: 100%
+  align-items: center
+  margin-top: 36px
+  margin-bottom: 26px
+  flex-wrap: wrap
+  @include mediaTablet
+    margin-top: 0
+    margin-bottom: 35px
+    font-size: 22px
+
+  &-title
+    color: #51504f
+    font-size: 16px
+    line-height: 20px
+    margin-top: 12px
+    margin-bottom: 18px
+    width: 100%
+    @include mediaTablet
+      margin-top: 18px
+      margin-bottom: 16px
+      font-size: 20px
+      line-height: 35px
+
+    span
+      max-width: 200px
+      display: block
+      @include mediaTablet
+        max-width: 100%
+
+  &-sale
+    color: #ada49e
+    text-decoration: line-through
+    margin-right: 10px
+
+  &-percent
+    margin-left: auto
+    line-height: 100%
+    padding: 10px 9px 9px 12px
+    font-size: 12px
+    color: #fff
+    border-radius: 6px 0
+    background-color: #756bff
+    @include mediaTablet
+      order: -1
+      margin-left: 0
+      padding: 13px 12px 11px 14px
+      font-size: 15px
+
+
 

@@ -7,9 +7,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const sizeBtn: HTMLElement = body.querySelector('.catalog-detail-btn-size')
   const catalogDetailSizesInfo: HTMLElement = body.querySelector('.catalog-detail-sizes-info')
   const catalogDetailBtns: HTMLElement = body.querySelector('.catalog-detail-btns')
+  const regularPrice: HTMLElement = body.querySelector('.catalog-detail-price-regular')
+  const catalogDetailBtnsPrice: HTMLElement = body.querySelector('.catalog-detail-btns-price')
   const activeClass: string = 'catalog-detail-sizes-item-active'
 
 
+  catalogDetailBtnsPrice.textContent = regularPrice.textContent
   sizeBtnsItems.forEach((btn: HTMLElement) => {
     console.log(btn)
     btn.addEventListener(('click'), () => {
@@ -27,5 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
   catalogDetailSizesInfoMob.innerHTML = catalogDetailSizesInfo.innerHTML
 
   catalogDetailBtns.insertAdjacentHTML('beforebegin', catalogDetailSizesInfoMob.outerHTML)
+
+  toggle('.catalog-detail-btn-size')
 
 })
