@@ -1,7 +1,6 @@
 @import 'src/styles/shared';
 
 .catalog-detail {
-  margin-top: 85px;
   margin-bottom: 108px;
 
   &-container {
@@ -64,6 +63,61 @@
   }
 
 
+  &-back {
+    color: #82756e;
+    font-size: 12px;
+    line-height: 100%;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 14px;
+    @include mediaTablet {
+      margin: 23px 0;
+      font-size: 16px;
+    }
+
+
+    &:before {
+      content: '';
+      display: block;
+      width: 7px;
+      height: 13px;
+      margin-right: 7px;
+      background: url('src/assets/img/catalog-detail/catalog-detail-back.png');
+      background-size: cover;
+      @include mediaTablet {
+        width: 8px;
+        height: 14px;
+
+        margin-right: 14px;
+      }
+    }
+
+  }
+
+  &-breadcrumb {
+    margin-top: 22px;
+    margin-bottom: 34px;
+    font-size: 13px;
+    line-height: 14px;
+    color: #82756e;
+    display: none;
+    @include mediaLaptop {
+      display: block;
+    }
+
+    a {
+      color: #ada49e;
+
+      &:after {
+        content: '/';
+        display: inline-block;
+        margin: 0 10px;
+      }
+    }
+
+  }
 }
 
 
