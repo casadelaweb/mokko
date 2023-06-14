@@ -1,14 +1,13 @@
-import Swiper, {Navigation, Pagination} from 'swiper'
+import Swiper, { Navigation, Pagination } from 'swiper'
 import 'swiper/scss'
-import {modals} from "src/scripts/modals-instance";
+import { modals } from 'src/scripts/modals-instance'
 
 
 document.addEventListener('DOMContentLoaded', () => {
-  const {body,} = document
+  const { body, } = document
   const galleryItems: HTMLElement[] = Array.from(body.querySelectorAll('.catalog-detail-gallery-item'))
   const catalogGalleryModalSLider: HTMLElement = body.querySelector('.catalog-detail-gallery-modal-slider .swiper-wrapper')
-
-
+  
   galleryItems.forEach((galleryItem: HTMLElement) => {
     const galleryModalItem: HTMLElement = document.createElement('div')
     galleryModalItem.classList.add('swiper-slide')
@@ -25,7 +24,10 @@ document.addEventListener('DOMContentLoaded', () => {
     enabled: true,
     slidesPerView: 1,
     direction: 'vertical',
-    modules: [Navigation, Pagination,],
+    modules: [
+      Navigation,
+      Pagination,
+    ],
 
     navigation: {
       nextEl: '.gallery-swiper-button-next',
