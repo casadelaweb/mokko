@@ -62,7 +62,7 @@ class Modals {
     html.style.setProperty('--modal-transition', this.options.transition.style())
   }
 
-  public activateModal(modal: any, trigger?: any): void {
+  public activateModal(modal: HTMLElement, trigger?: any): void {
     throwEvent(modal, Modals.events.beforeOpen, { trigger: trigger, })
     this.onBeforeOpen()
 
@@ -76,7 +76,7 @@ class Modals {
     throwEvent(modal, Modals.events.open, { trigger: trigger, })
   }
 
-  public deactivateModal(modal: any, trigger?: any): void {
+  public deactivateModal(modal: HTMLElement, trigger?: any): void {
     throwEvent(modal, Modals.events.beforeClose, { trigger: trigger, })
     this.onBeforeClose()
 
@@ -99,7 +99,7 @@ class Modals {
     })
   }
 
-  public toggleModal(modal: any, trigger?: any): void {
+  public toggleModal(modal: HTMLElement, trigger?: any): void {
     if (this.parameters.counter > 0) {
       this.deactivateModal(modal, trigger)
     } else {
