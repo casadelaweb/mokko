@@ -31,17 +31,20 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   })
 
-  noUiSlider.create(body.querySelector('#prices'), {
-    start: [
-      0,
-      100,
-    ],
-    connect: true,
-    range: {
-      'min': 0,
-      'max': 100,
-    },
-  })
+  const pricesContainer = body.querySelector('#prices')
+  if (pricesContainer) {
+    noUiSlider.create(pricesContainer, {
+      start: [
+        0,
+        100,
+      ],
+      connect: true,
+      range: {
+        'min': 0,
+        'max': 100,
+      },
+    })
+  }
 
   document.addEventListener('click', (event) => {
     const target = event.target as HTMLElement
