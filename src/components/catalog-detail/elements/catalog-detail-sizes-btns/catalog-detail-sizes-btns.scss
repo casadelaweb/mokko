@@ -40,9 +40,11 @@
   &-btns-cont {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin-top: 6px;
     padding-bottom: 16px;
     @include mediaTablet {
+      justify-content: flex-start;
       order: 1;
       margin-bottom: 35px;
     }
@@ -96,6 +98,18 @@
       @include mediaTablet {
         display: none;
       }
+    }
+
+    &-wishlist {
+      display: none;
+      width: 24px;
+      height: 21px;
+      margin-left: 20px;
+      background: url('src/assets/img/catalog-detail/catalog-detail-btn-wishlist.png');
+      @include mediaTablet {
+        display: block;
+      }
+
     }
   }
 
