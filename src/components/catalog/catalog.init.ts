@@ -16,20 +16,23 @@ document.addEventListener('DOMContentLoaded', () => {
   const { body, } = document
 
   const catalogHeader: HTMLElement = catalog.elements.catalogHeaderDesktop
+
   if (catalogHeader && isMediaAboveLaptop()) {
     catalogHeader.style.overflow = 'unset'
     catalogHeader.style.top = catalog.elements.header.offsetHeight + 'px'
   }
+  
+  if (catalogHeader) {
+    window.addEventListener('scroll', () => {
+      const { scrollY, } = window
 
-  window.addEventListener('scroll', () => {
-    const { scrollY, } = window
-
-    if (scrollY > catalog.elements.header.offsetHeight) {
-      catalogHeader.classList.add('scrolled')
-    } else {
-      catalogHeader.classList.remove('scrolled')
-    }
-  })
+      if (scrollY > catalog.elements.header.offsetHeight) {
+        catalogHeader.classList.add('scrolled')
+      } else {
+        catalogHeader.classList.remove('scrolled')
+      }
+    })
+  }
 
   const pricesContainer = body.querySelector('#prices')
   if (pricesContainer) {
