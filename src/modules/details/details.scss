@@ -1,40 +1,24 @@
 @import "src/styles/shared";
 
+@mixin compensateScrollbar() {
+  :not(.is-closing).open.has-vertical-scrollbar & {
+    @content
+  }
+}
+
 .details {
   &-summary {
-    @include flex(center);
-
-    a {
-      font-size: 18px;
+    &::before {
+      display: none;
     }
-  }
-
-  &-button {
-    @include flex(center, center);
-    margin-right: 14px;
   }
 
   &-body {
-    display: none;
-    grid-template-columns: 1fr;
-    row-gap: 15px;
-    padding-left: 24px;
-    margin: 20px 0;
+    @include flex($d: column);
+  }
 
-    &.active {
-      display: grid;
-    }
-
-    a, button {
-      display: inline-block;
-      width: fit-content;
-      color: #82756e;
-      font-size: 14px;
-      letter-spacing: 0.02em;
-    }
-
-    button {
-      color: #766cff;
-    }
+  &-link {
+    display: inline-block;
+    margin-bottom: 0.5em;
   }
 }

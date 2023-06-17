@@ -57,14 +57,12 @@
   }
 
   &-title {
-    color: #82756e;
     font-size: 17px;
     margin-bottom: 17px;
   }
 
 
   &-back {
-    color: #82756e;
     font-size: 12px;
     line-height: 100%;
     display: flex;
@@ -101,7 +99,6 @@
     margin-bottom: 34px;
     font-size: 13px;
     line-height: 14px;
-    color: #82756e;
     display: none;
     @include mediaLaptop {
       display: block;

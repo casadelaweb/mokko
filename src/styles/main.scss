@@ -18,12 +18,9 @@ html, body, #app {
   @include flex($d: column);
 }
 
-//.main {
-//  .has-offset {
-//
-//  }
-//}
-
+body {
+  color: #82756e;
+}
 
 .form {
   &-warning {

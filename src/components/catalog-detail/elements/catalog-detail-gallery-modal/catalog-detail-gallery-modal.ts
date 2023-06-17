@@ -1,12 +1,12 @@
-import Swiper, {Navigation, Pagination, SwiperOptions} from 'swiper'
+import Swiper, { Navigation, Pagination, SwiperOptions } from 'swiper'
 import 'swiper/scss'
-import {modals} from 'src/scripts/modals-instance'
-import {target} from "nouislider";
-import {CSSSelector} from "swiper/types";
+import { modals } from 'src/scripts/modals-instance'
+import { target } from 'nouislider'
+import { CSSSelector } from 'swiper/types'
 
 
 document.addEventListener('DOMContentLoaded', () => {
-  const {body,} = document
+  const { body, } = document
   const catalogDetail: HTMLElement = body.querySelector('.catalog-detail')
   const galleryItems: HTMLElement[] = Array.from(body.querySelectorAll('.catalog-detail-gallery-item'))
   const catalogGalleryModalSlider: HTMLElement = body.querySelector('.catalog-detail-gallery-modal-slider .swiper-wrapper')
