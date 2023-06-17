@@ -23,8 +23,8 @@ export class Details {
     }
     this.elements = []
     this.durationMin = 250
-    this.durationMax = 1000
-    this.durationPerHeight = 0.25
+    this.durationMax = 500
+    this.durationPerHeight = 0.33
     this.easing = 'linear'
     this.onClick = this.handleClick.bind(this)
 

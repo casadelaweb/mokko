@@ -32,89 +32,125 @@
 
           <div class="catalog-categories">
             <div class="catalog-categories-sticky filters">
-
               <div class="filters-header">
                 <span>Фильтры</span>
                 <button type="button">
                   <img alt="img" loading="lazy" src="src/assets/img/icons/close.png">
                 </button>
               </div>
-              <details class="details" data-details="details">
-                <summary class="details-summary" data-details="summary">
+              <div class="filters-body">
+                <details class="details" data-details="details">
+                  <summary class="details-summary" data-details="summary">
                   <span class="details-summary-content">
                     <span>Категории</span>
                     <button class="details-button" type="button">
                       <img alt="img" loading="lazy" src="src/assets/img/icons/arrow-down.png">
                     </button>
                   </span>
-                  <span class="details-selected"></span>
-                </summary>
-                <div class="details-body" data-details="body">
-                  <label><input name="category" type="checkbox"><span>Платья</span></label>
-                  <label><input name="category" type="checkbox"><span>Нарядная одежда</span></label>
-                  <label><input name="category" type="checkbox"><span>Блузы и рубашки</span></label>
-                  <label><input name="category" type="checkbox"><span>Брюки и юбки</span></label>
-                  <label><input name="category" type="checkbox"><span>Верхняя одежда</span></label>
-                  <label><input name="category" type="checkbox"><span>Джемперы и кардиганы</span></label>
-                  <label><input name="category" type="checkbox"><span>Костюмы и жакеты</span></label>
-                  <label><input name="category" type="checkbox"><span>Футболки и топы</span></label>
-                  <label><input name="category" type="checkbox"><span>Аксессуары</span></label>
-                </div>
-              </details>
-              <details class="details" data-details="details">
-                <summary class="details-summary" data-details="summary">
+                    <span class="details-selected"></span>
+                  </summary>
+                  <div class="details-body" data-details="body">
+                    <label><input name="category" type="checkbox"><span>Платья</span></label>
+                    <label><input name="category" type="checkbox"><span>Нарядная одежда</span></label>
+                    <label><input name="category" type="checkbox"><span>Блузы и рубашки</span></label>
+                    <label><input name="category" type="checkbox"><span>Брюки и юбки</span></label>
+                    <label><input name="category" type="checkbox"><span>Верхняя одежда</span></label>
+                    <label><input name="category" type="checkbox"><span>Джемперы и кардиганы</span></label>
+                    <label><input name="category" type="checkbox"><span>Костюмы и жакеты</span></label>
+                    <label><input name="category" type="checkbox"><span>Футболки и топы</span></label>
+                    <label><input name="category" type="checkbox"><span>Аксессуары</span></label>
+                  </div>
+                </details>
+                <details class="details" data-details="details">
+                  <summary class="details-summary" data-details="summary">
+                  <span class="details-summary-content">
+                    <span>Сортировать</span>
+                    <button class="details-button" type="button">
+                      <img alt="img" loading="lazy" src="src/assets/img/icons/arrow-down.png">
+                    </button>
+                  </span>
+                    <span class="details-selected"></span>
+                  </summary>
+                  <div class="details-body" data-details="body">
+                    <label> <input name="sorting" type="radio"> <span> По новизне </span> </label>
+                    <label> <input name="sorting" type="radio"> <span> По популярности </span> </label>
+                    <label> <input name="sorting" type="radio"> <span> По возрастанию цены </span> </label>
+                    <label> <input name="sorting" type="radio"> <span> По убыванию цены </span> </label>
+                    <label> <input name="sorting" type="radio"> <span> Товары по скидке </span> </label>
+                  </div>
+                </details>
+                <details class="details" data-details="details">
+                  <summary class="details-summary" data-details="summary">
                   <span class="details-summary-content">
                     <span>Размер</span>
                     <button class="details-button" type="button">
                       <img alt="img" loading="lazy" src="src/assets/img/icons/arrow-down.png">
                     </button>
                   </span>
-                  <span class="details-selected"></span>
-                </summary>
-                <div class="details-body" data-details="body">
-                  <label> <input name="sizes" type="checkbox"> <span> XS </span> </label>
-                  <label> <input name="sizes" type="checkbox"> <span> S </span> </label>
-                  <label> <input name="sizes" type="checkbox"> <span> M </span> </label>
-                  <label> <input name="sizes" type="checkbox"> <span> L </span> </label>
-                  <label> <input name="sizes" type="checkbox"> <span> XL </span> </label>
-                  <label> <input name="sizes" type="checkbox"> <span> XXL </span> </label>
-                </div>
-              </details>
-              <details class="details" data-details="details">
-                <summary class="details-summary" data-details="summary">
+                    <span class="details-selected"></span>
+                  </summary>
+                  <div class="details-body" data-details="body">
+                    <label> <input name="sizes" type="checkbox"> <span> XS </span> </label>
+                    <label> <input name="sizes" type="checkbox"> <span> S </span> </label>
+                    <label> <input name="sizes" type="checkbox"> <span> M </span> </label>
+                    <label> <input name="sizes" type="checkbox"> <span> L </span> </label>
+                    <label> <input name="sizes" type="checkbox"> <span> XL </span> </label>
+                    <label> <input name="sizes" type="checkbox"> <span> XXL </span> </label>
+                  </div>
+                </details>
+                <details class="details" data-details="details">
+                  <summary class="details-summary" data-details="summary">
+                  <span class="details-summary-content">
+                    <span>Цена</span>
+                    <button class="details-button" type="button">
+                      <img alt="img" loading="lazy" src="src/assets/img/icons/arrow-down.png">
+                    </button>
+                  </span>
+                    <span class="details-selected"></span>
+                  </summary>
+                  <div class="details-body" data-details="body"></div>
+                </details>
+                <details class="details" data-details="details">
+                  <summary class="details-summary" data-details="summary">
                   <span class="details-summary-content">
                     <span>Цвет</span>
                     <button class="details-button" type="button">
                       <img alt="img" loading="lazy" src="src/assets/img/icons/arrow-down.png">
                     </button>
                   </span>
-                  <span class="details-selected"></span>
-                </summary>
-                <div class="details-body" data-details="body">
-                  <label> <input name="color" type="checkbox"> <span> Белый и золотой</span> </label>
-                  <label> <input name="color" type="checkbox"> <span> Белый и молочный</span> </label>
-                  <label> <input name="color" type="checkbox"> <span> Черный </span> </label>
-                  <label> <input name="color" type="checkbox"> <span> Бежевый и золотой </span> </label>
-                  <label> <input name="color" type="checkbox"> <span> Зеленый и изумрудный </span> </label>
-                  <label> <input name="color" type="checkbox"> <span>Красный и бордовый </span> </label>
-                  <label> <input name="color" type="checkbox"> <span> Оливковый и хаки </span> </label>
-                  <label> <input name="color" type="checkbox"> <span> Коричневый и шоколадный </span> </label>
-                </div>
-              </details>
-
-              <!--
-                            <div class="catalog-categories-title">Категории</div>
-                            <a class="catalog-category" href="catalog.html">Смотреть всё</a>
-                            <a class="catalog-category" href="catalog.html">Платья</a>
-                            <a class="catalog-category" href="catalog.html">Нарядная одежда</a>
-                            <a class="catalog-category" href="catalog.html">Блузы и рубашки</a>
-                            <a class="catalog-category" href="catalog.html">Брюки и юбки</a>
-                            <a class="catalog-category" href="catalog.html">Верхняя одежда</a>
-                            <a class="catalog-category" href="catalog.html">Джемперы и кардиганы</a>
-                            <a class="catalog-category" href="catalog.html">Костюмы и жакеты</a>
-                            <a class="catalog-category" href="catalog.html">Футболки и топы</a>
-                            <a class="catalog-category" href="catalog.html">Аксессуары</a>
-                            -->
+                    <span class="details-selected"></span>
+                  </summary>
+                  <div class="details-body" data-details="body">
+                    <label> <input name="color" type="checkbox"> <span> Белый и золотой</span> </label>
+                    <label> <input name="color" type="checkbox"> <span> Белый и молочный</span> </label>
+                    <label> <input name="color" type="checkbox"> <span> Черный </span> </label>
+                    <label> <input name="color" type="checkbox"> <span> Бежевый и золотой </span> </label>
+                    <label> <input name="color" type="checkbox"> <span> Зеленый и изумрудный </span> </label>
+                    <label> <input name="color" type="checkbox"> <span>Красный и бордовый </span> </label>
+                    <label> <input name="color" type="checkbox"> <span> Оливковый и хаки </span> </label>
+                    <label> <input name="color" type="checkbox"> <span> Коричневый и шоколадный </span> </label>
+                  </div>
+                </details>
+                <!--<div class="catalog-categories-title">Категории</div>-->
+                <!--<a class="catalog-category" href="catalog.html">Смотреть всё</a>-->
+                <!--<a class="catalog-category" href="catalog.html">Платья</a>-->
+                <!--<a class="catalog-category" href="catalog.html">Нарядная одежда</a>-->
+                <!--<a class="catalog-category" href="catalog.html">Блузы и рубашки</a>-->
+                <!--<a class="catalog-category" href="catalog.html">Брюки и юбки</a>-->
+                <!--<a class="catalog-category" href="catalog.html">Верхняя одежда</a>-->
+                <!--<a class="catalog-category" href="catalog.html">Джемперы и кардиганы</a>-->
+                <!--<a class="catalog-category" href="catalog.html">Костюмы и жакеты</a>-->
+                <!--<a class="catalog-category" href="catalog.html">Футболки и топы</a>-->
+                <!--<a class="catalog-category" href="catalog.html">Аксессуары</a>-->
+              </div>
+              <div class="filters-buttons">
+                <button class="filters-reset" type="button">
+                  <span>Сбросить</span>
+                </button>
+                <button class="filters-submit" type="submit">
+                  <span>Применить</span>
+                </button>
+              </div>
             </div>
           </div>
 
