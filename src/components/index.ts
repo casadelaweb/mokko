@@ -1,5 +1,6 @@
 import 'src/components/header'
 import 'src/components/footer'
+import 'src/components/breadcrumbs'
 import 'src/components/menu'
 import 'src/components/hero'
 import 'src/components/section'

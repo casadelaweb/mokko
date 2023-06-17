@@ -1,0 +1,22 @@
+@import "src/styles/shared";
+
+.breadcrumbs {
+  font-size: 13px;
+  margin: 2em 0 3em;
+}
+
+.breadcrumb {
+  color: #ada49e;
+
+  &:after {
+    content: '/';
+    display: inline-block;
+    margin: 0 0.75em;
+  }
+
+  &.active {
+    &::after {
+      display: none;
+    }
+  }
+}

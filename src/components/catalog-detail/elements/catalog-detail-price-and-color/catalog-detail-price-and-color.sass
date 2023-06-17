@@ -42,14 +42,13 @@
 
 
 .catalog-detail-price
-  display: flex
+  @include flex(center, $w: wrap)
   color: #505050
   font-size: 18px
   line-height: 100%
-  align-items: center
   margin-top: 36px
   margin-bottom: 26px
-  flex-wrap: wrap
+
   @include mediaTablet
     margin-top: 0
     margin-bottom: 35px

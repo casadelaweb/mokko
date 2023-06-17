@@ -61,12 +61,10 @@
     margin-bottom: 17px;
   }
 
-
   &-back {
+    @include flex(center);
     font-size: 12px;
     line-height: 100%;
-    display: flex;
-    align-items: center;
     width: 100%;
     margin-top: 15px;
     margin-bottom: 14px;
@@ -74,7 +72,6 @@
       margin: 23px 0;
       font-size: 16px;
     }
-
 
     &:before {
       content: '';
@@ -91,29 +88,6 @@
         margin-right: 14px;
       }
     }
-
-  }
-
-  &-breadcrumb {
-    margin-top: 22px;
-    margin-bottom: 34px;
-    font-size: 13px;
-    line-height: 14px;
-    display: none;
-    @include mediaLaptop {
-      display: block;
-    }
-
-    a {
-      color: #ada49e;
-
-      &:after {
-        content: '/';
-        display: inline-block;
-        margin: 0 10px;
-      }
-    }
-
   }
 }
 

@@ -38,9 +38,7 @@
   }
 
   &-btns-cont {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include flex(center, space-between);
     margin-top: 6px;
     padding-bottom: 16px;
     @include mediaTablet {
@@ -79,9 +77,7 @@
     }
 
     &-size {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      @include flex(center, center);
 
       svg {
         margin-left: 10px;
