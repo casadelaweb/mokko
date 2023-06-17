@@ -1,19 +1,24 @@
-import { elementData, selectors } from 'src/modules/details/details.types'
+import { elementData, selectors, options } from 'src/modules/details/details.types'
 import './details.scss'
 
 export class Details {
+  private static readonly optionsDefault: options = { preferButtonIfExist: true, }
   public elements: elementData[]
   public selectors: selectors
+  public options: options
   private readonly easing: string
   private readonly durationMin: number
   private readonly durationMax: number
   private readonly durationPerHeight: number
+  // eslint-disable-next-line no-unused-vars
+  private readonly onClick: (event) => void
 
-  constructor() {
+  constructor(optionsCustom?: options) {
     this.selectors = {
       details: '[data-details=details]',
       summary: '[data-details=summary]',
-      content: '[data-details=content]',
+      button: '[data-details=button]',
+      content: '[data-details=body]',
       scrollbars: { vertical: 'has-vertical-scrollbar', },
     }
     this.elements = []
@@ -21,18 +26,29 @@ export class Details {
     this.durationMax = 1000
     this.durationPerHeight = 0.25
     this.easing = 'linear'
+    this.onClick = this.handleClick.bind(this)
+
+    this.options = {
+      ...Details.optionsDefault,
+      ...optionsCustom,
+    }
   }
 
   public init(): void {
-    this.update()
-    document.addEventListener('click', this.clickHandler.bind(this))
+    this.updateElements()
+    this.listen()
   }
 
-  public update(): void {
+  public updateElements(): void {
     const { body, } = document
 
     const details: HTMLElement[] = Array.from(body.querySelectorAll(this.selectors.details))
     if (details.length > 0) this.elements = this.updateElementsData(details)
+  }
+
+  private listen(): void {
+    document.removeEventListener('click', this.onClick)
+    document.addEventListener('click', this.onClick)
   }
 
   private shrink(data: elementData): void {
@@ -135,16 +151,16 @@ export class Details {
     }
   }
 
-  private clickHandler(event: MouseEvent): void {
+  private handleClick(event: MouseEvent): void {
     const target = event.target as HTMLElement
 
     if (target.closest(this.selectors.summary)) {
-      event.preventDefault()
-
       const summary = target.closest(this.selectors.summary)
       const data: elementData = this.elements.find((data: elementData) => {
         return data.summary === summary ? data : false
       })
+
+      if (!this.options.preferButtonIfExist && !target.closest(this.selectors.button)) event.preventDefault()
 
       data.details.style.overflow = 'hidden'
       if (data.parameters.isClosing || !data.parameters.isOpen) {
@@ -160,6 +176,7 @@ export class Details {
       return {
         details: element,
         summary: element.querySelector(this.selectors.summary),
+        button: element.querySelector(this.selectors.button),
         content: element.querySelector(this.selectors.content),
         parameters: {
           isOpen: element.hasAttribute('open'),

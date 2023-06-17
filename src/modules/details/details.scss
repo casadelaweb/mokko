@@ -15,6 +15,7 @@
 
   &-body {
     @include flex($d: column);
+    margin-top: 0.5em;
   }
 
   &-link {
