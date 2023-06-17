@@ -52,28 +52,6 @@
     }
   }
 
-  &-checkbox {
-    border-color: #82756e;
-    flex: 0 0 auto;
-    width: 16px;
-    height: 16px;
-    margin-right: 0.5em;
-
-    &[type=checkbox] {
-      border-radius: 4px;
-    }
-
-    &:checked {
-      background: #82756e;
-    }
-
-    &::before {
-      content: " ";
-      background: none;
-      font-size: 0.6667em;
-    }
-  }
-
   &-options {
     position: absolute;
     z-index: 1;

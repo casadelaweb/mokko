@@ -6,6 +6,12 @@
   }
 }
 
+//details, summary {
+//  display: unset;
+//  width: auto;
+//  padding-left: unset;
+//}
+
 .details {
   &-summary {
     &::before {
@@ -14,14 +20,20 @@
   }
 
   &-button {
-    [open] & {
+    transition: transform 0.5s;
+
+    .is-opening &, .open & {
       transform: rotate(90deg);
+    }
+
+    .is-closing & {
+      transform: none;
     }
   }
 
   &-body {
     @include flex($d: column);
-    margin-top: 0.5em;
+    padding-top: 0.5em;
   }
 
   &-link {

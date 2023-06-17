@@ -1,0 +1,67 @@
+@import "src/styles/shared";
+
+.filters {
+  &-header {
+    @include flex(center, space-between);
+    padding: $containerPaddingMobile;
+    @include mediaLaptop {
+      padding-left: 0;
+    }
+  }
+
+  .details {
+    @include flex($d: column);
+
+    &-summary {
+      &,
+      &-content {
+        @include flex(center);
+        flex: 1 0 auto;
+        width: auto;
+      }
+
+      padding: 24px $containerPaddingMobile;
+      border-top: 2px solid #e9e9e9;
+      font-size: 17px;
+      @include mediaLaptop {
+        font-size: 18px;
+        padding-left: 0;
+      }
+    }
+
+    &-button {
+      margin-left: auto;
+      order: 1;
+    }
+
+    &-selected {
+      @include lineClamp(1);
+      color: #c7b29c;
+      font-size: 13px;
+      letter-spacing: 0.02em;
+      @include mediaLaptop {
+        font-size: 14px;
+      }
+    }
+
+    &-body {
+      @include flex($d: column);
+      font-size: 14px;
+      letter-spacing: 0.02em;
+      padding: 0 0 1em;
+      @include mediaTablet {
+        font-size: 16px;
+      }
+    }
+  }
+
+  label {
+    @include flex(center);
+    width: fit-content;
+    margin-bottom: 0.5em;
+  }
+
+  //[type=checkbox], [type=radio] {
+  //  margin-right: 0.75em;
+  //}
+}
