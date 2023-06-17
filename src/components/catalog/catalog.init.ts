@@ -1,4 +1,4 @@
-import Swiper, { Navigation, A11y, Pagination } from 'swiper'
+import Swiper, { Navigation, A11y, Pagination, Mousewheel } from 'swiper'
 import 'swiper/scss'
 import 'swiper/scss/a11y'
 import { accessibility as accessibilitySettings } from 'src/scripts/swiper-settings'
@@ -10,8 +10,63 @@ import './no-ui-slider.scss'
 import { isMediaAboveLaptop } from 'src/scripts/helpers'
 
 document.addEventListener('DOMContentLoaded', () => {
+  const catalogCardSlider = new Swiper('[data-slider=catalog-card]', {
+    modules: [
+      Navigation,
+      A11y,
+      Pagination,
+      Mousewheel,
+    ],
+    ...accessibilitySettings,
+    loop: true,
+    speed: 250,
+    grabCursor: true,
+    slidesPerView: 1,
+    spaceBetween: 14,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+      enabled: false,
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+      enabled: true,
+    },
+    mousewheel: false,
+    breakpoints: {
+      1280: {
+        navigation: { enabled: true, },
+        pagination: { enabled: false, },
+        mousewheel: { releaseOnEdges: true, },
+      },
+      1920: {
+        navigation: { enabled: true, },
+        pagination: { enabled: false, },
+        mousewheel: { releaseOnEdges: true, },
+      },
+    },
+  })
+
+  // let isHovering: boolean = false
+  // const hooksCustom = {
+  //   afterMouseEnter(data) {
+  //     isHovering = true
+  //     const currentSlider = catalogCardSlider.find((swiper) => swiper.el === data.slider)
+  //
+  //     setTimeout(() => {
+  //       if (isHovering) currentSlider.mousewheel.enable()
+  //     }, 1000)
+  //   },
+  //   afterMouseLeave(data) {
+  //     isHovering = false
+  //     const currentSlider = catalogCardSlider.find((swiper) => swiper.el === data.slider)
+  //     currentSlider.mousewheel.disable()
+  //   },
+  // }
   const catalog = new Catalog()
   catalog.init()
+
 
   const { body, } = document
 
@@ -21,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
     catalogHeader.style.overflow = 'unset'
     catalogHeader.style.top = catalog.elements.header.offsetHeight + 'px'
   }
-  
+
   if (catalogHeader) {
     window.addEventListener('scroll', () => {
       const { scrollY, } = window
@@ -55,39 +110,5 @@ document.addEventListener('DOMContentLoaded', () => {
     if (target.closest('.catalog-more')) {
       catalog.update()
     }
-  })
-
-  new Swiper('[data-slider=catalog-card]', {
-    modules: [
-      Navigation,
-      A11y,
-      Pagination,
-    ],
-    ...accessibilitySettings,
-    loop: true,
-    speed: 500,
-    grabCursor: true,
-    slidesPerView: 1,
-    spaceBetween: 14,
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-      enabled: false,
-    },
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-      enabled: true,
-    },
-    breakpoints: {
-      1280: {
-        navigation: { enabled: true, },
-        pagination: { enabled: false, },
-      },
-      1920: {
-        navigation: { enabled: true, },
-        pagination: { enabled: false, },
-      },
-    },
   })
 })

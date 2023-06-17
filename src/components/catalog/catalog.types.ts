@@ -24,3 +24,11 @@ export interface selectors {
     next: string,
   },
 }
+
+export interface hooks {
+  // eslint-disable-next-line no-unused-vars
+  afterMouseEnter(element: card): any
+
+  // eslint-disable-next-line no-unused-vars
+  afterMouseLeave(element: card): any
+}

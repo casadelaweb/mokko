@@ -120,10 +120,6 @@
     margin-bottom: 0.75em;
   }
 
-  //&-main {
-  //  overflow: hidden;
-  //}
-
   &-cards {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -388,7 +384,6 @@
 
     &-item, &-prev, &-next {
       @include flex(center, center);
-      // margin: 0 0.5em;
       width: 28px;
       height: 28px;
       border-radius: 50%;

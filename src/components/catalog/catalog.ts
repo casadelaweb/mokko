@@ -1,8 +1,9 @@
-import { card, catalogElements, selectors } from 'src/components/catalog/catalog.types'
+import { card, catalogElements, selectors, hooks } from 'src/components/catalog/catalog.types'
 import { isMediaAboveLaptop } from 'src/scripts/helpers'
 
 export class Catalog {
   public elements: catalogElements | undefined
+  public hooks: hooks
   private isMediaAboveLaptop: boolean
   private readonly selectors: selectors
   // eslint-disable-next-line no-unused-vars
@@ -12,7 +13,7 @@ export class Catalog {
   // eslint-disable-next-line no-unused-vars
   private readonly onMouseLeave: (event) => void
 
-  constructor() {
+  constructor(hooksCustom?: hooks) {
     this.selectors = {
       card: '[data-catalog=card]',
       slider: '[data-slider=catalog-card]',
@@ -29,6 +30,8 @@ export class Catalog {
     this.onClick = this.handleClick.bind(this)
     this.onMouseEnter = this.handleMouseEnter.bind(this)
     this.onMouseLeave = this.handleMouseLeave.bind(this)
+
+    if (hooksCustom) this.hooks = { ...hooksCustom, }
   }
 
   public init(): void {
@@ -93,6 +96,12 @@ export class Catalog {
       sizes.classList.add('active')
       buttonPrev.classList.add('active')
       buttonNext.classList.add('active')
+
+
+      if (this.hooks) {
+        const data = this.elements.cards.find((cardEl) => cardEl.card === card)
+        this.hooks.afterMouseEnter(data)
+      }
     }
   }
 
@@ -107,6 +116,12 @@ export class Catalog {
       sizes.classList.remove('active')
       buttonPrev.classList.remove('active')
       buttonNext.classList.remove('active')
+
+
+      if (this.hooks) {
+        const data = this.elements.cards.find((cardEl) => cardEl.card === card)
+        this.hooks.afterMouseLeave(data)
+      }
     }
   }
 
