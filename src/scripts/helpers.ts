@@ -8,5 +8,6 @@ export function throwEvent(element: HTMLElement, name: string, detail: object) {
 }
 
 export function isMediaAboveLaptop(): boolean {
+  console.log(window.matchMedia('(min-width: 1280px)').matches)
   return window.matchMedia('(min-width: 1280px)').matches
 }

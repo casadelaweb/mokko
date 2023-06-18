@@ -3,11 +3,9 @@ import 'swiper/scss'
 import 'swiper/scss/a11y'
 import { accessibility as accessibilitySettings } from 'src/scripts/swiper-settings'
 import { Catalog } from 'src/components/catalog/catalog'
-
-import * as noUiSlider from 'nouislider'
-import 'nouislider/dist/nouislider.css'
-import './no-ui-slider.scss'
 import { isMediaAboveLaptop } from 'src/scripts/helpers'
+import './catalog.filters'
+import './catalog.prices'
 
 document.addEventListener('DOMContentLoaded', () => {
   new Swiper('[data-slider=catalog-card]', {
@@ -67,9 +65,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const catalog = new Catalog()
   catalog.init()
 
-
-  const { body, } = document
-
   const catalogHeader: HTMLElement = catalog.elements.catalogHeaderDesktop
 
   if (catalogHeader && isMediaAboveLaptop()) {
@@ -88,36 +83,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     })
   }
-
-  const pricesContainer = body.querySelector('#prices')
-  if (pricesContainer) {
-    noUiSlider.create(pricesContainer, {
-      start: [
-        0,
-        100,
-      ],
-      connect: true,
-      range: {
-        'min': 0,
-        'max': 100,
-      },
-    })
-  }
-
-  const overlay = body.querySelector('[data-modal-overlay]')
-  document.addEventListener('modalOpen', (event: CustomEvent) => {
-    const target = event.target as HTMLElement
-
-    if (target.matches('[data-modal=catalog-filters]')) {
-      overlay.classList.add('active')
-    }
-  })
-  document.addEventListener('modalClose', (event: CustomEvent) => {
-    const target = event.target as HTMLElement
-    if (target.matches('[data-modal=catalog-filters]')) {
-      overlay.classList.remove('active')
-    }
-  })
 
   document.addEventListener('click', (event) => {
     const target = event.target as HTMLElement
