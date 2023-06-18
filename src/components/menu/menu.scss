@@ -214,25 +214,4 @@
       letter-spacing: 1px;
     }
   }
-
-  &-overlay {
-    position: fixed;
-    z-index: 101;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(#51504f, 0.5);
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.5s;
-
-    &.active {
-      opacity: 1;
-      pointer-events: auto;
-      //@include mediaLaptop {
-      //  z-index: 98;
-      //}
-    }
-  }
 }

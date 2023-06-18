@@ -27,7 +27,7 @@ export class Menu {
       ],
       buttonMobileOpen: '[data-menu=mobile-open]',
       buttonMobileClose: '[data-menu=mobile-close]',
-      overlay: '[data-menu=overlay]',
+      overlay: '[data-modal-overlay]',
     }
     this.media = '(min-width: 1280px)'
   }

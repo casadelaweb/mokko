@@ -104,7 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
     })
   }
 
-  const overlay = body.querySelector('[data-menu=overlay]')
+  const overlay = body.querySelector('[data-modal-overlay]')
   document.addEventListener('modalOpen', (event: CustomEvent) => {
     const target = event.target as HTMLElement
 

@@ -120,8 +120,12 @@
     @include flex(center);
     margin-top: auto;
     @include mediaOnlyMobileAndTablets {
-      padding: ($containerPaddingMobile * 2) $containerPaddingMobile;
+      position: sticky;
+      z-index: 1;
+      bottom: 0;
+      background: white;
       box-shadow: 0 -2px 4px rgba(81, 80, 79, 0.25);
+      padding: ($containerPaddingMobile * 2) $containerPaddingMobile;
     }
   }
 
