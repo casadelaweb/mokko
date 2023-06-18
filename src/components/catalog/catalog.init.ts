@@ -5,7 +5,6 @@ import { accessibility as accessibilitySettings } from 'src/scripts/swiper-setti
 import { Catalog } from 'src/components/catalog/catalog'
 import { isMediaAboveLaptop } from 'src/scripts/helpers'
 import './catalog.filters'
-import './catalog.prices'
 
 document.addEventListener('DOMContentLoaded', () => {
   new Swiper('[data-slider=catalog-card]', {

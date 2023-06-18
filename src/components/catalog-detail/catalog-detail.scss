@@ -89,6 +89,29 @@
       }
     }
   }
+
+  &-info {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: $containerPaddingMobile * 1.5;
+    // padding: 0 ($containerPaddingMobile * 2);
+    @include detailsMobile;
+
+    .details {
+      &-summary {
+        padding-left: $containerPaddingMobile * 2;
+      }
+
+      &-button {
+        left: 0
+      }
+
+      //&-body {
+      //  margin-left: $containerPaddingMobile * -2;
+      //}
+    }
+
+  }
 }
 
 

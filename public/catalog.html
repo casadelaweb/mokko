@@ -14,6 +14,7 @@
   <main class="main">
     <section class="catalog">
       <div class="catalog-container">
+
         <div class="catalog-header mobile">
           <h1 class="catalog-title">Каталог</h1>
 
@@ -27,6 +28,7 @@
             <img alt="img" loading="lazy" src="src/assets/img/icons/squares.png">
           </button>
         </div>
+
         <div class="catalog-layout" data-catalog="layout">
 
           <div class="filters" data-modal="catalog-filters">
@@ -107,7 +109,13 @@
                   </span>
                     <span class="details-selected"></span>
                   </summary>
-                  <div class="details-body" data-details="body"></div>
+                  <div class="details-body" data-details="body">
+                    <div class="select-prices">
+                      <input class="select-input" placeholder="от 1 999 ₽" type="text">
+                      <input class="select-input" placeholder="до 29 999 ₽" type="text">
+                    </div>
+                    <div data-catalog-prices></div>
+                  </div>
                 </details>
                 <details class="details" data-details="details">
                   <summary class="details-summary" data-details="summary">
@@ -157,6 +165,7 @@
 
             <div class="catalog-header desktop" data-catalog="header-desktop">
               <h1 class="catalog-title">Каталог</h1>
+
               <div class="catalog-filters">
                 <div class="select" data-select>
                   <div class="select-current">
@@ -203,7 +212,7 @@
                       <input class="select-input" placeholder="от 1 999 ₽" type="text">
                       <input class="select-input" placeholder="до 29 999 ₽" type="text">
                     </div>
-                    <div id="prices"></div>
+                    <div data-catalog-prices></div>
 
                     <button class="select-button" type="button">
                       <span>Применить</span>
@@ -276,6 +285,7 @@
                     </label>
                   </form>
                 </div>
+
               </div>
 
               <button class="catalog-header-button" data-catalog-layout="row"
@@ -358,6 +368,7 @@
             <button class="catalog-more" data-catalog="update" type="button">
               <span>Показать еще</span>
             </button>
+            
             <div class="catalog-pagination">
 
               <a class="catalog-pagination-prev" href="catalog.html">
@@ -394,32 +405,6 @@
 
         </div>
 
-        <div class="catalog-menu-mobile modal" data-modal="catalog-menu-mobile">
-          <div class="modal-content">
-            <div class="catalog-menu-mobile-header">
-              <span>Фильтры</span>
-              <button data-modal-close>
-                <img alt="img" loading="lazy" src="src/assets/img/icons/close.png">
-              </button>
-            </div>
-            <div class="catalog-menu-mobile-body">
-              <div>Цвет</div>
-              <div>Цена</div>
-              <div>Размер</div>
-              <div>Сортировать</div>
-              <div>Категории</div>
-            </div>
-            <div class="catalog-menu-mobile-footer">
-              <button type="button">
-                <span>Сбросить всё</span>
-              </button>
-
-              <button type="button">
-                <span>Применить</span>
-              </button>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   </main>
