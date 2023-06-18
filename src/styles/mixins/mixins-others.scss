@@ -28,3 +28,56 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+
+@mixin scrollbar {
+  @media screen and (any-hover: hover) {
+    &::-webkit-scrollbar {
+      width: 10px
+    }
+    &::-webkit-scrollbar-track {
+      background: white;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: #51504f;
+      border: 3px solid white;
+    }
+  }
+}
+
+@mixin detailsMobile {
+  .details {
+    &-summary {
+      position: relative;
+      z-index: 0;
+
+      &-link {
+        font-size: 18px;
+      }
+    }
+
+    &.is-opening, &.open {
+      .details-button {
+        transform: rotate(-90deg);
+      }
+    }
+
+    &-button {
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      left: $containerPaddingMobile * -2;
+      width: $containerPaddingMobile;
+    }
+
+    &-body {
+      padding: $containerPaddingMobile 0 0;
+      font-size: 14px;
+      letter-spacing: 0.02em;
+    }
+
+    &-link {
+      display: inline-block;
+      margin-bottom: 1em;
+    }
+  }
+}

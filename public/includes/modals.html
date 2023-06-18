@@ -1,5 +1,5 @@
 <div id="modals">
-  <div class="modal" data-modal="make-an-appointment">
+  <div class="modal" data-modal="appointment">
     <div class="modal-content">
       <button class="modal-close" data-modal-close type="button">закрыть</button>
       Здесь будет модальное окно.
@@ -90,104 +90,113 @@
         </div>
       </div>
       <div class="menu-mobile">
-        <div class="menu-mobile-top">
-          <button class="menu-mobile-button-close" data-menu="mobile-close" data-modal-close type="button">
+        <div class="menu-mobile-header">
+          <button class="menu-mobile-close" data-menu="mobile-close" data-modal-close type="button">
             <img alt="img" loading="lazy" src="src/assets/img/icons/close.png">
           </button>
         </div>
-        <button class="header-button-purple" data-modal-open="make-an-appointment" type="button">
-          <span>Записаться к стилисту</span>
-        </button>
-        <div class="menu-mobile-main">
-          <a class="menu-mobile-link" href="404.html">Новинки</a>
-          <details class="details" data-details="details">
-            <summary class="details-summary" data-details="summary">
-              <button class="details-button" data-details="button" type="button">
-                <img alt="img" loading="lazy" src="src/assets/img/icons/arrow-down.png">
-              </button>
-              <a class="menu-mobile-link" href="catalog.html">Каталог</a>
-            </summary>
-            <div class="details-body" data-details="body">
-              <a class="details-link" href="catalog.html">Платья</a>
-              <a class="details-link" href="catalog.html">Нарядная одежда</a>
-              <a class="details-link" href="catalog.html">Блузы и рубашки</a>
-              <a class="details-link" href="catalog.html">Брюки и юбки</a>
-              <a class="details-link" href="catalog.html">Верхняя одежда</a>
-              <a class="details-link" href="catalog.html">Джемперы и кардиганы</a>
-              <a class="details-link" href="catalog.html">Костюмы и жакеты</a>
-              <a class="details-link" href="catalog.html">Футболки и топы</a>
-              <a class="details-link" href="catalog.html">Аксессуары</a>
-              <a class="details-link" href="catalog.html">Смотреть всё</a>
-            </div>
-          </details>
-          <a class="menu-mobile-link" href="404.html">SALE</a>
-          <a class="menu-mobile-link" href="404.html">Магазины</a>
-          <details class="details" data-details="details">
-            <summary class="details-summary" data-details="summary">
-              <button class="details-button" data-details="button" type="button">
-                <img alt="img" loading="lazy" src="src/assets/img/icons/arrow-down.png">
-              </button>
-              <a class="menu-mobile-link" href="404.html">Информация</a>
-            </summary>
-            <div class="details-body" data-details="body">
-              <a class="details-link" href="404.html">Ссылка с коротким текстом</a>
-              <a class="details-link" href="404.html">
-                Ссылка с относительно длинным текстом длиной в несколько строк
-              </a>
-            </div>
-          </details>
-          <details class="details" data-details="details">
-            <summary class="details-summary" data-details="summary">
-              <button class="details-button" data-details="button" type="button">
-                <img alt="img" loading="lazy" src="src/assets/img/icons/arrow-down.png">
-              </button>
-              <a class="menu-mobile-link" href="404.html">Личный кабинет</a>
-            </summary>
-            <div class="details-body" data-details="body">
-              <a class="details-link" href="404.html">Ссылка с коротким текстом</a>
-              <a class="details-link" href="404.html">
-                Ссылка с относительно длинным текстом длиной в несколько строк
-              </a>
-            </div>
-          </details>
-          <details class="details" data-details="details">
-            <summary class="details-summary" data-details="summary">
-              <button class="details-button" data-details="button" type="button">
-                <img alt="img" loading="lazy" src="src/assets/img/icons/arrow-down.png">
-              </button>
-              <a class="menu-mobile-link" href="404.html">Связаться с нами</a>
-            </summary>
-            <div class="details-body" data-details="body">
-              <a class="details-link" href="404.html">Ссылка с коротким текстом</a>
-              <a class="details-link" href="404.html">
-                Ссылка с относительно длинным текстом длиной в несколько строк
-              </a>
-            </div>
-          </details>
-        </div>
-        <form class="form menu-form">
-          <label class="menu-form-label form-label" for="menu-mobile-input"> Подписка на новости </label>
-          <div class="menu-form-layout">
-            <div class="form-main">
-              <input
-                autocomplete="off"
-                class="form-input"
-                id="menu-mobile-input"
-                name="email"
-                placeholder="Введите ваш e-mail"
-                required
-                type="text"
-              >
-              <button class="form-button" type="submit">
-                <img alt="img" loading="lazy" src="src/assets/img/icons/arrow-right.png">
-              </button>
-            </div>
-            <div class="form-warning">
-              Подписываясь на рассылку, вы соглашаетесь <br>
-              с условиями <a href="404.html">политики конфиденциальности</a>
-            </div>
+
+        <div class="menu-mobile-body">
+          <button class="header-button-purple" data-modal-open="appointment" type="button">
+            <span>Записаться к стилисту</span>
+          </button>
+
+          <div class="menu-mobile-links">
+            <a class="menu-mobile-link" href="404.html">Новинки</a>
+            <details class="details" data-details="details">
+              <summary class="details-summary" data-details="summary">
+                <button class="details-button" data-details="button" type="button">
+                  <img alt="img" loading="lazy" src="src/assets/img/icons/arrow-down.png">
+                </button>
+                <a class="details-summary-link" href="catalog.html">Каталог</a>
+              </summary>
+              <div class="details-body" data-details="body">
+                <a class="details-link" href="catalog.html">Платья</a>
+                <a class="details-link" href="catalog.html">Нарядная одежда</a>
+                <a class="details-link" href="catalog.html">Блузы и рубашки</a>
+                <a class="details-link" href="catalog.html">Брюки и юбки</a>
+                <a class="details-link" href="catalog.html">Верхняя одежда</a>
+                <a class="details-link" href="catalog.html">Джемперы и кардиганы</a>
+                <a class="details-link" href="catalog.html">Костюмы и жакеты</a>
+                <a class="details-link" href="catalog.html">Футболки и топы</a>
+                <a class="details-link" href="catalog.html">Аксессуары</a>
+                <a class="details-link" href="catalog.html">Смотреть всё</a>
+              </div>
+            </details>
+            <a class="menu-mobile-link" href="404.html">SALE</a>
+            <a class="menu-mobile-link" href="404.html">Магазины</a>
+            <details class="details" data-details="details">
+              <summary class="details-summary" data-details="summary">
+                <button class="details-button" data-details="button" type="button">
+                  <img alt="img" loading="lazy" src="src/assets/img/icons/arrow-down.png">
+                </button>
+                <a class="details-summary-link" href="404.html">Информация</a>
+              </summary>
+              <div class="details-body" data-details="body">
+                <a class="details-link" href="404.html">Ссылка с коротким текстом</a>
+                <a class="details-link" href="404.html">
+                  Ссылка с относительно длинным текстом длиной в несколько строк
+                </a>
+              </div>
+            </details>
+            <details class="details" data-details="details">
+              <summary class="details-summary" data-details="summary">
+                <button class="details-button" data-details="button" type="button">
+                  <img alt="img" loading="lazy" src="src/assets/img/icons/arrow-down.png">
+                </button>
+                <a class="details-summary-link" href="404.html">Личный кабинет</a>
+              </summary>
+              <div class="details-body" data-details="body">
+                <a class="details-link" href="404.html">Ссылка с коротким текстом</a>
+                <a class="details-link" href="404.html">
+                  Ссылка с относительно длинным текстом длиной в несколько строк
+                </a>
+              </div>
+            </details>
+            <details class="details" data-details="details">
+              <summary class="details-summary" data-details="summary">
+                <button class="details-button" data-details="button" type="button">
+                  <img alt="img" loading="lazy" src="src/assets/img/icons/arrow-down.png">
+                </button>
+                <a class="details-summary-link" href="404.html">Связаться с нами</a>
+              </summary>
+              <div class="details-body" data-details="body">
+                <a class="details-link" href="404.html">Ссылка с коротким текстом</a>
+                <a class="details-link" href="404.html">
+                  Ссылка с относительно длинным текстом длиной в несколько строк
+                </a>
+              </div>
+            </details>
           </div>
-        </form>
+
+        </div>
+
+        <div class="menu-mobile-footer">
+          <form class="form menu-form">
+            <label class="menu-form-label form-label" for="menu-mobile-input"> Подписка на новости </label>
+            <div class="menu-form-layout">
+              <div class="form-main">
+                <input
+                  autocomplete="off"
+                  class="form-input"
+                  id="menu-mobile-input"
+                  name="email"
+                  placeholder="Введите ваш e-mail"
+                  required
+                  type="text"
+                >
+                <button class="form-button" type="submit">
+                  <img alt="img" loading="lazy" src="src/assets/img/icons/arrow-right.png">
+                </button>
+              </div>
+              <div class="form-warning">
+                Подписываясь на рассылку, вы соглашаетесь <br>
+                с условиями <a href="404.html">политики конфиденциальности</a>
+              </div>
+            </div>
+          </form>
+        </div>
+
       </div>
     </div>
   </nav>

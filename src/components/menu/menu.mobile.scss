@@ -1,0 +1,42 @@
+@import "src/styles/shared";
+
+.menu-mobile {
+  @include flex($d: column);
+  min-height: 100%;
+  @include mediaLaptop {
+    display: none;
+  }
+
+  &-header, &-body {
+    border-bottom: 2px solid #e9e9e9;
+  }
+
+  &-header, &-body, &-footer {
+    padding: $containerPaddingMobile;
+  }
+
+  &-footer {
+    margin-top: auto;
+  }
+
+  &-close {
+    width: 18px;
+    height: 18px;
+  }
+
+  &-links {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: $containerPaddingMobile * 1.5;
+    padding: 0 ($containerPaddingMobile * 2);
+  }
+
+  @include detailsMobile;
+
+  .form {
+    @include mediaOnlyTablets {
+      padding: 28px 0;
+    }
+  }
+}
+

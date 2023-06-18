@@ -12,21 +12,10 @@
     z-index: 105;
     width: 320px;
     transform: translate(calc(-100% - 100px), 0);
-    padding: $containerPaddingMobile 0 ($containerPaddingMobile * 2);
+    // padding: $containerPaddingMobile 0 ($containerPaddingMobile * 2);
     overflow-y: auto;
     height: 100%;
-    @media screen and (any-hover: hover) {
-      &::-webkit-scrollbar {
-        width: 10px
-      }
-      &::-webkit-scrollbar-track {
-        background: white;
-      }
-      &::-webkit-scrollbar-thumb {
-        background: #51504f;
-        border: 3px solid white;
-      }
-    }
+    @include scrollbar;
   }
 
   @include mediaLaptop {
@@ -35,6 +24,7 @@
     overflow: unset;
     padding: 56px 0;
     width: 100%;
+    box-shadow: 12px 12px 24px 0 rgba(black, 0.1);
   }
 
   &.active {
@@ -44,8 +34,8 @@
 
   &-container {
     @extend .container;
-    @include mediaOnlyTablets {
-      padding: 0 $containerPaddingMobile;
+    @include mediaOnlyMobileAndTablets {
+      padding: 0;
       height: 100%;
     }
   }
@@ -54,53 +44,6 @@
     display: none;
     @include mediaLaptop {
       @include flex($j: space-between);
-    }
-  }
-
-  &-mobile {
-    @include flex($d: column);
-    @include mediaOnlyTablets {
-      min-height: 100%;
-    }
-    @include mediaLaptop {
-      display: none;
-    }
-
-    &-top {
-      padding-bottom: 10px;
-      border-bottom: 2px solid #e9e9e9;
-      margin-bottom: 14px;
-      @include mediaOnlyTablets {
-        padding: 15px 0;
-      }
-    }
-
-    &-button-close {
-      width: 18px;
-      height: 18px;
-    }
-
-    $this: &;
-
-    &-main {
-      display: grid;
-      grid-template-columns: 1fr;
-      row-gap: 15px;
-      padding-bottom: 40px;
-
-      & > #{$this}-link {
-        margin-left: 24px;
-      }
-    }
-
-    &-link {
-      font-size: 17px;
-    }
-
-    .form {
-      @include mediaOnlyTablets {
-        padding: 28px 0;
-      }
     }
   }
 
@@ -135,14 +78,7 @@
   &-form {
     max-width: none;
     margin-top: auto;
-    padding-top: 28px;
-    border-top: 2px solid #e9e9e9;
-
-    @include mediaLaptop {
-      padding: 0;
-      border-top: 0;
-    }
-
+    
     &-layout {
       @include mediaLaptop {
         @include flex(center);

@@ -1,13 +1,9 @@
-import { globalScrollController } from 'src/scripts/global-scroll-controller'
-import { modals } from 'src/scripts/modals-instance'
 import { menuElements, menuSelectors } from 'src/components/menu/menu.types'
 import { isMediaAboveLaptop } from 'src/scripts/helpers'
 
 export class Menu {
   public elements: menuElements
   private readonly selectors: menuSelectors
-  // eslint-disable-next-line no-unused-vars
-  // private readonly onClick: (event) => void
   private readonly onResize: () => void
 
   constructor() {
@@ -17,22 +13,18 @@ export class Menu {
       menu: null,
       buttonsDesktopClose: [],
       buttonDesktopOpen: null,
-      buttonMobileOpen: null,
-      buttonMobileClose: null,
     }
     this.selectors = {
-      header: '.header',
-      menu: '.menu',
+      header: 'header',
+      menu: '[data-modal=menu]',
       buttonDesktopOpen: '[data-menu=desktop-open]',
       buttonsDesktopClose: [
         'a',
         'button',
       ],
-      buttonMobileOpen: '[data-menu=mobile-open]',
-      buttonMobileClose: '[data-menu=mobile-close]',
       overlay: '[data-modal-overlay]',
     }
-    // this.onClick = this.handleClick.bind(this)
+
     this.onResize = this.handleResize.bind(this)
   }
 
@@ -42,32 +34,8 @@ export class Menu {
     this.listen()
   }
 
-  public open(): void {
-    const { overlay, menu, } = this.elements
-
-    overlay.classList.add('active')
-    menu.classList.add('active')
-
-    globalScrollController.update()
-    globalScrollController.lock()
-    modals.parameters.counter++
-  }
-
-  public close(): void {
-    const { overlay, menu, } = this.elements
-
-    overlay.classList.remove('active')
-    menu.classList.remove('active')
-
-    globalScrollController.update()
-    globalScrollController.unlock()
-    modals.parameters.counter--
-  }
-
   private listen(): void {
-    const { header, buttonsDesktopClose, buttonDesktopOpen, menu, } = this.elements
-
-    // document.addEventListener('click', this.onClick)
+    const { buttonsDesktopClose, buttonDesktopOpen, menu, } = this.elements
 
     buttonsDesktopClose.forEach((button) => {
       button.addEventListener('mouseenter', () => {
@@ -78,12 +46,13 @@ export class Menu {
     })
     buttonDesktopOpen.addEventListener('mouseenter', () => {
       if (isMediaAboveLaptop()) {
-        header.classList.add('hovered')
+        // header.classList.add('active')
         menu.classList.add('active')
       }
     })
     menu.addEventListener('mouseleave', () => {
       if (isMediaAboveLaptop()) {
+        // header.classList.remove(('active'))
         menu.classList.remove('active')
       }
     })
@@ -108,17 +77,13 @@ export class Menu {
       const buttons: HTMLElement[] = Array.from(this.elements.header.querySelectorAll(selector))
 
       buttons.forEach((button: HTMLElement) => {
-        if (!button.matches(selectors.buttonDesktopOpen) &&
-          !button.matches(selectors.buttonMobileOpen) &&
-          !button.matches(selectors.buttonMobileClose)) {
+        if (!button.matches(selectors.buttonDesktopOpen)) {
           this.elements.buttonsDesktopClose.push(button)
         }
       })
     })
 
     this.elements.buttonDesktopOpen = body.querySelector(selectors.buttonDesktopOpen)
-    this.elements.buttonMobileClose = body.querySelector(selectors.buttonMobileClose)
-    this.elements.buttonMobileOpen = body.querySelector(selectors.buttonMobileOpen)
   }
 
   private updateMenuStyles(): void {
@@ -129,19 +94,5 @@ export class Menu {
     } else {
       menu.style.top = '0px'
     }
-  }
-
-  // private handleClick(event: MouseEvent): void {
-  //   const target = event.target as HTMLElement
-  //
-  //   if (target.closest(this.selectors.buttonMobileOpen)) this.open()
-  //   if (target.closest(this.selectors.buttonMobileClose)) this.close()
-  //   if (target.closest(this.selectors.overlay)) this.close()
-  // }
-
-  private handleMouseEnter(event: MouseEvent): void {
-  }
-
-  private handleMouseLeave(event: MouseEvent): void {
   }
 }

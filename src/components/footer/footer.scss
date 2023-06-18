@@ -22,7 +22,8 @@
   &-middle {
     display: grid;
     grid-template-columns: 1fr;
-    row-gap: 28px;
+    row-gap: $containerPaddingMobile * 1.5;
+    padding: 0 ($containerPaddingMobile * 3);
   }
 
   &-middle, &-bottom {
@@ -34,6 +35,8 @@
   .form-main {
     margin-bottom: 18px;
   }
+
+  @include detailsMobile;
 }
 
 .ft {
@@ -75,14 +78,7 @@
     row-gap: 16px;
 
     a, button {
-      display: inline-block;
-      width: fit-content;
       font-size: 14px;
-      letter-spacing: 0.02em;
-    }
-
-    button {
-      color: #766cff;
     }
   }
 
@@ -138,14 +134,7 @@
     font-size: 17px;
 
     a, button {
-      display: inline-block;
-      width: fit-content;
-      margin-bottom: 16px;
-    }
-
-    button {
-      color: #766cff;
-      text-align: left;
+      margin-bottom: 1em;
     }
   }
 

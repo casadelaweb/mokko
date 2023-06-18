@@ -20,13 +20,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   })
   header.addEventListener('mouseleave', () => {
-    if (isMediaAboveLaptop()
-      && !menu.elements.menu.matches('.active')) {
+    if (isMediaAboveLaptop() && !menu.elements.menu.matches('.active')) {
       header.classList.remove('hovered')
     }
   })
 
-  window.addEventListener('scroll', () => {
+  function hoverHeader() {
     const { scrollY, } = window
 
     if (scrollY > headerHeight) {
@@ -34,5 +33,8 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       header.classList.remove('scrolled')
     }
-  })
+  }
+
+  hoverHeader()
+  window.addEventListener('scroll', hoverHeader)
 })

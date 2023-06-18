@@ -28,7 +28,7 @@ class Modals {
         buttonOpen: '[data-modal-open]',
         buttonClose: '[data-modal-close]',
         buttonToggle: '[data-modal-toggle]',
-        header: '[data-header]',
+        header: 'header',
       },
       transition: {
         duration: 333,

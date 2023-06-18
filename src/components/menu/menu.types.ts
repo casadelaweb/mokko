@@ -2,10 +2,8 @@ export interface menuElements {
   overlay: HTMLElement,
   header: HTMLElement,
   menu: HTMLElement,
-  buttonsDesktopClose: HTMLElement[] | [],
+  buttonsDesktopClose: HTMLElement[],
   buttonDesktopOpen: HTMLElement,
-  buttonMobileOpen: HTMLElement,
-  buttonMobileClose: HTMLElement,
 }
 
 export interface menuSelectors {
@@ -14,6 +12,4 @@ export interface menuSelectors {
   menu: string,
   buttonsDesktopClose: string[],
   buttonDesktopOpen: string,
-  buttonMobileOpen: string,
-  buttonMobileClose: string,
 }
