@@ -35,9 +35,14 @@
   }
 
   &-sticky {
+    @include flex($d: column);
     @include mediaOnlyMobileAndTablets {
       height: 100%;
-      position: static;
+    }
+    @include mediaLaptop {
+      position: sticky;
+      z-index: 0;
+      top: 100px;
     }
   }
 
@@ -49,6 +54,12 @@
     text-transform: uppercase;
     @include mediaLaptop {
       padding-left: 0;
+    }
+  }
+
+  &-close {
+    @include mediaLaptop {
+      display: none;
     }
   }
 

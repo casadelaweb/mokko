@@ -16,6 +16,10 @@ class Modals {
   private readonly onClose: any
   private readonly onBeforeOpen: any
   private readonly onBeforeClose: any
+  // eslint-disable-next-line no-unused-vars
+  private readonly onClick: (event) => void
+  // eslint-disable-next-line no-unused-vars
+  private readonly onKeyUp: (event) => void
 
   constructor({ hooks, }) {
     this.options = {
@@ -34,12 +38,16 @@ class Modals {
       },
     }
     this.hooks = {
+      // eslint-disable-next-line @typescript-eslint/no-empty-function
       beforeOpen() {
       },
+      // eslint-disable-next-line @typescript-eslint/no-empty-function
       open() {
       },
+      // eslint-disable-next-line @typescript-eslint/no-empty-function
       beforeClose() {
       },
+      // eslint-disable-next-line @typescript-eslint/no-empty-function
       close() {
       },
       ...hooks,
@@ -49,6 +57,8 @@ class Modals {
     this.onClose = this.hooks.close.bind(this)
     this.onBeforeOpen = this.hooks.beforeOpen.bind(this)
     this.onBeforeClose = this.hooks.beforeClose.bind(this)
+    this.onClick = this.handleClick.bind(this)
+    this.onKeyUp = this.handleKeyUp.bind(this)
 
     this.parameters = {
       counter: 0,
@@ -124,53 +134,66 @@ class Modals {
   }
 
   private listen(): void {
+    document.removeEventListener('click', this.onClick)
+    document.removeEventListener('keyup', this.onKeyUp)
+
+    document.addEventListener('click', this.onClick)
+    document.addEventListener('keyup', this.onKeyUp)
+  }
+
+  private handleClick(event: MouseEvent): void {
     const { body, } = document
     const { selectors, } = this.options
 
-    document.addEventListener('click', (event: MouseEvent) => {
-      const { target, }: { target: HTMLElement } = event
-      const conditions = {
-        buttonOpen: target.closest(selectors.buttonOpen),
-        buttonClose: target.closest(selectors.buttonClose),
-        buttonToggle: target.closest(selectors.buttonToggle),
+    const { target, }: { target: HTMLElement } = event
+    const conditions = {
+      buttonOpen: target.closest(selectors.buttonOpen),
+      buttonClose: target.closest(selectors.buttonClose),
+      buttonToggle: target.closest(selectors.buttonToggle),
+    }
+
+    if (conditions.buttonOpen) {
+      const { buttonOpen: button, } = conditions
+      const attribute = selectors.buttonOpen.slice(1, -1)
+      const modal: HTMLElement = body.querySelector('[data-modal=' + button.getAttribute(attribute) + ']')
+      if (modal) this.activateModal(modal, button)
+    }
+    if (conditions.buttonClose) {
+      const { buttonClose: button, } = conditions
+      let modal: HTMLElement
+
+      if (button.getAttribute(selectors.buttonClose)) {
+        const attribute = selectors.buttonClose.slice(1, -1)
+        modal = body.querySelector('[data-modal=' + button.getAttribute(attribute) + ']')
+      } else {
+        modal = button.closest(selectors.modal)
       }
 
-      if (conditions.buttonOpen) {
-        const { buttonOpen: button, } = conditions
-        const attribute = selectors.buttonOpen.slice(1, -1)
-        const modal = body.querySelector('[data-modal=' + button.getAttribute(attribute) + ']')
-        if (modal) this.activateModal(modal, button)
-      }
-      if (conditions.buttonClose) {
-        const { buttonClose: button, } = conditions
-        let modal: HTMLElement
+      if (modal) this.deactivateModal(modal, button)
+    }
+    if (conditions.buttonToggle) {
+      const { buttonToggle: button, } = conditions
+      const attribute = selectors.buttonToggle.slice(1, -1)
+      const modal: HTMLElement = body.querySelector('[data-modal=' + button.getAttribute(attribute) + ']')
+      if (modal) this.toggleModal(modal, button)
+    }
+  }
 
-        if (button.getAttribute(selectors.buttonClose)) {
-          const attribute = selectors.buttonClose.slice(1, -1)
-          modal = body.querySelector('[data-modal=' + button.getAttribute(attribute) + ']')
-        } else {
-          modal = button.closest(selectors.modal)
-        }
+  private handleKeyUp(event: KeyboardEvent): void {
+    const { body, } = document
 
-        if (modal) this.deactivateModal(modal, button)
-      }
-      if (conditions.buttonToggle) {
-        const { buttonToggle: button, } = conditions
-        const attribute = selectors.buttonToggle.slice(1, -1)
-        const modal = body.querySelector('[data-modal=' + button.getAttribute(attribute) + ']')
-        if (modal) this.toggleModal(modal, button)
-      }
-    })
-    document.addEventListener('keyup', (event: KeyboardEvent) => {
-      if (event.code === 'Escape' && this.parameters.counter > 0) {
-        this.deactivateModal(this.parameters.current, {
-          type: 'keyup',
-          key: 'Escape',
-          element: false,
-          boundedWith: body.querySelector('[data-modal-open]'),
-        })
-      }
-    })
+    if (event.code === 'Escape' &&
+      this.parameters.counter > 0 &&
+      this.parameters.current instanceof HTMLElement) {
+
+      this.deactivateModal(this.parameters.current, {
+        type: 'keyup',
+        key: 'Escape',
+        element: false,
+        boundedWith: body.querySelector('[data-modal-open]'),
+      })
+
+    }
   }
 }
 

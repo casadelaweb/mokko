@@ -94,26 +94,6 @@
     }
   }
 
-  &-categories {
-    display: none;
-    @include mediaLaptop {
-      display: block;
-    }
-
-    &-title {
-      font-size: 17px;
-      letter-spacing: 0.02em;
-      margin-bottom: 1.25em;
-    }
-
-    &-sticky {
-      @include flex($d: column);
-      position: sticky;
-      z-index: 0;
-      top: 100px;
-    }
-  }
-
   &-category {
     font-size: 15px;
     letter-spacing: 0.02em;
