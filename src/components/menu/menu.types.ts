@@ -1,11 +1,11 @@
 export interface menuElements {
-  overlay: HTMLElement | null,
-  header: HTMLElement | null,
-  menu: HTMLElement | null,
+  overlay: HTMLElement,
+  header: HTMLElement,
+  menu: HTMLElement,
   buttonsDesktopClose: HTMLElement[] | [],
-  buttonDesktopOpen: HTMLElement | null,
-  buttonMobileOpen: HTMLElement | null,
-  buttonMobileClose: HTMLElement | null,
+  buttonDesktopOpen: HTMLElement,
+  buttonMobileOpen: HTMLElement,
+  buttonMobileClose: HTMLElement,
 }
 
 export interface menuSelectors {

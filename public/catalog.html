@@ -18,7 +18,7 @@
         <div class="catalog-header mobile">
           <h1 class="catalog-title">Каталог</h1>
 
-          <button class="catalog-header-button" data-modal-open="catalog-menu-mobile" type="button">
+          <button class="catalog-header-button" data-modal-open="catalog-filters" type="button">
             <img alt="img" loading="lazy" src="src/assets/img/icons/filters.png">
           </button>
           <button class="catalog-header-button" data-catalog-layout="row" type="button">
@@ -30,11 +30,11 @@
         </div>
         <div class="catalog-layout" data-catalog="layout">
 
-          <div class="catalog-categories">
-            <div class="catalog-categories-sticky filters">
+          <div class="catalog-categories filters" data-modal="catalog-filters">
+            <div class="catalog-categories-sticky filters-sticky">
               <div class="filters-header">
                 <span>Фильтры</span>
-                <button type="button">
+                <button data-modal-close type="button">
                   <img alt="img" loading="lazy" src="src/assets/img/icons/close.png">
                 </button>
               </div>
@@ -356,7 +356,7 @@
               end;
             </div>
 
-            <button class="catalog-more" type="button">
+            <button class="catalog-more" data-catalog="update" type="button">
               <span>Показать еще</span>
             </button>
             <div class="catalog-pagination">

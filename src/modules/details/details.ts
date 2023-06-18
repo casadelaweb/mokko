@@ -154,13 +154,15 @@ export class Details {
   private handleClick(event: MouseEvent): void {
     const target = event.target as HTMLElement
 
-    if (target.closest(this.selectors.summary)) {
+    const condition = target.closest(this.selectors.summary) || target.closest(this.selectors.button)
+
+    if (condition && !target.closest('a[href]')) {
+      event.preventDefault()
+
       const summary = target.closest(this.selectors.summary)
       const data: elementData = this.elements.find((data: elementData) => {
         return data.summary === summary ? data : false
       })
-
-      if (!this.options.preferButtonIfExist && !target.closest(this.selectors.button)) event.preventDefault()
 
       data.details.style.overflow = 'hidden'
       if (data.parameters.isClosing || !data.parameters.isOpen) {

@@ -10,7 +10,7 @@ import './no-ui-slider.scss'
 import { isMediaAboveLaptop } from 'src/scripts/helpers'
 
 document.addEventListener('DOMContentLoaded', () => {
-  const catalogCardSlider = new Swiper('[data-slider=catalog-card]', {
+  new Swiper('[data-slider=catalog-card]', {
     modules: [
       Navigation,
       A11y,
@@ -104,10 +104,25 @@ document.addEventListener('DOMContentLoaded', () => {
     })
   }
 
+  const overlay = body.querySelector('[data-menu=overlay]')
+  document.addEventListener('modalOpen', (event: CustomEvent) => {
+    const target = event.target as HTMLElement
+
+    if (target.matches('[data-modal=catalog-filters]')) {
+      overlay.classList.add('active')
+    }
+  })
+  document.addEventListener('modalClose', (event: CustomEvent) => {
+    const target = event.target as HTMLElement
+    if (target.matches('[data-modal=catalog-filters]')) {
+      overlay.classList.remove('active')
+    }
+  })
+
   document.addEventListener('click', (event) => {
     const target = event.target as HTMLElement
 
-    if (target.closest('.catalog-more')) {
+    if (target.closest('[data-catalog=update]')) {
       catalog.update()
     }
   })
