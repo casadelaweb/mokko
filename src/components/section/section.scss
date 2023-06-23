@@ -37,6 +37,12 @@
     }
   }
 
+  &-button {
+    .icon-arrow-right {
+      font-size: 12px;
+    }
+  }
+
   &-layout {
     margin-bottom: 30px;
     @include mediaTablet {

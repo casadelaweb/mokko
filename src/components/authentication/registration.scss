@@ -3,12 +3,16 @@
 .registration {
   @include flex($d: column);
   background: white;
-  width: 400px;
   min-height: 490px;
-  padding: 40px 48px 48px;
   font-size: 14px;
   position: relative;
   z-index: 0;
+  width: calc(100% - 32px);
+  padding: 24px 16px 40px;
+  @include mediaTablet {
+    padding: 40px 48px 48px;
+    width: 400px;
+  }
 
   &-close {
     position: absolute;

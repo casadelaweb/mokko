@@ -23,6 +23,7 @@
 
   &-button {
     transition: transform 0.5s;
+    font-size: 12px;
 
     .is-opening &, .open & {
       transform: rotate(90deg);
