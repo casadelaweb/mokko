@@ -5,6 +5,7 @@
       Здесь будет модальное окно.
     </div>
   </div>
+
   <div class="modal" data-modal="catalog-detail-gallery-modal">
     <div class="catalog-detail-gallery-modal">
       <button class="modal-close" data-modal-close type="button">
@@ -200,6 +201,83 @@
       </div>
     </div>
   </nav>
+  
+  <div class="modal" data-modal="registration">
+    <div class="registration">
+      <button class="registration-close" data-modal-close type="button">
+        <span class="iconfont icon-close"></span>
+      </button>
+
+      <h2 class="registration-title">Регистрация</h2>
+
+      <div class="registration-layout">
+
+        <form class="registration-step">
+          <label class="registration-label">
+            <input class="registration-input" name="name" placeholder="Имя *" required type="text">
+          </label>
+          <label class="registration-label">
+            <input class="registration-input" data-mask="tel" name="tel" placeholder="Телефон *" required type="text">
+          </label>
+          <label class="registration-label">
+            <input class="registration-input" data-mask="email" name="email" placeholder="Почта" type="text">
+          </label>
+          <button class="registration-button" type="submit">
+            <span>Зарегистрироваться</span>
+          </button>
+          <label class="registration-policy">
+            <input required type="checkbox">
+            <span>
+            Даю своё согласие на обработку персональных данных в соответствии с
+            <a href="404.html">политикой конфиденциальности</a>
+          </span>
+          </label>
+
+          <a class="registration-link" href="404.html">
+            <span>Войти</span>
+          </a>
+        </form>
+
+        <form class="registration-step" hidden>
+          <label class="registration-label">
+            <input class="registration-input" placeholder="Код из СМС *" required type="text">
+          </label>
+          <div class="registration-message">
+            * Код отправлен на номер +7 (960) 274-44-44
+            Повторная отправка возможна через 60 сек.
+          </div>
+          <button class="registration-button" type="submit">
+            <span>Подтвердить</span>
+          </button>
+          <label class="registration-policy">
+            <input required type="checkbox">
+            <span>
+            Даю своё согласие на обработку персональных данных в соответствии с
+            <a href="404.html">политикой конфиденциальности</a>
+          </span>
+          </label>
+
+          <a class="registration-link" href="404.html">
+            <span>Войти</span>
+          </a>
+        </form>
+
+        <div class="registration-success" hidden>
+          <img alt="img" src="src/assets/img/icons/heart-color.png">
+          <p>Спасибо за регистрацию!</p>
+
+          <p>Вход на сайт осуществляется по номеру телефона. В личном кабинете можно установить пароль и использовать
+            для входа логин (адрес эл. почты).</p>
+
+          <a class="registration-link" href="404.html">
+            <span>Личный кабинет</span>
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
 
   <div class="modal-overlay" data-modal-overlay></div>
 </div>

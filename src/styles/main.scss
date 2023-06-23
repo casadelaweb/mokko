@@ -21,35 +21,16 @@ body {
   }
 }
 
-.section-button {
-  .icon-arrow-right {
-    margin-left: 4px;
-    @include mediaTablet {
-      margin-left: 10px;
-    }
-  }
-}
-
 .swiper-button-prev, .swiper-button-next {
   @include flex(center, center);
 
-  .icon-arrow-left {
-    transform: translateX(-25%);
-  }
-
-  .icon-arrow-right {
-    transform: translateX(25%);
-  }
-}
-
-.icon-arrow-left, .icon-arrow-right {
-  width: 6px;
-  height: 10px;
-
-  @include mediaTablet {
-    width: 8px;
-    height: 14px;
-  }
+  //.icon-arrow-left {
+  //  transform: translateX(-25%);
+  //}
+  //
+  //.icon-arrow-right {
+  //  transform: translateX(25%);
+  //}
 }
 
 .p404 {

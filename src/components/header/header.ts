@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const headerHeight: number = header.offsetHeight
   const main: HTMLElement = body.querySelector('.main')
 
-  const isPageIndex = body.getAttribute('data-page')
+  const isPageIndex: string = body.getAttribute('data-page')
 
   if (isPageIndex !== 'index') {
     header.classList.add('active')

@@ -46,32 +46,7 @@
       padding: 0 48px;
     }
   }
-
-  &-mobile {
-    @include flex(center, space-between);
-
-    @include mediaLaptop {
-      display: none;
-    }
-
-    &-left, &-right {
-      @include flex(center);
-    }
-
-    &-button {
-      flex: 0 0 auto;
-      width: 18px;
-      height: 18px;
-      margin: 0 6px;
-
-      @include mediaTablet {
-        width: 22px;
-        height: 22px;
-        margin: 0 11px;
-      }
-    }
-  }
-
+  
   &-links {
     font-size: 17px;
     letter-spacing: 0.34px;

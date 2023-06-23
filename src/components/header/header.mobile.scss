@@ -1,0 +1,21 @@
+@import "src/styles/shared";
+
+.header-mobile {
+  @include flex(center, space-between);
+  @include mediaLaptop {
+    display: none;
+  }
+
+  &-left, &-right {
+    @include flex(center);
+  }
+
+  &-button {
+    flex: 0 0 auto;
+    font-size: 18px;
+    margin: 0 0.5em;
+    @include mediaTablet {
+      font-size: 22px;
+    }
+  }
+}

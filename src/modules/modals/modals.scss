@@ -30,9 +30,14 @@
     position: relative;
     @include flex(center, center, column);
     background: white;
-    width: 400px;
-    height: 400px;
-    padding: 20px;
+    height: 200px;
+    padding: 24px 16px;
+    max-width: 100%;
+    @include mediaTablet {
+      width: 400px;
+      height: 400px;
+      padding: 20px;
+    }
   }
 
   &-close {
