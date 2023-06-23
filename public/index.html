@@ -26,20 +26,20 @@
       <button class="registration-close" data-modal-close type="button">
         <span class="iconfont icon-close"></span>
       </button>
-      
+
       <h2 class="registration-title">Регистрация</h2>
 
       <div class="registration-layout">
 
         <form class="registration-step">
           <label class="registration-label">
-            <input class="registration-input" placeholder="Имя *" required type="text">
+            <input class="registration-input" name="name" placeholder="Имя *" required type="text">
           </label>
           <label class="registration-label">
-            <input class="registration-input" placeholder="Телефон *" required type="text">
+            <input class="registration-input" data-mask="tel" name="tel" placeholder="Телефон *" required type="text">
           </label>
           <label class="registration-label">
-            <input class="registration-input" placeholder="Почта" type="text">
+            <input class="registration-input" data-mask="email" name="email" placeholder="Почта" type="text">
           </label>
           <button class="registration-button" type="submit">
             <span>Зарегистрироваться</span>

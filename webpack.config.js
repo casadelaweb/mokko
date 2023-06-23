@@ -54,10 +54,10 @@ const htmlPagesRegistered = htmlPages.map((page) => new HtmlWebpackPlugin({
     collapseWhitespace: false,
     keepClosingSlash: false,
     removeComments: isProductionMode,
-    removeRedundantAttributes: true,
+    removeRedundantAttributes: false,
     removeScriptTypeAttributes: true,
     removeStyleLinkTypeAttributes: true,
-    useShortDoctype: true,
+    useShortDoctype: false,
   },
 }))
 
