@@ -1,8 +1,6 @@
 import Swiper, { Pagination, SwiperOptions } from 'swiper'
 import 'swiper/scss'
 import { CSSSelector } from 'swiper/types'
-// import 'swiper/scss/pagination'
-
 
 document.addEventListener('DOMContentLoaded', () => {
   new Swiper('.catalog-detail-gallery-slider' as CSSSelector, {
