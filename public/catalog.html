@@ -19,7 +19,7 @@
           <h1 class="catalog-title">Каталог</h1>
 
           <button class="catalog-header-button" data-modal-open="catalog-filters" type="button">
-            <img alt="img" loading="lazy" src="src/assets/img/icons/filters.png">
+            <span class="iconfont icon-filters"></span>
           </button>
           <button class="catalog-header-button" data-catalog-layout="row" type="button">
             <img alt="img" loading="lazy" src="src/assets/img/icons/square.png">
@@ -36,7 +36,7 @@
               <div class="filters-header">
                 <span>Фильтры</span>
                 <button class="filters-close" data-modal-close type="button">
-                  <img alt="img" loading="lazy" src="src/assets/img/icons/close.png">
+                  <span class="iconfont icon-close"></span>
                 </button>
               </div>
               <div class="filters-body">
@@ -46,10 +46,10 @@
                   <span class="details-summary-content">
                     <span>Категории</span>
                     <button class="details-button" type="button">
-                      <img alt="img" loading="lazy" src="src/assets/img/icons/arrow-down.png">
+                      <span class="iconfont icon-arrow-down"></span>
                     </button>
                   </span>
-                    <span class="details-selected"></span>
+                    <span class=" details-selected"></span>
                   </summary>
                   <div class="details-body" data-details="body">
                     <label><input name="category" type="checkbox"><span>Платья</span></label>
@@ -68,10 +68,10 @@
                   <span class="details-summary-content">
                     <span>Сортировать</span>
                     <button class="details-button" type="button">
-                      <img alt="img" loading="lazy" src="src/assets/img/icons/arrow-down.png">
+                      <span class="iconfont icon-arrow-down"></span>
                     </button>
                   </span>
-                    <span class="details-selected"></span>
+                    <span class=" details-selected"></span>
                   </summary>
                   <div class="details-body" data-details="body">
                     <label> <input name="sorting" type="radio"> <span> По новизне </span> </label>
@@ -86,10 +86,10 @@
                   <span class="details-summary-content">
                     <span>Размер</span>
                     <button class="details-button" type="button">
-                      <img alt="img" loading="lazy" src="src/assets/img/icons/arrow-down.png">
+                      <span class="iconfont icon-arrow-down"></span>
                     </button>
                   </span>
-                    <span class="details-selected"></span>
+                    <span class=" details-selected"></span>
                   </summary>
                   <div class="details-body" data-details="body">
                     <label> <input name="sizes" type="checkbox"> <span> XS </span> </label>
@@ -105,10 +105,10 @@
                   <span class="details-summary-content">
                     <span>Цена</span>
                     <button class="details-button" type="button">
-                      <img alt="img" loading="lazy" src="src/assets/img/icons/arrow-down.png">
+                      <span class="iconfont icon-arrow-down"></span>
                     </button>
                   </span>
-                    <span class="details-selected"></span>
+                    <span class=" details-selected"></span>
                   </summary>
                   <div class="details-body" data-details="body">
                     <div class="select-prices">
@@ -123,10 +123,10 @@
                   <span class="details-summary-content">
                     <span>Цвет</span>
                     <button class="details-button" type="button">
-                      <img alt="img" loading="lazy" src="src/assets/img/icons/arrow-down.png">
+                      <span class="iconfont icon-arrow-down"></span>
                     </button>
                   </span>
-                    <span class="details-selected"></span>
+                    <span class=" details-selected"></span>
                   </summary>
                   <div class="details-body" data-details="body">
                     <label> <input name="color" type="checkbox"> <span> Белый и золотой</span> </label>
@@ -174,10 +174,10 @@
                     <span class="select-current-text"> Размер </span>
                     <div class="select-current-value"></div>
                     <button class="select-current-button" type="button">
-                      <img alt="img" loading="lazy" src="src/assets/img/icons/arrow-down.png">
+                      <span class="iconfont icon-arrow-down"></span>
                     </button>
                   </div>
-                  <form class="select-options">
+                  <form class=" select-options">
                     <label class="select-option">
                       <input class="select-checkbox" name="sizes" type="checkbox"> <span> XS </span>
                     </label>
@@ -206,10 +206,10 @@
                     <span class="select-current-text"> Цена </span>
                     <div class="select-current-value"></div>
                     <button class="select-current-button" type="button">
-                      <img alt="img" loading="lazy" src="src/assets/img/icons/arrow-down.png">
+                      <span class="iconfont icon-arrow-down"></span>
                     </button>
                   </div>
-                  <form class="select-options">
+                  <form class=" select-options">
                     <div class="select-prices">
                       <input class="select-input" placeholder="от 1 999 ₽" type="text">
                       <input class="select-input" placeholder="до 29 999 ₽" type="text">
@@ -226,10 +226,10 @@
                     <span class="select-current-text"> Цвет </span>
                     <div class="select-current-value"></div>
                     <button class="select-current-button" type="button">
-                      <img alt="img" loading="lazy" src="src/assets/img/icons/arrow-down.png">
+                      <span class="iconfont icon-arrow-down"></span>
                     </button>
                   </div>
-                  <form class="select-options">
+                  <form class=" select-options">
                     <label class="select-option">
                       <input class="select-checkbox" name="color" type="checkbox"> <span> Белый и золотой</span>
                     </label>
@@ -240,13 +240,16 @@
                       <input class="select-checkbox" name="color" type="checkbox"> <span> Черный </span>
                     </label>
                     <label class="select-option">
-                      <input class="select-checkbox" name="color" type="checkbox"> <span> Бежевый и золотой </span>
+                      <input class="select-checkbox" name="color" type="checkbox">
+                      <span> Бежевый и золотой </span>
                     </label>
                     <label class="select-option">
-                      <input class="select-checkbox" name="color" type="checkbox"> <span> Зеленый и изумрудный </span>
+                      <input class="select-checkbox" name="color" type="checkbox">
+                      <span> Зеленый и изумрудный </span>
                     </label>
                     <label class="select-option">
-                      <input class="select-checkbox" name="color" type="checkbox"> <span>Красный и бордовый </span>
+                      <input class="select-checkbox" name="color" type="checkbox">
+                      <span>Красный и бордовый </span>
                     </label>
                     <label class="select-option">
                       <input class="select-checkbox" name="color" type="checkbox"> <span> Оливковый и хаки </span>
@@ -266,10 +269,10 @@
                     <!-- <span class="select-current-text"> По новизне </span> -->
                     <div class="select-current-value"></div>
                     <button class="select-current-button" type="button">
-                      <img alt="img" loading="lazy" src="src/assets/img/icons/arrow-down.png">
+                      <span class="iconfont icon-arrow-down"></span>
                     </button>
                   </div>
-                  <form class="select-options">
+                  <form class=" select-options">
                     <label class="select-option active">
                       <input class="select-checkbox" name="sorting" type="radio"> <span> По новизне </span>
                     </label>
@@ -277,13 +280,16 @@
                       <input class="select-checkbox" name="sorting" type="radio"> <span> По популярности </span>
                     </label>
                     <label class="select-option">
-                      <input class="select-checkbox" name="sorting" type="radio"> <span> По возрастанию цены </span>
+                      <input class="select-checkbox" name="sorting" type="radio">
+                      <span> По возрастанию цены </span>
                     </label>
                     <label class="select-option">
-                      <input class="select-checkbox" name="sorting" type="radio"> <span> По убыванию цены </span>
+                      <input class="select-checkbox" name="sorting" type="radio">
+                      <span> По убыванию цены </span>
                     </label>
                     <label class="select-option">
-                      <input class="select-checkbox" name="sorting" type="radio"> <span> Товары по скидке </span>
+                      <input class="select-checkbox" name="sorting" type="radio">
+                      <span> Товары по скидке </span>
                     </label>
                   </form>
                 </div>
@@ -305,7 +311,7 @@
               <article class="catalog-card" data-catalog="card">
                 <div class="catalog-card-discount"> -30%</div>
                 <button class="catalog-card-favourite" type="button">
-                  <img alt="img" loading="lazy" src="src/assets/img/icons/heart.png">
+                  <span class="iconfont icon-heart"></span>
                 </button>
 
                 <div class="catalog-card-slider swiper" data-catalog-card="slider" data-slider="catalog-card">
@@ -313,23 +319,26 @@
                   <div class="swiper-wrapper">
 
                     <div class="swiper-slide">
-                      <img alt="img" class="catalog-card-img" loading="lazy" src="src/assets/img/section/product-1.jpg">
+                      <img alt="img" class="catalog-card-img" loading="lazy"
+                           src="src/assets/img/section/product-1.jpg">
                     </div>
                     <div class="swiper-slide">
-                      <img alt="img" class="catalog-card-img" loading="lazy" src="src/assets/img/section/product-2.jpg">
+                      <img alt="img" class="catalog-card-img" loading="lazy"
+                           src="src/assets/img/section/product-2.jpg">
                     </div>
                     <div class="swiper-slide">
-                      <img alt="img" class="catalog-card-img" loading="lazy" src="src/assets/img/section/product-3.jpg">
+                      <img alt="img" class="catalog-card-img" loading="lazy"
+                           src="src/assets/img/section/product-3.jpg">
                     </div>
 
                   </div>
 
-                  <div class="swiper-button-prev">
-                    <img alt="img" class="icon-arrow-left" loading="lazy" src="src/assets/img/icons/arrow-left.png">
-                  </div>
-                  <div class="swiper-button-next">
-                    <img alt="img" class="icon-arrow-right" loading="lazy" src="src/assets/img/icons/arrow-right.png">
-                  </div>
+                  <button class="swiper-button-prev" type="button">
+                    <span class="iconfont icon-arrow-left"></span>
+                  </button>
+                  <button class="swiper-button-next" type="button">
+                    <span class="iconfont icon-arrow-right"></span>
+                  </button>
                   <div class="swiper-pagination"></div>
 
                   <div class="catalog-card-sizes" data-catalog-card="controls">
@@ -341,13 +350,14 @@
                     <button class="catalog-card-size" type="button">3XL</button>
 
                     <button class="catalog-card-cart" type="button">
-                      <img alt="img" loading="lazy" src="src/assets/img/icons/suitcase-color.png">
+                      <span class="iconfont icon-suitcase"></span>
                     </button>
                   </div>
                 </div>
 
                 <h2 class="catalog-card-title">
-                  <a href="catalog-detail.html"> Относительно длинное название товара длинной в одну, две или три
+                  <a href="catalog-detail.html"> Относительно длинное название товара длинной в одну, две или
+                    три
                     строки </a>
                 </h2>
                 <div class="catalog-card-price">
@@ -374,7 +384,7 @@
             <div class="catalog-pagination">
 
               <a class="catalog-pagination-prev" href="catalog.html">
-                <img alt="img" loading="lazy" src="src/assets/img/icons/arrow-left.png">
+                <span class="iconfont icon-arrow-left"></span>
               </a>
 
               <div class="catalog-pagination-list">
@@ -399,7 +409,7 @@
               </div>
 
               <a class="catalog-pagination-next" href="catalog.html">
-                <img alt="img" loading="lazy" src="src/assets/img/icons/arrow-right.png">
+                <span class="iconfont icon-arrow-right"></span>
               </a>
 
             </div>

@@ -1,0 +1,159 @@
+$icon-arrow-down: "\e900";
+$icon-arrow-left: "\e901";
+$icon-arrow-right: "\e902";
+$icon-arrow-up: "\e903";
+$icon-close: "\e904";
+$icon-filters: "\e905";
+$icon-heart: "\e906";
+$icon-heart-fill: "\e907";
+$icon-location: "\e908";
+$icon-logo: "\e909";
+$icon-menu: "\e90a";
+$icon-mute: "\e90b";
+$icon-person: "\e90c";
+$icon-search: "\e90d";
+$icon-square: "\e90e";
+$icon-squares-eight: "\e90f";
+$icon-squares-four: "\e910";
+$icon-squares-six: "\e911";
+$icon-suitcase: "\e912";
+
+
+@font-face {
+  font-family: 'iconfont';
+  src: url('src/assets/fonts/iconfont.eot?w0ynb6');
+  src: url('src/assets/fonts/iconfont.eot?w0ynb6#iefix') format('embedded-opentype'),
+  url('src/assets/fonts/iconfont.ttf?w0ynb6') format('truetype'),
+  url('src/assets/fonts/iconfont.woff?w0ynb6') format('woff'),
+  url('src/assets/fonts/iconfont.svg?w0ynb6#iconfont') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+.iconfont {
+  font-family: 'iconfont', emoji !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-arrow-down {
+  &:before {
+    content: $icon-arrow-down;
+  }
+}
+
+.icon-arrow-left {
+  &:before {
+    content: $icon-arrow-left;
+  }
+}
+
+.icon-arrow-right {
+  &:before {
+    content: $icon-arrow-right;
+  }
+}
+
+.icon-arrow-up {
+  &:before {
+    content: $icon-arrow-up;
+  }
+}
+
+.icon-close {
+  &:before {
+    content: $icon-close;
+  }
+}
+
+.icon-filters {
+  &:before {
+    content: $icon-filters;
+  }
+}
+
+.icon-heart {
+  &:before {
+    content: $icon-heart;
+  }
+}
+
+.icon-heart-fill {
+  &:before {
+    content: $icon-heart-fill;
+  }
+}
+
+.icon-location {
+  &:before {
+    content: $icon-location;
+  }
+}
+
+.icon-logo {
+  &:before {
+    content: $icon-logo;
+  }
+}
+
+.icon-menu {
+  &:before {
+    content: $icon-menu;
+  }
+}
+
+.icon-mute {
+  &:before {
+    content: $icon-mute;
+  }
+}
+
+.icon-person {
+  &:before {
+    content: $icon-person;
+  }
+}
+
+.icon-search {
+  &:before {
+    content: $icon-search;
+  }
+}
+
+.icon-square {
+  &:before {
+    content: $icon-square;
+  }
+}
+
+.icon-squares-eight {
+  &:before {
+    content: $icon-squares-eight;
+  }
+}
+
+.icon-squares-four {
+  &:before {
+    content: $icon-squares-four;
+  }
+}
+
+.icon-squares-six {
+  &:before {
+    content: $icon-squares-six;
+  }
+}
+
+.icon-suitcase {
+  &:before {
+    content: $icon-suitcase;
+  }
+}
+
