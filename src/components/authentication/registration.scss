@@ -1,0 +1,90 @@
+@import "src/styles/shared";
+
+.registration {
+  @include flex($d: column);
+  background: white;
+  width: 400px;
+  min-height: 490px;
+  padding: 40px 48px 48px;
+  font-size: 14px;
+
+  a {
+    text-decoration: underline;
+  }
+
+  p {
+    margin-bottom: 1em;
+  }
+
+  &-title {
+    color: #51504f;
+    font-size: 20px;
+    text-align: center;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+  }
+
+  &-layout {
+    @include flex($d: column);
+    flex: 1 0 auto;
+  }
+
+  &-step {
+    @include flex($d: column);
+    flex: 1 0 auto;
+  }
+
+  &-success {
+    @include flex($d: column);
+    flex: 1 0 auto;
+    font-size: 17px;
+    text-align: center;
+
+    img {
+      margin: 0 auto 1em;
+    }
+  }
+
+  &-label {
+    display: block;
+    margin-bottom: 18px;
+  }
+
+  &-input {
+    width: 100%;
+    height: 43px;
+    border-radius: 4px;
+    background: #e9e9e9;
+    color: #82756e;
+    font-size: 14px;
+    padding: 0 10px;
+  }
+
+  &-button {
+    width: 100%;
+    height: 43px;
+    border-radius: 4px;
+    background: #c7b29c;
+    color: #ffffff;
+    font-size: 17px;
+    text-align: center;
+    margin: 0 auto 20px;
+  }
+
+  &-message {
+    margin-bottom: auto;
+  }
+
+  &-policy {
+    @include flex;
+    margin-bottom: 32px;
+  }
+
+  &-link {
+    display: inline-block;
+    color: #82756e;
+    font-size: 17px;
+    margin: 0 auto;
+  }
+}
