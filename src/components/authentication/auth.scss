@@ -1,0 +1,94 @@
+@import "src/styles/shared";
+
+.auth {
+  @include flex($d: column);
+  background: white;
+  font-size: 14px;
+  position: relative;
+  z-index: 0;
+  width: calc(100% - 32px);
+  padding: 24px 16px 40px;
+  @include mediaTablet {
+    padding: 40px 48px 48px;
+    width: 400px;
+  }
+
+  &-close {
+    position: absolute;
+    z-index: 1;
+    top: 18px;
+    right: 18px;
+    font-size: 20px;
+    color: #82756e;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+
+  p {
+    margin-bottom: 1em;
+  }
+
+  &-title {
+    color: #51504f;
+    font-size: 20px;
+    text-align: center;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+  }
+
+  &-body {
+    @include flex($d: column);
+    flex: 1 0 auto;
+  }
+
+  &-step {
+    @include flex($d: column);
+    flex: 1 0 auto;
+  }
+
+  &-success {
+    @include flex($d: column);
+    flex: 1 0 auto;
+    font-size: 17px;
+    text-align: center;
+
+    img {
+      margin: 0 auto 1em;
+    }
+  }
+
+  &-label {
+    display: block;
+    margin-bottom: 18px;
+  }
+
+  &-input {
+    @extend .input-grey;
+    width: 100%;
+  }
+
+  &-button {
+    @extend .button-brown;
+    margin: 0 auto 18px;
+  }
+
+  &-message {
+    margin-bottom: auto;
+  }
+
+  &-policy {
+    @include flex;
+    margin-bottom: 32px;
+  }
+
+  &-link {
+    display: inline-block;
+    color: #82756e;
+    font-size: 17px;
+    margin: 0 auto;
+    text-decoration: underline;
+  }
+}

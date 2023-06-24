@@ -1,4 +1,45 @@
 @import "src/styles/shared";
 
 .login {
+  &-header {
+    @include flex(center);
+    margin: 0 auto 18px;
+
+    &-divider {
+      height: 20px;
+      width: 2px;
+      background: #82756e;
+      margin: 0 10px;
+    }
+
+    &-button {
+      font-size: 17px;
+      color: #ada49e;
+
+      &.active {
+        color: #82756e;
+      }
+    }
+  }
+
+  &-body {
+    @include flex($d: column);
+  }
+
+  &-tel, &-email {
+    flex: 1 0 auto;
+    @include flex($d: column);
+    display: none;
+
+    &.active {
+      @include flex;
+    }
+  }
+
+  &-tel {
+
+  }
+
+  &-email {
+  }
 }
