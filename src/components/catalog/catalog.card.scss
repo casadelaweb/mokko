@@ -30,14 +30,32 @@
   }
 
   &-favourite {
+    @include flex(center, center);
     top: 5px;
-    right: 5px;
-    width: 18px;
-    height: 18px;
+    right: 8px;
+    font-size: 16px;
+    color: white;
+    opacity: 0.9;
 
     .mode-row & {
-      top: 12px;
       right: 12px;
+      font-size: 20px;
+    }
+  }
+
+  &-preview {
+    position: absolute;
+    z-index: 2;
+    right: 8px;
+    top: 16px + 5px + 8px;
+    font-size: 16px;
+    color: white;
+    opacity: 0.9;
+
+    .mode-row & {
+      right: 12px;
+      top: 20px + 5px + 12px;
+      font-size: 20px;
     }
   }
 
@@ -63,6 +81,7 @@
     object-position: center;
     aspect-ratio: 9 / 13.5;
   }
+
 
   &-sizes {
     @include flex(center);
@@ -213,4 +232,6 @@
       }
     }
   }
+
+
 }
