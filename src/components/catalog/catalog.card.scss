@@ -36,10 +36,17 @@
     font-size: 16px;
     color: white;
     opacity: 0.9;
+    @include mediaTablet {
+      top: 8px;
+      font-size: 20px;
+    }
 
     .mode-row & {
       right: 12px;
       font-size: 20px;
+      @include mediaTablet {
+        font-size: 24px;
+      }
     }
   }
 
@@ -51,11 +58,22 @@
     font-size: 16px;
     color: white;
     opacity: 0.9;
+    @include mediaTablet {
+      top: 20px + 8px + 8px;
+      font-size: 20px;
+    }
+    @include mediaLaptop {
+      display: none;
+    }
 
     .mode-row & {
       right: 12px;
       top: 20px + 5px + 12px;
       font-size: 20px;
+      @include mediaTablet {
+        top: 24px + 8px + 12px;
+        font-size: 24px;
+      }
     }
   }
 

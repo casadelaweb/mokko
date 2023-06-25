@@ -30,17 +30,42 @@
     <section class="catalog-detail">
       <div class="catalog-detail-container">
         <div class="catalog-detail-left">
-          import ./includes/catalog-detail-elements/catalog-detail-gallery.html;
+          <div class="catalog-detail-gallery">
+            <div class="swiper catalog-detail-gallery-slider">
+              <div class="swiper-wrapper">
+                repeat 7 times:
+                <div class="swiper-slide">
+                  <div class="catalog-detail-gallery-item">
+                    <img alt="img" loading="lazy" src="/src/assets/img/catalog-detail/catalog-detail-gallery-item.png">
+                  </div>
+                </div>
+                end;
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
         </div>
         <div class="catalog-detail-right">
           <div class="catalog-detail-right-sticky" data-catalog-detail="sticky">
 
             <div class="catalog-detail-price">
-              <div class="catalog-detail-price-title"><span>Очень длинное название платья</span></div>
-              <div class="catalog-detail-price-sale">7 799 ₽</div>
-              <div class="catalog-detail-price-regular">5 000 ₽</div>
               <div class="catalog-detail-price-percent">SALE -30%</div>
+              <h1 class="catalog-detail-price-title">
+                Очень длинное название платья
+              </h1>
+              <div class="catalog-detail-prices">
+                <span class="catalog-detail-price-sale">7 799 ₽</span>
+                <span class="catalog-detail-price-regular">5 000 ₽</span>
+              </div>
             </div>
+            <a class="catalog-detail-instalment" href="#" target="_blank">
+              <img alt="img"
+                   class="catalog-detail-instalment-logo"
+                   loading="lazy"
+                   src="src/assets/img/catalog-detail/instalment-logo.png">
+              <span>4 платежа по 1 000 ₽ </span>
+              <span class="iconfont icon-arrow-right"></span>
+            </a>
 
             <div class="catalog-detail-colors">
               <div class="catalog-detail-title">
@@ -54,7 +79,60 @@
               Сиреневый жемчуг
             </div>
 
-            import ./includes/catalog-detail-elements/catalog-detail-btns.html;
+            <div class="catalog-detail-btns">
+              <div class="catalog-detail-btns-price"></div>
+              <div class="catalog-detail-btns-cont">
+                <button class="catalog-detail-btn catalog-detail-btn-size" data-toggle-href="catalog-detail-sizes-cont">
+                  <span>Размеры</span>
+                  <span class="iconfont icon-arrow-down"></span>
+
+                </button>
+                <button class="catalog-detail-btn catalog-detail-btn-buy"></button>
+
+                <button class="catalog-detail-btn-wishlist" type="button">
+                  <span class="iconfont icon-heart"></span>
+                </button>
+
+              </div>
+              <div class="catalog-detail-sizes-cont" id="catalog-detail-sizes-cont">
+                <div class="catalog-detail-title">
+                  Размеры
+                </div>
+
+                <div class="catalog-detail-sizes-items">
+
+                  <div class="catalog-detail-sizes-item">
+                    S <span>36</span>
+                  </div>
+                  <div class="catalog-detail-sizes-item">
+                    M <span>36</span>
+                  </div>
+                  <div class="catalog-detail-sizes-item">
+                    L <span>36</span>
+                  </div>
+                  <div class="catalog-detail-sizes-item">
+                    XL <span>36</span>
+                  </div>
+                  <div class="catalog-detail-sizes-item">
+                    XXL <span>36</span>
+                  </div>
+                  <div class="catalog-detail-sizes-item">
+                    XXXL <span>36</span>
+                  </div>
+
+                </div>
+
+                <div class="catalog-detail-sizes-info">
+                  <span>Параметры модели: 170/87/64/88</span>
+                  <span> Размер на модели: XS</span>
+                  <div class="catalog-detail-sizes-table-url" data-modal-open="table-size">
+                    Таблица размеров
+                  </div>
+                </div>
+
+
+              </div>
+            </div>
 
             <div class="catalog-detail-info">
               <details class="details" data-details="details">
@@ -202,7 +280,6 @@
         </div>
       </div>
     </section>
-
 
     <section class="catalog-detail-products section">
       <div class="section-container">
@@ -464,7 +541,6 @@
 
   import ./includes/footer.html;
   import ./includes/modals.html;
-  import ./includes/catalog-detail-elements/catalog-detail-table-size.html;
 </div>
 </body>
 </html>

@@ -70,6 +70,9 @@
     letter-spacing: 0.02em;
     text-transform: uppercase;
     margin-right: auto;
+    @include mediaMobileConventional {
+      font-size: 14px;
+    }
     @include mediaTablet {
       font-size: 18px;
     }

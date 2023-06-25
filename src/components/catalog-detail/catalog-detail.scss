@@ -113,6 +113,37 @@
 
   }
 
+  &-prices {
+    @include mediaLaptop {
+      margin-bottom: 20px;
+    }
+  }
+
+  &-instalment {
+    @include flex(center);
+    width: 100%;
+    padding: 12px;
+    background: #f2f2f2;
+    color: #51504f;
+    border-radius: 4px;
+    margin-bottom: 36px;
+    font-size: 14px;
+
+    &-logo {
+      width: 68px;
+      height: 20px;
+      border-radius: 4px;
+      margin-right: 10px;
+    }
+
+    .icon-arrow-right {
+      color: #82756e;
+      margin-left: auto;
+      font-size: 13px;
+    }
+  }
+
+  // костыль
   &-products {
     padding: 30px 0;
 
