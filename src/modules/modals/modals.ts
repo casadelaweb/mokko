@@ -88,7 +88,7 @@ class Modals {
     this.parameters.current.classList.add('current')
 
     this.onOpen()
-    console.log(this)
+    // console.log(this)
 
     throwEvent(modal, Modals.events.open, { trigger: trigger, })
   }
@@ -112,7 +112,7 @@ class Modals {
           this.parameters.all.forEach((modal) => modal.classList.remove('current'))
         }
         this.parameters.counter--
-        console.log(this)
+        // console.log(this)
         resolve()
       }, this.options.transition.duration)
 
