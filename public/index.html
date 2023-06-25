@@ -21,6 +21,47 @@
     import ./includes/banner-three.html;
   </main>
 
+  <div class="search" data-modal="search">
+    <div class="search-header">
+      <button class="search-close" data-modal-close type="button">
+        <span class="iconfont icon-close"></span>
+      </button>
+    </div>
+
+    <form class="search-form" data-search="form">
+      <button class="search-submit" type="submit">
+        <span class="iconfont icon-search"></span>
+      </button>
+      <label class="search-label">
+        <input class="search-input" placeholder="Искать ..." required type="text">
+        <button class="search-input-reset" data-search="reset" type="button">
+          <span class="iconfont icon-close"></span>
+        </button>
+      </label>
+    </form>
+
+    <div class="search-body">
+      <div class="search-recommended">
+        <h2 class="search-title">Часто ищут</h2>
+        <a class="search-link" href="catalog-detail.html"> <span>Свитер</span> </a>
+        <a class="search-link" href="catalog-detail.html"> <span>Кардиган</span> </a>
+        <a class="search-link" href="catalog-detail.html"> <span>Водолазка</span> </a>
+        <a class="search-link" href="catalog-detail.html"> <span>Свитер шерсть</span> </a>
+      </div>
+      <div class="search-categories">
+        <h2 class="search-title">Искать в категории</h2>
+        <a class="search-link" href="catalog.html"> <span>Джемперы и кардиганы</span> </a>
+        <a class="search-link" href="catalog.html"> <span>Новинки</span> </a>
+      </div>
+    </div>
+
+    <div class="search-footer">
+      <a class="search-button" href="catalog.html">
+        <span>Смотреть все результаты</span>
+      </a>
+    </div>
+
+  </div>
   import ./includes/footer.html;
   import ./includes/modals.html;
 </div>

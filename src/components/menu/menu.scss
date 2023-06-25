@@ -12,7 +12,6 @@
     z-index: 105;
     width: 320px;
     transform: translate(calc(-100% - 100px), 0);
-    // padding: $containerPaddingMobile 0 ($containerPaddingMobile * 2);
     overflow-y: auto;
     height: 100%;
     @include scrollbar;
@@ -78,7 +77,7 @@
   &-form {
     max-width: none;
     margin-top: auto;
-    
+
     &-layout {
       @include mediaLaptop {
         @include flex(center);
