@@ -193,10 +193,10 @@ class Modals {
   }
 
   private handleKeyUp(event: KeyboardEvent): void {
+    // console.log(this)
     const { body, } = document
 
-    if (event.code === 'Escape' &&
-      this.parameters.counter > 0 &&
+    if (event.code === 'Escape' && this.parameters.all.length > 0 &&
       this.parameters.current instanceof HTMLElement) {
 
       this.deactivateModal(this.parameters.current, {
