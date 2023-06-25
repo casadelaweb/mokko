@@ -77,11 +77,18 @@ class Modals {
     this.onBeforeOpen()
 
     modal.classList.add('active')
-    this.parameters.all.push(modal)
+
+    if (!this.parameters.all.includes(modal)) {
+      this.parameters.all.push(modal)
+      this.parameters.counter++
+    }
+
     this.parameters.current = modal
-    this.parameters.counter++
+    this.parameters.all.forEach((modal) => modal.classList.remove('current'))
+    this.parameters.current.classList.add('current')
 
     this.onOpen()
+    console.log(this)
 
     throwEvent(modal, Modals.events.open, { trigger: trigger, })
   }
@@ -95,11 +102,17 @@ class Modals {
     new Promise((resolve) => {
 
       setTimeout(() => {
+        this.parameters.all.forEach((modal) => modal.classList.remove('current'))
         this.parameters.all = this.parameters.all.slice(0, -1)
         const lastModal = this.parameters.all[this.parameters.all.length - 1]
         this.parameters.current = lastModal ? lastModal : false
+        if (this.parameters.current instanceof HTMLElement) {
+          this.parameters.current.classList.add('current')
+        } else {
+          this.parameters.all.forEach((modal) => modal.classList.remove('current'))
+        }
         this.parameters.counter--
-
+        console.log(this)
         resolve()
       }, this.options.transition.duration)
 

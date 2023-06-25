@@ -26,6 +26,10 @@
     opacity: 1;
   }
 
+  &.current {
+    z-index: 120;
+  }
+
   &-content {
     position: relative;
     @include flex(center, center, column);

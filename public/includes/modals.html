@@ -229,9 +229,9 @@
             </span>
           </label>
 
-          <a class="auth-link" href="404.html">
+          <button class="auth-link" data-modal-open="login" type="button">
             <span>Войти</span>
-          </a>
+          </button>
         </form>
         <form class="auth-step" hidden>
           <label class="auth-label">
@@ -257,7 +257,9 @@
           </button>
         </form>
         <div class="auth-success" hidden>
-          <img alt="img" src="src/assets/img/icons/heart-color.png">
+
+          <span class="iconfont icon-heart"></span>
+
           <p>Спасибо за регистрацию!</p>
 
           <p>Вход на сайт осуществляется по номеру телефона. В личном кабинете можно установить пароль и использовать
@@ -321,7 +323,7 @@
               <a href="404.html">политикой конфиденциальности</a>
             </span>
           </label>
-          <button class="auth-link" type="submit">
+          <button class="auth-link" data-modal-open="registration" type="button">
             <span>Зарегистрироваться</span>
           </button>
         </form>
@@ -362,7 +364,6 @@
       </div>
 
     </div>
-
   </div>
 
   <div class="modal-overlay" data-modal-overlay></div>
