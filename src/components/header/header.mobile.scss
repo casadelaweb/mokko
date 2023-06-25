@@ -11,6 +11,7 @@
   }
 
   &-button {
+    @include flex(center, center);
     flex: 0 0 auto;
     font-size: 18px;
     margin: 0 0.4em;
@@ -18,7 +19,8 @@
       font-size: 20px;
     }
     @include mediaTablet {
-      font-size: 22px;
+      font-size: 26px;
+      margin: 0 0.5em;
     }
   }
 }

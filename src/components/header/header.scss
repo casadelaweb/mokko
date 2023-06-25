@@ -17,9 +17,9 @@
   @include mediaTablet {
     padding: 20px 0;
   }
-  @include mediaLaptop {
-    padding: 20px 0;
-  }
+  //@include mediaLaptop {
+  //  padding: 20px 0;
+  //}
 
   &.hovered, &.scrolled, &.active {
     background: white;
@@ -78,11 +78,11 @@
       font-size: 22px;
     }
     @include mediaTablet {
-      font-size: 26px;
-    }
-    @include mediaLaptop {
       font-size: 32px;
     }
+    //@include mediaLaptop {
+    //  font-size: 32px;
+    //}
   }
 
   &-buttons {
