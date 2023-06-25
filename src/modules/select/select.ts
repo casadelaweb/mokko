@@ -3,6 +3,9 @@ import { selectors } from 'src/modules/select/select.types'
 
 export class Select {
   private selectors: selectors
+  private parameters: {
+    current: HTMLElement[]
+  }
 
   constructor() {
     this.selectors = {
@@ -13,6 +16,7 @@ export class Select {
       options: '.select-options',
       option: '.select-option',
     }
+    this.parameters = { current: [], }
   }
 
   public init(): void {
@@ -44,6 +48,20 @@ export class Select {
         const select: HTMLElement = target.closest(this.selectors.select)
         const options: HTMLElement = select.querySelector(this.selectors.options)
         const button: HTMLElement = select.querySelector(this.selectors.button)
+
+        // костыль
+        // if (select.classList.contains('active')) {
+        //
+        // } else {
+        //
+        // }
+        // const { body, } = document
+        // const elements: HTMLElement[] = [
+        //   ...body.querySelectorAll(this.selectors.select),
+        //   ...body.querySelectorAll(this.selectors.options),
+        //   ...body.querySelectorAll(this.selectors.button),
+        // ]
+        // elements.forEach((element: HTMLElement) => element.classList.remove('active'))
 
         options.classList.toggle('active')
         button.classList.toggle('active')

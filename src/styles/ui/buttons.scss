@@ -17,6 +17,12 @@
   color: #82756e;
   font-size: 14px;
   padding: 0 10px;
+  border: 1px solid transparent;
+
+  &.error {
+    border-color: #e71c35;
+    color: #e71c35;
+  }
 }
 
 .button-brown {

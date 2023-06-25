@@ -7,7 +7,7 @@ import { modals } from 'src/scripts/modals-instance'
 import { globalScrollController } from 'src/scripts/global-scroll-controller'
 import { Select } from 'src/modules/select/select'
 import { Details } from 'src/modules/details/details'
-import { Masks } from 'src/scripts/masks'
+import { Masks } from 'src/modules/masks/masks'
 
 document.addEventListener('DOMContentLoaded', () => {
   lazyloadInstance.update()

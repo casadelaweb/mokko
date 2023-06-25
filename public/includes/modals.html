@@ -337,8 +337,9 @@
                    required type="text">
           </label>
           <label class="auth-label">
-            <input autocomplete="off" class="auth-input" name="password" placeholder="Пароль" required
+            <input autocomplete="off" class="auth-input error" name="password" placeholder="Пароль" required
                    type="password">
+            <span class="auth-input-message">Неверный пароль</span>
           </label>
           <button class="auth-button" type="submit">
             <span>Зарегистрироваться</span>
@@ -349,7 +350,7 @@
               <a href="404.html">политикой конфиденциальности</a>
             </span>
           </label>
-          <div>
+          <div class="auth-message">
             <span>Забыли пароль?</span>
             <a class="auth-link" href="404.html">
               <span>Восстановить</span>

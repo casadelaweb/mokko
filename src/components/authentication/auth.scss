@@ -68,6 +68,13 @@
   &-input {
     @extend .input-grey;
     width: 100%;
+
+    &-message {
+      display: inline-block;
+      font-size: 14px;
+      color: #e71c35;
+      margin-top: 0.5em;
+    }
   }
 
   &-button {
