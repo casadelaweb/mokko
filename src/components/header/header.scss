@@ -9,8 +9,11 @@
   color: white;
   transition: background-color 0.5s, backdrop-filter 0.5s, border-color 0.5s;
   border-bottom: 2px solid transparent;
-  padding: 10px 0;
+  padding: 12px 0;
   overflow: hidden;
+  @include mediaMobileConventional {
+    padding: 16px 0;
+  }
   @include mediaTablet {
     padding: 20px 0;
   }
@@ -46,7 +49,7 @@
       padding: 0 48px;
     }
   }
-  
+
   &-links {
     font-size: 17px;
     letter-spacing: 0.34px;
@@ -71,6 +74,9 @@
     display: inline-block;
     margin: 0 auto;
     font-size: 20px;
+    @include mediaMobileConventional {
+      font-size: 22px;
+    }
     @include mediaTablet {
       font-size: 26px;
     }

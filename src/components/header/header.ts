@@ -25,7 +25,17 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   })
 
-  function hoverHeader() {
+  function updateHeaderHeight(): void {
+    const { body, documentElement: html, } = document
+    const header: HTMLElement = body.querySelector('.header')
+    const headerHeight: string = header.offsetHeight + 'px'
+    html.style.setProperty('--headerHeight', headerHeight)
+  }
+
+  updateHeaderHeight()
+  window.addEventListener('resize', updateHeaderHeight)
+
+  function hoverHeader(): void {
     const { scrollY, } = window
 
     if (scrollY > headerHeight) {

@@ -4,8 +4,11 @@
   display: block;
   width: 100%;
 
-  &-img {
+  &-img, &-video {
     display: block;
     width: 100%;
+    @include mediaOnlyMobile {
+      min-height: calc(100vh - var(--headerHeight));
+    }
   }
 }

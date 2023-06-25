@@ -64,9 +64,10 @@
     &-button {
       position: absolute;
       z-index: 1;
-      top: 0;
+      top: 4px;
       left: $containerPaddingMobile * -2;
       width: $containerPaddingMobile;
+      font-size: 13px;
     }
 
     &-body {
