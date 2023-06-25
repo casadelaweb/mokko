@@ -32,7 +32,6 @@ document.addEventListener('DOMContentLoaded', () => {
     })
   }
 
-
   if (catalogDetailSizesInfo) {
     const catalogDetailSizesInfoMob: HTMLElement = catalogDetailSizesInfo.cloneNode()
     catalogDetailSizesInfoMob.classList.add('catalog-detail-sizes-info-mob')
@@ -42,4 +41,11 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   toggle('.catalog-detail-btn-size')
+
+  document.addEventListener('DOMContentLoaded', (event: MouseEvent) => {
+    const target = event.target as HTMLElement
+    if (target.closest('.catalog-detail-btn-buy')) {
+
+    }
+  })
 })

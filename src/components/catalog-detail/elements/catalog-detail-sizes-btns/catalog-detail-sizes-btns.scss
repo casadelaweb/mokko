@@ -2,7 +2,6 @@
 
 .catalog-detail {
   &-btns {
-
     @include mediaOnlyMobile {
       position: fixed;
       bottom: 0;
@@ -78,21 +77,20 @@
 
     &-size {
       @include flex(center, center);
+      @include mediaTablet {
+        display: none;
+      }
 
-      svg {
+      .icon-arrow-down {
         margin-left: 10px;
+        transform-origin: center;
         transition: transform $toggleBtnTransition;
       }
 
-
       &.krel-toggle-active {
-        svg {
+        .icon-arrow-down {
           transform: rotate(180deg);
         }
-      }
-
-      @include mediaTablet {
-        display: none;
       }
     }
 
@@ -106,9 +104,7 @@
 
     }
   }
-
 }
-
 
 .catalog-detail-sizes {
   &-cont {
@@ -182,6 +178,4 @@
       }
     }
   }
-
-
 }
