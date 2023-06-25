@@ -43,8 +43,10 @@
     }
 
     &-button {
+      @include flex(center, center);
       transform-origin: center;
       transition: transform 0.5s;
+      font-size: 13px;
 
       &.active {
         transform: rotate(180deg);

@@ -23,17 +23,27 @@
     @include scrollbar;
   }
 
-  &-sticky {
+  &-sticky, &-mobile {
     @include flex($d: column);
     @include mediaOnlyMobileAndTablets {
       height: 100%;
     }
+  }
+
+  &-sticky {
     @include mediaLaptop {
       position: sticky;
       z-index: 0;
       top: 100px;
     }
   }
+
+  &-mobile {
+    @include mediaLaptop {
+      display: none;
+    }
+  }
+
 
   &-header {
     @include flex(center, space-between);
@@ -43,6 +53,7 @@
     text-transform: uppercase;
     @include mediaLaptop {
       padding-left: 0;
+      display: none;
     }
   }
 
@@ -53,7 +64,7 @@
   }
 
   &-body {
-    margin-bottom: 40px
+    margin-bottom: 40px;
   }
 
   .details {
@@ -151,5 +162,31 @@
   &-submit {
     background: #c7b29c;
     color: white;
+  }
+
+  // для десктопа
+  &-desktop {
+    display: none;
+    @include mediaLaptop {
+      @include flex($d: column);
+    }
+  }
+
+  &-title {
+    color: #82756e;
+    font-size: 17px;
+    letter-spacing: 0.02em;
+    margin-bottom: 1.25em;
+  }
+
+  &-link {
+    font-size: 15px;
+    letter-spacing: 0.02em;
+    margin-bottom: 1em;
+
+    &:hover,
+    &.active {
+      color: #51504f;
+    }
   }
 }
