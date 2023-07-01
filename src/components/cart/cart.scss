@@ -1,0 +1,21 @@
+@import "src/styles/shared";
+
+.cart {
+  padding-top: 15px;
+
+  &-title {
+    font-size: 12px;
+    text-transform: uppercase;
+    // margin-bottom: 36px;
+  }
+
+  &-container {
+    @extend .container;
+  }
+
+  &-layout {
+  }
+
+  &-cards {
+  }
+}

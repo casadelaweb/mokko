@@ -1,0 +1,106 @@
+@import "src/styles/shared";
+
+.cart-card {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  column-gap: 25px;
+  padding: 25px 0;
+  border-bottom: 1px solid #dadada;
+  font-size: 14px;
+
+  &-left, &-right {
+    @include flex($d: column);
+  }
+
+  &-img {
+    display: block;
+    border-radius: 4px;
+    margin-bottom: 13px;
+  }
+
+  &-quantity {
+    @include flex(center, space-between);
+    background: #f1f1f1;
+    height: 43px;
+    width: 95px;
+    margin: auto auto 0;
+    border-radius: 4px;
+
+    &-button, &-input {
+      flex: 0 0 auto;
+      height: 100%;
+      text-align: center;
+      color: #82756e;
+      font-size: 14px;
+    }
+
+    &-button {
+      @include flex(center, center);
+      padding: 0 10px;
+      width: 33%;
+      transition: background-color 0.2s;
+
+      &:active {
+        background: #dadada;
+      }
+    }
+
+    &-input {
+      width: 34%;
+    }
+  }
+
+  &-title {
+    margin-bottom: 14px;
+  }
+
+  &-article {
+    margin-bottom: 10px;
+  }
+
+  &-colors {
+    margin-bottom: 14px;
+  }
+
+  &-color {
+    &-name {
+      margin-bottom: 6px;
+    }
+
+    &-circle {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+    }
+  }
+
+  &-size {
+    margin-bottom: 14px;
+  }
+
+  &-discount {
+    @include flex(center, center);
+    width: 57px;
+    height: 37px;
+    border-radius: 10px 0;
+    background: #756bff;
+    color: white;
+    font-size: 15px;
+  }
+
+  &-prices {
+  }
+
+  &-price {
+  }
+
+  &-footer {
+    margin-top: auto;
+  }
+
+  &-remove {
+  }
+
+  &-favourite {
+  }
+}

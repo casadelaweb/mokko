@@ -9,9 +9,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const isPageIndex: string = body.getAttribute('data-page')
 
-  if (isPageIndex !== 'index') {
+  if (isPageIndex === 'index') {
+    main.style.marginTop = '0px'
+  } else {
     header.classList.add('active')
-    main.style.marginTop = headerHeight + 'px'
   }
 
   header.addEventListener('mouseenter', () => {

@@ -1,0 +1,63 @@
+@import "src/styles/shared";
+
+.cart-summary {
+  padding: 36px $containerPaddingMobile 46px;
+  background: #f1f1f1;
+  font-size: 15px;
+  margin: 0 ($containerPaddingMobile * -1);
+
+  &-row {
+    @include flex(center, space-between);
+    margin-bottom: 25px;
+  }
+
+  &-title, &-price {
+    font-size: 17px;
+    letter-spacing: 0.02em;
+  }
+
+  &-title {
+    color: #82756e;
+  }
+
+  &-price {
+    color: #505050;
+  }
+
+  &-label {
+    @include flex(center, $w: wrap);
+    margin-bottom: 20px;
+
+    &-title {
+      flex: 0 0 auto;
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  }
+
+  &-points {
+    border-radius: 4px;
+    background: #766cff;
+    color: white;
+    font-size: 17px;
+    padding: 4px 10px;
+    margin: 0 4px;
+  }
+
+  &-input {
+    @extend .input-white;
+    flex: 1 0 auto;
+  }
+
+  &-button {
+    @extend .button-square;
+  }
+
+  &-message {
+    margin-bottom: 36px;
+  }
+
+  &-submit {
+    @extend .button-brown;
+  }
+}

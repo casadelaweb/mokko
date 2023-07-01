@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+        name="viewport">
+  <meta content="ie=edge" http-equiv="X-UA-Compatible">
+  <title>Mokko Brand | Корзина</title>
+</head>
+<body>
+<div id="app">
+  import ./includes/header.html;
+
+  <main class="main">
+    <section class="cart">
+      <div class="cart-container">
+        <h2 class="cart-title">Корзина</h2>
+        <div class="cart-layout">
+          <div class="cart-cards">
+            repeat 5 times:
+            <article class="cart-card" data-cart-card="card">
+              <div class="cart-card-left">
+                <img alt="img" class="cart-card-img" loading="lazy" src="src/assets/img/section/product-3.jpg">
+                <div class="cart-card-quantity" data-cart-card="quantity">
+                  <button class="cart-card-quantity-button"
+                          data-cart-card="quantity-minus"
+                          type="button">
+                    <span>-</span>
+                  </button>
+                  <input class="cart-card-quantity-input"
+                         data-cart-card="quantity-input"
+                         type="text"
+                         value="1">
+                  <button class="cart-card-quantity-button"
+                          data-cart-card="quantity-plus"
+                          type="button">
+                    <span>+</span>
+                  </button>
+                </div>
+              </div>
+              <div class="cart-card-right">
+                <h2 class="cart-card-title">Плащ с очень длинным названием</h2>
+                <div class="cart-card-article">
+                  <span>арт. </span>
+                  <span>156653</span>
+                </div>
+                <div class="cart-card-colors">
+                  <div class="cart-card-color-name">Бежевый</div>
+                  <div class="cart-card-color-circle" style="background: #d0ad97;"></div>
+                </div>
+                <div class="cart-card-size"> M/36</div>
+                <div class="cart-card-discount">-30%</div>
+                <div class="cart-card-prices">
+                  <span class="cart-card-price">7 799 ₽</span>
+                  <span class="cart-card-price">5 000 ₽</span>
+                </div>
+
+                <div class="cart-card-footer">
+                  <button class="cart-card-remove" type="button">
+                    <span>Удалить</span>
+                    <span class="iconfont icon-close"></span>
+                  </button>
+                  <button class="cart-card-favourite" type="button">
+                    <span class="iconfont icon-heart"></span>
+                  </button>
+                </div>
+              </div>
+            </article>
+            end;
+          </div>
+          <form class="cart-summary">
+            <div class="cart-summary-row">
+              <h2 class="cart-summary-title">СУММА ЗАКАЗА</h2>
+              <div class="cart-summary-price">18 999 ₽</div>
+            </div>
+
+            <label class="cart-summary-label">
+              <span class="cart-summary-label-title">Введите промокод</span>
+              <input autocomplete="off" class="cart-summary-input" name="promocode">
+              <button class="cart-summary-button" type="button">
+                <span class="iconfont icon-arrow-right"></span>
+              </button>
+            </label>
+
+            <label class="cart-summary-label">
+              <span class="cart-summary-label-title">
+                Баллов доступно: <span class="cart-summary-points"> 1250 </span> <br>
+                Использовать
+              </span>
+              <input autocomplete="off" class="cart-summary-input" name="points">
+              <button class="cart-summary-button" type="button">
+                <span class="iconfont icon-arrow-right"></span>
+              </button>
+            </label>
+
+            <div class="cart-summary-message">
+              Стоимость доставки будет учтена
+              при продолжении оформления
+            </div>
+
+            <div class="cart-summary-row">
+              <h2 class="cart-summary-title">ИТОГО</h2>
+              <div class="cart-summary-price">18 999 ₽</div>
+            </div>
+            <button class="cart-summary-submit" type="submit">
+              <span>Оформить заказ</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  import ./includes/footer.html;
+  import ./includes/modals.html;
+</div>
+</body>
+</html>

@@ -25,6 +25,31 @@
   }
 }
 
+.input-white {
+  height: 43px;
+  border-radius: 4px;
+  background: white;
+  color: #82756e;
+  font-size: 14px;
+  padding: 0 10px;
+  border: 1px solid transparent;
+
+  &.error {
+    border-color: #e71c35;
+    color: #e71c35;
+  }
+}
+
+.button-square {
+  @include flex(center, center);
+  width: 43px;
+  height: 43px;
+  border-radius: 0 4px 4px 0;
+  background: #c7b29c;
+  color: white;
+  font-size: 15px;
+}
+
 .button-brown {
   @include flex(center, center);
   width: 100%;
