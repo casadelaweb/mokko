@@ -1,11 +1,14 @@
 @import "src/styles/shared";
 
 .cart-card {
+  position: relative;
+  z-index: 0;
   padding: 25px 0;
   border-bottom: 1px solid #dadada;
   font-size: 14px;
-  @include mediaTabletBg {
-
+  @include mediaLaptop {
+    font-size: 15px;
+    padding: 30px 0;
   }
 
   &:first-child {
@@ -31,6 +34,10 @@
     grid-template-areas:
     "img body quantity prices"
     "img footer footer footer";
+    @include mediaLaptop {
+      grid-template-columns: 126px auto 95px 70px;
+      column-gap: 32px;
+    }
 
     .cart-card {
       &-img {
@@ -39,6 +46,10 @@
 
       &-body {
         grid-area: body;
+        @include mediaLaptop {
+          @include flex;
+          margin-left: -16px;
+        }
       }
 
       &-quantity {
@@ -53,8 +64,17 @@
       }
 
       &-footer {
-        grid-area: footer;
-        justify-content: flex-end;
+        @include mediaTablet {
+          @include flex(center, flex-end);
+          grid-area: footer;
+          position: absolute;
+          z-index: 1;
+          right: 0;
+          bottom: 25px;
+        }
+        @include mediaLaptop {
+          bottom: 30px;
+        }
       }
     }
   }
@@ -75,7 +95,9 @@
   &-img {
     display: block;
     border-radius: 4px;
-    margin-bottom: 13px;
+    @include mediaOnlyMobile {
+      margin-bottom: 13px;
+    }
 
     img {
       display: block;
@@ -86,7 +108,7 @@
   &-quantity {
     @include flex(center, space-between);
     background: #f1f1f1;
-    height: 43px;
+    height: 44px;;
     width: 95px;
     margin: auto auto 0;
     border-radius: 4px;
@@ -115,16 +137,32 @@
     }
   }
 
+  &-body {
+    @include mediaLaptop {
+      @include flex($j: space-between);
+    }
+  }
+
   &-title {
     margin-bottom: 14px;
+    @include mediaLaptop {
+      font-size: 18px;
+      width: 120px;
+    }
   }
 
   &-article {
     margin-bottom: 10px;
+    @include mediaLaptop {
+      margin-bottom: 0;
+    }
   }
 
   &-colors {
     margin-bottom: 14px;
+    @include mediaLaptop {
+      margin-bottom: 0;
+    }
   }
 
   &-color {
@@ -143,6 +181,13 @@
     @include mediaOnlyMobile {
       margin-bottom: 14px;
     }
+    @include mediaLaptop {
+      @include flex(center, center);
+      width: 44px;
+      height: 44px;
+      border-radius: 4px;
+      background: #f1f1f1;
+    }
   }
 
   &-prices {
@@ -154,7 +199,7 @@
 
   &-discount {
     @include flex(center, center);
-    width: 57px;
+    width: 56px;
     height: 37px;
     border-radius: 10px 0;
     background: #756bff;
@@ -162,6 +207,11 @@
     font-size: 15px;
     @include mediaTablet {
       margin-bottom: 13px;
+    }
+    @include mediaLaptop {
+      font-size: 17px;
+      width: 70px;
+      height: 45px;
     }
   }
 
@@ -182,7 +232,7 @@
   &-footer {
     @include flex(center);
     @include mediaOnlyMobile {
-      height: 43px;
+      height: 44px;;
       margin-top: auto;
     }
   }
@@ -190,6 +240,9 @@
   &-remove {
     @include flex(center);
     font-size: 16px;
+    @include mediaLaptop {
+      font-size: 17px;
+    }
 
     .iconfont {
       font-size: 13px;

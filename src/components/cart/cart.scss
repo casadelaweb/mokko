@@ -2,7 +2,7 @@
 
 .cart {
   padding-top: 15px;
-  @include mediaTabletBg {
+  @include mediaTablet {
     padding-top: 24px;
   }
 
@@ -15,6 +15,10 @@
     }
     @include mediaTabletBg {
       margin-bottom: 42px;
+    }
+
+    @include mediaDesktop {
+      font-size: 20px;
     }
   }
 
@@ -32,5 +36,8 @@
 
   &-cards {
     margin-bottom: 25px;
+    @include mediaTablet {
+      margin-bottom: 56px;
+    }
   }
 }
