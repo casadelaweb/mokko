@@ -19,8 +19,25 @@
           <div class="cart-cards">
             repeat 5 times:
             <article class="cart-card" data-cart-card="card">
-              <div class="cart-card-left">
-                <img alt="img" class="cart-card-img" loading="lazy" src="src/assets/img/section/product-3.jpg">
+
+              <div class="cart-card-desktop">
+                <a class="cart-card-img" href="catalog-detail.html">
+                  <img alt="img" loading="lazy" src="src/assets/img/section/product-3.jpg">
+                </a>
+                <div class="cart-card-body">
+                  <h2 class="cart-card-title">
+                    <a href="catalog-detail.html">Плащ с очень длинным названием</a>
+                  </h2>
+                  <div class="cart-card-article">
+                    <span>арт. </span>
+                    <span>156653</span>
+                  </div>
+                  <div class="cart-card-colors">
+                    <div class="cart-card-color-name">Бежевый</div>
+                    <div class="cart-card-color-circle" style="background: #d0ad97;"></div>
+                  </div>
+                  <div class="cart-card-size"> M/36</div>
+                </div>
                 <div class="cart-card-quantity" data-cart-card="quantity">
                   <button class="cart-card-quantity-button"
                           data-cart-card="quantity-minus"
@@ -37,24 +54,17 @@
                     <span>+</span>
                   </button>
                 </div>
-              </div>
-              <div class="cart-card-right">
-                <h2 class="cart-card-title">Плащ с очень длинным названием</h2>
-                <div class="cart-card-article">
-                  <span>арт. </span>
-                  <span>156653</span>
-                </div>
-                <div class="cart-card-colors">
-                  <div class="cart-card-color-name">Бежевый</div>
-                  <div class="cart-card-color-circle" style="background: #d0ad97;"></div>
-                </div>
-                <div class="cart-card-size"> M/36</div>
-                <div class="cart-card-discount">-30%</div>
                 <div class="cart-card-prices">
-                  <span class="cart-card-price">7 799 ₽</span>
-                  <span class="cart-card-price">5 000 ₽</span>
+                  <div class="cart-card-discount">-30%</div>
+                  <div>
+                    <div class="cart-card-price-old">
+                      <span data-cart-card="price-old">7 799</span> <span>₽</span>
+                    </div>
+                    <div class="cart-card-price-current">
+                      <span data-cart-card="price-current">4 123</span> <span>₽</span>
+                    </div>
+                  </div>
                 </div>
-
                 <div class="cart-card-footer">
                   <button class="cart-card-remove" type="button">
                     <span>Удалить</span>
@@ -65,15 +75,79 @@
                   </button>
                 </div>
               </div>
+
+              <div class="cart-card-mobile">
+                <div class="cart-card-left">
+                  <a class="cart-card-img" href="catalog-detail.html">
+                    <img alt="img" loading="lazy" src="src/assets/img/section/product-3.jpg">
+                  </a>
+                  <div class="cart-card-quantity" data-cart-card="quantity">
+                    <button class="cart-card-quantity-button"
+                            data-cart-card="quantity-minus"
+                            type="button">
+                      <span>-</span>
+                    </button>
+                    <input class="cart-card-quantity-input"
+                           data-cart-card="quantity-input"
+                           type="text"
+                           value="1">
+                    <button class="cart-card-quantity-button"
+                            data-cart-card="quantity-plus"
+                            type="button">
+                      <span>+</span>
+                    </button>
+                  </div>
+                </div>
+                <div class="cart-card-right">
+                  <div class="cart-card-body">
+                    <h2 class="cart-card-title">
+                      <a href="catalog-detail.html">Плащ с очень длинным названием</a>
+                    </h2>
+                    <div class="cart-card-article">
+                      <span>арт. </span>
+                      <span>156653</span>
+                    </div>
+                    <div class="cart-card-colors">
+                      <div class="cart-card-color-name">Бежевый</div>
+                      <div class="cart-card-color-circle" style="background: #d0ad97;"></div>
+                    </div>
+                    <div class="cart-card-size"> M/36</div>
+
+                    <div class="cart-card-prices">
+                      <div class="cart-card-discount">-30%</div>
+                      <div>
+                        <div class="cart-card-price-old">
+                          <span data-cart-card="price-old">7 799</span> <span>₽</span>
+                        </div>
+                        <div class="cart-card-price-current">
+                          <span data-cart-card="price-current">4 123</span> <span>₽</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="cart-card-footer">
+                    <button class="cart-card-remove" type="button">
+                      <span>Удалить</span>
+                      <span class="iconfont icon-close"></span>
+                    </button>
+                    <button class="cart-card-favourite" type="button">
+                      <span class="iconfont icon-heart"></span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              
             </article>
             end;
           </div>
           <form class="cart-summary">
-            <div class="cart-summary-row">
+            <div class="cart-summary-header">
               <h2 class="cart-summary-title">СУММА ЗАКАЗА</h2>
-              <div class="cart-summary-price">18 999 ₽</div>
+              <div class="cart-summary-price">
+                <span data-cart="price-raw">18 999</span>
+                <span>₽</span>
+              </div>
             </div>
-
             <label class="cart-summary-label">
               <span class="cart-summary-label-title">Введите промокод</span>
               <input autocomplete="off" class="cart-summary-input" name="promocode">
@@ -81,7 +155,6 @@
                 <span class="iconfont icon-arrow-right"></span>
               </button>
             </label>
-
             <label class="cart-summary-label">
               <span class="cart-summary-label-title">
                 Баллов доступно: <span class="cart-summary-points"> 1250 </span> <br>
@@ -92,13 +165,11 @@
                 <span class="iconfont icon-arrow-right"></span>
               </button>
             </label>
-
             <div class="cart-summary-message">
               Стоимость доставки будет учтена
               при продолжении оформления
             </div>
-
-            <div class="cart-summary-row">
+            <div class="cart-summary-footer">
               <h2 class="cart-summary-title">ИТОГО</h2>
               <div class="cart-summary-price">18 999 ₽</div>
             </div>

@@ -1,13 +1,19 @@
+import { throwEvent } from 'src/scripts/helpers'
+
 interface iSelectors {
   card: string,
   quantity: string,
   minus: string,
   plus: string,
   input: string,
+  priceCurrent: string,
+  priceOld: string,
 }
 
-interface iElement {
+export interface iElement {
   card: HTMLElement,
+  priceCurrent: HTMLElement,
+  priceOld: HTMLElement,
   quantity: HTMLElement,
   minus: HTMLElement,
   plus: HTMLElement,
@@ -39,6 +45,8 @@ export class CartCard {
       minus: '[data-cart-card=quantity-minus]',
       plus: '[data-cart-card=quantity-plus]',
       input: '[data-cart-card=quantity-input]',
+      priceCurrent: '[data-cart-card=price-current]',
+      priceOld: '[data-cart-card=price-old]',
     }
     this.options = {
       min: 1,
@@ -90,6 +98,8 @@ export class CartCard {
     const minus: HTMLElement = card.querySelector(this.selectors.minus)
     const plus: HTMLElement = card.querySelector(this.selectors.plus)
     const quantity: HTMLElement = card.querySelector(this.selectors.quantity)
+    const priceCurrent: HTMLElement = card.querySelector(this.selectors.priceCurrent)
+    const priceOld: HTMLElement = card.querySelector(this.selectors.priceOld)
 
     return {
       card,
@@ -97,6 +107,8 @@ export class CartCard {
       minus,
       plus,
       quantity,
+      priceCurrent,
+      priceOld,
     }
   }
 
@@ -109,12 +121,16 @@ export class CartCard {
     let value = parseInt(input.value) - 1
     value = value <= this.options.min ? this.options.min : value
     input.value = value.toString()
+
+    throwEvent(input, 'cartCardUpdate')
   }
 
   private decreaseValue(input: HTMLInputElement): void {
     let value = parseInt(input.value) + 1
     value = value >= this.options.max ? this.options.max : value
     input.value = value.toString()
+
+    throwEvent(input, 'cartCardUpdate')
   }
 
   private handleStart(event: MouseEvent): void {
@@ -131,7 +147,6 @@ export class CartCard {
           this.increaseValue(input)
         }, this.intervalDuration)
       }, this.timeoutDuration)
-
     }
     if (target.closest(this.selectors.plus)) {
       const button: HTMLElement = target.closest(this.selectors.plus)

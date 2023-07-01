@@ -2,11 +2,20 @@
 
 .cart {
   padding-top: 15px;
+  @include mediaTabletBg {
+    padding-top: 24px;
+  }
 
   &-title {
     font-size: 12px;
     text-transform: uppercase;
-    // margin-bottom: 36px;
+    margin-bottom: 36px;
+    @include mediaTablet {
+      font-size: 18px;
+    }
+    @include mediaTabletBg {
+      margin-bottom: 42px;
+    }
   }
 
   &-container {
@@ -14,8 +23,14 @@
   }
 
   &-layout {
+    @include mediaTabletBg {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      column-gap: 56px;
+    }
   }
 
   &-cards {
+    margin-bottom: 25px;
   }
 }

@@ -1,12 +1,72 @@
 @import "src/styles/shared";
 
 .cart-card {
-  display: grid;
-  grid-template-columns: 1fr 1.1fr;
-  column-gap: 25px;
   padding: 25px 0;
   border-bottom: 1px solid #dadada;
   font-size: 14px;
+  @include mediaTabletBg {
+
+  }
+
+  &:first-child {
+    padding-top: 0;
+  }
+
+  &:last-child {
+    border-bottom: 0;
+    @include mediaTabletBg {
+      padding-bottom: 0;
+    }
+  }
+
+  &-desktop {
+    @include mediaOnlyMobile {
+      display: none;
+    }
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: min-content;
+    column-gap: 25px;
+    grid-auto-flow: row;
+    grid-template-areas:
+    "img body quantity prices"
+    "img footer footer footer";
+
+    .cart-card {
+      &-img {
+        grid-area: img;
+      }
+
+      &-body {
+        grid-area: body;
+      }
+
+      &-quantity {
+        grid-area: quantity;
+        margin: 0 0 auto;
+      }
+
+      &-prices {
+        @include flex(flex-end, $d: column);
+        grid-area: prices;
+        margin: 0 0 auto;
+      }
+
+      &-footer {
+        grid-area: footer;
+        justify-content: flex-end;
+      }
+    }
+  }
+
+  &-mobile {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    column-gap: 25px;
+    @include mediaTablet {
+      display: none;
+    }
+  }
 
   &-left, &-right {
     @include flex($d: column);
@@ -16,6 +76,11 @@
     display: block;
     border-radius: 4px;
     margin-bottom: 13px;
+
+    img {
+      display: block;
+      border-radius: 4px;
+    }
   }
 
   &-quantity {
@@ -75,7 +140,16 @@
   }
 
   &-size {
-    margin-bottom: 14px;
+    @include mediaOnlyMobile {
+      margin-bottom: 14px;
+    }
+  }
+
+  &-prices {
+    @include flex(center, space-between);
+    @include mediaOnlyMobile {
+      margin-top: auto;
+    }
   }
 
   &-discount {
@@ -86,21 +160,50 @@
     background: #756bff;
     color: white;
     font-size: 15px;
-  }
-
-  &-prices {
+    @include mediaTablet {
+      margin-bottom: 13px;
+    }
   }
 
   &-price {
+    &, &-old, &-current {
+      font-size: 17px;
+    }
+
+    &-old {
+      text-decoration: line-through;
+    }
+
+    &-current {
+      color: #ea1c35;
+    }
   }
 
   &-footer {
-    margin-top: auto;
+    @include flex(center);
+    @include mediaOnlyMobile {
+      height: 43px;
+      margin-top: auto;
+    }
   }
 
   &-remove {
+    @include flex(center);
+    font-size: 16px;
+
+    .iconfont {
+      font-size: 13px;
+      margin-left: 6px;
+    }
   }
 
   &-favourite {
+    font-size: 22px;
+    @include mediaOnlyMobile {
+      margin-left: auto;
+    }
+    @include mediaTablet {
+      margin-left: 20px;
+    }
   }
 }

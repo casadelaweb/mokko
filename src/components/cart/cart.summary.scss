@@ -5,8 +5,20 @@
   background: #f1f1f1;
   font-size: 15px;
   margin: 0 ($containerPaddingMobile * -1);
+  @include mediaTablet {
+    padding: 36px $containerPaddingTablet 46px;
+    margin: 0 ($containerPaddingTablet * -1);
+  }
+  @include mediaTabletBg {
+    padding: 36px 20px 32px;
+    margin: 0 0 20px;
+    height: fit-content;
+    position: sticky;
+    z-index: 0;
+    top: calc(var(--headerHeight) + 20px)
+  }
 
-  &-row {
+  &-header, &-footer {
     @include flex(center, space-between);
     margin-bottom: 25px;
   }
@@ -59,5 +71,6 @@
 
   &-submit {
     @extend .button-brown;
+    width: 300px;
   }
 }
