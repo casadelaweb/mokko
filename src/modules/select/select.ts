@@ -4,7 +4,7 @@ import { selectors } from 'src/modules/select/select.types'
 export class Select {
   private selectors: selectors
   private parameters: {
-    current: HTMLElement[]
+    current: HTMLElement | HTMLElement[]
   }
 
   constructor() {
@@ -33,10 +33,12 @@ export class Select {
       const optionsAll = Array.from(select.querySelectorAll(this.selectors.option))
       const optionsActive = optionsAll.filter((option: HTMLElement) => option.classList.contains('active'))
 
-      const valueContainer = select.querySelector(this.selectors.value)
-      let valueContent: string = ''
-      optionsActive.forEach((option) => valueContent = valueContent + option.textContent)
-      valueContainer.textContent = valueContent
+      if (optionsActive.length > 0) {
+        const valueContainer = select.querySelector(this.selectors.value)
+        let valueContent: string = ''
+        optionsActive.forEach((option) => valueContent = valueContent + option.textContent)
+        valueContainer.textContent = valueContent
+      }
     })
   }
 
@@ -49,20 +51,13 @@ export class Select {
         const options: HTMLElement = select.querySelector(this.selectors.options)
         const button: HTMLElement = select.querySelector(this.selectors.button)
 
-        // костыль
-        // if (select.classList.contains('active')) {
-        //
-        // } else {
-        //
-        // }
-        // const { body, } = document
-        // const elements: HTMLElement[] = [
-        //   ...body.querySelectorAll(this.selectors.select),
-        //   ...body.querySelectorAll(this.selectors.options),
-        //   ...body.querySelectorAll(this.selectors.button),
-        // ]
-        // elements.forEach((element: HTMLElement) => element.classList.remove('active'))
-
+        if (this.parameters.current instanceof HTMLElement && this.parameters.current !== select) {
+          this.parameters.current.classList.remove('active')
+          this.parameters.current.querySelector(this.selectors.options).classList.remove('active')
+          this.parameters.current.querySelector(this.selectors.button).classList.remove('active')
+        }
+        this.parameters.current = select
+        select.classList.toggle('active')
         options.classList.toggle('active')
         button.classList.toggle('active')
       }

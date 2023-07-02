@@ -7,19 +7,7 @@
   }
 
   &-title {
-    font-size: 12px;
-    text-transform: uppercase;
-    margin-bottom: 36px;
-    @include mediaTablet {
-      font-size: 18px;
-    }
-    @include mediaTabletBg {
-      margin-bottom: 42px;
-    }
-
-    @include mediaDesktop {
-      font-size: 20px;
-    }
+    @extend .page-title;
   }
 
   &-container {

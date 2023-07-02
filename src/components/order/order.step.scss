@@ -1,0 +1,44 @@
+@import "src/styles/shared";
+
+.order-step {
+  padding: 32px 0;
+  border-bottom: 1px solid #f1f1f1;
+  @include mediaLaptop {
+    display: grid;
+    grid-template-columns: 1fr 1.85fr;
+  }
+
+  &:first-child {
+    padding-top: 0;
+  }
+
+  &:last-child {
+    border-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  &-header {
+    @include flex(center);
+    margin-bottom: 32px;
+    @include mediaLaptop {
+      height: fit-content;
+      margin-bottom: auto;
+    }
+  }
+
+  &-number {
+    @include flex(center, center);
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #e9e9e9;
+    margin-right: 8px;
+  }
+
+  &-title {
+    font-size: 16px;
+    @include mediaLaptop {
+      font-size: 18px;
+    }
+  }
+}

@@ -1,0 +1,85 @@
+@import "src/styles/shared";
+
+.order {
+  &-button {
+    @extend .button-brown;
+    margin-bottom: 20px;
+  }
+
+  &-label {
+    @include flex($d: column);
+    margin-bottom: 20px;
+
+    &._radio {
+      flex-direction: row;
+    }
+
+    &-title {
+      font-size: 14px;
+      color: #ada49e;
+      margin-bottom: 6px;
+
+      ._radio & {
+        color: #80756e;
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &-input {
+    @extend .input-grey;
+  }
+
+  &-location {
+    position: relative;
+    z-index: 0;
+    @include flex(stretch);
+    border-radius: 4px;
+    overflow: hidden;
+
+    &-input {
+      @extend .input-grey;
+      flex: 1 0 auto;
+      border-radius: 0;
+    }
+
+    &-search, &-reset {
+      @include flex(center, center);
+      background: #e9e9e9;
+      padding: 10px;
+    }
+
+    &-search {
+      font-size: 24px;
+    }
+
+    &-reset {
+      .iconfont {
+        font-size: 12px;
+        font-weight: 700;
+      }
+    }
+  }
+
+
+  .select {
+    @extend .input-grey;
+    @include flex(stretch, center);
+    flex: 0 0 auto;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+
+    &-current {
+      flex: 1 0 auto;
+      width: 100%;
+      padding: 10px 15px;
+
+      &-button {
+        position: static;
+        font-size: 15px;
+        margin: 0 10px 0 0;
+      }
+    }
+  }
+}

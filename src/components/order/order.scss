@@ -2,67 +2,37 @@
 
 .order {
   color: #82756e;
-  
+  font-size: 14px;
+
+  &-note {
+    line-height: 1.4;
+    margin-bottom: 20px;
+  }
+
+  &-warning {
+    color: #ea1c35;
+  }
+
   &-container {
     @extend .container;
   }
 
-  &-title {
-  }
-
-  &-step {
-    padding: 32px 0;
-    border-bottom: 1px solid #f1f1f1;
-
-    &-header {
-      @include flex(center);
-      margin-bottom: 32px;
-    }
-
-    &-number {
-      @include flex(center, center);
-      width: 24px;
-      height: 24px;
-      border-radius: 50%;
-      background: #e9e9e9;
-      margin-right: 8px;
-    }
-
-    &-title {
-    }
-  }
-
-  &-label {
-    @include flex($d: column);
-    margin-bottom: 20px;
-
-    &-title {
-      font-size: 14px;
-      color: #ada49e;
-      margin-bottom: 6px;
-    }
-  }
-
-  &-input {
-    @extend .input-grey;
-  }
-
-  &-summary {
-    padding: 36px $containerPaddingMobile 46px;
-    background: #f1f1f1;
-    font-size: 15px;
-    margin: 0 ($containerPaddingMobile * -1);
-    @include mediaTablet {
-      padding: 36px $containerPaddingTablet 46px;
-      margin: 0 ($containerPaddingTablet * -1);
-    }
+  &-layout {
     @include mediaTabletBg {
-      padding: 36px 20px 32px;
-      margin: 0 0 56px;
-      height: fit-content;
-      position: sticky;
-      z-index: 0;
-      top: calc(var(--headerHeight) + 20px)
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      column-gap: 56px;
+    }
+  }
+
+  &-title {
+    @extend .page-title;
+  }
+
+  &-steps {
+    margin-bottom: 32px;
+    @include mediaLaptop {
+      margin-bottom: 120px;
     }
   }
 }
