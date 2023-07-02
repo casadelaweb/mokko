@@ -1,7 +1,7 @@
 @import "src/styles/variables";
 @import "src/styles/mixins";
 
-.container {
+@mixin container {
   margin: 0 auto;
   max-width: $containerWidthMobile;
   padding: 0 $containerPaddingMobile;
@@ -17,6 +17,10 @@
     padding: 0 $containerPaddingDesktop;
     max-width: $containerWidthDesktop;
   }
+}
+
+.container {
+  @include container;
 }
 
 .page-title {

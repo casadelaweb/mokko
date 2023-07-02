@@ -88,12 +88,15 @@ class Modals {
     this.parameters.current.classList.add('current')
 
     this.onOpen()
-    // console.log(this)
 
     throwEvent(modal, Modals.events.open, { trigger: trigger, })
   }
 
   public deactivateModal(modal: HTMLElement, trigger?: any): void {
+    // если модальное окно не активно
+    // выходим из метода
+    if (!modal.classList.contains('active')) return
+
     throwEvent(modal, Modals.events.beforeClose, { trigger: trigger, })
     this.onBeforeClose()
 
@@ -112,7 +115,6 @@ class Modals {
           this.parameters.all.forEach((modal) => modal.classList.remove('current'))
         }
         this.parameters.counter--
-        // console.log(this)
         resolve()
       }, this.options.transition.duration)
 
@@ -193,11 +195,11 @@ class Modals {
   }
 
   private handleKeyUp(event: KeyboardEvent): void {
-    // console.log(this)
-    const { body, } = document
-
-    if (event.code === 'Escape' && this.parameters.all.length > 0 &&
-      this.parameters.current instanceof HTMLElement) {
+    if (event.code === 'Escape' &&
+      this.parameters.all.length > 0 &&
+      this.parameters.current instanceof HTMLElement
+    ) {
+      const { body, } = document
 
       this.deactivateModal(this.parameters.current, {
         type: 'keyup',

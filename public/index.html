@@ -28,7 +28,35 @@
       </button>
     </div>
     <div class="search-layout">
-      <div class="search-desktop"></div>
+
+      <div class="search-desktop">
+        <h2 class="search-results-title">
+          Результаты поиска <span>(15)</span>
+        </h2>
+        <div class="search-cards">
+          repeat 3 times:
+          <article class="search-card">
+            <a class="search-card-img" href="catalog-detail.html">
+              <img alt="img" loading="lazy" src="src/assets/img/section/product-5.jpg">
+            </a>
+            <h2 class="search-card-title">
+              <a href="catalog-detail.html">Джемпер из шерсти</a>
+            </h2>
+            <div class="search-card-price">7 799 ₽</div>
+            <div class="search-card-colors">
+              <div class="search-card-color" style="background: #756bff"></div>
+              <div class="search-card-color" style="background: lightcoral"></div>
+              <div class="search-card-color" style="background: lightsalmon"></div>
+              <div class="search-card-color" style="background: lightgrey"></div>
+            </div>
+          </article>
+          end;
+        </div>
+        <a class="search-results-button" href="catalog.html">
+          <span>Смотреть все результаты</span>
+        </a>
+      </div>
+
       <div class="search-mobile">
         <form class="search-form" data-search="form">
           <button class="search-submit" type="submit">

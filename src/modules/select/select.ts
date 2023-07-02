@@ -42,6 +42,15 @@ export class Select {
     })
   }
 
+  private deactivate(select: HTMLElement): void {
+    const options: HTMLElement = select.querySelector(this.selectors.options)
+    const button: HTMLElement = select.querySelector(this.selectors.button)
+
+    select.classList.remove('active')
+    options.classList.remove('active')
+    button.classList.remove('active')
+  }
+
   private listen(): void {
     document.addEventListener('click', (event) => {
       const target = event.target as HTMLElement
@@ -52,9 +61,7 @@ export class Select {
         const button: HTMLElement = select.querySelector(this.selectors.button)
 
         if (this.parameters.current instanceof HTMLElement && this.parameters.current !== select) {
-          this.parameters.current.classList.remove('active')
-          this.parameters.current.querySelector(this.selectors.options).classList.remove('active')
-          this.parameters.current.querySelector(this.selectors.button).classList.remove('active')
+          this.deactivate(this.parameters.current)
         }
         this.parameters.current = select
         select.classList.toggle('active')
@@ -71,6 +78,10 @@ export class Select {
         optionsAll.forEach((option: HTMLElement) => option.classList.remove('active'))
         optionCurrent.classList.add('active')
         valueContainer.textContent = optionCurrent.textContent
+      }
+
+      if (!target.closest(this.selectors.select)) {
+        if (this.parameters.current instanceof HTMLElement) this.deactivate(this.parameters.current)
       }
     })
   }
