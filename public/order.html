@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+        name="viewport">
+  <meta content="ie=edge" http-equiv="X-UA-Compatible">
+  <title>Mokko Brand | Оформление заказа</title>
+</head>
+<body>
+<div id="app">
+  import ./includes/header.html;
+
+  <main class="main">
+    <section class="order">
+      <div class="order-container">
+        <h2 class="order-title">Оформление заказа</h2>
+        <div class="order-step">
+          <h2 class="order-step-title">Регион доставки</h2>
+        </div>
+        <div class="order-step">
+          <h2 class="order-step-title">Доставка</h2>
+        </div>
+        <div class="order-step">
+          <h2 class="order-step-title">Оплата</h2>
+        </div>
+
+        <div class="order-step">
+          <div class="order-step-header">
+            <div class="order-step-number">4</div>
+            <h2 class="order-step-title"> Покупатель </h2>
+          </div>
+          <label class="order-label">
+            <span class="order-label-title">Имя *</span>
+            <input autocomplete="off" class="order-input" placeholder="Имя" required type="text">
+          </label>
+          <label class="order-label">
+            <span class="order-label-title">Фамилия *</span>
+            <input autocomplete="off" class="order-input" placeholder="Фамилия" required type="text">
+          </label>
+          <label class="order-label">
+            <span class="order-label-title">Почта *</span>
+            <input autocomplete="off" class="order-input" data-mask="email" placeholder="Почта" required type="text">
+          </label>
+          <label class="order-label">
+            <span class="order-label-title">Телефон *</span>
+            <input autocomplete="off" class="order-input" data-mask="tel" placeholder="Телефон" required type="text">
+          </label>
+        </div>
+
+        <form class="order-summary">
+          <button class="order-summary-submit" type="submit">
+            <span>Оплатить</span>
+          </button>
+          <div>
+            Нажимая на кнопку «Оплатить»,
+            вы принимаете условия <a href="#">публичной оферты</a>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  import ./includes/footer.html;
+  import ./includes/modals.html;
+</div>
+</body>
+</html>
