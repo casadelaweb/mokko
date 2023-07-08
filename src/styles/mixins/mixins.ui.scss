@@ -1,0 +1,138 @@
+@use 'mixins.media' as *;
+@use 'mixins.helpers' as *;
+@use 'src/styles/variables' as *;
+
+@mixin container {
+  margin: 0 auto;
+  max-width: $containerWidthMobile;
+  padding: 0 $containerPaddingMobile;
+
+  @include mediaTablet {
+    padding: 0 $containerPaddingTablet;
+  }
+  @include mediaLaptop {
+    padding: 0 $containerPaddingLaptop;
+    max-width: $containerWidthLaptop;
+  }
+  @include mediaDesktop {
+    padding: 0 $containerPaddingDesktop;
+    max-width: $containerWidthDesktop;
+  }
+}
+
+@mixin pageSummary {
+  padding: 36px $containerPaddingMobile 46px;
+  background: #f1f1f1;
+  font-size: 15px;
+  margin: 0 ($containerPaddingMobile * -1);
+  @include mediaTablet {
+    padding: 36px $containerPaddingTablet 46px;
+    margin: 0 ($containerPaddingTablet * -1);
+  }
+  @include mediaTabletBg {
+    padding: 36px 20px 32px;
+    margin: 0 0 56px;
+    height: fit-content;
+    position: sticky;
+    z-index: 0;
+    top: calc(var(--headerHeight) + 20px)
+  }
+
+  &-body {
+    .icon-close {
+      font-size: 12px;
+      font-weight: 700;
+      margin: 0 4px;
+    }
+  }
+  &-footer, &-header {
+    font-size: 17px;
+  }
+  &-footer {
+    padding-top: 12px;
+    border-top: 2px solid white;
+  }
+
+  &-row {
+    @include flex(center, space-between);
+    margin-bottom: 20px;
+  }
+  &-name, &-value {
+    letter-spacing: 0.02em;
+  }
+  &-name {
+    color: #82756e;
+  }
+  &-value {
+    color: #505050;
+  }
+
+  &-points {
+    border-radius: 4px;
+    background: #766cff;
+    color: white;
+    font-size: 17px;
+    padding: 4px 10px;
+    margin: 0 4px;
+  }
+
+  &-submit {
+    @extend .button-brown;
+    margin-bottom: 20px;
+    max-width: 300px;
+  }
+}
+
+@mixin scrollbar {
+  @media screen and (any-hover: hover) {
+    &::-webkit-scrollbar {
+      width: 10px
+    }
+    &::-webkit-scrollbar-track {
+      background: white;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: #51504f;
+      border: 3px solid white;
+    }
+  }
+}
+
+@mixin detailsMobile {
+  .details {
+    &-summary {
+      position: relative;
+      z-index: 0;
+
+      &-link {
+        font-size: 18px;
+      }
+    }
+
+    &.is-opening, &.open {
+      .details-button {
+        transform: rotate(-90deg);
+      }
+    }
+
+    &-button {
+      position: absolute;
+      z-index: 1;
+      top: 4px;
+      left: $containerPaddingMobile * -2;
+      width: $containerPaddingMobile;
+      font-size: 13px;
+    }
+
+    &-body {
+      padding: $containerPaddingMobile 0 0;
+      font-size: 14px;
+      letter-spacing: 0.02em;
+    }
+
+    &-link {
+      display: inline-block;
+      margin-bottom: 1em;
+    }
+  }
+}

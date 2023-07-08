@@ -1,2 +1,21 @@
-@forward './variables.scss';
-@forward './variables.root';
+:root {
+  --headerHeight: 50px;
+}
+
+
+$containerPaddingMobile: 14px;
+$containerPaddingTablet: 40px;
+$containerPaddingLaptop: 50px;
+$containerPaddingDesktop: 130px;
+
+$containerWidthMobile: 100%;
+$containerWidthLaptop: 1280px;
+$containerWidthDesktop: 1920px;
+
+$breakpointMobileConventional: 360px;
+$breakpointTablet: 768px;
+$breakpointTabletBg: 1024px;
+$breakpointLaptop: 1280px;
+$breakpointDesktop: 1920px;
+
+$toggleBtnTransition: 0.25s

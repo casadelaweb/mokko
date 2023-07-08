@@ -1,4 +1,5 @@
 @use 'src/styles/shared' as Shared;
+@use 'src/styles/ui' as *;
 
 .search {
   //@include Shared.mediaLaptop {
@@ -15,7 +16,7 @@
 
   &-layout {
     @include Shared.mediaLaptop {
-      @include Shared.container;
+      @include container;
       column-gap: 56px;
       padding-top: 32px !important;
     }
