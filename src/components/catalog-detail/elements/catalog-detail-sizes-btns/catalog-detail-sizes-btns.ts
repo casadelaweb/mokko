@@ -42,10 +42,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   toggle('.catalog-detail-btn-size')
 
-  document.addEventListener('DOMContentLoaded', (event: MouseEvent) => {
-    const target = event.target as HTMLElement
-    if (target.closest('.catalog-detail-btn-buy')) {
-
-    }
-  })
+  // document.addEventListener('DOMContentLoaded', (event: MouseEvent) => {
+  //   const target = event.target as HTMLElement
+  //   if (target.closest('.catalog-detail-btn-buy')) {
+  //
+  //   }
+  // })
 })
