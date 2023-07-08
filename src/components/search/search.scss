@@ -20,7 +20,7 @@
   @include mediaLaptop {
     z-index: 130;
     overflow: hidden;
-    height: 650px;
+    height: auto;
     box-shadow: 12px 12px 24px 0 rgba(black, 0.1);
   }
 
@@ -35,6 +35,9 @@
     border-bottom: 2px solid #e9e9e9;
     @include mediaLaptop {
       padding: 24px;
+    }
+    @include mediaDesktop {
+      padding: 30px 24px;
     }
   }
 
@@ -51,6 +54,10 @@
       padding: 40px 48px 56px;
       grid-template-columns: 3fr 1fr;
       column-gap: 96px;
+    }
+    @include mediaDesktop {
+      max-height: 750px - 80px;
+      column-gap: 112px;
     }
 
     &-aside {
