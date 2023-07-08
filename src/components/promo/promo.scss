@@ -1,46 +1,46 @@
-@use 'src/styles/shared' as Shared;
-@use 'src/styles/ui';
+@import 'src/styles/shared';
+
 
 .promo {
   overflow: hidden;
   padding: 60px 0;
-  @include Shared.mediaTablet {
+  @include mediaTablet {
     padding: 72px 0 80px
   }
-  @include Shared.mediaTabletBg {
+  @include mediaTabletBg {
     padding: 80px 0;
   }
-  @include Shared.mediaLaptop {
+  @include mediaLaptop {
     padding: 110px 0;
   }
-  @include Shared.mediaDesktop {
+  @include mediaDesktop {
     padding: 110px 0;
   }
 
   &-container {
-    @extend .container;
+    @include container;
   }
 
   &-main {
     margin-bottom: 30px;
-    @include Shared.mediaTabletBg {
-      @include Shared.flex(center, space-between);
+    @include mediaTabletBg {
+      @include flex(center, space-between);
       margin-bottom: 60px;
     }
-    @include Shared.mediaLaptop {
+    @include mediaLaptop {
       margin-bottom: 80px;
     }
   }
 
   &-text {
     margin-bottom: 58px;
-    @include Shared.mediaTablet {
+    @include mediaTablet {
       margin-bottom: 80px;
     }
-    @include Shared.mediaTabletBg {
+    @include mediaTabletBg {
       margin-bottom: 0;
     }
-    @include Shared.mediaLaptop {
+    @include mediaLaptop {
       padding-left: 40px;
     }
   }
@@ -51,14 +51,14 @@
     letter-spacing: 0.05em;
     margin-bottom: 1em;
     text-transform: uppercase;
-    @include Shared.mediaTablet {
+    @include mediaTablet {
       font-size: 26px;
       margin-bottom: 30px;
     }
-    @include Shared.mediaTabletBg {
+    @include mediaTabletBg {
       line-height: 38 / 26;
     }
-    @include Shared.mediaLaptop {
+    @include mediaLaptop {
       font-size: 32px;
       line-height: 44 / 32;
     }
@@ -66,14 +66,14 @@
 
   &-description {
     font-size: 14px;
-    @include Shared.mediaTablet {
+    @include mediaTablet {
       font-size: 16px;
       max-width: 520px;
     }
-    @include Shared.mediaTabletBg {
+    @include mediaTabletBg {
       max-width: 360px;
     }
-    @include Shared.mediaLaptop {
+    @include mediaLaptop {
       font-size: 18px;
       max-width: 488px;
     }
@@ -91,7 +91,7 @@
     z-index: 0;
 
     &-overlay {
-      @include Shared.flex(center, center);
+      @include flex(center, center);
       background-color: rgba(#51504f, 0.5);
       border-radius: 10px;
       height: 100%;
@@ -106,7 +106,7 @@
       color: white;
       font-size: 16px;
       text-align: center;
-      @include Shared.mediaTablet {
+      @include mediaTablet {
         font-size: 18px;
         letter-spacing: 0.05em;
       }

@@ -1,22 +1,22 @@
-@use 'src/styles/shared' as Shared;
-@use 'src/styles/ui';
+@import 'src/styles/shared';
+
 
 .cart {
   padding-top: 15px;
-  @include Shared.mediaTablet {
+  @include mediaTablet {
     padding-top: 24px;
   }
 
   &-title {
-    @extend .page-title;
+    @include page-title;
   }
 
   &-container {
-    @extend .container;
+    @include container;
   }
 
   &-layout {
-    @include Shared.mediaTabletBg {
+    @include mediaTabletBg {
       column-gap: 56px;
       display: grid;
       grid-template-columns: 2fr 1fr;
@@ -25,7 +25,7 @@
 
   &-cards {
     margin-bottom: 25px;
-    @include Shared.mediaTablet {
+    @include mediaTablet {
       margin-bottom: 56px;
     }
   }

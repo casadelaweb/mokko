@@ -1,15 +1,14 @@
-@use 'src/styles/shared' as Shared;
-@use 'src/styles/variables' as *;
-@use 'src/styles/ui';
+@import 'src/styles/shared';
+
 
 .order {
   &-button {
-    @extend .button-brown;
+    @include button-brown;
     margin-bottom: 20px;
   }
 
   &-label {
-    @include Shared.flex($d: column);
+    @include flex($d: column);
     margin-bottom: 20px;
 
     &._radio {
@@ -29,24 +28,24 @@
   }
 
   &-input {
-    @extend .input-grey;
+    @include input-grey;
   }
 
   &-location {
     border-radius: 4px;
     overflow: hidden;
-    @include Shared.flex(stretch);
+    @include flex(stretch);
     position: relative;
     z-index: 0;
 
     &-input {
-      @extend .input-grey;
+      @include input-grey;
       border-radius: 0;
       flex: 1 0 auto;
     }
 
     &-search, &-reset {
-      @include Shared.flex(center, center);
+      @include flex(center, center);
       background: #e9e9e9;
       padding: 10px;
     }
@@ -65,8 +64,8 @@
 
 
   .select {
-    @extend .input-grey;
-    @include Shared.flex(stretch, center);
+    @include input-grey;
+    @include flex(stretch, center);
     flex: 0 0 auto;
     margin: 0;
     padding: 0;

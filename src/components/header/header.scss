@@ -1,4 +1,4 @@
-@use 'src/styles/shared' as Shared;
+@import 'src/styles/shared';
 
 .header {
   border-bottom: 2px solid transparent;
@@ -11,10 +11,10 @@
   transition: background-color 0.5s, backdrop-filter 0.5s, border-color 0.5s;
   width: 100%;
   z-index: 100;
-  @include Shared.mediaMobileConventional {
+  @include mediaMobileConventional {
     padding: 16px 0;
   }
-  @include Shared.mediaTablet {
+  @include mediaTablet {
     padding: 20px 0;
   }
 
@@ -25,23 +25,23 @@
   }
 
   &-container {
-    padding: 0 (Shared.$containerPaddingMobile - 6px);
-    @include Shared.mediaTablet {
-      padding: 0 (Shared.$containerPaddingTablet - 11px);
+    padding: 0 ($containerPaddingMobile - 6px);
+    @include mediaTablet {
+      padding: 0 ($containerPaddingTablet - 11px);
     }
 
-    @include Shared.mediaDesktop {
+    @include mediaDesktop {
       margin: 0 auto;
       max-width: 1920px;
-      padding: 0 Shared.$containerPaddingDesktop;
+      padding: 0 $containerPaddingDesktop;
     }
   }
 
   &-desktop {
     display: none;
 
-    @include Shared.mediaLaptop {
-      @include Shared.flex(center);
+    @include mediaLaptop {
+      @include flex(center);
       margin: 0 auto;
       padding: 0 48px;
     }
@@ -71,19 +71,19 @@
     top: 50%;
     transform: translate(-50%, -50%);
     z-index: 1;
-    @include Shared.mediaMobileConventional {
+    @include mediaMobileConventional {
       font-size: 22px;
     }
-    @include Shared.mediaTablet {
+    @include mediaTablet {
       font-size: 32px;
     }
-    //@include Shared.mediaLaptop {
+    //@include mediaLaptop {
     //  font-size: 32px;
     //}
   }
 
   &-buttons {
-    @include Shared.flex(center);
+    @include flex(center);
     margin-left: auto;
   }
 
@@ -97,7 +97,7 @@
     margin: 0 auto 22px;
     width: 100%;
 
-    @include Shared.mediaLaptop {
+    @include mediaLaptop {
       margin: 0 (36px - 20px) 0 auto;
       width: 228px;
     }

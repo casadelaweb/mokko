@@ -1,4 +1,4 @@
-@use 'src/styles/shared' as Shared;
+@import 'src/styles/shared';
 
 .cart-card {
   border-bottom: 1px solid #dadada;
@@ -6,7 +6,7 @@
   padding: 25px 0;
   position: relative;
   z-index: 0;
-  @include Shared.mediaLaptop {
+  @include mediaLaptop {
     font-size: 15px;
     padding: 30px 0;
   }
@@ -17,7 +17,7 @@
 
   &:last-child {
     border-bottom: 0;
-    @include Shared.mediaTabletBg {
+    @include mediaTabletBg {
       padding-bottom: 0;
     }
   }
@@ -31,10 +31,10 @@
     'img footer footer footer';
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: min-content;
-    @include Shared.mediaOnlyMobile {
+    @include mediaOnlyMobile {
       display: none;
     }
-    @include Shared.mediaLaptop {
+    @include mediaLaptop {
       column-gap: 32px;
       grid-template-columns: 126px auto 95px 70px;
     }
@@ -46,8 +46,8 @@
 
       &-body {
         grid-area: body;
-        @include Shared.mediaLaptop {
-          @include Shared.flex;
+        @include mediaLaptop {
+          @include flex;
           margin-left: -16px;
         }
       }
@@ -58,21 +58,21 @@
       }
 
       &-prices {
-        @include Shared.flex(flex-end, $d: column);
+        @include flex(flex-end, $d: column);
         grid-area: prices;
         margin: 0 0 auto;
       }
 
       &-footer {
-        @include Shared.mediaTablet {
-          @include Shared.flex(center, flex-end);
+        @include mediaTablet {
+          @include flex(center, flex-end);
           bottom: 25px;
           grid-area: footer;
           position: absolute;
           right: 0;
           z-index: 1;
         }
-        @include Shared.mediaLaptop {
+        @include mediaLaptop {
           bottom: 30px;
         }
       }
@@ -83,19 +83,19 @@
     column-gap: 25px;
     display: grid;
     grid-template-columns: 1fr 1.1fr;
-    @include Shared.mediaTablet {
+    @include mediaTablet {
       display: none;
     }
   }
 
   &-left, &-right {
-    @include Shared.flex($d: column);
+    @include flex($d: column);
   }
 
   &-img {
     border-radius: 4px;
     display: block;
-    @include Shared.mediaOnlyMobile {
+    @include mediaOnlyMobile {
       margin-bottom: 13px;
     }
 
@@ -106,7 +106,7 @@
   }
 
   &-quantity {
-    @include Shared.flex(center, space-between);
+    @include flex(center, space-between);
     background: #f1f1f1;
     border-radius: 4px;
     height: 44px;;
@@ -122,7 +122,7 @@
     }
 
     &-button {
-      @include Shared.flex(center, center);
+      @include flex(center, center);
       padding: 0 10px;
       transition: background-color 0.2s;
       width: 33%;
@@ -138,32 +138,32 @@
   }
 
   &-body {
-    @include Shared.mediaLaptop {
-      @include Shared.flex($j: space-between);
+    @include mediaLaptop {
+      @include flex($j: space-between);
     }
   }
 
   &-title {
     margin-bottom: 14px;
-    @include Shared.mediaLaptop {
+    @include mediaLaptop {
       font-size: 18px;
       width: 120px;
     }
-    @include Shared.mediaDesktop {
+    @include mediaDesktop {
       width: 240px;
     }
   }
 
   &-article {
     margin-bottom: 10px;
-    @include Shared.mediaLaptop {
+    @include mediaLaptop {
       margin-bottom: 0;
     }
   }
 
   &-colors {
     margin-bottom: 14px;
-    @include Shared.mediaLaptop {
+    @include mediaLaptop {
       margin-bottom: 0;
     }
   }
@@ -181,11 +181,11 @@
   }
 
   &-size {
-    @include Shared.mediaOnlyMobile {
+    @include mediaOnlyMobile {
       margin-bottom: 14px;
     }
-    @include Shared.mediaLaptop {
-      @include Shared.flex(center, center);
+    @include mediaLaptop {
+      @include flex(center, center);
       background: #f1f1f1;
       border-radius: 4px;
       height: 44px;
@@ -194,24 +194,24 @@
   }
 
   &-prices {
-    @include Shared.flex(center, space-between);
-    @include Shared.mediaOnlyMobile {
+    @include flex(center, space-between);
+    @include mediaOnlyMobile {
       margin-top: auto;
     }
   }
 
   &-discount {
-    @include Shared.flex(center, center);
+    @include flex(center, center);
     background: #756bff;
     border-radius: 10px 0;
     color: white;
     font-size: 15px;
     height: 37px;
     width: 56px;
-    @include Shared.mediaTablet {
+    @include mediaTablet {
       margin-bottom: 13px;
     }
-    @include Shared.mediaLaptop {
+    @include mediaLaptop {
       font-size: 17px;
       height: 45px;
       width: 70px;
@@ -233,17 +233,17 @@
   }
 
   &-footer {
-    @include Shared.flex(center);
-    @include Shared.mediaOnlyMobile {
+    @include flex(center);
+    @include mediaOnlyMobile {
       height: 44px;;
       margin-top: auto;
     }
   }
 
   &-remove {
-    @include Shared.flex(center);
+    @include flex(center);
     font-size: 16px;
-    @include Shared.mediaLaptop {
+    @include mediaLaptop {
       font-size: 17px;
     }
 
@@ -255,10 +255,10 @@
 
   &-favourite {
     font-size: 22px;
-    @include Shared.mediaOnlyMobile {
+    @include mediaOnlyMobile {
       margin-left: auto;
     }
-    @include Shared.mediaTablet {
+    @include mediaTablet {
       margin-left: 20px;
     }
   }

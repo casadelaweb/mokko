@@ -1,6 +1,5 @@
-@use 'src/styles/shared' as Shared;
-@use 'src/styles/variables' as *;
-@use 'src/styles/ui';
+@import 'src/styles/shared';
+
 
 .search {
   background: white;
@@ -9,21 +8,21 @@
   position: fixed;
   top: 0;
   transition: transform 0.5s;
-  @include Shared.mediaOnlyMobileAndTablets {
+  @include mediaOnlyMobileAndTablets {
     height: 100%;
     overflow-y: auto;
     transform: translate(calc(-100% - 100px), 0);
     width: 320px;
     z-index: 105;
-    @include Shared.scrollbar;
+    @include scrollbar;
   }
-  @include Shared.mediaTablet {
+  @include mediaTablet {
     height: 440px;
     padding-bottom: 48px;
     transform: translate(0, calc(-100% - 100px));
     width: 100%;
   }
-  @include Shared.mediaLaptop {
+  @include mediaLaptop {
     box-shadow: 12px 12px 24px 0 rgba(black, 0.1);
     height: 650px;
     overflow: unset;
@@ -37,84 +36,84 @@
   }
 
   &-layout {
-    @include Shared.mediaLaptop {
+    @include mediaLaptop {
       display: grid;
       grid-template-columns: 3fr 1fr;
     }
   }
 
   &-header {
-    @include Shared.flex(center);
+    @include flex(center);
     border-bottom: 2px solid #e9e9e9;
     padding: $containerPaddingMobile;
-    @include Shared.mediaTablet {
+    @include mediaTablet {
       padding: $containerPaddingMobile 20px;
     }
-    @include Shared.mediaLaptop {
+    @include mediaLaptop {
       padding: 24px;
     }
   }
 
   &-body {
-    @include Shared.mediaOnlyTablet {
-      @include Shared.flex($w: wrap);
+    @include mediaOnlyTablet {
+      @include flex($w: wrap);
       margin-bottom: 56px - 14px;
     }
   }
 
   &-footer {
-    @extend .container;
-    @include Shared.mediaLaptop {
+    @include container;
+    @include mediaLaptop {
       display: none;
     }
   }
 
   &-close {
-    @include Shared.flex(center, center);
-    @include Shared.mediaTablet {
+    @include flex(center, center);
+    @include mediaTablet {
       font-size: 18px;
     }
-    @include Shared.mediaLaptop {
+    @include mediaLaptop {
       font-size: 24px;
       margin-left: auto;
     }
   }
 
   &-form {
-    @include Shared.flex(center);
+    @include flex(center);
     padding: 20px 40px 0 20px;
     position: relative;
     z-index: 0;
-    @include Shared.mediaTablet {
+    @include mediaTablet {
       margin-bottom: 32px;
     }
   }
 
   &-label {
-    @include Shared.flex;
+    @include flex;
     flex: 1 0 auto;
     position: relative;
     z-index: 0;
   }
 
   &-submit {
-    @include Shared.flex(center, center);
+    @include flex(center, center);
     font-size: 18px;
     margin-right: 8px;
-    @include Shared.mediaTablet {
+    @include mediaTablet {
       font-size: 22px;
     }
   }
 
   &-input {
-    @extend .input-grey;
+    @include input-grey;
     color: #51504f;
     flex: 1 0 auto;
     font-size: 14px;
     letter-spacing: 0.02em;
 
     &-reset {
-      @include Shared.flex(center, center);
+      @include flex(center, center);
       font-size: 14px;
       position: absolute;
       right: 8px;
@@ -125,15 +124,15 @@
 
 
   &-recommended, &-categories {
-    @include Shared.flex($d: column);
+    @include flex($d: column);
     padding: 20px 40px 0;
-    @include Shared.mediaTablet {
+    @include mediaTablet {
       padding: 0 40px;
     }
   }
 
   &-categories {
-    @include Shared.mediaOnlyMobile {
+    @include mediaOnlyMobile {
       margin-bottom: 40px;
     }
   }
@@ -142,10 +141,10 @@
     display: inline-block;
     font-size: 17px;
     margin-bottom: 1em;
-    @include Shared.mediaTablet {
+    @include mediaTablet {
       margin-bottom: 24px;
     }
-    @include Shared.mediaLaptop {
+    @include mediaLaptop {
       color: #51504f;
       font-size: 18px;
     }
@@ -156,16 +155,16 @@
     font-size: 14px;
     letter-spacing: 0.02em;
     margin-bottom: 1em;
-    @include Shared.mediaLaptop {
+    @include mediaLaptop {
       font-size: 17px;
     }
   }
 
 
   &-button {
-    @extend .button-brown;
+    @include button-brown;
     margin: 0 auto;
-    @include Shared.mediaTablet {
+    @include mediaTablet {
       width: 250px;
     }
   }

@@ -1,14 +1,13 @@
-@use 'src/styles/shared' as Shared;
-@use 'src/styles/variables' as *;
-@use 'src/styles/ui';
+@import 'src/styles/shared';
+
 
 .order-summary {
-  @include Shared.pageSummary;
+  @include pageSummary;
 
   &-policy {
     line-height: 1.3;
     text-align: center;
-    @include Shared.mediaOnlyTablet {
+    @include mediaOnlyTablet {
       display: inline-block;
     }
 

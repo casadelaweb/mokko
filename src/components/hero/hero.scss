@@ -1,4 +1,4 @@
-@use 'src/styles/shared' as Shared;
+@import 'src/styles/shared';
 
 .hero {
   overflow: hidden;
@@ -11,7 +11,7 @@
       display: block;
       object-fit: cover;
       width: 100%;
-      @include Shared.mediaOnlyMobile {
+      @include mediaOnlyMobile {
         min-height: 100vh;
       }
     }
@@ -19,14 +19,14 @@
 }
 
 .swiper-pagination {
-  @include Shared.flex(center, center);
+  @include flex(center, center);
   bottom: 16px;
   left: 50%;
   position: absolute;
   transform: translate(-50%, 0);
   z-index: 1;
 
-  @include Shared.mediaLaptop {
+  @include mediaLaptop {
     bottom: 30px;
   }
 
@@ -40,7 +40,7 @@
     transition: background-color 0.5s, opacity 0.5s;
     width: 46px;
 
-    @include Shared.mediaLaptop {
+    @include mediaLaptop {
       width: 80px;
     }
 

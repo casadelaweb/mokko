@@ -1,5 +1,3 @@
-@use 'src/styles/variables';
-
 @mixin flex($a:'unset', $j:'unset', $d:'unset', $w:'unset') {
   display: flex;
   @if ($a != 'unset') {

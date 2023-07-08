@@ -1,17 +1,17 @@
-@use 'src/styles/shared' as Shared;
-@use 'src/styles/ui';
+@import 'src/styles/shared';
+
 
 .search {
   &-desktop {
     display: none;
-    @include Shared.mediaLaptop {
+    @include mediaLaptop {
       display: block;
     }
   }
 
   &-layout {
-    @include Shared.mediaLaptop {
-      @include Shared.container;
+    @include mediaLaptop {
+      @include container;
       column-gap: 56px;
       padding-top: 32px !important;
     }
@@ -24,14 +24,14 @@
     }
 
     &-button {
-      @extend .button-brown;
+      @include button-brown;
       margin: 0 auto;
       width: 300px;
     }
   }
 
   &-cards {
-    @include Shared.mediaLaptop {
+    @include mediaLaptop {
       column-gap: 14px;
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -64,7 +64,7 @@
   }
 
   &-colors {
-    @include Shared.flex(center);
+    @include flex(center);
   }
 
   &-color {

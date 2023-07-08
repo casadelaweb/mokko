@@ -1,8 +1,7 @@
-@use 'src/styles/shared' as Shared;
-@use 'src/styles/ui';
+@import 'src/styles/shared';
 
 .auth {
-  @include Shared.flex($d: column);
+  @include flex($d: column);
   background: white;
   font-size: 14px;
   padding: 24px 16px 40px;
@@ -10,7 +9,7 @@
   width: calc(100% - 32px);
   z-index: 0;
 
-  @include Shared.mediaTablet {
+  @include mediaTablet {
     padding: 40px 48px 48px;
     width: 400px;
   }
@@ -42,17 +41,17 @@
   }
 
   &-body {
-    @include Shared.flex($d: column);
+    @include flex($d: column);
     flex: 1 0 auto;
   }
 
   &-step {
-    @include Shared.flex($d: column);
+    @include flex($d: column);
     flex: 1 0 auto;
   }
 
   &-success {
-    @include Shared.flex($d: column);
+    @include flex($d: column);
     flex: 1 0 auto;
     font-size: 17px;
     text-align: center;
@@ -68,7 +67,7 @@
   }
 
   &-input {
-    @extend .input-grey;
+    @include input-grey;
     width: 100%;
 
     &-message {
@@ -80,7 +79,7 @@
   }
 
   &-button {
-    @extend .button-brown;
+    @include button-brown;
     margin: 0 auto 18px;
   }
 
@@ -89,7 +88,7 @@
   }
 
   &-policy {
-    @include Shared.flex;
+    @include flex;
     margin-bottom: 32px;
   }
 

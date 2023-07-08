@@ -1,10 +1,9 @@
-@use 'src/styles/shared' as Shared;
-@use 'src/styles/variables' as *;
+@import 'src/styles/shared';
 
 .catalog-detail {
   &-btns {
-    @include Shared.mediaOnlyMobile {
-      background: #ffffff;
+    @include mediaOnlyMobile {
+      background: white;
       bottom: 0;
       box-shadow: 0 -2px 4px rgba(81, 80, 79, 0.25);
       left: 0;
@@ -19,29 +18,29 @@
       font-size: 14px;
       line-height: 18px;
       text-align: right;
-      @include Shared.mediaTablet {
+      @include mediaTablet {
         display: none;
       }
     }
 
     .catalog-detail-sizes-info span {
       display: none;
-      @include Shared.mediaTablet {
+      @include mediaTablet {
         display: block;
       }
     }
 
-    @include Shared.mediaTablet {
+    @include mediaTablet {
       display: flex;
       flex-direction: column;
     }
   }
 
   &-btns-cont {
-    @include Shared.flex(center, space-between);
+    @include flex(center, space-between);
     margin-top: 6px;
     padding-bottom: 16px;
-    @include Shared.mediaTablet {
+    @include mediaTablet {
       justify-content: flex-start;
       margin-bottom: 35px;
       order: 1;
@@ -68,7 +67,7 @@
         content: 'В корзину'
       }
 
-      @include Shared.mediaTablet {
+      @include mediaTablet {
         width: 270px;
         &:before {
           content: 'Добавить в корзину'
@@ -77,8 +76,8 @@
     }
 
     &-size {
-      @include Shared.flex(center, center);
-      @include Shared.mediaTablet {
+      @include flex(center, center);
+      @include mediaTablet {
         display: none;
       }
 
@@ -99,7 +98,7 @@
       display: none;
       font-size: 20px;
       margin-left: 20px;
-      @include Shared.mediaTablet {
+      @include mediaTablet {
         display: block;
       }
 
@@ -109,12 +108,12 @@
 
 .catalog-detail-sizes {
   &-cont {
-    @include Shared.mediaOnlyMobile {
+    @include mediaOnlyMobile {
       .catalog-detail-title {
         display: none;
       }
     }
-    @include Shared.mediaTablet {
+    @include mediaTablet {
       height: auto;
       opacity: 1;
     }
@@ -174,7 +173,7 @@
     }
 
     &-mob {
-      @include Shared.mediaTablet {
+      @include mediaTablet {
         display: none;
       }
     }

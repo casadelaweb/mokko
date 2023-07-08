@@ -3,7 +3,7 @@ const path = require('path')
 const pathRoot = (directory) => path.resolve(__dirname, directory)
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-
+const CssMinimizer = require('css-minimizer-webpack-plugin')
 const mode = process.env.NODE_ENV || 'development'
 const isDevelopmentMode = mode === 'development'
 const isProductionMode = !isDevelopmentMode
@@ -14,7 +14,10 @@ const stylesPipeline = {
   development: [
     MiniCssExtractPlugin.loader,
     'css-loader',
-    'sass-loader',
+    {
+      loader: 'sass-loader',
+      options: { implementation: require('sass'), },
+    },
   ],
   production: [
     MiniCssExtractPlugin.loader,
@@ -23,7 +26,10 @@ const stylesPipeline = {
       loader: 'postcss-loader',
       options: { postcssOptions: { plugins: [ 'postcss-preset-env', ], }, },
     },
-    'sass-loader',
+    {
+      loader: 'sass-loader',
+      options: { implementation: require('sass'), },
+    },
   ],
 }
 const scriptsRuleset = {
@@ -65,12 +71,18 @@ module.exports = {
   mode: mode,
   target: 'browserslist',
   devtool: isDevelopmentMode ? 'source-map' : false,
-  optimization: { minimize: isProductionMode, },
+  optimization: {
+    minimize: false,
+    minimizer: [
+      '...',
+      new CssMinimizer(),
+    ],
+  },
   entry: { main: pathRoot('src/main.ts'), },
   output: {
     path: pathRoot('dist/'),
     filename: 'assets/js/[name].[contenthash:4].js',
-    clean: isProductionMode,
+    clean: true,
   },
   resolve: {
     alias: { 'src': pathRoot('./src'), },

@@ -1,11 +1,11 @@
-@use 'src/styles/shared' as Shared;
-@use 'src/styles/ui';
+@import 'src/styles/shared';
+
 
 .cart-summary {
-  @include Shared.pageSummary;
+  @include pageSummary;
 
   &-label {
-    @include Shared.flex(center, $w: wrap);
+    @include flex(center, $w: wrap);
     margin-bottom: 20px;
 
     &-title {
@@ -16,12 +16,12 @@
   }
 
   &-input {
-    @extend .input-white;
+    @include input-white;
     flex: 1 0 auto;
   }
 
   &-button {
-    @extend .button-square;
+    @include button-square;
   }
 
   &-message {

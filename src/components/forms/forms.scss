@@ -1,30 +1,30 @@
-@use 'src/styles/shared' as Shared;
-@use 'src/styles/ui';
+@import 'src/styles/shared';
+
 
 .form {
   &-label {
     display: inline-block;
     margin-bottom: 18px;
-    @include Shared.mediaTablet {
+    @include mediaTablet {
       font-size: 18px;
     }
-    @include Shared.mediaLaptop {
+    @include mediaLaptop {
       font-size: 20px;
       margin-bottom: 36px;
     }
   }
 
   &-main {
-    @include Shared.flex(center);
+    @include flex(center);
   }
 
   &-input {
-    @extend .input-grey;
+    @include input-grey;
     flex: 1 0 auto;
   }
 
   &-button {
-    @extend .button-square;
+    @include button-square;
   }
 
   &-warning {

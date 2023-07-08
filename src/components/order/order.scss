@@ -1,6 +1,5 @@
-@use 'src/styles/shared' as Shared;
-@use 'src/styles/variables' as *;
-@use 'src/styles/ui';
+@import 'src/styles/shared';
+
 
 .order {
   color: #82756e;
@@ -16,11 +15,11 @@
   }
 
   &-container {
-    @extend .container;
+    @include container;
   }
 
   &-layout {
-    @include Shared.mediaTabletBg {
+    @include mediaTabletBg {
       column-gap: 56px;
       display: grid;
       grid-template-columns: 2fr 1fr;
@@ -28,12 +27,12 @@
   }
 
   &-title {
-    @extend .page-title;
+    @include page-title;
   }
 
   &-steps {
     margin-bottom: 32px;
-    @include Shared.mediaLaptop {
+    @include mediaLaptop {
       margin-bottom: 120px;
     }
   }

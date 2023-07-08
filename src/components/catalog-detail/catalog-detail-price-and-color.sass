@@ -1,4 +1,4 @@
-@use 'src/styles/shared' as Shared
+@import 'src/styles/shared'
 
 .catalog-detail-colors
   font-size: 15px
@@ -6,12 +6,12 @@
   padding-bottom: 30px
   border-bottom: 1px solid #e9e9e9
   margin-bottom: 30px
-  @include Shared.mediaOnlyMobile
-    padding-left: Shared.$containerPaddingMobile
-    padding-right: Shared.$containerPaddingMobile
-    margin-left: Shared.$containerPaddingMobile * -1
-    margin-right: Shared.$containerPaddingMobile * -1
-  @include Shared.mediaTablet
+  @include mediaOnlyMobile
+    padding-left: $containerPaddingMobile
+    padding-right: $containerPaddingMobile
+    margin-left: $containerPaddingMobile * -1
+    margin-right: $containerPaddingMobile * -1
+  @include mediaTablet
     border-bottom: none
     padding-bottom: 0
 
@@ -22,7 +22,7 @@
       width: 28px
       height: 28px
       border-radius: 50%
-      border: 4px solid #fff
+      border: 4px solid white
       position: relative
       margin-right: 14px
       display: inline-block
@@ -41,14 +41,14 @@
 
 
 .catalog-detail-price
-  @include Shared.flex(center, $w: wrap)
+  @include flex(center, $w: wrap)
   color: #505050
   font-size: 18px
   line-height: 100%
   margin-top: 36px
   margin-bottom: 26px
 
-  @include Shared.mediaTablet
+  @include mediaTablet
     margin-top: 0
     // margin-bottom: 35px
     font-size: 22px
@@ -58,7 +58,7 @@
     font-size: 16px
     margin-bottom: 18px
     width: 100%
-    @include Shared.mediaTablet
+    @include mediaTablet
       margin-bottom: 16px
       font-size: 20px
 
@@ -77,7 +77,7 @@
     background: #756bff
     width: 85px
     order: 1
-    @include Shared.mediaTablet
+    @include mediaTablet
       order: -1
       margin-left: 0
       padding: 13px 12px 11px 14px

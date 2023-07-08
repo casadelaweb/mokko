@@ -1,9 +1,9 @@
-@use 'src/styles/shared' as Shared;
+@import 'src/styles/shared';
 
 .menu-mobile {
-  @include Shared.flex($d: column);
+  @include flex($d: column);
   min-height: 100%;
-  @include Shared.mediaLaptop {
+  @include mediaLaptop {
     display: none;
   }
 
@@ -12,7 +12,7 @@
   }
 
   &-header, &-body, &-footer {
-    padding: Shared.$containerPaddingMobile;
+    padding: $containerPaddingMobile;
   }
 
   &-footer {
@@ -27,14 +27,14 @@
   &-links {
     display: grid;
     grid-template-columns: 1fr;
-    padding: 0 (Shared.$containerPaddingMobile * 2);
-    row-gap: Shared.$containerPaddingMobile * 1.5;
+    padding: 0 ($containerPaddingMobile * 2);
+    row-gap: $containerPaddingMobile * 1.5;
   }
 
-  @include Shared.detailsMobile;
+  @include detailsMobile;
 
   .form {
-    @include Shared.mediaOnlyTablets {
+    @include mediaOnlyTablets {
       padding: 28px 0;
     }
   }

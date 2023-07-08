@@ -1,19 +1,18 @@
-@use 'src/styles/shared' as Shared;
-@use 'src/styles/ui';
+@import 'src/styles/shared';
 
 .catalog-detail {
   margin-bottom: 100px;
 
   &-container {
-    @extend .container;
+    @include container;
 
-    @include Shared.mediaOnlyMobile {
+    @include mediaOnlyMobile {
       padding-left: 0;
       padding-right: 0;
     }
 
 
-    @include Shared.mediaTablet {
+    @include mediaTablet {
       display: flex;
     }
 
@@ -23,33 +22,33 @@
     overflow: hidden;
     width: 100%;
 
-    @include Shared.mediaTablet {
+    @include mediaTablet {
       margin-right: 47px;
       width: 337px;
     }
-    @include Shared.mediaTabletBg {
+    @include mediaTabletBg {
       width: 626px;
     }
-    @include Shared.mediaLaptop {
+    @include mediaLaptop {
       margin-right: 56px;
       width: 787px;
     }
-    @include Shared.mediaDesktop {
+    @include mediaDesktop {
       margin-right: 77px;
       width: 1106px;
     }
   }
 
   &-right {
-    @include Shared.mediaOnlyMobile {
-      padding: 0 Shared.$containerPaddingMobile;
+    @include mediaOnlyMobile {
+      padding: 0 $containerPaddingMobile;
     }
-    @include Shared.mediaTablet {
+    @include mediaTablet {
       flex: 1;
     }
 
     &-sticky {
-      @include Shared.mediaTablet {
+      @include mediaTablet {
         position: sticky;
         top: 100px;
         z-index: 0;
@@ -63,13 +62,13 @@
   }
 
   &-back {
-    @include Shared.flex(center);
+    @include flex(center);
     font-size: 12px;
     line-height: 100%;
     margin-bottom: 14px;
     margin-top: 15px;
     width: 100%;
-    @include Shared.mediaTablet {
+    @include mediaTablet {
       font-size: 16px;
       margin: 23px 0;
     }
@@ -82,7 +81,7 @@
       height: 13px;
       margin-right: 7px;
       width: 7px;
-      @include Shared.mediaTablet {
+      @include mediaTablet {
         height: 14px;
         margin-right: 14px;
 
@@ -94,12 +93,12 @@
   &-info {
     display: grid;
     grid-template-columns: 1fr;
-    row-gap: Shared.$containerPaddingMobile * 1.5;
-    @include Shared.detailsMobile;
+    row-gap: $containerPaddingMobile * 1.5;
+    @include detailsMobile;
 
     .details {
       &-summary {
-        padding-left: Shared.$containerPaddingMobile * 2;
+        padding-left: $containerPaddingMobile * 2;
       }
 
       &-button {
@@ -109,13 +108,13 @@
   }
 
   &-prices {
-    @include Shared.mediaLaptop {
+    @include mediaLaptop {
       margin-bottom: 20px;
     }
   }
 
   &-instalment {
-    @include Shared.flex(center);
+    @include flex(center);
     background: #f2f2f2;
     border-radius: 4px;
     color: #51504f;
@@ -147,7 +146,7 @@
     }
 
     .section-product {
-      @include Shared.flex($d: column);
+      @include flex($d: column);
 
       &-title, &-price, &-colors {
         display: block;
@@ -157,7 +156,7 @@
       }
 
       &-colors {
-        @include Shared.flex(center);
+        @include flex(center);
       }
 
       &-color {

@@ -1,11 +1,16 @@
-@use 'src/styles/shared' as Shared;
+@import 'src/styles/shared';
+@import 'src/styles/ui';
+
+:root {
+  --headerHeight: $headerInititalHeight;
+}
 
 html {
-  @include Shared.scrollbar;
+  @include scrollbar;
 }
 
 html, body, #app {
-  @include Shared.flex($d: column);
+  @include flex($d: column);
 }
 
 body {
@@ -21,7 +26,7 @@ body {
 }
 
 .swiper-button-prev, .swiper-button-next {
-  @include Shared.flex(center, center);
+  @include flex(center, center);
 }
 
 .p404 {

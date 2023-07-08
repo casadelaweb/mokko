@@ -1,4 +1,4 @@
-@use 'src/styles/shared' as Shared;
+@import 'src/styles/shared';
 
 .banner {
   display: block;
@@ -7,7 +7,7 @@
   &-img, &-video {
     display: block;
     width: 100%;
-    @include Shared.mediaOnlyMobile {
+    @include mediaOnlyMobile {
       min-height: calc(100vh - var(--headerHeight));
     }
   }
