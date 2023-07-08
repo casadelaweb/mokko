@@ -1,4 +1,6 @@
 @use 'src/styles/shared' as Shared;
+@use 'src/styles/variables' as *;
+@use 'src/styles/ui';
 
 .order-summary {
   @include Shared.pageSummary;
@@ -8,7 +10,6 @@
     text-align: center;
     @include Shared.mediaOnlyTablet {
       display: inline-block;
-      // width: 300px;
     }
 
     a {

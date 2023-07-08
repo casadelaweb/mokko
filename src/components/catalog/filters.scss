@@ -49,7 +49,7 @@
     @include Shared.flex(center, space-between);
     font-size: 12px;
     letter-spacing: 0.02px;
-    padding: $containerPaddingMobile;
+    padding: Shared.$containerPaddingMobile;
     text-transform: uppercase;
     @include Shared.mediaLaptop {
       display: none;
@@ -76,7 +76,7 @@
       flex: 1 0 auto;
       font-size: 17px;
       height: 70px;
-      padding: 0 $containerPaddingMobile;
+      padding: 0 Shared.$containerPaddingMobile;
       transition: background-color 0.25s;
       width: auto;
 
@@ -117,7 +117,7 @@
       @include Shared.flex($d: column);
       font-size: 14px;
       letter-spacing: 0.02em;
-      padding: $containerPaddingMobile;
+      padding: Shared.$containerPaddingMobile;
       @include Shared.mediaTablet {
         font-size: 16px;
       }
@@ -137,7 +137,7 @@
       background: white;
       bottom: 0;
       box-shadow: 0 -2px 4px rgba(81, 80, 79, 0.25);
-      padding: ($containerPaddingMobile * 2) $containerPaddingMobile;
+      padding: (Shared.$containerPaddingMobile * 2) Shared.$containerPaddingMobile;
       position: sticky;
       z-index: 1;
     }

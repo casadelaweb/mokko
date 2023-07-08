@@ -1,4 +1,6 @@
 @use 'src/styles/shared' as Shared;
+@use 'src/styles/variables' as *;
+@use 'src/styles/ui';
 
 .search {
   background: white;

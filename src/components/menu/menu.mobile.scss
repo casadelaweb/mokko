@@ -12,7 +12,7 @@
   }
 
   &-header, &-body, &-footer {
-    padding: $containerPaddingMobile;
+    padding: Shared.$containerPaddingMobile;
   }
 
   &-footer {
@@ -27,8 +27,8 @@
   &-links {
     display: grid;
     grid-template-columns: 1fr;
-    padding: 0 ($containerPaddingMobile * 2);
-    row-gap: $containerPaddingMobile * 1.5;
+    padding: 0 (Shared.$containerPaddingMobile * 2);
+    row-gap: Shared.$containerPaddingMobile * 1.5;
   }
 
   @include Shared.detailsMobile;

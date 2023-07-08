@@ -1,4 +1,5 @@
 @use 'src/styles/shared' as Shared;
+@use 'src/styles/ui';
 
 .section {
   overflow: hidden;
@@ -6,13 +7,8 @@
   @include Shared.mediaTablet {
     padding: 50px 0 80px
   }
-  @include Shared.mediaTabletBg {
-  }
   @include Shared.mediaLaptop {
     padding: 80px 0 110px;
-  }
-  @include Shared.mediaDesktop {
-    // padding: 110px 0;
   }
 
   &-container {
@@ -48,12 +44,8 @@
     @include Shared.mediaTablet {
       margin-bottom: 50px;
     }
-    @include Shared.mediaTabletBg {
-    }
     @include Shared.mediaLaptop {
       margin-bottom: 80px;
-    }
-    @include Shared.mediaDesktop {
     }
   }
 
@@ -68,9 +60,7 @@
     &-favourite {
       height: 18px;
       opacity: 0.75;
-      // background: white;
       position: absolute;
-
       right: 5px;
       top: 5px;
       width: 18px;

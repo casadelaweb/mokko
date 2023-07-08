@@ -1,4 +1,5 @@
 @use 'src/styles/shared' as Shared;
+@use 'src/styles/ui';
 
 .cart-summary {
   @include Shared.pageSummary;

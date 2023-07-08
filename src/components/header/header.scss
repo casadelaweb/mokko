@@ -17,9 +17,6 @@
   @include Shared.mediaTablet {
     padding: 20px 0;
   }
-  //@include Shared.mediaLaptop {
-  //  padding: 20px 0;
-  //}
 
   &.hovered, &.scrolled, &.active {
     background: white;
@@ -28,15 +25,15 @@
   }
 
   &-container {
-    padding: 0 ($containerPaddingMobile - 6px);
+    padding: 0 (Shared.$containerPaddingMobile - 6px);
     @include Shared.mediaTablet {
-      padding: 0 ($containerPaddingTablet - 11px);
+      padding: 0 (Shared.$containerPaddingTablet - 11px);
     }
 
     @include Shared.mediaDesktop {
       margin: 0 auto;
       max-width: 1920px;
-      padding: 0 $containerPaddingDesktop;
+      padding: 0 Shared.$containerPaddingDesktop;
     }
   }
 

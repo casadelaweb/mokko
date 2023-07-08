@@ -1,22 +1,17 @@
 @use 'src/styles/shared' as Shared;
-@use 'src/styles/ui' as *;
+@use 'src/styles/ui';
 
 .search {
-  //@include Shared.mediaLaptop {
-  //  overflow: hidden;
-  //}
-
   &-desktop {
     display: none;
     @include Shared.mediaLaptop {
       display: block;
-      // padding: 0 48px;
     }
   }
 
   &-layout {
     @include Shared.mediaLaptop {
-      @include container;
+      @include Shared.container;
       column-gap: 56px;
       padding-top: 32px !important;
     }

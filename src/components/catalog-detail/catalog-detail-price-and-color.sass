@@ -1,4 +1,4 @@
-@use 'src/styles/shared'
+@use 'src/styles/shared' as Shared
 
 .catalog-detail-colors
   font-size: 15px
@@ -7,10 +7,10 @@
   border-bottom: 1px solid #e9e9e9
   margin-bottom: 30px
   @include Shared.mediaOnlyMobile
-    padding-left: $containerPaddingMobile
-    padding-right: $containerPaddingMobile
-    margin-left: -$containerPaddingMobile
-    margin-right: -$containerPaddingMobile
+    padding-left: Shared.$containerPaddingMobile
+    padding-right: Shared.$containerPaddingMobile
+    margin-left: Shared.$containerPaddingMobile * -1
+    margin-right: Shared.$containerPaddingMobile * -1
   @include Shared.mediaTablet
     border-bottom: none
     padding-bottom: 0

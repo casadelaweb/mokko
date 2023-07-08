@@ -1,4 +1,5 @@
 @use 'src/styles/shared' as Shared;
+@use 'src/styles/ui';
 
 .catalog-detail {
   margin-bottom: 100px;
@@ -41,7 +42,7 @@
 
   &-right {
     @include Shared.mediaOnlyMobile {
-      padding: 0 $containerPaddingMobile;
+      padding: 0 Shared.$containerPaddingMobile;
     }
     @include Shared.mediaTablet {
       flex: 1;
@@ -93,24 +94,18 @@
   &-info {
     display: grid;
     grid-template-columns: 1fr;
-    row-gap: $containerPaddingMobile * 1.5;
-    // padding: 0 ($containerPaddingMobile * 2);
+    row-gap: Shared.$containerPaddingMobile * 1.5;
     @include Shared.detailsMobile;
 
     .details {
       &-summary {
-        padding-left: $containerPaddingMobile * 2;
+        padding-left: Shared.$containerPaddingMobile * 2;
       }
 
       &-button {
         left: 0
       }
-
-      //&-body {
-      //  margin-left: $containerPaddingMobile * -2;
-      //}
     }
-
   }
 
   &-prices {

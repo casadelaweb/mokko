@@ -1,18 +1,14 @@
 @use 'src/styles/shared' as Shared;
+@use 'src/styles/ui';
 
 .auth {
-  @include Shared.Shared
-
+  @include Shared.flex($d: column);
   background: white;
-
-($d:column);
   font-size: 14px;
   padding: 24px 16px 40px;
   position: relative;
   width: calc(100% - 32px);
   z-index: 0;
-
-  .flex
 
   @include Shared.mediaTablet {
     padding: 40px 48px 48px;

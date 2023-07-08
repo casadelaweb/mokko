@@ -8,7 +8,7 @@ const mode = process.env.NODE_ENV || 'development'
 const isDevelopmentMode = mode === 'development'
 const isProductionMode = !isDevelopmentMode
 
-const htmlLoaderPipeline = require('./webpack/html-loader-pipeline')
+const htmlLoaderPipeline = require('./.webpack/html-loader-pipeline')
 
 const stylesPipeline = {
   development: [

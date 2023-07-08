@@ -1,5 +1,4 @@
 @use 'src/styles/shared' as Shared;
-@use 'src/styles/ui';
 
 html {
   @include Shared.scrollbar;
