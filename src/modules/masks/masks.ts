@@ -30,17 +30,25 @@ export class Masks {
       ...body.querySelectorAll(this.selectors.tel),
       ...body.querySelectorAll(this.selectors.email),
     ]
-
     this.elements.forEach((element: HTMLElement) => {
-
       if (element.matches(this.selectors.tel)) {
         IMask(element, { mask: this.patterns.tel, })
       }
-
       if (element.matches(this.selectors.email)) {
         IMask(element, { mask: this.patterns.email, })
       }
-
     })
+
+    // this.listen()
   }
+
+  // private listen(): void {
+  //   document.addEventListener('click', (event: MouseEvent) => {
+  //     const target = event.target as HTMLElement
+  //
+  //     if (target.closest('[type=submit]')) {
+  //       event.preventDefault()
+  //     }
+  //   })
+  // }
 }

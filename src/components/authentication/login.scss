@@ -28,11 +28,10 @@
 
   &-tel, &-email {
     display: none;
-    @include flex($d: column);
-    flex: 1 0 auto;
-
+    
     &.active {
-      @include flex;
+      @include flex($d: column);
+      flex: 1 0 auto;
     }
   }
 

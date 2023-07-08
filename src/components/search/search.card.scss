@@ -1,52 +1,5 @@
 @import 'src/styles/shared';
 
-
-.search {
-  &-desktop {
-    display: none;
-    @include mediaLaptop {
-      display: block;
-    }
-  }
-
-  &-layout {
-    @include mediaLaptop {
-      @include container;
-      column-gap: 56px;
-      padding-top: 32px !important;
-    }
-  }
-
-  &-results {
-    &-title {
-      font-size: 18px;
-      margin-bottom: 18px;
-    }
-
-    &-button {
-      @include button-brown;
-      margin: 0 auto;
-      width: 300px;
-    }
-  }
-
-  &-cards {
-    @include mediaLaptop {
-      column-gap: 14px;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      margin-bottom: 32px;
-      row-gap: 32px;
-    }
-  }
-
-  &-form, &-recommended, &-categories {
-    padding-left: 0;
-    padding-right: 0;
-    padding-top: 0;
-  }
-}
-
 .search-card {
   display: grid;
   grid-template-columns: 1fr;
@@ -68,9 +21,9 @@
   }
 
   &-color {
-    border-radius: 50%;
+    width: 11px;
     height: 11px;
     margin-right: 4px;
-    width: 11px;
+    border-radius: 50%;
   }
 }

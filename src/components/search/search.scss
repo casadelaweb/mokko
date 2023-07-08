@@ -1,171 +1,93 @@
 @import 'src/styles/shared';
 
-
 .search {
-  background: white;
-  left: 0;
-  pointer-events: none;
   position: fixed;
+  z-index: 105;
   top: 0;
+  left: 0;
+  overflow-y: auto;
+  width: 320px;
+  height: 100%;
   transition: transform 0.5s;
-  @include mediaOnlyMobileAndTablets {
-    height: 100%;
-    overflow-y: auto;
-    transform: translate(calc(-100% - 100px), 0);
-    width: 320px;
-    z-index: 105;
-    @include scrollbar;
-  }
+  transform: translate(calc(-100% - 100px), 0);
+  pointer-events: none;
+  background: white;
   @include mediaTablet {
-    height: 440px;
-    padding-bottom: 48px;
-    transform: translate(0, calc(-100% - 100px));
     width: 100%;
+    height: 440px;
+    transform: translate(0, calc(-100% - 100px));
   }
   @include mediaLaptop {
-    box-shadow: 12px 12px 24px 0 rgba(black, 0.1);
-    height: 650px;
-    overflow: unset;
-    padding: 0;
     z-index: 130;
+    overflow: hidden;
+    height: 650px;
+    box-shadow: 12px 12px 24px 0 rgba(black, 0.1);
   }
 
   &.active {
-    pointer-events: auto;
     transform: none;
-  }
-
-  &-layout {
-    @include mediaLaptop {
-      display: grid;
-      grid-template-columns: 3fr 1fr;
-    }
+    pointer-events: auto;
   }
 
   &-header {
     @include flex(center);
+    padding: 14px;
     border-bottom: 2px solid #e9e9e9;
-    padding: $containerPaddingMobile;
-    @include mediaTablet {
-      padding: $containerPaddingMobile 20px;
-    }
     @include mediaLaptop {
       padding: 24px;
     }
   }
 
   &-body {
-    @include mediaOnlyTablet {
-      @include flex($w: wrap);
-      margin-bottom: 56px - 14px;
+    padding: 20px 14px (56px - 14px - 14px) 40px;
+    @include mediaTablet {
+      padding: 24px 40px (56px - 14px);
+    }
+    @include mediaLaptop {
+      @include scrollbar;
+      display: grid;
+      overflow-y: scroll;
+      max-height: 650px - 74px;
+      padding: 40px 48px 56px;
+      grid-template-columns: 3fr 1fr;
+      column-gap: 96px;
+    }
+
+    &-aside {
+      @include mediaTablet {
+        @include flex($w: wrap);
+      }
+      @include mediaLaptop {
+        position: sticky;
+        z-index: 1;
+        top: 0;
+        display: block;
+        height: fit-content;
+      }
     }
   }
 
   &-footer {
-    @include container;
+    padding: 0 14px;
+    @include mediaTablet {
+      padding-bottom: 46px;
+    }
     @include mediaLaptop {
       display: none;
     }
   }
 
-  &-close {
-    @include flex(center, center);
-    @include mediaTablet {
-      font-size: 18px;
-    }
-    @include mediaLaptop {
-      font-size: 24px;
-      margin-left: auto;
-    }
-  }
-
-  &-form {
-    @include flex(center);
-    padding: 20px 40px 0 20px;
-    position: relative;
-    z-index: 0;
-    @include mediaTablet {
-      margin-bottom: 32px;
-    }
-  }
-
-  &-label {
-    @include flex;
-    flex: 1 0 auto;
-    position: relative;
-    z-index: 0;
-  }
-
-  &-submit {
-    @include flex(center, center);
-    font-size: 18px;
-    margin-right: 8px;
-    @include mediaTablet {
-      font-size: 22px;
-    }
-  }
-
-  &-input {
-    @include input-grey;
-    color: #51504f;
-    flex: 1 0 auto;
-    font-size: 14px;
-    letter-spacing: 0.02em;
-
-    &-reset {
-      @include flex(center, center);
-      font-size: 14px;
-      position: absolute;
-      right: 8px;
-      top: 14px;
-      z-index: 1;
-    }
-  }
-
-
   &-recommended, &-categories {
     @include flex($d: column);
-    padding: 20px 40px 0;
+    margin-bottom: 14px;
     @include mediaTablet {
-      padding: 0 40px;
-    }
-  }
-
-  &-categories {
-    @include mediaOnlyMobile {
-      margin-bottom: 40px;
-    }
-  }
-
-  &-title {
-    display: inline-block;
-    font-size: 17px;
-    margin-bottom: 1em;
-    @include mediaTablet {
-      margin-bottom: 24px;
+      flex: 0 0 auto;
+      width: 25%;
+      margin-bottom: 0;
     }
     @include mediaLaptop {
-      color: #51504f;
-      font-size: 18px;
-    }
-  }
-
-  &-link {
-    display: inline-block;
-    font-size: 14px;
-    letter-spacing: 0.02em;
-    margin-bottom: 1em;
-    @include mediaLaptop {
-      font-size: 17px;
-    }
-  }
-
-
-  &-button {
-    @include button-brown;
-    margin: 0 auto;
-    @include mediaTablet {
-      width: 250px;
+      width: auto;
+      margin-bottom: (46px - 14px);
     }
   }
 }

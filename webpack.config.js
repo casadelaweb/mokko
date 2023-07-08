@@ -40,7 +40,7 @@ const scriptsRuleset = {
     options: {
       minify: false,
       jsc: {
-        target: 'es2015',
+        target: 'es5',
         loose: false,
         minify: {
           compress: false,
@@ -72,7 +72,7 @@ module.exports = {
   target: 'browserslist',
   devtool: isDevelopmentMode ? 'source-map' : false,
   optimization: {
-    minimize: false,
+    minimize: isProductionMode,
     minimizer: [
       '...',
       new CssMinimizer(),
@@ -82,7 +82,7 @@ module.exports = {
   output: {
     path: pathRoot('dist/'),
     filename: 'assets/js/[name].[contenthash:4].js',
-    clean: true,
+    clean: isProductionMode,
   },
   resolve: {
     alias: { 'src': pathRoot('./src'), },

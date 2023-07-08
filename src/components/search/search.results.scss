@@ -1,0 +1,35 @@
+@import 'src/styles/shared';
+
+.search {
+  &-results {
+    display: none;
+    @include mediaLaptop {
+      display: block;
+    }
+  }
+
+  &-results {
+    &-title {
+      font-size: 18px;
+      margin-bottom: 18px;
+    }
+
+    &-button {
+      @include button-brown;
+      width: 300px;
+      margin: 0 auto;
+    }
+  }
+
+  &-cards {
+    @include mediaLaptop {
+      display: grid;
+      margin-bottom: 32px;
+      column-gap: 14px;
+      grid-template-columns: repeat(4, 1fr);
+      row-gap: 32px;
+    }
+  }
+}
+
+
