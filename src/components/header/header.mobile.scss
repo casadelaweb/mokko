@@ -1,24 +1,24 @@
-@use 'src/styles/shared';
+@use 'src/styles/shared' as Shared;
 
 .header-mobile {
-  @include flex(center, space-between);
-  @include mediaLaptop {
+  @include Shared.flex(center, space-between);
+  @include Shared.mediaLaptop {
     display: none;
   }
 
   &-left, &-right {
-    @include flex(center);
+    @include Shared.flex(center);
   }
 
   &-button {
-    @include flex(center, center);
+    @include Shared.flex(center, center);
     flex: 0 0 auto;
     font-size: 18px;
     margin: 0 0.4em;
-    @include mediaMobileConventional {
+    @include Shared.mediaMobileConventional {
       font-size: 20px;
     }
-    @include mediaTablet {
+    @include Shared.mediaTablet {
       font-size: 26px;
       margin: 0 0.5em;
     }

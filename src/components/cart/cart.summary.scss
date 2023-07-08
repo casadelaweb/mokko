@@ -1,10 +1,10 @@
-@use 'src/styles/shared';
+@use 'src/styles/shared' as Shared;
 
 .cart-summary {
-  @include pageSummary;
+  @include Shared.pageSummary;
 
   &-label {
-    @include flex(center, $w: wrap);
+    @include Shared.flex(center, $w: wrap);
     margin-bottom: 20px;
 
     &-title {

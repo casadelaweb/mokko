@@ -1,4 +1,4 @@
-@use 'src/styles/shared';
+@use 'src/styles/shared' as Shared;
 
 .menu {
   background: white;
@@ -8,16 +8,16 @@
   top: 0;
   transition: transform 0.5s;
 
-  @include mediaOnlyMobileAndTablets {
+  @include Shared.mediaOnlyMobileAndTablets {
     height: 100%;
     overflow-y: auto;
     transform: translate(calc(-100% - 100px), 0);
     width: 320px;
     z-index: 105;
-    @include scrollbar;
+    @include Shared.scrollbar;
   }
 
-  @include mediaLaptop {
+  @include Shared.mediaLaptop {
     box-shadow: 12px 12px 24px 0 rgba(black, 0.1);
     overflow: unset;
     padding: 56px 0;
@@ -33,7 +33,7 @@
 
   &-container {
     @extend .container;
-    @include mediaOnlyMobileAndTablets {
+    @include Shared.mediaOnlyMobileAndTablets {
       height: 100%;
       padding: 0;
     }
@@ -41,24 +41,24 @@
 
   &-desktop {
     display: none;
-    @include mediaLaptop {
-      @include flex($j: space-between);
+    @include Shared.mediaLaptop {
+      @include Shared.flex($j: space-between);
     }
   }
 
   &-columns {
-    @include flex;
-    @include mediaLaptop {
+    @include Shared.flex;
+    @include Shared.mediaLaptop {
       margin-bottom: 150px;
     }
   }
 
   &-column {
-    @include flex($d: column);
+    @include Shared.flex($d: column);
     margin-right: 150px;
 
     &:last-child {
-      @include mediaLaptop {
+      @include Shared.mediaLaptop {
         margin-right: 100px;
       }
     }
@@ -70,7 +70,7 @@
   }
 
   &-left {
-    @include flex($d: column);
+    @include Shared.flex($d: column);
     color: #80756e;
   }
 
@@ -79,14 +79,14 @@
     max-width: none;
 
     &-layout {
-      @include mediaLaptop {
-        @include flex(center);
+      @include Shared.mediaLaptop {
+        @include Shared.flex(center);
       }
     }
 
     .form-label {
       margin-bottom: 18px;
-      @include mediaLaptop {
+      @include Shared.mediaLaptop {
         margin-bottom: 20px;
       }
     }
@@ -94,14 +94,14 @@
     .form-main {
       margin-bottom: 10px;
 
-      @include mediaLaptop {
+      @include Shared.mediaLaptop {
         margin: 0 22px 0 0;
       }
     }
   }
 
   &-categories {
-    @include flex;
+    @include Shared.flex;
   }
 
   &-category {
@@ -118,11 +118,11 @@
 
     &-img {
       border-radius: 8px;
-      @include mediaLaptop {
+      @include Shared.mediaLaptop {
         height: 286px;
         width: 286px;
       }
-      @include mediaDesktop {
+      @include Shared.mediaDesktop {
         height: 408px;
         width: 408px;
       }

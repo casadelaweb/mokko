@@ -1,11 +1,11 @@
-@use 'src/styles/shared';
+@use 'src/styles/shared' as Shared;
 
 html {
-  @include scrollbar;
+  @include Shared.scrollbar;
 }
 
 html, body, #app {
-  @include flex($d: column);
+  @include Shared.flex($d: column);
 }
 
 body {
@@ -21,7 +21,7 @@ body {
 }
 
 .swiper-button-prev, .swiper-button-next {
-  @include flex(center, center);
+  @include Shared.flex(center, center);
 }
 
 .p404 {

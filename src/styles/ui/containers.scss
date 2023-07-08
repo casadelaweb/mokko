@@ -1,39 +1,39 @@
-@use 'src/styles/variables';
-@use 'src/styles/mixins';
+@use 'src/styles/variables' as *;
+@use 'src/styles/shared' as Shared;
 
 @mixin container {
   margin: 0 auto;
   max-width: $containerWidthMobile;
   padding: 0 $containerPaddingMobile;
 
-  @include mediaTablet {
+  @include Shared.mediaTablet {
     padding: 0 $containerPaddingTablet;
   }
-  @include mediaLaptop {
+  @include Shared.mediaLaptop {
     padding: 0 $containerPaddingLaptop;
     max-width: $containerWidthLaptop;
   }
-  @include mediaDesktop {
+  @include Shared.mediaDesktop {
     padding: 0 $containerPaddingDesktop;
     max-width: $containerWidthDesktop;
   }
 }
 
 .container {
-  @include container;
+  @include Shared.container;
 }
 
 .page-title {
   font-size: 12px;
   margin-bottom: 36px;
   text-transform: uppercase;
-  @include mediaTablet {
+  @include Shared.mediaTablet {
     font-size: 18px;
   }
-  @include mediaTabletBg {
+  @include Shared.mediaTabletBg {
     margin-bottom: 42px;
   }
-  @include mediaDesktop {
+  @include Shared.mediaDesktop {
     font-size: 20px;
   }
 }
@@ -43,11 +43,11 @@
   background: #f1f1f1;
   font-size: 15px;
   margin: 0 ($containerPaddingMobile * -1);
-  @include mediaTablet {
+  @include Shared.mediaTablet {
     padding: 36px $containerPaddingTablet 46px;
     margin: 0 ($containerPaddingTablet * -1);
   }
-  @include mediaTabletBg {
+  @include Shared.mediaTabletBg {
     padding: 36px 20px 32px;
     margin: 0 0 56px;
     height: fit-content;
@@ -72,7 +72,7 @@
   }
 
   &-row {
-    @include flex(center, space-between);
+    @include Shared.flex(center, space-between);
     margin-bottom: 20px;
   }
   &-name, &-value {

@@ -1,9 +1,9 @@
-@use 'src/styles/shared';
+@use 'src/styles/shared' as Shared;
 
 .order-step {
   border-bottom: 1px solid #dadada;
   padding: 32px 0;
-  @include mediaLaptop {
+  @include Shared.mediaLaptop {
     display: grid;
     grid-template-columns: 1fr 1.85fr;
   }
@@ -15,22 +15,22 @@
   &:last-child {
     border-bottom: 0;
     padding-bottom: 0;
-    @include mediaOnlyTablet {
+    @include Shared.mediaOnlyTablet {
       padding-bottom: 50px;
     }
   }
 
   &-header {
-    @include flex(center);
+    @include Shared.flex(center);
     margin-bottom: 32px;
-    @include mediaLaptop {
+    @include Shared.mediaLaptop {
       height: fit-content;
       margin-bottom: auto;
     }
   }
 
   &-number {
-    @include flex(center, center);
+    @include Shared.flex(center, center);
     background: #e9e9e9;
     border-radius: 50%;
     height: 24px;
@@ -40,7 +40,7 @@
 
   &-title {
     font-size: 16px;
-    @include mediaTablet {
+    @include Shared.mediaTablet {
       font-size: 18px;
     }
   }

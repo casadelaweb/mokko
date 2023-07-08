@@ -1,4 +1,4 @@
-@use 'src/styles/shared';
+@use 'src/styles/shared' as Shared;
 
 .search {
   background: white;
@@ -7,21 +7,21 @@
   position: fixed;
   top: 0;
   transition: transform 0.5s;
-  @include mediaOnlyMobileAndTablets {
+  @include Shared.mediaOnlyMobileAndTablets {
     height: 100%;
     overflow-y: auto;
     transform: translate(calc(-100% - 100px), 0);
     width: 320px;
     z-index: 105;
-    @include scrollbar;
+    @include Shared.scrollbar;
   }
-  @include mediaTablet {
+  @include Shared.mediaTablet {
     height: 440px;
     padding-bottom: 48px;
     transform: translate(0, calc(-100% - 100px));
     width: 100%;
   }
-  @include mediaLaptop {
+  @include Shared.mediaLaptop {
     box-shadow: 12px 12px 24px 0 rgba(black, 0.1);
     height: 650px;
     overflow: unset;
@@ -35,71 +35,71 @@
   }
 
   &-layout {
-    @include mediaLaptop {
+    @include Shared.mediaLaptop {
       display: grid;
       grid-template-columns: 3fr 1fr;
     }
   }
 
   &-header {
-    @include flex(center);
+    @include Shared.flex(center);
     border-bottom: 2px solid #e9e9e9;
     padding: $containerPaddingMobile;
-    @include mediaTablet {
+    @include Shared.mediaTablet {
       padding: $containerPaddingMobile 20px;
     }
-    @include mediaLaptop {
+    @include Shared.mediaLaptop {
       padding: 24px;
     }
   }
 
   &-body {
-    @include mediaOnlyTablet {
-      @include flex($w: wrap);
+    @include Shared.mediaOnlyTablet {
+      @include Shared.flex($w: wrap);
       margin-bottom: 56px - 14px;
     }
   }
 
   &-footer {
     @extend .container;
-    @include mediaLaptop {
+    @include Shared.mediaLaptop {
       display: none;
     }
   }
 
   &-close {
-    @include flex(center, center);
-    @include mediaTablet {
+    @include Shared.flex(center, center);
+    @include Shared.mediaTablet {
       font-size: 18px;
     }
-    @include mediaLaptop {
+    @include Shared.mediaLaptop {
       font-size: 24px;
       margin-left: auto;
     }
   }
 
   &-form {
-    @include flex(center);
+    @include Shared.flex(center);
     padding: 20px 40px 0 20px;
     position: relative;
     z-index: 0;
-    @include mediaTablet {
+    @include Shared.mediaTablet {
       margin-bottom: 32px;
     }
   }
 
   &-label {
-    @include flex;
+    @include Shared.flex;
     flex: 1 0 auto;
     position: relative;
     z-index: 0;
   }
 
   &-submit {
-    @include flex(center, center);
+    @include Shared.flex(center, center);
     font-size: 18px;
     margin-right: 8px;
-    @include mediaTablet {
+    @include Shared.mediaTablet {
       font-size: 22px;
     }
   }
@@ -112,7 +112,7 @@
     letter-spacing: 0.02em;
 
     &-reset {
-      @include flex(center, center);
+      @include Shared.flex(center, center);
       font-size: 14px;
       position: absolute;
       right: 8px;
@@ -123,15 +123,15 @@
 
 
   &-recommended, &-categories {
-    @include flex($d: column);
+    @include Shared.flex($d: column);
     padding: 20px 40px 0;
-    @include mediaTablet {
+    @include Shared.mediaTablet {
       padding: 0 40px;
     }
   }
 
   &-categories {
-    @include mediaOnlyMobile {
+    @include Shared.mediaOnlyMobile {
       margin-bottom: 40px;
     }
   }
@@ -140,10 +140,10 @@
     display: inline-block;
     font-size: 17px;
     margin-bottom: 1em;
-    @include mediaTablet {
+    @include Shared.mediaTablet {
       margin-bottom: 24px;
     }
-    @include mediaLaptop {
+    @include Shared.mediaLaptop {
       color: #51504f;
       font-size: 18px;
     }
@@ -154,7 +154,7 @@
     font-size: 14px;
     letter-spacing: 0.02em;
     margin-bottom: 1em;
-    @include mediaLaptop {
+    @include Shared.mediaLaptop {
       font-size: 17px;
     }
   }
@@ -163,7 +163,7 @@
   &-button {
     @extend .button-brown;
     margin: 0 auto;
-    @include mediaTablet {
+    @include Shared.mediaTablet {
       width: 250px;
     }
   }

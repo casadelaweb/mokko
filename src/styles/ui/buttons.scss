@@ -1,5 +1,5 @@
 @use 'src/styles/variables';
-@use 'src/styles/mixins';
+@use 'src/styles/mixins' as Shared;
 
 .button-appointment {
   color: #766cff;
@@ -41,7 +41,7 @@
 }
 
 .button-square {
-  @include flex(center, center);
+  @include Shared.flex(center, center);
   background: #c7b29c;
   border-radius: 0 4px 4px 0;
   color: white;
@@ -51,7 +51,7 @@
 }
 
 .button-brown {
-  @include flex(center, center);
+  @include Shared.flex(center, center);
   background: #c7b29c;
   border-radius: 4px;
   color: white;

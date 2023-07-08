@@ -1,11 +1,11 @@
-@use 'src/styles/shared';
+@use 'src/styles/shared' as Shared;
 
 .catalog {
   padding-top: 40px;
-  @include mediaTablet {
+  @include Shared.mediaTablet {
     padding-top: 60px;
   }
-  @include mediaLaptop {
+  @include Shared.mediaLaptop {
     padding-top: 80px;
   }
 
@@ -14,19 +14,19 @@
   }
 
   &-header {
-    @include flex(center);
+    @include Shared.flex(center);
     margin-bottom: 32px;
 
     &.mobile {
       display: flex;
-      @include mediaLaptop {
+      @include Shared.mediaLaptop {
         display: none;
       }
     }
 
     &.desktop {
       display: none;
-      @include mediaLaptop {
+      @include Shared.mediaLaptop {
         background: white;
         display: flex;
         flex-wrap: wrap;
@@ -35,7 +35,7 @@
         top: 85px;
         z-index: 1;
       }
-      @include mediaDesktop {
+      @include Shared.mediaDesktop {
         padding: 20px 0;
       }
 
@@ -56,8 +56,8 @@
   &-filters {
     display: none;
     flex: 1 0 auto;
-    @include mediaLaptop {
-      @include flex(center);
+    @include Shared.mediaLaptop {
+      @include Shared.flex(center);
     }
 
     [data-select=sorting] {
@@ -70,13 +70,13 @@
     letter-spacing: 0.02em;
     margin-right: auto;
     text-transform: uppercase;
-    @include mediaMobileConventional {
+    @include Shared.mediaMobileConventional {
       font-size: 14px;
     }
-    @include mediaTablet {
+    @include Shared.mediaTablet {
       font-size: 18px;
     }
-    @include mediaLaptop {
+    @include Shared.mediaLaptop {
       flex: 0 0 auto;
       font-size: 20px;
       margin-bottom: 2em;
@@ -86,10 +86,10 @@
 
   &-layout {
     margin-bottom: 60px;
-    @include mediaTabletBg {
+    @include Shared.mediaTabletBg {
       margin-bottom: 72px;
     }
-    @include mediaLaptop {
+    @include Shared.mediaLaptop {
       column-gap: 40px;
       display: grid;
       grid-template-columns: 1fr 3fr;
@@ -109,20 +109,20 @@
     grid-template-columns: repeat(2, 1fr);
     margin-bottom: 48px;
     row-gap: 20px;
-    @include mediaTablet {
+    @include Shared.mediaTablet {
       column-gap: 14px;
       row-gap: 56px;
     }
-    @include mediaTabletBg {
+    @include Shared.mediaTabletBg {
       grid-template-columns: repeat(4, 1fr);
     }
-    @include mediaLaptop {
+    @include Shared.mediaLaptop {
       margin-bottom: 72px;
     }
 
     .mode-row & {
       grid-template-columns: 1fr;
-      @include mediaTabletBg {
+      @include Shared.mediaTabletBg {
         grid-template-columns: repeat(3, 1fr);
         row-gap: 32px;
       }
@@ -130,7 +130,7 @@
   }
 
   &-more {
-    @include flex(center, center);
+    @include Shared.flex(center, center);
     border: 2px solid #82756e;
     border-radius: 4px;
     font-size: 17px;
@@ -140,18 +140,18 @@
   }
 
   &-pagination {
-    @include flex(center, center);
+    @include Shared.flex(center, center);
     font-size: 17px;
     margin: 0 auto;
     width: fit-content;
 
     &-list {
-      @include flex(center);
+      @include Shared.flex(center);
       margin: 0 10px;
     }
 
     &-item, &-prev, &-next {
-      @include flex(center, center);
+      @include Shared.flex(center, center);
       border-radius: 50%;
       height: 28px;
       transition: background 0.5s;

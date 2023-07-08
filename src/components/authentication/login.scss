@@ -1,8 +1,8 @@
-@use 'src/styles/shared';
+@use 'src/styles/shared' as Shared;
 
 .login {
   &-header {
-    @include flex(center);
+    @include Shared.flex(center);
     margin: 0 auto 18px;
 
     &-divider {
@@ -23,16 +23,16 @@
   }
 
   &-body {
-    @include flex($d: column);
+    @include Shared.flex($d: column);
   }
 
   &-tel, &-email {
     display: none;
-    @include flex($d: column);
+    @include Shared.flex($d: column);
     flex: 1 0 auto;
 
     &.active {
-      @include flex;
+      @include Shared.flex;
     }
   }
 

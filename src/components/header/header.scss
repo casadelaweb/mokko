@@ -1,4 +1,4 @@
-@use 'src/styles/shared';
+@use 'src/styles/shared' as Shared;
 
 .header {
   border-bottom: 2px solid transparent;
@@ -11,13 +11,13 @@
   transition: background-color 0.5s, backdrop-filter 0.5s, border-color 0.5s;
   width: 100%;
   z-index: 100;
-  @include mediaMobileConventional {
+  @include Shared.mediaMobileConventional {
     padding: 16px 0;
   }
-  @include mediaTablet {
+  @include Shared.mediaTablet {
     padding: 20px 0;
   }
-  //@include mediaLaptop {
+  //@include Shared.mediaLaptop {
   //  padding: 20px 0;
   //}
 
@@ -29,11 +29,11 @@
 
   &-container {
     padding: 0 ($containerPaddingMobile - 6px);
-    @include mediaTablet {
+    @include Shared.mediaTablet {
       padding: 0 ($containerPaddingTablet - 11px);
     }
 
-    @include mediaDesktop {
+    @include Shared.mediaDesktop {
       margin: 0 auto;
       max-width: 1920px;
       padding: 0 $containerPaddingDesktop;
@@ -43,8 +43,8 @@
   &-desktop {
     display: none;
 
-    @include mediaLaptop {
-      @include flex(center);
+    @include Shared.mediaLaptop {
+      @include Shared.flex(center);
       margin: 0 auto;
       padding: 0 48px;
     }
@@ -74,19 +74,19 @@
     top: 50%;
     transform: translate(-50%, -50%);
     z-index: 1;
-    @include mediaMobileConventional {
+    @include Shared.mediaMobileConventional {
       font-size: 22px;
     }
-    @include mediaTablet {
+    @include Shared.mediaTablet {
       font-size: 32px;
     }
-    //@include mediaLaptop {
+    //@include Shared.mediaLaptop {
     //  font-size: 32px;
     //}
   }
 
   &-buttons {
-    @include flex(center);
+    @include Shared.flex(center);
     margin-left: auto;
   }
 
@@ -100,7 +100,7 @@
     margin: 0 auto 22px;
     width: 100%;
 
-    @include mediaLaptop {
+    @include Shared.mediaLaptop {
       margin: 0 (36px - 20px) 0 auto;
       width: 228px;
     }

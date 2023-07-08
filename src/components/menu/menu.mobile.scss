@@ -1,9 +1,9 @@
-@use 'src/styles/shared';
+@use 'src/styles/shared' as Shared;
 
 .menu-mobile {
-  @include flex($d: column);
+  @include Shared.flex($d: column);
   min-height: 100%;
-  @include mediaLaptop {
+  @include Shared.mediaLaptop {
     display: none;
   }
 
@@ -31,10 +31,10 @@
     row-gap: $containerPaddingMobile * 1.5;
   }
 
-  @include detailsMobile;
+  @include Shared.detailsMobile;
 
   .form {
-    @include mediaOnlyTablets {
+    @include Shared.mediaOnlyTablets {
       padding: 28px 0;
     }
   }

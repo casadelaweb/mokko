@@ -1,11 +1,11 @@
-@use 'src/styles/shared';
+@use 'src/styles/shared' as Shared;
 
 .footer {
   overflow: hidden;
 }
 
 .fm {
-  @include mediaTablet {
+  @include Shared.mediaTablet {
     display: none;
   }
 
@@ -36,15 +36,15 @@
     margin-bottom: 18px;
   }
 
-  @include detailsMobile;
+  @include Shared.detailsMobile;
 }
 
 .ft {
   display: none;
-  @include mediaTablet {
+  @include Shared.mediaTablet {
     display: block;
   }
-  @include mediaLaptop {
+  @include Shared.mediaLaptop {
     display: none;
   }
 
@@ -83,7 +83,7 @@
   }
 
   .form {
-    @include flex($w: wrap);
+    @include Shared.flex($w: wrap);
 
     &-label, &-main {
       flex: 0 0 auto;
@@ -98,7 +98,7 @@
     &-main {
       margin-right: 24px;
       width: 380px;
-      @include mediaTabletBg {
+      @include Shared.mediaTabletBg {
         margin-right: 28px;
       }
     }
@@ -112,7 +112,7 @@
 .fd {
   @extend .container;
   display: none;
-  @include mediaLaptop {
+  @include Shared.mediaLaptop {
     column-gap: 100px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -130,7 +130,7 @@
   }
 
   &-links {
-    @include flex($d: column);
+    @include Shared.flex($d: column);
     font-size: 17px;
 
     a, button {

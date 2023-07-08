@@ -7,16 +7,16 @@
     height: 150vw
     border-radius: 10px
     cursor: pointer
-    @include mediaTablet
+    @include Shared.mediaTablet
       width: 337px
       height: 505.5px
-    @include mediaTabletBg
+    @include Shared.mediaTabletBg
       width: 306px
       height: 459px
-    @include mediaLaptop
+    @include Shared.mediaLaptop
       width: 387px
       height: 580px
-    @include mediaDesktop
+    @include Shared.mediaDesktop
       width: 546px
       height: 819px
 
@@ -26,12 +26,12 @@
   .swiper-pagination-bullet
     width: 32px
     margin: 0 5px
-    @include mediaTabletBg
+    @include Shared.mediaTabletBg
       display: none
 
 
   .swiper-wrapper
-    @include mediaTabletBg
+    @include Shared.mediaTabletBg
       display: grid
       gap: 14px
       grid-template-columns: 1fr 1fr

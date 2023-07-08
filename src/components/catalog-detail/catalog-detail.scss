@@ -1,4 +1,4 @@
-@use 'src/styles/shared';
+@use 'src/styles/shared' as Shared;
 
 .catalog-detail {
   margin-bottom: 100px;
@@ -6,52 +6,52 @@
   &-container {
     @extend .container;
 
-    @include mediaOnlyMobile {
+    @include Shared.mediaOnlyMobile {
       padding-left: 0;
       padding-right: 0;
     }
 
 
-    @include mediaTablet {
+    @include Shared.mediaTablet {
       display: flex;
     }
 
   }
 
   &-left {
-    width: 100%;
     overflow: hidden;
+    width: 100%;
 
-    @include mediaTablet {
-      width: 337px;
+    @include Shared.mediaTablet {
       margin-right: 47px;
+      width: 337px;
     }
-    @include mediaTabletBg {
+    @include Shared.mediaTabletBg {
       width: 626px;
     }
-    @include mediaLaptop {
-      width: 787px;
+    @include Shared.mediaLaptop {
       margin-right: 56px;
+      width: 787px;
     }
-    @include mediaDesktop {
-      width: 1106px;
+    @include Shared.mediaDesktop {
       margin-right: 77px;
+      width: 1106px;
     }
   }
 
   &-right {
-    @include mediaOnlyMobile {
+    @include Shared.mediaOnlyMobile {
       padding: 0 $containerPaddingMobile;
     }
-    @include mediaTablet {
+    @include Shared.mediaTablet {
       flex: 1;
     }
 
     &-sticky {
-      @include mediaTablet {
+      @include Shared.mediaTablet {
         position: sticky;
-        z-index: 0;
         top: 100px;
+        z-index: 0;
       }
     }
   }
@@ -62,30 +62,30 @@
   }
 
   &-back {
-    @include flex(center);
+    @include Shared.flex(center);
     font-size: 12px;
     line-height: 100%;
-    width: 100%;
-    margin-top: 15px;
     margin-bottom: 14px;
-    @include mediaTablet {
-      margin: 23px 0;
+    margin-top: 15px;
+    width: 100%;
+    @include Shared.mediaTablet {
       font-size: 16px;
+      margin: 23px 0;
     }
 
     &:before {
-      content: '';
-      display: block;
-      width: 7px;
-      height: 13px;
-      margin-right: 7px;
       background: url('src/assets/img/catalog-detail/catalog-detail-back.png');
       background-size: cover;
-      @include mediaTablet {
-        width: 8px;
+      content: '';
+      display: block;
+      height: 13px;
+      margin-right: 7px;
+      width: 7px;
+      @include Shared.mediaTablet {
         height: 14px;
-
         margin-right: 14px;
+
+        width: 8px;
       }
     }
   }
@@ -95,7 +95,7 @@
     grid-template-columns: 1fr;
     row-gap: $containerPaddingMobile * 1.5;
     // padding: 0 ($containerPaddingMobile * 2);
-    @include detailsMobile;
+    @include Shared.detailsMobile;
 
     .details {
       &-summary {
@@ -114,32 +114,32 @@
   }
 
   &-prices {
-    @include mediaLaptop {
+    @include Shared.mediaLaptop {
       margin-bottom: 20px;
     }
   }
 
   &-instalment {
-    @include flex(center);
-    width: 100%;
-    padding: 12px;
+    @include Shared.flex(center);
     background: #f2f2f2;
-    color: #51504f;
     border-radius: 4px;
-    margin-bottom: 36px;
+    color: #51504f;
     font-size: 14px;
+    margin-bottom: 36px;
+    padding: 12px;
+    width: 100%;
 
     &-logo {
-      width: 68px;
-      height: 20px;
       border-radius: 4px;
+      height: 20px;
       margin-right: 10px;
+      width: 68px;
     }
 
     .icon-arrow-right {
       color: #82756e;
-      margin-left: auto;
       font-size: 13px;
+      margin-left: auto;
     }
   }
 
@@ -152,24 +152,24 @@
     }
 
     .section-product {
-      @include flex($d: column);
+      @include Shared.flex($d: column);
 
       &-title, &-price, &-colors {
         display: block;
         font-size: 14px;
-        order: 1;
         margin-top: 8px;
+        order: 1;
       }
 
       &-colors {
-        @include flex(center);
+        @include Shared.flex(center);
       }
 
       &-color {
-        width: 14px;
-        height: 14px;
         border-radius: 50%;
+        height: 14px;
         margin-right: 0.5em;
+        width: 14px;
       }
 
       &-img {

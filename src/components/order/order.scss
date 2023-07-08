@@ -1,4 +1,4 @@
-@use 'src/styles/shared';
+@use 'src/styles/shared' as Shared;
 
 .order {
   color: #82756e;
@@ -18,7 +18,7 @@
   }
 
   &-layout {
-    @include mediaTabletBg {
+    @include Shared.mediaTabletBg {
       column-gap: 56px;
       display: grid;
       grid-template-columns: 2fr 1fr;
@@ -31,7 +31,7 @@
 
   &-steps {
     margin-bottom: 32px;
-    @include mediaLaptop {
+    @include Shared.mediaLaptop {
       margin-bottom: 120px;
     }
   }

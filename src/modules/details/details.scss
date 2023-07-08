@@ -1,16 +1,10 @@
-@use 'src/styles/shared';
+@use 'src/styles/shared' as Shared;
 
 @mixin compensateScrollbar() {
   :not(.is-closing).open.has-vertical-scrollbar & {
     @content
   }
 }
-
-//details, summary {
-//  display: unset;
-//  width: auto;
-//  padding-left: unset;
-//}
 
 .details {
   &-summary {
@@ -36,7 +30,7 @@
   }
 
   &-body {
-    @include flex($d: column);
+    @include Shared.flex($d: column);
     padding-top: 0.5em;
   }
 }

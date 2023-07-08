@@ -1,4 +1,4 @@
-@use 'src/styles/shared';
+@use 'src/styles/shared' as Shared;
 
 .select {
   display: inline-block;
@@ -8,10 +8,10 @@
   position: relative;
   width: fit-content;
   z-index: 2;
-  @include mediaTablet {
+  @include Shared.mediaTablet {
     font-size: 15px;
   }
-  @include mediaLaptop {
+  @include Shared.mediaLaptop {
     font-size: 17px;
   }
 
@@ -31,7 +31,7 @@
   }
 
   &-current {
-    @include flex(center);
+    @include Shared.flex(center);
     cursor: pointer;
 
     &-text, &-value {
@@ -43,7 +43,7 @@
     }
 
     &-button {
-      @include flex(center, center);
+      @include Shared.flex(center, center);
       font-size: 13px;
       transform-origin: center;
       transition: transform 0.5s;
@@ -79,14 +79,14 @@
   }
 
   &-option {
-    @include flex(center);
+    @include Shared.flex(center);
     cursor: pointer;
 
     font-size: 13px;
     padding: 0.75em 1em;
     transition: background 0.5s, color 0.5s;
     white-space: nowrap;
-    @include mediaLaptop {
+    @include Shared.mediaLaptop {
       font-size: 14px;
     }
 
@@ -100,7 +100,7 @@
   }
 
   &-button {
-    @include flex(center, center);
+    @include Shared.flex(center, center);
     background: #c7b29c;
     color: white;
     font-size: 17px;

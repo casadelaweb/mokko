@@ -1,7 +1,7 @@
-@use 'src/styles/shared';
+@use 'src/styles/shared' as Shared;
 
 .filters {
-  @include mediaOnlyMobileAndTablets {
+  @include Shared.mediaOnlyMobileAndTablets {
     background: white;
     display: block;
     height: 100%;
@@ -20,18 +20,18 @@
       transform: none;
     }
 
-    @include scrollbar;
+    @include Shared.scrollbar;
   }
 
   &-sticky, &-mobile {
-    @include flex($d: column);
-    @include mediaOnlyMobileAndTablets {
+    @include Shared.flex($d: column);
+    @include Shared.mediaOnlyMobileAndTablets {
       height: 100%;
     }
   }
 
   &-sticky {
-    @include mediaLaptop {
+    @include Shared.mediaLaptop {
       position: sticky;
       top: 100px;
       z-index: 0;
@@ -39,26 +39,26 @@
   }
 
   &-mobile {
-    @include mediaLaptop {
+    @include Shared.mediaLaptop {
       display: none;
     }
   }
 
 
   &-header {
-    @include flex(center, space-between);
+    @include Shared.flex(center, space-between);
     font-size: 12px;
     letter-spacing: 0.02px;
     padding: $containerPaddingMobile;
     text-transform: uppercase;
-    @include mediaLaptop {
+    @include Shared.mediaLaptop {
       display: none;
       padding-left: 0;
     }
   }
 
   &-close {
-    @include mediaLaptop {
+    @include Shared.mediaLaptop {
       display: none;
     }
   }
@@ -68,10 +68,10 @@
   }
 
   .details {
-    @include flex($d: column);
+    @include Shared.flex($d: column);
 
     &-summary {
-      @include flex(center);
+      @include Shared.flex(center);
       border-top: 1px solid #e9e9e9;
       flex: 1 0 auto;
       font-size: 17px;
@@ -80,7 +80,7 @@
       transition: background-color 0.25s;
       width: auto;
 
-      @include mediaLaptop {
+      @include Shared.mediaLaptop {
         font-size: 18px;
         padding-left: 0;
       }
@@ -92,7 +92,7 @@
       //}
 
       &-content {
-        @include flex(center);
+        @include Shared.flex(center);
         flex: 1 0 auto;
         width: auto;
       }
@@ -104,36 +104,36 @@
     }
 
     &-selected {
-      @include lineClamp(1);
+      @include Shared.lineClamp(1);
       color: #c7b29c;
       font-size: 13px;
       letter-spacing: 0.02em;
-      @include mediaLaptop {
+      @include Shared.mediaLaptop {
         font-size: 14px;
       }
     }
 
     &-body {
-      @include flex($d: column);
+      @include Shared.flex($d: column);
       font-size: 14px;
       letter-spacing: 0.02em;
       padding: $containerPaddingMobile;
-      @include mediaTablet {
+      @include Shared.mediaTablet {
         font-size: 16px;
       }
     }
   }
 
   label {
-    @include flex(center);
+    @include Shared.flex(center);
     margin-bottom: 0.5em;
     width: fit-content;
   }
 
   &-buttons {
-    @include flex(center);
+    @include Shared.flex(center);
     margin-top: auto;
-    @include mediaOnlyMobileAndTablets {
+    @include Shared.mediaOnlyMobileAndTablets {
       background: white;
       bottom: 0;
       box-shadow: 0 -2px 4px rgba(81, 80, 79, 0.25);
@@ -154,7 +154,7 @@
     border: 2px solid #c7b29c;
     color: #c7b29c;
     margin-right: 10px;
-    @include mediaLaptop {
+    @include Shared.mediaLaptop {
       margin-right: 20px;
     }
   }
@@ -167,8 +167,8 @@
   // для десктопа
   &-desktop {
     display: none;
-    @include mediaLaptop {
-      @include flex($d: column);
+    @include Shared.mediaLaptop {
+      @include Shared.flex($d: column);
     }
   }
 

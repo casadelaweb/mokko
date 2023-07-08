@@ -1,11 +1,11 @@
-@use 'src/styles/shared';
+@use 'src/styles/shared' as Shared;
 
 :root {
   --modal-transition: transform 0.5s, opacity 0.5s;
 }
 
 .modal {
-  @include flex(center, center, column);
+  @include Shared.flex(center, center, column);
   background: rgba(#51504f, 0.5);
   height: 100%;
   left: 0;
@@ -32,12 +32,12 @@
 
   &-content {
     background: white;
-    @include flex(center, center, column);
+    @include Shared.flex(center, center, column);
     height: 200px;
     max-width: 100%;
     padding: 24px 16px;
     position: relative;
-    @include mediaTablet {
+    @include Shared.mediaTablet {
       height: 400px;
       padding: 20px;
       width: 400px;

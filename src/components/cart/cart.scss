@@ -1,8 +1,8 @@
-@use 'src/styles/shared';
+@use 'src/styles/shared' as Shared;
 
 .cart {
   padding-top: 15px;
-  @include mediaTablet {
+  @include Shared.mediaTablet {
     padding-top: 24px;
   }
 
@@ -15,7 +15,7 @@
   }
 
   &-layout {
-    @include mediaTabletBg {
+    @include Shared.mediaTabletBg {
       column-gap: 56px;
       display: grid;
       grid-template-columns: 2fr 1fr;
@@ -24,7 +24,7 @@
 
   &-cards {
     margin-bottom: 25px;
-    @include mediaTablet {
+    @include Shared.mediaTablet {
       margin-bottom: 56px;
     }
   }

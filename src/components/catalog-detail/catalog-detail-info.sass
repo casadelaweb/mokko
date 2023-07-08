@@ -14,7 +14,7 @@
     border-bottom: 1px solid #e9e9e9
     margin-bottom: $containerPaddingMobile
     padding-bottom: $containerPaddingMobile
-    @include mediaOnlyMobile
+    @include Shared.mediaOnlyMobile
       padding-left: $containerPaddingMobile
       padding-right: $containerPaddingMobile
       margin-left: ($containerPaddingMobile * -1)
@@ -32,7 +32,7 @@
       margin-top: 16px
       display: flex
       font-size: 14px
-      @include mediaTablet
+      @include Shared.mediaTablet
         font-size: 15px
 
       span
@@ -63,7 +63,7 @@
     a
       color: #ada49e
       text-decoration: underline
-      @include mediaOnlyMobile
+      @include Shared.mediaOnlyMobile
         margin-bottom: 16px
 
 

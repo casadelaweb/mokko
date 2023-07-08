@@ -1,4 +1,4 @@
-@use 'src/styles/shared';
+@use 'src/styles/shared' as Shared;
 
 .order {
   &-button {
@@ -7,7 +7,7 @@
   }
 
   &-label {
-    @include flex($d: column);
+    @include Shared.flex($d: column);
     margin-bottom: 20px;
 
     &._radio {
@@ -33,7 +33,7 @@
   &-location {
     border-radius: 4px;
     overflow: hidden;
-    @include flex(stretch);
+    @include Shared.flex(stretch);
     position: relative;
     z-index: 0;
 
@@ -44,7 +44,7 @@
     }
 
     &-search, &-reset {
-      @include flex(center, center);
+      @include Shared.flex(center, center);
       background: #e9e9e9;
       padding: 10px;
     }
@@ -64,7 +64,7 @@
 
   .select {
     @extend .input-grey;
-    @include flex(stretch, center);
+    @include Shared.flex(stretch, center);
     flex: 0 0 auto;
     margin: 0;
     padding: 0;

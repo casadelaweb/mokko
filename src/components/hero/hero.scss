@@ -1,4 +1,4 @@
-@use 'src/styles/shared';
+@use 'src/styles/shared' as Shared;
 
 .hero {
   overflow: hidden;
@@ -17,20 +17,20 @@
       display: block;
       object-fit: cover;
       width: 100%;
-      @include mediaOnlyMobile {
+      @include Shared.mediaOnlyMobile {
         min-height: 100vh;
       }
       //max-height: 550px;
-      //@include mediaTablet {
+      //@include Shared.mediaTablet {
       //  max-height: 956px;
       //}
-      //@include mediaTabletBg {
+      //@include Shared.mediaTabletBg {
       //  max-height: 700px;
       //}
-      //@include mediaLaptop {
+      //@include Shared.mediaLaptop {
       //  max-height: 700px;
       //}
-      //@include mediaDesktop {
+      //@include Shared.mediaDesktop {
       //  max-height: 1050px;
       //}
     }
@@ -38,14 +38,14 @@
 }
 
 .swiper-pagination {
-  @include flex(center, center);
+  @include Shared.flex(center, center);
   bottom: 16px;
   left: 50%;
   position: absolute;
   transform: translate(-50%, 0);
   z-index: 1;
 
-  @include mediaLaptop {
+  @include Shared.mediaLaptop {
     bottom: 30px;
   }
 
@@ -59,7 +59,7 @@
     transition: background-color 0.5s, opacity 0.5s;
     width: 46px;
 
-    @include mediaLaptop {
+    @include Shared.mediaLaptop {
       width: 80px;
     }
 
