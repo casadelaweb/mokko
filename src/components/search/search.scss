@@ -57,6 +57,7 @@
     }
     @include mediaDesktop {
       max-height: 750px - 80px;
+      padding: 40px 64px 56px;
       column-gap: 112px;
     }
 
