@@ -1,9 +1,9 @@
-@import "src/styles/shared";
+@use 'src/styles/shared';
 
 .catalog-card {
+  min-width: 0;
   position: relative;
   z-index: 0;
-  min-width: 0;
 
   &-discount, &-favourite {
     position: absolute;
@@ -11,39 +11,39 @@
   }
 
   &-discount {
-    top: 0;
-    left: 0;
     background: #766cff;
-    color: white;
     border-radius: 12px 0 12px 0;
+    color: white;
     font-size: 10px;
+    left: 0;
     padding: 8px 4px;
+    top: 0;
     @include mediaLaptop {
-      padding: 12px 8px;
       font-size: 15px;
+      padding: 12px 8px;
     }
 
     .mode-row & {
-      padding: 12px 8px;
       font-size: 15px;
+      padding: 12px 8px;
     }
   }
 
   &-favourite {
     @include flex(center, center);
-    top: 5px;
-    right: 8px;
-    font-size: 16px;
     color: white;
+    font-size: 16px;
     opacity: 0.9;
+    right: 8px;
+    top: 5px;
     @include mediaTablet {
-      top: 8px;
       font-size: 20px;
+      top: 8px;
     }
 
     .mode-row & {
-      right: 12px;
       font-size: 20px;
+      right: 12px;
       @include mediaTablet {
         font-size: 24px;
       }
@@ -51,39 +51,39 @@
   }
 
   &-preview {
+    color: white;
+    font-size: 16px;
+    opacity: 0.9;
     position: absolute;
-    z-index: 2;
     right: 8px;
     top: 16px + 5px + 8px;
-    font-size: 16px;
-    color: white;
-    opacity: 0.9;
+    z-index: 2;
     @include mediaTablet {
-      top: 20px + 8px + 8px;
       font-size: 20px;
+      top: 20px + 8px + 8px;
     }
     @include mediaLaptop {
       display: none;
     }
 
     .mode-row & {
+      font-size: 20px;
       right: 12px;
       top: 20px + 5px + 12px;
-      font-size: 20px;
       @include mediaTablet {
-        top: 24px + 8px + 12px;
         font-size: 24px;
+        top: 24px + 8px + 12px;
       }
     }
   }
 
   &-slider {
-    position: relative;
-    z-index: 0;
-    min-width: 0;
-    overflow: hidden;
     border-radius: 12px;
     margin-bottom: 4px;
+    min-width: 0;
+    overflow: hidden;
+    position: relative;
+    z-index: 0;
     @include mediaTablet {
       margin-bottom: 8px;
     }
@@ -93,28 +93,28 @@
   }
 
   &-img {
+    aspect-ratio: 9 / 13.5;
     display: block;
-    width: 100%;
     object-fit: cover;
     object-position: center;
-    aspect-ratio: 9 / 13.5;
+    width: 100%;
   }
 
 
   &-sizes {
     @include flex(center);
-    position: absolute;
-    z-index: 1;
-    left: 0;
-    bottom: 0;
-    width: 100%;
     background: rgba(white, 0.75);
-    padding: 10px;
+    bottom: 0;
     font-size: 10px;
+    left: 0;
+    padding: 10px;
+    pointer-events: none;
+    position: absolute;
     text-transform: uppercase;
     transform: translate(0, 125%);
-    pointer-events: none;
     transition: transform 0.5s;
+    width: 100%;
+    z-index: 1;
     @include mediaLaptop {
       font-size: 14px;
       padding: 20px 14px;
@@ -129,8 +129,8 @@
     }
 
     &.active {
-      transform: none;
       pointer-events: auto;
+      transform: none;
     }
   }
 
@@ -140,14 +140,14 @@
   }
 
   &-cart {
-    margin-left: auto;
     flex: 0 0 auto;
-    width: 18px;
     height: 18px;
+    margin-left: auto;
+    width: 18px;
 
     .mode-row & {
-      width: 22px;
       height: 22px;
+      width: 22px;
     }
   }
 
@@ -182,8 +182,8 @@
     }
 
     &-previous {
-      text-decoration: line-through;
       margin-right: 1em;
+      text-decoration: line-through;
     }
 
     &-current {
@@ -196,26 +196,26 @@
   }
 
   &-color {
-    flex: 0 0 auto;
     border-radius: 50%;
-    width: 14px;
+    flex: 0 0 auto;
     height: 14px;
     margin-right: 0.5em;
+    width: 14px;
   }
 
   .swiper {
     &-button {
       &-prev, &-next {
-        transition: transform 0.5s;
         pointer-events: none;
+        transition: transform 0.5s;
 
         @include mediaOnlyMobileAndTablets {
           display: none;
         }
 
         &.active {
-          transform: translate(0, -50%);
           pointer-events: auto;
+          transform: translate(0, -50%);
         }
       }
 
@@ -235,8 +235,8 @@
       }
 
       &-bullet {
-        width: 16px;
         margin: 0 0.25em;
+        width: 16px;
         @include mediaTablet {
           width: 24px;
         }

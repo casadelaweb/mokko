@@ -1,4 +1,4 @@
-@import "src/styles/shared";
+@use 'src/styles/shared';
 
 .menu-mobile {
   @include flex($d: column);
@@ -20,15 +20,15 @@
   }
 
   &-close {
-    width: 18px;
     height: 18px;
+    width: 18px;
   }
 
   &-links {
     display: grid;
     grid-template-columns: 1fr;
-    row-gap: $containerPaddingMobile * 1.5;
     padding: 0 ($containerPaddingMobile * 2);
+    row-gap: $containerPaddingMobile * 1.5;
   }
 
   @include detailsMobile;

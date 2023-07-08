@@ -1,4 +1,4 @@
-@import "src/styles/shared";
+@use 'src/styles/shared';
 
 .order {
   color: #82756e;
@@ -19,9 +19,9 @@
 
   &-layout {
     @include mediaTabletBg {
+      column-gap: 56px;
       display: grid;
       grid-template-columns: 2fr 1fr;
-      column-gap: 56px;
     }
   }
 

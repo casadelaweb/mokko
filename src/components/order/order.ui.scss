@@ -1,4 +1,4 @@
-@import "src/styles/shared";
+@use 'src/styles/shared';
 
 .order {
   &-button {
@@ -15,8 +15,8 @@
     }
 
     &-title {
-      font-size: 14px;
       color: #ada49e;
+      font-size: 14px;
       margin-bottom: 6px;
 
       ._radio & {
@@ -31,16 +31,16 @@
   }
 
   &-location {
-    position: relative;
-    z-index: 0;
-    @include flex(stretch);
     border-radius: 4px;
     overflow: hidden;
+    @include flex(stretch);
+    position: relative;
+    z-index: 0;
 
     &-input {
       @extend .input-grey;
-      flex: 1 0 auto;
       border-radius: 0;
+      flex: 1 0 auto;
     }
 
     &-search, &-reset {
@@ -66,19 +66,19 @@
     @extend .input-grey;
     @include flex(stretch, center);
     flex: 0 0 auto;
-    width: 100%;
     margin: 0;
     padding: 0;
+    width: 100%;
 
     &-current {
       flex: 1 0 auto;
-      width: 100%;
       padding: 10px 15px;
+      width: 100%;
 
       &-button {
-        position: static;
         font-size: 15px;
         margin: 0 10px 0 0;
+        position: static;
       }
     }
   }

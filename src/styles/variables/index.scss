@@ -1,2 +1,2 @@
-@import "./variables.scss";
-@import "./variables.root";
+@forward './variables.scss';
+@forward './variables.root';

@@ -1,4 +1,4 @@
-@import "src/styles/shared";
+@use 'src/styles/shared';
 
 .hero {
   overflow: hidden;
@@ -39,25 +39,25 @@
 
 .swiper-pagination {
   @include flex(center, center);
-  position: absolute;
-  z-index: 1;
   bottom: 16px;
   left: 50%;
+  position: absolute;
   transform: translate(-50%, 0);
+  z-index: 1;
 
   @include mediaLaptop {
     bottom: 30px;
   }
 
   &-bullet {
-    display: inline-block;
-    width: 46px;
-    height: 2px;
     background: white;
+    cursor: pointer;
+    display: inline-block;
+    height: 2px;
+    margin: 0 10px;
     opacity: 0.8;
     transition: background-color 0.5s, opacity 0.5s;
-    margin: 0 10px;
-    cursor: pointer;
+    width: 46px;
 
     @include mediaLaptop {
       width: 80px;

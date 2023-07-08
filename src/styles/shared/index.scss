@@ -1,3 +1,3 @@
-@import "src/styles/variables";
-@import "src/styles/mixins";
-@import "src/styles/ui";
+@forward 'src/styles/variables';
+@forward 'src/styles/mixins';
+@forward 'src/styles/ui';

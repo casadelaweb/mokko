@@ -1,4 +1,4 @@
-@import "src/styles/shared";
+@use 'src/styles/shared';
 
 @mixin compensateScrollbar() {
   :not(.is-closing).open.has-vertical-scrollbar & {
@@ -22,9 +22,9 @@
   }
 
   &-button {
+    font-size: 12px;
     transform-origin: center;
     transition: transform 0.5s;
-    font-size: 12px;
 
     .is-opening &, .open & {
       transform: rotate(90deg);

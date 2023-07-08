@@ -1,5 +1,5 @@
-@import "src/styles/ui/checkboxes";
-@import "src/styles/ui/buttons";
-@import "src/styles/ui/fonts";
-@import "src/styles/ui/containers";
-@import "src/styles/ui/iconfont";
+@forward 'src/styles/ui/checkboxes';
+@forward 'src/styles/ui/buttons';
+@forward 'src/styles/ui/fonts';
+@forward 'src/styles/ui/containers';
+@forward 'src/styles/ui/iconfont';

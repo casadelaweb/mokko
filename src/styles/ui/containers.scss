@@ -1,5 +1,5 @@
-@import "src/styles/variables";
-@import "src/styles/mixins";
+@use 'src/styles/variables';
+@use 'src/styles/mixins';
 
 @mixin container {
   margin: 0 auto;
@@ -25,8 +25,8 @@
 
 .page-title {
   font-size: 12px;
-  text-transform: uppercase;
   margin-bottom: 36px;
+  text-transform: uppercase;
   @include mediaTablet {
     font-size: 18px;
   }

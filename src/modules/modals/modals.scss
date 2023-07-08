@@ -1,4 +1,4 @@
-@import "src/styles/shared";
+@use 'src/styles/shared';
 
 :root {
   --modal-transition: transform 0.5s, opacity 0.5s;
@@ -6,24 +6,24 @@
 
 .modal {
   @include flex(center, center, column);
-  position: fixed;
-  z-index: 110;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
   background: rgba(#51504f, 0.5);
-  // backdrop-filter: blur(4px);
-  transition: var(--modal-transition);
-  overflow-y: auto;
-  transform: translate(0, 0);
+  height: 100%;
+  left: 0;
   opacity: 0;
+  overflow-y: auto;
   pointer-events: none;
+  position: fixed;
+  // backdrop-filter: blur(4px);
+  top: 0;
+  transform: translate(0, 0);
+  transition: var(--modal-transition);
+  width: 100%;
+  z-index: 110;
 
   &.active {
+    opacity: 1;
     pointer-events: auto;
     transform: none;
-    opacity: 1;
   }
 
   &.current {
@@ -31,37 +31,37 @@
   }
 
   &-content {
-    position: relative;
-    @include flex(center, center, column);
     background: white;
+    @include flex(center, center, column);
     height: 200px;
-    padding: 24px 16px;
     max-width: 100%;
+    padding: 24px 16px;
+    position: relative;
     @include mediaTablet {
-      width: 400px;
       height: 400px;
       padding: 20px;
+      width: 400px;
     }
   }
 
   &-close {
     position: absolute;
-    z-index: 1;
-    top: 20px;
     right: 20px;
+    top: 20px;
+    z-index: 1;
   }
 
   &-overlay {
-    position: fixed;
-    z-index: 101;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
     background: rgba(#51504f, 0.5);
+    height: 100%;
+    left: 0;
     opacity: 0;
     pointer-events: none;
+    position: fixed;
+    top: 0;
     transition: opacity 0.5s;
+    width: 100%;
+    z-index: 101;
 
     &.active {
       opacity: 1;

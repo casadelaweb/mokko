@@ -1,16 +1,16 @@
-@import "src/styles/shared";
+@use 'src/styles/shared';
 
 .header {
-  position: fixed;
-  z-index: 100;
-  top: 0;
-  left: 0;
-  width: 100%;
-  color: white;
-  transition: background-color 0.5s, backdrop-filter 0.5s, border-color 0.5s;
   border-bottom: 2px solid transparent;
-  padding: 12px 0;
+  color: white;
+  left: 0;
   overflow: hidden;
+  padding: 12px 0;
+  position: fixed;
+  top: 0;
+  transition: background-color 0.5s, backdrop-filter 0.5s, border-color 0.5s;
+  width: 100%;
+  z-index: 100;
   @include mediaMobileConventional {
     padding: 16px 0;
   }
@@ -23,8 +23,8 @@
 
   &.hovered, &.scrolled, &.active {
     background: white;
-    color: #938781;
     border-color: #f2f2f2;
+    color: #938781;
   }
 
   &-container {
@@ -66,14 +66,14 @@
   }
 
   &-logo {
-    position: absolute;
-    z-index: 1;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     display: inline-block;
-    margin: 0 auto;
     font-size: 20px;
+    left: 50%;
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
     @include mediaMobileConventional {
       font-size: 22px;
     }
@@ -91,18 +91,18 @@
   }
 
   &-button-purple {
-    border-radius: 4px;
     background: #766cff;
+    border-radius: 4px;
     color: white;
     font-size: 17px;
-    letter-spacing: 0.05em;
-    width: 100%;
     height: 44px;;
+    letter-spacing: 0.05em;
     margin: 0 auto 22px;
+    width: 100%;
 
     @include mediaLaptop {
-      width: 228px;
       margin: 0 (36px - 20px) 0 auto;
+      width: 228px;
     }
   }
 

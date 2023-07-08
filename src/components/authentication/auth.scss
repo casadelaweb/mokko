@@ -1,25 +1,25 @@
-@import "src/styles/shared";
+@use 'src/styles/shared' as Shared;
 
 .auth {
-  @include flex($d: column);
+  @include Shared.flex($d: column);
   background: white;
   font-size: 14px;
-  position: relative;
-  z-index: 0;
-  width: calc(100% - 32px);
   padding: 24px 16px 40px;
+  position: relative;
+  width: calc(100% - 32px);
+  z-index: 0;
   @include mediaTablet {
     padding: 40px 48px 48px;
     width: 400px;
   }
 
   &-close {
-    position: absolute;
-    z-index: 1;
-    top: 18px;
-    right: 18px;
-    font-size: 20px;
     color: #82756e;
+    font-size: 20px;
+    position: absolute;
+    right: 18px;
+    top: 18px;
+    z-index: 1;
   }
 
   a {
@@ -33,10 +33,10 @@
   &-title {
     color: #51504f;
     font-size: 20px;
-    text-align: center;
     letter-spacing: 0.02em;
-    text-transform: uppercase;
     margin-bottom: 30px;
+    text-align: center;
+    text-transform: uppercase;
   }
 
   &-body {
@@ -70,9 +70,9 @@
     width: 100%;
 
     &-message {
+      color: #e71c35;
       display: inline-block;
       font-size: 14px;
-      color: #e71c35;
       margin-top: 0.5em;
     }
   }
@@ -92,8 +92,8 @@
   }
 
   &-link {
-    display: inline-block;
     color: #82756e;
+    display: inline-block;
     font-size: 17px;
     margin: 0 auto;
     text-decoration: underline;

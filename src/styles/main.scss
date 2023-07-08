@@ -1,5 +1,4 @@
-@import "src/styles/shared";
-@import "src/styles/ui";
+@use 'src/styles/shared';
 
 html {
   @include scrollbar;
@@ -23,14 +22,6 @@ body {
 
 .swiper-button-prev, .swiper-button-next {
   @include flex(center, center);
-
-  //.icon-arrow-left {
-  //  transform: translateX(-25%);
-  //}
-  //
-  //.icon-arrow-right {
-  //  transform: translateX(25%);
-  //}
 }
 
 .p404 {

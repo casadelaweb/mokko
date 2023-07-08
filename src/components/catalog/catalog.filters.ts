@@ -6,7 +6,7 @@ import './no-ui-slider.scss'
 
 document.addEventListener('DOMContentLoaded', () => {
   modalsAside(modals, '[data-modal=catalog-filters]')
-  
+
   const { body, } = document
 
   const prices: HTMLElement[] = Array.from(body.querySelectorAll('[data-catalog-prices]'))

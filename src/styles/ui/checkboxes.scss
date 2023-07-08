@@ -1,15 +1,15 @@
-@import "src/styles/variables";
-@import "src/styles/mixins";
+@use 'src/styles/variables';
+@use 'src/styles/mixins';
 
 [type=checkbox], [type=radio] {
   border: 2px solid #82756e;
-  overflow: hidden;
+  border-radius: 4px;
   flex: 0 0 auto;
-  width: 18px;
   height: 18px;
   margin-right: 0.5em;
+  overflow: hidden;
   transition: background-color 0.25s;
-  border-radius: 4px;
+  width: 18px;
 
   &:checked {
     background: #82756e;
@@ -20,8 +20,8 @@
   }
 
   &::before {
-    content: " ";
     background: #82756e;
+    content: ' ';
     opacity: 1;
     transform: scale(0);
     transition: transform 0.25s;

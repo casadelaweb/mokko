@@ -1,4 +1,4 @@
-@import "src/styles/shared";
+@use 'src/styles/shared';
 
 .promo {
   overflow: hidden;
@@ -46,10 +46,10 @@
 
   &-title {
     color: #505050;
-    text-transform: uppercase;
     font-size: 16px;
-    margin-bottom: 1em;
     letter-spacing: 0.05em;
+    margin-bottom: 1em;
+    text-transform: uppercase;
     @include mediaTablet {
       font-size: 26px;
       margin-bottom: 30px;
@@ -94,20 +94,20 @@
 
     &-overlay {
       @include flex(center, center);
-      position: absolute;
-      z-index: 1;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border-radius: 10px;
       background-color: rgba(#51504f, 0.5);
+      border-radius: 10px;
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      z-index: 1;
     }
 
     &-title {
       color: white;
-      text-align: center;
       font-size: 16px;
+      text-align: center;
       @include mediaTablet {
         font-size: 18px;
         letter-spacing: 0.05em;

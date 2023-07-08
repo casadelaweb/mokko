@@ -1,32 +1,32 @@
-@import "src/styles/shared";
+@use 'src/styles/shared';
 
 .search {
+  background: white;
+  left: 0;
+  pointer-events: none;
   position: fixed;
   top: 0;
-  left: 0;
-  background: white;
   transition: transform 0.5s;
-  pointer-events: none;
   @include mediaOnlyMobileAndTablets {
-    z-index: 105;
-    width: 320px;
-    transform: translate(calc(-100% - 100px), 0);
-    overflow-y: auto;
     height: 100%;
+    overflow-y: auto;
+    transform: translate(calc(-100% - 100px), 0);
+    width: 320px;
+    z-index: 105;
     @include scrollbar;
   }
   @include mediaTablet {
-    transform: translate(0, calc(-100% - 100px));
     height: 440px;
-    width: 100%;
     padding-bottom: 48px;
+    transform: translate(0, calc(-100% - 100px));
+    width: 100%;
   }
   @include mediaLaptop {
+    box-shadow: 12px 12px 24px 0 rgba(black, 0.1);
     height: 650px;
-    z-index: 130;
     overflow: unset;
     padding: 0;
-    box-shadow: 12px 12px 24px 0 rgba(black, 0.1);
+    z-index: 130;
   }
 
   &.active {
@@ -43,8 +43,8 @@
 
   &-header {
     @include flex(center);
-    padding: $containerPaddingMobile;
     border-bottom: 2px solid #e9e9e9;
+    padding: $containerPaddingMobile;
     @include mediaTablet {
       padding: $containerPaddingMobile 20px;
     }
@@ -80,9 +80,9 @@
 
   &-form {
     @include flex(center);
+    padding: 20px 40px 0 20px;
     position: relative;
     z-index: 0;
-    padding: 20px 40px 0 20px;
     @include mediaTablet {
       margin-bottom: 32px;
     }
@@ -106,18 +106,18 @@
 
   &-input {
     @extend .input-grey;
+    color: #51504f;
     flex: 1 0 auto;
     font-size: 14px;
-    color: #51504f;
     letter-spacing: 0.02em;
 
     &-reset {
       @include flex(center, center);
-      position: absolute;
-      z-index: 1;
-      top: 14px;
-      right: 8px;
       font-size: 14px;
+      position: absolute;
+      right: 8px;
+      top: 14px;
+      z-index: 1;
     }
   }
 
@@ -144,8 +144,8 @@
       margin-bottom: 24px;
     }
     @include mediaLaptop {
-      font-size: 18px;
       color: #51504f;
+      font-size: 18px;
     }
   }
 

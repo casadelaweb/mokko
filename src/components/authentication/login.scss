@@ -1,4 +1,4 @@
-@import "src/styles/shared";
+@use 'src/styles/shared';
 
 .login {
   &-header {
@@ -6,15 +6,15 @@
     margin: 0 auto 18px;
 
     &-divider {
-      height: 20px;
-      width: 2px;
       background: #82756e;
+      height: 20px;
       margin: 0 10px;
+      width: 2px;
     }
 
     &-button {
-      font-size: 17px;
       color: #ada49e;
+      font-size: 17px;
 
       &.active {
         color: #82756e;
@@ -27,9 +27,9 @@
   }
 
   &-tel, &-email {
-    flex: 1 0 auto;
-    @include flex($d: column);
     display: none;
+    @include flex($d: column);
+    flex: 1 0 auto;
 
     &.active {
       @include flex;
@@ -44,8 +44,8 @@
   }
 
   .auth-message {
-    text-align: center;
     font-size: 17px;
     line-height: 1.75;
+    text-align: center;
   }
 }

@@ -1,4 +1,4 @@
-@import "src/styles/variables";
+@use 'src/styles/variables';
 
 @mixin flex($a:'unset', $j:'unset', $d:'unset', $w:'unset') {
   display: flex;

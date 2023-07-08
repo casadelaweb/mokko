@@ -1,11 +1,11 @@
-@import "src/styles/shared";
+@use 'src/styles/shared';
 
 .cart-card {
-  position: relative;
-  z-index: 0;
-  padding: 25px 0;
   border-bottom: 1px solid #dadada;
   font-size: 14px;
+  padding: 25px 0;
+  position: relative;
+  z-index: 0;
   @include mediaLaptop {
     font-size: 15px;
     padding: 30px 0;
@@ -23,20 +23,20 @@
   }
 
   &-desktop {
+    column-gap: 25px;
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-areas:
+    'img body quantity prices'
+    'img footer footer footer';
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: min-content;
     @include mediaOnlyMobile {
       display: none;
     }
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: min-content;
-    column-gap: 25px;
-    grid-auto-flow: row;
-    grid-template-areas:
-    "img body quantity prices"
-    "img footer footer footer";
     @include mediaLaptop {
-      grid-template-columns: 126px auto 95px 70px;
       column-gap: 32px;
+      grid-template-columns: 126px auto 95px 70px;
     }
 
     .cart-card {
@@ -66,11 +66,11 @@
       &-footer {
         @include mediaTablet {
           @include flex(center, flex-end);
+          bottom: 25px;
           grid-area: footer;
           position: absolute;
-          z-index: 1;
           right: 0;
-          bottom: 25px;
+          z-index: 1;
         }
         @include mediaLaptop {
           bottom: 30px;
@@ -80,9 +80,9 @@
   }
 
   &-mobile {
+    column-gap: 25px;
     display: grid;
     grid-template-columns: 1fr 1.1fr;
-    column-gap: 25px;
     @include mediaTablet {
       display: none;
     }
@@ -93,39 +93,39 @@
   }
 
   &-img {
-    display: block;
     border-radius: 4px;
+    display: block;
     @include mediaOnlyMobile {
       margin-bottom: 13px;
     }
 
     img {
-      display: block;
       border-radius: 4px;
+      display: block;
     }
   }
 
   &-quantity {
     @include flex(center, space-between);
     background: #f1f1f1;
-    height: 44px;;
-    width: 95px;
-    margin: auto auto 0;
     border-radius: 4px;
+    height: 44px;;
+    margin: auto auto 0;
+    width: 95px;
 
     &-button, &-input {
+      color: #82756e;
       flex: 0 0 auto;
+      font-size: 14px;
       height: 100%;
       text-align: center;
-      color: #82756e;
-      font-size: 14px;
     }
 
     &-button {
       @include flex(center, center);
       padding: 0 10px;
-      width: 33%;
       transition: background-color 0.2s;
+      width: 33%;
 
       &:active {
         background: #dadada;
@@ -174,9 +174,9 @@
     }
 
     &-circle {
-      width: 20px;
-      height: 20px;
       border-radius: 50%;
+      height: 20px;
+      width: 20px;
     }
   }
 
@@ -186,10 +186,10 @@
     }
     @include mediaLaptop {
       @include flex(center, center);
-      width: 44px;
-      height: 44px;
-      border-radius: 4px;
       background: #f1f1f1;
+      border-radius: 4px;
+      height: 44px;
+      width: 44px;
     }
   }
 
@@ -202,19 +202,19 @@
 
   &-discount {
     @include flex(center, center);
-    width: 56px;
-    height: 37px;
-    border-radius: 10px 0;
     background: #756bff;
+    border-radius: 10px 0;
     color: white;
     font-size: 15px;
+    height: 37px;
+    width: 56px;
     @include mediaTablet {
       margin-bottom: 13px;
     }
     @include mediaLaptop {
       font-size: 17px;
-      width: 70px;
       height: 45px;
+      width: 70px;
     }
   }
 

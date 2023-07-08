@@ -1,19 +1,19 @@
-@import "src/styles/shared";
+@use 'src/styles/shared';
 
 .filters {
   @include mediaOnlyMobileAndTablets {
-    position: fixed;
-    z-index: 105;
-    top: 0;
-    left: 0;
-    width: 320px;
-    height: 100%;
     background: white;
     display: block;
-    transform: translate(-100%, 0);
-    pointer-events: none;
+    height: 100%;
+    left: 0;
     overflow-y: auto;
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    transform: translate(-100%, 0);
     transition: transform 0.5s;
+    width: 320px;
+    z-index: 105;
 
     &.active {
       pointer-events: auto;
@@ -33,8 +33,8 @@
   &-sticky {
     @include mediaLaptop {
       position: sticky;
-      z-index: 0;
       top: 100px;
+      z-index: 0;
     }
   }
 
@@ -47,13 +47,13 @@
 
   &-header {
     @include flex(center, space-between);
-    padding: $containerPaddingMobile;
     font-size: 12px;
     letter-spacing: 0.02px;
+    padding: $containerPaddingMobile;
     text-transform: uppercase;
     @include mediaLaptop {
-      padding-left: 0;
       display: none;
+      padding-left: 0;
     }
   }
 
@@ -72,13 +72,13 @@
 
     &-summary {
       @include flex(center);
-      flex: 1 0 auto;
-      height: 70px;
-      width: auto;
-      padding: 0 $containerPaddingMobile;
       border-top: 1px solid #e9e9e9;
+      flex: 1 0 auto;
       font-size: 17px;
+      height: 70px;
+      padding: 0 $containerPaddingMobile;
       transition: background-color 0.25s;
+      width: auto;
 
       @include mediaLaptop {
         font-size: 18px;
@@ -126,27 +126,27 @@
 
   label {
     @include flex(center);
-    width: fit-content;
     margin-bottom: 0.5em;
+    width: fit-content;
   }
 
   &-buttons {
     @include flex(center);
     margin-top: auto;
     @include mediaOnlyMobileAndTablets {
-      position: sticky;
-      z-index: 1;
-      bottom: 0;
       background: white;
+      bottom: 0;
       box-shadow: 0 -2px 4px rgba(81, 80, 79, 0.25);
       padding: ($containerPaddingMobile * 2) $containerPaddingMobile;
+      position: sticky;
+      z-index: 1;
     }
   }
 
   &-reset, &-submit {
-    width: 142px;
-    height: 44px;;
     border-radius: 4px;
+    height: 44px;;
+    width: 142px;
   }
 
   &-reset {
