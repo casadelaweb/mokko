@@ -149,6 +149,9 @@
       font-size: 18px;
       width: 120px;
     }
+    @include mediaDesktop {
+      width: 240px;
+    }
   }
 
   &-article {
