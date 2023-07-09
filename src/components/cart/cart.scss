@@ -1,6 +1,5 @@
 @import 'src/styles/shared';
 
-
 .cart {
   padding-top: 15px;
   @include mediaTablet {
@@ -17,9 +16,12 @@
 
   &-layout {
     @include mediaTabletBg {
-      column-gap: 56px;
       display: grid;
-      grid-template-columns: 2fr 1fr;
+      grid-template-columns: auto 350px;
+      column-gap: 56px;
+    }
+    @include mediaDesktop {
+      column-gap: 156px;
     }
   }
 

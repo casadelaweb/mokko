@@ -1,8 +1,43 @@
 @import 'src/styles/shared';
 
-
 .cart-summary {
   @include pageSummary;
+
+  &-promocodes {
+    margin-bottom: 20px;
+  }
+
+  &-promocode {
+    @include flex(center, space-between, $w: wrap);
+    font-size: 13px;
+    margin-bottom: 10px;
+    @include mediaTablet {
+      font-size: 14px;
+    }
+
+    &-name {
+      font-weight: 500;
+    }
+
+    &-remove {
+      @include flex(center, center);
+      color: #e71c35;
+    }
+
+    &-status {
+      flex: 0 0 auto;
+      width: 100%;
+      margin-top: 4px;
+
+      &.error {
+        color: #e71c35
+      }
+
+      &.success {
+        color: mediumseagreen;
+      }
+    }
+  }
 
   &-label {
     @include flex(center, $w: wrap);
@@ -10,8 +45,8 @@
 
     &-title {
       flex: 0 0 auto;
-      margin-bottom: 10px;
       width: 100%;
+      margin-bottom: 10px;
     }
   }
 

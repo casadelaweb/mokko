@@ -17,6 +17,10 @@ body {
   color: #82756e;
 }
 
+.container {
+  @include container;
+}
+
 .form {
   &-warning {
     a {
