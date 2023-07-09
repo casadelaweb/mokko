@@ -6,15 +6,15 @@
     margin: 0 auto 18px;
 
     &-divider {
-      background: #82756e;
+      width: 2px;
       height: 20px;
       margin: 0 10px;
-      width: 2px;
+      background: #82756e;
     }
 
     &-button {
-      color: #ada49e;
       font-size: 17px;
+      color: #ada49e;
 
       &.active {
         color: #82756e;
@@ -28,7 +28,7 @@
 
   &-tel, &-email {
     display: none;
-    
+
     &.active {
       @include flex($d: column);
       flex: 1 0 auto;
