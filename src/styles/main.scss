@@ -43,3 +43,15 @@ body {
 .main {
   margin-top: var(--headerHeight);
 }
+
+input, textarea {
+  &.error {
+    color: #e71c35;
+    border-color: #e71c35;
+  }
+
+  &.success {
+    color: mediumseagreen;
+    border-color: mediumseagreen;
+  }
+}
