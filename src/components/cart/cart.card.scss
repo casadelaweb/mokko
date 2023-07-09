@@ -254,9 +254,7 @@
   &-favourite {
     @include flex(center, center);
     font-size: 22px;
-    @include mediaOnlyMobile {
-      margin-left: auto;
-    }
+    margin-left: auto;
     @include mediaTablet {
       margin-left: 20px;
     }
