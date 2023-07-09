@@ -12,6 +12,10 @@ document.addEventListener('DOMContentLoaded', () => {
       const form: HTMLFormElement = body.querySelector('[data-search=form]')
       form.reset()
     }
+
+    if (target.closest('.search-form-submit')) {
+      document.body.querySelector('.search-results').classList.toggle('loading')
+    }
   })
 })
 

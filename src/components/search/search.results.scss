@@ -2,9 +2,35 @@
 
 .search {
   &-results {
+    position: relative;
+    z-index: 0;
     display: none;
     @include mediaLaptop {
       display: block;
+    }
+
+    &::before {
+      content: ' ';
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      transition: 0.25s;
+      pointer-events: none;
+      opacity: 0;
+      background: white url('src/assets/img/loading.gif') no-repeat center 150px;
+      @include mediaDesktop {
+        background-position-y: 240px;
+      }
+    }
+
+    &.loading {
+      &::before {
+        pointer-events: auto;
+        opacity: 1;
+      }
     }
 
     &-title {
@@ -22,10 +48,10 @@
   &-cards {
     @include mediaLaptop {
       display: grid;
-      margin-bottom: 32px;
-      column-gap: 14px;
       grid-template-columns: repeat(4, 1fr);
+      column-gap: 14px;
       row-gap: 32px;
+      margin-bottom: 32px;
     }
     @include mediaDesktop {
       grid-template-columns: repeat(5, 1fr);
