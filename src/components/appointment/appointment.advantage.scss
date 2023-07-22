@@ -1,5 +1,11 @@
 @import 'src/styles/shared';
 
+.appointment-advantages {
+  @include mediaTablet {
+    margin-bottom: 56px;
+  }
+}
+
 .appointment-advantage {
   @include flex(center, center, column);
   min-height: 290px;
@@ -8,6 +14,17 @@
   color: white;
   border-radius: 10px;
   background: #c7b29c;
+
+  @include mediaTablet {
+    min-height: 220px;
+    padding: 50px 60px 60px;
+  }
+  @include mediaTabletBg {
+  }
+  @include mediaLaptop {
+  }
+  @include mediaDesktop {
+  }
 
   &-title {
     @include flex(center);
@@ -18,6 +35,15 @@
     margin-bottom: 20px;
     padding-bottom: 16px;
     border-bottom: 2px solid white;
+    @include mediaTablet {
+      font-size: 20px;
+    }
+    @include mediaTabletBg {
+    }
+    @include mediaLaptop {
+    }
+    @include mediaDesktop {
+    }
   }
 
   &-number {
@@ -29,10 +55,30 @@
     color: #6d6865;
     border-radius: 50%;
     background: #dbcdbf;
+    @include mediaTablet {
+      width: 44px;
+      height: 44px;
+      margin-right: 16px;
+    }
+    @include mediaTabletBg {
+    }
+    @include mediaLaptop {
+    }
+    @include mediaDesktop {
+    }
   }
 
   &-description {
     font-size: 14px;
     line-height: 1.4;
+    @include mediaTablet {
+      font-size: 16px;
+    }
+    @include mediaTabletBg {
+    }
+    @include mediaLaptop {
+    }
+    @include mediaDesktop {
+    }
   }
 }

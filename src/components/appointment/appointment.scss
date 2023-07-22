@@ -3,6 +3,65 @@
 .appointment {
   &-container {
     @include container;
+    @include mediaLaptop {
+      display: grid;
+      grid-template-columns: 1fr 3fr;
+      column-gap: 60px;
+    }
+  }
+
+  &-nav {
+    margin: 24px 0;
+    @include mediaTablet {
+      margin: 32px 0;
+    }
+    @include mediaLaptop {
+      position: sticky;
+      z-index: 0;
+      top: calc(var(--headerHeight) + 20px);
+      height: fit-content;
+    }
+
+    &-title {
+      font-size: 14px;
+      letter-spacing: 0.02em;
+      @include mediaTablet {
+        font-size: 16px;
+      }
+      @include mediaLaptop {
+        font-size: 17px;
+        margin-bottom: 22px;
+      }
+
+      .iconfont {
+        @include mediaLaptop {
+          display: none;
+        }
+      }
+    }
+
+    &-links {
+      display: none;
+      @include mediaLaptop {
+        @include flex($d: column);
+      }
+    }
+
+    &-link {
+      display: inline-block;
+      flex: 0 0 auto;
+      width: fit-content;
+      margin-bottom: 0.75em;
+      text-align: left;
+      @include mediaLaptop {
+        font-size: 15px;
+        letter-spacing: 0.02em;
+      }
+
+      &.active {
+        color: #766cff;
+      }
+    }
   }
 
   &-title {
@@ -11,15 +70,30 @@
     letter-spacing: 0.02em;
     margin: 20px 0;
     text-transform: uppercase;
+    color: #505050;
+    @include mediaTablet {
+      font-size: 24px;
+      margin: 32px 0;
+    }
+    @include mediaLaptop {
+      font-size: 28px;
+      margin: 40px 0;
+    }
   }
 
   &-description {
     font-size: 14px;
     line-height: 1.4;
     margin-bottom: 56px;
+    @include mediaTablet {
+      font-size: 16px;
+    }
 
     p {
       margin-bottom: 1em;
+      @include mediaTablet {
+        margin-bottom: 1.5em;
+      }
     }
   }
 
@@ -30,5 +104,19 @@
     border-radius: 8px;
     object-fit: cover;
     object-position: center;
+  }
+
+  &-hero {
+    @include mediaTablet {
+      margin-bottom: 64px;
+    }
+  }
+
+  &-free {
+    @include mediaTablet {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 24px;
+    }
   }
 }
