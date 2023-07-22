@@ -7,14 +7,14 @@
 
   &-title {
     font-size: 16px;
-    line-height: calc(24 / 16);
+    line-height: 1.4;
     letter-spacing: 0.02em;
     margin: 20px 0;
   }
 
   &-description {
     font-size: 14px;
-    line-height: calc(20 / 14);
+    line-height: 1.4;
     margin-bottom: 56px;
 
     p {
@@ -34,14 +34,14 @@
   &-form {
     &-message {
       font-size: 14px;
-      line-height: calc(20 / 14);
+      line-height: 1.4;
       margin-bottom: 20px;
       color: #80756e;
     }
 
     &-policy {
       font-size: 13px;
-      line-height: calc(18 / 13);
+      line-height: 1.4;
 
       a {
         text-decoration: underline;
