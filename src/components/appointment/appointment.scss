@@ -10,6 +10,7 @@
     line-height: 1.4;
     letter-spacing: 0.02em;
     margin: 20px 0;
+    text-transform: uppercase;
   }
 
   &-description {
@@ -29,61 +30,5 @@
     border-radius: 8px;
     object-fit: cover;
     object-position: center;
-  }
-
-  &-form {
-    &-message {
-      font-size: 14px;
-      line-height: 1.4;
-      margin-bottom: 20px;
-      color: #80756e;
-    }
-
-    &-policy {
-      font-size: 13px;
-      line-height: 1.4;
-
-      a {
-        text-decoration: underline;
-      }
-    }
-  }
-
-  &-submit {
-    @include buttonPurple;
-    margin: 40px 0 20px;
-  }
-
-  &-social {
-    @include flex(center, center);
-    font-size: 24px;
-    flex: 0 0 auto;
-    width: 52px;
-    height: 52px;
-    color: white;
-    border-radius: 4px;
-    background: #a69d97;
-  }
-
-  &-label {
-    @include flex($d: column);
-    margin: 20px 0;
-
-    &-text {
-      font-size: 14px;
-      display: inline-block;
-      margin-bottom: 4px;
-    }
-  }
-
-  &-input {
-    @include inputGrey;
-    padding: 0 12px;
-  }
-
-  &-textarea {
-    @include inputGrey;
-    height: 200px;
-    padding: 12px;
   }
 }
