@@ -1,0 +1,69 @@
+@import 'src/styles/shared';
+
+.cookie {
+  position: fixed;
+  z-index: 100;
+  left: $containerPaddingMobile;
+  bottom: $containerPaddingMobile;
+  width: calc(100% - $containerPaddingMobile * 2);
+  padding: ($containerPaddingMobile * 1.25) $containerPaddingMobile;
+  transition: transform 0.5s;
+  transform: translate(0, 150%);
+  pointer-events: none;
+  color: white;
+  border-radius: 8px;
+  background: #ada49e;
+
+  @include mediaTablet {
+    @include flex(center);
+    left: $containerPaddingTablet;
+    bottom: $containerPaddingTablet;
+    width: calc(100% - $containerPaddingTablet * 2);
+    padding: 32px 36px;
+  }
+
+  @include mediaLaptop {
+    left: auto;
+    right: $containerPaddingTablet;
+    width: 690px;
+    transform: translate(150%, 0);
+  }
+
+  &.active {
+    transform: none;
+    pointer-events: auto;
+  }
+
+  &-message {
+    font-size: 14px;
+    line-height: calc(20 / 14);
+    @include mediaTablet {
+      font-size: 16px;
+    }
+
+    a {
+      text-decoration: underline;
+    }
+  }
+
+  &-button {
+    @include flex(center, center);
+    font-size: 22px;
+    letter-spacing: 0.02em;
+    flex: 0 0 auto;
+    width: 100%;
+    height: 43px;
+    margin-top: $containerPaddingMobile;
+    text-align: center;
+    color: #ada49e;
+    border-radius: 6px;
+    background: white;
+
+    @include mediaTablet {
+      font-size: 24px;
+      width: 60px;
+      height: 60px;
+      margin-top: 0;
+    }
+  }
+}
