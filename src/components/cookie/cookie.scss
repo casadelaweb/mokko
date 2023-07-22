@@ -29,6 +29,17 @@
     transform: translate(150%, 0);
   }
 
+  .locked & {
+    left: calc($containerPaddingMobile + var(--scrollbarWidth));
+    @include mediaTablet {
+      left: calc($containerPaddingMobile + var(--scrollbarWidth));
+    }
+    @include mediaLaptop {
+      left: auto;
+      right: calc($containerPaddingTablet + var(--scrollbarWidth));
+    }
+  }
+
   &.active {
     transform: none;
     pointer-events: auto;

@@ -54,5 +54,6 @@ export class scrollController {
     const { documentElement: html, body, } = document
     this.scrollBarWidth = window.innerWidth - html.clientWidth
     this.header = body.querySelector('header')
+    html.style.setProperty('--scrollbarWidth', this.scrollBarWidth + 'px')
   }
 }
