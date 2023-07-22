@@ -78,8 +78,8 @@
   &-input {
     @include input-grey;
     font-size: 14px;
-    flex: 1 0 auto;
     letter-spacing: 0.02em;
+    flex: 1 0 auto;
     color: #51504f;
   }
 
@@ -98,16 +98,16 @@
 
   &-link {
     font-size: 14px;
+    letter-spacing: 0.02em;
     display: inline-block;
     margin-bottom: 1em;
-    letter-spacing: 0.02em;
     @include mediaLaptop {
       font-size: 17px;
     }
   }
 
   &-button {
-    @include button-brown;
+    @include buttonBrown;
     margin: 0 auto;
     @include mediaTablet {
       width: 250px;

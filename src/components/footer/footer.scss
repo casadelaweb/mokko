@@ -16,21 +16,21 @@
 
   &-top {
     @include container;
-    padding-bottom: 46px;
     padding-top: 46px;
+    padding-bottom: 46px;
   }
 
   &-middle {
     display: grid;
     grid-template-columns: 1fr;
-    padding: 0 ($containerPaddingMobile * 3);
     row-gap: $containerPaddingMobile * 1.5;
+    padding: 0 ($containerPaddingMobile * 3);
   }
 
   &-middle, &-bottom {
     @include container;
-    padding-bottom: 28px;
     padding-top: 28px;
+    padding-bottom: 28px;
   }
 
   .form-main {
@@ -51,12 +51,14 @@
 
   &-top, &-middle, &-bottom {
     @include container;
+    //padding-top: 48px;
+    //padding-bottom: 48px;
     border-top: 1px solid #e9e9e9;
-    padding-bottom: 50px;
-    padding-top: 50px;
   }
 
-  &-top {
+  &-top, &-middle, &-bottom {
+    padding-top: 48px;
+    padding-bottom: 48px;
   }
 
   &-middle {
@@ -65,15 +67,15 @@
   }
 
   &-title {
-    display: inline-block;
     font-size: 18px;
-    margin-bottom: 36px;
+    display: inline-block;
     width: fit-content;
+    margin-bottom: 36px;
   }
 
   &-links {
-    display: grid;
     font-size: 16px;
+    display: grid;
     grid-template-columns: 1fr;
     row-gap: 16px;
     text-align: left;
@@ -92,13 +94,13 @@
 
     &-label {
       line-height: 1;
-      margin-bottom: 32px;
       width: 100%;
+      margin-bottom: 32px;
     }
 
     &-main {
-      margin-right: 24px;
       width: 380px;
+      margin-right: 24px;
       @include mediaTabletBg {
         margin-right: 28px;
       }
@@ -114,19 +116,19 @@
   @include container;
   display: none;
   @include mediaLaptop {
-    column-gap: 100px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    padding-bottom: 72px;
+    column-gap: 100px;
     padding-top: 48px;
+    padding-bottom: 72px;
   }
 
   &-col {
   }
 
   &-title {
-    display: inline-block;
     font-size: 20px;
+    display: inline-block;
     margin-bottom: 36px;
   }
 

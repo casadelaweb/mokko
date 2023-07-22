@@ -2,25 +2,25 @@
 
 .auth {
   @include flex($d: column);
-  background: white;
   font-size: 14px;
-  padding: 24px 16px 40px;
   position: relative;
-  width: calc(100% - 32px);
   z-index: 0;
+  width: calc(100% - 32px);
+  padding: 24px 16px 40px;
+  background: white;
 
   @include mediaTablet {
-    padding: 40px 48px 48px;
     width: 400px;
+    padding: 40px 48px 48px;
   }
 
   &-close {
-    color: #82756e;
     font-size: 20px;
     position: absolute;
-    right: 18px;
-    top: 18px;
     z-index: 1;
+    top: 18px;
+    right: 18px;
+    color: #82756e;
   }
 
   a {
@@ -32,12 +32,12 @@
   }
 
   &-title {
-    color: #51504f;
     font-size: 20px;
     letter-spacing: 0.02em;
     margin-bottom: 30px;
     text-align: center;
     text-transform: uppercase;
+    color: #51504f;
   }
 
   &-body {
@@ -52,8 +52,8 @@
 
   &-success {
     @include flex($d: column);
-    flex: 1 0 auto;
     font-size: 17px;
+    flex: 1 0 auto;
     text-align: center;
 
     img {
@@ -71,15 +71,15 @@
     width: 100%;
 
     &-message {
-      color: #e71c35;
-      display: inline-block;
       font-size: 14px;
+      display: inline-block;
       margin-top: 0.5em;
+      color: #e71c35;
     }
   }
 
   &-button {
-    @include button-brown;
+    @include buttonBrown;
     margin: 0 auto 18px;
   }
 
@@ -93,10 +93,10 @@
   }
 
   &-link {
-    color: #82756e;
-    display: inline-block;
     font-size: 17px;
+    display: inline-block;
     margin: 0 auto;
     text-decoration: underline;
+    color: #82756e;
   }
 }

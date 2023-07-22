@@ -77,7 +77,7 @@
   }
 
   &-submit {
-    @include button-brown;
+    @include buttonBrown;
     width: 100%;
     margin-bottom: 20px;
     @include mediaOnlyTablet {
@@ -141,7 +141,7 @@
   }
 }
 
-@mixin button-appointment {
+@mixin buttonAppointment {
   color: #766cff;
   display: inline-block;
   letter-spacing: 0.02em;
@@ -180,7 +180,7 @@
   }
 }
 
-@mixin button-square {
+@mixin buttonSquare {
   @include flex(center, center);
   background: #c7b29c;
   border-radius: 0 4px 4px 0;
@@ -190,7 +190,7 @@
   width: 44px;
 }
 
-@mixin button-brown {
+@mixin buttonBrown {
   @include flex(center, center);
   background: #c7b29c;
   border-radius: 4px;
@@ -199,6 +199,17 @@
   height: 44px;;
   text-align: center;
   width: 100%;
+}
+
+@mixin buttonWhite {
+  @include flex(center, center);
+  height: 44px;
+  width: 100%;
+  border-radius: 4px;
+  background: white;
+  color: #c7b29c;
+  font-size: 17px;
+  text-align: center;
 }
 
 @mixin page-title {
