@@ -141,16 +141,7 @@
   }
 }
 
-@mixin buttonAppointment {
-  color: #766cff;
-  display: inline-block;
-  letter-spacing: 0.02em;
-  text-align: left;
-  white-space: nowrap;
-  width: fit-content;
-}
-
-@mixin input-grey {
+@mixin inputGrey {
   background: #e9e9e9;
   border: 1px solid transparent;
   border-radius: 4px;
@@ -165,7 +156,7 @@
   }
 }
 
-@mixin input-white {
+@mixin inputWhite {
   background: white;
   border: 1px solid transparent;
   border-radius: 4px;
@@ -178,6 +169,15 @@
     border-color: #e71c35;
     color: #e71c35;
   }
+}
+
+@mixin buttonAppointment {
+  color: #766cff;
+  display: inline-block;
+  letter-spacing: 0.02em;
+  text-align: left;
+  white-space: nowrap;
+  width: fit-content;
 }
 
 @mixin buttonSquare {
@@ -212,7 +212,18 @@
   text-align: center;
 }
 
-@mixin page-title {
+@mixin buttonPurple {
+  @include flex(center, center);
+  font-size: 17px;
+  letter-spacing: 0.05em;
+  width: 100%;
+  height: 44px;;
+  color: white;
+  border-radius: 4px;
+  background: #766cff;
+}
+
+@mixin pageTitle {
   font-size: 12px;
   margin-bottom: 36px;
   text-transform: uppercase;

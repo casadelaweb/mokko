@@ -2,8 +2,8 @@
 
 
 .order {
-  color: #82756e;
   font-size: 14px;
+  color: #82756e;
 
   &-note {
     line-height: 1.4;
@@ -20,14 +20,14 @@
 
   &-layout {
     @include mediaTabletBg {
-      column-gap: 56px;
       display: grid;
       grid-template-columns: 2fr 1fr;
+      column-gap: 56px;
     }
   }
 
   &-title {
-    @include page-title;
+    @include pageTitle;
   }
 
   &-steps {

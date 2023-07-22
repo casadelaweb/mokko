@@ -28,7 +28,7 @@
   }
 
   &-input {
-    @include input-grey;
+    @include inputGrey;
   }
 
   &-location {
@@ -39,7 +39,7 @@
     border-radius: 4px;
 
     &-input {
-      @include input-grey;
+      @include inputGrey;
       flex: 1 0 auto;
       border-radius: 0;
     }
@@ -64,7 +64,7 @@
 
 
   .select {
-    @include input-grey;
+    @include inputGrey;
     @include flex(stretch, center);
     flex: 0 0 auto;
     width: 100%;
