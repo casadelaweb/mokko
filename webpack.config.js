@@ -72,11 +72,11 @@ module.exports = {
   target: 'browserslist',
   devtool: isDevelopmentMode ? 'source-map' : false,
   optimization: {
-    minimize: isProductionMode,
-    minimizer: [
+    minimize: true,
+    minimizer: isProductionMode ? [
       '...',
       new CssMinimizer(),
-    ],
+    ] : [ new CssMinimizer(), ],
   },
   entry: { main: pathRoot('src/main.ts'), },
   output: {
