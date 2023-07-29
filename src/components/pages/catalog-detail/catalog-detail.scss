@@ -7,8 +7,8 @@
     @include container;
 
     @include mediaOnlyMobile {
-      padding-left: 0;
       padding-right: 0;
+      padding-left: 0;
     }
 
 
@@ -23,19 +23,19 @@
     width: 100%;
 
     @include mediaTablet {
-      margin-right: 47px;
       width: 337px;
+      margin-right: 47px;
     }
     @include mediaTabletBg {
       width: 626px;
     }
     @include mediaLaptop {
-      margin-right: 56px;
       width: 787px;
+      margin-right: 56px;
     }
     @include mediaDesktop {
-      margin-right: 77px;
       width: 1106px;
+      margin-right: 77px;
     }
   }
 
@@ -50,8 +50,8 @@
     &-sticky {
       @include mediaTablet {
         position: sticky;
-        top: 100px;
         z-index: 0;
+        top: 100px;
       }
     }
   }
@@ -65,27 +65,27 @@
     @include flex(center);
     font-size: 12px;
     line-height: 100%;
-    margin-bottom: 14px;
-    margin-top: 15px;
     width: 100%;
+    margin-top: 15px;
+    margin-bottom: 14px;
     @include mediaTablet {
       font-size: 16px;
       margin: 23px 0;
     }
 
     &:before {
-      background: url('src/assets/img/catalog-detail/catalog-detail-back.png');
-      background-size: cover;
       content: '';
       display: block;
+      width: 7px;
       height: 13px;
       margin-right: 7px;
-      width: 7px;
+      background: url('src/assets/img/catalog-detail/catalog-detail-back.png');
+      background-size: cover;
       @include mediaTablet {
-        height: 14px;
-        margin-right: 14px;
-
         width: 8px;
+        height: 14px;
+
+        margin-right: 14px;
       }
     }
   }
@@ -115,25 +115,25 @@
 
   &-instalment {
     @include flex(center);
-    background: #f2f2f2;
-    border-radius: 4px;
-    color: #51504f;
     font-size: 14px;
+    width: 100%;
     margin-bottom: 36px;
     padding: 12px;
-    width: 100%;
+    color: #505050;
+    border-radius: 4px;
+    background: #f2f2f2;
 
     &-logo {
-      border-radius: 4px;
+      width: 68px;
       height: 20px;
       margin-right: 10px;
-      width: 68px;
+      border-radius: 4px;
     }
 
     .icon-arrow-right {
-      color: #82756e;
       font-size: 13px;
       margin-left: auto;
+      color: #82756e;
     }
   }
 
@@ -149,10 +149,10 @@
       @include flex($d: column);
 
       &-title, &-price, &-colors {
-        display: block;
         font-size: 14px;
-        margin-top: 8px;
+        display: block;
         order: 1;
+        margin-top: 8px;
       }
 
       &-colors {
@@ -160,10 +160,10 @@
       }
 
       &-color {
-        border-radius: 50%;
+        width: 14px;
         height: 14px;
         margin-right: 0.5em;
-        width: 14px;
+        border-radius: 50%;
       }
 
       &-img {

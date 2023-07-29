@@ -6,23 +6,23 @@
 
 .modal {
   @include flex(center, center, column);
-  background: rgba(#51504f, 0.5);
-  height: 100%;
-  left: 0;
-  opacity: 0;
-  overflow-y: auto;
-  pointer-events: none;
   position: fixed;
-  top: 0;
-  transform: translate(0, 0);
-  transition: var(--modal-transition);
-  width: 100%;
   z-index: 110;
+  top: 0;
+  left: 0;
+  overflow-y: auto;
+  width: 100%;
+  height: 100%;
+  transition: var(--modal-transition);
+  transform: translate(0, 0);
+  pointer-events: none;
+  opacity: 0;
+  background: rgba(#505050, 0.5);
 
   &.active {
-    opacity: 1;
-    pointer-events: auto;
     transform: none;
+    pointer-events: auto;
+    opacity: 1;
   }
 
   &.current {
@@ -30,41 +30,41 @@
   }
 
   &-content {
-    background: white;
-    @include flex(center, center, column);
-    height: 200px;
-    max-width: 100%;
-    padding: 24px 16px;
     position: relative;
+    @include flex(center, center, column);
+    max-width: 100%;
+    height: 200px;
+    padding: 24px 16px;
+    background: white;
     @include mediaTablet {
+      width: 400px;
       height: 400px;
       padding: 20px;
-      width: 400px;
     }
   }
 
   &-close {
     position: absolute;
-    right: 20px;
-    top: 20px;
     z-index: 1;
+    top: 20px;
+    right: 20px;
   }
 
   &-overlay {
-    background: rgba(#51504f, 0.5);
-    height: 100%;
-    left: 0;
-    opacity: 0;
-    pointer-events: none;
     position: fixed;
-    top: 0;
-    transition: opacity 0.5s;
-    width: 100%;
     z-index: 101;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: opacity 0.5s;
+    pointer-events: none;
+    opacity: 0;
+    background: rgba(#505050, 0.5);
 
     &.active {
-      opacity: 1;
       pointer-events: auto;
+      opacity: 1;
     }
   }
 }

@@ -1,8 +1,8 @@
 .noUi {
   &-horizontal {
     width: calc(100% - 20px);
-    margin: 0 auto;
     height: 4px !important;
+    margin: 0 auto;
     border: 0 !important;
     background: #f2f2f2 !important;
   }
@@ -13,19 +13,19 @@
   }
 
   &-connect {
-    background: #51504f;
     border: 0 !important;
+    background: #505050;
   }
 
   &-handle {
-    width: 20px !important;
-    height: 20px !important;
-    border-radius: 50%;
-    background: white;
-    border: 2px solid #51504f !important;
     top: -8px !important;
     right: -10px !important;
+    width: 20px !important;
+    height: 20px !important;
     cursor: grab;
+    border: 2px solid #505050 !important;
+    border-radius: 50%;
+    background: white;
 
     &::before, &::after {
       display: none !important;
@@ -33,7 +33,7 @@
   }
 
   &-touch-area {
-    background: white;
     border-radius: 50%;
+    background: white;
   }
 }
