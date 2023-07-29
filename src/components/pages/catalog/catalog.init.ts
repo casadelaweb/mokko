@@ -2,7 +2,7 @@ import Swiper, { Navigation, A11y, Pagination, Mousewheel } from 'swiper'
 import 'swiper/scss'
 import 'swiper/scss/a11y'
 import { accessibility as accessibilitySettings } from 'src/scripts/swiper-settings'
-import { Catalog } from 'src/components/catalog/catalog'
+import { Catalog } from './catalog'
 import { isMediaAboveLaptop } from 'src/scripts/helpers'
 import './catalog.filters'
 

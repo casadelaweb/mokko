@@ -1,21 +1,2 @@
-// это блоки
-import 'src/components/header'
-import 'src/components/footer'
-import 'src/components/breadcrumbs'
-import 'src/components/menu'
-import 'src/components/hero'
-import 'src/components/section'
-import 'src/components/forms'
-import 'src/components/banners'
-import 'src/components/promo'
-import 'src/components/authentication'
-import 'src/components/search'
-import 'src/components/cart'
-import 'src/components/order'
-import 'src/components/cookie'
-
-// это страницы
-import 'src/components/catalog'
-import 'src/components/catalog-detail'
-import 'src/components/page-404'
-import 'src/components/information'
+import 'src/components/main'
+import 'src/components/pages'

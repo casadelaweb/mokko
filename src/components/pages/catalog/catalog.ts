@@ -1,4 +1,4 @@
-import { card, catalogElements, selectors, hooks } from 'src/components/catalog/catalog.types'
+import { card, catalogElements, selectors, hooks } from './catalog.types'
 import { isMediaAboveLaptop } from 'src/scripts/helpers'
 
 export class Catalog {

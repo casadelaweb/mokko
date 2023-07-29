@@ -1,4 +1,4 @@
-import { menuElements, menuSelectors } from 'src/components/menu/menu.types'
+import { menuElements, menuSelectors } from './menu.types'
 import { isMediaAboveLaptop } from 'src/scripts/helpers'
 
 export class Menu {

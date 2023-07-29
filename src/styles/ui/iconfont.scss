@@ -1,22 +1,24 @@
-$icon-arrow-down: '\e900';
-$icon-arrow-left: '\e901';
-$icon-arrow-right: '\e902';
-$icon-arrow-up: '\e903';
-$icon-close: '\e904';
-$icon-filters: '\e905';
-$icon-heart: '\e906';
-$icon-heart-fill: '\e907';
-$icon-location: '\e908';
-$icon-logo: '\e909';
-$icon-menu: '\e90a';
-$icon-mute: '\e90b';
-$icon-person: '\e90c';
-$icon-search: '\e90d';
-$icon-square: '\e90e';
-$icon-squares-eight: '\e90f';
-$icon-squares-four: '\e910';
-$icon-squares-six: '\e911';
-$icon-suitcase: '\e912';
+$icon-telegram: '\e900';
+$icon-vk: '\e901';
+$icon-arrow-down: '\e902';
+$icon-arrow-left: '\e903';
+$icon-arrow-right: '\e904';
+$icon-arrow-up: '\e905';
+$icon-close: '\e906';
+$icon-filters: '\e907';
+$icon-heart: '\e908';
+$icon-heart-fill: '\e909';
+$icon-location: '\e90a';
+$icon-logo: '\e90b';
+$icon-menu: '\e90c';
+$icon-mute: '\e90d';
+$icon-person: '\e90e';
+$icon-search: '\e90f';
+$icon-square: '\e910';
+$icon-squares-eight: '\e911';
+$icon-squares-four: '\e912';
+$icon-squares-six: '\e913';
+$icon-suitcase: '\e914';
 
 @font-face {
   font-family: 'iconfont';
@@ -33,14 +35,26 @@ $icon-suitcase: '\e912';
 .iconfont {
   // display: inline-block;
   font-family: 'iconfont', emoji !important;
-  -webkit-font-smoothing: antialiased;
+  font-weight: normal;
   font-style: normal;
   font-variant: normal;
-  font-weight: normal;
   line-height: 1;
+  text-transform: none;
+  -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   speak: never;
-  text-transform: none;
+}
+
+.icon-telegram {
+  &:before {
+    content: $icon-telegram;
+  }
+}
+
+.icon-vk {
+  &:before {
+    content: $icon-vk;
+  }
 }
 
 .icon-arrow-down {

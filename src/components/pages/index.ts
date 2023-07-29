@@ -1,0 +1,6 @@
+import 'src/components/pages/cart'
+import 'src/components/pages/catalog'
+import 'src/components/pages/catalog-detail'
+import 'src/components/pages/information'
+import 'src/components/pages/order'
+import 'src/components/pages/page404'
