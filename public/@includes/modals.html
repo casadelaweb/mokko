@@ -94,7 +94,6 @@
             <span class="iconfont icon-close"></span>
           </button>
         </div>
-
         <div class="menu-mobile-body">
           <a class="header-button-purple" href="/information/appointment">
             <span>Записаться к стилисту</span>
@@ -169,7 +168,6 @@
           </div>
 
         </div>
-
         <div class="menu-mobile-footer">
           <form class="form menu-form">
             <label class="menu-form-label form-label" for="menu-mobile-input"> Подписка на новости </label>
@@ -195,7 +193,6 @@
             </div>
           </form>
         </div>
-
       </div>
     </div>
   </nav>
@@ -356,20 +353,6 @@
 
     </div>
   </div>
-  <div class="table-size">
-    <div class="modal" data-modal="table-size">
-
-      <div class="table-size-modal-content">
-        <button class="table-size-modal-close" data-modal-close type="button">
-          <span class="iconfont icon-arrow-down"></span>
-        </button>
-        <div class="table-size-modal-img">
-          <img alt="img" loading="lazy" src="src/assets/img/catalog-detail/table-size.jpg">
-        </div>
-
-      </div>
-    </div>
-  </div>
   <div class="search" data-modal="search">
     <div class="search-header">
       <button class="search-close" data-modal-close type="button">
@@ -443,5 +426,17 @@
       </a>
     </div>
   </div>
+  <div class="modal" data-modal="sizeguide">
+    <button class="modal-close" data-modal-close type="button">
+      <span class="iconfont icon-close"></span>
+    </button>
+    <h1 class="appointment-title">ТАБЛИЦА РАЗМЕРОВ</h1>
+    <h2 class="table-label">
+      Замеры указаны в сантиметрах
+    </h2>
+
+    import @includes/sizeguide-table.html;
+  </div>
+
   <div class="modal-overlay" data-modal-overlay></div>
 </div>
