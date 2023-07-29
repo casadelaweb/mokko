@@ -7,6 +7,9 @@ module.exports = function processImports(match, source) {
 
   source = source.replace(/^src\//gmi, '../src/')
 
-  const filePath = path.resolve(loaderContext.context, source)
+  const dir = loaderContext.context.replace(/public.*/gmi, 'public')
+  // console.log(dir, source)
+
+  const filePath = path.resolve(dir, source)
   return fs.readFileSync(filePath, 'utf8')
 }

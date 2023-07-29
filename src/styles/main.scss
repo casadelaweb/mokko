@@ -34,13 +34,6 @@ body {
   @include flex(center, center);
 }
 
-.p404 {
-  &-h1 {
-    font-size: 40px;
-    margin: 2.5em auto;
-  }
-}
-
 .main {
   margin-top: var(--headerHeight);
 }

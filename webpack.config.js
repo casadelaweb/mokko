@@ -50,22 +50,56 @@ const scriptsRuleset = {
     },
   },
 }
-const htmlPages = fs.readdirSync(pathRoot('public')).filter(fileName => fileName.endsWith('.html'))
-const htmlPagesRegistered = htmlPages.map((page) => new HtmlWebpackPlugin({
-  filename: './' + page,
-  template: './public/' + page,
-  scriptLoading: 'blocking',
-  inject: 'body',
-  minify: {
-    collapseWhitespace: false,
-    keepClosingSlash: false,
-    removeComments: isProductionMode,
-    removeRedundantAttributes: false,
-    removeScriptTypeAttributes: true,
-    removeStyleLinkTypeAttributes: true,
-    useShortDoctype: false,
-  },
-}))
+
+const Files = []
+
+function ThroughDirectory(Directory) {
+  fs.readdirSync(Directory).forEach(File => {
+    // console.log(Directory)
+    const Absolute = path.join(Directory, File)
+    if (Absolute.includes('@')) return
+
+    if (fs.statSync(Absolute).isDirectory()) {
+      return ThroughDirectory(Absolute)
+    } else {
+      if (Absolute.endsWith('.html')) {
+        const pathRelative = Absolute.replace(pathRoot('public'), '').replace(path.basename(Absolute), '')
+        const result = {
+          fileName: path.basename(Absolute),
+          pathRelative,
+        }
+        return Files.push(result)
+      }
+    }
+  })
+}
+
+ThroughDirectory(pathRoot('public'))
+// console.log(Files)
+
+
+// const htmlPages = fs.readdirSync(pathRoot('public')).filter(fileName => {
+//   console.log(fileName)
+//   return fileName.endsWith('.html')
+// })
+const htmlPages = Files
+const htmlPagesRegistered = htmlPages.map((page) => {
+  return new HtmlWebpackPlugin({
+    filename: './' + page.pathRelative + page.fileName,
+    template: './public/' + page.pathRelative + page.fileName,
+    scriptLoading: 'blocking',
+    inject: 'body',
+    minify: {
+      collapseWhitespace: false,
+      keepClosingSlash: false,
+      removeComments: isProductionMode,
+      removeRedundantAttributes: false,
+      removeScriptTypeAttributes: true,
+      removeStyleLinkTypeAttributes: true,
+      useShortDoctype: false,
+    },
+  })
+})
 
 module.exports = {
   mode: mode,

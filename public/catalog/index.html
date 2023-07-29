@@ -9,7 +9,7 @@
 </head>
 <body>
 <div id="app">
-  import ./includes/header.html;
+  import @includes/header.html;
 
   <main class="main">
     <section class="catalog">
@@ -150,16 +150,16 @@
 
               <div class="filters-desktop">
                 <h2 class="filters-title">Категории</h2>
-                <a class="filters-link" href="catalog.html">Смотреть всё</a>
-                <a class="filters-link" href="catalog.html">Платья</a>
-                <a class="filters-link active" href="catalog.html">Нарядная одежда</a>
-                <a class="filters-link" href="catalog.html">Блузы и рубашки</a>
-                <a class="filters-link" href="catalog.html">Брюки и юбки</a>
-                <a class="filters-link" href="catalog.html">Верхняя одежда</a>
-                <a class="filters-link" href="catalog.html">Джемперы и кардиганы</a>
-                <a class="filters-link" href="catalog.html">Костюмы и жакеты</a>
-                <a class="filters-link" href="catalog.html">Футболки и топы</a>
-                <a class="filters-link" href="catalog.html">Аксессуары</a>
+                <a class="filters-link" href="/catalog">Смотреть всё</a>
+                <a class="filters-link" href="/catalog">Платья</a>
+                <a class="filters-link active" href="/catalog">Нарядная одежда</a>
+                <a class="filters-link" href="/catalog">Блузы и рубашки</a>
+                <a class="filters-link" href="/catalog">Брюки и юбки</a>
+                <a class="filters-link" href="/catalog">Верхняя одежда</a>
+                <a class="filters-link" href="/catalog">Джемперы и кардиганы</a>
+                <a class="filters-link" href="/catalog">Костюмы и жакеты</a>
+                <a class="filters-link" href="/catalog">Футболки и топы</a>
+                <a class="filters-link" href="/catalog">Аксессуары</a>
               </div>
 
             </div>
@@ -307,7 +307,7 @@
             <div class="catalog-cards">
               repeat 9 times:
 
-              import ./includes/catalog-card.html;
+              import @includes/catalog-card.html;
 
               end;
             </div>
@@ -316,32 +316,32 @@
             </button>
             <div class="catalog-pagination">
 
-              <a class="catalog-pagination-prev" href="catalog.html">
+              <a class="catalog-pagination-prev" href="/catalog">
                 <span class="iconfont icon-arrow-left"></span>
               </a>
 
               <div class="catalog-pagination-list">
-                <a class="catalog-pagination-item active" href="catalog.html">
+                <a class="catalog-pagination-item active" href="/catalog">
                   <span>1</span>
                 </a>
-                <a class="catalog-pagination-item" href="catalog.html">
+                <a class="catalog-pagination-item" href="/catalog">
                   <span>2</span>
                 </a>
-                <a class="catalog-pagination-item" href="catalog.html">
+                <a class="catalog-pagination-item" href="/catalog">
                   <span>3</span>
                 </a>
-                <a class="catalog-pagination-item" href="catalog.html">
+                <a class="catalog-pagination-item" href="/catalog">
                   <span>4</span>
                 </a>
 
                 <span class="catalog-pagination-item">...</span>
 
-                <a class="catalog-pagination-item" href="catalog.html">
+                <a class="catalog-pagination-item" href="/catalog">
                   <span>18</span>
                 </a>
               </div>
 
-              <a class="catalog-pagination-next" href="catalog.html">
+              <a class="catalog-pagination-next" href="/catalog">
                 <span class="iconfont icon-arrow-right"></span>
               </a>
 
@@ -352,9 +352,9 @@
     </section>
   </main>
 
-  import ./includes/footer.html;
-  import ./includes/modals.html;
-  import ./includes/cookie.html;
+  import @includes/footer.html;
+  import @includes/modals.html;
+  import @includes/cookie.html;
 </div>
 </body>
 </html>

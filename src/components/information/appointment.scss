@@ -1,0 +1,59 @@
+@import 'src/styles/shared';
+
+.appointment {
+  &-title {
+    font-size: 16px;
+    line-height: 1.4;
+    letter-spacing: 0.02em;
+    margin: 20px 0;
+    text-transform: uppercase;
+    color: #505050;
+    @include mediaTablet {
+      font-size: 24px;
+      margin: 32px 0;
+    }
+    @include mediaLaptop {
+      font-size: 28px;
+      margin: 40px 0;
+    }
+  }
+
+  &-description {
+    font-size: 14px;
+    line-height: 1.4;
+    margin-bottom: 56px;
+    @include mediaTablet {
+      font-size: 16px;
+    }
+
+    p {
+      margin-bottom: 1em;
+      @include mediaTablet {
+        margin-bottom: 1.5em;
+      }
+    }
+  }
+
+  &-img {
+    display: block;
+    width: 100%;
+    margin-bottom: 56px;
+    border-radius: 8px;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  &-hero {
+    @include mediaTablet {
+      margin-bottom: 64px;
+    }
+  }
+
+  &-free {
+    @include mediaTablet {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 24px;
+    }
+  }
+}

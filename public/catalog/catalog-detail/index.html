@@ -9,19 +9,19 @@
 </head>
 <body>
 <div id="app">
-  import ./includes/header.html;
+  import @includes/header.html;
 
   <main class="main">
     <div class="catalog-detail-top" data-catalog="header-desktop">
       <div class="container">
 
         <div class="breadcrumbs">
-          <a class="breadcrumb" href="index.html">Главная</a>
-          <a class="breadcrumb" href="catalog.html">Каталог</a>
-          <a class="breadcrumb" href="catalog.html">Нарядная одежда</a>
-          <a class="breadcrumb active" href="catalog-detail.html">Платье</a>
+          <a class="breadcrumb" href="/">Главная</a>
+          <a class="breadcrumb" href="/catalog">Каталог</a>
+          <a class="breadcrumb" href="/catalog">Нарядная одежда</a>
+          <a class="breadcrumb active" href="/catalog/catalog-detail">Платье</a>
         </div>
-        <a class="catalog-detail-back" href="catalog.html">
+        <a class="catalog-detail-back" href="/catalog">
           Назад
         </a>
       </div>
@@ -36,7 +36,7 @@
                 repeat 7 times:
                 <div class="swiper-slide">
                   <div class="catalog-detail-gallery-item">
-                    <img alt="img" loading="lazy" src="/src/assets/img/catalog-detail/catalog-detail-gallery-item.png">
+                    <img alt="img" loading="lazy" src="src/assets/img/catalog-detail/catalog-detail-gallery-item.png">
                   </div>
                 </div>
                 end;
@@ -72,9 +72,9 @@
                 Цвет
               </div>
               <div class="catalog-detail-colors-items">
-                <a class="catalog-detail-colors-item-active" href="catalog-detail.html"
+                <a class="catalog-detail-colors-item-active" href="/catalog/catalog-detail"
                    style="background:  #766cff"></a>
-                <a href="catalog-detail.html" style="background:  #d87f77"></a>
+                <a href="/catalog/catalog-detail" style="background:  #d87f77"></a>
               </div>
               Сиреневый жемчуг
             </div>
@@ -94,7 +94,7 @@
                 </button>
 
               </div>
-              <div id="catalog-detail-sizes-cont" class="catalog-detail-sizes-cont">
+              <div class="catalog-detail-sizes-cont" id="catalog-detail-sizes-cont">
                 <div class="catalog-detail-title">
                   Размеры
                 </div>
@@ -268,8 +268,8 @@
                   </div>
 
                   <div class="catalog-detail-info-more">
-                    <a href="404.html">Подробнее об оплате</a>
-                    <a href="404.html">Подробнее о доставке</a>
+                    <a href="/404">Подробнее об оплате</a>
+                    <a href="/404">Подробнее о доставке</a>
                   </div>
 
                 </div>
@@ -285,10 +285,10 @@
       <div class="section-container">
         <div class="section-header">
           <h2 class="section-title">
-            <a href="catalog.html">Сопутствующие товары</a>
+            <a href="/catalog">Сопутствующие товары</a>
           </h2>
           <div class="section-button">
-            <a href="catalog.html">
+            <a href="/catalog">
               <span>Все</span>
               <span class="iconfont icon-arrow-right"></span>
             </a>
@@ -303,8 +303,9 @@
                   <span class="iconfont icon-heart"></span>
                 </button>
 
-                <a href="catalog-detail.html">
-                  <img alt="img" class="section-product-img" loading="lazy" src="src/assets/img/section/product-5.jpg">
+                <a href="/catalog/catalog-detail">
+                  <img alt="img" class="section-product-img" loading="lazy"
+                       src="src/assets/img/section/product-5.jpg">
                 </a>
                 <div class="swiper-lazy-preloader"></div>
 
@@ -322,8 +323,9 @@
                   <span class="iconfont icon-heart"></span>
                 </button>
 
-                <a href="catalog-detail.html">
-                  <img alt="img" class="section-product-img" loading="lazy" src="src/assets/img/section/product-6.jpg">
+                <a href="/catalog/catalog-detail">
+                  <img alt="img" class="section-product-img" loading="lazy"
+                       src="src/assets/img/section/product-6.jpg">
                 </a>
                 <div class="swiper-lazy-preloader"></div>
 
@@ -341,8 +343,96 @@
                   <span class="iconfont icon-heart"></span>
                 </button>
 
-                <a href="catalog-detail.html">
-                  <img alt="img" class="section-product-img" loading="lazy" src="src/assets/img/section/product-7.jpg">
+                <a href="/catalog/catalog-detail">
+                  <img alt="img" class="section-product-img" loading="lazy"
+                       src="src/assets/img/section/product-7.jpg">
+                </a>
+                <div class="swiper-lazy-preloader"></div>
+
+                <h2 class="section-product-title">Название продукта</h2>
+                <div class="section-product-price">7 799 ₽</div>
+                <div class="section-product-colors">
+                  <div class="section-product-color" style="background: #756bff;"></div>
+                  <div class="section-product-color" style="background: lightcoral;"></div>
+                </div>
+              </article>
+            </div>
+
+          </div>
+          <div class="swiper-button-prev">
+            <span class="iconfont icon-arrow-left"></span>
+          </div>
+          <div class="swiper-button-next">
+            <span class="iconfont icon-arrow-right"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="catalog-detail-products section">
+      <div class="section-container">
+        <div class="section-header">
+          <h2 class="section-title">
+            <a href="/catalog">Похожие товары</a>
+          </h2>
+          <div class="section-button">
+            <a href="/catalog">
+              <span>Все</span>
+              <span class="iconfont icon-arrow-right"></span>
+            </a>
+          </div>
+        </div>
+        <div class="swiper slider-small">
+          <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+              <article class="section-product">
+                <button class="section-product-favourite" type="button">
+                  <span class="iconfont icon-heart"></span>
+                </button>
+
+                <a href="/catalog/catalog-detail">
+                  <img alt="img" class="section-product-img" loading="lazy"
+                       src="src/assets/img/section/product-5.jpg">
+                </a>
+                <div class="swiper-lazy-preloader"></div>
+
+                <h2 class="section-product-title">Название продукта</h2>
+                <div class="section-product-price">7 799 ₽</div>
+                <div class="section-product-colors">
+                  <div class="section-product-color" style="background: #756bff;"></div>
+                  <div class="section-product-color" style="background: lightcoral;"></div>
+                </div>
+              </article>
+            </div>
+            <div class="swiper-slide">
+              <article class="section-product">
+                <button class="section-product-favourite" type="button">
+                  <span class="iconfont icon-heart"></span>
+                </button>
+
+                <a href="/catalog/catalog-detail">
+                  <img alt="img" class="section-product-img" loading="lazy"
+                       src="src/assets/img/section/product-6.jpg">
+                </a>
+                <div class="swiper-lazy-preloader"></div>
+
+                <h2 class="section-product-title">Название продукта</h2>
+                <div class="section-product-price">7 799 ₽</div>
+                <div class="section-product-colors">
+                  <div class="section-product-color" style="background: #756bff;"></div>
+                  <div class="section-product-color" style="background: lightcoral;"></div>
+                </div>
+              </article>
+            </div>
+            <div class="swiper-slide">
+              <article class="section-product">
+                <button class="section-product-favourite" type="button">
+                  <span class="iconfont icon-heart"></span>
+                </button>
+
+                <a href="/catalog/catalog-detail">
+                  <img alt="img" class="section-product-img" loading="lazy"
+                       src="src/assets/img/section/product-7.jpg">
                 </a>
                 <div class="swiper-lazy-preloader"></div>
 
@@ -370,10 +460,10 @@
       <div class="section-container">
         <div class="section-header">
           <h2 class="section-title">
-            <a href="catalog.html">Похожие товары</a>
+            <a href="/catalog">Недавно просмотренные</a>
           </h2>
           <div class="section-button">
-            <a href="catalog.html">
+            <a href="/catalog">
               <span>Все</span>
               <span class="iconfont icon-arrow-right"></span>
             </a>
@@ -388,8 +478,9 @@
                   <span class="iconfont icon-heart"></span>
                 </button>
 
-                <a href="catalog-detail.html">
-                  <img alt="img" class="section-product-img" loading="lazy" src="src/assets/img/section/product-5.jpg">
+                <a href="/catalog/catalog-detail">
+                  <img alt="img" class="section-product-img" loading="lazy"
+                       src="src/assets/img/section/product-5.jpg">
                 </a>
                 <div class="swiper-lazy-preloader"></div>
 
@@ -407,8 +498,9 @@
                   <span class="iconfont icon-heart"></span>
                 </button>
 
-                <a href="catalog-detail.html">
-                  <img alt="img" class="section-product-img" loading="lazy" src="src/assets/img/section/product-6.jpg">
+                <a href="/catalog/catalog-detail">
+                  <img alt="img" class="section-product-img" loading="lazy"
+                       src="src/assets/img/section/product-6.jpg">
                 </a>
                 <div class="swiper-lazy-preloader"></div>
 
@@ -426,93 +518,9 @@
                   <span class="iconfont icon-heart"></span>
                 </button>
 
-                <a href="catalog-detail.html">
-                  <img alt="img" class="section-product-img" loading="lazy" src="src/assets/img/section/product-7.jpg">
-                </a>
-                <div class="swiper-lazy-preloader"></div>
-
-                <h2 class="section-product-title">Название продукта</h2>
-                <div class="section-product-price">7 799 ₽</div>
-                <div class="section-product-colors">
-                  <div class="section-product-color" style="background: #756bff;"></div>
-                  <div class="section-product-color" style="background: lightcoral;"></div>
-                </div>
-              </article>
-            </div>
-
-          </div>
-          <div class="swiper-button-prev">
-            <span class="iconfont icon-arrow-left"></span>
-          </div>
-          <div class="swiper-button-next">
-            <span class="iconfont icon-arrow-right"></span>
-          </div>
-        </div>
-      </div>
-
-    </section>
-    <section class="catalog-detail-products section">
-      <div class="section-container">
-        <div class="section-header">
-          <h2 class="section-title">
-            <a href="catalog.html">Недавно просмотренные</a>
-          </h2>
-          <div class="section-button">
-            <a href="catalog.html">
-              <span>Все</span>
-              <span class="iconfont icon-arrow-right"></span>
-            </a>
-          </div>
-        </div>
-        <div class="swiper slider-small">
-          <div class="swiper-wrapper">
-
-            <div class="swiper-slide">
-              <article class="section-product">
-                <button class="section-product-favourite" type="button">
-                  <span class="iconfont icon-heart"></span>
-                </button>
-
-                <a href="catalog-detail.html">
-                  <img alt="img" class="section-product-img" loading="lazy" src="src/assets/img/section/product-5.jpg">
-                </a>
-                <div class="swiper-lazy-preloader"></div>
-
-                <h2 class="section-product-title">Название продукта</h2>
-                <div class="section-product-price">7 799 ₽</div>
-                <div class="section-product-colors">
-                  <div class="section-product-color" style="background: #756bff;"></div>
-                  <div class="section-product-color" style="background: lightcoral;"></div>
-                </div>
-              </article>
-            </div>
-            <div class="swiper-slide">
-              <article class="section-product">
-                <button class="section-product-favourite" type="button">
-                  <span class="iconfont icon-heart"></span>
-                </button>
-
-                <a href="catalog-detail.html">
-                  <img alt="img" class="section-product-img" loading="lazy" src="src/assets/img/section/product-6.jpg">
-                </a>
-                <div class="swiper-lazy-preloader"></div>
-
-                <h2 class="section-product-title">Название продукта</h2>
-                <div class="section-product-price">7 799 ₽</div>
-                <div class="section-product-colors">
-                  <div class="section-product-color" style="background: #756bff;"></div>
-                  <div class="section-product-color" style="background: lightcoral;"></div>
-                </div>
-              </article>
-            </div>
-            <div class="swiper-slide">
-              <article class="section-product">
-                <button class="section-product-favourite" type="button">
-                  <span class="iconfont icon-heart"></span>
-                </button>
-
-                <a href="catalog-detail.html">
-                  <img alt="img" class="section-product-img" loading="lazy" src="src/assets/img/section/product-7.jpg">
+                <a href="/catalog/catalog-detail">
+                  <img alt="img" class="section-product-img" loading="lazy"
+                       src="src/assets/img/section/product-7.jpg">
                 </a>
                 <div class="swiper-lazy-preloader"></div>
 
@@ -539,9 +547,9 @@
 
   </main>
 
-  import ./includes/footer.html;
-  import ./includes/modals.html;
-  import ./includes/cookie.html;
+  import @includes/footer.html;
+  import @includes/modals.html;
+  import @includes/cookie.html;
 </div>
 </body>
 </html>

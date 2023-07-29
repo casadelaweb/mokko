@@ -9,27 +9,27 @@
 </head>
 <body>
 <div id="app">
-  import ./includes/header.html;
+  import @includes/header.html;
 
   <main class="main">
     <div class="appointment">
-      <div class="appointment-container">
-        <section class="appointment-nav">
-          <h2 class="appointment-nav-title">
+      <div class="information-container">
+        <section class="information-nav">
+          <h2 class="information-nav-title">
             <span>Информация</span> <span class="iconfont icon-arrow-down"></span>
           </h2>
-          <div class="appointment-nav-links">
-            <a class="appointment-nav-link active" href="#">Записаться к стилисту</a>
-            <a class="appointment-nav-link" href="#">Отзывы</a>
-            <a class="appointment-nav-link" href="#">Доставка</a>
-            <a class="appointment-nav-link" href="#">Оплата</a>
-            <a class="appointment-nav-link" href="#">Оплата долями</a>
-            <a class="appointment-nav-link" href="#">Возврат</a>
-            <a class="appointment-nav-link" href="#">Магазины</a>
-            <a class="appointment-nav-link" href="#">Оптовые продажи</a>
-            <a class="appointment-nav-link" href="#">Таблица размеров</a>
-            <a class="appointment-nav-link" href="#">Политика конфиденциальности</a>
-            <a class="appointment-nav-link" href="#">Договор-оферта</a>
+          <div class="information-nav-links">
+            <a class="information-nav-link active" href="appointment.html">Записаться к стилисту</a>
+            <a class="information-nav-link" href="#">Отзывы</a>
+            <a class="information-nav-link" href="#">Доставка</a>
+            <a class="information-nav-link" href="#">Оплата</a>
+            <a class="information-nav-link" href="#">Оплата долями</a>
+            <a class="information-nav-link" href="#">Возврат</a>
+            <a class="information-nav-link" href="#">Магазины</a>
+            <a class="information-nav-link" href="#">Оптовые продажи</a>
+            <a class="information-nav-link" href="#">Таблица размеров</a>
+            <a class="information-nav-link" href="#">Политика конфиденциальности</a>
+            <a class="information-nav-link" href="#">Договор-оферта</a>
           </div>
         </section>
 
@@ -37,9 +37,9 @@
           <section class="appointment-hero">
             <h1 class="appointment-title">Записаться к стилисту</h1>
             <picture>
-              <!--          <source media="(min-width: 1920px)" srcset="src/assets/img/appointment/banner-1920.jpg">-->
+              <!--          <source media="(min-width: 1920px)" srcset="src/assets/img/information/banner-1920.jpg">-->
               <source media="(min-width: 1280px)" srcset="src/assets/img/appointment/banner-1280.jpg">
-              <!--          <source media="(min-width: 1024px)" srcset="src/assets/img/appointment/banner-1024.jpg">-->
+              <!--          <source media="(min-width: 1024px)" srcset="src/assets/img/information/banner-1024.jpg">-->
               <source media="(min-width: 768px)" srcset="src/assets/img/appointment/banner-768.jpg">
               <img alt="img" class="appointment-img" loading="lazy" src="src/assets/img/appointment/banner.jpg">
             </picture>
@@ -54,7 +54,8 @@
               </div>
             </div>
             <div>
-              <img alt="img" class="appointment-img" loading="lazy" src="src/assets/img/appointment/banner-free.jpg">
+              <img alt="img" class="appointment-img" loading="lazy"
+                   src="src/assets/img/appointment/banner-free.jpg">
             </div>
           </section>
           <section class="appointment-advantages">
@@ -118,7 +119,7 @@
             </button>
             <div class="appointment-form-policy">
               Нажимая кнопку «Записаться» вы даёте своё согласие на обработку персональных данных в соответствии
-              с <a href="policy.html">политикой конфиденциальности</a>
+              с <a href="..//policy">политикой конфиденциальности</a>
             </div>
           </form>
         </div>
@@ -126,9 +127,9 @@
     </div>
   </main>
 
-  import ./includes/footer.html;
-  import ./includes/modals.html;
-  import ./includes/cookie.html;
+  import @includes/footer.html;
+  import @includes/modals.html;
+  import @includes/cookie.html;
 </div>
 </body>
 </html>

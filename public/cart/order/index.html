@@ -9,16 +9,16 @@
 </head>
 <body>
 <div id="app">
-  import ./includes/header.html;
+  import @includes/header.html;
 
   <main class="main">
     <section class="order">
       <div class="order-container">
 
         <div class="breadcrumbs">
-          <a class="breadcrumb" href="index.html">Главная</a>
-          <a class="breadcrumb" href="cart.html">Корзина</a>
-          <a class="breadcrumb active" href="order.html">Оформление заказа</a>
+          <a class="breadcrumb" href="/">Главная</a>
+          <a class="breadcrumb" href="/cart">Корзина</a>
+          <a class="breadcrumb active" href="/cart/order">Оформление заказа</a>
         </div>
 
         <h2 class="order-title">Оформление заказа</h2>
@@ -45,9 +45,9 @@
                     <label class="order-location-search" for="input-location" type="button">
                       <span class="iconfont icon-search"></span>
                     </label>
-                    <input id="input-location"
-                           autocomplete="off"
+                    <input autocomplete="off"
                            class="order-location-input"
+                           id="input-location"
                            name="location"
                            placeholder="Санкт Петербург, Россия" required
                            type="text">
@@ -245,9 +245,9 @@
     </section>
   </main>
 
-  import ./includes/footer.html;
-  import ./includes/modals.html;
-  import ./includes/cookie.html;
+  import @includes/footer.html;
+  import @includes/modals.html;
+  import @includes/cookie.html;
 </div>
 </body>
 </html>

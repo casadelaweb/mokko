@@ -9,14 +9,14 @@
 </head>
 <body>
 <div id="app">
-  import ./includes/header.html;
+  import @includes/header.html;
 
   <main class="main">
     <section class="cart">
       <div class="cart-container">
         <div class="breadcrumbs">
-          <a class="breadcrumb" href="index.html">Главная</a>
-          <a class="breadcrumb active" href="cart.html">Корзина</a>
+          <a class="breadcrumb" href="/">Главная</a>
+          <a class="breadcrumb active" href="/cart/">Корзина</a>
         </div>
         <h1 class="cart-title">Корзина</h1>
         <div class="cart-layout">
@@ -24,13 +24,13 @@
             repeat 5 times:
             <article class="cart-card" data-cart-card="card">
 
-              <a class="cart-card-img" href="catalog-detail.html">
+              <a class="cart-card-img" href="/catalog/catalog-detail">
                 <img alt="img" loading="lazy" src="src/assets/img/section/product-3.jpg">
               </a>
               <div class="cart-card-body">
                 <div>
                   <h2 class="cart-card-title">
-                    <a href="catalog-detail.html">Плащ с очень длинным названием</a>
+                    <a href="/catalog/catalog-detail">Плащ с очень длинным названием</a>
                   </h2>
                   <div class="cart-card-article">
                     <span>арт. </span>
@@ -151,7 +151,7 @@
                 <h2 class="cart-summary-title">ИТОГО</h2>
                 <div class="cart-summary-price">18 999 ₽</div>
               </div>
-              <a class="cart-summary-submit" href="order.html" type="submit">
+              <a class="cart-summary-submit" href="/cart/order" type="submit">
                 <span>Оформить заказ</span>
               </a>
             </div>
@@ -161,9 +161,9 @@
     </section>
   </main>
 
-  import ./includes/footer.html;
-  import ./includes/modals.html;
-  import ./includes/cookie.html;
+  import @includes/footer.html;
+  import @includes/modals.html;
+  import @includes/cookie.html;
 </div>
 </body>
 </html>
