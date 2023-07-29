@@ -12,25 +12,58 @@
   import @includes/header.html;
 
   <main class="main">
+    <div class="breadcrumbs">
+      <div class="breadcrumbs-container">
+        <a class="breadcrumb" href="/">Главная</a>
+        <a class="breadcrumb" href="/information">Информация</a>
+        <a class="breadcrumb active" href="/information/appointment">Записаться к стилисту</a>
+      </div>
+    </div>
+
     <div class="appointment">
-      <div class="information-container">
-        <section class="information-nav">
-          <h2 class="information-nav-title">
-            <span>Информация</span> <span class="iconfont icon-arrow-down"></span>
-          </h2>
-          <div class="information-nav-links">
-            <a class="information-nav-link active" href="appointment.html">Записаться к стилисту</a>
-            <a class="information-nav-link" href="#">Отзывы</a>
-            <a class="information-nav-link" href="#">Доставка</a>
-            <a class="information-nav-link" href="#">Оплата</a>
-            <a class="information-nav-link" href="#">Оплата долями</a>
-            <a class="information-nav-link" href="#">Возврат</a>
-            <a class="information-nav-link" href="#">Магазины</a>
-            <a class="information-nav-link" href="#">Оптовые продажи</a>
-            <a class="information-nav-link" href="#">Таблица размеров</a>
-            <a class="information-nav-link" href="#">Политика конфиденциальности</a>
-            <a class="information-nav-link" href="#">Договор-оферта</a>
+      <div class="info-container">
+        <section class="info-nav">
+          <div class="info-nav-header">
+            <h2 class="info-nav-title">Информация </h2>
+            <button class="info-nav-button" type="button">
+              <span class="iconfont icon-arrow-down"></span>
+            </button>
           </div>
+          <ul class="info-nav-list">
+            <li class="info-nav-item active">
+              <a href="/information/appointment">Записаться к стилисту</a>
+            </li>
+            <li class="info-nav-item">
+              <a href="#">Отзывы</a>
+            </li>
+            <li class="info-nav-item">
+              <a href="#">Доставка</a>
+            </li>
+            <li class="info-nav-item">
+              <a href="/information/payment">Оплата</a>
+            </li>
+            <li class="info-nav-item">
+              <a href="#">Оплата долями</a>
+            </li>
+            <li class="info-nav-item">
+              <a href="#">Возврат</a>
+            </li>
+            <li class="info-nav-item">
+              <a href="#">Магазины</a>
+            </li>
+            <li class="info-nav-item">
+              <a href="#">Оптовые продажи</a>
+            </li>
+            <li class="info-nav-item">
+              <a href="/information/sizeguide">Таблица размеров</a>
+            </li>
+            <li class="info-nav-item">
+              <a href="#">Политика конфиденциальности</a>
+            </li>
+            <li class="info-nav-item">
+              <a href="#">Договор-оферта</a>
+            </li>
+          </ul>
         </section>
 
         <div class="appointment-main">
@@ -44,8 +77,9 @@
               <img alt="img" class="appointment-img" loading="lazy" src="src/assets/img/appointment/banner.jpg">
             </picture>
           </section>
+
           <section class="appointment-free">
-            <div>
+            <div class="appointment-free-main">
               <h2 class="appointment-title">ЖЕЛАЕТЕ ОБНОВИТЬ ГАРДЕРОБ, НО НЕ ЗНАЕТЕ, ЧТО ВАМ ИДЁТ?</h2>
               <div class="appointment-description">
                 <p>Наш профессиональный стилист поможет вам составить гардероб, который подчеркнет вашу
@@ -53,40 +87,45 @@
                 <p>Услуга предоставляется абсолютно бесплатно.</p>
               </div>
             </div>
-            <div>
-              <img alt="img" class="appointment-img" loading="lazy"
+            <div class="appointment-free-images">
+              <img alt="img" class="appointment-free-discount" loading="lazy" src="src/assets/img/appointment/free.png">
+              <img alt="img" class="appointment-free-img" loading="lazy"
                    src="src/assets/img/appointment/banner-free.jpg">
             </div>
           </section>
+
           <section class="appointment-advantages">
             <h2 class="appointment-title">Что вы получите?</h2>
-            <article class="appointment-advantage">
-              <h2 class="appointment-advantage-title">
-                <span class="appointment-advantage-number">1</span> <span>Образы</span>
-              </h2>
-              <div class="appointment-advantage-description">
-                Для вас соберут готовые образы под запрос. Например, в офис или для разного рода мероприятий
-              </div>
-            </article>
-            <article class="appointment-advantage">
-              <h2 class="appointment-advantage-title">
-                <span class="appointment-advantage-number">2</span> <span>Детали</span>
-              </h2>
-              <div class="appointment-advantage-description">
-                Стилист подберёт вам обувь и аксессуары исходя из ваших предпочтений
-              </div>
-            </article>
-            <article class="appointment-advantage">
-              <h2 class="appointment-advantage-title">
-                <span class="appointment-advantage-number">3</span> <span>Знания</span>
-              </h2>
-              <div class="appointment-advantage-description">
-                Узнаете полезные рекомендации от профессионального стилиста, которые сможете использовать в будущем
-              </div>
-            </article>
+            <div class="appointment-advantages-layout">
+              <article class="appointment-advantage">
+                <h2 class="appointment-advantage-title">
+                  <span class="appointment-advantage-number">1</span> <span>Образы</span>
+                </h2>
+                <div class="appointment-advantage-description">
+                  Для вас соберут готовые образы под запрос. Например, в офис или для разного рода мероприятий
+                </div>
+              </article>
+              <article class="appointment-advantage">
+                <h2 class="appointment-advantage-title">
+                  <span class="appointment-advantage-number">2</span> <span>Детали</span>
+                </h2>
+                <div class="appointment-advantage-description">
+                  Стилист подберёт вам обувь и аксессуары исходя из ваших предпочтений
+                </div>
+              </article>
+              <article class="appointment-advantage">
+                <h2 class="appointment-advantage-title">
+                  <span class="appointment-advantage-number">3</span> <span>Знания</span>
+                </h2>
+                <div class="appointment-advantage-description">
+                  Узнаете полезные рекомендации от профессионального стилиста, которые сможете использовать в будущем
+                </div>
+              </article>
+            </div>
           </section>
+
           <form class="appointment-form">
-            <h2 class="appointment-title">ЗАПИСАТЬСЯ ОНЛАЙН</h2>
+            <h2 class="appointment-title appointment-form-title">ЗАПИСАТЬСЯ ОНЛАЙН</h2>
             <div class="appointment-form-message">
               Бронирование свободной даты происходит через онлайн-форму или личные сообщения ВКонтакте. Просто напишите
               «Хочу записаться на шопинг».
@@ -94,32 +133,34 @@
             <a class="appointment-social" href="https://vk.com" target="_blank">
               <span class="iconfont icon-vk"></span>
             </a>
-            <label class="appointment-label">
-              <span class="appointment-label-text">Имя *</span>
-              <input autocomplete="off" class="appointment-input" placeholder="Имя"
-                     required type="text">
-            </label>
-            <label class="appointment-label">
-              <span class="appointment-label-text">Почта *</span>
-              <input autocomplete="off" class="appointment-input" data-mask="email"
-                     placeholder="username@site.ru" required type="text">
-            </label>
-            <label class="appointment-label">
-              <span class="appointment-label-text">Телефон *</span>
-              <input autocomplete="off" class="appointment-input" data-mask="tel"
-                     placeholder="+7 999 999 99 99" required type="text">
-            </label>
-            <label class="appointment-label">
-              <span class="appointment-label-text">Комментарий *</span>
-              <textarea autocomplete="off" class="appointment-textarea" placeholder="Комментарий"
-                        type="text"></textarea>
-            </label>
-            <button class="appointment-submit" type="submit">
-              <span>Записаться</span>
-            </button>
-            <div class="appointment-form-policy">
-              Нажимая кнопку «Записаться» вы даёте своё согласие на обработку персональных данных в соответствии
-              с <a href="policy/">политикой конфиденциальности</a>
+            <div class="appointment-form-layout">
+              <label class="appointment-label _name">
+                <span class="appointment-label-text">Имя *</span>
+                <input autocomplete="off" class="appointment-input" placeholder="Имя"
+                       required type="text">
+              </label>
+              <label class="appointment-label _email">
+                <span class="appointment-label-text">Почта *</span>
+                <input autocomplete="off" class="appointment-input" data-mask="email"
+                       placeholder="username@site.ru" required type="text">
+              </label>
+              <label class="appointment-label _tel">
+                <span class="appointment-label-text">Телефон *</span>
+                <input autocomplete="off" class="appointment-input" data-mask="tel"
+                       placeholder="+7 999 999 99 99" required type="text">
+              </label>
+              <label class="appointment-label _textarea">
+                <span class="appointment-label-text">Комментарий *</span>
+                <textarea autocomplete="off" class="appointment-textarea" placeholder="Комментарий"
+                          type="text"></textarea>
+              </label>
+              <button class="appointment-submit" type="submit">
+                <span>Записаться</span>
+              </button>
+              <div class="appointment-form-policy">
+                Нажимая кнопку «Записаться» вы даёте своё согласие на обработку персональных данных в соответствии
+                с <a href="policy/">политикой конфиденциальности</a>
+              </div>
             </div>
           </form>
         </div>

@@ -4,10 +4,18 @@
   @include mediaTablet {
     margin-bottom: 56px;
   }
+
+  &-layout {
+    @include mediaTabletBg {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      column-gap: $containerPaddingMobile;
+    }
+  }
 }
 
 .appointment-advantage {
-  @include flex(center, center, column);
+  @include flex(center, $d: column);
   min-height: 290px;
   margin: $containerPaddingMobile 0;
   padding: 36px;
@@ -20,6 +28,8 @@
     padding: 50px 60px 60px;
   }
   @include mediaTabletBg {
+    min-height: 406px;
+    padding: 92px 36px 36px;
   }
   @include mediaLaptop {
   }
@@ -39,6 +49,7 @@
       font-size: 20px;
     }
     @include mediaTabletBg {
+      font-size: 22px;
     }
     @include mediaLaptop {
     }
@@ -61,6 +72,7 @@
       margin-right: 16px;
     }
     @include mediaTabletBg {
+      font-size: 26px;
     }
     @include mediaLaptop {
     }
@@ -75,6 +87,7 @@
       font-size: 16px;
     }
     @include mediaTabletBg {
+      font-size: 18px;
     }
     @include mediaLaptop {
     }

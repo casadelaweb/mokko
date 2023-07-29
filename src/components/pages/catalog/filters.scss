@@ -1,23 +1,23 @@
 @import 'src/styles/shared';
 
 .filters {
-  @include mediaOnlyMobileAndTablets {
-    background: white;
-    display: block;
-    height: 100%;
+  @include mediaOnlyMobileAndAllTablets {
+    position: fixed;
+    z-index: 105;
+    top: 0;
     left: 0;
     overflow-y: auto;
-    pointer-events: none;
-    position: fixed;
-    top: 0;
-    transform: translate(-100%, 0);
-    transition: transform 0.5s;
+    display: block;
     width: 320px;
-    z-index: 105;
+    height: 100%;
+    transition: transform 0.5s;
+    transform: translate(-100%, 0);
+    pointer-events: none;
+    background: white;
 
     &.active {
-      pointer-events: auto;
       transform: none;
+      pointer-events: auto;
     }
 
     @include scrollbar;
@@ -25,7 +25,7 @@
 
   &-sticky, &-mobile {
     @include flex($d: column);
-    @include mediaOnlyMobileAndTablets {
+    @include mediaOnlyMobileAndAllTablets {
       height: 100%;
     }
   }
@@ -33,8 +33,8 @@
   &-sticky {
     @include mediaLaptop {
       position: sticky;
-      top: 100px;
       z-index: 0;
+      top: 100px;
     }
   }
 
@@ -72,13 +72,13 @@
 
     &-summary {
       @include flex(center);
-      border-top: 1px solid #e9e9e9;
-      flex: 1 0 auto;
       font-size: 17px;
+      flex: 1 0 auto;
+      width: auto;
       height: 70px;
       padding: 0 $containerPaddingMobile;
       transition: background-color 0.25s;
-      width: auto;
+      border-top: 1px solid #e9e9e9;
 
       @include mediaLaptop {
         font-size: 18px;
@@ -99,15 +99,15 @@
     }
 
     &-button {
-      margin-left: auto;
       order: 1;
+      margin-left: auto;
     }
 
     &-selected {
       @include lineClamp(1);
-      color: #c7b29c;
       font-size: 13px;
       letter-spacing: 0.02em;
+      color: #c7b29c;
       @include mediaLaptop {
         font-size: 14px;
       }
@@ -126,42 +126,42 @@
 
   label {
     @include flex(center);
-    margin-bottom: 0.5em;
     width: fit-content;
+    margin-bottom: 0.5em;
   }
 
   &-buttons {
     @include flex(center);
     margin-top: auto;
-    @include mediaOnlyMobileAndTablets {
-      background: white;
-      bottom: 0;
-      box-shadow: 0 -2px 4px rgba(81, 80, 79, 0.25);
-      padding: ($containerPaddingMobile * 2) $containerPaddingMobile;
+    @include mediaOnlyMobileAndAllTablets {
       position: sticky;
       z-index: 1;
+      bottom: 0;
+      padding: ($containerPaddingMobile * 2) $containerPaddingMobile;
+      background: white;
+      box-shadow: 0 -2px 4px rgba(81, 80, 79, 0.25);
     }
   }
 
   &-reset, &-submit {
-    border-radius: 4px;
-    height: 44px;;
     width: 142px;
+    height: 44px;;
+    border-radius: 4px;
   }
 
   &-reset {
-    background: white;
-    border: 2px solid #c7b29c;
-    color: #c7b29c;
     margin-right: 10px;
+    color: #c7b29c;
+    border: 2px solid #c7b29c;
+    background: white;
     @include mediaLaptop {
       margin-right: 20px;
     }
   }
 
   &-submit {
-    background: #c7b29c;
     color: white;
+    background: #c7b29c;
   }
 
   // для десктопа
@@ -173,10 +173,10 @@
   }
 
   &-title {
-    color: #82756e;
     font-size: 17px;
     letter-spacing: 0.02em;
     margin-bottom: 1.25em;
+    color: #82756e;
   }
 
   &-link {

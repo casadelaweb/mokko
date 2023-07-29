@@ -1,3 +1,4 @@
+import './info'
 import './information.scss'
 import './appointment.scss'
 import './appointment.advantage.scss'

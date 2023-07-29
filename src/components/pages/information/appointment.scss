@@ -12,7 +12,7 @@
       font-size: 24px;
       margin: 32px 0;
     }
-    @include mediaLaptop {
+    @include mediaTabletBg {
       font-size: 28px;
       margin: 40px 0;
     }
@@ -24,6 +24,9 @@
     margin-bottom: 56px;
     @include mediaTablet {
       font-size: 16px;
+    }
+    @include mediaTabletBg {
+      font-size: 18px;
     }
 
     p {
@@ -50,10 +53,47 @@
   }
 
   &-free {
+    position: relative;
+    z-index: 0;
     @include mediaTablet {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       column-gap: 24px;
+    }
+    @include mediaTabletBg {
+      grid-template-columns: 2fr 1fr;
+      column-gap: 52px;
+    }
+
+    &-images {
+      position: relative;
+      z-index: 0;
+    }
+
+    &-img {
+      width: 100%;
+      height: 100%;
+      margin-bottom: 0;
+      border-radius: 8px;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    &-discount {
+      position: absolute;
+      z-index: 1;
+      top: -52px;
+      right: 12px;
+      width: 74px;
+      height: 74px;
+      @include mediaTabletBg {
+        top: auto;
+        left: (60px + 92px) * -1;
+        right: auto;
+        bottom: 10px;
+        width: 92px;
+        height: 92px;
+      }
     }
   }
 }
