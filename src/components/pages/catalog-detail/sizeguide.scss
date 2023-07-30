@@ -1,0 +1,62 @@
+@import 'src/styles/shared';
+
+.sizeguide {
+  position: fixed;
+  z-index: 105;
+  top: 0;
+  right: 0;
+  width: 320px;
+  height: 100%;
+  transition: transform 0.5s;
+  transform: translate(100%, 0);
+  pointer-events: none;
+  background: white;
+  @include mediaTabletBg {
+    width: 432px;
+  }
+
+  &.active {
+    transform: none;
+    pointer-events: auto;
+  }
+
+  &-header {
+    @include flex(center, space-between);
+    padding: 14px;
+    border-bottom: 2px solid #e9e9e9;
+    @include mediaTabletBg {
+      padding: 20px 40px;
+    }
+  }
+
+  &-title {
+    font-size: 12px;
+    line-height: 1;
+    // font-weight: 500;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: #82756e;
+    @include mediaMobileConventional {
+      font-size: 14px;
+    }
+    @include mediaTablet {
+      font-size: 16px;
+    }
+    @include mediaTabletBg {
+      font-size: 18px;
+    }
+  }
+
+  &-close {
+    font-size: 18px;
+    line-height: 1;
+    color: #82756e;
+  }
+
+  &-body {
+    padding: 24px 14px;
+    @include mediaTabletBg {
+      padding: 20px 40px;
+    }
+  }
+}

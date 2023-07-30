@@ -426,16 +426,20 @@
       </a>
     </div>
   </div>
-  <div class="modal" data-modal="sizeguide">
-    <button class="modal-close" data-modal-close type="button">
-      <span class="iconfont icon-close"></span>
-    </button>
-    <h1 class="appointment-title">ТАБЛИЦА РАЗМЕРОВ</h1>
-    <h2 class="table-label">
-      Замеры указаны в сантиметрах
-    </h2>
 
-    import @includes/sizeguide-table.html;
+  <div class="sizeguide" data-modal="sizeguide">
+    <div class="sizeguide-header">
+      <h2 class="sizeguide-title">ТАБЛИЦА РАЗМЕРОВ</h2>
+      <button class="sizeguide-close" data-modal-close type="button">
+        <span class="iconfont icon-close"></span>
+      </button>
+    </div>
+    <div class="sizeguide-body">
+      <h2 class="table-label">
+        Замеры указаны в сантиметрах
+      </h2>
+      import @includes/sizeguide-table.html;
+    </div>
   </div>
 
   <div class="modal-overlay" data-modal-overlay></div>
