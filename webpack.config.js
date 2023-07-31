@@ -34,13 +34,13 @@ const stylesPipeline = {
 }
 const scriptsRuleset = {
   test: /\.(js|ts)$/,
-  exclude: /(node_modules|dist|.vscode|.idea)/,
+  exclude: /(node_modules|dist|.vscode|.idea|.github|.webpack)/,
   use: {
     loader: 'swc-loader',
     options: {
       minify: false,
       jsc: {
-        target: 'es5',
+        target: 'es2015',
         loose: false,
         minify: {
           compress: false,

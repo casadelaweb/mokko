@@ -12,7 +12,7 @@
 
   &-nav {
     position: relative;
-    z-index: 0;
+    z-index: 1;
     margin: 24px 0;
     @include mediaTablet {
       margin: 32px 0;
@@ -63,7 +63,7 @@
       background: white;
       @include mediaOnlyMobileAndAllTablets {
         position: absolute;
-        z-index: 1;
+        z-index: 2;
         top: calc(100% + 14px);
         left: 0;
         overflow: hidden;
@@ -101,6 +101,43 @@
           background: #f1f1f1;
         }
       }
+    }
+  }
+
+  &-title {
+    font-size: 16px;
+    line-height: 1.4;
+    letter-spacing: 0.02em;
+    margin: 1em 0;
+    text-transform: uppercase;
+    @include mediaTablet {
+      font-size: 18px;
+    }
+    @include mediaTabletBg {
+      font-size: 20px;
+    }
+  }
+
+  &-form-test {
+    // @include flex($d: column);
+    font-size: 14px;
+
+    label {
+      @include flex($d: column);
+      margin-bottom: 16px;
+    }
+
+    input {
+      @include inputGrey;
+    }
+
+    span {
+      margin-bottom: 8px;
+    }
+
+    button {
+      @include buttonPurple;
+      margin: 20px 0;
     }
   }
 }

@@ -27,6 +27,10 @@
     @include buttonSquare;
   }
 
+  &-submit {
+    @include buttonPurple;
+  }
+
   &-warning {
     font-size: 13px;
 

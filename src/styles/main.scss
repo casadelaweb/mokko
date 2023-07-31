@@ -22,6 +22,10 @@ body {
   @include container;
 }
 
+hr {
+  margin: 20px 0;
+}
+
 .form {
   &-warning {
     a {
