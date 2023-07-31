@@ -352,6 +352,60 @@
     </section>
   </main>
 
+  <form class="preview" data-modal="preview" data-preview="form">
+    <input hidden name="size" type="text">
+    <input hidden name="color" type="text">
+
+    <button class="preview-close" data-modal-close type="button">
+      <span class="iconfont icon-arrow-down"></span>
+    </button>
+
+    <div class="preview-body">
+      <a class="preview-img" href="/catalog/catalog-detail">
+        <img alt="img" loading="lazy" src="src/assets/img/section/product-3.jpg">
+      </a>
+      <div class="preview-info">
+        <div class="preview-discount">-30%</div>
+        <h2 class="preview-title"><a href="/catalog/catalog-detail">Название продукта</a></h2>
+        <div class="preview-prices">
+          <div class="preview-price _old">7 799 ₽</div>
+          <div class="preview-price _current">5 000 ₽</div>
+        </div>
+        <div class="preview-colors">
+          <button class="preview-color" data-preview="color" type="button">
+            <span style="background: #756bff"></span>
+          </button>
+          <button class="preview-color active" data-preview="color" type="button">
+            <span style="background: lightsalmon"></span>
+          </button>
+          <button class="preview-color" data-preview="color" type="button">
+            <span style="background: black"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="preview-sizes">
+      <div class="preview-sizes-title">Выберите размер:</div>
+      <div class="preview-sizes-list">
+        <button class="preview-size" data-preview="size" type="button"><span>S <br> 36</span></button>
+        <button class="preview-size active" data-preview="size" type="button"><span>M <br> 38</span></button>
+        <button class="preview-size" data-preview="size" type="button"><span>L <br> 40</span></button>
+        <button class="preview-size" data-preview="size" type="button"><span>XL <br> 42</span></button>
+        <button class="preview-size" data-preview="size" type="button"><span>XXL <br> 44</span></button>
+        <button class="preview-size" data-preview="size" type="button"><span>3XL <br> 46</span></button>
+        <button class="preview-size" data-preview="size" type="button"><span>4XL <br> 48</span></button>
+      </div>
+    </div>
+    <div class="preview-footer">
+      <button class="preview-cart" type="submit">
+        <span>Добавить в корзину</span>
+      </button>
+      <button class="preview-favourite" type="button">
+        <span class="iconfont icon-heart"></span>
+      </button>
+    </div>
+  </form>
+
   import @includes/footer.html;
   import @includes/modals.html;
   import @includes/cookie.html;

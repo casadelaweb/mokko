@@ -47,7 +47,6 @@ document.addEventListener('DOMContentLoaded', () => {
     },
   })
 
-  modalsAside(modals, '[data-modal=product-preview]')
 
   // let isHovering: boolean = false
   // const hooksCustom = {
