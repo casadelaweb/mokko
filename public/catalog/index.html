@@ -362,15 +362,22 @@
     </button>
 
     <div class="preview-body">
-      <a class="preview-img" href="/catalog/catalog-detail">
+      <div class="swiper preview-slider">
         <button class="preview-slider-button-prev" type="button">
           <span class="iconfont icon-arrow-left"></span>
         </button>
-        <img alt="img" loading="lazy" src="src/assets/img/section/product-3.jpg">
         <button class="preview-slider-button-next" type="button">
           <span class="iconfont icon-arrow-right"></span>
         </button>
-      </a>
+
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <a class="preview-img" href="/catalog/catalog-detail">
+              <img alt="img" loading="lazy" src="src/assets/img/section/product-3.jpg">
+            </a>
+          </div>
+        </div>
+      </div>
       <div class="preview-info">
         <div class="preview-discount">-30%</div>
         <h2 class="preview-title">
