@@ -11,6 +11,23 @@
   transform: translate(0, 100%);
   pointer-events: none;
   background: white;
+  @include mediaOnlyTablet {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    column-gap: 36px;
+    padding: 20px 14px 30px;
+  }
+  @include mediaTabletBg {
+    top: 0;
+    right: 0;
+    width: 433px;
+    height: 100%;
+    padding: 36px 72px 20px;
+    transform: translate(100%, 0);
+  }
+  @include mediaLaptop {
+    padding-bottom: 36px;
+  }
 
   &.active {
     transform: none;
@@ -24,32 +41,94 @@
     z-index: 1;
     top: 24px;
     right: 14px;
+    @include mediaTabletBg {
+      top: 36px;
+      right: 40px;
+    }
+
+    .icon-arrow-down {
+      @include mediaTabletBg {
+        display: none;
+      }
+    }
+
+    .icon-close {
+      display: none;
+      @include mediaTabletBg {
+        display: inline-block;
+      }
+    }
   }
 
   &-body {
     @include flex;
     margin-bottom: 24px;
+    @include mediaTabletBg {
+      @include flex($d: column);
+      position: relative;
+      z-index: 0;
+      margin: 0 0 24px;
+    }
   }
 
   &-img {
+    position: relative;
+    z-index: 0;
     display: inline-block;
     flex: 0 0 auto;
     width: 93px;
     height: 128px;
     margin-right: 14px;
     border-radius: 6px;
+    @include mediaTabletBg {
+      width: 234px;
+      height: 351px;
+      margin: 0 0 18px;
+      border-radius: 10px;
+    }
 
     img {
       width: 100%;
       height: 100%;
       border-radius: 6px;
       object-fit: cover;
+      @include mediaTabletBg {
+        border-radius: 10px;
+      }
     }
   }
 
-  &-info {
-    flex: 1 0 auto;
+  &-slider {
+    &-button {
+      &-prev, &-next {
+        @include flex(center, center);
+        font-size: 14px;
+        position: absolute;
+        z-index: 1;
+        top: 50%;
+        width: 30px;
+        height: 34px;
+        transform: translate(0, -50%);
+        background: rgba(white, 0.75);
+      }
+
+      &-prev {
+        left: 0;
+        border-radius: 0 6px 6px 0;
+      }
+
+      &-next {
+        right: 0;
+        border-radius: 6px 0 0 6px;
+      }
+    }
   }
+
+  //&-info {
+  //  @include mediaOnlyMobile {
+  //    flex: 1 0 auto;
+  //  }
+  //}
 
   &-discount {
     @include flex(center, center);
@@ -61,22 +140,42 @@
     color: white;
     border-radius: 6px 0;
     background: #756bff;
+    @include mediaTabletBg {
+      font-size: 15px;
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      width: 53px;
+      height: 37px;
+      margin-bottom: 0;
+      border-radius: 10px 0 6px 0;
+    }
   }
 
   &-title {
     font-size: 13px;
     margin-bottom: 8px;
     color: #82756e;
+    @include mediaTabletBg {
+      font-size: 15px;
+    }
   }
 
   &-prices {
     @include flex(center);
     margin-bottom: 14px;
+    @include mediaTabletBg {
+      margin-bottom: 20px;
+    }
   }
 
   &-price {
     font-size: 15px;
     margin-right: 4px;
+    @include mediaTabletBg {
+      font-size: 17px;
+    }
 
     &._old {
       text-decoration: line-through;
@@ -131,8 +230,16 @@
     }
   }
 
+  //&-footer {
+  //}
+
   &-sizes {
-    margin-bottom: 14px;
+    $size: 28px;
+    $sizeTabletBg: 32px;
+    margin-bottom: $size * 0.5;
+    @include mediaTabletBg {
+      margin-bottom: $sizeTabletBg * 0.5;
+    }
 
     &-title {
       font-size: 15px;
@@ -143,7 +250,11 @@
       @include flex(center);
       overflow-x: auto;
       margin-right: -10px;
-      padding-bottom: 14px;
+      padding-bottom: $size * 0.5;
+      @include mediaTabletBg {
+        margin-right: -20px;
+        padding-bottom: $sizeTabletBg * 0.5;
+      }
     }
   }
 
@@ -165,13 +276,13 @@
     }
   }
 
-  &-footer {
+  &-buttons {
     @include flex(center);
   }
 
   &-cart {
     @include buttonBrown;
-    flex: 1 0 auto;
+    flex: 0 0 auto;
     width: 250px;
     margin-right: 18px;
   }

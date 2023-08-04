@@ -358,15 +358,24 @@
 
     <button class="preview-close" data-modal-close type="button">
       <span class="iconfont icon-arrow-down"></span>
+      <span class="iconfont icon-close"></span>
     </button>
 
     <div class="preview-body">
       <a class="preview-img" href="/catalog/catalog-detail">
+        <button class="preview-slider-button-prev" type="button">
+          <span class="iconfont icon-arrow-left"></span>
+        </button>
         <img alt="img" loading="lazy" src="src/assets/img/section/product-3.jpg">
+        <button class="preview-slider-button-next" type="button">
+          <span class="iconfont icon-arrow-right"></span>
+        </button>
       </a>
       <div class="preview-info">
         <div class="preview-discount">-30%</div>
-        <h2 class="preview-title"><a href="/catalog/catalog-detail">Название продукта</a></h2>
+        <h2 class="preview-title">
+          <a href="/catalog/catalog-detail">Относительно длинное название продукта, содержащее длинные слова</a>
+        </h2>
         <div class="preview-prices">
           <div class="preview-price _old">7 799 ₽</div>
           <div class="preview-price _current">5 000 ₽</div>
@@ -384,25 +393,27 @@
         </div>
       </div>
     </div>
-    <div class="preview-sizes">
-      <div class="preview-sizes-title">Выберите размер:</div>
-      <div class="preview-sizes-list">
-        <button class="preview-size" data-preview="size" type="button"><span>S <br> 36</span></button>
-        <button class="preview-size active" data-preview="size" type="button"><span>M <br> 38</span></button>
-        <button class="preview-size" data-preview="size" type="button"><span>L <br> 40</span></button>
-        <button class="preview-size" data-preview="size" type="button"><span>XL <br> 42</span></button>
-        <button class="preview-size" data-preview="size" type="button"><span>XXL <br> 44</span></button>
-        <button class="preview-size" data-preview="size" type="button"><span>3XL <br> 46</span></button>
-        <button class="preview-size" data-preview="size" type="button"><span>4XL <br> 48</span></button>
-      </div>
-    </div>
     <div class="preview-footer">
-      <button class="preview-cart" type="submit">
-        <span>Добавить в корзину</span>
-      </button>
-      <button class="preview-favourite" type="button">
-        <span class="iconfont icon-heart"></span>
-      </button>
+      <div class="preview-sizes">
+        <div class="preview-sizes-title">Выберите размер:</div>
+        <div class="preview-sizes-list">
+          <button class="preview-size" data-preview="size" type="button"><span>S <br> 36</span></button>
+          <button class="preview-size active" data-preview="size" type="button"><span>M <br> 38</span></button>
+          <button class="preview-size" data-preview="size" type="button"><span>L <br> 40</span></button>
+          <button class="preview-size" data-preview="size" type="button"><span>XL <br> 42</span></button>
+          <button class="preview-size" data-preview="size" type="button"><span>XXL <br> 44</span></button>
+          <button class="preview-size" data-preview="size" type="button"><span>3XL <br> 46</span></button>
+          <button class="preview-size" data-preview="size" type="button"><span>4XL <br> 48</span></button>
+        </div>
+      </div>
+      <div class="preview-buttons">
+        <button class="preview-cart" type="submit">
+          <span>Добавить в корзину</span>
+        </button>
+        <button class="preview-favourite" type="button">
+          <span class="iconfont icon-heart"></span>
+        </button>
+      </div>
     </div>
   </form>
 
