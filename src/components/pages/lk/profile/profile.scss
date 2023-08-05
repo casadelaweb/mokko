@@ -1,0 +1,33 @@
+@import 'src/styles/shared';
+
+.profile {
+  &-form {
+    margin: 46px 0 72px;
+  }
+
+  &-label {
+    @include flex($d: column);
+    margin-bottom: 20px;
+  }
+
+  &-name {
+    font-size: 14px;
+    margin-bottom: 6px;
+    color: #ada49e;
+  }
+
+  &-input {
+    @include inputGrey;
+  }
+
+  &-warning {
+    font-size: 13px;
+    line-height: 2;
+    color: #e71c35;
+  }
+
+  &-submit {
+    @include buttonBrown;
+    margin-top: 38px;
+  }
+}

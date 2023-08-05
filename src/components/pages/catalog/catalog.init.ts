@@ -5,8 +5,6 @@ import { accessibility as accessibilitySettings } from 'src/scripts/swiper-setti
 import { Catalog } from './catalog'
 import { isMediaAboveLaptop } from 'src/scripts/helpers'
 import './catalog.filters'
-import { modalsAside } from 'src/modules/modals/modals.aside'
-import { modals } from 'src/scripts/modals-instance'
 
 document.addEventListener('DOMContentLoaded', () => {
   new Swiper('[data-slider=catalog-card]', {

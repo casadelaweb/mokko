@@ -11,21 +11,23 @@
   }
 
   &-nav {
-    position: relative;
+    position: sticky;
     z-index: 1;
-    margin: 24px 0;
+    top: var(--headerHeight);
+    padding: 14px 0;
+    background: white;
     @include mediaTablet {
-      margin: 32px 0;
+      padding: 32px 0;
     }
     @include mediaLaptop {
-      position: sticky;
-      z-index: 0;
       top: calc(var(--headerHeight) + 20px);
       height: fit-content;
+      padding: 0;
     }
 
     &-header {
       @include flex(center);
+      width: fit-content;
     }
 
     &-title {

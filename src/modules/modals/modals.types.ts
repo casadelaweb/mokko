@@ -5,6 +5,7 @@ export interface Options {
     buttonClose: string,
     header: string,
     modal: string,
+    overlay: string,
   },
   transition: {
     duration: number,

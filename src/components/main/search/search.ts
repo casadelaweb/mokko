@@ -1,9 +1,5 @@
-import { modals } from 'src/scripts/modals-instance'
-import { modalsAside } from 'src/modules/modals/modals.aside'
-
 document.addEventListener('DOMContentLoaded', () => {
   const { body, } = document
-  modalsAside(modals, '[data-modal=search]')
 
   document.addEventListener('click', (event: MouseEvent) => {
     const target = event.target as HTMLElement

@@ -20,6 +20,7 @@ class Modals {
   private readonly onClick: (event) => void
   // eslint-disable-next-line no-unused-vars
   private readonly onKeyUp: (event) => void
+  private overlay: HTMLElement
 
   constructor({ hooks, }) {
     this.options = {
@@ -29,6 +30,7 @@ class Modals {
         buttonClose: '[data-modal-close]',
         buttonToggle: '[data-modal-toggle]',
         header: 'header',
+        overlay: '[data-modal-overlay]',
       },
       transition: {
         duration: 333,
@@ -87,6 +89,9 @@ class Modals {
     this.parameters.all.forEach((modal) => modal.classList.remove('current'))
     this.parameters.current.classList.add('current')
 
+    if (this.parameters.current === modal) {
+      this.overlay.classList.add('active')
+    }
     this.onOpen()
 
     throwEvent(modal, Modals.events.open, { trigger: trigger, })
@@ -119,6 +124,9 @@ class Modals {
       }, this.options.transition.duration)
 
     }).then(() => {
+      if (this.parameters.counter === 0) {
+        this.overlay.classList.remove('active')
+      }
       this.onClose()
       return throwEvent(modal, Modals.events.close, { trigger: trigger, })
     })
@@ -144,6 +152,17 @@ class Modals {
         this.activateModal(modal)
       })
     }
+
+    // if (this.overlay) {
+    this.overlay = body.querySelector(this.options.selectors.overlay)
+    // } else {
+    //   const overlay: HTMLElement = document.createElement('div')
+    //   overlay.classList.add('modal-overlay')
+    //   overlay.setAttribute('data-modal-overlay', '')
+    //   body.appendChild(overlay)
+    //   this.overlay = overlay
+    // }
+    // console.log(this)
 
     this.listen()
   }
@@ -191,6 +210,13 @@ class Modals {
       const attribute = selectors.buttonToggle.slice(1, -1)
       const modal: HTMLElement = body.querySelector('[data-modal=' + button.getAttribute(attribute) + ']')
       if (modal) this.toggleModal(modal, button)
+    }
+
+    if (target.closest(selectors.overlay) && this.parameters.current) {
+      const isElement = this.parameters.current instanceof HTMLElement
+      if (isElement && this.parameters.current.matches(selectors.modal)) {
+        this.deactivateModal(this.parameters.current)
+      }
     }
   }
 
