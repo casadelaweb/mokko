@@ -1,12 +1,27 @@
 @import 'src/styles/shared';
 
 .subscriptions {
+  &-description {
+    font-size: 14px;
+    line-height: 1.4;
+    @include mediaTablet {
+      font-size: 16px;
+    }
+    @include mediaLaptop {
+      font-size: 18px;
+    }
+  }
+
   &-form {
+    margin-bottom: 100px;
   }
 
   &-label {
     @include flex;
     margin: 26px 0;
+    @include mediaTablet {
+      margin: 36px 0;
+    }
 
     &-body {
       @include flex($d: column);
@@ -15,13 +30,19 @@
     &-name {
       font-size: 16px;
       letter-spacing: 0.02em;
-      margin-bottom: 4px;
+      // margin-bottom: 4px;
       color: #82756e;
+      @include mediaTablet {
+        font-size: 18px;
+      }
     }
 
     &-description {
       font-size: 14px;
       color: #ada49e;
+      @include mediaTablet {
+        font-size: 15px;
+      }
     }
   }
 
@@ -30,5 +51,8 @@
 
   &-submit {
     @include buttonBrown;
+    @include mediaTablet {
+      max-width: 266px;
+    }
   }
 }
