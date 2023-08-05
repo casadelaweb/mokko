@@ -1,15 +1,15 @@
 [type=checkbox], [type=radio] {
-  border: 2px solid #82756e;
-  border-radius: 4px;
+  overflow: hidden;
   flex: 0 0 auto;
+  width: 18px;
   height: 18px;
   margin-right: 0.5em;
-  overflow: hidden;
   transition: background-color 0.25s;
-  width: 18px;
+  border: 2px solid #80756e;
+  border-radius: 4px;
 
   &:checked {
-    background: #82756e;
+    background: #80756e;
 
     &::before {
       transform: scale(1);
@@ -17,11 +17,11 @@
   }
 
   &::before {
-    background: #82756e;
     content: ' ';
-    opacity: 1;
-    transform: scale(0);
     transition: transform 0.25s;
+    transform: scale(0);
+    opacity: 1;
+    background: #80756e;
   }
 }
 

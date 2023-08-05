@@ -12,13 +12,14 @@
 
   &-nav {
     position: sticky;
-    z-index: 1;
+    z-index: 0;
     top: var(--headerHeight);
+    // margin: 0 -14px;
     padding: 14px 0;
     background: white;
-    @include mediaTablet {
-      padding: 32px 0;
-    }
+    //@include mediaTablet {
+    //  padding: 32px 0;
+    //}
     @include mediaLaptop {
       top: calc(var(--headerHeight) + 20px);
       height: fit-content;
@@ -48,7 +49,7 @@
       margin: 0 0.5em;
       transition: transform 0.5s;
       transform-origin: center;
-      color: #82756e;
+      color: #80756e;
       @include mediaLaptop {
         display: none;
       }
@@ -98,11 +99,16 @@
       }
 
       &.active, &:hover {
-        color: #756bff;
+        color: #766cff;
         @include mediaOnlyMobileAndAllTablets {
           background: #f1f1f1;
         }
       }
+    }
+
+    &-overlay {
+      @include overlay;
+      z-index: 99;
     }
   }
 

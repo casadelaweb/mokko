@@ -19,6 +19,8 @@
   }
 
   &.active {
+    color: #80756e;
+
     &::after {
       display: none;
     }

@@ -11,6 +11,7 @@ class Modals {
   }
   public parameters: Parameters
   public options: Options
+  public overlay: HTMLElement
   private readonly hooks: Hooks
   private readonly onOpen: any
   private readonly onClose: any
@@ -20,7 +21,6 @@ class Modals {
   private readonly onClick: (event) => void
   // eslint-disable-next-line no-unused-vars
   private readonly onKeyUp: (event) => void
-  private overlay: HTMLElement
 
   constructor({ hooks, }) {
     this.options = {

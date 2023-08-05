@@ -9,8 +9,8 @@
 
     &-img, &-video {
       display: block;
-      object-fit: cover;
       width: 100%;
+      object-fit: cover;
       @include mediaOnlyMobile {
         min-height: 100vh;
       }
@@ -20,33 +20,33 @@
 
 .swiper-pagination {
   @include flex(center, center);
-  bottom: 16px;
-  left: 50%;
   position: absolute;
-  transform: translate(-50%, 0);
   z-index: 1;
+  left: 50%;
+  bottom: 16px;
+  transform: translate(-50%, 0);
 
   @include mediaLaptop {
     bottom: 30px;
   }
 
   &-bullet {
-    background: white;
-    cursor: pointer;
     display: inline-block;
+    width: 46px;
     height: 2px;
     margin: 0 10px;
-    opacity: 0.8;
+    cursor: pointer;
     transition: background-color 0.5s, opacity 0.5s;
-    width: 46px;
+    opacity: 0.8;
+    background: white;
 
     @include mediaLaptop {
       width: 80px;
     }
 
     &-active {
-      background: #82756e;
       opacity: 1;
+      background: #80756e;
     }
   }
 }

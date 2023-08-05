@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+        name="viewport">
+  <meta content="ie=edge" http-equiv="X-UA-Compatible">
+  <title>Бонусная программа</title>
+</head>
+<body>
+<div id="app">
+  import @includes/header.html;
+
+  <main class="main">
+    <div class="breadcrumbs">
+      <div class="breadcrumbs-container">
+        <a class="breadcrumb" href="/">Главная</a>
+        <a class="breadcrumb" href="/lk">Личный кабинет</a>
+        <a class="breadcrumb active" href="/lk/bonuses">Бонусная программа</a>
+      </div>
+    </div>
+
+    <div class="info">
+      <div class="info-container">
+        import @includes/lk-nav.html;
+
+        <div class="info-main">
+          <div class="bonuses-container">
+            <h1 class="info-title">Бонусная программа</h1>
+            <div class="bonuses-banner">
+              <div class="bonuses-banner-header">
+                <span>Накоплено баллов</span>
+                <span>1 балл = 1 ₽</span>
+              </div>
+              <div class="bonuses-banner-value">1450</div>
+            </div>
+            <div class="bonuses-terms">
+              <details class="details" data-details="details" open>
+                <summary class="details-summary" data-details="summary">
+                  <span class="bonuses-title">Условия бонусной программы</span>
+                  <button class="details-button" data-details="button" type="button">
+                    <span class="iconfont icon-arrow-down"></span>
+                  </button>
+                </summary>
+                <div class="details-body" data-details="body">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                  dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                  aliquip
+                  ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
+                  eu
+                  fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                  deserunt mollit anim id est laborum.
+                </div>
+              </details>
+            </div>
+            <h2 class="bonuses-title">История начислений</h2>
+            <div class="bonuses-history">
+              repeat 3 times:
+              <article class="bonuses-history-item">
+                <div class="bonuses-history-body">
+                  <h3 class="bonuses-history-title"> Заказ №33333333</h3>
+                  <div class="bonuses-history-date">02.04.2023</div>
+                </div>
+                <div class="bonuses-history-quantity">+1500</div>
+              </article>
+              <article class="bonuses-history-item">
+                <div class="bonuses-history-body">
+                  <h3 class="bonuses-history-title"> Заказ №33333333</h3>
+                  <div class="bonuses-history-date">Отменен</div>
+                </div>
+                <div class="bonuses-history-quantity error">-500</div>
+              </article>
+              end;
+
+            </div>
+            <button class="bonuses-history-button" type="button">
+              <span>Смотреть всю историю</span>
+              <span class="iconfont icon-arrow-down"></span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  import @includes/footer.html;
+  import @includes/modals.html;
+  import @includes/cookie.html;
+</div>
+</body>
+</html>

@@ -61,7 +61,7 @@
     letter-spacing: 0.02em;
   }
   &-name {
-    color: #82756e;
+    color: #80756e;
   }
   &-value {
     color: #505050;
@@ -69,7 +69,7 @@
 
   &-points {
     border-radius: 4px;
-    background: #756bff;
+    background: #766cff;
     color: white;
     font-size: 17px;
     padding: 4px 10px;
@@ -145,7 +145,7 @@
   background: #e9e9e9;
   border: 1px solid transparent;
   border-radius: 4px;
-  color: #82756e;
+  color: #80756e;
   font-size: 14px;
   height: 44px;;
   padding: 0 10px;
@@ -160,7 +160,7 @@
   background: white;
   border: 1px solid transparent;
   border-radius: 4px;
-  color: #82756e;
+  color: #80756e;
   font-size: 14px;
   height: 44px;;
   padding: 0 10px;
@@ -172,7 +172,7 @@
 }
 
 @mixin buttonAppointment {
-  color: #756bff;
+  color: #766cff;
   display: inline-block;
   letter-spacing: 0.02em;
   text-align: left;
@@ -220,7 +220,7 @@
   height: 44px;;
   color: white;
   border-radius: 4px;
-  background: #756bff;
+  background: #766cff;
 }
 
 @mixin pageTitle {
@@ -235,6 +235,24 @@
   }
   @include mediaDesktop {
     font-size: 20px;
+  }
+}
+
+@mixin overlay {
+  position: fixed;
+  z-index: 101;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.5s;
+  pointer-events: none;
+  opacity: 0;
+  background: rgba(#505050, 0.5);
+
+  &.active {
+    pointer-events: auto;
+    opacity: 1;
   }
 }
 
