@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+        name="viewport">
+  <meta content="ie=edge" http-equiv="X-UA-Compatible">
+  <title>Управление подписками</title>
+</head>
+<body>
+<div id="app">
+  import @includes/header.html;
+
+  <main class="main">
+    <div class="breadcrumbs">
+      <div class="breadcrumbs-container">
+        <a class="breadcrumb" href="/">Главная</a>
+        <a class="breadcrumb" href="/lk">Личный кабинет</a>
+        <a class="breadcrumb active" href="/lk/subscriptions">Управление подписками</a>
+      </div>
+    </div>
+
+    <div class="info">
+      <div class="info-container">
+        import @includes/lk-nav.html;
+
+        <div class="info-main">
+          <h1 class="info-title">Управление подписками</h1>
+          <div class="text">
+            Здесь вы можете подписаться
+            на интересующие вас рассылки.
+            И отменить неактуальные для вас темы.
+          </div>
+          <form class="subscriptions-form">
+            <label class="subscriptions-label">
+              <input class="subscriptions-checkbox" name="news" type="checkbox">
+              <span class="subscriptions-label-body">
+                <span class="subscriptions-label-name">Новости</span>
+                <span class="subscriptions-label-description">
+                  Узнавайте первыми наши последние новости и информацию о новиках.
+                </span>
+              </span>
+            </label>
+            <label class="subscriptions-label">
+              <input class="subscriptions-checkbox" name="news" type="checkbox">
+              <span class="subscriptions-label-body">
+                <span class="subscriptions-label-name">SALE</span>
+                <span class="subscriptions-label-description">
+                  Регулярная рассылка с информацией о скидках, сезонных и специальных предложениях.
+                </span>
+              </span>
+            </label>
+            <button class="subscriptions-submit">
+              <span>Сохранить изменения</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  import @includes/footer.html;
+  import @includes/modals.html;
+  import @includes/cookie.html;
+</div>
+</body>
+</html>
