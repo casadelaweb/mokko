@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+        name="viewport">
+  <meta content="ie=edge" http-equiv="X-UA-Compatible">
+  <title>Мои заказы</title>
+</head>
+<body>
+<div id="app">
+  import @includes/header.html;
+
+  <main class="main">
+    <div class="breadcrumbs">
+      <div class="breadcrumbs-container">
+        <a class="breadcrumb" href="/">Главная</a>
+        <a class="breadcrumb" href="/lk">Личный кабинет</a>
+        <a class="breadcrumb active" href="/lk/orders">Мои заказы</a>
+      </div>
+    </div>
+
+    <div class="info">
+      <div class="info-container">
+        import @includes/lk-nav.html;
+
+        <div class="info-main">
+          <h1 class="info-title">Мои заказы</h1>
+          <div class="info-description">
+            У вас пока нет активных заказов. <br>
+            Чтобы это исправить, перейдите в каталог и соберите свой идеальный гардероб.
+          </div>
+          <a class="orders-button" href="/catalog">
+            <span>Перейти в каталог</span>
+          </a>
+          <div class="orders-cards">
+            <article class="orders-card">
+              <a href="/catalog">
+                <img alt="img" class="orders-card-img" loading="lazy" src="src/assets/img/menu/category-1.jpg">
+              </a>
+              <h2 class="orders-card-title">
+                <a href="/catalog">Новинки</a>
+              </h2>
+            </article>
+            <article class="orders-card">
+              <a href="/catalog">
+                <img alt="img" class="orders-card-img" loading="lazy" src="src/assets/img/menu/category-2.jpg">
+              </a>
+              <h2 class="orders-card-title">
+                <a href="/catalog">Бестселлеры</a>
+              </h2>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  import @includes/footer.html;
+  import @includes/modals.html;
+  import @includes/cookie.html;
+</div>
+</body>
+</html>

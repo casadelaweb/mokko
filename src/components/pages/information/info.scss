@@ -126,6 +126,19 @@
     }
   }
 
+  &-description {
+    font-size: 14px;
+    line-height: 1.4;
+    margin: 20px 0;
+    @include mediaTablet {
+      font-size: 16px;
+      margin: 32px 0;
+    }
+    @include mediaLaptop {
+      font-size: 18px;
+    }
+  }
+
   &-form-test {
     // @include flex($d: column);
     font-size: 14px;

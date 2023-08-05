@@ -1,0 +1,64 @@
+@import 'src/styles/shared';
+
+.orders {
+  //&-layout {
+  //  @include mediaTabletBg {
+  //    @include flex;
+  //  }
+  //}
+  //
+  //&-info {
+  //  @include mediaTabletBg {
+  //    max-width: 340px;
+  //  }
+  //}
+
+  &-button {
+    @include buttonBrown;
+    margin: 20px 0 32px;
+    @include mediaTablet {
+      max-width: 232px;
+      margin: 32px 0 42px;
+    }
+  }
+
+  &-card {
+    position: relative;
+    z-index: 0;
+    display: inline-block;
+    width: 100%;
+    height: auto;
+    margin-bottom: 14px;
+    @include mediaTablet {
+      width: 286px;
+      height: 286px;
+      margin: 0 10px 14px 0;
+    }
+    @include mediaDesktop {
+      width: 408px;
+      height: 408px;
+    }
+
+    a {
+      display: inline-block;
+    }
+
+    &-img {
+      border-radius: 8px;
+    }
+
+    &-title {
+      font-size: 20px;
+      font-style: normal;
+      letter-spacing: 1px;
+      position: absolute;
+      z-index: 1;
+      left: 50%;
+      bottom: 40px;
+      width: 100%;
+      transform: translate(-50%, 0);
+      text-align: center;
+      color: white;
+    }
+  }
+}
