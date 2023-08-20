@@ -45,7 +45,6 @@ document.addEventListener('DOMContentLoaded', () => {
     },
   })
 
-
   // let isHovering: boolean = false
   // const hooksCustom = {
   //   afterMouseEnter(data) {

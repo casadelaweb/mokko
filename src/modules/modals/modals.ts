@@ -1,6 +1,6 @@
 import 'src/modules/modals/modals.scss'
 import { Hooks, Options, Parameters } from 'src/modules/modals/modals.types'
-import { throwEvent } from 'src/scripts/helpers.ts'
+import { throwEvent } from 'src/scripts/helpers'
 
 class Modals {
   private static readonly events = {
@@ -18,9 +18,9 @@ class Modals {
   private readonly onBeforeOpen: any
   private readonly onBeforeClose: any
   // eslint-disable-next-line no-unused-vars
-  private readonly onClick: (event) => void
+  private readonly onClick: (event: MouseEvent) => any
   // eslint-disable-next-line no-unused-vars
-  private readonly onKeyUp: (event) => void
+  private readonly onKeyUp: (event: KeyboardEvent) => any
 
   constructor({ hooks, }) {
     this.options = {
@@ -107,7 +107,7 @@ class Modals {
 
     modal.classList.remove('active')
 
-    new Promise((resolve) => {
+    new Promise<void>((resolve) => {
 
       setTimeout(() => {
         this.parameters.all.forEach((modal) => modal.classList.remove('current'))
@@ -179,7 +179,7 @@ class Modals {
     const { body, } = document
     const { selectors, } = this.options
 
-    const { target, }: { target: HTMLElement } = event
+    const target = event.target as HTMLElement
     const conditions = {
       buttonOpen: target.closest(selectors.buttonOpen),
       buttonClose: target.closest(selectors.buttonClose),

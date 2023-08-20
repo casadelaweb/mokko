@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const catalogGalleryModalSlider: HTMLElement = body.querySelector('.catalog-detail-gallery-modal-slider .swiper-wrapper')
 
   galleryItems.forEach((galleryItem: HTMLElement, index: number) => {
-    galleryItem.dataset.slideId = `${index}`
+    galleryItem.dataset.slideId = `${ index }`
     const galleryModalItem: HTMLElement = document.createElement('div')
     galleryModalItem.classList.add('swiper-slide')
     galleryModalItem.innerHTML = '<div class="catalog-detail-gallery-modal-item"></div>'
@@ -56,6 +56,5 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     })
   }
-
 
 })

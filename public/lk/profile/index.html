@@ -29,48 +29,51 @@
           <div class="text">
             Добро пожаловать в Личный кабинет!
             Здесь вы можете скорректировать или дополнить данные о себе. Посмотреть историю заказов и сформировать
-            новые.
-            А также подписаться на полезные рассылки.
+            новые. А также подписаться на полезные рассылки.
           </div>
 
           <form class="profile-form">
-            <label class="profile-label">
-              <span class="profile-name">Имя</span>
-              <input autocomplete="off" class="profile-input" placeholder="Имя" required type="text">
-              <span class="profile-warning"> Заполните это поле правильно </span>
-            </label>
-            <label class="profile-label">
-              <span class="profile-name">Фамилия</span>
-              <input autocomplete="off" class="profile-input" placeholder="Фамилия" required type="text">
-              <span class="profile-warning"></span>
-            </label>
-            <label class="profile-label">
-              <span class="profile-name">Почта</span>
-              <input autocomplete="off" class="profile-input" data-mask="email" placeholder="Почта" required
-                     type="text">
-              <span class="profile-warning"></span>
-            </label>
-            <label class="profile-label">
-              <span class="profile-name">Пароль</span>
-              <input autocomplete="off" class="profile-input" placeholder="Пароль" required type="password">
-              <span class="profile-warning"></span>
-            </label>
-            <label class="profile-label">
-              <span class="profile-name">Новый пароль</span>
-              <input autocomplete="off" class="profile-input" placeholder="Новый пароль" required type="password">
-              <span class="profile-warning"></span>
-            </label>
-            <label class="profile-label">
-              <span class="profile-name">Телефон</span>
-              <input autocomplete="off" class="profile-input" data-mask="tel" placeholder="Телефон" required
-                     type="text">
-              <span class="profile-warning"></span>
-            </label>
-            <label class="profile-label">
-              <span class="profile-name">Дата рождения</span>
-              <input autocomplete="off" class="profile-input" placeholder="Дата рождения" required type="password">
-              <span class="profile-warning"></span>
-            </label>
+            <div class="profile-form-layout">
+              <label class="profile-label _firstname">
+                <span class="profile-name">Имя</span>
+                <input autocomplete="off" class="profile-input" placeholder="Имя" required type="text">
+                <span class="profile-warning"> Заполните это поле правильно </span>
+              </label>
+              <label class="profile-label _lastname">
+                <span class="profile-name">Фамилия</span>
+                <input autocomplete="off" class="profile-input" placeholder="Фамилия" required type="text">
+                <span class="profile-warning"></span>
+              </label>
+              <label class="profile-label _email">
+                <span class="profile-name">Почта</span>
+                <input autocomplete="off" class="profile-input" data-mask="email" placeholder="Почта" required
+                       type="text">
+                <span class="profile-warning"></span>
+              </label>
+              <label class="profile-label _password">
+                <span class="profile-name">Пароль</span>
+                <input autocomplete="off" class="profile-input" placeholder="Пароль" required type="password">
+                <span class="profile-warning"></span>
+              </label>
+              <label class="profile-label _password-new">
+                <span class="profile-name">Новый пароль</span>
+                <input autocomplete="off" class="profile-input" placeholder="Новый пароль" required type="password">
+                <span class="profile-warning"></span>
+              </label>
+              <label class="profile-label _tel">
+                <span class="profile-name">Телефон</span>
+                <input autocomplete="off" class="profile-input" data-mask="tel" placeholder="Телефон" required
+                       type="text">
+                <span class="profile-warning"></span>
+              </label>
+              <label class="profile-label _birthday">
+                <span class="profile-name">Дата рождения</span>
+                <input autocomplete="off" class="profile-input" placeholder="Дата рождения" required type="date"
+                       value="1987-09-02">
+                <span class="profile-warning"></span>
+              </label>
+            </div>
+
             <button class="profile-submit" type="submit">
               <span>Сохранить изменения</span>
             </button>

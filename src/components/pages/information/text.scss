@@ -3,7 +3,7 @@
 .text {
   font-size: 14px;
   line-height: 1.4;
-  margin-bottom: 48px;
+  margin-bottom: 42px;
   color: #80756e;
   @include mediaTablet {
     font-size: 15px;
@@ -91,10 +91,10 @@
       }
 
       &::before {
+        text-align: center;
         content: counter(ol-list-counter);
         width: 20px;
         height: 20px;
-        text-align: center;
         border-radius: 50%;
         background: white;
         @include mediaTabletBg {

@@ -97,7 +97,6 @@ export class Catalog {
       buttonPrev.classList.add('active')
       buttonNext.classList.add('active')
 
-
       if (this.hooks) {
         const data = this.elements.cards.find((cardEl) => cardEl.card === card)
         this.hooks.afterMouseEnter(data)
@@ -116,7 +115,6 @@ export class Catalog {
       sizes.classList.remove('active')
       buttonPrev.classList.remove('active')
       buttonNext.classList.remove('active')
-
 
       if (this.hooks) {
         const data = this.elements.cards.find((cardEl) => cardEl.card === card)

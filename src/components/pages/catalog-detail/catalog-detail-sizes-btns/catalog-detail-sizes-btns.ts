@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
         button.classList.add(activeClass)
 
         const textArr: string[] = button.textContent.trim().split(' ')
-        sizeBtn.children[0].textContent = `${textArr[0]} (${textArr[1]})`
+        sizeBtn.children[0].textContent = `${ textArr[0] } (${ textArr[1] })`
       }
     })
   }
