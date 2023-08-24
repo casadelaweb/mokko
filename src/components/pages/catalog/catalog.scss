@@ -69,8 +69,8 @@
   &-title {
     font-size: 12px;
     letter-spacing: 0.02em;
-    margin-right: auto;
     text-transform: uppercase;
+    margin-right: auto;
     @include mediaMobileConventional {
       font-size: 14px;
     }

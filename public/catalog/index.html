@@ -1,11 +1,8 @@
 <!doctype html>
 <html lang="ru">
-<head>
-  <meta charset="UTF-8">
-  <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
-        name="viewport">
-  <meta content="ie=edge" http-equiv="X-UA-Compatible">
-  <title>Mokko Brand | Каталог</title>
+<head itemscope itemtype="http://schema.org/WPHeader">
+  import @includes/meta/main.html;
+  <title itemprop="headline">Mokko Brand | Каталог</title>
 </head>
 <body>
 <div id="app">
@@ -28,142 +25,8 @@
           </button>
         </div>
         <div class="catalog-layout" data-catalog="layout">
-          <div class="filters" data-modal="catalog-filters">
-            <div class="filters-sticky">
+          import @includes/catalog/filters.html;
 
-              <form class="filters-mobile">
-                <div class="filters-header">
-                  <span>Фильтры</span>
-                  <button class="filters-close" data-modal-close type="button">
-                    <span class="iconfont icon-close"></span>
-                  </button>
-                </div>
-                <div class="filters-body">
-                  <details class="details" data-details="details">
-                    <summary class="details-summary" data-details="summary">
-                  <span class="details-summary-content">
-                    <span>Категории</span>
-                    <button class="details-button" type="button">
-                      <span class="iconfont icon-arrow-down"></span>
-                    </button>
-                  </span>
-                      <span class=" details-selected"></span>
-                    </summary>
-                    <div class="details-body" data-details="body">
-                      <label><input name="category" type="checkbox"><span>Платья</span></label>
-                      <label><input name="category" type="checkbox"><span>Нарядная одежда</span></label>
-                      <label><input name="category" type="checkbox"><span>Блузы и рубашки</span></label>
-                      <label><input name="category" type="checkbox"><span>Брюки и юбки</span></label>
-                      <label><input name="category" type="checkbox"><span>Верхняя одежда</span></label>
-                      <label><input name="category" type="checkbox"><span>Джемперы и кардиганы</span></label>
-                      <label><input name="category" type="checkbox"><span>Костюмы и жакеты</span></label>
-                      <label><input name="category" type="checkbox"><span>Футболки и топы</span></label>
-                      <label><input name="category" type="checkbox"><span>Аксессуары</span></label>
-                    </div>
-                  </details>
-                  <details class="details" data-details="details">
-                    <summary class="details-summary" data-details="summary">
-                  <span class="details-summary-content">
-                    <span>Сортировать</span>
-                    <button class="details-button" type="button">
-                      <span class="iconfont icon-arrow-down"></span>
-                    </button>
-                  </span>
-                      <span class=" details-selected"></span>
-                    </summary>
-                    <div class="details-body" data-details="body">
-                      <label> <input name="sorting" type="radio"> <span> По новизне </span> </label>
-                      <label> <input name="sorting" type="radio"> <span> По популярности </span> </label>
-                      <label> <input name="sorting" type="radio"> <span> По возрастанию цены </span> </label>
-                      <label> <input name="sorting" type="radio"> <span> По убыванию цены </span> </label>
-                      <label> <input name="sorting" type="radio"> <span> Товары по скидке </span> </label>
-                    </div>
-                  </details>
-                  <details class="details" data-details="details">
-                    <summary class="details-summary" data-details="summary">
-                  <span class="details-summary-content">
-                    <span>Размер</span>
-                    <button class="details-button" type="button">
-                      <span class="iconfont icon-arrow-down"></span>
-                    </button>
-                  </span>
-                      <span class=" details-selected"></span>
-                    </summary>
-                    <div class="details-body" data-details="body">
-                      <label> <input name="sizes" type="checkbox"> <span> XS </span> </label>
-                      <label> <input name="sizes" type="checkbox"> <span> S </span> </label>
-                      <label> <input name="sizes" type="checkbox"> <span> M </span> </label>
-                      <label> <input name="sizes" type="checkbox"> <span> L </span> </label>
-                      <label> <input name="sizes" type="checkbox"> <span> XL </span> </label>
-                      <label> <input name="sizes" type="checkbox"> <span> XXL </span> </label>
-                    </div>
-                  </details>
-                  <details class="details" data-details="details">
-                    <summary class="details-summary" data-details="summary">
-                  <span class="details-summary-content">
-                    <span>Цена</span>
-                    <button class="details-button" type="button">
-                      <span class="iconfont icon-arrow-down"></span>
-                    </button>
-                  </span>
-                      <span class=" details-selected"></span>
-                    </summary>
-                    <div class="details-body" data-details="body">
-                      <div class="select-prices">
-                        <input class="select-input" placeholder="от 1 999 ₽" type="text">
-                        <input class="select-input" placeholder="до 29 999 ₽" type="text">
-                      </div>
-                      <div data-catalog-prices></div>
-                    </div>
-                  </details>
-                  <details class="details" data-details="details">
-                    <summary class="details-summary" data-details="summary">
-                  <span class="details-summary-content">
-                    <span>Цвет</span>
-                    <button class="details-button" type="button">
-                      <span class="iconfont icon-arrow-down"></span>
-                    </button>
-                  </span>
-                      <span class=" details-selected"></span>
-                    </summary>
-                    <div class="details-body" data-details="body">
-                      <label> <input name="color" type="checkbox"> <span> Белый и золотой</span> </label>
-                      <label> <input name="color" type="checkbox"> <span> Белый и молочный</span> </label>
-                      <label> <input name="color" type="checkbox"> <span> Черный </span> </label>
-                      <label> <input name="color" type="checkbox"> <span> Бежевый и золотой </span> </label>
-                      <label> <input name="color" type="checkbox"> <span> Зеленый и изумрудный </span> </label>
-                      <label> <input name="color" type="checkbox"> <span>Красный и бордовый </span> </label>
-                      <label> <input name="color" type="checkbox"> <span> Оливковый и хаки </span> </label>
-                      <label> <input name="color" type="checkbox"> <span> Коричневый и шоколадный </span> </label>
-                    </div>
-                  </details>
-                </div>
-                <div class="filters-buttons">
-                  <button class="filters-reset" type="button">
-                    <span>Сбросить</span>
-                  </button>
-                  <button class="filters-submit" type="submit">
-                    <span>Применить</span>
-                  </button>
-                </div>
-              </form>
-
-              <div class="filters-desktop">
-                <h2 class="filters-title">Категории</h2>
-                <a class="filters-link" href="/catalog">Смотреть всё</a>
-                <a class="filters-link" href="/catalog">Платья</a>
-                <a class="filters-link active" href="/catalog">Нарядная одежда</a>
-                <a class="filters-link" href="/catalog">Блузы и рубашки</a>
-                <a class="filters-link" href="/catalog">Брюки и юбки</a>
-                <a class="filters-link" href="/catalog">Верхняя одежда</a>
-                <a class="filters-link" href="/catalog">Джемперы и кардиганы</a>
-                <a class="filters-link" href="/catalog">Костюмы и жакеты</a>
-                <a class="filters-link" href="/catalog">Футболки и топы</a>
-                <a class="filters-link" href="/catalog">Аксессуары</a>
-              </div>
-
-            </div>
-          </div>
           <div class="catalog-main">
             <div class="catalog-header desktop" data-catalog="header-desktop">
               <h1 class="catalog-title">Каталог</h1>
@@ -177,7 +40,7 @@
                       <span class="iconfont icon-arrow-down"></span>
                     </button>
                   </div>
-                  <div class=" select-options">
+                  <div class="select-options">
                     <label class="select-option">
                       <input class="select-checkbox" name="sizes" type="checkbox"> <span> XS </span>
                     </label>
@@ -209,7 +72,7 @@
                       <span class="iconfont icon-arrow-down"></span>
                     </button>
                   </div>
-                  <div class=" select-options">
+                  <div class="select-options">
                     <div class="select-prices">
                       <input class="select-input" placeholder="от 1 999 ₽" type="text">
                       <input class="select-input" placeholder="до 29 999 ₽" type="text">
@@ -229,7 +92,7 @@
                       <span class="iconfont icon-arrow-down"></span>
                     </button>
                   </div>
-                  <div class=" select-options">
+                  <div class="select-options">
                     <label class="select-option">
                       <input class="select-checkbox" name="color" type="checkbox"> <span> Белый и золотой</span>
                     </label>
@@ -307,122 +170,21 @@
             <div class="catalog-cards">
               repeat 9 times:
 
-              import @includes/catalog-card.html;
+              import @includes/catalog/card.html;
 
               end;
             </div>
             <button class="catalog-more" data-catalog="update" type="button">
               <span>Показать еще</span>
             </button>
-            <div class="catalog-pagination">
-
-              <a class="catalog-pagination-prev" href="/catalog">
-                <span class="iconfont icon-arrow-left"></span>
-              </a>
-
-              <div class="catalog-pagination-list">
-                <a class="catalog-pagination-item active" href="/catalog">
-                  <span>1</span>
-                </a>
-                <a class="catalog-pagination-item" href="/catalog">
-                  <span>2</span>
-                </a>
-                <a class="catalog-pagination-item" href="/catalog">
-                  <span>3</span>
-                </a>
-                <a class="catalog-pagination-item" href="/catalog">
-                  <span>4</span>
-                </a>
-
-                <span class="catalog-pagination-item">...</span>
-
-                <a class="catalog-pagination-item" href="/catalog">
-                  <span>18</span>
-                </a>
-              </div>
-
-              <a class="catalog-pagination-next" href="/catalog">
-                <span class="iconfont icon-arrow-right"></span>
-              </a>
-
-            </div>
+            import @includes/catalog/pagination.html;
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <form class="preview" data-modal="preview" data-preview="form">
-    <input hidden name="size" type="text">
-    <input hidden name="color" type="text">
-
-    <button class="preview-close" data-modal-close type="button">
-      <span class="iconfont icon-arrow-down"></span>
-      <span class="iconfont icon-close"></span>
-    </button>
-
-    <div class="preview-body">
-      <div class="swiper preview-slider">
-        <button class="preview-slider-button-prev" type="button">
-          <span class="iconfont icon-arrow-left"></span>
-        </button>
-        <button class="preview-slider-button-next" type="button">
-          <span class="iconfont icon-arrow-right"></span>
-        </button>
-
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <a class="preview-img" href="/catalog/catalog-detail">
-              <img alt="img" loading="lazy" src="src/assets/img/section/product-3.jpg">
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="preview-info">
-        <div class="preview-discount">-30%</div>
-        <h2 class="preview-title">
-          <a href="/catalog/catalog-detail">Относительно длинное название продукта, содержащее длинные слова</a>
-        </h2>
-        <div class="preview-prices">
-          <div class="preview-price _old">7 799 ₽</div>
-          <div class="preview-price _current">5 000 ₽</div>
-        </div>
-        <div class="preview-colors">
-          <button class="preview-color" data-preview="color" type="button">
-            <span style="background: #766cff"></span>
-          </button>
-          <button class="preview-color active" data-preview="color" type="button">
-            <span style="background: lightsalmon"></span>
-          </button>
-          <button class="preview-color" data-preview="color" type="button">
-            <span style="background: black"></span>
-          </button>
-        </div>
-      </div>
-    </div>
-    <div class="preview-footer">
-      <div class="preview-sizes">
-        <div class="preview-sizes-title">Выберите размер:</div>
-        <div class="preview-sizes-list">
-          <button class="preview-size" data-preview="size" type="button"><span>S <br> 36</span></button>
-          <button class="preview-size active" data-preview="size" type="button"><span>M <br> 38</span></button>
-          <button class="preview-size" data-preview="size" type="button"><span>L <br> 40</span></button>
-          <button class="preview-size" data-preview="size" type="button"><span>XL <br> 42</span></button>
-          <button class="preview-size" data-preview="size" type="button"><span>XXL <br> 44</span></button>
-          <button class="preview-size" data-preview="size" type="button"><span>3XL <br> 46</span></button>
-          <button class="preview-size" data-preview="size" type="button"><span>4XL <br> 48</span></button>
-        </div>
-      </div>
-      <div class="preview-buttons">
-        <button class="preview-cart" type="submit">
-          <span>Добавить в корзину</span>
-        </button>
-        <button class="preview-favourite" type="button">
-          <span class="iconfont icon-heart"></span>
-        </button>
-      </div>
-    </div>
-  </form>
+  import @includes/catalog/preview.html;
 
   import @includes/footer.html;
   import @includes/modals.html;

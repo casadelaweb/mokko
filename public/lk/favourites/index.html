@@ -1,11 +1,8 @@
 <!doctype html>
 <html lang="ru">
-<head>
-  <meta charset="UTF-8">
-  <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
-        name="viewport">
-  <meta content="ie=edge" http-equiv="X-UA-Compatible">
-  <title>Избранное </title>
+<head itemscope itemtype="http://schema.org/WPHeader">
+  import @includes/meta/main.html;
+  <title itemprop="headline">Избранное </title>
 </head>
 <body>
 <div id="app">
@@ -22,14 +19,35 @@
 
     <div class="info">
       <div class="info-container">
-        import @includes/lk-nav.html;
 
         <div class="info-main">
-          <h1 class="info-title">Избранное</h1>
+          <div class="catalog-layout" data-catalog="layout">
+            import @includes/catalog/filters.html;
+            <div class="catalog-header mobile">
+              import @includes/lk-nav.html;
+
+              <button class="catalog-header-button" data-modal-open="catalog-filters" type="button">
+                <span class="iconfont icon-filters"></span>
+              </button>
+              <button class="catalog-header-button" data-catalog-layout="row" type="button">
+                <span class="iconfont icon-square"></span>
+              </button>
+              <button class="catalog-header-button" data-catalog-layout="grid" type="button">
+                <span class="iconfont icon-squares-four"></span>
+              </button>
+            </div>
+            <h1 class="info-title">Избранное</h1>
+
+            <div class="catalog-cards">
+              import @includes/catalog/card.html;
+              import @includes/catalog/card-out-of-stock.html;
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </main>
+  import @includes/catalog/preview.html;
 
   import @includes/footer.html;
   import @includes/modals.html;

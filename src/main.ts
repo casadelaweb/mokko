@@ -8,7 +8,7 @@ import { globalScrollController } from 'src/scripts/global-scroll-controller'
 import { Select } from 'src/modules/select/select'
 import { Details } from 'src/modules/details/details'
 import { Masks } from 'src/modules/masks/masks'
-import { Tooltip } from 'src/modules/toolip/tooltip'
+import { Tooltip } from 'src/modules/tooltip/tooltip'
 
 document.addEventListener('DOMContentLoaded', () => {
   lazyloadInstance.update()

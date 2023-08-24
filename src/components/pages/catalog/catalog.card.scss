@@ -5,6 +5,12 @@
   z-index: 0;
   min-width: 0;
 
+  &._disabled {
+    .catalog-card-slider {
+      opacity: 0.5;
+    }
+  }
+
   &-discount, &-favourite {
     position: absolute;
     z-index: 1;
@@ -104,15 +110,15 @@
   &-sizes {
     @include flex(center);
     font-size: 10px;
+    text-transform: uppercase;
     position: absolute;
     z-index: 1;
-    left: 0;
     bottom: 0;
+    left: 0;
     width: 100%;
     padding: 10px;
     transition: transform 0.5s;
     transform: translate(0, 125%);
-    text-transform: uppercase;
     pointer-events: none;
     background: rgba(white, 0.75);
     @include mediaLaptop {
@@ -182,8 +188,8 @@
     }
 
     &-previous {
-      margin-right: 1em;
       text-decoration: line-through;
+      margin-right: 1em;
     }
 
     &-current {
