@@ -26,28 +26,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
   new Swiper('.section-layout', {
     ...sharedSettings,
-    autoplay: { delay: 10000, },
+    autoplay: {delay: 10000,},
     breakpoints: {
       768: {
         slidesPerView: 3,
         spaceBetween: 14,
       },
-      1024: { slidesPerView: 3, },
-      1280: { slidesPerView: 4, },
+      1024: {slidesPerView: 3,},
+      1280: {slidesPerView: 4,},
     },
   })
 
   new Swiper('.slider-small', {
     ...sharedSettings,
-    autoplay: { delay: 5000, },
+    autoplay: {delay: 5000,},
     breakpoints: {
       768: {
         slidesPerView: 3,
         spaceBetween: 14,
       },
-      1024: { slidesPerView: 4, },
-      1280: { slidesPerView: 5, },
-      1920: { slidesPerView: 6, },
+      1024: {slidesPerView: 4,},
+      1280: {slidesPerView: 5,},
+      1920: {slidesPerView: 6,},
     },
   })
 })

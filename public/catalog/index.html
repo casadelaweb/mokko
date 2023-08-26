@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="ru">
-<head itemscope itemtype="http://schema.org/WPHeader">
+<head itemscope itemtype="https://schema.org/WPHeader">
   import @includes/meta/main.html;
   <title itemprop="headline">Mokko Brand | Каталог</title>
 </head>
@@ -11,153 +11,266 @@
   <main class="main">
     <section class="catalog">
       <div class="catalog-container">
-        <div class="catalog-header mobile">
-          <h1 class="catalog-title">Каталог</h1>
-
-          <button class="catalog-header-button" data-modal-open="catalog-filters" type="button">
-            <span class="iconfont icon-filters"></span>
-          </button>
-          <button class="catalog-header-button" data-catalog-layout="row" type="button">
-            <span class="iconfont icon-square"></span>
-          </button>
-          <button class="catalog-header-button" data-catalog-layout="grid" type="button">
-            <span class="iconfont icon-squares-four"></span>
-          </button>
-        </div>
         <div class="catalog-layout" data-catalog="layout">
-          import @includes/catalog/filters.html;
+          import @includes/catalog/catalog-aside.html;
 
           <div class="catalog-main">
-            <div class="catalog-header desktop" data-catalog="header-desktop">
+            <div class="catalog-header" data-catalog="header-desktop">
               <h1 class="catalog-title">Каталог</h1>
 
-              <form class="catalog-filters">
-                <div class="select" data-select>
-                  <div class="select-current">
-                    <span class="select-current-text"> Размер </span>
-                    <div class="select-current-value"></div>
-                    <button class="select-current-button" type="button">
-                      <span class="iconfont icon-arrow-down"></span>
-                    </button>
-                  </div>
-                  <div class="select-options">
-                    <label class="select-option">
-                      <input class="select-checkbox" name="sizes" type="checkbox"> <span> XS </span>
-                    </label>
-                    <label class="select-option">
-                      <input class="select-checkbox" name="sizes" type="checkbox"> <span> S </span>
-                    </label>
-                    <label class="select-option">
-                      <input class="select-checkbox" name="sizes" type="checkbox"> <span> M </span>
-                    </label>
-                    <label class="select-option">
-                      <input class="select-checkbox" name="sizes" type="checkbox"> <span> L </span>
-                    </label>
-                    <label class="select-option">
-                      <input class="select-checkbox" name="sizes" type="checkbox"> <span> XL </span>
-                    </label>
-                    <label class="select-option">
-                      <input class="select-checkbox" name="sizes" type="checkbox"> <span> XXL </span>
-                    </label>
-                    <button class="select-button" type="button">
-                      <span>Применить</span>
-                    </button>
-                  </div>
+              <form class="catalog-filters" data-modal="catalog-filters">
+                <input hidden id="catalog-reset" type="reset">
+                <input hidden id="catalog-submit" type="submit">
+
+                <!-- только для мобильной версии -->
+                <div class="catalog-filters-header">
+                  <span>Фильтры</span>
+                  <button class="catalog-filters-close" data-modal-close type="button">
+                    <span class="iconfont icon-close"></span>
+                  </button>
                 </div>
-                <div class="select" data-select>
-                  <div class="select-current">
-                    <span class="select-current-text"> Цена </span>
-                    <div class="select-current-value"></div>
-                    <button class="select-current-button" type="button">
-                      <span class="iconfont icon-arrow-down"></span>
-                    </button>
-                  </div>
-                  <div class="select-options">
-                    <div class="select-prices">
-                      <input class="select-input" placeholder="от 1 999 ₽" type="text">
-                      <input class="select-input" placeholder="до 29 999 ₽" type="text">
+
+                <div class="catalog-filters-body">
+                  <div class="catalog-filter" data-details="details">
+                    <div class="catalog-filter-summary" data-details="summary">
+                      <div class="catalog-filter-summary-content">
+                        <span>Категории</span>
+                        <button class="catalog-filter-button" type="button"><span
+                          class="iconfont icon-arrow-down"></span>
+                        </button>
+                      </div>
+                      <span class="catalog-filter-selected"></span>
                     </div>
-                    <div data-catalog-prices></div>
+                    <div class="catalog-filter-body" data-details="body">
+                      <label><input name="category" type="checkbox"><span>Платья</span></label>
+                      <label><input name="category" type="checkbox"><span>Нарядная одежда</span></label>
+                      <label><input name="category" type="checkbox"><span>Блузы и рубашки</span></label>
+                      <label><input name="category" type="checkbox"><span>Брюки и юбки</span></label>
+                      <label><input name="category" type="checkbox"><span>Верхняя одежда</span></label>
+                      <label><input name="category" type="checkbox"><span>Джемперы и кардиганы</span></label>
+                      <label><input name="category" type="checkbox"><span>Костюмы и жакеты</span></label>
+                      <label><input name="category" type="checkbox"><span>Футболки и топы</span></label>
+                      <label><input name="category" type="checkbox"><span>Аксессуары</span></label>
+                    </div>
+                  </div>
+                  <div class="catalog-filter" data-details="details">
+                    <div class="catalog-filter-summary" data-details="summary">
+                      <div class="catalog-filter-summary-content">
+                        <span>Сортировать</span>
+                        <button class="catalog-filter-button" type="button">
+                          <span class="iconfont icon-arrow-down"></span>
+                        </button>
+                      </div>
+                      <span class="catalog-filter-selected"></span>
+                    </div>
+                    <div class="catalog-filter-body" data-details="body">
+                      <label> <input name="sorting" type="radio"> <span> По новизне </span> </label>
+                      <label> <input name="sorting" type="radio"> <span> По популярности </span> </label>
+                      <label> <input name="sorting" type="radio"> <span> По возрастанию цены </span> </label>
+                      <label> <input name="sorting" type="radio"> <span> По убыванию цены </span> </label>
+                      <label> <input name="sorting" type="radio"> <span> Товары по скидке </span> </label>
+                    </div>
+                  </div>
+                  <div class="catalog-filter" data-details="details">
+                    <div class="catalog-filter-summary" data-details="summary">
+                      <div class="catalog-filter-summary-content">
+                        <span>Размер</span>
+                        <button class="catalog-filter-button" type="button">
+                          <span class="iconfont icon-arrow-down"></span>
+                        </button>
+                      </div>
+                      <span class="catalog-filter-selected"></span>
+                    </div>
+                    <div class="catalog-filter-body" data-details="body">
+                      <label> <input name="sizes" type="checkbox"> <span> XS </span> </label>
+                      <label> <input name="sizes" type="checkbox"> <span> S </span> </label>
+                      <label> <input name="sizes" type="checkbox"> <span> M </span> </label>
+                      <label> <input name="sizes" type="checkbox"> <span> L </span> </label>
+                      <label> <input name="sizes" type="checkbox"> <span> XL </span> </label>
+                      <label> <input name="sizes" type="checkbox"> <span> XXL </span> </label>
+                    </div>
+                  </div>
+                  <div class="catalog-filter" data-details="details">
+                    <div class="catalog-filter-summary" data-details="summary">
+                      <div class="catalog-filter-summary-content">
+                        <span>Цена</span>
+                        <button class="catalog-filter-button" type="button">
+                          <span class="iconfont icon-arrow-down"></span>
+                        </button>
+                      </div>
+                      <span class="catalog-filter-selected"></span>
+                    </div>
+                    <div class="catalog-filter-body" data-details="body">
+                      <div class="select-prices">
+                        <input class="select-input" placeholder="от 1 999 ₽" type="text">
+                        <input class="select-input" placeholder="до 29 999 ₽" type="text">
+                      </div>
+                      <div data-catalog-prices></div>
+                    </div>
+                  </div>
+                  <div class="catalog-filter" data-details="details">
+                    <div class="catalog-filter-summary" data-details="summary">
+                      <div class="catalog-filter-summary-content">
+                        <span>Цвет</span>
+                        <button class="catalog-filter-button" type="button">
+                          <span class="iconfont icon-arrow-down"></span>
+                        </button>
+                      </div>
+                      <span class="catalog-filter-selected"></span>
+                    </div>
+                    <div class="catalog-filter-body" data-details="body">
+                      <label> <input name="color" type="checkbox"> <span> Белый и золотой</span> </label>
+                      <label> <input name="color" type="checkbox"> <span> Белый и молочный</span> </label>
+                      <label> <input name="color" type="checkbox"> <span> Черный </span> </label>
+                      <label> <input name="color" type="checkbox"> <span> Бежевый и золотой </span> </label>
+                      <label> <input name="color" type="checkbox"> <span> Зеленый и изумрудный </span> </label>
+                      <label> <input name="color" type="checkbox"> <span>Красный и бордовый </span> </label>
+                      <label> <input name="color" type="checkbox"> <span> Оливковый и хаки </span> </label>
+                      <label> <input name="color" type="checkbox"> <span> Коричневый и шоколадный </span> </label>
+                    </div>
+                  </div>
+                </div>
 
-                    <button class="select-button" type="button">
-                      <span>Применить</span>
-                    </button>
-                  </div>
-                </div>
-                <div class="select" data-select>
-                  <div class="select-current">
-                    <span class="select-current-text"> Цвет </span>
-                    <div class="select-current-value"></div>
-                    <button class="select-current-button" type="button">
-                      <span class="iconfont icon-arrow-down"></span>
-                    </button>
-                  </div>
-                  <div class="select-options">
-                    <label class="select-option">
-                      <input class="select-checkbox" name="color" type="checkbox"> <span> Белый и золотой</span>
-                    </label>
-                    <label class="select-option">
-                      <input class="select-checkbox" name="color" type="checkbox"> <span> Белый и молочный</span>
-                    </label>
-                    <label class="select-option">
-                      <input class="select-checkbox" name="color" type="checkbox"> <span> Черный </span>
-                    </label>
-                    <label class="select-option">
-                      <input class="select-checkbox" name="color" type="checkbox">
-                      <span> Бежевый и золотой </span>
-                    </label>
-                    <label class="select-option">
-                      <input class="select-checkbox" name="color" type="checkbox">
-                      <span> Зеленый и изумрудный </span>
-                    </label>
-                    <label class="select-option">
-                      <input class="select-checkbox" name="color" type="checkbox">
-                      <span>Красный и бордовый </span>
-                    </label>
-                    <label class="select-option">
-                      <input class="select-checkbox" name="color" type="checkbox"> <span> Оливковый и хаки </span>
-                    </label>
-                    <label class="select-option">
-                      <input class="select-checkbox" name="color" type="checkbox">
-                      <span> Коричневый и шоколадный </span>
-                    </label>
-                    <button class="select-button" type="button">
-                      <span>Применить</span>
-                    </button>
-                  </div>
+                <!-- только для мобильной версии -->
+                <div class="catalog-filters-footer">
+                  <label class="catalog-filters-reset" for="catalog-reset" type="button">
+                    <span>Сбросить</span>
+                  </label>
+                  <label class="catalog-filters-submit" for="catalog-submit" type="submit">
+                    <span>Применить</span>
+                  </label>
                 </div>
 
-                <div class="select" data-select="sorting">
-                  <div class="select-current">
-                    <!-- <span class="select-current-text"> По новизне </span> -->
-                    <div class="select-current-value"></div>
-                    <button class="select-current-button" type="button">
-                      <span class="iconfont icon-arrow-down"></span>
-                    </button>
+                <!--<div class="catalog-filters-desktop">
+                  <div class="select" data-select>
+                    <div class="select-current">
+                      <span class="select-current-text"> Размер </span>
+                      <div class="select-current-value"></div>
+                      <button class="select-current-button" type="button">
+                        <span class="iconfont icon-arrow-down"></span>
+                      </button>
+                    </div>
+                    <div class="select-options">
+                      <label class="select-option">
+                        <input class="select-checkbox" name="sizes" type="checkbox"> <span> XS </span>
+                      </label>
+                      <label class="select-option">
+                        <input class="select-checkbox" name="sizes" type="checkbox"> <span> S </span>
+                      </label>
+                      <label class="select-option">
+                        <input class="select-checkbox" name="sizes" type="checkbox"> <span> M </span>
+                      </label>
+                      <label class="select-option">
+                        <input class="select-checkbox" name="sizes" type="checkbox"> <span> L </span>
+                      </label>
+                      <label class="select-option">
+                        <input class="select-checkbox" name="sizes" type="checkbox"> <span> XL </span>
+                      </label>
+                      <label class="select-option">
+                        <input class="select-checkbox" name="sizes" type="checkbox"> <span> XXL </span>
+                      </label>
+                      <button class="select-button" type="button">
+                        <span>Применить</span>
+                      </button>
+                    </div>
                   </div>
-                  <div class="select-options">
-                    <label class="select-option active">
-                      <input class="select-checkbox" name="sorting" type="radio"> <span> По новизне </span>
-                    </label>
-                    <label class="select-option">
-                      <input class="select-checkbox" name="sorting" type="radio"> <span> По популярности </span>
-                    </label>
-                    <label class="select-option">
-                      <input class="select-checkbox" name="sorting" type="radio">
-                      <span> По возрастанию цены </span>
-                    </label>
-                    <label class="select-option">
-                      <input class="select-checkbox" name="sorting" type="radio">
-                      <span> По убыванию цены </span>
-                    </label>
-                    <label class="select-option">
-                      <input class="select-checkbox" name="sorting" type="radio">
-                      <span> Товары по скидке </span>
-                    </label>
+                  <div class="select" data-select>
+                    <div class="select-current">
+                      <span class="select-current-text"> Цена </span>
+                      <div class="select-current-value"></div>
+                      <button class="select-current-button" type="button">
+                        <span class="iconfont icon-arrow-down"></span>
+                      </button>
+                    </div>
+                    <div class="select-options">
+                      <div class="select-prices">
+                        <input class="select-input" placeholder="от 1 999 ₽" type="text">
+                        <input class="select-input" placeholder="до 29 999 ₽" type="text">
+                      </div>
+                      <div data-catalog-prices></div>
+
+                      <button class="select-button" type="button">
+                        <span>Применить</span>
+                      </button>
+                    </div>
                   </div>
-                </div>
+                  <div class="select" data-select>
+                    <div class="select-current">
+                      <span class="select-current-text"> Цвет </span>
+                      <div class="select-current-value"></div>
+                      <button class="select-current-button" type="button">
+                        <span class="iconfont icon-arrow-down"></span>
+                      </button>
+                    </div>
+                    <div class="select-options">
+                      <label class="select-option">
+                        <input class="select-checkbox" name="color" type="checkbox"> <span> Белый и золотой</span>
+                      </label>
+                      <label class="select-option">
+                        <input class="select-checkbox" name="color" type="checkbox"> <span> Белый и молочный</span>
+                      </label>
+                      <label class="select-option">
+                        <input class="select-checkbox" name="color" type="checkbox"> <span> Черный </span>
+                      </label>
+                      <label class="select-option">
+                        <input class="select-checkbox" name="color" type="checkbox">
+                        <span> Бежевый и золотой </span>
+                      </label>
+                      <label class="select-option">
+                        <input class="select-checkbox" name="color" type="checkbox">
+                        <span> Зеленый и изумрудный </span>
+                      </label>
+                      <label class="select-option">
+                        <input class="select-checkbox" name="color" type="checkbox">
+                        <span>Красный и бордовый </span>
+                      </label>
+                      <label class="select-option">
+                        <input class="select-checkbox" name="color" type="checkbox"> <span> Оливковый и хаки </span>
+                      </label>
+                      <label class="select-option">
+                        <input class="select-checkbox" name="color" type="checkbox">
+                        <span> Коричневый и шоколадный </span>
+                      </label>
+                      <button class="select-button" type="button">
+                        <span>Применить</span>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="select" data-select="sorting">
+                    <div class="select-current">
+                      <div class="select-current-value"></div>
+                      <button class="select-current-button" type="button">
+                        <span class="iconfont icon-arrow-down"></span>
+                      </button>
+                    </div>
+                    <div class="select-options">
+                      <label class="select-option active">
+                        <input class="select-checkbox" name="sorting" type="radio"> <span> По новизне </span>
+                      </label>
+                      <label class="select-option">
+                        <input class="select-checkbox" name="sorting" type="radio"> <span> По популярности </span>
+                      </label>
+                      <label class="select-option">
+                        <input class="select-checkbox" name="sorting" type="radio">
+                        <span> По возрастанию цены </span>
+                      </label>
+                      <label class="select-option">
+                        <input class="select-checkbox" name="sorting" type="radio">
+                        <span> По убыванию цены </span>
+                      </label>
+                      <label class="select-option">
+                        <input class="select-checkbox" name="sorting" type="radio">
+                        <span> Товары по скидке </span>
+                      </label>
+                    </div>
+                  </div>
+                </div>-->
               </form>
 
+              <button class="catalog-header-button" data-modal-open="catalog-filters" type="button">
+                <span class="iconfont icon-filters"></span>
+              </button>
               <button class="catalog-header-button" data-catalog-layout="row"
                       style="height: auto; width: auto;" type="button">
                 <span class="iconfont icon-squares-six"></span>
@@ -167,6 +280,7 @@
                 <span class="iconfont icon-squares-eight"></span>
               </button>
             </div>
+
             <div class="catalog-cards">
               repeat 9 times:
 
@@ -174,6 +288,7 @@
 
               end;
             </div>
+
             <button class="catalog-more" data-catalog="update" type="button">
               <span>Показать еще</span>
             </button>

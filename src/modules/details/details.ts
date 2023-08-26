@@ -2,7 +2,7 @@ import { elementData, selectors, options } from 'src/modules/details/details.typ
 import './details.scss'
 
 export class Details {
-  private static readonly optionsDefault: options = { preferButtonIfExist: true, }
+  private static readonly optionsDefault: options = {preferButtonIfExist: true,}
   public elements: elementData[]
   public selectors: selectors
   public options: options
@@ -11,7 +11,7 @@ export class Details {
   private readonly durationMax: number
   private readonly durationPerHeight: number
   // eslint-disable-next-line no-unused-vars
-  private readonly onClick: (event) => void
+  private readonly onClick: (event: MouseEvent) => void
 
   constructor(optionsCustom?: options) {
     this.selectors = {
@@ -19,7 +19,7 @@ export class Details {
       summary: '[data-details=summary]',
       button: '[data-details=button]',
       content: '[data-details=body]',
-      scrollbars: { vertical: 'has-vertical-scrollbar', },
+      scrollbars: {vertical: 'has-vertical-scrollbar',},
     }
     this.elements = []
     this.durationMin = 250
@@ -40,7 +40,7 @@ export class Details {
   }
 
   public updateElements(): void {
-    const { body, } = document
+    const {body,} = document
 
     const details: HTMLElement[] = Array.from(body.querySelectorAll(this.selectors.details))
     if (details.length > 0) this.elements = this.updateElementsData(details)

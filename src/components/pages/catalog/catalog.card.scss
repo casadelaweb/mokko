@@ -68,9 +68,9 @@
       font-size: 20px;
       top: 20px + 8px + 8px;
     }
-    @include mediaLaptop {
-      display: none;
-    }
+    // @include mediaLaptop {
+    //   display: none;
+    // }
 
     .mode-row & {
       font-size: 20px;

@@ -1,6 +1,6 @@
 @import 'src/styles/shared';
 
-.catalog-detail {
+.product {
   margin-bottom: 100px;
 
   &-container {
@@ -79,7 +79,7 @@
       width: 7px;
       height: 13px;
       margin-right: 7px;
-      background: url('src/assets/img/catalog-detail/catalog-detail-back.png');
+      background: url('src/assets/img/product/product-back.png');
       background-size: cover;
       @include mediaTablet {
         width: 8px;

@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const { body, } = document
+  const {body,} = document
 
   document.addEventListener('click', (event: MouseEvent) => {
     const target = event.target as HTMLElement

@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="ru">
-<head itemscope itemtype="http://schema.org/WPHeader">
+<head itemscope itemtype="https://schema.org/WPHeader">
   <meta charset="UTF-8">
   <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
         name="viewport">
@@ -12,31 +12,31 @@
   import @includes/header.html;
 
   <main class="main">
-    <div class="catalog-detail-top" data-catalog="header-desktop">
+    <div class="product-top" data-catalog="header-desktop">
       <div class="container">
 
         <div class="breadcrumbs">
           <a class="breadcrumb" href="/">Главная</a>
           <a class="breadcrumb" href="/catalog">Каталог</a>
           <a class="breadcrumb" href="/catalog">Нарядная одежда</a>
-          <a class="breadcrumb active" href="/catalog/catalog-detail">Платье</a>
+          <a class="breadcrumb active" href="/catalog/product">Платье</a>
         </div>
-        <a class="catalog-detail-back" href="/catalog">
+        <a class="product-back" href="/catalog">
           Назад
         </a>
       </div>
     </div>
 
-    <section class="catalog-detail">
-      <div class="catalog-detail-container">
-        <div class="catalog-detail-left">
-          <div class="catalog-detail-gallery">
-            <div class="swiper catalog-detail-gallery-slider">
+    <section class="product">
+      <div class="product-container">
+        <div class="product-left">
+          <div class="product-gallery">
+            <div class="swiper product-gallery-slider">
               <div class="swiper-wrapper">
                 repeat 7 times:
                 <div class="swiper-slide">
-                  <div class="catalog-detail-gallery-item">
-                    <img alt="img" loading="lazy" src="src/assets/img/catalog-detail/catalog-detail-gallery-item.png">
+                  <div class="product-gallery-item">
+                    <img alt="img" loading="lazy" src="src/assets/img/product/product-gallery-item.png">
                   </div>
                 </div>
                 end;
@@ -45,88 +45,88 @@
             </div>
           </div>
         </div>
-        <div class="catalog-detail-right">
-          <div class="catalog-detail-right-sticky" data-catalog-detail="sticky">
+        <div class="product-right">
+          <div class="product-right-sticky" data-product="sticky">
 
-            <div class="catalog-detail-price">
-              <div class="catalog-detail-price-percent">SALE -30%</div>
-              <h1 class="catalog-detail-price-title">
+            <div class="product-price">
+              <div class="product-price-percent">SALE -30%</div>
+              <h1 class="product-price-title">
                 Очень длинное название платья
               </h1>
-              <div class="catalog-detail-prices">
-                <span class="catalog-detail-price-sale">7 799 ₽</span>
-                <span class="catalog-detail-price-regular">5 000 ₽</span>
+              <div class="product-prices">
+                <span class="product-price-sale">7 799 ₽</span>
+                <span class="product-price-regular">5 000 ₽</span>
               </div>
             </div>
-            <a class="catalog-detail-instalment" href="#" target="_blank">
+            <a class="product-instalment" href="#" target="_blank">
               <img alt="img"
-                   class="catalog-detail-instalment-logo"
+                   class="product-instalment-logo"
                    loading="lazy"
-                   src="src/assets/img/catalog-detail/instalment-logo.png">
+                   src="src/assets/img/product/instalment-logo.png">
               <span>4 платежа по 1 000 ₽ </span>
               <span class="iconfont icon-arrow-right"></span>
             </a>
 
-            <div class="catalog-detail-colors">
-              <div class="catalog-detail-title">
+            <div class="product-colors">
+              <div class="product-title">
                 Цвет
               </div>
-              <div class="catalog-detail-colors-items">
-                <a class="catalog-detail-colors-item-active" href="/catalog/catalog-detail"
+              <div class="product-colors-items">
+                <a class="product-colors-item-active" href="/catalog/product"
                    style="background:  #766cff"></a>
-                <a href="/catalog/catalog-detail" style="background:  #d87f77"></a>
+                <a href="/catalog/product" style="background:  #d87f77"></a>
               </div>
               Сиреневый жемчуг
             </div>
 
-            <div class="catalog-detail-btns">
-              <div class="catalog-detail-btns-price"></div>
-              <div class="catalog-detail-btns-cont">
-                <button class="catalog-detail-btn catalog-detail-btn-size"
-                        data-toggle-href="/catalog-detail-sizes-cont">
+            <div class="product-btns">
+              <div class="product-btns-price"></div>
+              <div class="product-btns-cont">
+                <button class="product-btn product-btn-size"
+                        data-toggle-href="/product-sizes-cont">
                   <span>Размеры</span>
                   <span class="iconfont icon-arrow-down"></span>
 
                 </button>
-                <button class="catalog-detail-btn catalog-detail-btn-buy"></button>
+                <button class="product-btn product-btn-buy"></button>
 
-                <button class="catalog-detail-btn-wishlist" type="button">
+                <button class="product-btn-wishlist" type="button">
                   <span class="iconfont icon-heart"></span>
                 </button>
 
               </div>
-              <div class="catalog-detail-sizes-cont" id="catalog-detail-sizes-cont">
-                <div class="catalog-detail-title">
+              <div class="product-sizes-cont" id="product-sizes-cont">
+                <div class="product-title">
                   Размеры
                 </div>
 
-                <div class="catalog-detail-sizes-items">
+                <div class="product-sizes-items">
 
-                  <div class="catalog-detail-sizes-item">
+                  <div class="product-sizes-item">
                     S <span>36</span>
                   </div>
-                  <div class="catalog-detail-sizes-item">
+                  <div class="product-sizes-item">
                     M <span>36</span>
                   </div>
-                  <div class="catalog-detail-sizes-item">
+                  <div class="product-sizes-item">
                     L <span>36</span>
                   </div>
-                  <div class="catalog-detail-sizes-item">
+                  <div class="product-sizes-item">
                     XL <span>36</span>
                   </div>
-                  <div class="catalog-detail-sizes-item">
+                  <div class="product-sizes-item">
                     XXL <span>36</span>
                   </div>
-                  <div class="catalog-detail-sizes-item">
+                  <div class="product-sizes-item">
                     XXXL <span>36</span>
                   </div>
 
                 </div>
 
-                <div class="catalog-detail-sizes-info">
+                <div class="product-sizes-info">
                   <span>Параметры модели: 170/87/64/88</span>
                   <span> Размер на модели: XS</span>
-                  <div class="catalog-detail-sizes-table-url" data-modal-open="sizeguide">
+                  <div class="product-sizes-table-url" data-modal-open="sizeguide">
                     Таблица размеров
                   </div>
                 </div>
@@ -135,7 +135,7 @@
               </div>
             </div>
 
-            <div class="catalog-detail-info">
+            <div class="product-info">
               <details class="details" data-details="details">
                 <summary class="details-summary" data-details="summary">
                   <button class="details-button" type="button">
@@ -145,7 +145,7 @@
                 </summary>
                 <div class="details-body" data-details="body">
 
-                  <div class="catalog-detail-info-text catalog-detail-info-text-border">
+                  <div class="product-info-text product-info-text-border">
                     <p>
                       Артикул: <span>156653</span> <br>
                       Состав: <span>60% вискоза, 20% модал, 20% п/э</span>
@@ -178,19 +178,19 @@
                 </summary>
                 <div class="details-body" data-details="body">
 
-                  <div class="catalog-detail-info-text">
+                  <div class="product-info-text">
                     Актуальность информации уточняйте
                     по телефону.
                   </div>
-                  <div class="catalog-detail-info-title">Санкт-Петербург</div>
+                  <div class="product-info-title">Санкт-Петербург</div>
 
                   repeat 3 times:
 
-                  <div class="catalog-detail-info-item">
+                  <div class="product-info-item">
                     ТРК «Академ-Парк» <br>
                     Гражданский просп., 41, 2 этаж
                     <a href="tel:+79990331844">+7 (999) 033-18-44</a>
-                    <div class="catalog-detail-info-item-sizes">
+                    <div class="product-info-item-sizes">
                       <span>S</span>
                       <span>M</span>
                       <span>L</span>
@@ -200,15 +200,15 @@
 
                   end;
 
-                  <div class="catalog-detail-info-title">Хабаровск</div>
+                  <div class="product-info-title">Хабаровск</div>
 
                   repeat 3 times:
 
-                  <div class="catalog-detail-info-item">
+                  <div class="product-info-item">
                     ТРК «Академ-Парк» <br>
                     Гражданский просп., 41, 2 этаж
                     <a href="tel:+79990331844">+7 (999) 033-18-44</a>
-                    <div class="catalog-detail-info-item-sizes">
+                    <div class="product-info-item-sizes">
                       <span>S</span>
                       <span>M</span>
                       <span>L</span>
@@ -228,7 +228,7 @@
                 </summary>
                 <div class="details-body" data-details="body">
 
-                  <div class="catalog-detail-info-text catalog-detail-info-text-border">
+                  <div class="product-info-text product-info-text-border">
                     <p> Варианты оплаты зависят от выбора типа доставки.</p>
 
                     <p>
@@ -243,12 +243,12 @@
                     </p>
                   </div>
 
-                  <div class="catalog-detail-info-title">
+                  <div class="product-info-title">
                     <span class="iconfont icon-location"></span>
                     <span>Санкт-Петербург</span>
                   </div>
 
-                  <div class="catalog-detail-info-item">
+                  <div class="product-info-item">
                     Курьерская служба <br>
                     СДЭК <br>
                     BOXBERRY <br>
@@ -256,19 +256,19 @@
                   </div>
 
 
-                  <div class="catalog-detail-info-title">
+                  <div class="product-info-title">
                     <span class="iconfont icon-location"></span>
                     <span>Остальные регионы</span>
                   </div>
 
 
-                  <div class="catalog-detail-info-item catalog-detail-info-item-noBorder">
+                  <div class="product-info-item product-info-item-noBorder">
                     СДЭК <br>
                     BOXBERRY <br>
                     Бесплатная доставка при заказе от 7000 ₽
                   </div>
 
-                  <div class="catalog-detail-info-more">
+                  <div class="product-info-more">
                     <a href="/page404">Подробнее об оплате</a>
                     <a href="/page404">Подробнее о доставке</a>
                   </div>
@@ -282,7 +282,7 @@
       </div>
     </section>
 
-    <section class="catalog-detail-products section">
+    <section class="product-products section">
       <div class="section-container">
         <div class="section-header">
           <h2 class="section-title">
@@ -304,7 +304,7 @@
                   <span class="iconfont icon-heart"></span>
                 </button>
 
-                <a href="/catalog/catalog-detail">
+                <a href="/catalog/product">
                   <img alt="img" class="section-product-img" loading="lazy"
                        src="src/assets/img/section/product-5.jpg">
                 </a>
@@ -324,7 +324,7 @@
                   <span class="iconfont icon-heart"></span>
                 </button>
 
-                <a href="/catalog/catalog-detail">
+                <a href="/catalog/product">
                   <img alt="img" class="section-product-img" loading="lazy"
                        src="src/assets/img/section/product-6.jpg">
                 </a>
@@ -344,7 +344,7 @@
                   <span class="iconfont icon-heart"></span>
                 </button>
 
-                <a href="/catalog/catalog-detail">
+                <a href="/catalog/product">
                   <img alt="img" class="section-product-img" loading="lazy"
                        src="src/assets/img/section/product-7.jpg">
                 </a>
@@ -369,7 +369,7 @@
         </div>
       </div>
     </section>
-    <section class="catalog-detail-products section">
+    <section class="product-products section">
       <div class="section-container">
         <div class="section-header">
           <h2 class="section-title">
@@ -391,7 +391,7 @@
                   <span class="iconfont icon-heart"></span>
                 </button>
 
-                <a href="/catalog/catalog-detail">
+                <a href="/catalog/product">
                   <img alt="img" class="section-product-img" loading="lazy"
                        src="src/assets/img/section/product-5.jpg">
                 </a>
@@ -411,7 +411,7 @@
                   <span class="iconfont icon-heart"></span>
                 </button>
 
-                <a href="/catalog/catalog-detail">
+                <a href="/catalog/product">
                   <img alt="img" class="section-product-img" loading="lazy"
                        src="src/assets/img/section/product-6.jpg">
                 </a>
@@ -431,7 +431,7 @@
                   <span class="iconfont icon-heart"></span>
                 </button>
 
-                <a href="/catalog/catalog-detail">
+                <a href="/catalog/product">
                   <img alt="img" class="section-product-img" loading="lazy"
                        src="src/assets/img/section/product-7.jpg">
                 </a>
@@ -457,7 +457,7 @@
       </div>
 
     </section>
-    <section class="catalog-detail-products section">
+    <section class="product-products section">
       <div class="section-container">
         <div class="section-header">
           <h2 class="section-title">
@@ -479,7 +479,7 @@
                   <span class="iconfont icon-heart"></span>
                 </button>
 
-                <a href="/catalog/catalog-detail">
+                <a href="/catalog/product">
                   <img alt="img" class="section-product-img" loading="lazy"
                        src="src/assets/img/section/product-5.jpg">
                 </a>
@@ -499,7 +499,7 @@
                   <span class="iconfont icon-heart"></span>
                 </button>
 
-                <a href="/catalog/catalog-detail">
+                <a href="/catalog/product">
                   <img alt="img" class="section-product-img" loading="lazy"
                        src="src/assets/img/section/product-6.jpg">
                 </a>
@@ -519,7 +519,7 @@
                   <span class="iconfont icon-heart"></span>
                 </button>
 
-                <a href="/catalog/catalog-detail">
+                <a href="/catalog/product">
                   <img alt="img" class="section-product-img" loading="lazy"
                        src="src/assets/img/section/product-7.jpg">
                 </a>

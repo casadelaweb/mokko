@@ -33,14 +33,14 @@ document.addEventListener('DOMContentLoaded', () => {
     mousewheel: false,
     breakpoints: {
       1280: {
-        navigation: { enabled: true, },
-        pagination: { enabled: false, },
-        mousewheel: { releaseOnEdges: true, },
+        navigation: {enabled: true,},
+        // pagination: { enabled: false, },
+        mousewheel: {releaseOnEdges: true,},
       },
       1920: {
-        navigation: { enabled: true, },
-        pagination: { enabled: false, },
-        mousewheel: { releaseOnEdges: true, },
+        navigation: {enabled: true,},
+        // pagination: { enabled: false, },
+        mousewheel: {releaseOnEdges: true,},
       },
     },
   })
@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (catalogHeader) {
     window.addEventListener('scroll', () => {
-      const { scrollY, } = window
+      const {scrollY,} = window
 
       if (scrollY > catalog.elements.header.offsetHeight) {
         catalogHeader.classList.add('scrolled')

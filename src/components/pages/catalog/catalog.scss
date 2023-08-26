@@ -1,6 +1,5 @@
 @import 'src/styles/shared';
 
-
 .catalog {
   padding-top: 40px;
   @include mediaTablet {
@@ -54,18 +53,6 @@
     }
   }
 
-  &-filters {
-    display: none;
-    flex: 1 0 auto;
-    @include mediaLaptop {
-      @include flex(center);
-    }
-
-    [data-select=sorting] {
-      margin-left: auto;
-    }
-  }
-
   &-title {
     font-size: 12px;
     letter-spacing: 0.02em;
@@ -94,6 +81,17 @@
       display: grid;
       grid-template-columns: 1fr 3fr;
       column-gap: 40px;
+    }
+  }
+
+  &-aside {
+    display: none;
+    @include mediaLaptop {
+      @include flex($d: column);
+      position: sticky;
+      z-index: 0;
+      top: calc(var(--headerHeight) + 20px);
+      height: fit-content;
     }
   }
 

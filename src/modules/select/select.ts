@@ -16,7 +16,7 @@ export class Select {
       options: '.select-options',
       option: '.select-option',
     }
-    this.parameters = { current: [], }
+    this.parameters = {current: [],}
   }
 
   public init(): void {
@@ -25,7 +25,7 @@ export class Select {
   }
 
   private update(): void {
-    const { body, } = document
+    const {body,} = document
 
     const selects = Array.from(body.querySelectorAll(this.selectors.select))
 

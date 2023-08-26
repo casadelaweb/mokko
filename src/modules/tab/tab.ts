@@ -25,11 +25,11 @@ export class Tab {
     const target = event.target as HTMLElement
 
     if (target.closest(this.selectors.button)) {
-      const { body, } = document
+      const {body,} = document
       const button: HTMLElement = target.closest(this.selectors.button)
 
       const tabName: string = '[data-tab=' + button.getAttribute('data-tab') + ']'
-      const elements: HTMLElement[] = [ ...body.querySelectorAll(tabName), ]
+      const elements: HTMLElement[] = [...body.querySelectorAll(tabName),]
 
       const buttonTabContent: string = button.getAttribute('data-tab-button')
       const tabContent: HTMLElement = elements.find((element: HTMLElement) => {
