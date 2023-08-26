@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const {body,} = document
+  const { body, } = document
 
   const form: HTMLElement = body.querySelector('[data-preview=form]')
 

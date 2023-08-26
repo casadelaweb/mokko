@@ -1,25 +1,35 @@
-import { elementData, selectors, options } from 'src/modules/details/details.types'
+import { iElementData, iSelectors, iOptions } from 'src/modules/details/details.types'
 import './details.scss'
+import { isMediaAboveLaptop } from 'src/scripts/helpers'
 
 export class Details {
-  private static readonly optionsDefault: options = {preferButtonIfExist: true,}
-  public elements: elementData[]
-  public selectors: selectors
-  public options: options
+  private static readonly optionsDefault: iOptions = {
+    preferButtonIfExist: true,
+    selectors: {
+      details: '[data-details=details]',
+      summary: '[data-details=summary]',
+      button: '[data-details=button]',
+      content: '[data-details=body]',
+      scrollbars: { vertical: 'has-vertical-scrollbar', },
+    },
+    onlyUnderLaptop: false,
+  }
+  public elements: iElementData[]
+  public selectors: iSelectors
+  public options: iOptions
   private readonly easing: string
   private readonly durationMin: number
   private readonly durationMax: number
   private readonly durationPerHeight: number
   // eslint-disable-next-line no-unused-vars
   private readonly onClick: (event: MouseEvent) => void
+  //eslint-disable-next-line no-unused-vars
+  private readonly onResize: (event?: UIEvent) => void
 
-  constructor(optionsCustom?: options) {
+  constructor(optionsCustom?: iOptions) {
     this.selectors = {
-      details: '[data-details=details]',
-      summary: '[data-details=summary]',
-      button: '[data-details=button]',
-      content: '[data-details=body]',
-      scrollbars: {vertical: 'has-vertical-scrollbar',},
+      ...Details.optionsDefault.selectors,
+      ...optionsCustom?.selectors,
     }
     this.elements = []
     this.durationMin = 250
@@ -27,6 +37,7 @@ export class Details {
     this.durationPerHeight = 0.33
     this.easing = 'linear'
     this.onClick = this.handleClick.bind(this)
+    this.onResize = this.handleResize.bind(this)
 
     this.options = {
       ...Details.optionsDefault,
@@ -35,23 +46,37 @@ export class Details {
   }
 
   public init(): void {
+    this.updateListeners()
     this.updateElements()
-    this.listen()
   }
 
   public updateElements(): void {
-    const {body,} = document
+    const { body, } = document
 
     const details: HTMLElement[] = Array.from(body.querySelectorAll(this.selectors.details))
     if (details.length > 0) this.elements = this.updateElementsData(details)
   }
 
-  private listen(): void {
-    document.removeEventListener('click', this.onClick)
-    document.addEventListener('click', this.onClick)
+  private updateListeners(): void {
+    window.removeEventListener('resize', this.onResize)
+    window.addEventListener('resize', this.onResize)
+
+    this.updateClickListeners()
   }
 
-  private shrink(data: elementData): void {
+  private updateClickListeners(): void {
+    if (this.options.onlyUnderLaptop) {
+
+      document.removeEventListener('click', this.onClick)
+      if (!isMediaAboveLaptop()) document.addEventListener('click', this.onClick)
+
+    } else {
+      document.removeEventListener('click', this.onClick)
+      document.addEventListener('click', this.onClick)
+    }
+  }
+
+  private shrink(data: iElementData): void {
     data.parameters.isClosing = true
     data.details.classList.add('is-closing')
 
@@ -74,7 +99,7 @@ export class Details {
     data.parameters.animation.oncancel = () => data.parameters.isClosing = false
   }
 
-  private open(data: elementData): void {
+  private open(data: iElementData): void {
     data.details.style.height = data.details.offsetHeight + 'px'
     data.details.open = true
     window.requestAnimationFrame(() => this.expand(data))
@@ -93,7 +118,7 @@ export class Details {
     return duration
   }
 
-  private expand(data: elementData): void {
+  private expand(data: iElementData): void {
     data.parameters.isOpening = true
     data.details.classList.add('is-opening')
 
@@ -116,7 +141,7 @@ export class Details {
     data.parameters.animation.oncancel = () => data.parameters.isOpening = false
   }
 
-  private onAnimationFinish(data: elementData, open: boolean): void {
+  private onAnimationFinish(data: iElementData, open: boolean): void {
     data.details.open = open
     data.parameters.isOpen = open
     data.parameters.animation = null
@@ -153,14 +178,13 @@ export class Details {
 
   private handleClick(event: MouseEvent): void {
     const target = event.target as HTMLElement
-
     const condition = target.closest(this.selectors.summary) || target.closest(this.selectors.button)
 
     if (condition && !target.closest('a[href]')) {
       event.preventDefault()
 
       const summary = target.closest(this.selectors.summary)
-      const data: elementData = this.elements.find((data: elementData) => {
+      const data: iElementData = this.elements.find((data: iElementData) => {
         return data.summary === summary ? data : false
       })
 
@@ -173,7 +197,11 @@ export class Details {
     }
   }
 
-  private updateElementsData(elements: HTMLElement[]): elementData[] {
+  private handleResize(): void {
+    this.updateClickListeners()
+  }
+
+  private updateElementsData(elements: HTMLElement[]): iElementData[] {
     return elements.map((element: HTMLDetailsElement) => {
       return {
         details: element,

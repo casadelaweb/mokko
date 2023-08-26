@@ -31,7 +31,7 @@ export class Catalog {
     this.onMouseEnter = this.handleMouseEnter.bind(this)
     this.onMouseLeave = this.handleMouseLeave.bind(this)
 
-    if (hooksCustom) this.hooks = {...hooksCustom,}
+    if (hooksCustom) this.hooks = { ...hooksCustom, }
   }
 
   public init(): void {
@@ -45,7 +45,7 @@ export class Catalog {
   }
 
   private updateMouseListeners(): void {
-    const {body,} = document
+    const { body, } = document
 
     const cards: HTMLElement[] = Array.from(body.querySelectorAll(this.selectors.card))
 
@@ -125,17 +125,17 @@ export class Catalog {
 
   private changeLayoutMode(mode: string): void {
     switch (mode) {
-      case 'row':
-        this.elements.layout.classList.add('mode-row')
-        break
-      default:
-        this.elements.layout.classList.remove('mode-row')
-        break
+    case 'row':
+      this.elements.layout.classList.add('mode-row')
+      break
+    default:
+      this.elements.layout.classList.remove('mode-row')
+      break
     }
   }
 
   private updateElements(): catalogElements {
-    const {body,} = document
+    const { body, } = document
 
     const header: HTMLElement = body.querySelector('.header')
     const layout: HTMLElement = body.querySelector('[data-catalog=layout]')

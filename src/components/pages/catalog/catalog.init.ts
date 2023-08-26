@@ -5,6 +5,8 @@ import { accessibility as accessibilitySettings } from 'src/scripts/swiper-setti
 import { Catalog } from './catalog'
 import { isMediaAboveLaptop } from 'src/scripts/helpers'
 import './catalog.filters'
+import { Details } from 'src/modules/details/details'
+import { Select } from 'src/modules/select/select'
 
 document.addEventListener('DOMContentLoaded', () => {
   new Swiper('[data-slider=catalog-card]', {
@@ -33,14 +35,14 @@ document.addEventListener('DOMContentLoaded', () => {
     mousewheel: false,
     breakpoints: {
       1280: {
-        navigation: {enabled: true,},
+        navigation: { enabled: true, },
         // pagination: { enabled: false, },
-        mousewheel: {releaseOnEdges: true,},
+        mousewheel: { releaseOnEdges: true, },
       },
       1920: {
-        navigation: {enabled: true,},
+        navigation: { enabled: true, },
         // pagination: { enabled: false, },
-        mousewheel: {releaseOnEdges: true,},
+        mousewheel: { releaseOnEdges: true, },
       },
     },
   })
@@ -73,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (catalogHeader) {
     window.addEventListener('scroll', () => {
-      const {scrollY,} = window
+      const { scrollY, } = window
 
       if (scrollY > catalog.elements.header.offsetHeight) {
         catalogHeader.classList.add('scrolled')
@@ -82,6 +84,28 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     })
   }
+
+  new Details({
+    preferButtonIfExist: true,
+    selectors: {
+      details: '.catalog-filter',
+      summary: '.catalog-filter-summary',
+      button: '.catalog-filter-button',
+      content: '.catalog-filter-body',
+      scrollbars: { vertical: 'has-vertical-scrollbar', },
+    },
+    onlyUnderLaptop: true,
+  }).init()
+  new Select({
+    selectors: {
+      select: '.catalog-filter',
+      current: '.catalog-filter-summary',
+      value: '.catalog-filter-selected',
+      button: '.catalog-filter-button',
+      options: '.catalog-filter-body',
+      option: '.catalog-filter-label',
+    },
+  }).init()
 
   document.addEventListener('click', (event) => {
     const target = event.target as HTMLElement

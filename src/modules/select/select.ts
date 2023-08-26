@@ -1,34 +1,46 @@
 import './select.scss'
-import { selectors } from 'src/modules/select/select.types'
+import { iSelectors } from 'src/modules/select/select.types'
+
+interface iOptions {
+  selectors: iSelectors
+}
 
 export class Select {
-  private selectors: selectors
-  private parameters: {
-    current: HTMLElement | HTMLElement[]
-  }
-
-  constructor() {
-    this.selectors = {
+  private static readonly optionsDefault: iOptions = {
+    selectors: {
       select: '.select',
       current: '.select-current',
       value: '.select-current-value',
       button: '.select-current-button',
       options: '.select-options',
       option: '.select-option',
+    },
+  }
+  public elements: any[]
+  private selectors: iSelectors
+  private parameters: {
+    current: HTMLElement | HTMLElement[]
+  }
+
+  constructor(optionsCustom?: iOptions) {
+    this.selectors = {
+      ...Select.optionsDefault.selectors,
+      ...optionsCustom?.selectors,
     }
-    this.parameters = {current: [],}
+    this.parameters = { current: [], }
+    this.elements = []
   }
 
   public init(): void {
     this.listen()
     this.update()
+    console.log(this)
   }
 
   private update(): void {
-    const {body,} = document
+    const { body, } = document
 
-    const selects = Array.from(body.querySelectorAll(this.selectors.select))
-
+    const selects: HTMLElement[] = Array.from(body.querySelectorAll(this.selectors.select))
     selects.forEach((select: HTMLElement) => {
       const optionsAll = Array.from(select.querySelectorAll(this.selectors.option))
       const optionsActive = optionsAll.filter((option: HTMLElement) => option.classList.contains('active'))
@@ -39,6 +51,15 @@ export class Select {
         optionsActive.forEach((option) => valueContent = valueContent + option.textContent)
         valueContainer.textContent = valueContent
       }
+
+      this.elements.push({
+        select,
+        current: select.querySelector(this.selectors.current),
+        value: select.querySelector(this.selectors.value),
+        button: select.querySelector(this.selectors.button),
+        options: select.querySelector(this.selectors.options),
+        option: select.querySelector(this.selectors.option),
+      })
     })
   }
 

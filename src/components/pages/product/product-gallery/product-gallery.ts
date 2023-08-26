@@ -6,13 +6,13 @@ document.addEventListener('DOMContentLoaded', () => {
   new Swiper('.product-gallery-slider' as CSSSelector, {
     enabled: true,
     slidesPerView: 1,
-    modules: [Pagination,],
+    modules: [ Pagination, ],
 
     pagination: {
       el: '.swiper-pagination',
       type: 'bullets',
       clickable: true,
     },
-    breakpoints: {1024: {enabled: false,},},
+    breakpoints: { 1024: { enabled: false, }, },
   } as SwiperOptions)
 })

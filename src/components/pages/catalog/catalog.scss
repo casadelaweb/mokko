@@ -16,40 +16,35 @@
   &-header {
     @include flex(center);
     margin-bottom: 32px;
-
-    &.mobile {
-      display: flex;
-      @include mediaLaptop {
-        display: none;
-      }
+    @include mediaLaptop {
+      position: sticky;
+      z-index: 1;
+      top: var(--headerHeight);
+      flex-wrap: wrap;
+      background: white;
     }
 
-    &.desktop {
-      display: none;
-      @include mediaLaptop {
-        position: sticky;
-        z-index: 1;
-        top: 85px;
-        display: flex;
-        flex-wrap: wrap;
-        padding: 16px 0;
-        background: white;
-      }
-      @include mediaDesktop {
-        padding: 20px 0;
-      }
-
-      &.scrolled {
-        .catalog-title {
-          display: none;
-        }
+    &.scrolled {
+      .catalog-title {
+        display: none;
       }
     }
 
     &-button {
       font-size: 18px;
       flex: 0 0 auto;
+      width: auto;
+      height: auto;
       margin-left: 0.5em;
+
+      &._open-modal {
+        @include mediaLaptop {
+          display: none;
+        }
+      }
+
+      &._change-layout {
+      }
     }
   }
 
@@ -68,7 +63,7 @@
       font-size: 20px;
       flex: 0 0 auto;
       width: 100%;
-      margin-bottom: 2em;
+      margin-bottom: 40px - 14px;
     }
   }
 

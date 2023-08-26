@@ -2,7 +2,7 @@ import toggle from 'src/modules/toggle/toggle'
 
 document.addEventListener('DOMContentLoaded', () => {
   // toggle('.product-info-block-btn')
-  const {body,} = document
+  const { body, } = document
   // const sizeBtnsItems: HTMLElement[] = Array.from(body.querySelectorAll('.product-sizes-item'))
   const catalogDetail: HTMLElement = body.querySelector('.product')
   const sizeBtn: HTMLElement = body.querySelector('.product-btn-size')

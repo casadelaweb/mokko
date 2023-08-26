@@ -2,7 +2,7 @@ import { menu } from 'src/scripts/menu-instance'
 import { isMediaAboveLaptop } from 'src/scripts/helpers'
 
 document.addEventListener('DOMContentLoaded', () => {
-  const {body,} = document
+  const { body, } = document
   const header: HTMLElement = body.querySelector('.header')
   const headerHeight: number = header.offsetHeight
   const main: HTMLElement = body.querySelector('.main')
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
   })
 
   function updateHeaderHeight(): void {
-    const {body, documentElement: html,} = document
+    const { body, documentElement: html, } = document
     const header: HTMLElement = body.querySelector('.header')
     const headerHeight: string = header.offsetHeight + 'px'
     html.style.setProperty('--headerHeight', headerHeight)
@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('resize', updateHeaderHeight)
 
   function hoverHeader(): void {
-    const {scrollY,} = window
+    const { scrollY, } = window
 
     if (scrollY > headerHeight) {
       header.classList.add('scrolled')

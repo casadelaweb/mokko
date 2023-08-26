@@ -1,4 +1,4 @@
-export interface selectors {
+export interface iSelectors {
   select: string,
   current: string,
   value: string,

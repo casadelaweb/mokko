@@ -1,4 +1,4 @@
-export interface elementData {
+export interface iElementData {
   details: HTMLDetailsElement,
   summary: HTMLElement,
   button: HTMLElement,
@@ -11,7 +11,7 @@ export interface elementData {
   }
 }
 
-export interface selectors {
+export interface iSelectors {
   details: string,
   summary: string,
   button: string,
@@ -21,6 +21,8 @@ export interface selectors {
   }
 }
 
-export interface options {
+export interface iOptions {
   preferButtonIfExist: boolean,
+  selectors?: iSelectors,
+  onlyUnderLaptop?: boolean
 }

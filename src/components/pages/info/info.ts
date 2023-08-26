@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const {body,} = document
+  const { body, } = document
 
   if (body.querySelector('.info-nav')) {
     let isInfoNavActive = false

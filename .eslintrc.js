@@ -10,7 +10,7 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
   ],
   'parser': '@typescript-eslint/parser',
-  'plugins': ['@typescript-eslint',],
+  'plugins': [ '@typescript-eslint', ],
   'overrides': [],
   'parserOptions': {
     'ecmaVersion': 'latest',
