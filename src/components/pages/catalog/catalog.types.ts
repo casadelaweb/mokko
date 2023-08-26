@@ -1,4 +1,4 @@
-export interface card {
+export interface iCard {
   card: HTMLElement,
   slider: HTMLElement,
   controls: HTMLElement,
@@ -8,14 +8,14 @@ export interface card {
   }
 }
 
-export interface catalogElements {
+export interface iCatalogElements {
   header: HTMLElement,
   layout: HTMLElement,
   catalogHeaderDesktop: HTMLElement,
-  cards: card[]
+  cards: iCard[]
 }
 
-export interface selectors {
+export interface iSelectors {
   slider: string,
   controls: string,
   card: string,
@@ -25,10 +25,12 @@ export interface selectors {
   },
 }
 
-export interface hooks {
+export interface iHooks {
   // eslint-disable-next-line no-unused-vars
-  afterMouseEnter(element: card): any
+  onDOMMutation?(): any,
+  // eslint-disable-next-line no-unused-vars
+  afterMouseEnter?(element: iCard): any
 
   // eslint-disable-next-line no-unused-vars
-  afterMouseLeave(element: card): any
+  afterMouseLeave?(element: iCard): any
 }

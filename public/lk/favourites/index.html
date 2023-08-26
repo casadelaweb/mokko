@@ -2,7 +2,7 @@
 <html lang="ru">
 <head itemscope itemtype="https://schema.org/WPHeader">
   import @includes/meta/main.html;
-  <title itemprop="headline">Избранное </title>
+  <title itemprop="headline">Mokko Brand | Избранное</title>
 </head>
 <body>
 <div id="app">
@@ -17,36 +17,37 @@
       </div>
     </div>
 
-    <div class="info">
-      <div class="info-container">
+    <section class="catalog">
+      <div class="catalog-container">
+        <div class="catalog-layout" data-catalog="layout">
+          <!--import @includes/catalog/catalog-aside.html;-->
+          import @includes/lk-nav.html;
 
-        <div class="info-main">
-          <div class="catalog-layout" data-catalog="layout">
-            import @includes/catalog/filters.html;
-            <div class="catalog-header mobile">
-              import @includes/lk-nav.html;
-
-              <button class="catalog-header-button" data-modal-open="catalog-filters" type="button">
-                <span class="iconfont icon-filters"></span>
-              </button>
-              <button class="catalog-header-button" data-catalog-layout="row" type="button">
-                <span class="iconfont icon-square"></span>
-              </button>
-              <button class="catalog-header-button" data-catalog-layout="grid" type="button">
-                <span class="iconfont icon-squares-four"></span>
-              </button>
+          <div class="catalog-main">
+            <div class="catalog-header" data-catalog="header-desktop">
+              <h1 class="catalog-title">Избранное</h1>
+              import @includes/catalog/catalog-filters.html;
             </div>
-            <h1 class="info-title">Избранное</h1>
 
             <div class="catalog-cards">
+              repeat 3 times:
               import @includes/catalog/card.html;
+              end;
+              repeat 3 times:
               import @includes/catalog/card-out-of-stock.html;
+              end;
             </div>
+
+            <button class="catalog-more" data-catalog="update" type="button">
+              <span>Показать еще</span>
+            </button>
+            import @includes/catalog/pagination.html;
           </div>
         </div>
       </div>
-    </div>
+    </section>
   </main>
+
   import @includes/catalog/preview.html;
 
   import @includes/footer.html;

@@ -1,5 +1,14 @@
-<article class="catalog-card _disabled" data-catalog="card">
-  <!--<div class="catalog-card-discount"> -30%</div>-->
+<article class="catalog-card _disabled" data-catalog="card" itemscope itemtype="https://schema.org/Product">
+  <meta content="Наименование товара" itemprop="name">
+  <meta content="Краткое описание товара" itemprop="description">
+  <link href="src/assets/img/section/product-1.jpg" itemprop="image">
+  <div itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+    <meta content="7150.00" itemprop="price">
+    <meta content="RUB" itemprop="priceCurrency">
+    <link href="https://schema.org/OutOfStock" itemprop="availability">
+  </div>
+
+  <div class="catalog-card-discount"> -30%</div>
   <button class="catalog-card-favourite" type="button">
     <span class="iconfont icon-heart-fill"></span>
   </button>
@@ -22,7 +31,7 @@
         </a>
       </div>
     </div>
-    <button class="catalog-card-preview" data-modal-open="preview" disabled type="button">
+    <button class="catalog-card-preview" data-modal-open="preview" type="button">
       <span class="iconfont icon-suitcase"></span>
     </button>
     <button class="swiper-button-prev" title="Предыдущий слайд" type="button">
@@ -39,10 +48,6 @@
       <button class="catalog-card-size" type="button">XL</button>
       <button class="catalog-card-size" type="button">XXL</button>
       <button class="catalog-card-size" type="button">3XL</button>
-
-      <button class="catalog-card-cart" data-modal-open="preview" type="button">
-        <span class="iconfont icon-suitcase"></span>
-      </button>
     </div>
   </div>
 
@@ -51,16 +56,6 @@
   </h2>
   <div class="catalog-card-price">
     <span>Нет в наличии</span>
-    <!--    <div class="catalog-card-price-previous">-->
-    <!--      <span>7 999</span> <span>₽</span>-->
-    <!--    </div>-->
-    <!--    <div class="catalog-card-price-current">-->
-    <!--      <span>5 000</span> <span>₽</span>-->
-    <!--    </div>-->
   </div>
-  <!--  <div class="catalog-card-colors">-->
-  <!--    <div class="catalog-card-color" style="background: lightcoral;"></div>-->
-  <!--    <div class="catalog-card-color" style="background: lightgreen;"></div>-->
-  <!--    <div class="catalog-card-color" style="background: lightsalmon;"></div>-->
-  <!--  </div>-->
 </article>
+

@@ -1,19 +1,21 @@
-import { card, catalogElements, selectors, hooks } from './catalog.types'
-import { isMediaAboveLaptop } from 'src/scripts/helpers'
+import { iCard, iCatalogElements, iSelectors, iHooks } from './catalog.types'
+import { isMediaAboveLaptop, throwEvent } from 'src/scripts/helpers'
 
 export class Catalog {
-  public elements: catalogElements | undefined
-  public hooks: hooks
+  public elements: iCatalogElements | undefined
+  public hooks: iHooks
   private isMediaAboveLaptop: boolean
-  private readonly selectors: selectors
+  private readonly selectors: iSelectors
   // eslint-disable-next-line no-unused-vars
-  private readonly onClick: (event) => void
+  private readonly onClick: (event: MouseEvent) => void
   // eslint-disable-next-line no-unused-vars
-  private readonly onMouseEnter: (event) => void
+  private readonly onMouseEnter: (event: MouseEvent) => void
   // eslint-disable-next-line no-unused-vars
-  private readonly onMouseLeave: (event) => void
+  private readonly onMouseLeave: (event: MouseEvent) => void
+  //eslint-disable-next-line no-unused-vars
+  // private onDOMMutation: (event?) => any
 
-  constructor(hooksCustom?: hooks) {
+  constructor(hooksCustom?: iHooks) {
     this.selectors = {
       card: '[data-catalog=card]',
       slider: '[data-slider=catalog-card]',
@@ -31,17 +33,45 @@ export class Catalog {
     this.onMouseEnter = this.handleMouseEnter.bind(this)
     this.onMouseLeave = this.handleMouseLeave.bind(this)
 
-    if (hooksCustom) this.hooks = { ...hooksCustom, }
+    //if (hooksCustom) {
+    //  this.hooks = { ...hooksCustom, }
+    //  this.onDOMMutation = this.hooks.onDOMMutation.bind(this)
+    //}
   }
 
   public init(): void {
     this.update()
+    this.observeMutations()
   }
 
   public update(): void {
     this.isMediaAboveLaptop = isMediaAboveLaptop()
     this.elements = this.updateElements()
     this.listen()
+  }
+
+  private observeMutations(): void {
+    const catalog: HTMLElement = document.body.querySelector('[data-catalog=layout]')
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        if (mutation.target instanceof HTMLElement) {
+          const element: HTMLElement = mutation.target
+          if (element.matches(this.selectors.card) || element.matches('.catalog-cards')) {
+            throwEvent(mutation.target, 'catalogDOMMutation')
+            // this.update()
+          }
+        }
+      })
+    })
+
+    observer.observe(catalog, {
+      attributes: false,
+      attributeOldValue: false,
+      characterData: false,
+      characterDataOldValue: false,
+      childList: true,
+      subtree: true,
+    })
   }
 
   private updateMouseListeners(): void {
@@ -68,7 +98,7 @@ export class Catalog {
     document.addEventListener('click', this.onClick)
   }
 
-  private handleClick(event): void {
+  private handleClick(event: MouseEvent): void {
     const target = event.target as HTMLElement
 
     if (target.closest('[data-catalog-layout]')) {
@@ -85,7 +115,7 @@ export class Catalog {
     }
   }
 
-  private handleMouseEnter(event): void {
+  private handleMouseEnter(event: MouseEvent): void {
     const card = event.target as HTMLElement
 
     if (this.isMediaAboveLaptop) {
@@ -97,14 +127,14 @@ export class Catalog {
       buttonPrev.classList.add('active')
       buttonNext.classList.add('active')
 
-      if (this.hooks) {
-        const data = this.elements.cards.find((cardEl) => cardEl.card === card)
-        this.hooks.afterMouseEnter(data)
-      }
+      //if (this.hooks) {
+      //  const data = this.elements.cards.find((cardEl) => cardEl.card === card)
+      //  this.hooks.afterMouseEnter(data)
+      //}
     }
   }
 
-  private handleMouseLeave(event): void {
+  private handleMouseLeave(event: MouseEvent): void {
     const card = event.target as HTMLElement
 
     if (this.isMediaAboveLaptop) {
@@ -116,10 +146,10 @@ export class Catalog {
       buttonPrev.classList.remove('active')
       buttonNext.classList.remove('active')
 
-      if (this.hooks) {
-        const data = this.elements.cards.find((cardEl) => cardEl.card === card)
-        this.hooks.afterMouseLeave(data)
-      }
+      //if (this.hooks) {
+      //  const data = this.elements.cards.find((cardEl) => cardEl.card === card)
+      //  this.hooks?.afterMouseLeave(data)
+      //}
     }
   }
 
@@ -134,14 +164,14 @@ export class Catalog {
     }
   }
 
-  private updateElements(): catalogElements {
+  private updateElements(): iCatalogElements {
     const { body, } = document
 
     const header: HTMLElement = body.querySelector('.header')
     const layout: HTMLElement = body.querySelector('[data-catalog=layout]')
     const catalogHeaderDesktop: HTMLElement = body.querySelector('[data-catalog=header-desktop]')
     const cardsArray: HTMLElement[] = Array.from(body.querySelectorAll(this.selectors.card))
-    const cards = cardsArray.map((card: HTMLElement): card => {
+    const cards: iCard[] = cardsArray.map((card: HTMLElement): iCard => {
       const slider: HTMLElement = card.querySelector(this.selectors.slider)
       const controls: HTMLElement = card.querySelector(this.selectors.controls)
       const buttons: { prev: HTMLElement, next: HTMLElement } = {

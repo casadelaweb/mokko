@@ -9,7 +9,8 @@ import { Details } from 'src/modules/details/details'
 import { Select } from 'src/modules/select/select'
 
 document.addEventListener('DOMContentLoaded', () => {
-  new Swiper('[data-slider=catalog-card]', {
+  //@ts-ignore
+  const sliders: Swiper[] = new Swiper('[data-slider=catalog-card]', {
     modules: [
       Navigation,
       A11y,
@@ -46,33 +47,14 @@ document.addEventListener('DOMContentLoaded', () => {
       },
     },
   })
-
-  // let isHovering: boolean = false
-  // const hooksCustom = {
-  //   afterMouseEnter(data) {
-  //     isHovering = true
-  //     const currentSlider = catalogCardSlider.find((swiper) => swiper.el === data.slider)
-  //
-  //     setTimeout(() => {
-  //       if (isHovering) currentSlider.mousewheel.enable()
-  //     }, 1000)
-  //   },
-  //   afterMouseLeave(data) {
-  //     isHovering = false
-  //     const currentSlider = catalogCardSlider.find((swiper) => swiper.el === data.slider)
-  //     currentSlider.mousewheel.disable()
-  //   },
-  // }
   const catalog = new Catalog()
   catalog.init()
+  document.addEventListener('catalogDOMMutation', () => {
+    sliders.forEach((slider) => slider.update())
+    catalog.update()
+  })
 
   const catalogHeader: HTMLElement = catalog.elements.catalogHeaderDesktop
-
-  if (catalogHeader && isMediaAboveLaptop()) {
-    catalogHeader.style.overflow = 'unset'
-    catalogHeader.style.top = catalog.elements.header.offsetHeight + 'px'
-  }
-
   if (catalogHeader) {
     window.addEventListener('scroll', () => {
       const { scrollY, } = window
@@ -83,6 +65,10 @@ document.addEventListener('DOMContentLoaded', () => {
         catalogHeader.classList.remove('scrolled')
       }
     })
+    if (isMediaAboveLaptop()) {
+      catalogHeader.style.overflow = 'unset'
+      catalogHeader.style.top = catalog.elements.header.offsetHeight + 'px'
+    }
   }
 
   new Details({
@@ -106,12 +92,4 @@ document.addEventListener('DOMContentLoaded', () => {
       option: '.catalog-filter-label',
     },
   }).init()
-
-  document.addEventListener('click', (event) => {
-    const target = event.target as HTMLElement
-
-    if (target.closest('[data-catalog=update]')) {
-      catalog.update()
-    }
-  })
 })

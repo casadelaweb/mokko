@@ -9,6 +9,11 @@
     .catalog-card-slider {
       opacity: 0.5;
     }
+
+    .catalog-card-preview {
+      cursor: not-allowed;
+      // pointer-events: none;
+    }
   }
 
   &-discount, &-favourite {
@@ -256,6 +261,4 @@
       }
     }
   }
-
-
 }
