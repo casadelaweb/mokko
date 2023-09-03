@@ -1,4 +1,4 @@
-import './catalog.init'
+import './catalog'
 import './catalog.scss'
 import './catalog.card.scss'
 // import './catalog.filters'

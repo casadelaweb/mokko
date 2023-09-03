@@ -269,16 +269,6 @@
     }
   }
 
-  &-body {
-    .catalog-filters {
-      &-reset, &-submit {
-        @include mediaOnlyMobileAndAllTablets {
-          display: none;
-        }
-      }
-    }
-  }
-
   &._category {
     @include mediaLaptop {
       display: none;
@@ -290,5 +280,36 @@
       order: 1;
       margin-left: auto;
     }
+  }
+
+  &-summary {
+    max-width: 320px;
+    @include mediaLaptop {
+      max-width: 240px;
+    }
+  }
+
+  &-selected {
+    @include lineClamp(1);
+    line-height: 1;
+    @include mediaLaptop {
+      height: 1em;
+    }
+  }
+
+  &-body {
+    .catalog-filters {
+      &-reset, &-submit {
+        @include mediaOnlyMobileAndAllTablets {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &-label {
+    @include flex(center);
+    width: fit-content;
+    margin-bottom: 0.5em;
   }
 }

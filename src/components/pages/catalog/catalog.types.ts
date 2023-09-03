@@ -1,36 +1,28 @@
 export interface iCard {
-  card: HTMLElement,
-  slider: HTMLElement,
-  controls: HTMLElement,
   buttons: {
     prev: HTMLElement,
     next: HTMLElement
   }
+  card: HTMLElement,
+  controls: HTMLElement,
+  slider: HTMLElement,
 }
 
 export interface iCatalogElements {
+  cards: iCard[]
+  catalogHeaderDesktop: HTMLElement,
   header: HTMLElement,
   layout: HTMLElement,
-  catalogHeaderDesktop: HTMLElement,
-  cards: iCard[]
 }
 
 export interface iSelectors {
-  slider: string,
-  controls: string,
-  card: string,
+  buttonCatalogUpdate: string,
   buttons: {
     prev: string,
     next: string,
   },
-}
-
-export interface iHooks {
-  // eslint-disable-next-line no-unused-vars
-  onDOMMutation?(): any,
-  // eslint-disable-next-line no-unused-vars
-  afterMouseEnter?(element: iCard): any
-
-  // eslint-disable-next-line no-unused-vars
-  afterMouseLeave?(element: iCard): any
+  card: string,
+  catalogLayout: string,
+  controls: string,
+  slider: string,
 }
