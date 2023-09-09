@@ -1,6 +1,15 @@
 import './select.scss'
 import { iSelectors } from 'src/modules/select/select.types'
 
+interface iElement {
+  button: HTMLElement,
+  current: HTMLElement,
+  option: HTMLElement,
+  options: HTMLElement,
+  select: HTMLElement,
+  value: HTMLElement,
+}
+
 interface iOptions {
   selectors: iSelectors
 }
@@ -16,7 +25,7 @@ export class Select {
       option: '.select-option',
     },
   }
-  public elements: any[]
+  public elements: iElement[]
   private readonly onClick: (event: MouseEvent) => void
   private parameters: {
     current: HTMLElement | HTMLElement[]
@@ -36,6 +45,16 @@ export class Select {
   public init(): void {
     this.updateClickListeners()
     this.update()
+  }
+
+  public updateSelects(): void {
+    // если не массив, выходим сразу
+    if (!Array.isArray(this.elements)) return
+
+    // небольшая задержка, чтобы компенсировать задержку после события reset
+    setTimeout(() => {
+      this.elements.forEach((element: iElement) => this.updateTextSelected(element.select))
+    }, 100)
   }
 
   private deactivate(select: HTMLElement): void {
@@ -76,6 +95,7 @@ export class Select {
 
   private update(): void {
     this.updateElements()
+    this.updateSelects()
   }
 
   private updateClickListeners(): void {
@@ -90,15 +110,16 @@ export class Select {
 
     selects.forEach((select: HTMLElement) => {
       this.updateTextSelected(select)
-
-      this.elements.push({
-        select,
+      const element: iElement = {
+        select: select,
         current: select.querySelector(this.selectors.current),
         value: select.querySelector(this.selectors.value),
         button: select.querySelector(this.selectors.button),
         options: select.querySelector(this.selectors.options),
         option: select.querySelector(this.selectors.option),
-      })
+      }
+
+      this.elements.push(element)
     })
   }
 

@@ -13,7 +13,7 @@ export class CatalogCards {
   private readonly onMouseEnter: (event: MouseEvent) => void
   private readonly onMouseLeave: (event: MouseEvent) => void
   private readonly selectors: iSelectors
-  private swiper: Swiper | Swiper[]
+  private swiper: Swiper | Swiper[] | undefined
 
   constructor() {
     this.selectors = {
@@ -28,6 +28,7 @@ export class CatalogCards {
       buttonCatalogUpdate: '[data-catalog=update]',
     }
     this.isMediaAboveLaptop = false
+    this.swiper = undefined
 
     // cоздаем обертку для методов чтобы привязать контекст вызова
     this.onClick = this.handleClick.bind(this)
@@ -46,17 +47,24 @@ export class CatalogCards {
   public update(): void {
     this.isMediaAboveLaptop = isMediaAboveLaptop()
     this.elements = this.updateElements()
+    this.updateCatalogHeaderHeight()
     this.updateMouseListeners()
     this.updateSwiper()
   }
 
   private changeLayoutMode(mode: string): void {
     switch (mode) {
-    case 'row':
-      this.elements.layout.classList.add('mode-row')
+    case 'enlarged':
+      this.elements.layout.classList.remove('mode-chess')
+      this.elements.layout.classList.add('mode-enlarged')
+      break
+    case 'chess':
+      this.elements.layout.classList.remove('mode-enlarged')
+      this.elements.layout.classList.add('mode-chess')
       break
     default:
-      this.elements.layout.classList.remove('mode-row')
+      this.elements.layout.classList.remove('mode-enlarged')
+      this.elements.layout.classList.remove('mode-chess')
       break
     }
   }
@@ -114,6 +122,12 @@ export class CatalogCards {
   }
 
   private initSlider(): void {
+    // если на странице нет ни одного слайдера
+    if (!document.body.querySelector(this.selectors.slider)) {
+      this.swiper = undefined
+      return
+    }
+
     this.swiper = new Swiper(this.selectors.slider, {
       modules: [
         Navigation,
@@ -177,6 +191,12 @@ export class CatalogCards {
     }
   }
 
+  private updateCatalogHeaderHeight(): void {
+    const header = this.elements.catalogHeaderDesktop
+    const height: number = header ? 320 : header.offsetHeight
+    document.documentElement.style.setProperty('--catalogHeaderHeight', height + 'px')
+  }
+
   private updateCatalogListeners(): void {
     document.removeEventListener('catalogModified', this.onCatalogModified)
     document.addEventListener('catalogModified', this.onCatalogModified)
@@ -235,6 +255,8 @@ export class CatalogCards {
   }
 
   private updateSwiper(): void {
+    // если слайдера нет
+    if (this.swiper === undefined) return
 
     if (Array.isArray(this.swiper)) {
       this.swiper.forEach((slider: Swiper) => {

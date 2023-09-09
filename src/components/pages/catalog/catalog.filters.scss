@@ -285,6 +285,9 @@
   &-summary {
     max-width: 320px;
     @include mediaLaptop {
+      max-width: 200px;
+    }
+    @include mediaDesktop {
       max-width: 240px;
     }
   }

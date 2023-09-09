@@ -5,15 +5,15 @@ import { Details } from 'src/modules/details/details'
 import { Select } from 'src/modules/select/select'
 
 document.addEventListener('DOMContentLoaded', () => {
-  const catalog = new CatalogCards()
-  catalog.init()
+  const catalogCards = new CatalogCards()
+  catalogCards.init()
 
-  const catalogHeader: HTMLElement = catalog.elements.catalogHeaderDesktop
+  const catalogHeader: HTMLElement = catalogCards.elements.catalogHeaderDesktop
   if (catalogHeader) {
     window.addEventListener('scroll', () => {
       const { scrollY, } = window
 
-      if (scrollY > catalog.elements.header.offsetHeight) {
+      if (scrollY > catalogCards.elements.header.offsetHeight) {
         catalogHeader.classList.add('scrolled')
       } else {
         catalogHeader.classList.remove('scrolled')
@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
     })
     if (isMediaAboveLaptop()) {
       catalogHeader.style.overflow = 'unset'
-      catalogHeader.style.top = catalog.elements.header.offsetHeight + 'px'
+      catalogHeader.style.top = catalogCards.elements.header.offsetHeight + 'px'
     }
   }
 
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     onlyUnderLaptop: true,
   }).init()
-  new Select({
+  const catalogSelects = new Select({
     selectors: {
       select: '.catalog-filter',
       current: '.catalog-filter-summary',
@@ -45,5 +45,12 @@ document.addEventListener('DOMContentLoaded', () => {
       options: '.catalog-filter-body',
       option: '.catalog-filter-label',
     },
-  }).init()
+  })
+  catalogSelects.init()
+  const formFilters: HTMLElement = document.body.querySelector('[data-catalog=filters]')
+  if (formFilters) {
+    formFilters.addEventListener('reset', () => {
+      catalogSelects.updateSelects()
+    })
+  }
 })

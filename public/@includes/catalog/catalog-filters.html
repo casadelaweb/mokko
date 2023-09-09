@@ -1,4 +1,4 @@
-<form class="catalog-filters" data-modal="catalog-filters">
+<form class="catalog-filters" data-catalog="filters" data-modal="catalog-filters">
   <!-- кнопки применить и сбросить ссылаются на эти поля -->
   <input hidden id="catalog-reset" type="reset">
   <input hidden id="catalog-submit" type="submit">
@@ -65,19 +65,19 @@
       </div>
       <div class="catalog-filter-body">
         <label class="catalog-filter-label">
-          <input name="sorting" type="radio"> <span> По новизне </span>
+          <input name="sorting" type="radio" value="newest"> <span> По новизне </span>
         </label>
         <label class="catalog-filter-label">
-          <input name="sorting" type="radio"> <span> По популярности </span>
+          <input name="sorting" type="radio" value="popular"> <span> По популярности </span>
         </label>
         <label class="catalog-filter-label">
-          <input name="sorting" type="radio"> <span> По возрастанию цены </span>
+          <input name="sorting" type="radio" value="cheapest"> <span> По возрастанию цены </span>
         </label>
         <label class="catalog-filter-label">
-          <input name="sorting" type="radio"> <span> По убыванию цены </span>
+          <input name="sorting" type="radio" value="expensive"> <span> По убыванию цены </span>
         </label>
         <label class="catalog-filter-label">
-          <input name="sorting" type="radio"> <span> Товары по скидке </span>
+          <input name="sorting" type="radio" value="discount"> <span> Товары по скидке </span>
         </label>
         <label class="catalog-filters-submit" for="catalog-submit" type="submit">
           <span>Применить</span>
@@ -205,8 +205,11 @@
 <button class="catalog-header-button _open-modal" data-modal-open="catalog-filters" type="button">
   <span class="iconfont icon-filters"></span>
 </button>
-<button class="catalog-header-button _change-layout" data-catalog-layout="row" type="button">
+<button class="catalog-header-button _change-layout" data-catalog-layout="enlarged" type="button">
   <span class="iconfont icon-squares-six"></span>
+</button>
+<button class="catalog-header-button _change-layout" data-catalog-layout="chess" type="button">
+  []
 </button>
 <button class="catalog-header-button _change-layout" data-catalog-layout="grid" type="button">
   <span class="iconfont icon-squares-eight"></span>
