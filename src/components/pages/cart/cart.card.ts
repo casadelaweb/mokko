@@ -2,41 +2,41 @@ import { throwEvent } from 'src/scripts/helpers'
 
 interface iSelectors {
   card: string,
-  quantity: string,
+  input: string,
   minus: string,
   plus: string,
-  input: string,
   priceCurrent: string,
   priceOld: string,
+  quantity: string,
 }
 
 export interface iElement {
   card: HTMLElement,
+  input: HTMLInputElement,
+  minus: HTMLElement,
+  plus: HTMLElement,
   priceCurrent: HTMLElement,
   priceOld: HTMLElement,
   quantity: HTMLElement,
-  minus: HTMLElement,
-  plus: HTMLElement,
-  input: HTMLInputElement,
 }
 
 export class CartCard {
   public elements: iElement[]
-  private selectors: iSelectors
+  private interval: null | NodeJS.Timer
+  private readonly intervalDuration: number
+  // eslint-disable-next-line no-unused-vars
+  private readonly onClick: (event) => any
+  // eslint-disable-next-line no-unused-vars
+  private readonly onResize: () => any
   private options: {
     min: number,
     max: number,
   }
-  // eslint-disable-next-line no-unused-vars
-  private readonly onClick: (event) => any
+  private selectors: iSelectors
   // eslint-disable-next-line no-unused-vars
   private readonly stop: (event) => any
-  // eslint-disable-next-line no-unused-vars
-  private readonly onResize: () => any
-  private interval: null | NodeJS.Timer
   private timeout: null | NodeJS.Timeout
   private readonly timeoutDuration: number
-  private readonly intervalDuration: number
 
   constructor(options?) {
     this.selectors = {
@@ -68,61 +68,6 @@ export class CartCard {
     window.addEventListener('resize', this.onResize)
 
     console.log(this)
-  }
-
-  private updateListeners(): void {
-    document.removeEventListener('touchstart', this.onClick)
-    document.removeEventListener('touchend', this.stop)
-    document.removeEventListener('mousedown', this.onClick)
-    document.removeEventListener('mouseup', this.stop)
-    document.removeEventListener('mouseleave', this.stop)
-
-    if (this.isMobile()) {
-      document.addEventListener('touchstart', this.onClick)
-      document.addEventListener('touchend', this.stop)
-    } else {
-      document.addEventListener('mousedown', this.onClick)
-      document.addEventListener('mouseup', this.stop)
-      document.addEventListener('mouseleave', this.stop)
-    }
-  }
-
-  private updateElements(): iElement[] {
-    const { body, } = document
-    const cards: HTMLElement[] = Array.from(body.querySelectorAll(this.selectors.card))
-    return cards.map((card) => this.updateElement(card))
-  }
-
-  private updateElement(card: HTMLElement): iElement {
-    const input: HTMLInputElement = card.querySelector(this.selectors.input)
-    const minus: HTMLElement = card.querySelector(this.selectors.minus)
-    const plus: HTMLElement = card.querySelector(this.selectors.plus)
-    const quantity: HTMLElement = card.querySelector(this.selectors.quantity)
-    const priceCurrent: HTMLElement = card.querySelector(this.selectors.priceCurrent)
-    const priceOld: HTMLElement = card.querySelector(this.selectors.priceOld)
-
-    return {
-      card,
-      input,
-      minus,
-      plus,
-      quantity,
-      priceCurrent,
-      priceOld,
-    }
-  }
-
-  private isMobile(): boolean {
-    // console.log(('ontouchstart' in window), ('ontouchend' in window))
-    return ('ontouchstart' in window) && ('ontouchend' in window)
-  }
-
-  private increaseValue(input: HTMLInputElement): void {
-    let value = parseInt(input.value) - 1
-    value = value <= this.options.min ? this.options.min : value
-    input.value = value.toString()
-
-    throwEvent(input, 'cartCardUpdate')
   }
 
   private decreaseValue(input: HTMLInputElement): void {
@@ -165,5 +110,60 @@ export class CartCard {
   private handleStop(): void {
     clearTimeout(this.timeout)
     clearInterval(this.interval)
+  }
+
+  private increaseValue(input: HTMLInputElement): void {
+    let value = parseInt(input.value) - 1
+    value = value <= this.options.min ? this.options.min : value
+    input.value = value.toString()
+
+    throwEvent(input, 'cartCardUpdate')
+  }
+
+  private isMobile(): boolean {
+    // console.log(('ontouchstart' in window), ('ontouchend' in window))
+    return ('ontouchstart' in window) && ('ontouchend' in window)
+  }
+
+  private updateElement(card: HTMLElement): iElement {
+    const input: HTMLInputElement = card.querySelector(this.selectors.input)
+    const minus: HTMLElement = card.querySelector(this.selectors.minus)
+    const plus: HTMLElement = card.querySelector(this.selectors.plus)
+    const quantity: HTMLElement = card.querySelector(this.selectors.quantity)
+    const priceCurrent: HTMLElement = card.querySelector(this.selectors.priceCurrent)
+    const priceOld: HTMLElement = card.querySelector(this.selectors.priceOld)
+
+    return {
+      card,
+      input,
+      minus,
+      plus,
+      quantity,
+      priceCurrent,
+      priceOld,
+    }
+  }
+
+  private updateElements(): iElement[] {
+    const { body, } = document
+    const cards: HTMLElement[] = Array.from(body.querySelectorAll(this.selectors.card))
+    return cards.map((card) => this.updateElement(card))
+  }
+
+  private updateListeners(): void {
+    document.removeEventListener('touchstart', this.onClick)
+    document.removeEventListener('touchend', this.stop)
+    document.removeEventListener('mousedown', this.onClick)
+    document.removeEventListener('mouseup', this.stop)
+    document.removeEventListener('mouseleave', this.stop)
+
+    if (this.isMobile()) {
+      document.addEventListener('touchstart', this.onClick)
+      document.addEventListener('touchend', this.stop)
+    } else {
+      document.addEventListener('mousedown', this.onClick)
+      document.addEventListener('mouseup', this.stop)
+      document.addEventListener('mouseleave', this.stop)
+    }
   }
 }

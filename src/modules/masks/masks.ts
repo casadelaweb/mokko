@@ -2,15 +2,15 @@ import IMask from 'imask'
 
 export class Masks {
   private elements: HTMLElement[]
-  private selectors: {
-    tel: string,
-    email: string,
-  }
   private patterns: {
     tel: string,
     email: RegExp
   }
   private regExps: { email: RegExp }
+  private selectors: {
+    tel: string,
+    email: string,
+  }
 
   constructor() {
     this.elements = []
@@ -50,27 +50,6 @@ export class Masks {
     return warning
   }
 
-  private validateTel(element: HTMLInputElement | HTMLTextAreaElement): void {
-    // длина с учетом маски IMask
-    if (element.value.length !== 18) {
-      element.classList.add('error')
-      element.classList.remove('success')
-    } else {
-      element.classList.remove('error')
-      element.classList.add('success')
-    }
-  }
-
-  private validateEmail(element: HTMLInputElement | HTMLTextAreaElement): void {
-    if (!this.regExps.email.test(element.value)) {
-      element.classList.add('error')
-      element.classList.remove('success')
-    } else {
-      element.classList.remove('error')
-      element.classList.add('success')
-    }
-  }
-
   private listen(): void {
     this.elements.forEach((element: HTMLInputElement | HTMLTextAreaElement) => {
       element.addEventListener('input', () => {
@@ -85,5 +64,26 @@ export class Masks {
     //     event.preventDefault()
     //   }
     // })
+  }
+
+  private validateEmail(element: HTMLInputElement | HTMLTextAreaElement): void {
+    if (!this.regExps.email.test(element.value)) {
+      element.classList.add('error')
+      element.classList.remove('success')
+    } else {
+      element.classList.remove('error')
+      element.classList.add('success')
+    }
+  }
+
+  private validateTel(element: HTMLInputElement | HTMLTextAreaElement): void {
+    // длина с учетом маски IMask
+    if (element.value.length !== 18) {
+      element.classList.add('error')
+      element.classList.remove('success')
+    } else {
+      element.classList.remove('error')
+      element.classList.add('success')
+    }
   }
 }

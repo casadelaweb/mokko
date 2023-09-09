@@ -1,14 +1,19 @@
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock'
 
 export class scrollController {
+  public header: HTMLElement
   public isLocked: boolean
   public scrollBarWidth: number
-  public header: HTMLElement
 
   constructor() {
     this.header = null
     this.scrollBarWidth = null
     this.isLocked = false
+  }
+
+  public listen(): void {
+    document.addEventListener('DOMContentLoaded', this.update)
+    window.addEventListener('resize', this.update)
   }
 
   public lock(): void {
@@ -24,6 +29,14 @@ export class scrollController {
     }
   }
 
+  public toggle(): void {
+    if (this.isLocked) {
+      this.unlock()
+    } else {
+      this.lock()
+    }
+  }
+
   public unlock(): void {
     const { documentElement: html, body, } = document
     enableBodyScroll(body)
@@ -35,19 +48,6 @@ export class scrollController {
       this.header.style.marginRight = ''
       this.header.style.maxWidth = ''
     }
-  }
-
-  public toggle(): void {
-    if (this.isLocked) {
-      this.unlock()
-    } else {
-      this.lock()
-    }
-  }
-
-  public listen(): void {
-    document.addEventListener('DOMContentLoaded', this.update)
-    window.addEventListener('resize', this.update)
   }
 
   public update(): void {

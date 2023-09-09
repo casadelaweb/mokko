@@ -3,8 +3,8 @@ import { isMediaAboveLaptop } from 'src/scripts/helpers'
 
 export class Menu {
   public elements: menuElements
-  private readonly selectors: menuSelectors
   private readonly onResize: () => void
+  private readonly selectors: menuSelectors
 
   constructor() {
     this.elements = {
@@ -34,6 +34,11 @@ export class Menu {
     this.listen()
   }
 
+  private handleResize(): void {
+    this.updateElements()
+    this.updateMenuStyles()
+  }
+
   private listen(): void {
     const { buttonsDesktopClose, buttonDesktopOpen, menu, } = this.elements
 
@@ -57,11 +62,6 @@ export class Menu {
       }
     })
     window.addEventListener('resize', this.onResize)
-  }
-
-  private handleResize(): void {
-    this.updateElements()
-    this.updateMenuStyles()
   }
 
   private updateElements(): void {
