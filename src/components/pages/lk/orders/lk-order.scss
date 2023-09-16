@@ -4,7 +4,8 @@
   color: #ea1c35;
 }
 
-.lk-order {
+// карточка для страницы все заказы
+.lk-orders-card {
   @include flex($d: column);
   line-height: 1;
   margin-bottom: 52px;
@@ -137,5 +138,71 @@
     span {
       margin: 0 0.25em;
     }
+  }
+}
+
+// карточка одного заказа
+.lk-order {
+  &-title {
+  }
+
+  &-description {
+    font-size: 14px;
+    margin-bottom: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #e9e9e9;
+  }
+
+  &-dates {
+    margin-bottom: 24px;
+  }
+
+  &-date {
+    font-size: 15px;
+    margin-bottom: 14px;
+    color: #ada49e;
+
+    span {
+      color: #505050;
+    }
+  }
+
+  &-status {
+    @include buttonGrey;
+    margin-bottom: 56px;
+  }
+
+  &-products {
+  }
+
+  &-product {
+  }
+
+  &-value {
+    font-size: 15px;
+    color: #505050;
+  }
+
+  &-section {
+    margin-bottom: 48px;
+
+    &-title {
+      font-size: 16px;
+      margin-bottom: 36px;
+      color: #82756e;
+    }
+
+    &-item {
+      @include flex(center, space-between);
+      margin-bottom: 14px;
+    }
+
+    &-summary {
+      margin-top: 42px;
+    }
+  }
+
+  &-cancel {
+    @include buttonBrown;
   }
 }

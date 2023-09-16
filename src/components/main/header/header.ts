@@ -5,8 +5,8 @@ class Header {
   public header: HTMLElement
   private headerHeight: number
   private isPageIndex: boolean
-  private onResize: (event?: Event) => void
-  private onScroll: (event?: Event) => void
+  private readonly onResize: (event?: Event) => void
+  private readonly onScroll: (event?: Event) => void
 
   constructor() {
     this.header = undefined
@@ -21,8 +21,6 @@ class Header {
     this.updateHeaderHeight()
     this.hoverHeader()
     this.updateListeners()
-
-    console.log(this)
   }
 
   private updateListeners(): void {

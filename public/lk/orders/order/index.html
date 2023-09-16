@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="ru">
+<head itemscope itemtype="https://schema.org/WPHeader">
+  <meta charset="UTF-8">
+  <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+        name="viewport">
+  <meta content="ie=edge" http-equiv="X-UA-Compatible">
+  <title itemprop="headline">Заказ № XXXXXXXXX</title>
+</head>
+<body>
+<div id="app">
+  import @includes/header.html;
+
+  <main class="main">
+    <div class="breadcrumbs">
+      <div class="breadcrumbs-container">
+        <a class="breadcrumb" href="/">Главная</a>
+        <a class="breadcrumb" href="/lk">Личный кабинет</a>
+        <a class="breadcrumb active" href="/lk/orders/order">Заказ № XXXXXXXXX</a>
+      </div>
+    </div>
+
+    <div class="info">
+      <div class="info-container">
+        import @includes/lk-nav.html;
+
+        <div class="info-main">
+          <h1 class="info-title">Заказ № XXXXXXXXX</h1>
+          <div class="lk-order">
+            <div class="lk-order-title"></div>
+            <div class="lk-order-description">Заказ успешно оформлен!
+              Подробную информацию о заказе и его статус, вы всегда можете посмотреть
+              в Личном кабинете в разделе «Мои заказы»
+            </div>
+            <div class="lk-order-dates">
+              <div class="lk-order-date">
+                Дата оформления: <span>06.05.2023</span>
+              </div>
+              <div class="lk-order-date">
+                Дата доставки: <span>Не назначена</span>
+              </div>
+            </div>
+            <div class="lk-order-status">
+              Статус: <span>ОФОРМЛЕН</span>
+            </div>
+            <div class="lk-order-products">
+
+            </div>
+            <div class="lk-order-section">
+              <div class="lk-order-title">Детали доставки</div>
+              <div class="lk-order-section-title">Доставка курьером</div>
+              <div class="lk-order-value">Санкт-Петербург, ул. Яблочкова. 47, 47</div>
+
+              <div class="lk-order-section-title">Покупатель</div>
+              <div class="lk-order-value">Соловей Hаталья</div>
+              <div class="lk-order-value">+7 (960) 274-77-77</div>
+              <div class="lk-order-value">solovey.spb@gmail.com</div>
+            </div>
+            <div class="lk-order-section">
+              <div class="lk-order-title">Детали оплаты</div>
+              <div class="lk-order-section-item">
+                <div class="lk-order-section-key">5 товаров на сумму</div>
+                <div class="lk-order-value">18 999 ₽</div>
+              </div>
+              <div class="lk-order-section-item">
+                <div class="lk-order-section-key">Промокод</div>
+                <div class="lk-order-value">SPRING</div>
+              </div>
+              <div class="lk-order-section-item">
+                <div class="lk-order-section-key">Баллы</div>
+                <div class="lk-order-value">1 250</div>
+              </div>
+              <div class="lk-order-section-item">
+                <div class="lk-order-section-key">Доставка</div>
+                <div class="lk-order-value">0 ₽</div>
+              </div>
+              <div class="lk-order-section-item">
+                <div class="lk-order-section-key">Оплата</div>
+                <div class="lk-order-value">при получении</div>
+              </div>
+              <div class="lk-order-section-summary">
+                <span>ИТОГО</span>
+                <span>15 000 ₽</span>
+              </div>
+            </div>
+            <button class="lk-order-cancel" type="button">
+              <span>Отменить заказ</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  import @includes/footer.html;
+  import @includes/modals.html;
+  import @includes/cookie.html;
+</div>
+</body>
+</html>
