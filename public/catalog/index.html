@@ -9,6 +9,13 @@
   import @includes/header.html;
 
   <main class="main">
+    <div class="breadcrumbs">
+      <div class="breadcrumbs-container">
+        <a class="breadcrumb" href="/">Главная</a>
+        <a class="breadcrumb active" href="/catalog">Каталог</a>
+      </div>
+    </div>
+
     <section class="catalog">
       <div class="catalog-container">
         <div class="catalog-layout" data-catalog="layout">
@@ -24,7 +31,7 @@
               <div class="catalog-cards-loading">
                 <img alt="loading" class="catalog-cards-loading-img" loading="lazy" src="src/assets/img/loading.gif">
               </div>
-              
+
               repeat 14 times:
 
               import @includes/catalog/card.html;

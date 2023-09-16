@@ -1,13 +1,13 @@
 @import 'src/styles/shared';
 
 .catalog {
-  padding-top: 40px;
-  @include mediaTablet {
-    padding-top: 60px;
-  }
-  @include mediaLaptop {
-    padding-top: 80px;
-  }
+  // padding-top: 40px;
+  // @include mediaTablet {
+  //   padding-top: 60px;
+  // }
+  // @include mediaLaptop {
+  //   padding-top: 80px;
+  // }
 
   &-container {
     @include container;

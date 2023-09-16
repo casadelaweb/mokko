@@ -149,7 +149,7 @@ export class CatalogCards {
       pagination: {
         el: '.swiper-pagination',
         clickable: true,
-        enabled: true,
+        // enabled: true,
       },
       mousewheel: false,
       breakpoints: {
@@ -193,6 +193,9 @@ export class CatalogCards {
 
   private updateCatalogHeaderHeight(): void {
     const header = this.elements.catalogHeaderDesktop
+
+    if (!header) return
+
     const height: number = header ? 320 : header.offsetHeight
     document.documentElement.style.setProperty('--catalogHeaderHeight', height + 'px')
   }

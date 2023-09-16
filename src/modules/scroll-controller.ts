@@ -11,7 +11,7 @@ export class scrollController {
     this.isLocked = false
   }
 
-  public listen(): void {
+  public init(): void {
     document.addEventListener('DOMContentLoaded', this.update)
     window.addEventListener('resize', this.update)
   }

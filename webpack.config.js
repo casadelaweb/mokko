@@ -82,8 +82,7 @@ ThroughDirectory(pathRoot('public'))
 //   console.log(fileName)
 //   return fileName.endsWith('.html')
 // })
-const htmlPages = Files
-const htmlPagesRegistered = htmlPages.map((page) => {
+const htmlPagesRegistered = Files.map((page) => {
   return new HtmlWebpackPlugin({
     filename: './' + page.pathRelative + page.fileName,
     template: './public/' + page.pathRelative + page.fileName,

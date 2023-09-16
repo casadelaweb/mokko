@@ -26,29 +26,115 @@
 
         <div class="info-main">
           <h1 class="info-title">Мои заказы</h1>
-          <div class="info-description">
-            У вас пока нет активных заказов. <br>
-            Чтобы это исправить, перейдите в каталог и соберите свой идеальный гардероб.
+          <!-- Если заказов нет-->
+          <div hidden>
+            <div class="info-description">
+              У вас пока нет активных заказов. <br>
+              Чтобы это исправить, перейдите в каталог и соберите свой идеальный гардероб.
+            </div>
+            <a class="orders-button" href="/catalog">
+              <span>Перейти в каталог</span>
+            </a>
+            <div class="orders-cards">
+              <article class="orders-card">
+                <a href="/catalog">
+                  <img alt="img" class="orders-card-img" loading="lazy" src="src/assets/img/menu/category-1.jpg">
+                </a>
+                <h2 class="orders-card-title">
+                  <a href="/catalog">Новинки</a>
+                </h2>
+              </article>
+              <article class="orders-card">
+                <a href="/catalog">
+                  <img alt="img" class="orders-card-img" loading="lazy" src="src/assets/img/menu/category-2.jpg">
+                </a>
+                <h2 class="orders-card-title">
+                  <a href="/catalog">Бестселлеры</a>
+                </h2>
+              </article>
+            </div>
           </div>
-          <a class="orders-button" href="/catalog">
-            <span>Перейти в каталог</span>
-          </a>
-          <div class="orders-cards">
-            <article class="orders-card">
-              <a href="/catalog">
-                <img alt="img" class="orders-card-img" loading="lazy" src="src/assets/img/menu/category-1.jpg">
-              </a>
-              <h2 class="orders-card-title">
-                <a href="/catalog">Новинки</a>
-              </h2>
+          <!-- Если заказы есть -->
+          <div>
+            <article class="lk-order">
+              <div class="lk-order-top">
+                <a class="lk-order-title" href="lk/orders/order">
+                  <span>Заказ №4444444</span>
+                  <span class="iconfont icon-arrow-right"></span>
+                </a>
+                <div class="lk-order-description">
+                  <span>5</span> товаров на сумму <span>18 999 ₽</span>
+                </div>
+                <button class="lk-order-cancel" type="button">
+                  <span>Отменить заказ</span>
+                  <span class="iconfont icon-close"></span>
+                </button>
+              </div>
+              <div class="lk-order-main">
+                <div class="lk-order-dates">
+                  <div class="lk-order-date">Дата оформления: <span>06.05.2023</span></div>
+                  <div class="lk-order-date">Дата доставки: <span>10.05.2023</span></div>
+                </div>
+                <div class="lk-order-buttons">
+                  <div class="lk-order-status">
+                    Статус: <span>ОПЛАЧЕН</span>
+                  </div>
+                  <a class="lk-order-track" href="https://pochta.ru/tracking" target="_blank">
+                    <span>Отследить заказ</span>
+                  </a>
+                </div>
+              </div>
             </article>
-            <article class="orders-card">
-              <a href="/catalog">
-                <img alt="img" class="orders-card-img" loading="lazy" src="src/assets/img/menu/category-2.jpg">
-              </a>
-              <h2 class="orders-card-title">
-                <a href="/catalog">Бестселлеры</a>
-              </h2>
+
+            <article class="lk-order">
+              <div class="lk-order-top">
+                <a class="lk-order-title" href="lk/orders/order">
+                  <span>Заказ №4444444</span>
+                  <span class="iconfont icon-arrow-right"></span>
+                </a>
+                <div class="lk-order-description">
+                  <span>5</span> товаров на сумму <span>18 999 ₽</span>
+                </div>
+                <button class="lk-order-cancel" type="button">
+                  <span>Оформить возврат</span>
+                </button>
+              </div>
+              <div class="lk-order-main">
+                <div class="lk-order-dates">
+                  <div class="lk-order-date">Дата оформления: <span>06.05.2023</span></div>
+                  <div class="lk-order-date">Дата доставки: <span>Самовывоз из магазина</span></div>
+                </div>
+                <div class="lk-order-buttons">
+                  <div class="lk-order-status">
+                    Статус: <span>ДОСТАВЛЕН</span>
+                  </div>
+                  <a class="lk-order-track" href="https://www.pochta.ru/tracking" target="_blank">
+                    <span>Отследить заказ</span>
+                  </a>
+                </div>
+              </div>
+            </article>
+            <article class="lk-order">
+              <div class="lk-order-top">
+                <a class="lk-order-title" href="lk/orders/order">
+                  <span>Заказ №4444444</span>
+                  <span class="iconfont icon-arrow-right"></span>
+                </a>
+                <div class="lk-order-description">
+                  <span>5</span> товаров на сумму <span>18 999 ₽</span>
+                </div>
+              </div>
+              <div class="lk-order-main">
+                <div class="lk-order-dates">
+                  <div class="lk-order-date">Дата оформления: <span>06.05.2023</span></div>
+                  <div class="lk-order-date">Дата доставки: <span>Не назначена</span></div>
+                </div>
+                <div class="lk-order-buttons">
+                  <div class="lk-order-status">
+                    Статус: <span class="color-error">ОТМЕНЕН</span>
+                  </div>
+                </div>
+              </div>
             </article>
           </div>
         </div>

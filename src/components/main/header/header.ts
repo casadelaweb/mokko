@@ -1,51 +1,94 @@
 import { menu } from 'src/scripts/menu-instance'
 import { isMediaAboveLaptop } from 'src/scripts/helpers'
 
-document.addEventListener('DOMContentLoaded', () => {
-  const { body, } = document
-  const header: HTMLElement = body.querySelector('.header')
-  const headerHeight: number = header.offsetHeight
-  const main: HTMLElement = body.querySelector('.main')
+class Header {
+  public header: HTMLElement
+  private headerHeight: number
+  private isPageIndex: boolean
+  private onResize: (event?: Event) => void
+  private onScroll: (event?: Event) => void
 
-  const isPageIndex: string = body.getAttribute('data-page')
-
-  if (isPageIndex === 'index') {
-    main.style.marginTop = '0px'
-  } else {
-    header.classList.add('active')
+  constructor() {
+    this.header = undefined
+    this.headerHeight = undefined
+    this.isPageIndex = undefined
+    this.onResize = this.handleResize.bind(this)
+    this.onScroll = this.handleScroll.bind(this)
   }
 
-  header.addEventListener('mouseenter', () => {
-    if (isMediaAboveLaptop()) {
-      header.classList.add('hovered')
-    }
-  })
-  header.addEventListener('mouseleave', () => {
-    if (isMediaAboveLaptop() && !menu.elements.menu.matches('.active')) {
-      header.classList.remove('hovered')
-    }
-  })
+  public init(): void {
+    this.updateElements()
+    this.updateHeaderHeight()
+    this.hoverHeader()
+    this.updateListeners()
 
-  function updateHeaderHeight(): void {
-    const { body, documentElement: html, } = document
-    const header: HTMLElement = body.querySelector('.header')
-    const headerHeight: string = header.offsetHeight + 'px'
-    html.style.setProperty('--headerHeight', headerHeight)
+    console.log(this)
   }
 
-  updateHeaderHeight()
-  window.addEventListener('resize', updateHeaderHeight)
+  private updateListeners(): void {
+    this.updateHeaderListeners()
+    this.updateGlobalListeners()
+  }
 
-  function hoverHeader(): void {
+  private updateGlobalListeners(): void {
+    window.removeEventListener('resize', this.onResize)
+    window.removeEventListener('scroll', this.onScroll)
+    window.addEventListener('resize', this.onResize)
+    window.addEventListener('scroll', this.onScroll)
+  }
+
+  private handleResize(): void {
+    this.updateHeaderHeight()
+  }
+
+  private handleScroll(): void {
+    this.hoverHeader()
+  }
+
+  private updateElements(): void {
+    const { body, } = document
+    this.header = body.querySelector('.header') ?? body.querySelector('header')
+    this.headerHeight = this.header.offsetHeight
+    this.isPageIndex = body.getAttribute('data-page') === 'index'
+  }
+
+  private updateHeaderHeight(): void {
+    this.headerHeight = this.header.offsetHeight
+
+    let value = this.headerHeight + 'px'
+    if (this.isPageIndex) {
+      value = '0px'
+    } else {
+      this.header.classList.add('active')
+    }
+
+    document.documentElement.style.setProperty('--headerHeight', value)
+  }
+
+  private hoverHeader(): void {
     const { scrollY, } = window
 
-    if (scrollY > headerHeight) {
-      header.classList.add('scrolled')
+    if (scrollY > this.headerHeight) {
+      this.header.classList.add('scrolled')
     } else {
-      header.classList.remove('scrolled')
+      this.header.classList.remove('scrolled')
     }
   }
 
-  hoverHeader()
-  window.addEventListener('scroll', hoverHeader)
+  private updateHeaderListeners(): void {
+    this.header.addEventListener('mouseenter', () => {
+      if (isMediaAboveLaptop()) {
+        this.header.classList.add('hovered')
+      }
+    })
+    this.header.addEventListener('mouseleave', () => {
+      if (isMediaAboveLaptop() && !menu.elements.menu.matches('.active')) {
+        this.header.classList.remove('hovered')
+      }
+    })
+  }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  new Header().init()
 })

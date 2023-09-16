@@ -1,0 +1,141 @@
+@use 'src/styles/shared' as *;
+
+.color-error {
+  color: #ea1c35;
+}
+
+.lk-order {
+  @include flex($d: column);
+  line-height: 1;
+  margin-bottom: 52px;
+  color: #82756e;
+  @include mediaOnlyMobile {
+    position: relative;
+    z-index: 0;
+    padding-bottom: 44px;
+  }
+  @include mediaTablet {
+    margin-bottom: 88px;
+  }
+  @include mediaDesktop {
+    max-width: 828px;
+  }
+
+  &-top {
+    @include mediaTablet {
+      @include flex(center);
+      margin-bottom: 24px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #e9e9e9;
+    }
+  }
+
+  &-title {
+    font-size: 16px;
+    letter-spacing: 0.02em;
+    display: inline-block;
+    @include mediaOnlyMobile {
+      margin-bottom: 14px;
+    }
+    @include mediaTablet {
+      font-size: 18px;
+      margin-right: auto;
+    }
+  }
+
+  &-description {
+    @include mediaOnlyMobile {
+      font-size: 15px;
+      margin-bottom: 24px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #e9e9e9;
+    }
+    @include mediaTablet {
+      font-size: 18px;
+    }
+
+    span {
+      color: #505050;
+    }
+  }
+
+  &-cancel {
+    @include mediaOnlyMobile {
+      @include buttonBrown;
+      position: absolute;
+      z-index: 0;
+      bottom: 0;
+    }
+    @include mediaTablet {
+      font-size: 15px;
+      margin-left: 30px;
+      color: #80756e;
+    }
+
+    span {
+      @include mediaOnlyMobile {
+        margin: 0 0.25em;
+      }
+    }
+  }
+
+  &-main {
+    @include mediaTablet {
+      @include flex;
+    }
+  }
+
+  &-dates {
+    @include mediaTablet {
+      @include flex;
+      margin-right: auto;
+    }
+  }
+
+  &-date {
+    font-size: 15px;
+    margin-bottom: 14px;
+    color: #ada49e;
+    @include mediaTablet {
+      font-size: 18px;
+      margin: 0 40px 0 0;
+    }
+
+    span {
+      color: #505050;
+      @include mediaTablet {
+        display: block;
+        margin-top: 0.5em;
+      }
+    }
+  }
+
+  &-status {
+    @include buttonGrey;
+    margin-bottom: 14px;
+    @include mediaTablet {
+      width: 266px;
+    }
+
+    span {
+      margin: 0 0.25em;
+    }
+  }
+
+  &-track {
+    @include mediaOnlyMobile {
+      @include buttonPurple;
+      margin-bottom: 14px;
+    }
+    @include mediaTablet {
+      @include buttonAppointment;
+      text-align: center;
+      width: 266px;
+    }
+
+
+    span {
+      margin: 0 0.25em;
+    }
+  }
+}
