@@ -32,6 +32,7 @@
   }
 
   .mode-chess & {
+    @include flex($w: wrap);
   }
 
   &-loading {
@@ -322,5 +323,66 @@
 
 // отображение карточек в шахматном режиме
 .mode-chess .catalog-card {
+  $this: '.catalog-card';
+  width: 100%;
 
+  &:not(:nth-child(3n+1)) {
+    width: calc(50% - 4px);
+
+    #{$this}-discount {
+      font-size: 15px;
+      padding: 12px 8px;
+    }
+
+    #{$this}-preview {
+      font-size: 20px;
+      top: 20px + 5px + 12px;
+      right: 12px;
+      @include mediaTablet {
+        font-size: 24px;
+        top: 24px + 8px + 12px;
+      }
+    }
+
+    #{$this}-favourite {
+      font-size: 20px;
+      right: 12px;
+      @include mediaTablet {
+        font-size: 24px;
+      }
+    }
+
+    #{$this}-cart {
+      width: 22px;
+      height: 22px;
+    }
+
+    #{$this}-title {
+      @include mediaDesktop {
+        font-size: 18px;
+      }
+    }
+
+    #{$this}-sizes {
+      font-size: 14px;
+      padding: 20px 14px;
+    }
+
+    #{$this}-price {
+      @include mediaDesktop {
+        font-size: 18px;
+      }
+    }
+
+    .swiper {
+      &-pagination {
+        &-bullet {
+          width: 32px;
+          @include mediaTablet {
+            width: 40px;
+          }
+        }
+      }
+    }
+  }
 }

@@ -1,6 +1,6 @@
 import './catalog'
 import './catalog.scss'
-import './catalog.card.scss'
+import './catalog.cards.scss'
 // import './catalog.filters'
 import './catalog.filters.scss'
 import './catalog.preview'

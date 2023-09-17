@@ -29,8 +29,6 @@ export class CatalogCards {
     }
     this.isMediaAboveLaptop = false
     this.swiper = undefined
-
-    // cоздаем обертку для методов чтобы привязать контекст вызова
     this.onClick = this.handleClick.bind(this)
     this.onMouseEnter = this.handleMouseEnter.bind(this)
     this.onMouseLeave = this.handleMouseLeave.bind(this)
@@ -57,21 +55,32 @@ export class CatalogCards {
     case 'enlarged':
       this.elements.layout.classList.remove('mode-chess')
       this.elements.layout.classList.add('mode-enlarged')
+      this.elements.cards.forEach(({ card, }) => {
+        card.classList.remove('mode-chess')
+        card.classList.add('mode-enlarged')
+      })
       break
     case 'chess':
       this.elements.layout.classList.remove('mode-enlarged')
       this.elements.layout.classList.add('mode-chess')
+      this.elements.cards.forEach(({ card, }) => {
+        card.classList.remove('mode-enlarged')
+        card.classList.add('mode-chess')
+      })
       break
     default:
       this.elements.layout.classList.remove('mode-enlarged')
       this.elements.layout.classList.remove('mode-chess')
+      this.elements.cards.forEach(({ card, }) => {
+        card.classList.remove('mode-enlarged')
+        card.classList.remove('mode-chess')
+      })
       break
     }
   }
 
   private handleCatalogModified(): void {
     this.update()
-    console.log(this)
   }
 
   private handleClick(event: MouseEvent): void {
