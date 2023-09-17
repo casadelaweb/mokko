@@ -1,4 +1,5 @@
-import { globalScrollController } from 'src/scripts/global-scroll-controller'
+// import { globalScrollController } from 'src/scripts/global-scroll-controller'
+import { isMediaAboveLaptop } from 'src/scripts/helpers'
 
 class InfoAside {
   private header: HTMLElement
@@ -54,6 +55,8 @@ class InfoAside {
 
   private handleClick(event: MouseEvent): void {
     const target = event.target as HTMLElement
+
+    if (isMediaAboveLaptop()) return
 
     if (target.closest(this.selectors.header)) {
       this.toggle()
