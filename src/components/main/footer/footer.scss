@@ -3,6 +3,15 @@
 
 .footer {
   overflow: hidden;
+
+  a {
+    display: block;
+    width: fit-content;
+  }
+
+  .details {
+    padding-left: 28px;
+  }
 }
 
 .fm {

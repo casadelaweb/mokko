@@ -2,18 +2,20 @@
 
 .info-nav {
   position: sticky;
-  z-index: 1;
+  z-index: 100;
   top: var(--headerHeight);
-  // margin: 0 -14px;
-  margin-right: auto;
-  padding: 14px 0;
+  margin: 0 calc($containerPaddingMobile * -1);
+  padding: $containerPaddingMobile;
   background: white;
-  //@include mediaTablet {
-  //  padding: 32px 0;
-  //}
+  @include mediaTablet {
+    margin: 0 calc($containerPaddingTablet * -1);
+    padding: $containerPaddingMobile $containerPaddingTablet;
+  }
   @include mediaLaptop {
+    z-index: 1;
     top: calc(var(--headerHeight) + 20px);
     height: fit-content;
+    margin: 0;
     padding: 0;
   }
 
@@ -53,39 +55,38 @@
   &-list {
     @include flex($d: column);
     width: 100%;
-    max-width: 240px;
     background: white;
     @include mediaOnlyMobileAndAllTablets {
       position: absolute;
-      z-index: 2;
-      top: calc(100% + 14px);
+      z-index: -1;
+      top: 100%;
       left: 0;
       overflow: hidden;
-      transition: opacity 0.5s, transform 0.5s;
-      transform: translate(0, 40px);
+      transition: transform 0.5s;
+      transform: translate(-100%, 0);
       pointer-events: none;
-      opacity: 0;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px 0 rgba(black, 0.15);
     }
 
     &.active {
+      z-index: 2;
       transform: none;
       pointer-events: auto;
-      opacity: 1;
     }
   }
 
   &-item {
-    font-size: 13px;
+    font-size: 17px;
     line-height: 1;
     letter-spacing: 0.02em;
     flex: 0 0 auto;
     padding: 10px $containerPaddingMobile;
     transition: background-color 0.5s, color 0.5s;
+    @include mediaTablet {
+      padding: $containerPaddingMobile $containerPaddingTablet;
+    }
     @include mediaLaptop {
       font-size: 15px;
-      margin-bottom: 0.75em;
+      margin: 0 0 0.75em;
       padding: 0;
     }
 
@@ -99,6 +100,6 @@
 
   &-overlay {
     @include overlay;
-    z-index: 99;
+    z-index: 98;
   }
 }

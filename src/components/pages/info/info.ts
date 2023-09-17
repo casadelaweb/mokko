@@ -13,6 +13,7 @@ class InfoAside {
     list: string,
     overlay: string,
   }
+  private readonly onClick: (event: MouseEvent) => any
 
   constructor() {
     this.selectors = {
@@ -22,13 +23,20 @@ class InfoAside {
       list: '.info-nav-list',
       overlay: '.info-nav-overlay',
     }
+    this.onClick = this.handleClick.bind(this)
   }
 
   public init(): void {
     this.updateElements()
+    this.updateListeners()
   }
 
-  public activate(): void {
+  private toggle(): void {
+    if (this.isActive()) this.deactivate()
+    else this.activate()
+  }
+
+  private activate(): void {
     this.header.classList.add('active')
     this.nav.classList.add('active')
     this.button.classList.add('active')
@@ -36,12 +44,31 @@ class InfoAside {
     this.overlay.classList.add('active')
   }
 
-  public deactivate(): void {
+  private deactivate(): void {
     this.header.classList.remove('active')
     this.nav.classList.remove('active')
     this.button.classList.remove('active')
     this.list.classList.remove('active')
     this.overlay.classList.remove('active')
+  }
+
+  private handleClick(event: MouseEvent): void {
+    const target = event.target as HTMLElement
+
+    if (target.closest(this.selectors.header)) {
+      this.toggle()
+    } else if (this.isActive() && !target.closest(this.selectors.nav)) {
+      this.deactivate()
+    } else if (target.closest(this.selectors.overlay)) {
+      this.deactivate()
+    }
+  }
+
+  private isActive(): boolean {
+    let result: boolean = false
+    if (this.header) result = this.header.classList.contains('active')
+
+    return result
   }
 
   private updateElements(): void {
@@ -53,27 +80,14 @@ class InfoAside {
     this.list = body.querySelector(this.selectors.list)
     this.overlay = body.querySelector(this.selectors.overlay)
   }
+
+  private updateListeners(): void {
+    document.removeEventListener('click', this.onClick)
+    document.addEventListener('click', this.onClick)
+  }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  const { body, } = document
-
   const aside = new InfoAside()
   aside.init()
-
-  if (body.querySelector('.info-nav')) {
-    const isInfoNavActive = false
-
-    document.addEventListener('click', (event: MouseEvent) => {
-      const target = event.target as HTMLElement
-
-      if (target.closest('.info-nav-header')) {
-        aside.activate()
-      } else if (isInfoNavActive && !target.closest('.info-nav')) {
-        aside.deactivate()
-      } else if (target.closest('.info-nav-overlay')) {
-        aside.deactivate()
-      }
-    })
-  }
 })

@@ -29,12 +29,15 @@
     @include mediaTablet {
       padding: 0 ($containerPaddingTablet - 11px);
     }
-
-    @include mediaDesktop {
-      max-width: 1920px;
-      margin: 0 auto;
-      padding: 0 $containerPaddingDesktop;
+    @include mediaLaptop {
+      @include container;
     }
+
+    // @include mediaDesktop {
+    //   max-width: 1920px;
+    //   margin: 0 auto;
+    //   padding: 0 $containerPaddingDesktop;
+    // }
   }
 
   &-desktop {
@@ -42,8 +45,8 @@
 
     @include mediaLaptop {
       @include flex(center);
-      margin: 0 auto;
-      padding: 0 48px;
+      // margin: 0 auto;
+      // padding: 0 48px;
     }
   }
 
