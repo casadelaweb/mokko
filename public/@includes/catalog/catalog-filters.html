@@ -6,7 +6,7 @@
   <!-- только для мобильной версии -->
   <div class="catalog-filters-header">
     <span>Фильтры</span>
-    <button class="catalog-filters-close" data-modal-close type="button">
+    <button class="catalog-filters-close" data-modal-close title="Закрыть окно" type="button">
       <span class="iconfont icon-close"></span>
     </button>
   </div>
@@ -16,7 +16,7 @@
       <div class="catalog-filter-summary">
         <div class="catalog-filter-summary-content">
           <span>Категории</span>
-          <button class="catalog-filter-button" type="button"><span
+          <button class="catalog-filter-button" title="Открыть фильтр" type="button"><span
             class="iconfont icon-arrow-down"></span>
           </button>
         </div>
@@ -48,7 +48,7 @@
         </label>
         <label class="catalog-filter-label">
           <input name="category" type="checkbox"><span>Аксессуары</span> </label>
-        <label class="catalog-filters-submit" for="catalog-submit" type="submit">
+        <label class="catalog-filters-submit" for="catalog-submit">
           <span>Применить</span>
         </label>
       </div>
@@ -57,7 +57,7 @@
       <div class="catalog-filter-summary">
         <div class="catalog-filter-summary-content">
           <span>Сортировать</span>
-          <button class="catalog-filter-button" type="button">
+          <button class="catalog-filter-button" title="Открыть фильтр" type="button">
             <span class="iconfont icon-arrow-down"></span>
           </button>
         </div>
@@ -79,7 +79,7 @@
         <label class="catalog-filter-label">
           <input name="sorting" type="radio" value="discount"> <span> Товары по скидке </span>
         </label>
-        <label class="catalog-filters-submit" for="catalog-submit" type="submit">
+        <label class="catalog-filters-submit" for="catalog-submit">
           <span>Применить</span>
         </label>
       </div>
@@ -88,7 +88,7 @@
       <div class="catalog-filter-summary">
         <div class="catalog-filter-summary-content">
           <span>Размер</span>
-          <button class="catalog-filter-button" type="button">
+          <button class="catalog-filter-button" title="Открыть фильтр" type="button">
             <span class="iconfont icon-arrow-down"></span>
           </button>
         </div>
@@ -119,7 +119,7 @@
         <label class="catalog-filter-label">
           <input name="sizes" type="checkbox" value="4XL"> <span> 4XL </span>
         </label>
-        <label class="catalog-filters-submit" for="catalog-submit" type="submit">
+        <label class="catalog-filters-submit" for="catalog-submit">
           <span>Применить</span>
         </label>
       </div>
@@ -128,7 +128,7 @@
       <div class="catalog-filter-summary">
         <div class="catalog-filter-summary-content">
           <span>Цена</span>
-          <button class="catalog-filter-button" type="button">
+          <button class="catalog-filter-button" title="Открыть фильтр" type="button">
             <span class="iconfont icon-arrow-down"></span>
           </button>
         </div>
@@ -146,7 +146,7 @@
       <div class="catalog-filter-summary">
         <div class="catalog-filter-summary-content">
           <span>Цвет</span>
-          <button class="catalog-filter-button" type="button">
+          <button class="catalog-filter-button" title="Открыть фильтр" type="button">
             <span class="iconfont icon-arrow-down"></span>
           </button>
         </div>
@@ -185,7 +185,7 @@
           <input name="color" type="checkbox" value="Коричневый и шоколадный">
           <span> Коричневый и шоколадный </span>
         </label>
-        <label class="catalog-filters-submit" for="catalog-submit" type="submit">
+        <label class="catalog-filters-submit" for="catalog-submit">
           <span>Применить</span>
         </label>
       </div>
@@ -194,23 +194,27 @@
 
   <!-- только для мобильной версии -->
   <div class="catalog-filters-footer">
-    <label class="catalog-filters-reset" for="catalog-reset" type="button">
+    <label class="catalog-filters-reset" for="catalog-reset">
       <span>Сбросить</span>
     </label>
-    <label class="catalog-filters-submit" for="catalog-submit" type="submit">
+    <label class="catalog-filters-submit" for="catalog-submit">
       <span>Применить</span>
     </label>
   </div>
 </form>
-<button class="catalog-header-button _open-modal" data-modal-open="catalog-filters" type="button">
+<button class="catalog-header-button _open-modal" data-modal-open="catalog-filters" title="Открыть фильтры"
+        type="button">
   <span class="iconfont icon-filters"></span>
 </button>
-<button class="catalog-header-button _change-layout" data-catalog-layout="enlarged" type="button">
-  <span class="iconfont icon-squares-six"></span>
+<button class="catalog-header-button _change-layout" data-catalog-layout="enlarged"
+        title="Подробный режим" type="button">
+  <span class="iconfont icon-square"></span>
 </button>
-<button class="catalog-header-button _change-layout" data-catalog-layout="chess" type="button">
-  []
+<button class="catalog-header-button _change-layout" data-catalog-layout="chess"
+        title="В шахматном порядке" type="button">
+  <span class="iconfont icon-squares-3"></span>
 </button>
-<button class="catalog-header-button _change-layout" data-catalog-layout="grid" type="button">
-  <span class="iconfont icon-squares-eight"></span>
+<button class="catalog-header-button _change-layout" data-catalog-layout="grid"
+        title="Компактный режим" type="button">
+  <span class="iconfont icon-squares-4"></span>
 </button>

@@ -1,13 +1,13 @@
 <div id="modals">
   <div class="modal" data-modal="appointment">
     <div class="modal-content">
-      <button class="modal-close" data-modal-close type="button">закрыть</button>
+      <button class="modal-close" data-modal-close title="Закрыть окно" type="button">закрыть</button>
       Здесь будет модальное окно.
     </div>
   </div>
   <div class="modal" data-modal="product-gallery-modal">
     <div class="product-gallery-modal">
-      <button class="modal-close" data-modal-close type="button">
+      <button class="modal-close" data-modal-close title="Закрыть окно" type="button">
         <span class="iconfont icon-close"></span>
       </button>
       <div class="swiper product-gallery-modal-slider">
@@ -46,18 +46,10 @@
             <label class="menu-form-label form-label" for="menu-input"> Подписка на новости </label>
             <div class="menu-form-layout">
               <div class="form-main">
-                <input
-                  autocomplete="off"
-                  class="form-input"
-                  data-mask="email"
-                  id="menu-input" name="email"
-                  placeholder="Введите ваш e-mail"
-                  required
-                  type="text"
-                >
-                <button class="form-button" type="submit">
+                <input autocomplete="off" class="form-input" data-mask="email" id="menu-input" name="email"
+                       placeholder="Введите ваш e-mail" required type="text">
+                <button class="form-button" title="Подписаться на новости" type="submit">
                   <span class="iconfont icon-arrow-right"></span>
-
                 </button>
               </div>
               <div class="form-warning">
@@ -90,7 +82,8 @@
       </div>
       <div class="menu-mobile">
         <div class="menu-mobile-header">
-          <button class="menu-mobile-close" data-menu="mobile-close" data-modal-close type="button">
+          <button class="menu-mobile-close" data-menu="mobile-close" data-modal-close title="Закрыть окно"
+                  type="button">
             <span class="iconfont icon-close"></span>
           </button>
         </div>
@@ -103,7 +96,7 @@
             <a class="menu-mobile-link" href="/page404">Новинки</a>
             <details class="details" data-details="details">
               <summary class="details-summary" data-details="summary">
-                <button class="details-button" data-details="button" type="button">
+                <button class="details-button" data-details="button" title="Раскрыть список" type="button">
                   <span class="iconfont icon-arrow-down"></span>
                 </button>
                 <a class="details-summary-link" href="/catalog">Каталог</a>
@@ -125,7 +118,7 @@
             <a class="menu-mobile-link" href="/info/shops">Магазины</a>
             <details class="details" data-details="details">
               <summary class="details-summary" data-details="summary">
-                <button class="details-button" data-details="button" type="button">
+                <button class="details-button" data-details="button" title="Раскрыть список" type="button">
                   <span class="iconfont icon-arrow-down"></span>
                 </button>
                 <a class="details-summary-link" href="/info">Информация</a>
@@ -146,7 +139,7 @@
             </details>
             <details class="details" data-details="details">
               <summary class="details-summary" data-details="summary">
-                <button class="details-button" data-details="button" type="button">
+                <button class="details-button" data-details="button" title="Раскрыть список" type="button">
                   <span class="iconfont icon-arrow-down"></span>
                 </button>
                 <a class="details-summary-link" href="/lk">Личный кабинет</a>
@@ -162,7 +155,7 @@
             </details>
             <details class="details" data-details="details">
               <summary class="details-summary" data-details="summary">
-                <button class="details-button" data-details="button" type="button">
+                <button class="details-button" data-details="button" title="Раскрыть список" type="button">
                   <span class="iconfont icon-arrow-down"></span>
                 </button>
                 <a class="details-summary-link" href="/page404">Связаться с нами</a>
@@ -182,16 +175,9 @@
             <label class="menu-form-label form-label" for="menu-mobile-input"> Подписка на новости </label>
             <div class="menu-form-layout">
               <div class="form-main">
-                <input
-                  autocomplete="off"
-                  class="form-input"
-                  data-mask="email"
-                  id="menu-mobile-input" name="email"
-                  placeholder="Введите ваш e-mail"
-                  required
-                  type="text"
-                >
-                <button class="form-button" type="submit">
+                <input autocomplete="off" class="form-input" data-mask="email" id="menu-mobile-input" name="email"
+                       placeholder="Введите ваш e-mail" required type="text">
+                <button class="form-button" title="Подписаться на новости" type="submit">
                   <span class="iconfont icon-arrow-right"></span>
                 </button>
               </div>
@@ -207,7 +193,7 @@
   </nav>
   <div class="modal" data-modal="registration">
     <div class="auth">
-      <button class="auth-close" data-modal-close type="button">
+      <button class="auth-close" data-modal-close title="Закрыть окно" type="button">
         <span class="iconfont icon-close"></span>
       </button>
       <h2 class="auth-title">Регистрация</h2>
@@ -279,7 +265,7 @@
   </div>
   <div class="modal" data-modal="login">
     <div class="auth login">
-      <button class="auth-close" data-modal-close type="button">
+      <button class="auth-close" data-modal-close title="Закрыть окно" type="button">
         <span class="iconfont icon-close"></span>
       </button>
       <h2 class="auth-title">ВОЙТИ В АККАУНТ</h2>
@@ -364,7 +350,7 @@
   </div>
   <div class="search" data-modal="search">
     <div class="search-header">
-      <button class="search-close" data-modal-close type="button">
+      <button class="search-close" data-modal-close title="Закрыть окно" type="button">
         <span class="iconfont icon-close"></span>
       </button>
     </div>
@@ -376,7 +362,7 @@
         <div class="search-cards">
           repeat 7 times:
           <article class="search-card">
-            <button class="search-card-favourite" type="button">
+            <button class="search-card-favourite" title="Добавить в избранное" type="button">
               <span class="iconfont icon-heart-fill"></span>
             </button>
             <a class="search-card-img" href="/catalog/product">
@@ -401,7 +387,7 @@
       </div>
       <div class="search-body-aside">
         <form class="search-form" data-search="form">
-          <button class="search-icon" type="submit">
+          <button class="search-icon" title="Искать" type="submit">
             <span class="iconfont icon-search"></span>
           </button>
           <label class="search-label">
@@ -438,7 +424,7 @@
   <div class="sizeguide" data-modal="sizeguide">
     <div class="sizeguide-header">
       <h2 class="sizeguide-title">ТАБЛИЦА РАЗМЕРОВ</h2>
-      <button class="sizeguide-close" data-modal-close type="button">
+      <button class="sizeguide-close" data-modal-close title="Закрыть окно" type="button">
         <span class="iconfont icon-close"></span>
       </button>
     </div>

@@ -1,48 +1,78 @@
-$icon-telegram: '\e900';
-$icon-vk: '\e901';
-$icon-arrow-down: '\e902';
-$icon-arrow-left: '\e903';
-$icon-arrow-right: '\e904';
-$icon-arrow-up: '\e905';
-$icon-close: '\e906';
-$icon-filters: '\e907';
-$icon-heart: '\e908';
-$icon-heart-fill: '\e909';
-$icon-location: '\e90a';
-$icon-logo: '\e90b';
-$icon-menu: '\e90c';
-$icon-mute: '\e90d';
-$icon-person: '\e90e';
-$icon-search: '\e90f';
-$icon-square: '\e910';
-$icon-squares-eight: '\e911';
-$icon-squares-four: '\e912';
-$icon-squares-six: '\e913';
-$icon-suitcase: '\e914';
+$icon-square: '\e900';
+$icon-squares-3: '\e901';
+$icon-squares-4: '\e902';
+$icon-squares-6: '\e903';
+$icon-squares-8: '\e904';
+$icon-telegram: '\e905';
+$icon-vk: '\e906';
+$icon-arrow-down: '\e907';
+$icon-arrow-left: '\e908';
+$icon-arrow-right: '\e909';
+$icon-arrow-up: '\e90a';
+$icon-close: '\e90b';
+$icon-filters: '\e90c';
+$icon-heart: '\e90d';
+$icon-heart-fill: '\e90e';
+$icon-location: '\e90f';
+$icon-logo: '\e910';
+$icon-menu: '\e911';
+$icon-mute: '\e912';
+$icon-person: '\e913';
+$icon-search: '\e914';
+$icon-suitcase: '\e915';
 
 @font-face {
   font-family: 'iconfont';
-  src: url('src/assets/fonts/iconfont.eot?w0ynb6');
-  src: url('src/assets/fonts/iconfont.eot?w0ynb6#iefix') format('embedded-opentype'),
-  url('src/assets/fonts/iconfont.ttf?w0ynb6') format('truetype'),
-  url('src/assets/fonts/iconfont.woff?w0ynb6') format('woff'),
-  url('src/assets/fonts/iconfont.svg?w0ynb6#iconfont') format('svg');
+  src: url('src/assets/fonts/iconfont.eot?gtz0yo');
+  src: url('src/assets/fonts/iconfont.eot?gtz0yo#iefix') format('embedded-opentype'),
+  url('src/assets/fonts/iconfont.ttf?gtz0yo') format('truetype'),
+  url('src/assets/fonts/iconfont.woff?gtz0yo') format('woff'),
+  url('src/assets/fonts/iconfont.svg?gtz0yo#iconfont') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
 }
 
 .iconfont {
-  // display: inline-block;
   font-family: 'iconfont', emoji !important;
   font-weight: normal;
   font-style: normal;
   font-variant: normal;
   line-height: 1;
   text-transform: none;
+  speak: never;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  speak: never;
+}
+
+.icon-square {
+  &:before {
+    content: $icon-square;
+  }
+}
+
+.icon-squares-3 {
+  &:before {
+    content: $icon-squares-3;
+  }
+}
+
+.icon-squares-4 {
+  &:before {
+    content: $icon-squares-4;
+  }
+}
+
+.icon-squares-6 {
+  &:before {
+    content: $icon-squares-6;
+  }
+}
+
+.icon-squares-8 {
+  &:before {
+    content: $icon-squares-8;
+  }
 }
 
 .icon-telegram {
@@ -138,30 +168,6 @@ $icon-suitcase: '\e914';
 .icon-search {
   &:before {
     content: $icon-search;
-  }
-}
-
-.icon-square {
-  &:before {
-    content: $icon-square;
-  }
-}
-
-.icon-squares-eight {
-  &:before {
-    content: $icon-squares-eight;
-  }
-}
-
-.icon-squares-four {
-  &:before {
-    content: $icon-squares-four;
-  }
-}
-
-.icon-squares-six {
-  &:before {
-    content: $icon-squares-six;
   }
 }
 
