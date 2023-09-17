@@ -16,6 +16,7 @@
       <div class="breadcrumbs-container">
         <a class="breadcrumb" href="/">Главная</a>
         <a class="breadcrumb" href="/lk">Личный кабинет</a>
+        <a class="breadcrumb" href="/lk/orders">Мои заказы</a>
         <a class="breadcrumb active" href="/lk/orders/order">Заказ № XXXXXXXXX</a>
       </div>
     </div>
@@ -28,21 +29,25 @@
           <h1 class="info-title">Заказ № XXXXXXXXX</h1>
           <div class="lk-order">
             <div class="lk-order-title"></div>
-            <div class="lk-order-description">Заказ успешно оформлен!
+            <div class="lk-order-description">
+              Заказ успешно оформлен! <br>
               Подробную информацию о заказе и его статус, вы всегда можете посмотреть
               в Личном кабинете в разделе «Мои заказы»
             </div>
-            <div class="lk-order-dates">
-              <div class="lk-order-date">
-                Дата оформления: <span>06.05.2023</span>
+            <div class="lk-order-description-bottom">
+              <div class="lk-order-dates">
+                <div class="lk-order-date">
+                  Дата оформления: <span>06.05.2023</span>
+                </div>
+                <div class="lk-order-date">
+                  Дата доставки: <span>Не назначена</span>
+                </div>
               </div>
-              <div class="lk-order-date">
-                Дата доставки: <span>Не назначена</span>
+              <div class="lk-order-status">
+                Статус: <span>ОФОРМЛЕН</span>
               </div>
             </div>
-            <div class="lk-order-status">
-              Статус: <span>ОФОРМЛЕН</span>
-            </div>
+
             <div class="lk-order-products">
               repeat 2 times:
               <article class="lk-order-product">
@@ -107,46 +112,55 @@
               </article>
               end;
             </div>
-            <div class="lk-order-section">
-              <div class="lk-order-section-title">Детали доставки</div>
-              <div class="lk-order-section-subtitle">Доставка курьером</div>
-              <div class="lk-order-section-value">Санкт-Петербург, ул. Яблочкова. 47, 47</div>
 
-              <div class="lk-order-section-subtitle">Покупатель</div>
-              <div class="lk-order-section-value">Соловей Hаталья</div>
-              <div class="lk-order-section-value">+7 (960) 274-77-77</div>
-              <div class="lk-order-section-value">solovey.spb@gmail.com</div>
+            <div class="lk-order-details">
+              <div class="lk-order-sections">
+                <div class="lk-order-delivery">
+                  <div class="lk-order-delivery-title">Детали доставки</div>
+                  <div class="lk-order-delivery-type">
+                    <div class="lk-order-delivery-key">Доставка курьером</div>
+                    <div class="lk-order-delivery-value">Санкт-Петербург, ул. Яблочкова. 47, 47</div>
+                  </div>
+                  <div class="lk-order-delivery-customer">
+                    <div class="lk-order-delivery-key">Покупатель</div>
+                    <div class="lk-order-delivery-value">Соловей Hаталья</div>
+                    <div class="lk-order-delivery-value">+7 (960) 274-77-77</div>
+                    <div class="lk-order-delivery-value">solovey.spb@gmail.com</div>
+                  </div>
+                </div>
+                <div class="lk-order-payment">
+                  <div class="lk-order-payment-title">Детали оплаты</div>
+                  <div class="lk-order-payment-item">
+                    <div class="lk-order-payment-key">5 товаров на сумму</div>
+                    <div class="lk-order-payment-value">18 999 ₽</div>
+                  </div>
+                  <div class="lk-order-payment-item">
+                    <div class="lk-order-payment-key">Промокод</div>
+                    <div class="lk-order-payment-value">SPRING</div>
+                  </div>
+                  <div class="lk-order-payment-item">
+                    <div class="lk-order-payment-key">Баллы</div>
+                    <div class="lk-order-payment-value">1 250</div>
+                  </div>
+                  <div class="lk-order-payment-item">
+                    <div class="lk-order-payment-key">Доставка</div>
+                    <div class="lk-order-payment-value">0 ₽</div>
+                  </div>
+                  <div class="lk-order-payment-item">
+                    <div class="lk-order-payment-key">Оплата</div>
+                    <div class="lk-order-payment-value">при получении</div>
+                  </div>
+                  <div class="lk-order-payment-summary">
+                    <span>ИТОГО</span>
+                    <span>15 000 ₽</span>
+                  </div>
+                </div>
+              </div>
+              <button class="lk-order-cancel" type="button">
+                <span>Отменить заказ</span>
+              </button>
             </div>
-            <div class="lk-order-section">
-              <div class="lk-order-section-title">Детали оплаты</div>
-              <div class="lk-order-section-item">
-                <div class="lk-order-section-key">5 товаров на сумму</div>
-                <div class="lk-order-section-value">18 999 ₽</div>
-              </div>
-              <div class="lk-order-section-item">
-                <div class="lk-order-section-key">Промокод</div>
-                <div class="lk-order-section-value">SPRING</div>
-              </div>
-              <div class="lk-order-section-item">
-                <div class="lk-order-section-key">Баллы</div>
-                <div class="lk-order-section-value">1 250</div>
-              </div>
-              <div class="lk-order-section-item">
-                <div class="lk-order-section-key">Доставка</div>
-                <div class="lk-order-section-value">0 ₽</div>
-              </div>
-              <div class="lk-order-section-item">
-                <div class="lk-order-section-key">Оплата</div>
-                <div class="lk-order-section-value">при получении</div>
-              </div>
-              <div class="lk-order-section-summary">
-                <span>ИТОГО</span>
-                <span>15 000 ₽</span>
-              </div>
-            </div>
-            <button class="lk-order-cancel" type="button">
-              <span>Отменить заказ</span>
-            </button>
+
           </div>
         </div>
       </div>
