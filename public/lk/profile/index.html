@@ -65,8 +65,10 @@
               </label>
               <label class="profile-label _birthday">
                 <span class="profile-name">Дата рождения</span>
-                <input autocomplete="off" class="profile-input" placeholder="Дата рождения" required type="date"
-                       value="1987-09-02">
+                <!-- календарь монтируется на клиенте с помощью модуля Calendar -->
+                <!-- привязывается к атрибуту data-calendar=input-->
+                <input autocomplete="off" class="profile-input" data-calendar="input" placeholder="Дата рождения"
+                       required type="date" value="1987-09-02">
                 <span class="profile-warning"></span>
               </label>
             </div>

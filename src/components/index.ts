@@ -1,2 +1,2 @@
-import 'src/components/main'
+import 'src/components/sections'
 import 'src/components/pages'

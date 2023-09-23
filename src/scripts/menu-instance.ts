@@ -1,3 +1,3 @@
-import { Menu } from 'src/components/main/menu/menu'
+import { Menu } from 'src/components/sections/menu/menu'
 
 export const menu = new Menu()
