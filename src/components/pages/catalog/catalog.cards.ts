@@ -1,9 +1,9 @@
 import { iCard, iCatalogElements, iSelectors } from './catalog.types'
 import { isMediaAboveLaptop, throwEvent } from 'src/scripts/helpers'
 import Swiper, { Navigation, A11y, Pagination, Mousewheel } from 'swiper'
+import { accessibility as accessibilitySettings } from 'src/scripts/swiper-settings'
 import 'swiper/scss'
 import 'swiper/scss/a11y'
-import { accessibility as accessibilitySettings } from 'src/scripts/swiper-settings'
 
 export class CatalogCards {
   public elements: iCatalogElements | undefined
@@ -36,8 +36,11 @@ export class CatalogCards {
   }
 
   public init(): void {
+    this.isMediaAboveLaptop = isMediaAboveLaptop()
+    this.elements = this.updateElements()
+    this.updateCatalogHeaderHeight()
+    this.updateMouseListeners()
     this.initSlider()
-    this.update()
     this.updateListeners()
     this.observeMutations()
   }
@@ -110,9 +113,9 @@ export class CatalogCards {
       const buttonPrev: HTMLElement = card.querySelector(this.selectors.buttons.prev)
       const buttonNext: HTMLElement = card.querySelector(this.selectors.buttons.next)
 
-      sizes.classList.add('active')
-      buttonPrev.classList.add('active')
-      buttonNext.classList.add('active')
+      sizes?.classList.add('active')
+      buttonPrev?.classList.add('active')
+      buttonNext?.classList.add('active')
     }
   }
 
@@ -124,9 +127,9 @@ export class CatalogCards {
       const buttonPrev: HTMLElement = card.querySelector(this.selectors.buttons.prev)
       const buttonNext: HTMLElement = card.querySelector(this.selectors.buttons.next)
 
-      sizes.classList.remove('active')
-      buttonPrev.classList.remove('active')
-      buttonNext.classList.remove('active')
+      sizes?.classList.remove('active')
+      buttonPrev?.classList.remove('active')
+      buttonNext?.classList.remove('active')
     }
   }
 
@@ -273,12 +276,11 @@ export class CatalogCards {
     if (Array.isArray(this.swiper)) {
       this.swiper.forEach((slider: Swiper) => {
         slider.destroy(false, true)
-        this.initSlider()
       })
     } else {
       this.swiper.destroy(false, true)
-      this.initSlider()
-      // this.swiper.update()
     }
+
+    console.log(this)
   }
 }
