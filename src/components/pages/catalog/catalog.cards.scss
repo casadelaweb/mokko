@@ -1,33 +1,74 @@
-@import 'src/styles/shared';
+@use 'src/styles/shared' as *;
+
+$columnGapMobile: 8px;
+$columnGapTablet: 14px;
 
 :root {
   --catalogHeaderHeight: 320px;
 }
 
-.catalog-header-button {
-  &._change-layout {
-    transition: opacity 0.25s, color 0.25s;
-    opacity: 0.5;
+.catalog {
+  &-main {
+    flex: 0 0 auto;
+    min-width: 0;
+  }
 
-    &:active {
-      color: #51504f;
+  &-header {
+    // margin-right: ($columnGapMobile * -1);
+    // margin-left: ($columnGapMobile * -1);
+    @include mediaTablet {
+      margin-right: ($columnGapTablet * -1);
+      margin-left: ($columnGapTablet * -1);
     }
 
-    &.active {
-      opacity: 1;
+    &-button {
+      &._change-layout {
+        transition: opacity 0.25s, color 0.25s;
+        opacity: 0.5;
+
+        &:active {
+          color: #51504f;
+        }
+
+        &.active {
+          opacity: 1;
+        }
+
+        ._mobile, ._tablet, ._tabletBg {
+          display: none;
+        }
+
+        ._mobile {
+          @include mediaOnlyMobile {
+            display: inline-block;
+          }
+        }
+
+        ._tablet {
+          @include mediaOnlyTablet {
+            display: inline-block;
+          }
+        }
+
+        ._tabletBg {
+          @include mediaTabletBg {
+            display: inline-block;
+          }
+        }
+      }
     }
   }
 }
-
-$columnGapMobile: 8px;
 
 .catalog-cards {
   @include flex($w: wrap);
   position: relative;
   z-index: 0;
+  min-width: 0;
   margin: 0 ($columnGapMobile * -1) 48px;
-
   @include mediaTablet {
+    margin-right: ($columnGapTablet * -1);
+    margin-left: ($columnGapTablet * -1);
   }
   @include mediaTabletBg {
   }
@@ -59,9 +100,18 @@ $columnGapMobile: 8px;
   position: relative;
   z-index: 0;
   flex: 0 0 auto;
-  width: calc(50% - $columnGapMobile);
+  width: calc(100% / 2 - $columnGapMobile);
   min-width: 0;
   margin: 0 ($columnGapMobile * 0.5) 20px;
+  @include mediaTablet {
+    width: calc(100% / 3 - $columnGapTablet);
+    margin-right: $columnGapTablet * 0.5;
+    margin-bottom: 36px;
+    margin-left: $columnGapTablet * 0.5;
+  }
+  @include mediaTabletBg {
+    width: calc(100% / 4 - $columnGapTablet);
+  }
 
   &._disabled {
     .catalog-card-slider {
@@ -268,6 +318,12 @@ $columnGapMobile: 8px;
 // отображение карточки в подробном режиме
 .mode-enlarged.catalog-card {
   width: calc(100% - $columnGapMobile);
+  @include mediaTablet {
+    width: calc(100% / 2 - $columnGapTablet);
+  }
+  @include mediaTabletBg {
+    width: calc(100% / 3 - $columnGapTablet);
+  }
 
   .catalog-card {
     &-discount {

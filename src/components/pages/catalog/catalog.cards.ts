@@ -1,5 +1,5 @@
 import { iCard, iCatalogElements, iSelectors } from './catalog.types'
-import { isMediaAboveLaptop, throwEvent } from 'src/scripts/helpers'
+import { isMediaAboveLaptop, throwEvent, getCurrentMedia } from 'src/scripts/helpers'
 import Swiper from 'swiper'
 import { Navigation, A11y, Pagination, Mousewheel } from 'swiper/modules'
 import { accessibility as accessibilitySettings } from 'src/scripts/swiper-settings'
@@ -11,6 +11,7 @@ export class CatalogCards {
   private readonly onClick: (event: MouseEvent) => void
   private readonly onMouseEnter: (event: MouseEvent) => void
   private readonly onMouseLeave: (event: MouseEvent) => void
+  private readonly onResize: (event: Event) => void
   private readonly selectors: iSelectors
   private swiper: Swiper | Swiper[] | undefined
 
@@ -33,6 +34,7 @@ export class CatalogCards {
     this.onMouseEnter = this.handleMouseEnter.bind(this)
     this.onMouseLeave = this.handleMouseLeave.bind(this)
     this.onCatalogModified = this.handleCatalogModified.bind(this)
+    this.onResize = this.handleResize.bind(this)
   }
 
   public init(): void {
@@ -43,6 +45,7 @@ export class CatalogCards {
     this.initSlider()
     this.updateListeners()
     this.observeMutations()
+    this.updateLayoutMode()
   }
 
   public update(): void {
@@ -51,6 +54,21 @@ export class CatalogCards {
     this.updateCatalogHeaderHeight()
     this.updateMouseListeners()
     this.updateSwiper()
+  }
+
+  private handleResize(): void {
+    this.updateLayoutMode()
+  }
+
+  private updateLayoutMode(): void {
+    let mode: string = 'mode-combined'
+    const buttonLayoutModeActive: HTMLElement = document.body.querySelector(`[${ this.selectors.buttonCatalogModeAttribute }].active`)
+    if (localStorage.getItem('catalogLayoutMode')) {
+      mode = localStorage.getItem('catalogLayoutMode')
+    } else if (buttonLayoutModeActive) {
+      mode = buttonLayoutModeActive.getAttribute(this.selectors.buttonCatalogModeAttribute)
+    }
+    this.changeLayoutMode(mode)
   }
 
   private changeLayoutMode(mode: string): void {
@@ -65,37 +83,46 @@ export class CatalogCards {
         button.classList.remove('active')
       }
     })
+    const media = getCurrentMedia()
 
     switch (mode) {
     case 'enlarged':
-      //this.elements.layout.classList.remove('mode-chess')
-      //this.elements.layout.classList.add('mode-enlarged')
       this.elements.cards.forEach(({ card, }) => {
-        card.classList.remove('mode-chess')
         card.classList.add('mode-enlarged')
       })
       break
-    case 'chess':
-      //this.elements.layout.classList.remove('mode-enlarged')
-      //this.elements.layout.classList.add('mode-chess')
+    case 'compact':
+      this.elements.cards.forEach(({ card, }) => {
+        card.classList.remove('mode-enlarged')
+      })
+      break
+    default:
+      // по умолчанию комбинированный режим карточек
       this.elements.cards.forEach(({ card, }, index) => {
-        // если это каждый третий элемент, начиная с первого
-        if ((index + 1) % 3 === 1) {
+        const position = index + 1
+
+        // для каждого первого элемента из 3, начиная с первого
+        if (media === 'mobile' && position % 3 === 1) {
           card.classList.add('mode-enlarged')
-        } else {
+        }
+        // для каждых 2 элементов из 5, начиная с первого
+        else if (media === 'tablet' && (position % 5 === 1 || position % 5 === 2)) {
+          card.classList.add('mode-enlarged')
+        }
+        // для каждых 3 элементов из 7, начиная с первого
+        else if ((media === 'tabletBg' || media === 'laptop' || media === 'desktop')
+            && (position % 7 === 1 || position % 7 === 2 || position % 7 === 3)) {
+          card.classList.add('mode-enlarged')
+        }
+        // для всех остальных
+        else {
           card.classList.remove('mode-enlarged')
         }
       })
       break
-    default:
-      //this.elements.layout.classList.remove('mode-enlarged')
-      //this.elements.layout.classList.remove('mode-chess')
-      this.elements.cards.forEach(({ card, }) => {
-        card.classList.remove('mode-enlarged')
-        card.classList.remove('mode-chess')
-      })
-      break
     }
+
+    localStorage.setItem('catalogLayoutMode', mode)
   }
 
   private handleCatalogModified(): void {
@@ -116,7 +143,7 @@ export class CatalogCards {
     if (target.closest(this.selectors.slider) && !this.isMediaAboveLaptop) {
       const card = target.closest(this.selectors.card)
       const controls = card.querySelector(this.selectors.controls)
-      controls.classList.toggle('active')
+      controls?.classList.toggle('active')
     }
 
     if (target.closest(this.selectors.buttonCatalogUpdate)) this.update()
@@ -234,9 +261,11 @@ export class CatalogCards {
     document.addEventListener('catalogModified', this.onCatalogModified)
   }
 
-  private updateClickListeners(): void {
+  private updateGlobalListeners(): void {
     document.removeEventListener('click', this.onClick)
     document.addEventListener('click', this.onClick)
+    window.removeEventListener('resize', this.onResize)
+    window.addEventListener('resize', this.onResize)
   }
 
   private updateElements(): iCatalogElements {
@@ -270,7 +299,7 @@ export class CatalogCards {
   }
 
   private updateListeners(): void {
-    this.updateClickListeners()
+    this.updateGlobalListeners()
     this.updateMouseListeners()
     this.updateCatalogListeners()
   }

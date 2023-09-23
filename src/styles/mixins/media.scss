@@ -30,6 +30,12 @@
   }
 }
 
+@mixin mediaOnlyTabletBg {
+  @media (min-width: $breakpointTabletBg) and (max-width: $breakpointLaptop - 1px) {
+    @content;
+  }
+}
+
 @mixin mediaOnlyTablets {
   @media (min-width: $breakpointTablet) and (max-width: $breakpointLaptop - 1px) {
     @content;
