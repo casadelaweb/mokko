@@ -1,6 +1,5 @@
-import Swiper, { Navigation, A11y, Autoplay } from 'swiper'
-import 'swiper/scss'
-import 'swiper/scss/a11y'
+import Swiper from 'swiper'
+import { Navigation, A11y, Autoplay } from 'swiper/modules'
 
 import {
   accessibility as accessibilitySettings,

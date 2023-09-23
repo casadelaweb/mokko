@@ -1,7 +1,5 @@
-import Swiper, { Pagination, Autoplay, A11y } from 'swiper'
-import 'swiper/scss'
-// import 'swiper/scss/pagination'
-import 'swiper/scss/a11y'
+import Swiper from 'swiper'
+import { Pagination, Autoplay, A11y } from 'swiper/modules'
 import { autoplay as autoplaySetting, accessibility as accessibilitySettings } from 'src/scripts/swiper-settings'
 
 document.addEventListener('DOMContentLoaded', () => {

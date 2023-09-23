@@ -4,35 +4,35 @@
   --catalogHeaderHeight: 320px;
 }
 
+.catalog-header-button {
+  &._change-layout {
+    transition: opacity 0.25s, color 0.25s;
+    opacity: 0.5;
+
+    &:active {
+      color: #51504f;
+    }
+
+    &.active {
+      opacity: 1;
+    }
+  }
+}
+
+$columnGapMobile: 8px;
+
 .catalog-cards {
+  @include flex($w: wrap);
   position: relative;
   z-index: 0;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  column-gap: 8px;
-  row-gap: 20px;
-  margin-bottom: 48px;
+  margin: 0 ($columnGapMobile * -1) 48px;
+
   @include mediaTablet {
-    column-gap: 14px;
-    row-gap: 56px;
   }
   @include mediaTabletBg {
-    grid-template-columns: repeat(4, 1fr);
   }
   @include mediaLaptop {
     margin-bottom: 72px;
-  }
-
-  .mode-enlarged & {
-    grid-template-columns: 1fr;
-    @include mediaTabletBg {
-      grid-template-columns: repeat(3, 1fr);
-      row-gap: 32px;
-    }
-  }
-
-  .mode-chess & {
-    @include flex($w: wrap);
   }
 
   &-loading {
@@ -58,7 +58,10 @@
 .catalog-card {
   position: relative;
   z-index: 0;
+  flex: 0 0 auto;
+  width: calc(50% - $columnGapMobile);
   min-width: 0;
+  margin: 0 ($columnGapMobile * 0.5) 20px;
 
   &._disabled {
     .catalog-card-slider {
@@ -73,7 +76,7 @@
 
   &-discount, &-favourite {
     position: absolute;
-    z-index: 1;
+    z-index: 2;
   }
 
   &-discount {
@@ -262,79 +265,17 @@
   }
 }
 
-// отображение карточек в подробном режиме
-.mode-enlarged .catalog-card {
-  &-discount {
-    font-size: 15px;
-    padding: 12px 8px;
-  }
+// отображение карточки в подробном режиме
+.mode-enlarged.catalog-card {
+  width: calc(100% - $columnGapMobile);
 
-  &-preview {
-    font-size: 20px;
-    top: 20px + 5px + 12px;
-    right: 12px;
-    @include mediaTablet {
-      font-size: 24px;
-      top: 24px + 8px + 12px;
-    }
-  }
-
-  &-favourite {
-    font-size: 20px;
-    right: 12px;
-    @include mediaTablet {
-      font-size: 24px;
-    }
-  }
-
-  &-cart {
-    width: 22px;
-    height: 22px;
-  }
-
-  &-title {
-    @include mediaDesktop {
-      font-size: 18px;
-    }
-  }
-
-  &-sizes {
-    font-size: 14px;
-    padding: 20px 14px;
-  }
-
-  &-price {
-    @include mediaDesktop {
-      font-size: 18px;
-    }
-  }
-
-  .swiper {
-    &-pagination {
-      &-bullet {
-        width: 32px;
-        @include mediaTablet {
-          width: 40px;
-        }
-      }
-    }
-  }
-}
-
-// отображение карточек в шахматном режиме
-.mode-chess .catalog-card {
-  $this: '.catalog-card';
-  width: 100%;
-
-  &:not(:nth-child(3n+1)) {
-    width: calc(50% - 4px);
-
-    #{$this}-discount {
+  .catalog-card {
+    &-discount {
       font-size: 15px;
       padding: 12px 8px;
     }
 
-    #{$this}-preview {
+    &-preview {
       font-size: 20px;
       top: 20px + 5px + 12px;
       right: 12px;
@@ -344,7 +285,7 @@
       }
     }
 
-    #{$this}-favourite {
+    &-favourite {
       font-size: 20px;
       right: 12px;
       @include mediaTablet {
@@ -352,35 +293,35 @@
       }
     }
 
-    #{$this}-cart {
+    &-cart {
       width: 22px;
       height: 22px;
     }
 
-    #{$this}-title {
+    &-title {
       @include mediaDesktop {
         font-size: 18px;
       }
     }
 
-    #{$this}-sizes {
+    &-sizes {
       font-size: 14px;
       padding: 20px 14px;
     }
 
-    #{$this}-price {
+    &-price {
       @include mediaDesktop {
         font-size: 18px;
       }
     }
+  }
 
-    .swiper {
-      &-pagination {
-        &-bullet {
-          width: 32px;
-          @include mediaTablet {
-            width: 40px;
-          }
+  .swiper {
+    &-pagination {
+      &-bullet {
+        width: 32px;
+        @include mediaTablet {
+          width: 40px;
         }
       }
     }

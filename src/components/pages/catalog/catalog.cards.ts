@@ -1,9 +1,8 @@
 import { iCard, iCatalogElements, iSelectors } from './catalog.types'
 import { isMediaAboveLaptop, throwEvent } from 'src/scripts/helpers'
-import Swiper, { Navigation, A11y, Pagination, Mousewheel } from 'swiper'
+import Swiper from 'swiper'
+import { Navigation, A11y, Pagination, Mousewheel } from 'swiper/modules'
 import { accessibility as accessibilitySettings } from 'src/scripts/swiper-settings'
-import 'swiper/scss'
-import 'swiper/scss/a11y'
 
 export class CatalogCards {
   public elements: iCatalogElements | undefined
@@ -26,6 +25,7 @@ export class CatalogCards {
         next: '.swiper-button-next',
       },
       buttonCatalogUpdate: '[data-catalog=update]',
+      buttonCatalogModeAttribute: 'data-catalog-layout',
     }
     this.isMediaAboveLaptop = false
     this.swiper = undefined
@@ -54,26 +54,42 @@ export class CatalogCards {
   }
 
   private changeLayoutMode(mode: string): void {
+    const body = document.body as HTMLElement
+    const buttons: HTMLElement[] = Array.from(
+      body.querySelectorAll(`[${ this.selectors.buttonCatalogModeAttribute }]`)
+    )
+    buttons.forEach((button: HTMLElement) => {
+      if (button.getAttribute(this.selectors.buttonCatalogModeAttribute) === mode) {
+        button.classList.add('active')
+      } else {
+        button.classList.remove('active')
+      }
+    })
+
     switch (mode) {
     case 'enlarged':
-      this.elements.layout.classList.remove('mode-chess')
-      this.elements.layout.classList.add('mode-enlarged')
+      //this.elements.layout.classList.remove('mode-chess')
+      //this.elements.layout.classList.add('mode-enlarged')
       this.elements.cards.forEach(({ card, }) => {
         card.classList.remove('mode-chess')
         card.classList.add('mode-enlarged')
       })
       break
     case 'chess':
-      this.elements.layout.classList.remove('mode-enlarged')
-      this.elements.layout.classList.add('mode-chess')
-      this.elements.cards.forEach(({ card, }) => {
-        card.classList.remove('mode-enlarged')
-        card.classList.add('mode-chess')
+      //this.elements.layout.classList.remove('mode-enlarged')
+      //this.elements.layout.classList.add('mode-chess')
+      this.elements.cards.forEach(({ card, }, index) => {
+        // если это каждый третий элемент, начиная с первого
+        if ((index + 1) % 3 === 1) {
+          card.classList.add('mode-enlarged')
+        } else {
+          card.classList.remove('mode-enlarged')
+        }
       })
       break
     default:
-      this.elements.layout.classList.remove('mode-enlarged')
-      this.elements.layout.classList.remove('mode-chess')
+      //this.elements.layout.classList.remove('mode-enlarged')
+      //this.elements.layout.classList.remove('mode-chess')
       this.elements.cards.forEach(({ card, }) => {
         card.classList.remove('mode-enlarged')
         card.classList.remove('mode-chess')
@@ -89,9 +105,10 @@ export class CatalogCards {
   private handleClick(event: MouseEvent): void {
     const target = event.target as HTMLElement
 
-    if (target.closest('[data-catalog-layout]')) {
-      const button: HTMLElement = target.closest('[data-catalog-layout]')
-      const mode = button.getAttribute('data-catalog-layout')
+    /** Режим отображения карточек в каталоге */
+    if (target.closest(`[${ this.selectors.buttonCatalogModeAttribute }]`)) {
+      const button: HTMLElement = target.closest(`[${ this.selectors.buttonCatalogModeAttribute }]`)
+      const mode = button.getAttribute(this.selectors.buttonCatalogModeAttribute)
 
       this.changeLayoutMode(mode)
     }

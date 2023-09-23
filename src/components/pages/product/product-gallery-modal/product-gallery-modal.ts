@@ -1,8 +1,8 @@
-import Swiper, { Navigation, Pagination, SwiperOptions, Mousewheel, A11y } from 'swiper'
+import Swiper from 'swiper'
+import { Navigation, Pagination, Mousewheel, A11y } from 'swiper/modules'
 import { accessibility } from 'src/scripts/swiper-settings'
-import 'swiper/scss'
 import { modals } from 'src/scripts/modals-instance'
-import { CSSSelector } from 'swiper/types'
+import { CSSSelector, SwiperOptions } from 'swiper/types'
 
 document.addEventListener('DOMContentLoaded', () => {
   const { body, } = document

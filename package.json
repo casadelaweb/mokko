@@ -45,7 +45,7 @@
     "imask": "^7.0.1",
     "nouislider": "^15.7.0",
     "restyle.css": "^1.0.8",
-    "swiper": "^9.3.2",
+    "swiper": "^10.3.0",
     "vanilla-lazyload": "^17.8.3"
   }
 }

@@ -1,6 +1,6 @@
-import Swiper, { Pagination, SwiperOptions } from 'swiper'
-import 'swiper/scss'
-import { CSSSelector } from 'swiper/types'
+import Swiper from 'swiper'
+import { Pagination } from 'swiper/modules'
+import { CSSSelector, SwiperOptions } from 'swiper/types'
 
 document.addEventListener('DOMContentLoaded', () => {
   new Swiper('.product-gallery-slider' as CSSSelector, {

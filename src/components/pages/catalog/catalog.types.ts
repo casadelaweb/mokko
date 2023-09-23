@@ -25,4 +25,5 @@ export interface iSelectors {
   catalogLayout: string,
   controls: string,
   slider: string,
+  buttonCatalogModeAttribute: string,
 }
