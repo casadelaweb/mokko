@@ -96,38 +96,38 @@ export class CatalogCards {
     const media = getCurrentMedia()
     
     switch(mode) {
-      case 'enlarged':
-        this.elements.cards.forEach(({card,}) => {
+    case 'enlarged':
+      this.elements.cards.forEach(({ card, }) => {
+        card.classList.add('mode-enlarged')
+      })
+      break
+    case 'compact':
+      this.elements.cards.forEach(({ card, }) => {
+        card.classList.remove('mode-enlarged')
+      })
+      break
+    default:
+      // по умолчанию комбинированный режим карточек
+      this.elements.cards.forEach(({ card, }, index) => {
+        // для каждого первого элемента из 3, начиная с первого
+        if(media === 'mobile' && this.everyOf(index, 1, 3)) {
           card.classList.add('mode-enlarged')
-        })
-        break
-      case 'compact':
-        this.elements.cards.forEach(({card,}) => {
-          card.classList.remove('mode-enlarged')
-        })
-        break
-      default:
-        // по умолчанию комбинированный режим карточек
-        this.elements.cards.forEach(({card,}, index) => {
-          // для каждого первого элемента из 3, начиная с первого
-          if(media === 'mobile' && this.everyOf(index, 1, 3)) {
-            card.classList.add('mode-enlarged')
-          }
-          // для каждых 2 элементов из 5, начиная с первого
-          else if(media === 'tablet' && this.everyOf(index, [1, 2,], 5)) {
-            card.classList.add('mode-enlarged')
-          }
-          // для каждых 3 элементов из 7, начиная с первого
-          else if((media === 'tabletBg' || media === 'laptop' || media === 'desktop')
+        }
+        // для каждых 2 элементов из 5, начиная с первого
+        else if(media === 'tablet' && this.everyOf(index, [1, 2,], 5)) {
+          card.classList.add('mode-enlarged')
+        }
+        // для каждых 3 элементов из 7, начиная с первого
+        else if((media === 'tabletBg' || media === 'laptop' || media === 'desktop')
             && this.everyOf(index, [1, 2, 3,], 7)) {
-            card.classList.add('mode-enlarged')
-          }
-          // для всех остальных
-          else {
-            card.classList.remove('mode-enlarged')
-          }
-        })
-        break
+          card.classList.add('mode-enlarged')
+        }
+        // для всех остальных
+        else {
+          card.classList.remove('mode-enlarged')
+        }
+      })
+      break
     }
     
     localStorage.setItem('catalogLayoutMode', mode)
@@ -218,14 +218,14 @@ export class CatalogCards {
       mousewheel: false,
       breakpoints: {
         1280: {
-          navigation: {enabled: true,},
+          navigation: { enabled: true, },
           // pagination: { enabled: false, },
-          mousewheel: {releaseOnEdges: true,},
+          mousewheel: { releaseOnEdges: true, },
         },
         1920: {
-          navigation: {enabled: true,},
+          navigation: { enabled: true, },
           // pagination: { enabled: false, },
-          mousewheel: {releaseOnEdges: true,},
+          mousewheel: { releaseOnEdges: true, },
         },
       },
     })
@@ -277,7 +277,7 @@ export class CatalogCards {
   }
   
   private updateElements(): iCatalogElements {
-    const {body,} = document
+    const { body, } = document
     
     const header: HTMLElement = body.querySelector('.header')
     const layout: HTMLElement = body.querySelector(this.selectors.catalogLayout)

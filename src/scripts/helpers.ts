@@ -14,7 +14,7 @@ export function isMediaAboveLaptop(): boolean {
 type currentMedia = 'mobile' | 'tablet' | 'tabletBg' | 'laptop' | 'desktop'
 
 export function getCurrentMedia(): currentMedia {
-  const {matchMedia,} = window
+  const { matchMedia, } = window
   let result: currentMedia = 'mobile'
   
   if(matchMedia('(min-width: 768px) and (max-width: 1023px)').matches) {

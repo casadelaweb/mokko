@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const catalogHeader: HTMLElement = catalogCards.elements.catalogHeaderDesktop
   if(catalogHeader) {
     window.addEventListener('scroll', () => {
-      const {scrollY,} = window
+      const { scrollY, } = window
       
       if(scrollY > catalogCards.elements.header.offsetHeight) {
         catalogHeader.classList.add('scrolled')
@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
       summary: '.catalog-filter-summary',
       button: '.catalog-filter-button',
       content: '.catalog-filter-body',
-      scrollbars: {vertical: 'has-vertical-scrollbar',},
+      scrollbars: { vertical: 'has-vertical-scrollbar', },
     },
     onlyUnderLaptop: true,
   }).init()

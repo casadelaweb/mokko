@@ -1,7 +1,7 @@
 import './toggle.scss'
 
 export default function toggle(selector: string) {
-  const {body,} = document
+  const { body, } = document
   const allToggles: HTMLElement[] = Array.from(body.querySelectorAll(selector))
   
   if(allToggles.length) {

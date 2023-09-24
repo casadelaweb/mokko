@@ -44,7 +44,7 @@ class Header {
   }
   
   private updateElements(): void {
-    const {body,} = document
+    const { body, } = document
     this.header = body.querySelector('.header') ?? body.querySelector('header')
     this.headerHeight = this.header.offsetHeight
     this.isPageIndex = body.getAttribute('data-page') === 'index'
@@ -64,7 +64,7 @@ class Header {
   }
   
   private hoverHeader(): void {
-    const {scrollY,} = window
+    const { scrollY, } = window
     
     if(scrollY > this.headerHeight) {
       this.header.classList.add('scrolled')

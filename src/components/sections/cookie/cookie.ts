@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const {body,} = document
+  const { body, } = document
   
   const cookieDate = localStorage.getItem('cookieDate')
   const cookie = body.querySelector('[data-cookie=window]')

@@ -10,7 +10,7 @@ export class Details {
       summary: '[data-details=summary]',
       button: '[data-details=button]',
       content: '[data-details=body]',
-      scrollbars: {vertical: 'has-vertical-scrollbar',},
+      scrollbars: { vertical: 'has-vertical-scrollbar', },
     },
     onlyUnderLaptop: false,
   }
@@ -51,7 +51,7 @@ export class Details {
   }
   
   public updateElements(): void {
-    const {body,} = document
+    const { body, } = document
     
     const details: HTMLElement[] = Array.from(body.querySelectorAll(this.selectors.details))
     if(details.length > 0) this.elements = this.updateElementsData(details)
@@ -79,7 +79,7 @@ export class Details {
     
     if(data.parameters.animation) data.parameters.animation.cancel()
     
-    data.parameters.animation = data.details.animate({height: [startHeight, endHeight,],}, {
+    data.parameters.animation = data.details.animate({ height: [startHeight, endHeight,], }, {
       duration: this.calculateDuration(data.details.offsetHeight, data.summary.offsetHeight + data.content.offsetHeight),
       easing: this.easing,
     })
@@ -155,7 +155,7 @@ export class Details {
     
     if(data.parameters.animation) data.parameters.animation.cancel()
     
-    data.parameters.animation = data.details.animate({height: [startHeight, endHeight,],}, {
+    data.parameters.animation = data.details.animate({ height: [startHeight, endHeight,], }, {
       duration: this.calculateDuration(data.details.offsetHeight, data.summary.offsetHeight),
       easing: this.easing,
     })
