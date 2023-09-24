@@ -4,16 +4,13 @@ import './no-ui-slider.scss'
 
 document.addEventListener('DOMContentLoaded', () => {
   const { body, } = document
-
+  
   const prices: HTMLElement[] = Array.from(body.querySelectorAll('[data-catalog-prices]'))
-
-  if (prices.length > 0) {
+  
+  if(prices.length > 0) {
     prices.forEach((element: HTMLElement) => {
       noUiSlider.create(element, {
-        start: [
-          0,
-          100,
-        ],
+        start: [0, 100,],
         connect: true,
         range: {
           'min': 0,

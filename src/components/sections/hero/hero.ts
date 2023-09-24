@@ -6,11 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   new Swiper('.hero-slider', {
     ...autoplaySetting,
     ...accessibilitySettings,
-    modules: [
-      Pagination,
-      Autoplay,
-      A11y,
-    ],
+    modules: [Pagination, Autoplay, A11y,],
     grabCursor: true,
     slidesPerView: 1,
     speed: 500,

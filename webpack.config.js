@@ -24,7 +24,7 @@ const stylesPipeline = {
     'css-loader',
     {
       loader: 'postcss-loader',
-      options: { postcssOptions: { plugins: [ 'postcss-preset-env', ], }, },
+      options: { postcssOptions: { plugins: ['postcss-preset-env',], }, },
     },
     {
       loader: 'sass-loader',
@@ -106,10 +106,7 @@ module.exports = {
   devtool: isDevelopmentMode ? 'source-map' : false,
   optimization: {
     minimize: true,
-    minimizer: isProductionMode ? [
-      '...',
-      new CssMinimizer(),
-    ] : [ new CssMinimizer(), ],
+    minimizer: isProductionMode ? ['...', new CssMinimizer(),] : [new CssMinimizer(),],
   },
   entry: { main: pathRoot('src/main.ts'), },
   output: {
@@ -213,10 +210,7 @@ module.exports = {
   },
   watchOptions: {
     aggregateTimeout: 500,
-    ignored: [
-      '**/node_modules',
-      '**/dist',
-    ],
+    ignored: ['**/node_modules', '**/dist',],
   },
   devServer: {
     port: 3000,

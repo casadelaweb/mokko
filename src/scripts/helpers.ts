@@ -16,16 +16,16 @@ type currentMedia = 'mobile' | 'tablet' | 'tabletBg' | 'laptop' | 'desktop'
 export function getCurrentMedia(): currentMedia {
   const { matchMedia, } = window
   let result: currentMedia = 'mobile'
-
-  if (matchMedia('(min-width: 768px) and (max-width: 1023px)').matches) {
+  
+  if(matchMedia('(min-width: 768px) and (max-width: 1023px)').matches) {
     result = 'tablet'
-  } else if (matchMedia('(min-width: 1024px) and (max-width: 1279px)').matches) {
+  } else if(matchMedia('(min-width: 1024px) and (max-width: 1279px)').matches) {
     result = 'tabletBg'
-  } else if (matchMedia('(min-width: 1280px) and (max-width: 1919px)').matches) {
+  } else if(matchMedia('(min-width: 1280px) and (max-width: 1919px)').matches) {
     result = 'laptop'
-  } else if (matchMedia('(min-width: 1920px)').matches) {
+  } else if(matchMedia('(min-width: 1920px)').matches) {
     result = 'desktop'
   }
-
+  
   return result
 }

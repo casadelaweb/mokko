@@ -12,17 +12,13 @@ document.addEventListener('DOMContentLoaded', () => {
     ...navigationSettings,
     ...autoplaySettings,
     ...accessibilitySettings,
-    modules: [
-      Navigation,
-      A11y,
-      Autoplay,
-    ],
+    modules: [Navigation, A11y, Autoplay,],
     speed: 500,
     grabCursor: true,
     slidesPerView: 2.05,
     spaceBetween: 7,
   }
-
+  
   new Swiper('.section-layout', {
     ...sharedSettings,
     autoplay: { delay: 10000, },
@@ -35,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
       1280: { slidesPerView: 4, },
     },
   })
-
+  
   new Swiper('.slider-small', {
     ...sharedSettings,
     autoplay: { delay: 5000, },

@@ -5,34 +5,19 @@ module.exports = {
     'amd': true,
     'node': true,
   },
-  'extends': [
-    'eslint:recommended',
-    'plugin:@typescript-eslint/recommended',
-  ],
+  'extends': ['eslint:recommended', 'plugin:@typescript-eslint/recommended',],
   'parser': '@typescript-eslint/parser',
-  'plugins': [ '@typescript-eslint', ],
+  'plugins': ['@typescript-eslint',],
   'overrides': [],
   'parserOptions': {
     'ecmaVersion': 'latest',
     'sourceType': 'module',
   },
   'rules': {
-    'indent': [
-      'error',
-      2,
-    ],
-    'linebreak-style': [
-      'error',
-      'windows',
-    ],
-    'quotes': [
-      'error',
-      'single',
-    ],
-    'semi': [
-      'error',
-      'never',
-    ],
+    'indent': ['error', 2,],
+    'linebreak-style': ['error', 'windows',],
+    'quotes': ['error', 'single',],
+    'semi': ['error', 'never',],
     'comma-dangle': [
       'error',
       {
@@ -48,11 +33,11 @@ module.exports = {
       {
         'ArrayExpression': {
           'multiline': true,
-          'minItems': 2,
+          'minItems': 4,
         },
         'ArrayPattern': {
           'multiline': true,
-          'minItems': 3,
+          'minItems': 4,
         },
       },
     ],
@@ -60,13 +45,10 @@ module.exports = {
       'error',
       {
         'multiline': true,
-        'minItems': 3,
+        'minItems': 4,
       },
     ],
-    'array-bracket-spacing': [
-      'error',
-      'always',
-    ],
+    'array-bracket-spacing': ['error', 'never',],
     'object-property-newline': 'error',
     'object-curly-newline': [
       'error',
@@ -80,10 +62,7 @@ module.exports = {
         'ExportDeclaration': { 'minProperties': 3, },
       },
     ],
-    'object-curly-spacing': [
-      'error',
-      'always',
-    ],
+    'object-curly-spacing': ['error', 'always',],
     'prefer-const': 'error',
     'no-var': 'error',
     'no-unused-vars': 'off',

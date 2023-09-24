@@ -6,8 +6,8 @@ document.addEventListener('DOMContentLoaded', () => {
   new Swiper('.product-gallery-slider' as CSSSelector, {
     enabled: true,
     slidesPerView: 1,
-    modules: [ Pagination, ],
-
+    modules: [Pagination,],
+    
     pagination: {
       el: '.swiper-pagination',
       type: 'bullets',

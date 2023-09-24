@@ -1,33 +1,38 @@
-$icon-square: '\e900';
-$icon-squares-3: '\e901';
-$icon-squares-4: '\e902';
-$icon-squares-6: '\e903';
-$icon-squares-8: '\e904';
-$icon-telegram: '\e905';
-$icon-vk: '\e906';
-$icon-arrow-down: '\e907';
-$icon-arrow-left: '\e908';
-$icon-arrow-right: '\e909';
-$icon-arrow-up: '\e90a';
-$icon-close: '\e90b';
-$icon-filters: '\e90c';
-$icon-heart: '\e90d';
-$icon-heart-fill: '\e90e';
-$icon-location: '\e90f';
-$icon-logo: '\e910';
-$icon-menu: '\e911';
-$icon-mute: '\e912';
-$icon-person: '\e913';
-$icon-search: '\e914';
-$icon-suitcase: '\e915';
+// @use 'sass:math';
+// $hash: '?v=' + math.random(1024) + math.random(1024) + '#iconfont';
+
+$icon-squares-5: '\e900';
+$icon-squares-7: '\e901';
+$icon-square: '\e902';
+$icon-squares-3: '\e903';
+$icon-squares-4: '\e904';
+$icon-squares-6: '\e905';
+$icon-squares-8: '\e906';
+$icon-telegram: '\e907';
+$icon-vk: '\e908';
+$icon-arrow-down: '\e909';
+$icon-arrow-left: '\e90a';
+$icon-arrow-right: '\e90b';
+$icon-arrow-up: '\e90c';
+$icon-close: '\e90d';
+$icon-filters: '\e90e';
+$icon-heart: '\e90f';
+$icon-heart-fill: '\e910';
+$icon-location: '\e911';
+$icon-logo: '\e912';
+$icon-menu: '\e913';
+$icon-mute: '\e914';
+$icon-person: '\e915';
+$icon-search: '\e916';
+$icon-suitcase: '\e917';
 
 @font-face {
   font-family: 'iconfont';
-  src: url('src/assets/fonts/iconfont.eot?gtz0yo');
-  src: url('src/assets/fonts/iconfont.eot?gtz0yo#iefix') format('embedded-opentype'),
-  url('src/assets/fonts/iconfont.ttf?gtz0yo') format('truetype'),
-  url('src/assets/fonts/iconfont.woff?gtz0yo') format('woff'),
-  url('src/assets/fonts/iconfont.svg?gtz0yo#iconfont') format('svg');
+  src: url('src/assets/fonts/iconfont.eot?d09flu');
+  src: url('src/assets/fonts/iconfont.eot?d09flu#iefix') format('embedded-opentype'),
+  url('src/assets/fonts/iconfont.ttf?d09flu') format('truetype'),
+  url('src/assets/fonts/iconfont.woff?d09flu') format('woff'),
+  url('src/assets/fonts/iconfont.svg?d09flu#iconfont') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -43,6 +48,18 @@ $icon-suitcase: '\e915';
   speak: never;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-squares-5 {
+  &:before {
+    content: $icon-squares-5;
+  }
+}
+
+.icon-squares-7 {
+  &:before {
+    content: $icon-squares-7;
+  }
 }
 
 .icon-square {

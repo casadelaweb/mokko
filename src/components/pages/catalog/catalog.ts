@@ -7,24 +7,24 @@ import { Select } from 'src/modules/select/select'
 document.addEventListener('DOMContentLoaded', () => {
   const catalogCards = new CatalogCards()
   catalogCards.init()
-
+  
   const catalogHeader: HTMLElement = catalogCards.elements.catalogHeaderDesktop
-  if (catalogHeader) {
+  if(catalogHeader) {
     window.addEventListener('scroll', () => {
       const { scrollY, } = window
-
-      if (scrollY > catalogCards.elements.header.offsetHeight) {
+      
+      if(scrollY > catalogCards.elements.header.offsetHeight) {
         catalogHeader.classList.add('scrolled')
       } else {
         catalogHeader.classList.remove('scrolled')
       }
     })
-    if (isMediaAboveLaptop()) {
+    if(isMediaAboveLaptop()) {
       catalogHeader.style.overflow = 'unset'
       catalogHeader.style.top = catalogCards.elements.header.offsetHeight + 'px'
     }
   }
-
+  
   new Details({
     preferButtonIfExist: true,
     selectors: {
@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
   })
   catalogSelects.init()
   const formFilters: HTMLElement = document.body.querySelector('[data-catalog=filters]')
-  if (formFilters) {
+  if(formFilters) {
     formFilters.addEventListener('reset', () => {
       catalogSelects.updateSelects()
     })

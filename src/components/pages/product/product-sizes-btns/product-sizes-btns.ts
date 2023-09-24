@@ -11,37 +11,37 @@ document.addEventListener('DOMContentLoaded', () => {
   const regularPrice: HTMLElement = body.querySelector('.product-price-regular')
   const catalogDetailBtnsPrice: HTMLElement = body.querySelector('.product-btns-price')
   const activeClass: string = 'product-sizes-item-active'
-
-  if (catalogDetailBtnsPrice && regularPrice) {
+  
+  if(catalogDetailBtnsPrice && regularPrice) {
     catalogDetailBtnsPrice.textContent = regularPrice.textContent
   }
-  if (catalogDetail) {
+  if(catalogDetail) {
     catalogDetail.addEventListener('click', (event) => {
       const target = event.target as HTMLElement
-
-      if (target.closest('.product-sizes-item')) {
+      
+      if(target.closest('.product-sizes-item')) {
         const button = target.closest('.product-sizes-item')
         const buttons: HTMLElement[] = Array.from(body.querySelectorAll('.product-sizes-item'))
-
+        
         buttons.forEach((element: HTMLElement) => element.classList.remove(activeClass))
         button.classList.add(activeClass)
-
+        
         const textArr: string[] = button.textContent.trim().split(' ')
-        sizeBtn.children[0].textContent = `${ textArr[0] } (${ textArr[1] })`
+        sizeBtn.children[0].textContent = `${textArr[0]} (${textArr[1]})`
       }
     })
   }
-
-  if (catalogDetailSizesInfo) {
+  
+  if(catalogDetailSizesInfo) {
     const catalogDetailSizesInfoMob: HTMLElement = catalogDetailSizesInfo.cloneNode()
     catalogDetailSizesInfoMob.classList.add('product-sizes-info-mob')
     catalogDetailSizesInfoMob.innerHTML = catalogDetailSizesInfo.innerHTML
-
+    
     catalogDetailBtns.insertAdjacentHTML('beforebegin', catalogDetailSizesInfoMob.outerHTML)
   }
-
+  
   toggle('.product-btn-size')
-
+  
   // document.addEventListener('DOMContentLoaded', (event: MouseEvent) => {
   //   const target = event.target as HTMLElement
   //   if (target.closest('.product-btn-buy')) {
