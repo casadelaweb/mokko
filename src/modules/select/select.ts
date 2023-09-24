@@ -37,7 +37,7 @@ export class Select {
       ...Select.optionsDefault.selectors,
       ...optionsCustom?.selectors,
     }
-    this.parameters = { current: [], }
+    this.parameters = {current: [],}
     this.elements = []
     this.onClick = this.handleClick.bind(this)
   }
@@ -104,7 +104,7 @@ export class Select {
   }
   
   private updateElements(): void {
-    const { body, } = document
+    const {body,} = document
     
     const selects: HTMLElement[] = Array.from(body.querySelectorAll(this.selectors.select))
     

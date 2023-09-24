@@ -1,4 +1,4 @@
-@import 'src/styles/shared';
+@use 'src/styles/shared' as *;
 
 .breadcrumbs {
   font-size: 13px;

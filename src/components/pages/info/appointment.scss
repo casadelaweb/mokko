@@ -1,12 +1,12 @@
-@import 'src/styles/shared';
+@use 'src/styles/shared' as *;
 
 .appointment {
   &-title {
     font-size: 16px;
     line-height: 1.4;
     letter-spacing: 0.02em;
-    margin: 20px 0;
     text-transform: uppercase;
+    margin: 20px 0;
     color: #505050;
     @include mediaTablet {
       font-size: 24px;
@@ -88,9 +88,9 @@
       height: 74px;
       @include mediaTabletBg {
         top: auto;
-        left: (60px + 92px) * -1;
         right: auto;
         bottom: 10px;
+        left: (60px + 92px) * -1;
         width: 92px;
         height: 92px;
       }

@@ -1,4 +1,4 @@
-@import 'src/styles/shared';
+@use 'src/styles/shared' as *;
 
 .reviews {
   display: grid;
@@ -37,8 +37,8 @@
   }
 
   &-button {
+    text-decoration: underline;
     display: inline-block;
     margin-top: auto;
-    text-decoration: underline;
   }
 }

@@ -22,7 +22,7 @@ import 'src/scripts/global-scroll-controller'
 ````
 
 ````scss
-@import 'src/styles/shared';
+@use 'src/styles/shared' as *;
 ````
 
 ## Скрипты

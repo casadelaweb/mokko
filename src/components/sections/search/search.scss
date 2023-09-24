@@ -1,4 +1,4 @@
-@import 'src/styles/shared';
+@use 'src/styles/shared' as *;
 
 .search {
   position: fixed;
@@ -50,15 +50,15 @@
       @include scrollbar;
       display: grid;
       overflow-y: scroll;
-      max-height: 650px - 74px;
-      padding: 40px 48px 56px;
       grid-template-columns: 3fr 1fr;
       column-gap: 96px;
+      max-height: 650px - 74px;
+      padding: 40px 48px 56px;
     }
     @include mediaDesktop {
+      column-gap: 112px;
       max-height: 750px - 80px;
       padding: 40px 64px 56px;
-      column-gap: 112px;
     }
 
     &-aside {

@@ -1,4 +1,4 @@
-@import 'src/styles/shared';
+@use 'src/styles/shared' as *;
 
 .select {
   font-size: 13px;
@@ -82,10 +82,10 @@
     @include flex(center);
     font-size: 13px;
 
+    white-space: nowrap;
     padding: 0.75em 1em;
     cursor: pointer;
     transition: background 0.5s, color 0.5s;
-    white-space: nowrap;
     @include mediaLaptop {
       font-size: 14px;
     }

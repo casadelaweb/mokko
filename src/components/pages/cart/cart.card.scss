@@ -1,4 +1,4 @@
-@import 'src/styles/shared';
+@use 'src/styles/shared' as *;
 
 .cart-card {
   font-size: 14px;
@@ -63,9 +63,9 @@
 
     &-button, &-input {
       font-size: 14px;
+      text-align: center;
       flex: 0 0 auto;
       height: 100%;
-      text-align: center;
       color: #80756e;
     }
 

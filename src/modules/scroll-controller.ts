@@ -17,7 +17,7 @@ export class scrollController {
   }
   
   public lock(): void {
-    const { documentElement: html, body, } = document
+    const {documentElement: html, body,} = document
     disableBodyScroll(body)
     this.isLocked = true
     html.classList.add('locked')
@@ -38,7 +38,7 @@ export class scrollController {
   }
   
   public unlock(): void {
-    const { documentElement: html, body, } = document
+    const {documentElement: html, body,} = document
     enableBodyScroll(body)
     this.isLocked = false
     html.classList.remove('locked')
@@ -51,7 +51,7 @@ export class scrollController {
   }
   
   public update(): void {
-    const { documentElement: html, body, } = document
+    const {documentElement: html, body,} = document
     this.scrollBarWidth = window.innerWidth - html.clientWidth
     this.header = body.querySelector('header')
     html.style.setProperty('--scrollbarWidth', this.scrollBarWidth + 'px')

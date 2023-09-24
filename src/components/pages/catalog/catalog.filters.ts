@@ -3,7 +3,7 @@ import 'nouislider/dist/nouislider.css'
 import './no-ui-slider.scss'
 
 document.addEventListener('DOMContentLoaded', () => {
-  const { body, } = document
+  const {body,} = document
   
   const prices: HTMLElement[] = Array.from(body.querySelectorAll('[data-catalog-prices]'))
   

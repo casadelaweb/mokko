@@ -1,4 +1,4 @@
-@import 'src/styles/shared';
+@use 'src/styles/shared' as *;
 
 .auth {
   @include flex($d: column);
@@ -34,9 +34,9 @@
   &-title {
     font-size: 20px;
     letter-spacing: 0.02em;
-    margin-bottom: 30px;
     text-align: center;
     text-transform: uppercase;
+    margin-bottom: 30px;
     color: #505050;
   }
 
@@ -53,8 +53,8 @@
   &-success {
     @include flex($d: column);
     font-size: 17px;
-    flex: 1 0 auto;
     text-align: center;
+    flex: 1 0 auto;
 
     img {
       margin: 0 auto 1em;
@@ -94,9 +94,9 @@
 
   &-link {
     font-size: 17px;
+    text-decoration: underline;
     display: inline-block;
     margin: 0 auto;
-    text-decoration: underline;
     color: #80756e;
   }
 }

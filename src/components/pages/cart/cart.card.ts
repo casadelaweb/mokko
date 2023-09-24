@@ -145,7 +145,7 @@ export class CartCard {
   }
   
   private updateElements(): iElement[] {
-    const { body, } = document
+    const {body,} = document
     const cards: HTMLElement[] = Array.from(body.querySelectorAll(this.selectors.card))
     return cards.map((card) => this.updateElement(card))
   }

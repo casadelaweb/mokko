@@ -1,10 +1,10 @@
-@import 'src/styles/shared';
+@use 'src/styles/shared' as *;
 
 .cookie {
   position: fixed;
   z-index: 100;
-  left: $containerPaddingMobile;
   bottom: $containerPaddingMobile;
+  left: $containerPaddingMobile;
   width: calc(100% - $containerPaddingMobile * 2);
   padding: ($containerPaddingMobile * 1.25) $containerPaddingMobile;
   transition: transform 0.5s;
@@ -16,15 +16,15 @@
 
   @include mediaTablet {
     @include flex(center);
-    left: $containerPaddingTablet;
     bottom: $containerPaddingTablet;
+    left: $containerPaddingTablet;
     width: calc(100% - $containerPaddingTablet * 2);
     padding: 32px 36px;
   }
 
   @include mediaLaptop {
-    left: auto;
     right: $containerPaddingTablet;
+    left: auto;
     width: 690px;
     transform: translate(150%, 0);
   }
@@ -35,8 +35,8 @@
       left: calc($containerPaddingMobile + var(--scrollbarWidth));
     }
     @include mediaLaptop {
-      left: auto;
       right: calc($containerPaddingTablet + var(--scrollbarWidth));
+      left: auto;
     }
   }
 
@@ -61,11 +61,11 @@
     @include flex(center, center);
     font-size: 22px;
     letter-spacing: 0.02em;
+    text-align: center;
     flex: 0 0 auto;
     width: 100%;
     height: 43px;
     margin-top: $containerPaddingMobile;
-    text-align: center;
     color: #ada49e;
     border-radius: 6px;
     background: white;

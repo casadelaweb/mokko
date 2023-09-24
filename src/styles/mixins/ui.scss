@@ -1,6 +1,6 @@
 @import 'src/styles/variables';
-@import './helpers';
-@import './media';
+@import 'src/styles/mixins/helpers';
+@import 'src/styles/mixins/media';
 
 @mixin container {
   margin: 0 auto;

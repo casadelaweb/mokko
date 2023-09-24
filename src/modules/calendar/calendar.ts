@@ -11,7 +11,7 @@ export class Calendar {
   private calendars: any
   
   constructor() {
-    this.selectors = { inputDate: '[data-calendar=input]', }
+    this.selectors = {inputDate: '[data-calendar=input]',}
     this.elements = []
     this.calendars = []
   }

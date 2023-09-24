@@ -5,7 +5,7 @@ import { modals } from 'src/scripts/modals-instance'
 import { CSSSelector, SwiperOptions } from 'swiper/types'
 
 document.addEventListener('DOMContentLoaded', () => {
-  const { body, } = document
+  const {body,} = document
   const catalogDetail: HTMLElement = body.querySelector('.product')
   const galleryItems: HTMLElement[] = Array.from(body.querySelectorAll('.product-gallery-item'))
   const catalogGalleryModalSlider: HTMLElement = body.querySelector('.product-gallery-modal-slider .swiper-wrapper')

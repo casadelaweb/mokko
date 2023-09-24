@@ -37,7 +37,7 @@ export class Menu {
   }
   
   private listen(): void {
-    const { buttonsDesktopClose, buttonDesktopOpen, menu, } = this.elements
+    const {buttonsDesktopClose, buttonDesktopOpen, menu,} = this.elements
     
     buttonsDesktopClose.forEach((button) => {
       button.addEventListener('mouseenter', () => {
@@ -62,8 +62,8 @@ export class Menu {
   }
   
   private updateElements(): void {
-    const { body, } = document
-    const { selectors, } = this
+    const {body,} = document
+    const {selectors,} = this
     
     this.elements.overlay = body.querySelector(selectors.overlay)
     this.elements.header = body.querySelector(selectors.header)
@@ -84,7 +84,7 @@ export class Menu {
   }
   
   private updateMenuStyles(): void {
-    const { menu, header, } = this.elements
+    const {menu, header,} = this.elements
     
     if(isMediaAboveLaptop()) {
       menu.style.top = header.offsetHeight + 'px'

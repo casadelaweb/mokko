@@ -1,4 +1,4 @@
-@import 'src/styles/shared';
+@use 'src/styles/shared' as *;
 
 .hero {
   overflow: hidden;
@@ -22,8 +22,8 @@
   @include flex(center, center);
   position: absolute;
   z-index: 1;
-  left: 50%;
   bottom: 16px;
+  left: 50%;
   transform: translate(-50%, 0);
 
   @include mediaLaptop {

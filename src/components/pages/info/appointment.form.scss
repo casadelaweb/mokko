@@ -1,4 +1,4 @@
-@import 'src/styles/shared';
+@use 'src/styles/shared' as *;
 
 .appointment {
   &-form {
@@ -62,8 +62,8 @@
       line-height: 1.4;
       grid-area: policy;
       @include mediaOnlyMobile {
-        width: 272px;
         text-align: center;
+        width: 272px;
       }
       @include mediaTabletBg {
         font-size: 14px;
@@ -89,8 +89,8 @@
     @include mediaTabletBg {
       position: absolute;
       z-index: 1;
-      left: 0;
       bottom: 0;
+      left: 0;
       margin: 0;
     }
   }

@@ -1,4 +1,4 @@
-@import 'src/styles/shared';
+@use 'src/styles/shared' as *;
 
 .page404 {
   position: relative;
@@ -39,8 +39,8 @@
     font-size: 54px * 1.1;
     font-weight: 700;
     line-height: 1;
-    margin-bottom: 32px;
     text-align: center;
+    margin-bottom: 32px;
     color: white;
     @include mediaTablet {
       font-size: 64px * 1.1;
@@ -52,9 +52,9 @@
     font-size: 16px;
     line-height: 1.4;
     letter-spacing: 0.02em;
+    text-align: center;
     width: 220px;
     margin-bottom: 24px;
-    text-align: center;
     color: white;
     @include mediaTablet {
       font-size: 20px;
@@ -73,9 +73,9 @@
   &-message {
     font-size: 14px;
     line-height: 1.4;
+    text-align: center;
     width: 250px;
     margin-bottom: 48px;
-    text-align: center;
     color: white;
     @include mediaTablet {
       font-size: 16px;

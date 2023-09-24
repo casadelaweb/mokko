@@ -22,7 +22,7 @@ class Modals {
   // eslint-disable-next-line no-unused-vars
   private readonly onKeyUp: (event: KeyboardEvent) => any
   
-  constructor({ hooks, }) {
+  constructor({hooks,}) {
     this.options = {
       selectors: {
         modal: '[data-modal]',
@@ -70,12 +70,12 @@ class Modals {
   }
   
   public update(): void {
-    const { documentElement: html, } = document
+    const {documentElement: html,} = document
     html.style.setProperty('--modal-transition', this.options.transition.style())
   }
   
   public activateModal(modal: HTMLElement, trigger?: any): void {
-    throwEvent(modal, Modals.events.beforeOpen, { trigger: trigger, })
+    throwEvent(modal, Modals.events.beforeOpen, {trigger: trigger,})
     this.onBeforeOpen()
     
     modal.classList.add('active')
@@ -94,7 +94,7 @@ class Modals {
     }
     this.onOpen()
     
-    throwEvent(modal, Modals.events.open, { trigger: trigger, })
+    throwEvent(modal, Modals.events.open, {trigger: trigger,})
   }
   
   public deactivateModal(modal: HTMLElement, trigger?: any): void {
@@ -102,7 +102,7 @@ class Modals {
     // выходим из метода
     if(!modal.classList.contains('active')) return
     
-    throwEvent(modal, Modals.events.beforeClose, { trigger: trigger, })
+    throwEvent(modal, Modals.events.beforeClose, {trigger: trigger,})
     this.onBeforeClose()
     
     modal.classList.remove('active')
@@ -128,7 +128,7 @@ class Modals {
         this.overlay.classList.remove('active')
       }
       this.onClose()
-      return throwEvent(modal, Modals.events.close, { trigger: trigger, })
+      return throwEvent(modal, Modals.events.close, {trigger: trigger,})
     })
   }
   
@@ -143,8 +143,8 @@ class Modals {
   public init(): void {
     this.update()
     
-    const { body, } = document
-    const { selectors, } = this.options
+    const {body,} = document
+    const {selectors,} = this.options
     
     const activeModals = body.querySelectorAll(selectors.modal + '.active')
     if(activeModals.length > 0) {
@@ -176,8 +176,8 @@ class Modals {
   }
   
   private handleClick(event: MouseEvent): void {
-    const { body, } = document
-    const { selectors, } = this.options
+    const {body,} = document
+    const {selectors,} = this.options
     
     const target = event.target as HTMLElement
     const conditions = {
@@ -187,13 +187,13 @@ class Modals {
     }
     
     if(conditions.buttonOpen) {
-      const { buttonOpen: button, } = conditions
+      const {buttonOpen: button,} = conditions
       const attribute = selectors.buttonOpen.slice(1, -1)
       const modal: HTMLElement = body.querySelector('[data-modal=' + button.getAttribute(attribute) + ']')
       if(modal) this.activateModal(modal, button)
     }
     if(conditions.buttonClose) {
-      const { buttonClose: button, } = conditions
+      const {buttonClose: button,} = conditions
       let modal: HTMLElement
       
       if(button.getAttribute(selectors.buttonClose)) {
@@ -206,7 +206,7 @@ class Modals {
       if(modal) this.deactivateModal(modal, button)
     }
     if(conditions.buttonToggle) {
-      const { buttonToggle: button, } = conditions
+      const {buttonToggle: button,} = conditions
       const attribute = selectors.buttonToggle.slice(1, -1)
       const modal: HTMLElement = body.querySelector('[data-modal=' + button.getAttribute(attribute) + ']')
       if(modal) this.toggleModal(modal, button)
@@ -225,7 +225,7 @@ class Modals {
       this.parameters.all.length > 0 &&
       this.parameters.current instanceof HTMLElement
     ) {
-      const { body, } = document
+      const {body,} = document
       
       this.deactivateModal(this.parameters.current, {
         type: 'keyup',

@@ -13,6 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
       type: 'bullets',
       clickable: true,
     },
-    breakpoints: { 1024: { enabled: false, }, },
+    breakpoints: {1024: {enabled: false,},},
   } as SwiperOptions)
 })

@@ -8,15 +8,15 @@
   </button>
 
   <div class="preview-body">
-    <div class="swiper preview-slider">
-      <button class="preview-slider-button-prev" type="button">
+    <div class=" preview-slider swiper">
+      <button class="preview-slider-button-prev" data-preview="slider-button-prev" type="button">
         <span class="iconfont icon-arrow-left"></span>
       </button>
-      <button class="preview-slider-button-next" type="button">
+      <button class="preview-slider-button-next" data-preview="slider-button-next" type="button">
         <span class="iconfont icon-arrow-right"></span>
       </button>
 
-      <div class="swiper-wrapper">
+      <div class="swiper-wrapper" data-preview="slides-container">
         <div class="swiper-slide">
           <a class="preview-img" href="/catalog/product">
             <img alt="img" loading="lazy" src="src/assets/img/section/product-3.jpg">
@@ -25,15 +25,17 @@
       </div>
     </div>
     <div class="preview-info">
-      <div class="preview-discount">-30%</div>
+      <div class="preview-discount" data-preview="discount">-30%</div>
       <h2 class="preview-title">
-        <a href="/catalog/product">Относительно длинное название продукта, содержащее длинные слова</a>
+        <a data-preview="title" href="/catalog/product" title="Перейти на страницу товара">
+          Относительно длинное название продукта, содержащее длинные слова
+        </a>
       </h2>
-      <div class="preview-prices">
-        <div class="preview-price _old">7 799 ₽</div>
-        <div class="preview-price _current">5 000 ₽</div>
+      <div class="preview-prices" data-preview="prices">
+        <div class="preview-price _old" data-preview="price-old">7 799 ₽</div>
+        <div class="preview-price _current" data-preview="price">5 000 ₽</div>
       </div>
-      <div class="preview-colors">
+      <div class="preview-colors" data-preview="colors">
         <button class="preview-color" data-preview="color" type="button">
           <span style="background: #766cff"></span>
         </button>
@@ -49,21 +51,37 @@
   <div class="preview-footer">
     <div class="preview-sizes">
       <div class="preview-sizes-title">Выберите размер:</div>
-      <div class="preview-sizes-list">
-        <button class="preview-size" data-preview="size" type="button"><span>S <br> 36</span></button>
-        <button class="preview-size active" data-preview="size" type="button"><span>M <br> 38</span></button>
-        <button class="preview-size" data-preview="size" type="button"><span>L <br> 40</span></button>
-        <button class="preview-size" data-preview="size" type="button"><span>XL <br> 42</span></button>
-        <button class="preview-size" data-preview="size" type="button"><span>XXL <br> 44</span></button>
-        <button class="preview-size" data-preview="size" type="button"><span>3XL <br> 46</span></button>
-        <button class="preview-size" data-preview="size" type="button"><span>4XL <br> 48</span></button>
+      <div class="preview-sizes-list" data-preview="sizes">
+        <button class="preview-size" data-preview="size" type="button">
+          <span>S <br> 36</span>
+        </button>
+        <button class="preview-size active" data-preview="size" type="button">
+          <span>M <br> 38</span>
+        </button>
+        <button class="preview-size" data-preview="size" type="button">
+          <span>L <br> 40</span>
+        </button>
+        <button class="preview-size" data-preview="size" type="button">
+          <span>XL <br> 42</span>
+        </button>
+        <button class="preview-size" data-preview="size" type="button">
+          <span>XXL <br> 44</span>
+        </button>
+        <button class="preview-size" data-preview="size" type="button">
+          <span>3XL <br> 46</span>
+        </button>
+        <button class="preview-size" data-preview="size" type="button">
+          <span>4XL <br> 48</span>
+        </button>
       </div>
+      <!-- todo: Как будем обрабатывать добавление товара если размер не выбран -->
+      <div class="preview-sizes-message">Для добавления товара в корзину выберите размер</div>
     </div>
     <div class="preview-buttons">
-      <button class="preview-cart" type="submit">
+      <button class="preview-cart" data-preview="submit" title="Добавить в корзину" type="submit">
         <span>Добавить в корзину</span>
       </button>
-      <button class="preview-favourite" type="button">
+      <button class="preview-favourite" title="Добавить в избранное" type="button">
         <span class="iconfont icon-heart"></span>
       </button>
     </div>

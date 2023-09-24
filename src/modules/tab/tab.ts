@@ -25,7 +25,7 @@ export class Tab {
     const target = event.target as HTMLElement
     
     if(target.closest(this.selectors.button)) {
-      const { body, } = document
+      const {body,} = document
       const button: HTMLElement = target.closest(this.selectors.button)
       
       const tabName: string = '[data-tab=' + button.getAttribute('data-tab') + ']'

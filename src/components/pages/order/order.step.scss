@@ -1,9 +1,9 @@
-@import 'src/styles/shared';
+@use 'src/styles/shared' as *;
 
 
 .order-step {
-  border-bottom: 1px solid #dadada;
   padding: 32px 0;
+  border-bottom: 1px solid #dadada;
   @include mediaLaptop {
     display: grid;
     grid-template-columns: 1fr 1.85fr;
@@ -14,8 +14,8 @@
   }
 
   &:last-child {
-    border-bottom: 0;
     padding-bottom: 0;
+    border-bottom: 0;
     @include mediaOnlyTablet {
       padding-bottom: 50px;
     }
@@ -32,11 +32,11 @@
 
   &-number {
     @include flex(center, center);
-    background: #e9e9e9;
-    border-radius: 50%;
+    width: 24px;
     height: 24px;
     margin-right: 8px;
-    width: 24px;
+    border-radius: 50%;
+    background: #e9e9e9;
   }
 
   &-title {
