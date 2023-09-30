@@ -1,6 +1,6 @@
 import { iElements, iSelectors } from 'src/components/pages/catalog/catalog.preview.types'
 import Swiper from 'swiper'
-import { Navigation, A11y, Pagination, Mousewheel } from 'swiper/modules'
+import { Navigation, A11y, Mousewheel } from 'swiper/modules'
 import { accessibility as accessibilitySettings } from 'src/scripts/swiper-settings'
 
 // import { CatalogCards } from 'src/components/pages/catalog/catalog.cards'
@@ -23,6 +23,18 @@ export class CatalogPreview {
       sizesContainer: '[data-preview=sizes]',
       sizeButton: '[data-preview=size]',
       submit: '[data-preview=submit]',
+    },
+    /** Эти селекторы находятся в карточке товара */
+    selectorsCatalogCard: {
+      title: '[data-test=title]',
+      discount: '[data-test=discount]',
+      url: '[data-test=url]',
+      priceOld: '[data-test=price-old]',
+      price: '[data-test=price]',
+      // этих элементов может быть несколько
+      img: '[data-test=img]',
+      color: '[data-test=color]',
+      size: '[data-test=size]',
     },
   }
   private readonly onClick: (event: MouseEvent) => void
@@ -67,10 +79,7 @@ export class CatalogPreview {
     }
     
     this.swiper = new Swiper(this.selectors.slider, {
-      modules: [
-        Navigation, A11y, Mousewheel,
-        // Pagination,
-      ],
+      modules: [Navigation, A11y, Mousewheel,],
       ...accessibilitySettings,
       loop: true,
       speed: 250,
@@ -81,10 +90,6 @@ export class CatalogPreview {
         nextEl: this.selectors.sliderButtonPrev,
         prevEl: this.selectors.sliderButtonNext,
       },
-      //pagination: {
-      //  el: '.swiper-pagination',
-      //  clickable: true,
-      //},
       mousewheel: false,
       breakpoints: {
         1280: { mousewheel: { releaseOnEdges: true, }, },
@@ -121,18 +126,62 @@ export class CatalogPreview {
     }
   }
   
+  //private getPreviewElements(form: HTMLElement){
+  //
+  //}
+  
   private updateListeners(): void {
     document.removeEventListener('click', this.onClick)
     document.addEventListener('click', this.onClick)
   }
   
+  private getCatalogCardElements(card: HTMLElement) {
+    const title: HTMLElement = card.querySelector('[data-test=title]')
+    const discount: HTMLElement = card.querySelector('[data-test=discount]')
+    const url: HTMLElement = card.querySelector('[data-test=url]')
+    const priceOld: HTMLElement = card.querySelector('[data-test=price-old]')
+    const price: HTMLElement = card.querySelector('[data-test=price]')
+    const imgs: HTMLElement[] = Array.from(card.querySelectorAll('[data-test=img]'))
+    const colors: HTMLElement[] = Array.from(card.querySelectorAll('[data-test=color]'))
+    const sizes: HTMLElement[] = Array.from(card.querySelectorAll('[data-test=size]'))
+    
+    const elements = {
+      card,
+      title,
+      discount,
+      url,
+      priceOld,
+      price,
+      imgs,
+      colors,
+      sizes,
+    }
+    const values = {
+      card,
+      title: title?.textContent,
+      discount: discount?.textContent,
+      url: url?.textContent,
+      priceOld: priceOld?.textContent,
+      price: price?.textContent,
+      imgs: imgs.map((item) => item?.textContent),
+      colors: colors.map((item) => item?.textContent),
+      sizes: sizes.map((item) => item?.textContent),
+    }
+    return {
+      elements,
+      values,
+    }
+  }
+  
   private handleClick(event: MouseEvent): void {
     const target = event.target as HTMLElement
     
+    // todo: когда открывается модальное окно карточки быстрого просмотра
     if(target.closest('[data-modal-open=preview]')) {
       const card: HTMLElement = target.closest('[data-catalog=card]')
       if(card.classList.contains('_disabled')) event.preventDefault()
       
+      console.log(this.getCatalogCardElements(card))
     }
     
     if(target.closest(this.selectors.colorButton)) {
