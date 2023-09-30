@@ -8,7 +8,7 @@
   </button>
 
   <div class="preview-body">
-    <div class=" preview-slider swiper">
+    <div class="preview-slider swiper" data-preview="slider">
       <button class="preview-slider-button-prev" data-preview="slider-button-prev" type="button">
         <span class="iconfont icon-arrow-left"></span>
       </button>
@@ -22,7 +22,13 @@
             <img alt="img" loading="lazy" src="src/assets/img/section/product-3.jpg">
           </a>
         </div>
+        <div class="swiper-slide">
+          <a class="preview-img" href="/catalog/product">
+            <img alt="img" loading="lazy" src="src/assets/img/section/product-5.jpg">
+          </a>
+        </div>
       </div>
+      <div class="preview-slider-pagination swiper-pagination"></div>
     </div>
     <div class="preview-info">
       <div class="preview-discount" data-preview="discount">-30%</div>
@@ -31,11 +37,11 @@
           Относительно длинное название продукта, содержащее длинные слова
         </a>
       </h2>
-      <div class="preview-prices" data-preview="prices">
+      <div class="preview-prices" data-preview="prices-container">
         <div class="preview-price _old" data-preview="price-old">7 799 ₽</div>
         <div class="preview-price _current" data-preview="price">5 000 ₽</div>
       </div>
-      <div class="preview-colors" data-preview="colors">
+      <div class="preview-colors" data-preview="colors-container">
         <button class="preview-color" data-preview="color" type="button">
           <span style="background: #766cff"></span>
         </button>

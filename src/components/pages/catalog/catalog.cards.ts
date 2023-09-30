@@ -1,22 +1,12 @@
-import { iCard, iCatalogElements, iSelectors } from './catalog.types'
-import { isMediaAboveLaptop, throwEvent, getCurrentMedia } from 'src/scripts/helpers'
+import { iCard, iCatalogElements, iSelectors } from './catalog.cards.types'
+import { isMediaAboveLaptop, throwEvent, getCurrentMedia, isAnyPointerFine } from 'src/scripts/helpers'
 import Swiper from 'swiper'
 import { Navigation, A11y, Pagination, Mousewheel } from 'swiper/modules'
 import { accessibility as accessibilitySettings } from 'src/scripts/swiper-settings'
 
 export class CatalogCards {
-  public elements: iCatalogElements | undefined
-  private isMediaAboveLaptop: boolean
-  private readonly onCatalogModified: (event: Event) => void
-  private readonly onClick: (event: MouseEvent) => void
-  private readonly onMouseEnter: (event: MouseEvent) => void
-  private readonly onMouseLeave: (event: MouseEvent) => void
-  private readonly onResize: (event: Event) => void
-  private readonly selectors: iSelectors
-  private swiper: Swiper | Swiper[] | undefined
-  
-  constructor() {
-    this.selectors = {
+  private static readonly settings = {
+    selectors: {
       catalogLayout: '[data-catalog=layout]',
       card: '[data-catalog=card]',
       slider: '[data-slider=catalog-card]',
@@ -27,8 +17,23 @@ export class CatalogCards {
       },
       buttonCatalogUpdate: '[data-catalog=update]',
       buttonCatalogModeAttribute: 'data-catalog-layout',
-    }
+    },
+  }
+  public elements: iCatalogElements | undefined
+  private isMediaAboveLaptop: boolean
+  private isAnyPointerFine: boolean
+  private readonly onCatalogModified: (event: Event) => void
+  private readonly onClick: (event: MouseEvent) => void
+  private readonly onMouseEnter: (event: MouseEvent) => void
+  private readonly onMouseLeave: (event: MouseEvent) => void
+  private readonly onResize: (event: Event) => void
+  private readonly selectors: iSelectors
+  private swiper: Swiper | Swiper[] | undefined
+  
+  constructor() {
+    this.selectors = { ...CatalogCards.settings.selectors, }
     this.isMediaAboveLaptop = false
+    this.isAnyPointerFine = false
     this.swiper = undefined
     this.onClick = this.handleClick.bind(this)
     this.onMouseEnter = this.handleMouseEnter.bind(this)
@@ -39,6 +44,7 @@ export class CatalogCards {
   
   public init(): void {
     this.isMediaAboveLaptop = isMediaAboveLaptop()
+    this.isAnyPointerFine = isAnyPointerFine()
     this.elements = this.updateElements()
     this.updateCatalogHeaderHeight()
     this.updateMouseListeners()
@@ -50,6 +56,7 @@ export class CatalogCards {
   
   public update(): void {
     this.isMediaAboveLaptop = isMediaAboveLaptop()
+    this.isAnyPointerFine = isAnyPointerFine()
     this.elements = this.updateElements()
     this.updateCatalogHeaderHeight()
     this.updateMouseListeners()
@@ -58,6 +65,10 @@ export class CatalogCards {
   
   private handleResize(): void {
     this.updateLayoutMode()
+    this.updateMouseListeners()
+    this.isMediaAboveLaptop = isMediaAboveLaptop()
+    this.isAnyPointerFine = isAnyPointerFine()
+    this.updateCatalogHeaderHeight()
   }
   
   private updateLayoutMode(): void {
@@ -160,7 +171,7 @@ export class CatalogCards {
   private handleMouseEnter(event: MouseEvent): void {
     const card = event.target as HTMLElement
     
-    if(this.isMediaAboveLaptop) {
+    if(this.isMediaAboveLaptop || this.isAnyPointerFine) {
       const sizes: HTMLElement = card.querySelector(this.selectors.controls)
       const buttonPrev: HTMLElement = card.querySelector(this.selectors.buttons.prev)
       const buttonNext: HTMLElement = card.querySelector(this.selectors.buttons.next)
@@ -174,7 +185,7 @@ export class CatalogCards {
   private handleMouseLeave(event: MouseEvent): void {
     const card = event.target as HTMLElement
     
-    if(this.isMediaAboveLaptop) {
+    if(this.isMediaAboveLaptop || this.isAnyPointerFine) {
       const sizes: HTMLElement = card.querySelector(this.selectors.controls)
       const buttonPrev: HTMLElement = card.querySelector(this.selectors.buttons.prev)
       const buttonNext: HTMLElement = card.querySelector(this.selectors.buttons.next)
@@ -213,18 +224,19 @@ export class CatalogCards {
       pagination: {
         el: '.swiper-pagination',
         clickable: true,
-        // enabled: true,
       },
       mousewheel: false,
       breakpoints: {
+        1024: {
+          navigation: { enabled: true, },
+          mousewheel: { releaseOnEdges: true, },
+        },
         1280: {
           navigation: { enabled: true, },
-          // pagination: { enabled: false, },
           mousewheel: { releaseOnEdges: true, },
         },
         1920: {
           navigation: { enabled: true, },
-          // pagination: { enabled: false, },
           mousewheel: { releaseOnEdges: true, },
         },
       },

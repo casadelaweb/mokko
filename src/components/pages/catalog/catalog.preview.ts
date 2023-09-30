@@ -1,53 +1,54 @@
-interface iElements {
-  form: HTMLElement,
-  title: HTMLElement,
-  discount: HTMLElement,
-  slidesContainer: HTMLElement
-  pricesContainer: HTMLElement,
-  priceOld: HTMLElement,
-  price: HTMLElement,
-  colorsContainer: HTMLElement,
-  color: HTMLElement,
-  sizesContainer: HTMLElement,
-  size: HTMLElement,
-  submit: HTMLElement,
-}
+import { iElements, iSelectors } from 'src/components/pages/catalog/catalog.preview.types'
+import Swiper from 'swiper'
+import { Navigation, A11y, Pagination, Mousewheel } from 'swiper/modules'
+import { accessibility as accessibilitySettings } from 'src/scripts/swiper-settings'
 
-interface iSelectors {
-  form: string,
-  title: string,
-  discount: string,
-  slidesContainer: string,
-  pricesContainer: string,
-  priceOld: string,
-  price: string,
-  colorsContainer: string,
-  color: string,
-  sizesContainer: string,
-  size: string,
-  submit: string,
-}
+// import { CatalogCards } from 'src/components/pages/catalog/catalog.cards'
 
 export class CatalogPreview {
+  private static readonly settings = {
+    selectors: {
+      form: '[data-preview=form]',
+      title: '[data-preview=title]',
+      discount: '[data-preview=discount]',
+      slider: '[data-preview=slider]',
+      slidesContainer: '[data-preview=slides-container]',
+      sliderButtonPrev: '[data-preview=slider-button-prev]',
+      sliderButtonNext: '[data-preview=slider-button-next]',
+      pricesContainer: '[data-preview=prices-container]',
+      priceOld: '[data-preview=price-old]',
+      price: '[data-preview=price]',
+      colorsContainer: '[data-preview=colors-container]',
+      colorButton: '[data-preview=color]',
+      sizesContainer: '[data-preview=sizes]',
+      sizeButton: '[data-preview=size]',
+      submit: '[data-preview=submit]',
+    },
+  }
   private readonly onClick: (event: MouseEvent) => void
   private elements: iElements | false
   private selectors: iSelectors
+  private swiper: Swiper | Swiper[] | undefined
   
   constructor() {
     this.onClick = this.handleClick.bind(this)
-    this.selectors = {
-      form: '[data-preview=form]',
-      title: '[data-preview=title]',
-      submit: '[data-preview=submit]',
-      //@ts-ignore
-      sizes: '[data-preview=sizes]',
-    }
-    
+    this.swiper = undefined
+    this.selectors = { ...CatalogPreview.settings.selectors, }
     this.elements = {
       form: undefined,
-      //@ts-ignore
-      colors: undefined,
-      sizes: undefined,
+      title: undefined,
+      discount: undefined,
+      slider: undefined,
+      slidesContainer: undefined,
+      sliderButtonPrev: undefined,
+      sliderButtonNext: undefined,
+      pricesContainer: undefined,
+      priceOld: undefined,
+      price: undefined,
+      colorsContainer: undefined,
+      colorButtons: [],
+      sizesContainer: undefined,
+      sizeButtons: [],
       submit: undefined,
     }
   }
@@ -56,29 +57,67 @@ export class CatalogPreview {
     this.elements = this.updateElements()
     if(this.elements === false) return
     this.updateListeners()
+    this.initSlider()
+  }
+  
+  private initSlider(): void {
+    if(!document.body.querySelector(this.selectors.slidesContainer)) {
+      this.swiper = undefined
+      return
+    }
+    
+    this.swiper = new Swiper(this.selectors.slider, {
+      modules: [
+        Navigation, A11y, Mousewheel,
+        // Pagination,
+      ],
+      ...accessibilitySettings,
+      loop: true,
+      speed: 250,
+      grabCursor: true,
+      slidesPerView: 1,
+      spaceBetween: 14,
+      navigation: {
+        nextEl: this.selectors.sliderButtonPrev,
+        prevEl: this.selectors.sliderButtonNext,
+      },
+      //pagination: {
+      //  el: '.swiper-pagination',
+      //  clickable: true,
+      //},
+      mousewheel: false,
+      breakpoints: {
+        1280: { mousewheel: { releaseOnEdges: true, }, },
+        1920: { mousewheel: { releaseOnEdges: true, }, },
+      },
+    })
   }
   
   private updateElements(): iElements | false {
     const body = document.body as HTMLElement
-    const form: HTMLElement = body.querySelector('[data-preview=form]')
+    const form: HTMLElement = body.querySelector(this.selectors.form)
     
     if(!form) return false
     
-    const submit: HTMLElement = form.querySelector(this.selectors.submit)
+    const colorButtons: HTMLElement[] = Array.from(form.querySelectorAll(this.selectors.colorButton))
+    const sizeButtons: HTMLElement[] = Array.from(form.querySelectorAll(this.selectors.sizeButton))
     
     return {
-      color: undefined,
-      colorsContainer: undefined,
-      discount: undefined,
-      price: undefined,
-      priceOld: undefined,
-      pricesContainer: undefined,
-      size: undefined,
-      sizesContainer: undefined,
-      slidesContainer: undefined,
-      title: undefined,
       form,
-      submit,
+      title: form.querySelector(this.selectors.title),
+      discount: form.querySelector(this.selectors.discount),
+      slider: form.querySelector(this.selectors.slider),
+      slidesContainer: form.querySelector(this.selectors.slidesContainer),
+      sliderButtonPrev: form.querySelector(this.selectors.sliderButtonPrev),
+      sliderButtonNext: form.querySelector(this.selectors.sliderButtonNext),
+      pricesContainer: form.querySelector(this.selectors.pricesContainer),
+      priceOld: form.querySelector(this.selectors.priceOld),
+      price: form.querySelector(this.selectors.price),
+      colorsContainer: form.querySelector(this.selectors.colorsContainer),
+      colorButtons,
+      sizesContainer: form.querySelector(this.selectors.sizesContainer),
+      sizeButtons,
+      submit: form.querySelector(this.selectors.submit),
     }
   }
   
@@ -96,16 +135,20 @@ export class CatalogPreview {
       
     }
     
-    //if(target.closest('[data-preview=color]')) {
-    //  const button: HTMLElement = target.closest('[data-preview=color]')
-    //  this.elements.colors.forEach((element: HTMLElement) => element.classList.remove('active'))
-    //  button.classList.add('active')
-    //}
-    //
-    //if(target.closest('[data-preview=size]')) {
-    //  const button: HTMLElement = target.closest('[data-preview=size]')
-    //  this.elements.sizes.forEach((element: HTMLElement) => element.classList.remove('active'))
-    //  button.classList.add('active')
-    //}
+    if(target.closest(this.selectors.colorButton)) {
+      const button: HTMLElement = target.closest(this.selectors.colorButton)
+      if(this.elements === false) return
+      
+      this.elements.colorButtons.forEach((element: HTMLElement) => element.classList.remove('active'))
+      button.classList.add('active')
+    }
+    
+    if(target.closest(this.selectors.sizeButton)) {
+      const button: HTMLElement = target.closest(this.selectors.sizeButton)
+      if(this.elements === false) return
+      
+      this.elements.sizeButtons.forEach((element: HTMLElement) => element.classList.remove('active'))
+      button.classList.add('active')
+    }
   }
 }

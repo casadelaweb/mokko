@@ -12,6 +12,12 @@
   }
 }
 
+@mixin mediaMobileBg {
+  @media (min-width: $breakpointMobileBg) {
+    @content;
+  }
+}
+
 @mixin mediaTablet {
   @media (min-width: $breakpointTablet) {
     @content;
