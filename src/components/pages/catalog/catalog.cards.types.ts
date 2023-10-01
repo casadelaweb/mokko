@@ -1,3 +1,5 @@
+import Swiper from 'swiper'
+
 export interface iCard {
   buttons: {
     prev: HTMLElement,
@@ -6,6 +8,7 @@ export interface iCard {
   card: HTMLElement,
   controls: HTMLElement,
   slider: HTMLElement,
+  swiperInstance?: Swiper,
 }
 
 export interface iCatalogElements {

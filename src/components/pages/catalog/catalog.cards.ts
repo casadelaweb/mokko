@@ -26,9 +26,20 @@ export class CatalogCards {
   private readonly onClick: (event: MouseEvent) => void
   private readonly onMouseEnter: (event: MouseEvent) => void
   private readonly onMouseLeave: (event: MouseEvent) => void
+  private readonly onMouseMove: (event: MouseEvent) => void
   private readonly onResize: (event: Event) => void
   private readonly selectors: iSelectors
   private swiper: Swiper | Swiper[] | undefined
+  private mousemoveParameters: {
+    current: {
+      x: number,
+      y: number,
+    },
+    old: {
+      x: number,
+      y: number,
+    },
+  }
   
   constructor() {
     this.selectors = { ...CatalogCards.settings.selectors, }
@@ -36,10 +47,21 @@ export class CatalogCards {
     this.isAnyPointerFine = false
     this.swiper = undefined
     this.onClick = this.handleClick.bind(this)
+    this.onMouseMove = this.handleMouseMove.bind(this)
     this.onMouseEnter = this.handleMouseEnter.bind(this)
     this.onMouseLeave = this.handleMouseLeave.bind(this)
     this.onCatalogModified = this.handleCatalogModified.bind(this)
     this.onResize = this.handleResize.bind(this)
+    this.mousemoveParameters = {
+      old: {
+        x: 0,
+        y: 0,
+      },
+      current: {
+        x: 0,
+        y: 0,
+      },
+    }
   }
   
   public init(): void {
@@ -49,6 +71,7 @@ export class CatalogCards {
     this.updateCatalogHeaderHeight()
     this.updateMouseListeners()
     this.initSlider()
+    this.updateElementsCardsSwiperInstance()
     this.updateListeners()
     this.observeMutations()
     this.updateLayoutMode()
@@ -61,6 +84,51 @@ export class CatalogCards {
     this.updateCatalogHeaderHeight()
     this.updateMouseListeners()
     this.updateSwiper()
+  }
+  
+  private updateElementsCardsSwiperInstance(): void {
+    this.elements.cards = this.elements.cards.map((element) => {
+      element.swiperInstance = this.getSwiperInstance(element.card)
+      return element
+    })
+  }
+  
+  private getSwiperInstance(card: HTMLElement): Swiper | undefined {
+    let result: undefined | Swiper = undefined
+    
+    const element = this.elements.cards.find((element) => element.card === card)
+    const slider = element.slider
+    
+    if(Array.isArray(this.swiper)) {
+      result = this.swiper.find((swiper) => swiper.el === slider)
+    } else if(this.swiper instanceof Swiper) {
+      result = this.swiper
+    }
+    
+    return result
+  }
+  
+  private handleMouseMove(event: MouseEvent): void {
+    if(this.swiper === undefined) return
+    
+    const target = event.target as HTMLElement
+    const slider: HTMLElement = target.closest(this.selectors.slider)
+    const element = this.elements.cards.find((element) => element.slider === slider)
+    const swiperInstance = this.getSwiperInstance(element.card)
+    
+    if(swiperInstance === undefined || !slider) return
+    
+    // делим видимую часть слайдера на процентные области
+    const sliderWidth: number = slider.offsetWidth
+    const parts: number = swiperInstance.slides.length
+    const partWidth: number = sliderWidth / parts
+    // как далеко вправо мы проскролили относительно элемента
+    const scrolledToRight: number = event.clientX - slider.getBoundingClientRect().x
+    // определяем в какой части слайдера мы находимся
+    const currentPart: number = Math.floor(((sliderWidth - scrolledToRight) / partWidth))
+    // не забываем убрать единицу так как индексирование слайдов начинается с 0
+    const slideIndex: number = parts - currentPart - 1
+    swiperInstance.slideTo(slideIndex)
   }
   
   private handleResize(): void {
@@ -212,8 +280,8 @@ export class CatalogCards {
       ],
       ...accessibilitySettings,
       loop: true,
-      speed: 250,
-      grabCursor: true,
+      speed: 333,
+      grabCursor: false,
       slidesPerView: 1,
       spaceBetween: 14,
       navigation: {
@@ -329,9 +397,11 @@ export class CatalogCards {
       const card = data.card
       card.removeEventListener('mouseenter', this.onMouseEnter)
       card.removeEventListener('mouseleave', this.onMouseLeave)
+      data.slider.removeEventListener('mousemove', this.onMouseMove)
       
       card.addEventListener('mouseenter', this.onMouseEnter)
       card.addEventListener('mouseleave', this.onMouseLeave)
+      data.slider.addEventListener('mousemove', this.onMouseMove)
     })
   }
   
