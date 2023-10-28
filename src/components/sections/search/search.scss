@@ -1,6 +1,7 @@
 @use 'src/styles/shared' as *;
 
 .search {
+  @include scrollbar;
   position: fixed;
   z-index: 105;
   top: 0;
@@ -16,6 +17,11 @@
     width: 100%;
     height: 440px;
     transform: translate(0, calc(-100% - 100px));
+  }
+  @include mediaTabletBg {
+    @media (any-hover: hover) {
+      overflow: hidden;
+    }
   }
   @include mediaLaptop {
     z-index: 130;
@@ -42,12 +48,12 @@
   }
 
   &-body {
+    @include scrollbar;
     padding: 20px 14px (56px - 14px - 14px) 40px;
     @include mediaTablet {
       padding: 24px 40px (56px - 14px);
     }
     @include mediaLaptop {
-      @include scrollbar;
       display: grid;
       overflow-y: scroll;
       grid-template-columns: 3fr 1fr;

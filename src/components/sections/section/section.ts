@@ -1,6 +1,6 @@
 import Swiper from 'swiper'
 import { Navigation, A11y, Autoplay } from 'swiper/modules'
-
+import { CSSSelector, SwiperOptions } from 'swiper/types'
 import {
   accessibility as accessibilitySettings,
   autoplay as autoplaySettings,
@@ -8,7 +8,7 @@ import {
 } from 'src/scripts/swiper-settings'
 
 document.addEventListener('DOMContentLoaded', () => {
-  const sharedSettings = {
+  const sharedSettings: SwiperOptions = {
     ...navigationSettings,
     ...autoplaySettings,
     ...accessibilitySettings,
@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     spaceBetween: 7,
   }
   
-  new Swiper('.section-layout', {
+  new Swiper('.section-layout' as CSSSelector, {
     ...sharedSettings,
     autoplay: { delay: 10000, },
     breakpoints: {
@@ -27,12 +27,22 @@ document.addEventListener('DOMContentLoaded', () => {
         slidesPerView: 3,
         spaceBetween: 14,
       },
-      1024: { slidesPerView: 3, },
-      1280: { slidesPerView: 4, },
+      1024: {
+        slidesPerView: 3,
+        spaceBetween: 14,
+      },
+      1280: {
+        slidesPerView: 4,
+        spaceBetween: 14,
+      },
+      1920: {
+        slidesPerView: 4,
+        spaceBetween: 14,
+      },
     },
-  })
+  } as SwiperOptions)
   
-  new Swiper('.slider-small', {
+  new Swiper('.slider-small' as CSSSelector, {
     ...sharedSettings,
     autoplay: { delay: 5000, },
     breakpoints: {
@@ -40,9 +50,18 @@ document.addEventListener('DOMContentLoaded', () => {
         slidesPerView: 3,
         spaceBetween: 14,
       },
-      1024: { slidesPerView: 4, },
-      1280: { slidesPerView: 5, },
-      1920: { slidesPerView: 6, },
+      1024: {
+        slidesPerView: 4,
+        spaceBetween: 14, 
+      },
+      1280: {
+        slidesPerView: 5,
+        spaceBetween: 14, 
+      },
+      1920: {
+        slidesPerView: 6,
+        spaceBetween: 14, 
+      },
     },
-  })
-})
+  } as SwiperOptions)
+}, { passive: true, })

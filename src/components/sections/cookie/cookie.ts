@@ -17,8 +17,8 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('cookieDate', Date.now().toString())
         cookie.classList.remove('active')
       }
-    })
+    }, { passive: true, })
   } else {
     cookie.classList.remove('active')
   }
-})
+}, { passive: true, })

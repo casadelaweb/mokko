@@ -88,7 +88,7 @@
 }
 
 @mixin scrollbar {
-  @media screen and (any-hover: hover) {
+  @media (any-hover: hover) {
     &::-webkit-scrollbar {
       width: 10px
     }

@@ -1,5 +1,6 @@
 import { iElements, iSelectors } from 'src/components/pages/catalog/catalog.preview.types'
 import Swiper from 'swiper'
+import { CSSSelector, SwiperOptions } from 'swiper/types'
 import { Navigation, A11y, Mousewheel } from 'swiper/modules'
 import { accessibility as accessibilitySettings } from 'src/scripts/swiper-settings'
 
@@ -78,7 +79,7 @@ export class CatalogPreview {
       return
     }
     
-    this.swiper = new Swiper(this.selectors.slider, {
+    this.swiper = new Swiper(this.selectors.slider as CSSSelector, {
       modules: [Navigation, A11y, Mousewheel,],
       ...accessibilitySettings,
       loop: true,
@@ -95,7 +96,7 @@ export class CatalogPreview {
         1280: { mousewheel: { releaseOnEdges: true, }, },
         1920: { mousewheel: { releaseOnEdges: true, }, },
       },
-    })
+    } as SwiperOptions)
   }
   
   private updateElements(): iElements | false {

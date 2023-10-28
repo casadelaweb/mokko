@@ -1,4 +1,6 @@
-export const accessibility = {
+import { SwiperOptions } from 'swiper/types'
+
+export const accessibility: SwiperOptions = {
   a11y: {
     enabled: true,
     firstSlideMessage: 'Это самый первый слайд',
@@ -6,6 +8,8 @@ export const accessibility = {
     prevSlideMessage: 'Предыдущий слайд',
     nextSlideMessage: 'Следующий слайд',
   },
+  grabCursor: true,
+  watchSlidesProgress: true,
 }
 
 export const autoplay = {

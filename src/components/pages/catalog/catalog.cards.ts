@@ -1,6 +1,7 @@
 import { iCard, iCatalogElements, iSelectors } from './catalog.cards.types'
 import { isMediaAboveLaptop, throwEvent, getCurrentMedia, isAnyPointerFine } from 'src/scripts/helpers'
 import Swiper from 'swiper'
+import { CSSSelector, SwiperOptions } from 'swiper/types'
 import { Navigation, A11y, Pagination, Mousewheel } from 'swiper/modules'
 import { accessibility as accessibilitySettings } from 'src/scripts/swiper-settings'
 
@@ -271,7 +272,7 @@ export class CatalogCards {
       return
     }
     
-    this.swiper = new Swiper(this.selectors.slider, {
+    this.swiper = new Swiper(this.selectors.slider as CSSSelector, {
       modules: [
         Navigation,
         A11y,
@@ -308,7 +309,7 @@ export class CatalogCards {
           mousewheel: { releaseOnEdges: true, },
         },
       },
-    })
+    } as SwiperOptions)
   }
   
   private observeMutations(): void {

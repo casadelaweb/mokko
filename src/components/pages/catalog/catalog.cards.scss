@@ -138,6 +138,10 @@ $columnGapTablet: 14px;
       font-size: 20px;
       top: 8px;
     }
+
+    &.active {
+      color: #82756e;
+    }
   }
 
   &-preview {
@@ -151,6 +155,10 @@ $columnGapTablet: 14px;
     @include mediaTablet {
       font-size: 20px;
       top: 20px + 8px + 8px;
+    }
+
+    &.active {
+      color: #82756e;
     }
   }
 

@@ -89,4 +89,4 @@ class Header {
 
 document.addEventListener('DOMContentLoaded', () => {
   new Header().init()
-})
+}, { passive: true, })

@@ -20,4 +20,4 @@ document.addEventListener('DOMContentLoaded', () => {
   new Details().init()
   new Masks().init()
   new Calendar().init()
-})
+}, { passive: true, })

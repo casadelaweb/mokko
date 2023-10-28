@@ -93,4 +93,4 @@ class InfoAside {
 document.addEventListener('DOMContentLoaded', () => {
   const aside = new InfoAside()
   aside.init()
-})
+}, { passive: true, })

@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
       } else {
         catalogHeader.classList.remove('scrolled')
       }
-    })
+    }, { passive: true, })
     if(isMediaAboveLaptop()) {
       catalogHeader.style.overflow = 'unset'
       catalogHeader.style.top = catalogCards.elements.header.offsetHeight + 'px'
@@ -55,4 +55,4 @@ document.addEventListener('DOMContentLoaded', () => {
       catalogSelects.updateSelects()
     })
   }
-})
+}, { passive: true, })
