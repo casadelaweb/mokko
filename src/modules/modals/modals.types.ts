@@ -16,7 +16,8 @@ export interface Options {
 export interface Parameters {
   counter: number,
   all: HTMLElement[],
-  current: HTMLElement | false
+  current: HTMLElement | false,
+  lastScrollVerticalPosition: number,
 }
 
 export interface Hooks {

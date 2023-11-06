@@ -52,15 +52,15 @@ document.addEventListener('DOMContentLoaded', () => {
       },
       1024: {
         slidesPerView: 4,
-        spaceBetween: 14, 
+        spaceBetween: 14,
       },
       1280: {
         slidesPerView: 5,
-        spaceBetween: 14, 
+        spaceBetween: 14,
       },
       1920: {
         slidesPerView: 6,
-        spaceBetween: 14, 
+        spaceBetween: 14,
       },
     },
   } as SwiperOptions)

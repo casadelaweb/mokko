@@ -1,14 +1,14 @@
-import { iSettings } from 'src/modules/toolip/tooltip.types'
+// import { iSettings } from 'src/modules/toolip/tooltip.types'
 import './tooltip.scss'
 
 export class Tooltip {
-  private static readonly settingsDefault: iSettings
+  private static readonly settingsDefault: any
   private readonly onScroll: (event: Event) => any
   private readonly onResize: (event: Event) => any
   private tooltip: HTMLElement
   private lastTarget: HTMLElement
   
-  constructor(settingsCustom?: iSettings) {
+  constructor() {
     this.onResize = this.handleResize.bind(this)
     this.onScroll = this.handleScroll.bind(this)
     // this.elements
@@ -51,7 +51,7 @@ export class Tooltip {
     this.create()
   }
   
-  public position(target: HTMLElement, placement?: string): void {
+  public position(target: HTMLElement): void {
     const coordinates = target.getBoundingClientRect()
     console.log(coordinates)
     const top: number = Math.round(coordinates.bottom) + 14
@@ -72,17 +72,17 @@ export class Tooltip {
   
   private updateListeners(): void {
     window.removeEventListener('scroll', this.onScroll)
-    window.addEventListener('scroll', this.onScroll)
+    window.addEventListener('scroll', this.onScroll, { passive: true, })
     
     window.removeEventListener('resize', this.onResize)
-    window.addEventListener('resize', this.onResize)
+    window.addEventListener('resize', this.onResize, { passive: true, })
   }
   
-  private handleScroll(event: Event) {
+  private handleScroll() {
     if(this.tooltip) this.hide()
   }
   
-  private handleResize(event: Event) {
+  private handleResize() {
     if(this.lastTarget) this.position(this.lastTarget)
   }
 }

@@ -20,7 +20,7 @@
   background: rgba(#505050, 0.5);
 
   &.active {
-    transform: none;
+    transform: translate3d(0, 0, 0);
     pointer-events: auto;
     opacity: 1;
   }

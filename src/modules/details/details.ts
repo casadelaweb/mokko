@@ -21,7 +21,7 @@ export class Details {
   private readonly durationMin: number
   private readonly durationPerHeight: number
   private readonly easing: string
-  // eslint-disable-next-line no-unused-vars
+  
   private readonly onClick: (event: MouseEvent) => void
   //eslint-disable-next-line no-unused-vars
   private readonly onResize: (event?: UIEvent) => void

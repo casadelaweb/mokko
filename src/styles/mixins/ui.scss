@@ -171,7 +171,6 @@
   }
 }
 
-
 @mixin buttonAppointment {
   color: #766cff;
   display: inline-block;
@@ -254,6 +253,59 @@
   &.active {
     pointer-events: auto;
     opacity: 1;
+  }
+}
+
+@mixin buttonFavourite {
+  $sizeMobile: 16px;
+  $sizeTablet: 20px;
+  @include flex(center, center);
+  top: $sizeMobile * 0.5;
+  right: $sizeMobile * 0.5;
+  opacity: 0.8;
+  color: white;
+  transition: opacity 0.25s, color 0.25s;
+  @include mediaTablet {
+    font-size: $sizeTablet;
+    top: $sizeTablet * 0.5;
+  }
+
+  &.active, &:hover {
+    color: #82756e;
+    opacity: 1;
+
+    .iconfont {
+      &::after {
+        color: white;
+        transform: none;
+      }
+    }
+  }
+
+  .iconfont {
+    position: relative;
+    z-index: 0;
+    // display: inline-block;
+    // font-size: $sizeMobile;
+
+    &::before {
+      $contourWidth: 1px;
+      font-size: calc(1em + $contourWidth * -2);
+      z-index: 1;
+      transition: color 0.25s;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    &::after {
+      content: $icon-heart-fill;
+      z-index: 0;
+      // top: $contourWidth * -1;
+      // left: $contourWidth * -1;
+      transition: color 0.25s;
+    }
   }
 }
 

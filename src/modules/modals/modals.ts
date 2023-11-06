@@ -17,10 +17,9 @@ class Modals {
   private readonly onClose: any
   private readonly onBeforeOpen: any
   private readonly onBeforeClose: any
-  // eslint-disable-next-line no-unused-vars
   private readonly onClick: (event: MouseEvent) => any
-  // eslint-disable-next-line no-unused-vars
   private readonly onKeyUp: (event: KeyboardEvent) => any
+  private readonly onScroll: (event: Event) => any
   
   constructor({ hooks, }) {
     this.options = {
@@ -61,11 +60,13 @@ class Modals {
     this.onBeforeClose = this.hooks.beforeClose.bind(this)
     this.onClick = this.handleClick.bind(this)
     this.onKeyUp = this.handleKeyUp.bind(this)
+    this.onScroll = this.handleScroll.bind(this)
     
     this.parameters = {
       counter: 0,
       all: [],
       current: false,
+      lastScrollVerticalPosition: 0,
     }
   }
   
@@ -170,9 +171,11 @@ class Modals {
   private listen(): void {
     document.removeEventListener('click', this.onClick)
     document.removeEventListener('keyup', this.onKeyUp)
+    window.removeEventListener('scroll', this.onScroll)
     
-    document.addEventListener('click', this.onClick)
-    document.addEventListener('keyup', this.onKeyUp)
+    document.addEventListener('click', this.onClick, { passive: true, })
+    document.addEventListener('keyup', this.onKeyUp, { passive: true, })
+    window.addEventListener('scroll', this.onScroll, { passive: true, })
   }
   
   private handleClick(event: MouseEvent): void {
@@ -235,6 +238,10 @@ class Modals {
       })
       
     }
+  }
+  
+  private handleScroll(event: Event): void {
+    console.log(window.scrollY, event)
   }
 }
 

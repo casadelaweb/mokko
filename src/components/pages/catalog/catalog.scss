@@ -16,17 +16,20 @@
   &-header {
     @include flex(center);
     margin-bottom: 32px;
+    background: white;
     @include mediaLaptop {
       position: sticky;
       z-index: 1;
       top: var(--headerHeight);
       flex-wrap: wrap;
-      background: white;
+      margin-bottom: 0;
     }
 
     &.scrolled {
       .catalog-title {
-        display: none;
+        @include mediaLaptop {
+          display: none;
+        }
       }
     }
 
@@ -74,7 +77,7 @@
     }
     @include mediaLaptop {
       display: grid;
-      grid-template-columns: 1fr 3fr;
+      grid-template-columns: 1fr 6fr;
       column-gap: 40px;
     }
   }

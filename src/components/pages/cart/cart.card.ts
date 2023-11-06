@@ -24,16 +24,16 @@ export class CartCard {
   public elements: iElement[]
   private interval: null | NodeJS.Timer
   private readonly intervalDuration: number
-  // eslint-disable-next-line no-unused-vars
+  
   private readonly onClick: (event) => any
-  // eslint-disable-next-line no-unused-vars
+  
   private readonly onResize: () => any
   private options: {
     min: number,
     max: number,
   }
   private selectors: iSelectors
-  // eslint-disable-next-line no-unused-vars
+  
   private readonly stop: (event) => any
   private timeout: null | NodeJS.Timeout
   private readonly timeoutDuration: number
@@ -109,6 +109,7 @@ export class CartCard {
   
   private handleStop(): void {
     clearTimeout(this.timeout)
+    //@ts-ignore
     clearInterval(this.interval)
   }
   
@@ -158,12 +159,12 @@ export class CartCard {
     document.removeEventListener('mouseleave', this.stop)
     
     if(this.isMobile()) {
-      document.addEventListener('touchstart', this.onClick)
-      document.addEventListener('touchend', this.stop)
+      document.addEventListener('touchstart', this.onClick, { passive: true, })
+      document.addEventListener('touchend', this.stop, { passive: true, })
     } else {
-      document.addEventListener('mousedown', this.onClick)
-      document.addEventListener('mouseup', this.stop)
-      document.addEventListener('mouseleave', this.stop)
+      document.addEventListener('mousedown', this.onClick, { passive: true, })
+      document.addEventListener('mouseup', this.stop, { passive: true, })
+      document.addEventListener('mouseleave', this.stop, { passive: true, })
     }
   }
 }

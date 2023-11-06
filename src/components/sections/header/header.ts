@@ -31,8 +31,8 @@ class Header {
   private updateGlobalListeners(): void {
     window.removeEventListener('resize', this.onResize)
     window.removeEventListener('scroll', this.onScroll)
-    window.addEventListener('resize', this.onResize)
-    window.addEventListener('scroll', this.onScroll)
+    window.addEventListener('resize', this.onResize, { passive: true, })
+    window.addEventListener('scroll', this.onScroll, { passive: true, })
   }
   
   private handleResize(): void {

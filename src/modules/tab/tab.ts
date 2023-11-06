@@ -1,6 +1,6 @@
 export class Tab {
-  // eslint-disable-next-line no-unused-vars
-  private readonly onClick: (event) => void
+  
+  private readonly onClick: (event: MouseEvent) => void
   private readonly selectors: {
     button: string,
     tab: string,
@@ -29,6 +29,7 @@ export class Tab {
       const button: HTMLElement = target.closest(this.selectors.button)
       
       const tabName: string = '[data-tab=' + button.getAttribute('data-tab') + ']'
+      //@ts-ignore
       const elements: HTMLElement[] = [...body.querySelectorAll(tabName),]
       
       const buttonTabContent: string = button.getAttribute('data-tab-button')
