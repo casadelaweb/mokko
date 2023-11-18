@@ -8,7 +8,7 @@ import path from 'path'
 // plugins
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import CssMinimizer from 'css-minimizer-webpack-plugin'
-import HTMLPagesRegistered from './configuration/templates'
+import HTMLWebpackPluginPages from './configuration/HTMLWebpackPluginPages'
 
 // rules
 import ruleScripts from './configuration/rules/scripts'
@@ -50,7 +50,7 @@ function config(env: iEnvVariables): Configuration {
       ],
     },
     plugins: [
-      ...HTMLPagesRegistered(rootPath, isProductionMode),
+      ...HTMLWebpackPluginPages(rootPath, isProductionMode),
       new MiniCssExtractPlugin({
         filename: 'assets/css/[name].[contenthash:4].css',
         chunkFilename: 'assets/css/[name].[contenthash:4].css',

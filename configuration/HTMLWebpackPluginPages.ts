@@ -25,7 +25,7 @@ function ThroughDirectory(Directory: string) {
   })
 }
 
-function HTMLPagesRegistered(rootPath: string, isProductionMode: boolean) {
+function HTMLWebpackPluginPages(rootPath: string, isProductionMode: boolean) {
   ThroughDirectory(rootPath + 'public')
   
   return Files.map((page) => {
@@ -47,4 +47,4 @@ function HTMLPagesRegistered(rootPath: string, isProductionMode: boolean) {
   })
 }
 
-export default HTMLPagesRegistered
+export default HTMLWebpackPluginPages
