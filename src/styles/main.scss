@@ -12,9 +12,9 @@ html {
 
 html, body, #app {
   @include flex($d: column);
-  flex: 0 0 auto;
-  min-width: 0;
-  min-height: 100%;
+  // flex: 0 0 auto;
+  // min-width: 0;
+  // min-height: 100%;
 }
 
 body {
@@ -37,8 +37,21 @@ hr {
   }
 }
 
-.swiper-button-prev, .swiper-button-next {
-  @include flex(center, center);
+.swiper {
+  min-width: 0;
+  max-width: 100%;
+
+  &-wrapper {
+    min-width: 0;
+  }
+
+  &-button {
+    &-prev, &-next {
+      @include flex(center, center);
+      flex: 0 0 auto;
+      min-width: 0;
+    }
+  }
 }
 
 .main {

@@ -1,4 +1,4 @@
-module.exports = function processRepeat(match, number, content) {
+export default function processRepeat(match, number, content) {
   // const occurrences = content.split('end;').length
   // console.log(occurrences)
 

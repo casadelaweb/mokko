@@ -85,31 +85,4 @@
   }
 }
 
-.stories {
-  &-slide {
-    position: relative;
-    z-index: 0;
 
-    &-overlay {
-      @include flex(center, center);
-      position: absolute;
-      z-index: 1;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border-radius: 10px;
-      background-color: rgba(#505050, 0.5);
-    }
-
-    &-title {
-      font-size: 16px;
-      text-align: center;
-      color: white;
-      @include mediaTablet {
-        font-size: 18px;
-        letter-spacing: 0.05em;
-      }
-    }
-  }
-}

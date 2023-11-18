@@ -1,7 +1,7 @@
-const path = require('path')
-const fs = require('fs')
+import { resolve } from 'path'
+import { readFileSync } from 'fs'
 
-module.exports = function processImports(match, source) {
+export default function processImports(match, source) {
   // eslint-disable-next-line @typescript-eslint/no-this-alias
   const loaderContext = this
 
@@ -10,6 +10,6 @@ module.exports = function processImports(match, source) {
   const dir = loaderContext.context.replace(/public.*/gmi, 'public')
   // console.log(dir, source)
 
-  const filePath = path.resolve(dir, source)
-  return fs.readFileSync(filePath, 'utf8')
+  const filePath = resolve(dir, source)
+  return readFileSync(filePath, 'utf8')
 }

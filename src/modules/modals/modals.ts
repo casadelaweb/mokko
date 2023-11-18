@@ -241,7 +241,7 @@ class Modals {
   }
   
   private handleScroll(event: Event): void {
-    console.log(window.scrollY, event)
+    // console.log(window.scrollY, event)
   }
 }
 

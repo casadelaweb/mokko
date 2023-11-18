@@ -309,3 +309,41 @@
   }
 }
 
+@mixin swiperNavigationButtons {
+  &-prev, &-next {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    display: none;
+    width: 30px;
+    height: 34px;
+    cursor: pointer;
+    transform: translate(0, -50%);
+    opacity: 0.75;
+
+    background: white;
+    @include mediaTabletBg {
+      @include flex(center, center);
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+      opacity: 0.25;
+    }
+  }
+
+  &-disabled {
+    opacity: 0;
+  }
+
+  &-prev {
+    left: 0;
+    border-radius: 0 8px 8px 0;
+  }
+
+  &-next {
+    right: 0;
+    border-radius: 8px 0 0 8px;
+  }
+}
+

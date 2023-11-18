@@ -1,12 +1,12 @@
-const path = require('path')
+import { dirname } from 'path'
 
-module.exports = function processAliases(match, attribute) {
+export default function processAliases(match, attribute) {
   // eslint-disable-next-line @typescript-eslint/no-this-alias
   const loaderContext = this
   const filePath = loaderContext.resourcePath
 
   // console.log(path.resolve(__dirname, filePath).replace(/.*public/gmi, ''))
-  const pathFromPublic = path.dirname(filePath).replace(/.*public/gmi, '')
+  const pathFromPublic = dirname(filePath).replace(/.*public/gmi, '')
   const depth = (pathFromPublic.match(/\\/g) || []).length + 1
 
   const pathPrefix = '../'.repeat(depth)

@@ -8,6 +8,7 @@
   pointer-events: none;
   background: white;
   @include mediaOnlyMobileAndAllTablets {
+    @include scrollbar;
     z-index: 105;
     overflow-x: hidden;
     overflow-y: scroll;
@@ -16,7 +17,6 @@
     height: 100%;
     // min-height: 100%;
     transform: translate(calc(-100% - 100px), 0);
-    @include scrollbar;
   }
 
   @include mediaLaptop {
@@ -36,9 +36,9 @@
   &-container {
     @include container;
     @include mediaOnlyMobileAndAllTablets {
-      //      height: 100%;
       min-width: 0;
-      height: auto;
+      height: 100%;
+      // height: auto;
       min-height: 0;
       padding: 0;
     }
