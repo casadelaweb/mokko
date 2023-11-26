@@ -1,15 +1,12 @@
 // types
 import type { Configuration } from 'node_modules/webpack'
 import { iEnvVariables, iMode } from './configuration/config.types'
-
 // node
 import path from 'path'
-
 // plugins
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import CssMinimizer from 'css-minimizer-webpack-plugin'
 import HTMLWebpackPluginPages from './configuration/HTMLWebpackPluginPages'
-
 // rules
 import ruleScripts from './configuration/rules/scripts'
 import ruleFavicon from './configuration/rules/favicon'

@@ -2,6 +2,7 @@ import 'restyle.css/dist/restyle.css'
 import 'restyle.css/dist/checkboxes.css'
 import 'swiper/scss'
 import 'swiper/scss/a11y'
+import 'swiper/scss/scrollbar'
 import 'src/styles/main.scss'
 import 'src/components'
 // import lazyloadInstance from 'src/scripts/lazyload-instance'
@@ -11,7 +12,7 @@ import { Select } from 'src/modules/select/select'
 import { Details } from 'src/modules/details/details'
 import { Masks } from 'src/modules/masks/masks'
 import { Calendar } from 'src/modules/calendar/calendar'
-// import { Stories } from 'src/modules/stories/stories'
+import { Stories } from 'src/modules/stories/stories'
 
 document.addEventListener('DOMContentLoaded', () => {
   // lazyloadInstance.update()
@@ -21,5 +22,5 @@ document.addEventListener('DOMContentLoaded', () => {
   new Details().init()
   new Masks().init()
   new Calendar().init()
-  // new Stories().init()
+  new Stories().init()
 }, { passive: true, })

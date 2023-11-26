@@ -21,7 +21,7 @@
     transform-origin: center;
 
     .is-opening &, .open & {
-      transform: rotate(90deg);
+      transform: rotate(180deg);
     }
 
     .is-closing & {

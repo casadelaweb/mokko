@@ -66,16 +66,7 @@
     row-gap: 8px;
 
     &-favourite {
-      font-size: 20px;
-      position: absolute;
-      z-index: 1;
-      top: 10px;
-      right: 10px;
-      color: white;
-
-      &.active {
-        color: #82756e;
-      }
+      @include buttonFavourite;
     }
 
     &-img {

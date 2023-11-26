@@ -15,7 +15,7 @@
     padding: 16px 0;
   }
   @include mediaTablet {
-    padding: 20px 0;
+    padding: 18px 0 17px;
   }
 
   &.hovered, &.scrolled, &.active {
@@ -74,6 +74,7 @@
     display: inline-block;
     margin: 0 auto;
     transform: translate(-50%, -50%);
+    color: #82756e;
     @include mediaMobileConventional {
       font-size: 22px;
     }
@@ -89,6 +90,4 @@
     @include flex(center);
     margin-left: auto;
   }
-
-
 }

@@ -5,10 +5,10 @@ import processImports from './process-imports.js'
 const tests = {
   imports: / *?import +'?"?(.*?)'?"? *?;/gmi,
   repeats: / *?repeat +(\d\d?) +times:([\s\S]*?)end;/gmi,
-  aliases: /(src|href|data-src|data-bg|srcset|poster)="(.*?)"/gmi,
+  aliases: /(src|href|data-src|data-bg|srcset|poster|content)="(.*?)"/gmi,
 }
 
-function htmlLoaderPipeline(content, loaderContext) {
+function htmlLoaderPipeline(content: any, loaderContext: any) {
   // console.log(loaderContext.resourcePath)
   let result = content
   

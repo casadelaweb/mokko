@@ -21,6 +21,7 @@
 }
 
 @mixin pageSummary {
+  border-radius: 10px;
   padding: 36px $containerPaddingMobile 46px;
   background: #f1f1f1;
   font-size: 15px;
@@ -115,7 +116,7 @@
 
     &.is-opening, &.open {
       .details-button {
-        transform: rotate(-90deg);
+        transform: rotate(180deg);
       }
     }
 
@@ -260,9 +261,11 @@
   $sizeMobile: 16px;
   $sizeTablet: 20px;
   @include flex(center, center);
+  position: absolute;
+  z-index: 1;
   top: $sizeMobile * 0.5;
   right: $sizeMobile * 0.5;
-  opacity: 0.8;
+  opacity: 0.75;
   color: white;
   transition: opacity 0.25s, color 0.25s;
   @include mediaTablet {
@@ -270,7 +273,7 @@
     top: $sizeTablet * 0.5;
   }
 
-  &.active, &:hover {
+  &:active:not([disabled]), &.active:not([disabled]) {
     color: #82756e;
     opacity: 1;
 
@@ -278,6 +281,20 @@
       &::after {
         color: white;
         transform: none;
+      }
+    }
+  }
+
+  @media (any-hover: hover) {
+    &:not([disabled]):hover {
+      color: #82756e;
+      opacity: 1;
+
+      .iconfont {
+        &::after {
+          color: white;
+          transform: none;
+        }
       }
     }
   }
@@ -307,6 +324,11 @@
       transition: color 0.25s;
     }
   }
+
+  // ._disabled & {
+  //   cursor: not-allowed;
+  //   pointer-events: none;
+  // }
 }
 
 @mixin swiperNavigationButtons {

@@ -1,8 +1,9 @@
 import Swiper from 'swiper'
-import { Navigation, Pagination, Mousewheel, A11y } from 'swiper/modules'
-import { accessibility } from 'src/scripts/swiper-settings'
+import { Navigation, Pagination, Mousewheel, A11y, Scrollbar, FreeMode } from 'swiper/modules'
+import { swiperDefaultSettings } from 'src/scripts/swiper-settings'
 import { modals } from 'src/scripts/modals-instance'
 import { CSSSelector, SwiperOptions } from 'swiper/types'
+//import 'swiper/modules/scrollbar.min.css'
 
 document.addEventListener('DOMContentLoaded', () => {
   const { body, } = document
@@ -12,36 +13,49 @@ document.addEventListener('DOMContentLoaded', () => {
   
   galleryItems.forEach((galleryItem: HTMLElement, index: number) => {
     galleryItem.dataset.slideId = `${index}`
-    const galleryModalItem: HTMLElement = document.createElement('div')
-    galleryModalItem.classList.add('swiper-slide')
-    galleryModalItem.innerHTML = '<div class="product-gallery-modal-item"></div>'
-    galleryModalItem.children[0].append(galleryItem.children[0].cloneNode())
-    catalogGalleryModalSlider.append(galleryModalItem)
+    //const galleryModalItem: HTMLElement = document.createElement('div')
+    //galleryModalItem.classList.add('swiper-slide')
+    //galleryModalItem.innerHTML = '<div class="product-gallery-modal-item"></div>'
+    //galleryModalItem.children[0].append(galleryItem.children[0].cloneNode())
+    //catalogGalleryModalSlider.append(galleryModalItem)
   })
   
   const swiperInstance: Swiper = new Swiper('.product-gallery-modal-slider' as CSSSelector, {
-    ...accessibility,
+    ...swiperDefaultSettings,
     modules: [
       Navigation,
       Pagination,
       Mousewheel,
       A11y,
+      // Scrollbar,
+      FreeMode,
     ],
-    loop: true,
+    freeMode: {
+      enabled: true,
+      sticky: false,
+      minimumVelocity: 0.50,
+    },
+    loop: false,
     enabled: true,
-    slidesPerView: 1,
+    slidesPerView: 'auto',
     direction: 'vertical',
+    //scrollbar: {
+    //  el: '.swiper-scrollbar',
+    //  enabled: false,
+    //},
     mousewheel: true,
-    spaceBetween: 80,
+    spaceBetween: 50,
     speed: 500,
     navigation: {
       nextEl: '.gallery-swiper-button-next',
       prevEl: '.gallery-swiper-button-prev',
+      enabled: true,
     },
     pagination: {
       el: '.swiper-pagination',
       type: 'bullets',
       clickable: true,
+      enabled: true,
     },
   } as SwiperOptions)
   
@@ -49,12 +63,11 @@ document.addEventListener('DOMContentLoaded', () => {
     catalogDetail.addEventListener('click', (event: MouseEvent) => {
       const target = event.target as HTMLElement
       if(target.closest('.product-gallery-item')) {
-        const modal: HTMLElement = body.querySelector('[data-modal=product-gallery-modal]')
+        const modalGallery: HTMLElement = body.querySelector('[data-modal=product-gallery-modal]')
         const item: HTMLElement = target.closest('.product-gallery-item')
-        modals.activateModal(modal)
+        modals.activateModal(modalGallery)
         swiperInstance.slideTo(+item.dataset.slideId, 0)
       }
     })
   }
-  
 })

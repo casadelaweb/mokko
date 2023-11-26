@@ -3,10 +3,10 @@ import { RuleSetRule } from 'node_modules/webpack'
 function ruleFavicon(rootPath: string): RuleSetRule {
   return {
     test: /(ico|png|webmanifest|svg|xml)$/i,
-    include: rootPath + 'src/assets/favicon',
-    exclude: rootPath + 'src/assets/img',
+    include: /favicon/,
+    exclude: /node_modules|img|iconfont|iconfonts|fonts/,
     type: 'asset/resource',
-    generator: { filename: '../[name][ext]', },
+    generator: { filename: './[name][ext]', },
   }
 }
 

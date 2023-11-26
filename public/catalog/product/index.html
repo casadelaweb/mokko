@@ -1,8 +1,11 @@
 <!doctype html>
 <html lang="ru">
 <head itemscope itemtype="https://schema.org/WPHeader">
-  import @includes/meta/main.html;
   <title itemprop="headline">Mokko Brand | Каталог детальная</title>
+  import @includes/meta/main.html;
+  import @includes/meta/favicon.html;
+  import @includes/meta/twitter.html;
+  import @includes/meta/opengraph.html;
 </head>
 <body>
 <div id="app">
@@ -24,19 +27,103 @@
       </div>
     </div>
 
+    <div class="modal" data-modal="product-gallery-modal">
+      <div class="product-gallery-modal">
+        <button class="modal-close" data-modal-close title="Закрыть окно" type="button">
+          <span class="iconfont icon-close"></span>
+        </button>
+        <div class="swiper product-gallery-modal-slider">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="product-gallery-modal-item">
+                <img alt="img" loading="lazy" src="src/assets/img/product/product_1.jpg">
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="product-gallery-modal-item">
+                <img alt="img" loading="lazy" src="src/assets/img/product/product_2.jpg">
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="product-gallery-modal-item">
+                <img alt="img" loading="lazy" src="src/assets/img/product/product_3.jpg">
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="product-gallery-modal-item">
+                <img alt="img" loading="lazy" src="src/assets/img/product/product_4.jpg">
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="product-gallery-modal-item">
+                <img alt="img" loading="lazy" src="src/assets/img/product/product_5.jpg">
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="product-gallery-modal-item">
+                <img alt="img" loading="lazy" src="src/assets/img/product/product_6.jpg">
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="product-gallery-modal-item">
+                <img alt="img" loading="lazy" src="src/assets/img/product/product_7.jpg">
+              </div>
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+          <div class="swiper-scrollbar"></div>
+
+          <div class="gallery-swiper-buttons">
+            <div class="gallery-swiper-button-prev"></div>
+            <div class="gallery-swiper-button-next"></div>
+          </div>
+
+        </div>
+      </div>
+    </div>
     <section class="product">
-      <div class="product-container">
+      <div class="product-container" data-product="container">
         <div class="product-left">
           <div class="product-gallery">
             <div class="swiper product-gallery-slider">
               <div class="swiper-wrapper">
-                repeat 7 times:
+
                 <div class="swiper-slide">
                   <div class="product-gallery-item">
-                    <img alt="img" loading="lazy" src="src/assets/img/product/product-gallery-item.png">
+                    <img alt="img" loading="lazy" src="src/assets/img/product/product_1.jpg">
                   </div>
                 </div>
-                end;
+                <div class="swiper-slide">
+                  <div class="product-gallery-item">
+                    <img alt="img" loading="lazy" src="src/assets/img/product/product_2.jpg">
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="product-gallery-item">
+                    <img alt="img" loading="lazy" src="src/assets/img/product/product_3.jpg">
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="product-gallery-item">
+                    <img alt="img" loading="lazy" src="src/assets/img/product/product_4.jpg">
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="product-gallery-item">
+                    <img alt="img" loading="lazy" src="src/assets/img/product/product_5.jpg">
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="product-gallery-item">
+                    <img alt="img" loading="lazy" src="src/assets/img/product/product_6.jpg">
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="product-gallery-item">
+                    <img alt="img" loading="lazy" src="src/assets/img/product/product_7.jpg">
+                  </div>
+                </div>
+
               </div>
               <div class="swiper-pagination"></div>
             </div>
@@ -230,7 +317,6 @@
                   <span>Доставка и оплата</span>
                 </summary>
                 <div class="details-body" data-details="body">
-
                   <div class="product-info-text product-info-text-border">
                     <p> Варианты оплаты зависят от выбора типа доставки.</p>
 
@@ -245,37 +331,29 @@
                       Оплата на сайте
                     </p>
                   </div>
-
                   <div class="product-info-title">
                     <span class="iconfont icon-location"></span>
                     <span>Санкт-Петербург</span>
                   </div>
-
                   <div class="product-info-item">
                     Курьерская служба <br>
                     СДЭК <br>
                     BOXBERRY <br>
                     Бесплатная доставка только Курьерской службой!
                   </div>
-
-
                   <div class="product-info-title">
                     <span class="iconfont icon-location"></span>
                     <span>Остальные регионы</span>
                   </div>
-
-
                   <div class="product-info-item product-info-item-noBorder">
                     СДЭК <br>
                     BOXBERRY <br>
                     Бесплатная доставка при заказе от 7000 ₽
                   </div>
-
                   <div class="product-info-more">
-                    <a href="/page404">Подробнее об оплате</a>
-                    <a href="/page404">Подробнее о доставке</a>
+                    <a href="/info/payment">Подробнее об оплате</a>
+                    <a href="/info/delivery">Подробнее о доставке</a>
                   </div>
-
                 </div>
               </details>
             </div>
@@ -550,6 +628,7 @@
     </section>
 
   </main>
+
 
   import @includes/footer.html;
   import @includes/modals.html;

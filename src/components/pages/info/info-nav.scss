@@ -62,15 +62,18 @@
       top: 100%;
       left: 0;
       overflow: hidden;
-      transition: transform 0.5s;
-      transform: translate(-100%, 0);
+      transition: transform 0.25s, opacity 0.25s;
+      transition-timing-function: ease-in-out;
+      transform: translate3d(-20px, 0, 0);
       pointer-events: none;
+      opacity: 0;
     }
 
     &.active {
       z-index: 2;
       transform: none;
       pointer-events: auto;
+      opacity: 1;
     }
   }
 

@@ -48,10 +48,17 @@
     }
 
     &-sticky {
+      transition: all 0.1s linear 0s;
       @include mediaTablet {
         position: sticky;
         z-index: 0;
-        top: 100px;
+        top: calc(var(--headerHeight) * -1);
+      }
+
+      &.sticky {
+        position: fixed;
+        right: auto;
+        bottom: 20px;
       }
     }
   }
@@ -98,11 +105,16 @@
 
     .details {
       &-summary {
+        font-size: 17px;
         padding-left: $containerPaddingMobile * 2;
       }
 
       &-button {
         left: 0
+      }
+
+      &-body {
+        font-size: 15px;
       }
     }
   }
@@ -137,7 +149,7 @@
     }
   }
 
-  // костыль
+  // todo: исправить костыль
   &-products {
     padding: 30px 0;
 

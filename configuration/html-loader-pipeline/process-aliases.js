@@ -20,9 +20,10 @@ export default function processAliases(match, attribute) {
     'data-bg',
     'srcset',
     'poster',
+    'content',
   ]
   if (attributesToMatch.includes(attribute)) {
-    match = match.replace(/(src|href|data-src|data-bg|srcset|poster)="src/gmi, attribute + `="${ pathFromRoot }`)
+    match = match.replace(/(src|href|data-src|data-bg|srcset|poster|content)="src/gmi, attribute + `="${ pathFromRoot }`)
   }
   return match
 }

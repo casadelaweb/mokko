@@ -33,6 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   
   if(catalogDetailSizesInfo) {
+    // @ts-ignore
     const catalogDetailSizesInfoMob: HTMLElement = catalogDetailSizesInfo.cloneNode()
     catalogDetailSizesInfoMob.classList.add('product-sizes-info-mob')
     catalogDetailSizesInfoMob.innerHTML = catalogDetailSizesInfo.innerHTML

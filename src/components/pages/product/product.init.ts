@@ -1,4 +1,5 @@
 import { isMediaAboveLaptop } from 'src/scripts/helpers'
+import { Product } from 'src/components/pages/product/product'
 
 document.addEventListener('DOMContentLoaded', () => {
   const { body, } = document
@@ -13,4 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     })
   }
+  
+  const product = new Product()
+  product.init()
 })

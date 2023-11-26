@@ -1,8 +1,11 @@
 <!doctype html>
 <html lang="ru">
 <head itemscope itemtype="https://schema.org/WPHeader">
-  import @includes/meta/main.html;
   <title itemprop="headline">Mokko Brand | Корзина</title>
+  import @includes/meta/main.html;
+  import @includes/meta/favicon.html;
+  import @includes/meta/twitter.html;
+  import @includes/meta/opengraph.html;
 </head>
 
 <body>
@@ -21,7 +24,7 @@
         <h1 class="cart-title">Корзина</h1>
         <div class="cart-layout">
           <div class="cart-cards">
-            repeat 5 times:
+            repeat 3 times:
             <article class="cart-card" data-cart-card="card">
 
               <a class="cart-card-img" href="/catalog/product">
@@ -41,7 +44,9 @@
                   <div class="cart-card-color-name">Бежевый</div>
                   <div class="cart-card-color-circle" style="background: #d0ad97;"></div>
                 </div>
-                <div class="cart-card-size"> M/36</div>
+                <div class="cart-card-size">
+                  XXL / 56
+                </div>
                 <div class="cart-card-prices">
                   <div class="cart-card-discount">-30%</div>
                   <div>
@@ -56,11 +61,70 @@
               </div>
               <div class="cart-card-quantity-wrapper">
                 <div class="cart-card-quantity" data-cart-card="quantity">
-                  <button class="cart-card-quantity-button" data-cart-card="quantity-minus" type="button">
+                  <button class="cart-card-quantity-button" data-cart-card="quantity-minus" title="Убрать"
+                          type="button">
                     <span>-</span>
                   </button>
                   <input class="cart-card-quantity-input" data-cart-card="quantity-input" type="text" value="1">
-                  <button class="cart-card-quantity-button" data-cart-card="quantity-plus" type="button">
+                  <button class="cart-card-quantity-button" data-cart-card="quantity-plus" title="Добавить"
+                          type="button">
+                    <span>+</span>
+                  </button>
+                </div>
+              </div>
+              <div class="cart-card-footer">
+                <button class="cart-card-remove" type="button">
+                  <span>Удалить</span>
+                  <span class="iconfont icon-close"></span>
+                </button>
+                <button class="cart-card-favourite" type="button">
+                  <span class="iconfont icon-heart-fill"></span>
+                </button>
+              </div>
+            </article>
+            <article class="cart-card" data-cart-card="card">
+
+              <a class="cart-card-img" href="/catalog/product">
+                <img alt="img" loading="lazy" src="src/assets/img/product/product_3.jpg">
+              </a>
+              <div class="cart-card-body">
+                <div>
+                  <h2 class="cart-card-title">
+                    <a href="/catalog/product">Короткое название товара</a>
+                  </h2>
+                  <div class="cart-card-article">
+                    <span>арт. </span>
+                    <span>156653</span>
+                  </div>
+                </div>
+                <div class="cart-card-colors">
+                  <div class="cart-card-color-name">Бежевый</div>
+                  <div class="cart-card-color-circle" style="background: #d0ad97;"></div>
+                </div>
+                <div class="cart-card-size">
+                  M / 36
+                </div>
+                <div class="cart-card-prices">
+                  <div class="cart-card-discount">-30%</div>
+                  <div>
+                    <div class="cart-card-price-old">
+                      <span data-cart-card="price-old">7 799</span> <span>₽</span>
+                    </div>
+                    <div class="cart-card-price-current">
+                      <span data-cart-card="price-current">4 123</span> <span>₽</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="cart-card-quantity-wrapper">
+                <div class="cart-card-quantity" data-cart-card="quantity">
+                  <button class="cart-card-quantity-button" data-cart-card="quantity-minus" title="Убрать"
+                          type="button">
+                    <span>-</span>
+                  </button>
+                  <input class="cart-card-quantity-input" data-cart-card="quantity-input" type="text" value="1">
+                  <button class="cart-card-quantity-button" data-cart-card="quantity-plus" title="Добавить"
+                          type="button">
                     <span>+</span>
                   </button>
                 </div>
