@@ -13,12 +13,14 @@
 }
 
 .iconfont {
+  @include flex(center, center);
   font-family: 'iconfont', emoji !important;
   font-weight: normal;
   font-style: normal;
   font-variant: normal;
   line-height: 1;
   text-transform: none;
+  flex: 0 0 auto;
   speak: never;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

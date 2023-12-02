@@ -6,6 +6,10 @@
   --scrollbarWidth: 17px;
 }
 
+// button {
+//   line-height: 1;
+// }
+
 html {
   @include scrollbar;
 }
@@ -72,4 +76,8 @@ input, textarea {
 
 .button-appointment {
   @include buttonAppointment;
+}
+
+.text-underline {
+  text-decoration: underline;
 }

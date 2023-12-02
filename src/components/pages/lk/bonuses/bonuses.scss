@@ -38,6 +38,7 @@
 
   &-terms {
     font-size: 14px;
+    line-height: calc(22 / 15);
     margin: 46px 0;
     color: #a89f99;
     @include mediaTablet {
