@@ -1,4 +1,5 @@
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock'
+import { getOS } from 'src/scripts/getOS'
 
 export class scrollController {
   public header: HTMLElement
@@ -9,6 +10,7 @@ export class scrollController {
     this.header = null
     this.scrollBarWidth = null
     this.isLocked = false
+    // console.log(getOS())
   }
   
   public init(): void {
@@ -17,6 +19,8 @@ export class scrollController {
   }
   
   public lock(): void {
+    if(getOS() === 'iOS') return
+    
     const { documentElement: html, body, } = document
     disableBodyScroll(body)
     this.isLocked = true
@@ -38,6 +42,8 @@ export class scrollController {
   }
   
   public unlock(): void {
+    if(getOS() === 'iOS') return
+    
     const { documentElement: html, body, } = document
     enableBodyScroll(body)
     this.isLocked = false

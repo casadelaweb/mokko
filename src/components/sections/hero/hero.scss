@@ -2,6 +2,7 @@
 
 .hero {
   overflow: hidden;
+  margin-top: calc(var(--headerHeight) * -1);
 
   &-slide {
     position: relative;

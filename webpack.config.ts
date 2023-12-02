@@ -15,6 +15,8 @@ import ruleIconfont from './configuration/rules/iconfont'
 import ruleImages from './configuration/rules/images'
 import ruleFonts from './configuration/rules/fonts'
 import ruleHTML from './configuration/rules/html'
+import devServer from './configuration/devServer'
+import watchOptions from './configuration/watchOptions'
 
 function config(env: iEnvVariables): Configuration {
   const mode: iMode = env.mode ?? 'development'
@@ -34,7 +36,7 @@ function config(env: iEnvVariables): Configuration {
     entry: { main: rootPath + 'src/main.ts', },
     output: {
       path: rootPath + 'dist',
-      filename: 'assets/js/[name].[contenthash:4].js',
+      filename: 'assets/js/[name].js?v=[contenthash:8]',
       clean: isProductionMode,
     },
     resolve: {
@@ -49,8 +51,8 @@ function config(env: iEnvVariables): Configuration {
     plugins: [
       ...HTMLWebpackPluginPages(rootPath, isProductionMode),
       new MiniCssExtractPlugin({
-        filename: 'assets/css/[name].[contenthash:4].css',
-        chunkFilename: 'assets/css/[name].[contenthash:4].css',
+        filename: 'assets/css/[name].css?v=[contenthash:8]',
+        chunkFilename: 'assets/css/[name].css?v=[contenthash:8]',
       }),
     ],
     module: {
@@ -64,21 +66,9 @@ function config(env: iEnvVariables): Configuration {
         ruleScripts(rootPath),
       ],
     },
-    watchOptions: {
-      aggregateTimeout: 500,
-      ignored: ['**/node_modules', '**/dist',],
-    },
+    watchOptions,
     // @ts-ignore
-    devServer: {
-      port: 3000,
-      open: true,
-      hot: true,
-      headers: {
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, PATCH, OPTIONS',
-        'Access-Control-Allow-Headers': 'X-Requested-With, content-type, Authorization',
-      },
-    },
+    devServer,
   }
 }
 

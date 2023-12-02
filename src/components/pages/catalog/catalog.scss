@@ -15,7 +15,10 @@
 
   &-header {
     @include flex(center);
-    margin-bottom: 32px;
+    // margin-bottom: 32px;
+    //margin-top: -14px;
+    padding: 0 0 32px;
+    transition: all 0.25s ease-in-out 0s;
     background: white;
     @include mediaLaptop {
       position: sticky;
@@ -26,6 +29,8 @@
     }
 
     &.scrolled {
+      // padding: 14px 0;
+
       .catalog-title {
         @include mediaLaptop {
           display: none;

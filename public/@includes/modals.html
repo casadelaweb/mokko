@@ -1,6 +1,22 @@
 <div id="modals">
 
-  <nav class="menu" data-modal="menu">
+  <nav class="menu-info" data-menu="info">
+    <div class="menu-info-container">
+      <a class="menu-info-link" href="/info/appointment">Записаться к стилисту</a>
+      <a class="menu-info-link" href="/info/reviews">Отзывы</a>
+      <a class="menu-info-link" href="/info/delivery">Доставка</a>
+      <a class="menu-info-link" href="/info/payment">Оплата</a>
+      <a class="menu-info-link" href="/page404">Оплата долями</a>
+      <a class="menu-info-link" href="/info/return">Возврат</a>
+      <a class="menu-info-link" href="/info/shops">Магазины</a>
+      <a class="menu-info-link" href="/info/wholesale">Оптовые продажи</a>
+      <a class="menu-info-link" href="/info/sizeguide">Таблица размеров</a>
+      <a class="menu-info-link" href="/info/policy">Политика конфиденциальности</a>
+      <a class="menu-info-link" href="/info/oferta">Договор-оферта</a>
+    </div>
+  </nav>
+
+  <nav class="menu" data-menu="desktop-open" data-modal="menu">
     <div class="menu-container">
       <div class="menu-desktop">
         <div class="menu-left">
@@ -77,7 +93,7 @@
                 <button class="details-button" data-details="button" title="Раскрыть список" type="button">
                   <span class="iconfont icon-arrow-down"></span>
                 </button>
-                <a class="details-summary-link" href="/catalog">Каталог</a>
+                <span class="details-summary-link">Каталог</span>
               </summary>
               <div class="details-body" data-details="body">
                 <a class="details-link" href="/catalog">Платья</a>
@@ -99,7 +115,7 @@
                 <button class="details-button" data-details="button" title="Раскрыть список" type="button">
                   <span class="iconfont icon-arrow-down"></span>
                 </button>
-                <a class="details-summary-link" href="/info">Информация</a>
+                <span class="details-summary-link">Информация</span>
               </summary>
               <div class="details-body" data-details="body">
                 <a class="details-link" href="/info/appointment">Записаться к стилисту</a>
@@ -120,7 +136,7 @@
                 <button class="details-button" data-details="button" title="Раскрыть список" type="button">
                   <span class="iconfont icon-arrow-down"></span>
                 </button>
-                <a class="details-summary-link" href="/lk">Личный кабинет</a>
+                <span class="details-summary-link">Личный кабинет</span>
               </summary>
               <div class="details-body" data-details="body">
                 <a class="details-link" href="/lk/orders"> Мои заказы </a>
@@ -136,7 +152,7 @@
                 <button class="details-button" data-details="button" title="Раскрыть список" type="button">
                   <span class="iconfont icon-arrow-down"></span>
                 </button>
-                <a class="details-summary-link" href="/page404">Связаться с нами</a>
+                <span class="details-summary-link">Связаться с нами</span>
               </summary>
               <div class="details-body" data-details="body">
                 <a class="details-link" href="/page404">Ссылка с коротким текстом</a>
@@ -169,6 +185,7 @@
       </div>
     </div>
   </nav>
+
   <div class="modal" data-modal="registration">
     <div class="auth">
       <button class="auth-close" data-modal-close title="Закрыть окно" type="button">

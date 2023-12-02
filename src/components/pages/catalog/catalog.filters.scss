@@ -41,6 +41,9 @@
   }
 
   &-close {
+    font-size: 19px;
+    width: 19px;
+    height: 19px;
     @include mediaLaptop {
       display: none;
     }
@@ -315,6 +318,10 @@
   &-label {
     @include flex(center);
     width: fit-content;
-    margin-bottom: 0.5em;
+    margin-bottom: 1em;
   }
+}
+
+[data-catalog-prices] {
+  margin-bottom: 1em;
 }

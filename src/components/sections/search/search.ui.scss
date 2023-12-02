@@ -3,9 +3,12 @@
 .search {
   &-close {
     @include flex(center, center);
-    @include mediaTablet {
-      font-size: 18px;
-    }
+    font-size: 19px;
+    width: 19px;
+    height: 19px;
+    // @include mediaTablet {
+    //   font-size: 18px;
+    // }
     @include mediaLaptop {
       font-size: 24px;
       margin-left: auto;

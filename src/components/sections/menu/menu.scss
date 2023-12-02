@@ -19,13 +19,13 @@
     // min-height: 100%;
     transform: translate(calc(-100% - 100px), 0);
   }
-
   @include mediaLaptop {
     z-index: 99;
+    top: var(--headerHeight);
     overflow: unset;
     width: 100%;
     padding: 56px 0;
-    transform: translate(0, calc(-100% - 100px));
+    transform: translate(0, calc(-100% - 200px));
     box-shadow: 12px 12px 24px 0 rgba(black, 0.1);
   }
 

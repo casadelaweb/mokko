@@ -53,14 +53,15 @@ class Header {
   private updateHeaderHeight(): void {
     this.headerHeight = this.header.offsetHeight
     
-    let value = this.headerHeight + 'px'
+    const value = this.headerHeight + 'px'
     if(this.isPageIndex) {
-      value = '0px'
+      //value = '0px'
     } else {
       this.header.classList.add('active')
     }
     
     document.documentElement.style.setProperty('--headerHeight', value)
+    // console.log(value)
   }
   
   private hoverHeader(): void {

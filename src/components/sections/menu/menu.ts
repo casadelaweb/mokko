@@ -27,13 +27,13 @@ export class Menu {
   
   public init(): void {
     this.updateElements()
-    this.updateMenuStyles()
+    //this.updateMenuStyles()
     this.listen()
   }
   
   private handleResize(): void {
     this.updateElements()
-    this.updateMenuStyles()
+    //this.updateMenuStyles()
   }
   
   private listen(): void {
@@ -83,13 +83,13 @@ export class Menu {
     this.elements.buttonDesktopOpen = body.querySelector(selectors.buttonDesktopOpen)
   }
   
-  private updateMenuStyles(): void {
-    const { menu, header, } = this.elements
-    
-    if(isMediaAboveLaptop()) {
-      menu.style.top = header.offsetHeight + 'px'
-    } else {
-      menu.style.top = '0px'
-    }
-  }
+  //private updateMenuStyles(): void {
+  //  const { menu, header, } = this.elements
+  //
+  //  if(isMediaAboveLaptop()) {
+  //    menu.style.top = header.offsetHeight + 'px'
+  //  } else {
+  //    menu.style.top = '0px'
+  //  }
+  //}
 }

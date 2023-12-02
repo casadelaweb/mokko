@@ -161,12 +161,13 @@ $columnGapTablet: 14px;
     min-width: 0;
     max-width: 100%;
     margin-bottom: 4px;
-    border-radius: 12px;
+    border-radius: 6px;
     @include mediaTablet {
       margin-bottom: 8px;
     }
     @include mediaLaptop {
       margin-bottom: 12px;
+      border-radius: 10px;
     }
   }
 
@@ -219,8 +220,8 @@ $columnGapTablet: 14px;
   }
 
   &-title {
-    @include lineClamp(3);
-    font-size: 12px;
+    @include lineClamp(2);
+    font-size: 13px;
     margin-bottom: 0.5em;
 
     @include mediaTabletBg {
