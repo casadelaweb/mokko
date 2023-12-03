@@ -6,8 +6,13 @@
   --scrollbarWidth: 17px;
 }
 
-// button {
-//   line-height: 1;
+// a, button {
+//   // line-height: 1;
+//   display: inline-flex;
+//   column-gap: 8px;
+//   align-items: center;
+//   justify-content: center;
+//   width: fit-content;
 // }
 
 html {
