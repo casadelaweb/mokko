@@ -1,6 +1,6 @@
 import { RuleSetRule } from 'node_modules/webpack'
 
-function ruleScripts(rootPath: string): RuleSetRule {
+function ruleScripts(): RuleSetRule {
   return {
     test: /\.(js|ts)$/,
     exclude: /node_modules/,

@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     slidesPerView: 2.05,
     spaceBetween: 7,
   }
-  
+
   new Swiper('.section-layout' as CSSSelector, {
     ...sharedSettings,
     autoplay: { delay: 10000, },
@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
       },
     },
   } as SwiperOptions)
-  
+
   new Swiper('.slider-small' as CSSSelector, {
     ...sharedSettings,
     autoplay: { delay: 5000, },

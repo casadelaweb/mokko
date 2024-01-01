@@ -4,7 +4,7 @@ import { Tab } from 'src/modules/tab/tab'
 document.addEventListener('DOMContentLoaded', () => {
   new Tab().init()
   // const { body, } = document
-  
+
   // document.addEventListener('modalOpen', (event) => {
   //   const modal: HTMLElement = event.target as HTMLElement
   //   if (modal.matches('[data-modal=login]')) {

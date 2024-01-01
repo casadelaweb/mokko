@@ -42,7 +42,7 @@ export class CatalogPreview {
   private elements: iElements | false
   private selectors: iSelectors
   private swiper: Swiper | Swiper[] | undefined
-  
+
   constructor() {
     this.onClick = this.handleClick.bind(this)
     this.swiper = undefined
@@ -65,20 +65,20 @@ export class CatalogPreview {
       submit: undefined,
     }
   }
-  
+
   public init(): void {
     this.elements = this.updateElements()
-    if(this.elements === false) return
+    if (this.elements === false) return
     this.updateListeners()
     this.initSlider()
   }
-  
+
   private initSlider(): void {
-    if(!document.body.querySelector(this.selectors.slidesContainer)) {
+    if (!document.body.querySelector(this.selectors.slidesContainer)) {
       this.swiper = undefined
       return
     }
-    
+
     this.swiper = new Swiper(this.selectors.slider as CSSSelector, {
       modules: [Navigation, A11y, Mousewheel,],
       ...accessibilitySettings,
@@ -98,16 +98,16 @@ export class CatalogPreview {
       },
     } as SwiperOptions)
   }
-  
+
   private updateElements(): iElements | false {
     const body = document.body as HTMLElement
     const form: HTMLElement = body.querySelector(this.selectors.form)
-    
-    if(!form) return false
-    
+
+    if (!form) return false
+
     const colorButtons: HTMLElement[] = Array.from(form.querySelectorAll(this.selectors.colorButton))
     const sizeButtons: HTMLElement[] = Array.from(form.querySelectorAll(this.selectors.sizeButton))
-    
+
     return {
       form,
       title: form.querySelector(this.selectors.title),
@@ -126,16 +126,16 @@ export class CatalogPreview {
       submit: form.querySelector(this.selectors.submit),
     }
   }
-  
+
   //private getPreviewElements(form: HTMLElement){
   //
   //}
-  
+
   private updateListeners(): void {
     document.removeEventListener('click', this.onClick)
     document.addEventListener('click', this.onClick)
   }
-  
+
   private getCatalogCardElements(card: HTMLElement) {
     const title: HTMLElement = card.querySelector('[data-test=title]')
     const discount: HTMLElement = card.querySelector('[data-test=discount]')
@@ -145,7 +145,7 @@ export class CatalogPreview {
     const imgs: HTMLElement[] = Array.from(card.querySelectorAll('[data-test=img]'))
     const colors: HTMLElement[] = Array.from(card.querySelectorAll('[data-test=color]'))
     const sizes: HTMLElement[] = Array.from(card.querySelectorAll('[data-test=size]'))
-    
+
     const elements = {
       card,
       title,
@@ -173,30 +173,30 @@ export class CatalogPreview {
       values,
     }
   }
-  
+
   private handleClick(event: MouseEvent): void {
     const target = event.target as HTMLElement
-    
+
     // todo: когда открывается модальное окно карточки быстрого просмотра
-    if(target.closest('[data-modal-open=preview]')) {
+    if (target.closest('[data-modal-open=preview]')) {
       const card: HTMLElement = target.closest('[data-catalog=card]')
-      if(card.classList.contains('_disabled')) event.preventDefault()
-      
+      if (card.classList.contains('_disabled')) event.preventDefault()
+
       console.log(this.getCatalogCardElements(card))
     }
-    
-    if(target.closest(this.selectors.colorButton)) {
+
+    if (target.closest(this.selectors.colorButton)) {
       const button: HTMLElement = target.closest(this.selectors.colorButton)
-      if(this.elements === false) return
-      
+      if (this.elements === false) return
+
       this.elements.colorButtons.forEach((element: HTMLElement) => element.classList.remove('active'))
       button.classList.add('active')
     }
-    
-    if(target.closest(this.selectors.sizeButton)) {
+
+    if (target.closest(this.selectors.sizeButton)) {
       const button: HTMLElement = target.closest(this.selectors.sizeButton)
-      if(this.elements === false) return
-      
+      if (this.elements === false) return
+
       this.elements.sizeButtons.forEach((element: HTMLElement) => element.classList.remove('active'))
       button.classList.add('active')
     }

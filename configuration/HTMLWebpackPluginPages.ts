@@ -8,12 +8,12 @@ function ThroughDirectory(Directory: string) {
   fs.readdirSync(Directory).forEach(File => {
     // console.log(Directory)
     const Absolute = path.join(Directory, File)
-    if(Absolute.includes('@')) return
-    
-    if(fs.statSync(Absolute).isDirectory()) {
+    if (Absolute.includes('@')) return
+
+    if (fs.statSync(Absolute).isDirectory()) {
       return ThroughDirectory(Absolute)
     } else {
-      if(Absolute.endsWith('.html')) {
+      if (Absolute.endsWith('.html')) {
         const pathRelative = Absolute.replace(path.resolve('public'), '').replace(path.basename(Absolute), '')
         const result = {
           fileName: path.basename(Absolute),
@@ -27,7 +27,7 @@ function ThroughDirectory(Directory: string) {
 
 function HTMLWebpackPluginPages(rootPath: string, isProductionMode: boolean) {
   ThroughDirectory(rootPath + 'public')
-  
+
   return Files.map((page) => {
     return new HTMLWebpackPlugin({
       filename: './' + page.pathRelative + page.fileName,

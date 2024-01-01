@@ -14,7 +14,7 @@ interface iSelectors {
 export class Stories {
   private readonly onClick: (event: MouseEvent) => any
   private selectors: iSelectors
-  
+
   constructor() {
     this.selectors = {
       slider: '[data-stories=slider]',
@@ -24,17 +24,17 @@ export class Stories {
     }
     this.onClick = this.handleClick.bind(this)
   }
-  
+
   public init(): void {
     // console.log(this)
     this.initSlider()
   }
-  
+
   private initSlider(): void {
     const { body, } = document
     //const progressCircle: HTMLElement = body.querySelector('.autoplay-progress svg')
     const progressContent: HTMLElement = body.querySelector('.autoplay-progress span')
-    
+
     new Swiper(this.selectors.slider as CSSSelector, {
       ...swiperDefaultSettings,
       ...autoplay,
@@ -71,11 +71,11 @@ export class Stories {
       //},
     } as SwiperOptions)
   }
-  
+
   private handleClick(event: MouseEvent): void {
     const target = event.target as HTMLElement
   }
-  
+
   private updateListeners(): void {
     document.removeEventListener('click', this.onClick)
     document.addEventListener('click', this.onClick, { passive: true, })

@@ -3,19 +3,19 @@ import './toggle.scss'
 export default function toggle(selector: string) {
   const { body, } = document
   const allToggles: HTMLElement[] = Array.from(body.querySelectorAll(selector))
-  
-  if(allToggles.length) {
+
+  if (allToggles.length) {
     allToggles.forEach(toggleBtn => {
-      
+
       const content: HTMLElement = document.getElementById(toggleBtn.dataset.toggleHref)
-      
-      if(!content) return
-      
+
+      if (!content) return
+
       content.innerHTML = '<div>' + content.innerHTML + '</div>'
       content.classList.add('krel-toggle-content')
       toggleBtn.classList.add('krel-toggle-btn')
       toggleBtn.addEventListener('click', () => {
-        if(toggleBtn.classList.contains('krel-toggle-active')) {
+        if (toggleBtn.classList.contains('krel-toggle-active')) {
           toggleBtn.classList.remove('krel-toggle-active')
           content.style.height = null
           content.style.opacity = null

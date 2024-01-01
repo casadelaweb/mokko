@@ -1,7 +1,7 @@
 import htmlLoaderPipeline from '../html-loader-pipeline'
 import { RuleSetRule } from 'node_modules/webpack'
 
-function ruleHTML(rootPath): RuleSetRule {
+function ruleHTML(): RuleSetRule {
   return {
     test: /\.html|php$/i,
     loader: 'html-loader',

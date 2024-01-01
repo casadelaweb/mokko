@@ -20,11 +20,11 @@ import watchOptions from './configuration/watchOptions'
 
 function config(env: iEnvVariables): Configuration {
   const mode: iMode = env.mode ?? 'development'
-  const isDevelopmentMode = mode === 'development'
-  const isProductionMode = !isDevelopmentMode
-  
+  const isDevelopmentMode: boolean = mode === 'development'
+  const isProductionMode: boolean = !isDevelopmentMode
+
   const rootPath: string = path.resolve(__dirname, './') + '/'
-  
+
   return {
     mode: mode,
     target: 'browserslist',
@@ -57,13 +57,13 @@ function config(env: iEnvVariables): Configuration {
     ],
     module: {
       rules: [
-        ruleHTML(rootPath),
-        ruleFonts(rootPath),
-        ruleIconfont(rootPath),
-        ruleFavicon(rootPath),
-        ruleImages(rootPath),
+        ruleHTML(),
+        ruleFonts(),
+        ruleIconfont(),
+        ruleFavicon(),
+        ruleImages(),
         ruleStyles(isDevelopmentMode),
-        ruleScripts(rootPath),
+        ruleScripts(),
       ],
     },
     watchOptions,

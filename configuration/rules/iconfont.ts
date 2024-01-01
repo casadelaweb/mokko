@@ -1,6 +1,6 @@
 import { RuleSetRule } from 'node_modules/webpack'
 
-function ruleIconfont(rootPath: string): RuleSetRule {
+function ruleIconfont(): RuleSetRule {
   return {
     test: /(.*?iconfont.*?)\.(svg|woff|woff2|eot|ttf|otf)$/i,
     type: 'asset/resource',

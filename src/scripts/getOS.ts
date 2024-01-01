@@ -19,18 +19,18 @@ export function getOS(): iOSName {
     ],
     iosPlatforms = ['iPhone', 'iPad', 'iPod',]
   let os = null
-  
-  if(macosPlatforms.indexOf(platform) !== -1) {
+
+  if (macosPlatforms.indexOf(platform) !== -1) {
     os = 'Mac OS'
-  } else if(iosPlatforms.indexOf(platform) !== -1) {
+  } else if (iosPlatforms.indexOf(platform) !== -1) {
     os = 'iOS'
-  } else if(windowsPlatforms.indexOf(platform) !== -1) {
+  } else if (windowsPlatforms.indexOf(platform) !== -1) {
     os = 'Windows'
-  } else if(/Android/.test(userAgent)) {
+  } else if (/Android/.test(userAgent)) {
     os = 'Android'
-  } else if(/Linux/.test(platform)) {
+  } else if (/Linux/.test(platform)) {
     os = 'Linux'
   }
-  
+
   return os
 }

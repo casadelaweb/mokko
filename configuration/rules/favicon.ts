@@ -1,6 +1,6 @@
 import { RuleSetRule } from 'node_modules/webpack'
 
-function ruleFavicon(rootPath: string): RuleSetRule {
+function ruleFavicon(): RuleSetRule {
   return {
     test: /(ico|png|webmanifest|svg|xml)$/i,
     include: /favicon/,

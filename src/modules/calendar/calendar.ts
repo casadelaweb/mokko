@@ -9,13 +9,13 @@ export class Calendar {
   private selectors: { inputDate: string, }
   private elements: HTMLInputElement[]
   private calendars: any
-  
+
   constructor() {
     this.selectors = { inputDate: '[data-calendar=input]', }
     this.elements = []
     this.calendars = []
   }
-  
+
   public init(): void {
     this.updateElements()
     this.elements.forEach((element) => {
@@ -23,11 +23,11 @@ export class Calendar {
     })
     // console.log(this)
   }
-  
+
   private updateElements(): void {
     this.elements = Array.from(document.body.querySelectorAll(this.selectors.inputDate))
   }
-  
+
   private updateFlatpicker(element: HTMLInputElement) {
     const calendar = flatpickr(element, {
       enableTime: false,

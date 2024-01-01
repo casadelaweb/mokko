@@ -1,6 +1,6 @@
 import { RuleSetRule } from 'node_modules/webpack'
 
-function ruleImages(rootPath: string): RuleSetRule {
+function ruleImages(): RuleSetRule {
   return {
     test: /(jpg|jpeg|png|webp|gif|svg)$/i,
     exclude: /iconfont|iconfonts|fonts|favicon/,

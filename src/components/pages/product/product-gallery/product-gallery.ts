@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     enabled: true,
     slidesPerView: 1,
     modules: [Pagination,],
-    
+
     pagination: {
       el: '.swiper-pagination',
       type: 'bullets',

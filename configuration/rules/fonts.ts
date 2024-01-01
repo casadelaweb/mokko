@@ -1,6 +1,6 @@
 import { RuleSetRule } from 'node_modules/webpack'
 
-function ruleFonts(rootPath: string): RuleSetRule {
+function ruleFonts(): RuleSetRule {
   return {
     test: /(woff|woff2|eot|ttf|otf)$/i,
     type: 'asset/resource',

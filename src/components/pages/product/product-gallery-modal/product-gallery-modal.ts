@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const catalogDetail: HTMLElement = body.querySelector('.product')
   const galleryItems: HTMLElement[] = Array.from(body.querySelectorAll('.product-gallery-item'))
   const catalogGalleryModalSlider: HTMLElement = body.querySelector('.product-gallery-modal-slider .swiper-wrapper')
-  
+
   galleryItems.forEach((galleryItem: HTMLElement, index: number) => {
     galleryItem.dataset.slideId = `${index}`
     //const galleryModalItem: HTMLElement = document.createElement('div')
@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     //galleryModalItem.children[0].append(galleryItem.children[0].cloneNode())
     //catalogGalleryModalSlider.append(galleryModalItem)
   })
-  
+
   const swiperInstance: Swiper = new Swiper('.product-gallery-modal-slider' as CSSSelector, {
     ...swiperDefaultSettings,
     modules: [
@@ -58,11 +58,11 @@ document.addEventListener('DOMContentLoaded', () => {
       enabled: true,
     },
   } as SwiperOptions)
-  
-  if(catalogDetail) {
+
+  if (catalogDetail) {
     catalogDetail.addEventListener('click', (event: MouseEvent) => {
       const target = event.target as HTMLElement
-      if(target.closest('.product-gallery-item')) {
+      if (target.closest('.product-gallery-item')) {
         const modalGallery: HTMLElement = body.querySelector('[data-modal=product-gallery-modal]')
         const item: HTMLElement = target.closest('.product-gallery-item')
         modals.activateModal(modalGallery)

@@ -6,15 +6,15 @@ document.addEventListener('DOMContentLoaded', () => {
   const header: HTMLElement = body.querySelector('.header')
   const headerHeight: number = header.offsetHeight
   const catalogDetailSticky: HTMLElement = body.querySelector('[data-product=sticky]')
-  
-  if(catalogDetailSticky) {
+
+  if (catalogDetailSticky) {
     window.addEventListener('resize', () => {
-      if(isMediaAboveLaptop()) {
+      if (isMediaAboveLaptop()) {
         catalogDetailSticky.style.top = headerHeight + 20 + 'px'
       }
     })
   }
-  
+
   const product = new Product()
   product.init()
 })

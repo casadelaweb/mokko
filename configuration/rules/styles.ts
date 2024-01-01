@@ -24,7 +24,7 @@ function ruleStyles(isDevelopmentMode: boolean): RuleSetRule {
       },
     ],
   }
-  
+
   return {
     test: /\.(css|sass|scss)$/i,
     use: isDevelopmentMode ? stylesPipeline.development : stylesPipeline.production,

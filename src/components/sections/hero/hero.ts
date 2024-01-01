@@ -1,7 +1,10 @@
 import Swiper from 'swiper'
 import { CSSSelector, SwiperOptions } from 'swiper/types'
 import { Pagination, Autoplay, A11y } from 'swiper/modules'
-import { autoplay as autoplaySetting, accessibility as accessibilitySettings } from 'src/scripts/swiper-settings'
+import {
+  autoplay as autoplaySetting,
+  accessibility as accessibilitySettings
+} from 'src/scripts/swiper-settings'
 
 document.addEventListener('DOMContentLoaded', () => {
   new Swiper('.hero-slider' as CSSSelector, {
