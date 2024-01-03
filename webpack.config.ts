@@ -4,6 +4,7 @@ import { iEnvVariables, iMode } from './configuration/config.types'
 // node
 import path from 'path'
 // plugins
+import webpack from 'webpack'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import CssMinimizer from 'css-minimizer-webpack-plugin'
 import HTMLWebpackPluginPages from './configuration/HTMLWebpackPluginPages'
@@ -56,6 +57,7 @@ function config(env: iEnvVariables): Configuration {
         chunkFilename: 'assets/css/[name].css?v=[contenthash:8]',
       }),
       new VueLoaderPlugin(),
+      new webpack.DefinePlugin({ __VUE_PROD_DEVTOOLS__: 'false', }),
     ],
     module: {
       rules: [
