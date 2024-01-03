@@ -3,11 +3,6 @@
 ._*
 .Spotlight-V100
 .Trashes
-.github
-.env
-.yarn/cache
-.yarn/install-state.gz
-_config.yml
 
 # Windows
 Thumbs.db
@@ -39,6 +34,11 @@ $RECYCLE.BIN/
 .fleet
 
 # Node and Enviroment
+.github
+.env
+.yarn/cache
+.yarn/install-state.gz
+_config.yml
 package-lock.json
 /dist
 node_modules
