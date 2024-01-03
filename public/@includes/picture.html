@@ -1,0 +1,28 @@
+<picture>
+  <!-- сначала пробуем высокие разрешения экрана -->
+  <source media="(min-width: 1920px)" srcset="src/assets/img/placeholder.webp"
+          type="image/webp">
+  <source media="(min-width: 1920px)" srcset="src/assets/img/placeholder.jpg"
+          type="image/jpeg">
+  <!-- затем средние разрешения экрана (большие планшеты и ноутбуки) -->
+  <source media="(min-width: 1024px)" srcset="src/assets/img/placeholder.webp"
+          type="image/webp">
+  <source media="(min-width: 1024px)" srcset="src/assets/img/placeholder.jpg"
+          type="image/jpeg">
+  <!-- затем средние планшеты и большие телефоны -->
+  <source media="(min-width: 540px)" srcset="src/assets/img/placeholder.webp"
+          type="image/webp">
+  <source media="(min-width: 540px)" srcset="src/assets/img/placeholder.jpg"
+          type="image/jpeg">
+  <!-- пробуем мобильный webp -->
+  <source srcset="src/assets/img/placeholder.webp" type="image/webp">
+  <!-- по умолчанию мобильный jpeg -->
+  <img alt="img" loading="lazy" src="src/assets/img/placeholder.jpg">
+  <!--
+  Safari поддерживает loading=lazy изображений с марта 2021,
+  Firefox с апреля 2023,
+  Chrome с сентября 2019,
+  Edge с января 2020
+
+  подробнее о поддержке loading=lazy https://caniuse.com/loading-lazy-attr -->
+</picture>

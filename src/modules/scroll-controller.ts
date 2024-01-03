@@ -10,7 +10,7 @@ export class scrollController {
     this.header = null
     this.scrollBarWidth = null
     this.isLocked = false
-    // console.log(getOS())
+
   }
 
   public init(): void {

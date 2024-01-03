@@ -27,6 +27,7 @@
         </a>
       </div>
     </div>
+
     <div class="modal" data-modal="product-gallery-modal">
       <div class="product-gallery-modal">
         <button class="modal-close" data-modal-close title="Закрыть окно" type="button">
@@ -34,41 +35,13 @@
         </button>
         <div class="swiper product-gallery-modal-slider">
           <div class="swiper-wrapper">
+            repeat 5 times:
             <div class="swiper-slide">
               <div class="product-gallery-modal-item">
-                <img alt="img" loading="lazy" src="src/assets/img/product/product_1.jpg">
+                import @includes/picture.html;
               </div>
             </div>
-            <div class="swiper-slide">
-              <div class="product-gallery-modal-item">
-                <img alt="img" loading="lazy" src="src/assets/img/product/product_2.jpg">
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="product-gallery-modal-item">
-                <img alt="img" loading="lazy" src="src/assets/img/product/product_3.jpg">
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="product-gallery-modal-item">
-                <img alt="img" loading="lazy" src="src/assets/img/product/product_4.jpg">
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="product-gallery-modal-item">
-                <img alt="img" loading="lazy" src="src/assets/img/product/product_5.jpg">
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="product-gallery-modal-item">
-                <img alt="img" loading="lazy" src="src/assets/img/product/product_6.jpg">
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="product-gallery-modal-item">
-                <img alt="img" loading="lazy" src="src/assets/img/product/product_7.jpg">
-              </div>
-            </div>
+            end;
           </div>
           <div class="swiper-pagination"></div>
           <div class="swiper-scrollbar"></div>
@@ -81,49 +54,20 @@
         </div>
       </div>
     </div>
+
     <section class="product">
       <div class="product-container" data-product="container">
         <div class="product-left">
           <div class="product-gallery">
             <div class="swiper product-gallery-slider">
               <div class="swiper-wrapper">
-
+                repeat 5 times:
                 <div class="swiper-slide">
                   <div class="product-gallery-item">
-                    <img alt="img" loading="lazy" src="src/assets/img/product/product_1.jpg">
+                    import @includes/picture.html;
                   </div>
                 </div>
-                <div class="swiper-slide">
-                  <div class="product-gallery-item">
-                    <img alt="img" loading="lazy" src="src/assets/img/product/product_2.jpg">
-                  </div>
-                </div>
-                <div class="swiper-slide">
-                  <div class="product-gallery-item">
-                    <img alt="img" loading="lazy" src="src/assets/img/product/product_3.jpg">
-                  </div>
-                </div>
-                <div class="swiper-slide">
-                  <div class="product-gallery-item">
-                    <img alt="img" loading="lazy" src="src/assets/img/product/product_4.jpg">
-                  </div>
-                </div>
-                <div class="swiper-slide">
-                  <div class="product-gallery-item">
-                    <img alt="img" loading="lazy" src="src/assets/img/product/product_5.jpg">
-                  </div>
-                </div>
-                <div class="swiper-slide">
-                  <div class="product-gallery-item">
-                    <img alt="img" loading="lazy" src="src/assets/img/product/product_6.jpg">
-                  </div>
-                </div>
-                <div class="swiper-slide">
-                  <div class="product-gallery-item">
-                    <img alt="img" loading="lazy" src="src/assets/img/product/product_7.jpg">
-                  </div>
-                </div>
-
+                end;
               </div>
               <div class="swiper-pagination"></div>
             </div>
@@ -142,6 +86,7 @@
               </div>
             </div>
             <a class="product-instalment" href="#" target="_blank">
+
               <img alt="img"
                    class="product-instalment-logo"
                    loading="lazy"
@@ -170,6 +115,8 @@
                 </button>
                 <button class="product-btn product-btn-buy" data-product="add-to-cart"
                         title="Добавить в корзину" type="button">
+                  <!-- todo: добавить индикатор ожидания ответа от сервера -->
+                  <!-- todo: добавить анимацию при добавлении товара -->
                   <span class="active">Товар успешно добавлен</span>
                   <span class="default">Добавить в корзину</span>
                 </button>
@@ -384,6 +331,7 @@
                 </button>
 
                 <a href="/catalog/product">
+
                   <img alt="img" class="section-product-img" loading="lazy"
                        src="src/assets/img/section/product-5.jpg">
                 </a>
@@ -405,6 +353,7 @@
                 </button>
 
                 <a href="/catalog/product">
+
                   <img alt="img" class="section-product-img" loading="lazy"
                        src="src/assets/img/section/product-6.jpg">
                 </a>
@@ -426,6 +375,7 @@
                 </button>
 
                 <a href="/catalog/product">
+
                   <img alt="img" class="section-product-img" loading="lazy"
                        src="src/assets/img/section/product-7.jpg">
                 </a>
@@ -474,6 +424,7 @@
                 </button>
 
                 <a href="/catalog/product">
+
                   <img alt="img" class="section-product-img" loading="lazy"
                        src="src/assets/img/section/product-5.jpg">
                 </a>
@@ -495,6 +446,7 @@
                 </button>
 
                 <a href="/catalog/product">
+
                   <img alt="img" class="section-product-img" loading="lazy"
                        src="src/assets/img/section/product-6.jpg">
                 </a>
@@ -516,6 +468,7 @@
                 </button>
 
                 <a href="/catalog/product">
+
                   <img alt="img" class="section-product-img" loading="lazy"
                        src="src/assets/img/section/product-7.jpg">
                 </a>
@@ -565,6 +518,7 @@
                 </button>
 
                 <a href="/catalog/product">
+
                   <img alt="img" class="section-product-img" loading="lazy"
                        src="src/assets/img/section/product-5.jpg">
                 </a>
@@ -586,6 +540,7 @@
                 </button>
 
                 <a href="/catalog/product">
+
                   <img alt="img" class="section-product-img" loading="lazy"
                        src="src/assets/img/section/product-6.jpg">
                 </a>
@@ -607,6 +562,7 @@
                 </button>
 
                 <a href="/catalog/product">
+
                   <img alt="img" class="section-product-img" loading="lazy"
                        src="src/assets/img/section/product-7.jpg">
                 </a>

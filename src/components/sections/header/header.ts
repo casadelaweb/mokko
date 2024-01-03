@@ -61,7 +61,7 @@ class Header {
     }
 
     document.documentElement.style.setProperty('--headerHeight', value)
-    // console.log(value)
+
   }
 
   private hoverHeader(): void {

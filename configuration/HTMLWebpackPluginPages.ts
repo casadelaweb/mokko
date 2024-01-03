@@ -6,7 +6,7 @@ const Files = []
 
 function ThroughDirectory(Directory: string) {
   fs.readdirSync(Directory).forEach(File => {
-    // console.log(Directory)
+
     const Absolute = path.join(Directory, File)
     if (Absolute.includes('@')) return
 

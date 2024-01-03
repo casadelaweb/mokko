@@ -423,6 +423,6 @@ export class CatalogCards {
       this.swiper.destroy(false, true)
     }
 
-    console.log(this)
+
   }
 }

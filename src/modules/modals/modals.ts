@@ -163,7 +163,7 @@ class Modals {
     //   body.appendChild(overlay)
     //   this.overlay = overlay
     // }
-    // console.log(this)
+
 
     this.listen()
   }
@@ -241,7 +241,7 @@ class Modals {
   }
 
   private handleScroll(event: Event): void {
-    // console.log(window.scrollY, event)
+
   }
 }
 

@@ -57,7 +57,11 @@ function config(env: iEnvVariables): Configuration {
         chunkFilename: 'assets/css/[name].css?v=[contenthash:8]',
       }),
       new VueLoaderPlugin(),
-      new webpack.DefinePlugin({ __VUE_PROD_DEVTOOLS__: 'false', }),
+      new webpack.DefinePlugin({
+        __VUE_OPTIONS_API__: 'true',
+        __VUE_PROD_DEVTOOLS__: 'false',
+        __VUE_PROD_HYDRATION_MISMATCH_DETAILS__: 'false',
+      }),
     ],
     module: {
       rules: [

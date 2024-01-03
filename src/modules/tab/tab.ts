@@ -37,7 +37,6 @@ export class Tab {
         return element.matches('[data-tab-content=' + buttonTabContent + ']')
       })
 
-      // console.log(elements, buttonTabContent, tabContent)
 
       elements.forEach((element: HTMLElement) => element.classList.remove('active'))
       button.classList.add('active')

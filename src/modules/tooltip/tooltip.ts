@@ -53,7 +53,7 @@ export class Tooltip {
 
   public position(target: HTMLElement): void {
     const coordinates = target.getBoundingClientRect()
-    // console.log(coordinates)
+
     const top: number = Math.round(coordinates.bottom) + 14
     const left: number = Math.round(coordinates.left)
     //const right: number = Math.round(coordinates.right) + 14

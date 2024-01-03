@@ -21,7 +21,7 @@ export class Calendar {
     this.elements.forEach((element) => {
       this.updateFlatpicker(element)
     })
-    // console.log(this)
+
   }
 
   private updateElements(): void {

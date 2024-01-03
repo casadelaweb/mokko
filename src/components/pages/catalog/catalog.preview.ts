@@ -182,7 +182,7 @@ export class CatalogPreview {
       const card: HTMLElement = target.closest('[data-catalog=card]')
       if (card.classList.contains('_disabled')) event.preventDefault()
 
-      console.log(this.getCatalogCardElements(card))
+
     }
 
     if (target.closest(this.selectors.colorButton)) {

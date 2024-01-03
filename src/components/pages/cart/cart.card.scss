@@ -223,7 +223,7 @@
     }
 
     &-old {
-      text-decoration: line-through;
+      @include lineThrough(#80756e);
     }
 
     &-current {

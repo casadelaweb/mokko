@@ -5,13 +5,13 @@ export default function processAliases(match, attribute) {
   const loaderContext = this
   const filePath = loaderContext.resourcePath
 
-  // console.log(path.resolve(__dirname, filePath).replace(/.*public/gmi, ''))
+
   const pathFromPublic = dirname(filePath).replace(/.*public/gmi, '')
   const depth = (pathFromPublic.match(/\\/g) || []).length + 1
 
   const pathPrefix = '../'.repeat(depth)
   const pathFromRoot = pathPrefix + 'src'
-  // console.log(filePath, pathFromPublic, depth, pathFromRoot)
+
 
   const attributesToMatch = [
     'href',

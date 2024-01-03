@@ -33,9 +33,9 @@ export class Product {
     // const height = this.elements.sticky.offsetHeight
     const heightParent = this.elements.container.offsetHeight
 
-    // console.log(scrolled, height, heightParent)
+
     const { top, height, bottom, } = this.elements.sticky.getBoundingClientRect()
-    // console.log(scrolled, Math.abs(top) + Math.abs(bottom), height)
+
 
     if (scrolled > height && scrolled < heightParent) {
       //this.elements.sticky.classList.add('sticky')

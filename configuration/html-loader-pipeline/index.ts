@@ -9,7 +9,7 @@ const tests = {
 }
 
 function htmlLoaderPipeline(content: any, loaderContext: any) {
-  // console.log(loaderContext.resourcePath)
+
   let result = content
 
   if (tests.imports.test(result)) {

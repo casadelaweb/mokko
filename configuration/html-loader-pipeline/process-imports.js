@@ -8,7 +8,7 @@ export default function processImports(match, source) {
   source = source.replace(/^src\//gmi, '../src/')
 
   const dir = loaderContext.context.replace(/public.*/gmi, 'public')
-  // console.log(dir, source)
+
 
   const filePath = resolve(dir, source)
   return readFileSync(filePath, 'utf8')

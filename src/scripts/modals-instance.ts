@@ -10,7 +10,7 @@ export const modals = new Modals({
     open() {
       globalScrollController.lock()
       if (this.parameters.all.length === 0) globalScrollController.update()
-      // console.log(this)
+
     },
     // beforeClose() {
     //   if (this.parameters.all.length === 0) globalScrollController.update()
@@ -20,7 +20,7 @@ export const modals = new Modals({
         globalScrollController.unlock()
         globalScrollController.update()
       }
-      // console.log(this)
+
     },
   },
 })

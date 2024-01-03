@@ -26,7 +26,7 @@ export class Stories {
   }
 
   public init(): void {
-    // console.log(this)
+
     this.initSlider()
   }
 
@@ -65,7 +65,7 @@ export class Stories {
       },
       //on: {
       //  autoplayTimeLeft(s, time, progress) {
-      //    console.log(this, time, progress)
+
       //    progressContent.textContent = `${Math.ceil(time / 1000)}s`
       //  },
       //},

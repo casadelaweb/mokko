@@ -12,8 +12,8 @@ import { Details } from 'src/modules/details/details'
 import { Masks } from 'src/modules/masks/masks'
 import { Calendar } from 'src/modules/calendar/calendar'
 import { Stories } from 'src/modules/stories/stories'
-import { createApp } from 'vue'
-import notificationsQueue from 'src/modules/notificationsQueue/notificationsQueue.vue'
+//import { createApp } from 'vue'
+//import notificationsQueue from 'src/modules/notificationsQueue/notificationsQueue.vue'
 import 'src/assets/img/placeholder.jpg'
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -25,6 +25,8 @@ document.addEventListener('DOMContentLoaded', () => {
   new Calendar().init()
   new Stories().init()
 
-  const nq = createApp(notificationsQueue)
-  nq.mount('#notifications-queue')
+  // const el: HTMLElement = document.querySelector('#notifications-queue')
+  // if (el) {
+  //   createApp(notificationsQueue).mount('#notifications-queue')
+  // }
 }, { passive: true, })

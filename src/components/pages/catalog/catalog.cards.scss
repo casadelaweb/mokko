@@ -239,7 +239,7 @@ $columnGapTablet: 14px;
     }
 
     &-previous {
-      text-decoration: line-through;
+      @include lineThrough(#80756e);
       margin-right: 1em;
     }
 

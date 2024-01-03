@@ -67,7 +67,7 @@ export class CartCard {
     this.onResize()
     window.addEventListener('resize', this.onResize)
 
-    console.log(this)
+
   }
 
   private decreaseValue(input: HTMLInputElement): void {
@@ -122,7 +122,7 @@ export class CartCard {
   }
 
   private isMobile(): boolean {
-    // console.log(('ontouchstart' in window), ('ontouchend' in window))
+
     return ('ontouchstart' in window) && ('ontouchend' in window)
   }
 

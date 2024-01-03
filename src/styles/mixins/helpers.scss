@@ -26,3 +26,21 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+
+@mixin lineThrough($color:#ada49e) {
+  position: relative;
+  z-index: 0;
+
+  &::before {
+    content: ' ';
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: $color;
+    pointer-events: none;
+    transform: translate(0, -50%);
+  }
+}
