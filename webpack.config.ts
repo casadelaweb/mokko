@@ -7,6 +7,7 @@ import path from 'path'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import CssMinimizer from 'css-minimizer-webpack-plugin'
 import HTMLWebpackPluginPages from './configuration/HTMLWebpackPluginPages'
+import { VueLoaderPlugin } from 'vue-loader'
 // rules
 import ruleScripts from './configuration/rules/scripts'
 import ruleFavicon from './configuration/rules/favicon'
@@ -54,9 +55,14 @@ function config(env: iEnvVariables): Configuration {
         filename: 'assets/css/[name].css?v=[contenthash:8]',
         chunkFilename: 'assets/css/[name].css?v=[contenthash:8]',
       }),
+      new VueLoaderPlugin(),
     ],
     module: {
       rules: [
+        {
+          test: /\.vue$/,
+          loader: 'vue-loader',
+        },
         ruleHTML(),
         ruleFonts(),
         ruleIconfont(),
