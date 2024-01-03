@@ -12,21 +12,21 @@
   import @includes/header.html;
 
   <main class="main">
+    <div class="breadcrumbs">
+      <div class="breadcrumbs-container">
+        <a class="breadcrumb" href="/">Главная</a>
+        <a class="breadcrumb" href="/catalog">Каталог</a>
+        <a class="breadcrumb" href="/catalog">Нарядная одежда</a>
+        <a class="breadcrumb active" href="/catalog/product">Платье</a>
+      </div>
+    </div>
     <div class="product-top" data-catalog="header-desktop">
       <div class="container">
-
-        <div class="breadcrumbs">
-          <a class="breadcrumb" href="/">Главная</a>
-          <a class="breadcrumb" href="/catalog">Каталог</a>
-          <a class="breadcrumb" href="/catalog">Нарядная одежда</a>
-          <a class="breadcrumb active" href="/catalog/product">Платье</a>
-        </div>
         <a class="product-back" href="/catalog">
           Назад
         </a>
       </div>
     </div>
-
     <div class="modal" data-modal="product-gallery-modal">
       <div class="product-gallery-modal">
         <button class="modal-close" data-modal-close title="Закрыть окно" type="button">
@@ -131,7 +131,6 @@
         </div>
         <div class="product-right">
           <div class="product-right-sticky" data-product="sticky">
-
             <div class="product-price">
               <div class="product-price-percent">SALE -30%</div>
               <h1 class="product-price-title">
@@ -150,7 +149,6 @@
               <span>4 платежа по 1 000 ₽ </span>
               <span class="iconfont icon-arrow-right"></span>
             </a>
-
             <div class="product-colors">
               <div class="product-title">
                 Цвет
@@ -162,51 +160,52 @@
               </div>
               Сиреневый жемчуг
             </div>
-
-            <div class="product-btns">
-              <div class="product-btns-price"></div>
-              <div class="product-btns-cont">
+            <div class="product-buttons">
+              <div class="product-buttons-price"></div>
+              <div class="product-buttons-cont">
                 <button class="product-btn product-btn-size"
                         data-toggle-href="/product-sizes-cont">
                   <span>Размеры</span>
                   <span class="iconfont icon-arrow-down"></span>
-
                 </button>
-                <button class="product-btn product-btn-buy"></button>
-
-                <button class="product-btn-wishlist" type="button">
+                <button class="product-btn product-btn-buy" data-product="add-to-cart"
+                        title="Добавить в корзину" type="button">
+                  <span class="active">хуй</span>
+                  <span class="default">Добавить в корзину</span>
+                </button>
+                <button class="product-btn-wishlist" data-product="toggle-favourite"
+                        title="Добавить в избранное" type="button">
                   <span class="iconfont icon-heart-fill"></span>
                 </button>
-
               </div>
-              <div class="product-sizes-cont" id="product-sizes-cont">
+              <div id="product-sizes-cont" class="product-sizes-cont">
                 <div class="product-title">
                   Размеры
                 </div>
+                <div class="product-sizes">
+                  <div class="product-sizes-notification" data-product="no-size-selected">
+                    Пожалуйста, выберите желаемый размер
+                  </div>
 
-                <div class="product-sizes-items">
-
-                  <div class="product-sizes-item">
+                  <div class="product-size _active" data-product="size">
                     S <span>36</span>
                   </div>
-                  <div class="product-sizes-item">
+                  <div class="product-size" data-product="size">
                     M <span>36</span>
                   </div>
-                  <div class="product-sizes-item">
+                  <div class="product-size" data-product="size">
                     L <span>36</span>
                   </div>
-                  <div class="product-sizes-item">
+                  <div class="product-size" data-product="size">
                     XL <span>36</span>
                   </div>
-                  <div class="product-sizes-item">
+                  <div class="product-size" data-product="size">
                     XXL <span>36</span>
                   </div>
-                  <div class="product-sizes-item">
+                  <div class="product-size" data-product="size">
                     XXXL <span>36</span>
                   </div>
-
                 </div>
-
                 <div class="product-sizes-info">
                   <span>Параметры модели: 170/87/64/88</span>
                   <span> Размер на модели: XS</span>
@@ -214,11 +213,8 @@
                     Таблица размеров
                   </div>
                 </div>
-
-
               </div>
             </div>
-
             <div class="product-info">
               <details class="details" data-details="details">
                 <summary class="details-summary" data-details="summary">
@@ -322,7 +318,8 @@
 
                     <p>
                       <span>Курьерская служба:</span> <br>
-                      Оплата на сайте или наличными/банковской картой при получении. Только для Санкт-Петербурга и
+                      Оплата на сайте или наличными/банковской картой при получении. Только для
+                      Санкт-Петербурга и
                       Москвы.
                     </p>
 
@@ -357,12 +354,12 @@
                 </div>
               </details>
             </div>
-
           </div>
         </div>
       </div>
     </section>
 
+    <!-- рекомендации -->
     <section class="product-products section">
       <div class="section-container">
         <div class="section-header">
@@ -381,7 +378,8 @@
 
             <div class="swiper-slide">
               <article class="section-product">
-                <button class="section-product-favourite" title="Добавить в избранное" type="button">
+                <button class="section-product-favourite" title="Добавить в избранное"
+                        type="button">
                   <span class="iconfont icon-heart-fill"></span>
                 </button>
 
@@ -401,7 +399,8 @@
             </div>
             <div class="swiper-slide">
               <article class="section-product">
-                <button class="section-product-favourite" title="Добавить в избранное" type="button">
+                <button class="section-product-favourite" title="Добавить в избранное"
+                        type="button">
                   <span class="iconfont icon-heart-fill"></span>
                 </button>
 
@@ -421,7 +420,8 @@
             </div>
             <div class="swiper-slide">
               <article class="section-product">
-                <button class="section-product-favourite" title="Добавить в избранное" type="button">
+                <button class="section-product-favourite" title="Добавить в избранное"
+                        type="button">
                   <span class="iconfont icon-heart-fill"></span>
                 </button>
 
@@ -468,7 +468,8 @@
 
             <div class="swiper-slide">
               <article class="section-product">
-                <button class="section-product-favourite" title="Добавить в избранное" type="button">
+                <button class="section-product-favourite" title="Добавить в избранное"
+                        type="button">
                   <span class="iconfont icon-heart-fill"></span>
                 </button>
 
@@ -488,7 +489,8 @@
             </div>
             <div class="swiper-slide">
               <article class="section-product">
-                <button class="section-product-favourite" title="Добавить в избранное" type="button">
+                <button class="section-product-favourite" title="Добавить в избранное"
+                        type="button">
                   <span class="iconfont icon-heart-fill"></span>
                 </button>
 
@@ -508,7 +510,8 @@
             </div>
             <div class="swiper-slide">
               <article class="section-product">
-                <button class="section-product-favourite" title="Добавить в избранное" type="button">
+                <button class="section-product-favourite" title="Добавить в избранное"
+                        type="button">
                   <span class="iconfont icon-heart-fill"></span>
                 </button>
 
@@ -556,7 +559,8 @@
 
             <div class="swiper-slide">
               <article class="section-product">
-                <button class="section-product-favourite" title="Добавить в избранное" type="button">
+                <button class="section-product-favourite" title="Добавить в избранное"
+                        type="button">
                   <span class="iconfont icon-heart-fill"></span>
                 </button>
 
@@ -576,7 +580,8 @@
             </div>
             <div class="swiper-slide">
               <article class="section-product">
-                <button class="section-product-favourite" title="Добавить в избранное" type="button">
+                <button class="section-product-favourite" title="Добавить в избранное"
+                        type="button">
                   <span class="iconfont icon-heart-fill"></span>
                 </button>
 
@@ -596,7 +601,8 @@
             </div>
             <div class="swiper-slide">
               <article class="section-product">
-                <button class="section-product-favourite" title="Добавить в избранное" type="button">
+                <button class="section-product-favourite" title="Добавить в избранное"
+                        type="button">
                   <span class="iconfont icon-heart-fill"></span>
                 </button>
 
@@ -626,9 +632,7 @@
       </div>
 
     </section>
-
   </main>
-
 
   import @includes/footer.html;
   import @includes/modals.html;

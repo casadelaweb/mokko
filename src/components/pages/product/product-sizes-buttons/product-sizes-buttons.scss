@@ -1,7 +1,7 @@
 @use 'src/styles/shared' as *;
 
 .product {
-  &-btns {
+  &-buttons {
     @include mediaOnlyMobile {
       position: fixed;
       z-index: 100;
@@ -36,7 +36,7 @@
     }
   }
 
-  &-btns-cont {
+  &-buttons-cont {
     @include flex(center, space-between);
     margin-top: 6px;
     padding-bottom: 16px;
@@ -60,18 +60,50 @@
     border-radius: 4px;
 
     &-buy {
+      border: 0;
+      @include flex(center);
+      position: relative;
+      z-index: 0;
+      overflow: hidden;
       color: white;
-      background-color: #c7b29c;
-
-      &:before {
-        content: 'В корзину'
-      }
-
+      background: #c7b29c;
+      transition: background-color 1s;
       @include mediaTablet {
         width: 270px;
-        &:before {
-          content: 'Добавить в корзину'
+      }
+
+      &._success {
+        background: #505050;
+
+        .default {
+          transform: translate(100%, 0);
+          transition-delay: 0s;
         }
+
+        .active {
+          transform: none;
+          transition-delay: 0.33s;
+        }
+      }
+
+      .default, .active {
+        @include flex(center, center);
+        width: 100%;
+        height: 100%;
+        flex: 0 0 auto;
+      }
+
+      .default {
+        transition: transform 0.33s ease-in-out 0.33s;
+      }
+
+      .active {
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        transform: translate(-100%, 0);
+        transition: transform 0.5s ease-in-out 0s;
       }
     }
 
@@ -122,34 +154,6 @@
     }
   }
 
-  &-items {
-    display: flex;
-    justify-content: space-between;
-    width: 290px;
-  }
-
-  &-item {
-    font-size: 13px;
-    line-height: 100%;
-    text-align: center;
-    display: block;
-    width: 40px;
-    padding: 5px 0;
-    cursor: pointer;
-    border: 2px solid #e9e9e9;
-    border-radius: 4px;
-
-
-    span {
-      font-size: 14px;
-      display: block;
-    }
-
-    &-active {
-      background-color: #e9e9e9;
-    }
-  }
-
   &-table-url {
     font-size: 15px;
     line-height: 18px;
@@ -179,6 +183,54 @@
       @include mediaTablet {
         display: none;
       }
+    }
+  }
+}
+
+.product {
+  &-sizes {
+    position: relative;
+    z-index: 0;
+    @include flex(center);
+    column-gap: 10px;
+    // width: 290px;
+
+    &-notification {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      z-index: 1;
+      opacity: 0;
+      transition: opacity 0.33s;
+      color: #ea1c35;
+      font-size: 14px;
+
+      &._active {
+        opacity: 1;
+      }
+    }
+  }
+
+  &-size {
+    flex: 0 0 auto;
+    font-size: 13px;
+    line-height: 100%;
+    text-align: center;
+    display: block;
+    width: 40px;
+    height: 40px;
+    padding: 5px 0;
+    cursor: pointer;
+    border: 2px solid #e9e9e9;
+    border-radius: 4px;
+
+    &._active {
+      background-color: #e9e9e9;
+    }
+
+    span {
+      font-size: 14px;
+      display: block;
     }
   }
 }
