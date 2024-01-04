@@ -257,7 +257,38 @@
   }
 }
 
+@mixin buttonSlightBackground {
+  @media (any-hover: hover) {
+    &:hover {
+      &::before {
+        transform: translate(-50%, -50%) scale(0);
+      }
+    }
+  }
+
+  &::before {
+    content: ' ';
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #80756e;
+    opacity: 0.3;
+    // backdrop-filter: blur(2px);
+    transition: opacity 0.33s, transform 0.33s;
+    @include mediaTablet {
+      width: 32px;
+      height: 32px;
+    }
+  }
+}
+
 @mixin buttonFavourite {
+  @include buttonSlightBackground;
   $sizeMobile: 16px;
   $sizeTablet: 20px;
   @include flex(center, center);
@@ -271,27 +302,6 @@
   @include mediaTablet {
     font-size: $sizeTablet;
     top: $sizeTablet * 0.5;
-  }
-
-  &:hover {
-    &::before {
-      transform: translate(-50%, calc(-50% - 1px)) scale(0);
-    }
-  }
-
-  &::before {
-    content: ' ';
-    position: absolute;
-    z-index: -1;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, calc(-50% - 1px));
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    background: #80756e;
-    opacity: 0.33;
-    transition: opacity 0.33s, transform 0.33s;
   }
 
   &:active:not([disabled]), &.active:not([disabled]) {
