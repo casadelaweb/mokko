@@ -27,6 +27,10 @@ function htmlLoaderPipeline(content: any, loaderContext: any) {
     result = result.replace(tests.imports, processImports.bind(loaderContext))
   }
 
+  if (tests.aliases.test(result)) {
+    result = result.replace(tests.aliases, processAliases.bind(loaderContext))
+  }
+
   return result
 }
 

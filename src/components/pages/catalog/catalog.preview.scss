@@ -13,9 +13,9 @@
   background: white;
   @include mediaOnlyTablet {
     display: grid;
+    padding: 20px 14px 30px;
     grid-template-columns: 2fr 3fr;
     column-gap: 36px;
-    padding: 20px 14px 30px;
   }
   @include mediaTabletBg {
     top: 0;
@@ -202,7 +202,7 @@
     }
 
     &._old {
-      text-decoration: line-through;
+      @include lineThrough(#a79e98);
       color: #a79e98;
     }
 
@@ -226,13 +226,13 @@
     border-radius: 50%;
 
     &::before {
-      content: ' ';
       position: absolute;
       z-index: 1;
       top: 50%;
       left: 50%;
       width: 28px;
       height: 28px;
+      content: ' ';
       transition: transform 0.25s;
       transform: translate(-50%, -50%) scale(0);
       transform-origin: center;
@@ -314,11 +314,11 @@
   &-size {
     @include flex(center, center);
     font-size: 13px;
-    text-align: center;
     flex: 0 0 auto;
     width: 40px;
     height: 40px;
     margin-right: 10px;
+    text-align: center;
     border: 2px solid #e9e9e9;
     border-radius: 4px;
     background: white;

@@ -9,24 +9,25 @@
 
   <div class="preview-body">
     <div class="preview-slider swiper" data-preview="slider">
-      <button class="preview-slider-button-prev" data-preview="slider-button-prev" type="button">
+      <button aria-label="Предыдущий слайд" class="preview-slider-button-prev"
+              data-preview="slider-button-prev"
+              title="Предыдущий слайд" type="button">
         <span class="iconfont icon-arrow-left"></span>
       </button>
-      <button class="preview-slider-button-next" data-preview="slider-button-next" type="button">
+      <button aria-label="Следующий слайд" class="preview-slider-button-next"
+              data-preview="slider-button-next"
+              title="Следующий слайд" type="button">
         <span class="iconfont icon-arrow-right"></span>
       </button>
 
       <div class="swiper-wrapper" data-preview="slides-container">
+        repeat 3 times:
         <div class="swiper-slide">
           <a class="preview-img" href="/catalog/product">
-            <img alt="img" loading="lazy" src="src/assets/img/section/product-3.jpg">
+            import @includes/picture.html;
           </a>
         </div>
-        <div class="swiper-slide">
-          <a class="preview-img" href="/catalog/product">
-            <img alt="img" loading="lazy" src="src/assets/img/section/product-5.jpg">
-          </a>
-        </div>
+        end;
       </div>
       <div class="preview-slider-pagination swiper-pagination"></div>
     </div>

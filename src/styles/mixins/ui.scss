@@ -273,6 +273,27 @@
     top: $sizeTablet * 0.5;
   }
 
+  &:hover {
+    &::before {
+      transform: translate(-50%, calc(-50% - 1px)) scale(0);
+    }
+  }
+
+  &::before {
+    content: ' ';
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, calc(-50% - 1px));
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #80756e;
+    opacity: 0.33;
+    transition: opacity 0.33s, transform 0.33s;
+  }
+
   &:active:not([disabled]), &.active:not([disabled]) {
     color: #82756e;
     opacity: 1;
@@ -324,11 +345,6 @@
       transition: color 0.25s;
     }
   }
-
-  // ._disabled & {
-  //   cursor: not-allowed;
-  //   pointer-events: none;
-  // }
 }
 
 @mixin swiperNavigationButtons {

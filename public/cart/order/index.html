@@ -45,9 +45,9 @@
                     <label class="order-location-search" for="input-location" type="button">
                       <span class="iconfont icon-search"></span>
                     </label>
-                    <input autocomplete="off"
+                    <input id="input-location"
+                           autocomplete="off"
                            class="order-location-input"
-                           id="input-location"
                            name="location"
                            placeholder="Санкт Петербург, Россия" required
                            type="text">
@@ -108,7 +108,8 @@
                 </label>
                 <label class="order-label _radio">
                   <input autocomplete="off" name="delivery" required type="radio">
-                  <span class="order-label-title"> СДЭК. <br> Платная доставка до пункта выдачи </span>
+                  <span
+                    class="order-label-title"> СДЭК. <br> Платная доставка до пункта выдачи </span>
                 </label>
                 <button class="order-button" type="button">
                   <span>Выбрать пункт выдачи</span>
@@ -132,7 +133,8 @@
                 </label>
                 <label class="order-label _radio">
                   <input autocomplete="off" name="payment" required type="radio">
-                  <span class="order-label-title">Оплата на сайте (VISA, Maestro, MasterCard, МИР)</span>
+                  <span
+                    class="order-label-title">Оплата на сайте (VISA, Maestro, MasterCard, МИР)</span>
                 </label>
                 <label class="order-label _radio">
                   <input autocomplete="off" name="payment" required type="radio">
