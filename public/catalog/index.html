@@ -2,14 +2,14 @@
 <html lang="ru">
 <head itemscope itemtype="https://schema.org/WPHeader">
   <title itemprop="headline">Mokko Brand | Каталог</title>
-  import @includes/meta/main.html;
-  import @includes/meta/favicon.html;
-  import @includes/meta/twitter.html;
-  import @includes/meta/opengraph.html;
+  import @views/meta/main.html;
+  import @views/meta/favicon.html;
+  import @views/meta/twitter.html;
+  import @views/meta/opengraph.html;
 </head>
 <body>
 <div id="app">
-  import @includes/header.html;
+  import @views/header.html;
 
   <main class="main">
     <div class="breadcrumbs">
@@ -22,12 +22,19 @@
     <section class="catalog">
       <div class="catalog-container">
         <div class="catalog-layout" data-catalog="layout">
-          import @includes/catalog/catalog-aside.html;
+          import @views/catalog/catalog-aside.html;
 
           <div class="catalog-main">
-            <div class="catalog-header" data-catalog="header-desktop">
+
+            <div class="catalog-header _mobile">
+              <div class="catalog-title">Каталог</div>
+              import @views/catalog/catalogFiltersButtons.html;
+            </div>
+
+            <div class="catalog-header _desktop" data-catalog="header-desktop">
               <h1 class="catalog-title">Каталог</h1>
-              import @includes/catalog/catalog-filters.html;
+              import @views/catalog/catalogFilters.html;
+              import @views/catalog/catalogFiltersButtons.html;
             </div>
 
             <div class="catalog-cards">
@@ -38,29 +45,29 @@
 
               repeat 7 times:
 
-              import @includes/catalog/card.html;
+              import @views/catalog/card.html;
 
               end;
 
-              import @includes/catalog/card.html;
+              import @views/catalog/card.html;
             </div>
 
             <button class="catalog-more" data-catalog="update" type="button">
               <span>Показать еще</span>
             </button>
 
-            import @includes/catalog/pagination.html;
+            import @views/catalog/pagination.html;
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  import @includes/catalog/preview.html;
+  import @views/catalog/preview.html;
 
-  import @includes/footer.html;
-  import @includes/modals.html;
-  import @includes/cookie.html;
+  import @views/footer.html;
+  import @views/modals.html;
+  import @views/cookie.html;
 </div>
 </body>
 </html>

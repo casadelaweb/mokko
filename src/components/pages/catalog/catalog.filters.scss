@@ -31,9 +31,9 @@
   &-header {
     @include flex(center, space-between);
     font-size: 12px;
+    padding: $containerPaddingMobile;
     letter-spacing: 0.02px;
     text-transform: uppercase;
-    padding: $containerPaddingMobile;
     @include mediaLaptop {
       display: none;
       padding-left: 0;
@@ -97,17 +97,17 @@
 
   &-title {
     font-size: 17px;
-    letter-spacing: 0.02em;
     margin-bottom: 1.25em;
+    letter-spacing: 0.02em;
     color: #80756e;
   }
 
   &-link {
     font-size: 15px;
-    letter-spacing: 0.02em;
     display: inline-block;
     width: fit-content;
     margin-bottom: 0.75em;
+    letter-spacing: 0.02em;
 
     &:hover,
     &.active {
@@ -138,16 +138,19 @@
       cursor: pointer;
       transition: background-color 0.25s;
       border-top: 1px solid #e9e9e9;
-
       @include mediaLaptop {
         font-size: 18px;
         padding-left: 0;
       }
 
-      @media (any-hover: hover) {
-        &:hover {
+      &:hover {
+        @media (any-hover: hover) {
           background: #f1f1f1;
         }
+      }
+
+      &:active {
+        background: #f1f1f1;
       }
 
       &-content {
@@ -161,6 +164,12 @@
       order: 1;
       margin-left: auto;
       cursor: pointer;
+      transition: transform 0.5s;
+      transform-origin: center;
+
+      &.active {
+        transform: rotate(180deg);
+      }
     }
 
     &-selected {
@@ -176,9 +185,9 @@
     &-body {
       @include flex($d: column);
       font-size: 14px;
-      letter-spacing: 0.02em;
       display: none;
       padding: $containerPaddingMobile;
+      letter-spacing: 0.02em;
       @include mediaTablet {
         font-size: 16px;
       }
@@ -186,12 +195,12 @@
   }
   @include mediaLaptop {
     font-size: 17px;
-    letter-spacing: 0.02em;
     position: relative;
     z-index: 2;
     display: inline-block;
     width: fit-content;
     margin-right: 1.5em;
+    letter-spacing: 0.02em;
     &-summary {
       display: block;
       padding: (14px + 7px) 0 7px;
@@ -253,10 +262,10 @@
     &-label {
       @include flex(center);
       font-size: 14px;
-      white-space: nowrap;
       padding: 0.75em 1em;
       cursor: pointer;
       transition: background 0.5s, color 0.5s;
+      white-space: nowrap;
 
       &.active {
         color: #505050;

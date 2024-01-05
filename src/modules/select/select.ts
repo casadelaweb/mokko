@@ -132,6 +132,8 @@ export class Select {
     const valueContainer: HTMLElement = select.querySelector(this.selectors.value)
     let valueContent: string = ''
 
+    if (valueContainer.getAttribute('data-select').trim().toLowerCase() === 'no-overwrite') return
+
     if (optionsActive.length > 0) {
       optionsActive.forEach((option, index) => {
         if (index + 1 === optionsActive.length) {

@@ -1,8 +1,14 @@
+// default styles reset
 import 'restyle.css/dist/restyle.css'
 import 'restyle.css/dist/checkboxes.css'
+// no UI slider
+import 'nouislider/dist/nouislider.css'
+import 'src/styles/ui/noUISlider.scss'
+// swiper
 import 'swiper/scss'
 import 'swiper/scss/a11y'
 import 'swiper/scss/scrollbar'
+// app styles
 import 'src/styles/main.scss'
 import 'src/components'
 import { modals } from 'src/scripts/modals-instance'

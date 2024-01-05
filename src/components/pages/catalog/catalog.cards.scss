@@ -297,8 +297,14 @@ $columnGapTablet: 14px;
 
     &-pagination {
       @include buttonSlightBackground;
-
-      bottom: 10px;
+      // bottom: 10px;
+      bottom: 12px;
+      @include mediaTablet {
+        bottom: 16px;
+      }
+      //@include mediaLaptop {
+      //  bottom: 16px;
+      //}
 
       &::before {
         width: calc(100% + 20px);
@@ -307,10 +313,6 @@ $columnGapTablet: 14px;
         @include mediaTablet {
           height: 20px;
         }
-      }
-
-      @include mediaLaptop {
-        bottom: 16px;
       }
 
       &-bullet {

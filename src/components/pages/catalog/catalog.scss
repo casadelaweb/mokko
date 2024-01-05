@@ -58,9 +58,9 @@
 
   &-title {
     font-size: 12px;
+    margin-right: auto;
     letter-spacing: 0.02em;
     text-transform: uppercase;
-    margin-right: auto;
     @include mediaMobileConventional {
       font-size: 14px;
     }
@@ -100,9 +100,9 @@
 
   &-category {
     font-size: 15px;
-    letter-spacing: 0.02em;
     display: inline-block;
     margin-bottom: 0.75em;
+    letter-spacing: 0.02em;
   }
 
   &-more {
@@ -140,6 +140,37 @@
 
       span {
       }
+    }
+  }
+}
+
+.catalog-header {
+  &._desktop {
+    @include mediaOnlyMobileAndAllTablets {
+      position: absolute;
+      top: -100%;
+      left: -100%;
+    }
+    @include mediaLaptop {
+      padding-bottom: 2px;
+    }
+  }
+
+  &._mobile {
+    @include flex(center);
+    position: sticky;
+    z-index: 10;
+    top: var(--headerHeight);
+    left: 0;
+    width: 100%;
+    padding: 14px 0;
+    background: white;
+    @include mediaLaptop {
+      display: none;
+    }
+
+    .catalog-title {
+      margin-right: auto;
     }
   }
 }
