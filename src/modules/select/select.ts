@@ -132,20 +132,22 @@ export class Select {
     const valueContainer: HTMLElement = select.querySelector(this.selectors.value)
     let valueContent: string = ''
 
-    if (valueContainer.getAttribute('data-select').trim().toLowerCase() === 'no-overwrite') return
+    if (valueContainer.hasAttribute('data-select') && valueContainer.getAttribute('data-select').trim().toLowerCase() === 'no-overwrite') {
+      return
+    } else {
+      if (optionsActive.length > 0) {
+        optionsActive.forEach((option, index) => {
+          if (index + 1 === optionsActive.length) {
+            valueContent = valueContent + option.textContent
+          } else {
+            valueContent = valueContent + option.textContent + ', '
+          }
+        })
 
-    if (optionsActive.length > 0) {
-      optionsActive.forEach((option, index) => {
-        if (index + 1 === optionsActive.length) {
-          valueContent = valueContent + option.textContent
-        } else {
-          valueContent = valueContent + option.textContent + ', '
-        }
-      })
-
-      valueContent = valueContent.trim().replace(/\s+/gmi, ' ').replace(/\s+,\s+/gmi, ', ')
+        valueContent = valueContent.trim().replace(/\s+/gmi, ' ').replace(/\s+,\s+/gmi, ', ')
+      }
+      valueContainer.setAttribute('title', valueContent)
+      valueContainer.textContent = valueContent
     }
-    valueContainer.setAttribute('title', valueContent)
-    valueContainer.textContent = valueContent
   }
 }
