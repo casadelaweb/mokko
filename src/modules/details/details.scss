@@ -25,12 +25,17 @@
     }
 
     .is-closing & {
-      transform: none;
+      transform: rotate(0);
     }
   }
 
   &-body {
-    @include flex($d: column);
+    display: none;
+    flex-direction: column;
     padding-top: 0.5em;
+
+    .is-opening &, .open & {
+      display: flex;
+    }
   }
 }

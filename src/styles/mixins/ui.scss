@@ -114,11 +114,15 @@
       }
     }
 
-    &.is-opening, &.open {
-      .details-button {
-        transform: rotate(180deg);
-      }
-    }
+    //&.is-opening, &.open {
+    //  .details-button {
+    //    transform: rotate(180deg);
+    //  }
+    //
+    //  .details-body {
+    //    display: flex;
+    //  }
+    //}
 
     &-button {
       position: absolute;
@@ -133,6 +137,7 @@
       padding: $containerPaddingMobile 0 0;
       font-size: 14px;
       letter-spacing: 0.02em;
+      //display: none;
     }
 
     &-link {
@@ -277,8 +282,7 @@
     height: 28px;
     border-radius: 50%;
     background: #80756e;
-    opacity: 0.3;
-    // backdrop-filter: blur(2px);
+    opacity: 0.2;
     transition: opacity 0.33s, transform 0.33s;
     @include mediaTablet {
       width: 32px;

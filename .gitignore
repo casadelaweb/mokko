@@ -46,6 +46,7 @@ public/assets/css/*.map
 public/assets/js/*.map
 .parcel-cache
 *.log
+*.todo
 
 # Prepros
 prepros.cfg
