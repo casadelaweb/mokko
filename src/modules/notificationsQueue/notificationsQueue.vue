@@ -7,10 +7,7 @@ export default defineComponent({
   data: function () {
     return {
       parameters: {
-        duration: 2000 as number,
-        selectors: {
-          buttonFavourite: '.catalog-card-favourite' as string,
-        },
+        duration: 1000 as number,
       },
       queue: [] as iQueueItem[]
     }
@@ -20,15 +17,10 @@ export default defineComponent({
   },
   methods: {
     handleServerResponse(event: iServerResponse) {
-      const selectors = this.parameters.selectors
-      const duration: number = this.parameters.duration
-      // console.log(event)
-
       const button = event.target as HTMLElement
       button.classList.remove('_loading')
       button.classList.remove('_disabled')
       const productId = event.detail.product.id
-
 
       if (event.detail.status === 'success') {
         if (event.detail.action.type === 'add') {
@@ -42,8 +34,8 @@ export default defineComponent({
           isShown: false
         })
         const item = this.getQueueItemById(productId)
-        setTimeout(() => item.isShown = true, duration * 0.1)
-        setTimeout(() => this.removeQueueItemById(productId), duration * 5)
+        setTimeout(() => item.isShown = true, 25)
+        setTimeout(() => this.removeQueueItemById(productId), 5000)
       }
     },
     getQueueItemById(id: string | number): iQueueItem | undefined {
@@ -55,7 +47,7 @@ export default defineComponent({
         item.isShown = false
         setTimeout(() => {
           this.queue = this.queue.filter((item: iQueueItem) => item.id !== id)
-        }, this.parameters.duration)
+        }, 333)
       }
     },
     clearAll(event: MouseEvent): void {
@@ -63,7 +55,7 @@ export default defineComponent({
       const button: HTMLElement = target.closest('.nq-button')
       this.queue.forEach((item: iQueueItem) => item.isShown = false)
       button.classList.remove('_active')
-      setTimeout(() => this.queue = [], this.parameters.duration * 0.25)
+      setTimeout(() => this.queue = [], 500)
     }
   }
 })
@@ -71,9 +63,15 @@ export default defineComponent({
 
 <template>
   <div class="nq">
+    <button :class="queue.length > 0 ? '_active' : '' "
+            :style="`transition-delay: 0.${queue.length}s`"
+            aria-label="Скрыть все уведомления" class="nq-button"
+            title="Скрыть все уведомления" @click="clearAll">
+      <span>скрыть все</span>
+    </button>
     <article v-for="(item, index) in queue" :key="item.id" :class="item.isShown ? '_active': '' "
-             :style="`transition-delay: 0.${index}s`" class="nq-item">
-      <div class="nq-item-label">добавлено в избранное</div>
+             class="nq-item">
+      <div class="nq-item-label">какой-то текст</div>
       <a :aria-label="item.title" :href="item.url" :title="item.title">
         <img :alt="item.title" :src="item.img.url" class="nq-item-img" loading="lazy">
       </a>
@@ -91,12 +89,6 @@ export default defineComponent({
         <span class="iconfont icon-close"></span>
       </button>
     </article>
-    <button v-if="queue.length > 0" :class="queue.length > 0 ? '_active' : '' "
-            :style="`transition-delay: 0.${queue.length}s`"
-            aria-label="Скрыть все уведомления"
-            class="nq-button" title="Скрыть все уведомления" v-on:click="clearAll">
-      <span>скрыть все</span>
-    </button>
   </div>
 </template>
 
@@ -107,7 +99,7 @@ export default defineComponent({
   $size: 13px;
   $sizeImg: 64px;
   $offsetX: 400px;
-  $transitionDuration: 0.250s;
+  $transitionDuration: 333ms;
 
   position: fixed;
   z-index: 100;
@@ -130,7 +122,7 @@ export default defineComponent({
     border: 2px solid #e9e9e9;
     border-radius: ($size * 0.5);
     box-shadow: ($size * 0.5) ($size * 0.5) $size 0 rgba(black, 0.1);
-    margin-bottom: $size;
+    margin-top: $size;
     display: flex;
     flex-wrap: wrap;
     column-gap: $size;
@@ -140,7 +132,7 @@ export default defineComponent({
     pointer-events: none;
     transform: translate($offsetX, 0);
     opacity: 0;
-    width: 240px;
+    width: 280px;
     @include mediaTablet {
       width: 320px;
     }
@@ -226,7 +218,7 @@ export default defineComponent({
     opacity: 0;
     pointer-events: none;
     transform: translate($offsetX, 0);
-    transition: opacity $transitionDuration, transform $transitionDuration;
+    transition: $transitionDuration;
 
     &._active {
       opacity: 1;
