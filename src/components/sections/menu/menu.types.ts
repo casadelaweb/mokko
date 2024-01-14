@@ -1,4 +1,4 @@
-export interface menuElements {
+export interface iMenuElements {
   overlay: HTMLElement,
   header: HTMLElement,
   menu: HTMLElement,
@@ -6,7 +6,7 @@ export interface menuElements {
   buttonDesktopOpen: HTMLElement,
 }
 
-export interface menuSelectors {
+export interface iMenuSelectors {
   overlay: string,
   header: string,
   menu: string,

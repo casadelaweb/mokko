@@ -33,7 +33,5 @@ export function getCurrentMedia(): currentMedia {
 
 /** Определяет есть ли мышь или другое устройство наведения */
 export function isAnyPointerFine(): boolean {
-
-
   return window.matchMedia('(any-pointer: fine)').matches
 }

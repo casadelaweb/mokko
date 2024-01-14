@@ -23,7 +23,6 @@ export class Details {
   private readonly easing: string
 
   private readonly onClick: (event: MouseEvent) => void
-  //eslint-disable-next-line no-unused-vars
   private readonly onResize: (event?: UIEvent) => void
 
   constructor(optionsCustom?: iOptions) {
@@ -35,7 +34,7 @@ export class Details {
     this.durationMin = 250
     this.durationMax = 500
     this.durationPerHeight = 0.33
-    this.easing = 'linear'
+    this.easing = 'ease-in-out'
     this.onClick = this.handleClick.bind(this)
     this.onResize = this.handleResize.bind(this)
 

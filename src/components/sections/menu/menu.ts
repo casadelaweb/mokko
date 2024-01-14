@@ -1,10 +1,10 @@
-import { menuElements, menuSelectors } from './menu.types'
+import { iMenuElements, iMenuSelectors } from './menu.types'
 import { isMediaAboveLaptop } from 'src/scripts/helpers'
 
 export class Menu {
-  public elements: menuElements
+  public elements: iMenuElements
   private readonly onResize: () => void
-  private readonly selectors: menuSelectors
+  private readonly selectors: iMenuSelectors
 
   constructor() {
     this.elements = {
@@ -82,14 +82,4 @@ export class Menu {
 
     this.elements.buttonDesktopOpen = body.querySelector(selectors.buttonDesktopOpen)
   }
-
-  //private updateMenuStyles(): void {
-  //  const { menu, header, } = this.elements
-  //
-  //  if(isMediaAboveLaptop()) {
-  //    menu.style.top = header.offsetHeight + 'px'
-  //  } else {
-  //    menu.style.top = '0px'
-  //  }
-  //}
 }
