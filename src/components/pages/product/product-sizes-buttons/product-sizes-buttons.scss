@@ -48,7 +48,7 @@
   }
 
   &-btn {
-    font-size: 17px;
+    font-size: 15px;
     line-height: 100%;
     width: calc(50% - 4px);
     padding-top: 14px;
@@ -58,6 +58,9 @@
     color: #c7b29c;
     border: 2px solid #c7b29c;
     border-radius: 4px;
+    @include mediaLaptop {
+      font-size: 17px;
+    }
 
     &-buy {
       position: relative;

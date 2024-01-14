@@ -10,15 +10,14 @@
       padding-right: 0;
       padding-left: 0;
     }
-
-
     @include mediaTablet {
       display: flex;
     }
-
   }
 
   &-left {
+    min-width: 0;
+    flex: 0 0 auto;
     overflow: hidden;
     width: 100%;
 
@@ -40,12 +39,14 @@
   }
 
   &-right {
+    min-width: 0;
+    flex: 0 0 auto;
     @include mediaOnlyMobile {
       padding: 0 $containerPaddingMobile;
     }
-    @include mediaTablet {
-      flex: 1;
-    }
+    //@include mediaTablet {
+    //  flex: 1;
+    //}
 
     &-sticky {
       transition: all 0.1s linear 0s;
