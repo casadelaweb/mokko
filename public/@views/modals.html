@@ -447,6 +447,43 @@
   </div>
   <div class="modal-overlay" data-modal-overlay></div>
 </div>
+
 <!-- очередь уведомлений рендерится на клиенте, временно отключена -->
 <!-- на текущий момент только для страницы продукта -->
 <div id="notifications-queue"></div>
+<script>
+  // для тестирования очереди уведомлений
+  // имитируем ответ от сервера
+  document.addEventListener('click', (event) => {
+    const {target} = event
+
+    // пример успешного добавления в избранное
+    if (target.closest('.catalog-card-favourite')) {
+      const button = target.closest('.catalog-card-favourite')
+      button.classList.add('_disabled')
+      button.classList.add('_loading')
+
+      setTimeout(() => {
+        const customEvent = new CustomEvent('serverResponse', {
+          bubbles: true,
+          detail: {
+            status: 'success',
+            action: {
+              type: 'add',
+              destination: 'favourite',
+            },
+            product: {
+              id: `product${Math.random()}`,
+              url: '/product',
+              title: `Тестовое название продукта ${Math.random()}`,
+              img: {url: '/assets/img/placeholder-product.jpeg',},
+              size: '44 | M',
+              colorClass: '_color',
+            },
+          },
+        })
+        button.dispatchEvent(customEvent)
+      }, 1000)
+    }
+  }, {passive: true,})
+</script>
