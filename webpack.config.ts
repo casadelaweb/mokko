@@ -10,6 +10,7 @@ import CssMinimizer from 'css-minimizer-webpack-plugin'
 import HTMLWebpackPluginPages from './configuration/HTMLWebpackPluginPages'
 import { VueLoaderPlugin } from 'vue-loader'
 // rules
+import ruleVue from './configuration/rules/vue'
 import ruleScripts from './configuration/rules/scripts'
 import ruleFavicon from './configuration/rules/favicon'
 import ruleStyles from './configuration/rules/styles'
@@ -65,10 +66,7 @@ function config(env: iEnvVariables): Configuration {
     ],
     module: {
       rules: [
-        {
-          test: /\.vue$/,
-          loader: 'vue-loader',
-        },
+        ruleVue(),
         ruleHTML(),
         ruleFonts(),
         ruleIconfont(),
