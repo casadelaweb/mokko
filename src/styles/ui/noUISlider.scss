@@ -31,9 +31,13 @@
       display: none;
     }
 
-    &-lower {right: 0}
+    &-lower {
+      right: 0
+    }
 
-    &-upper {right: -16px}
+    &-upper {
+      right: -16px
+    }
   }
 
   &-touch-area {
