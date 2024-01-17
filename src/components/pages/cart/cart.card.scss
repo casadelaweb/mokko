@@ -7,12 +7,15 @@
   padding: 25px 0;
   border-bottom: 1px solid #dadada;
   @include flex($w: wrap);
+  min-height: 340px;
   @include mediaTablet {
     flex-wrap: nowrap;
+    min-height: 240px;
   }
   @include mediaLaptop {
     font-size: 15px;
     padding: 30px 0;
+    min-height: 250px;
   }
 
   &:first-child {
