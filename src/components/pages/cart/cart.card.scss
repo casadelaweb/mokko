@@ -149,7 +149,9 @@
       margin-bottom: 10px;
     }
     @include mediaLaptop {
-      margin-bottom: 0;
+      margin: 0 10px 0 48px;
+      flex: 0 0 auto;
+      width: 120px;
     }
   }
 
