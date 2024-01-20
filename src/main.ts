@@ -22,6 +22,7 @@ import { createApp } from 'vue'
 import notificationsQueue from 'src/modules/notificationsQueue/notificationsQueue.vue'
 import 'src/assets/img/placeholder.jpg'
 // import { iServerResponse } from 'src/modules/notificationsQueue/notificationsQueue.types'
+import LazyLoad from 'vanilla-lazyload'
 
 document.addEventListener('DOMContentLoaded', () => {
   globalScrollController.init()
@@ -31,6 +32,8 @@ document.addEventListener('DOMContentLoaded', () => {
   new Masks().init()
   new Calendar().init()
   new Stories().init()
+
+  new LazyLoad()
 
   const el: HTMLElement = document.querySelector('#notifications-queue')
   if (el) {
