@@ -3,7 +3,7 @@ import { RuleSetRule } from 'node_modules/webpack'
 
 function ruleHTML(): RuleSetRule {
   return {
-    test: /\.html|php$/i,
+    test: /\.html$/i,
     loader: 'html-loader',
     options: {
       sources: {

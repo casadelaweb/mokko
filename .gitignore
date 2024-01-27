@@ -48,6 +48,7 @@ public/assets/js/*.map
 *.log
 *.todo
 .todo
+test.txt
 
 # Prepros
 prepros.cfg
