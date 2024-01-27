@@ -17,4 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
   //     modals.deactivateModal(modalLogin)
   //   }
   // })
+}, {
+  passive: true,
+  once: true,
 })

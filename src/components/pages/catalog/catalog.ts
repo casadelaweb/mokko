@@ -55,4 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
       catalogSelects.updateSelects()
     })
   }
-}, { passive: true, })
+}, {
+  passive: true,
+  once: true,
+})

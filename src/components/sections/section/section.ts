@@ -64,4 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
       },
     },
   } as SwiperOptions)
-}, { passive: true, })
+}, {
+  passive: true,
+  once: true,
+})

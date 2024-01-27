@@ -21,5 +21,8 @@ document.addEventListener('DOMContentLoaded', () => {
       }, 500)
     })
   }
-}, { passive: true, })
+}, {
+  passive: true,
+  once: true,
+})
 

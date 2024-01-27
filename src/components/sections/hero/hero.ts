@@ -19,4 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
       clickable: true,
     },
   } as SwiperOptions)
-}, { passive: true, })
+}, {
+  passive: true,
+  once: true,
+})

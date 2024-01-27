@@ -15,4 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     breakpoints: { 1024: { enabled: false, }, },
   } as SwiperOptions)
+}, {
+  passive: true,
+  once: true,
 })

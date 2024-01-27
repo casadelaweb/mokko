@@ -17,4 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const product = new Product()
   product.init()
+}, {
+  passive: true,
+  once: true,
 })

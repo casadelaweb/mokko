@@ -25,4 +25,7 @@
 //       priceRaw.textContent = calculatePriceRaw()
 //     })
 //   }
+// }, {
+//   passive: true,
+//   once: true,
 // })

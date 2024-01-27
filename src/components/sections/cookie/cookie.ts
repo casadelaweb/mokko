@@ -21,4 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     cookie.classList.remove('active')
   }
-}, { passive: true, })
+}, {
+  passive: true,
+  once: true,
+})

@@ -62,4 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
       spanMax.textContent = parseInt(values[1]).toLocaleString()
     })
   }
-}, { passive: true, })
+}, {
+  passive: true,
+  once: true,
+})
