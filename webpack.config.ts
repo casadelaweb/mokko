@@ -20,10 +20,10 @@ import ruleFonts from './configuration/rules/fonts'
 import ruleHTML from './configuration/rules/html'
 import devServer from './configuration/devServer'
 import watchOptions from './configuration/watchOptions'
-import htmlLoaderPipeline from './configuration/html-loader-pipeline'
-import tshEngine from './configuration/templateEngine/engine'
-import HTMLWebpackPlugin from 'html-webpack-plugin'
-import { isLocalFile } from '@swc/core/spack'
+import { EsbuildPlugin } from 'esbuild-loader'
+//import tshEngine from './configuration/templateEngine/engine'
+
+//import HTMLWebpackPlugin from 'html-webpack-plugin'
 
 function config(env: iEnvVariables): Configuration {
   const mode: iMode = env.mode ?? 'development'
@@ -37,8 +37,16 @@ function config(env: iEnvVariables): Configuration {
     target: 'browserslist',
     devtool: isDevelopmentMode ? 'source-map' : false,
     optimization: {
-      minimize: true,
-      minimizer: isProductionMode ? ['...', new CssMinimizer(),] : [new CssMinimizer(),],
+      minimize: false,
+      // minimizer: isProductionMode ? ['...', new CssMinimizer(),] : [new CssMinimizer(),],
+      // minimizer: [new CssMinimizer(),],
+      minimizer: [
+        new EsbuildPlugin({
+          target: 'es2015',
+          css: true,
+          legalComments: 'none',
+        }),
+      ],
     },
     entry: { main: rootPath + 'src/main.ts', },
     output: {
@@ -67,13 +75,13 @@ function config(env: iEnvVariables): Configuration {
         __VUE_PROD_DEVTOOLS__: 'false',
         __VUE_PROD_HYDRATION_MISMATCH_DETAILS__: 'false',
       }),
-      new HTMLWebpackPlugin({
-        filename: './test.html',
-        template: './src/views/index.tsh',
-        scriptLoading: 'blocking',
-        inject: 'body',
-        minify: false,
-      }),
+      // new HTMLWebpackPlugin({
+      //   filename: './test.html',
+      //   template: './src/views/index.tsh',
+      //   scriptLoading: 'blocking',
+      //   inject: 'body',
+      //   minify: false,
+      // }),
     ],
     module: {
       rules: [
@@ -85,34 +93,14 @@ function config(env: iEnvVariables): Configuration {
         ruleImages(),
         ruleStyles(isDevelopmentMode),
         ruleScripts(),
-        {
-          test: /\.tsh$/i,
-          loader: 'html-loader',
-          options: {
-            sources: {
-              list: [
-                '...',
-                {
-                  tag: 'img',
-                  attribute: 'data-src',
-                  type: 'src',
-                },
-                {
-                  tag: 'div',
-                  attribute: 'data-bg',
-                  type: 'src',
-                },
-                {
-                  tag: 'img',
-                  attribute: 'data-srcset',
-                  type: 'srcset',
-                },
-              ],
-            },
-            minimize: false,
-            preprocessor: (content: any, loaderContext: any) => tshEngine(content, loaderContext),
-          },
-        },
+        // {
+        //   test: /\.tsh$/i,
+        //   loader: 'html-loader',
+        //   options: {
+        //     minimize: false,
+        //     preprocessor: (content: any, loaderContext: any) => tshEngine(content, loaderContext),
+        //   },
+        // },
       ],
     },
     watchOptions,
