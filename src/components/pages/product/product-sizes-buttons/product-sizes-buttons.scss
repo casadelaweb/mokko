@@ -192,11 +192,11 @@
 
 .product {
   &-sizes {
+    @include scrollbar($orientation: 'horizontal');
+    @include flex(center);
     position: relative;
     z-index: 0;
-    @include flex(center);
     column-gap: 10px;
-    // width: 290px;
 
     &-notification {
       font-size: 14px;
