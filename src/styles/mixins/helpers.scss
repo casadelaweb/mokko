@@ -44,3 +44,9 @@
     transform: translate(0, -50%);
   }
 }
+
+@mixin hoverableDevice {
+  @media screen and (any-hover: hover) {
+    @content;
+  }
+}

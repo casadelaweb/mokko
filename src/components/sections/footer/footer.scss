@@ -170,15 +170,15 @@
       // margin: 0 ($containerPaddingLaptop * -1);
       // padding: 20px $containerPaddingLaptop 0;
     }
-    @include mediaDesktop {
-      //margin: 0 ($containerPaddingDesktop * -1);
-      //padding: 20px $containerPaddingDesktop 0;
-    }
+    // @include mediaDesktop {
+    //margin: 0 ($containerPaddingDesktop * -1);
+    //padding: 20px $containerPaddingDesktop 0;
+    // }
 
     &::before {
       content: ' ';
       position: absolute;
-      z-index: -1;
+      z-index: 1;
       top: 0;
       left: 50%;
       background: #e9e9e9;

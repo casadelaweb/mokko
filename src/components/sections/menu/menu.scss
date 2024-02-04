@@ -54,20 +54,23 @@
 
   &-columns {
     @include flex;
+    column-gap: 20px;
     @include mediaLaptop {
+      column-gap: 150px;
+      margin-right: 100px;
       margin-bottom: 150px;
     }
   }
 
   &-column {
     @include flex($d: column);
-    margin-right: 150px;
-
-    &:last-child {
-      @include mediaLaptop {
-        margin-right: 100px;
-      }
-    }
+    //margin-right: 150px;
+    //
+    //&:last-child {
+    //  @include mediaLaptop {
+    //    margin-right: 100px;
+    //  }
+    //}
   }
 
   &-link {

@@ -11,7 +11,20 @@
       padding-left: 0;
     }
     @include mediaTablet {
-      display: flex;
+      display: grid;
+      grid-template-columns: 337px auto;
+      column-gap: 48px;
+    }
+    @include mediaTabletBg {
+      grid-template-columns: 626px auto;
+    }
+    @include mediaLaptop {
+      grid-template-columns: 787px auto;
+      column-gap: 56px;
+    }
+    @include mediaDesktop {
+      grid-template-columns: 1106px auto;
+      column-gap: 76px;
     }
   }
 
@@ -19,34 +32,13 @@
     min-width: 0;
     flex: 0 0 auto;
     overflow: hidden;
-    width: 100%;
-
-    @include mediaTablet {
-      width: 337px;
-      margin-right: 47px;
-    }
-    @include mediaTabletBg {
-      width: 626px;
-    }
-    @include mediaLaptop {
-      width: 787px;
-      margin-right: 56px;
-    }
-    @include mediaDesktop {
-      width: 1106px;
-      margin-right: 77px;
-    }
   }
 
   &-right {
     min-width: 0;
-    flex: 0 0 auto;
     @include mediaOnlyMobile {
       padding: 0 $containerPaddingMobile;
     }
-    //@include mediaTablet {
-    //  flex: 1;
-    //}
 
     &-sticky {
       transition: all 0.1s linear 0s;

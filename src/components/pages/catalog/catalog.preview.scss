@@ -277,25 +277,14 @@
     }
 
     &-list {
+      @include scrollbar($orientation: 'horizontal');
       @include flex(center);
-      overflow-x: auto;
+      //overflow-x: auto;
       margin-right: -10px;
       padding-bottom: $size * 0.5;
       @include mediaTabletBg {
         margin-right: -20px;
         padding-bottom: $sizeTabletBg * 0.5;
-      }
-
-      @media screen and (any-hover: hover) {
-        &::-webkit-scrollbar {
-          height: 5px
-        }
-        &::-webkit-scrollbar-track {
-          background: white;
-        }
-        &::-webkit-scrollbar-thumb {
-          background: #505050;
-        }
       }
     }
 
