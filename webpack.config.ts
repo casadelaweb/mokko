@@ -6,7 +6,6 @@ import path from 'path'
 // plugins
 import webpack from 'webpack'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
-import CssMinimizer from 'css-minimizer-webpack-plugin'
 import HTMLWebpackPluginPages from './configuration/HTMLWebpackPluginPages'
 import { VueLoaderPlugin } from 'vue-loader'
 // rules
@@ -21,9 +20,6 @@ import ruleHTML from './configuration/rules/html'
 import devServer from './configuration/devServer'
 import watchOptions from './configuration/watchOptions'
 import { EsbuildPlugin } from 'esbuild-loader'
-//import tshEngine from './configuration/templateEngine/engine'
-
-//import HTMLWebpackPlugin from 'html-webpack-plugin'
 
 function config(env: iEnvVariables): Configuration {
   const mode: iMode = env.mode ?? 'development'
@@ -31,6 +27,7 @@ function config(env: iEnvVariables): Configuration {
   const isProductionMode: boolean = !isDevelopmentMode
 
   const rootPath: string = path.resolve(__dirname, './') + '/'
+  const distPath = path.resolve(__dirname, './public/assets')
 
   return {
     mode: mode,
@@ -38,8 +35,6 @@ function config(env: iEnvVariables): Configuration {
     devtool: isDevelopmentMode ? 'source-map' : false,
     optimization: {
       minimize: false,
-      // minimizer: isProductionMode ? ['...', new CssMinimizer(),] : [new CssMinimizer(),],
-      // minimizer: [new CssMinimizer(),],
       minimizer: [
         new EsbuildPlugin({
           target: 'es2015',
@@ -50,8 +45,8 @@ function config(env: iEnvVariables): Configuration {
     },
     entry: { main: rootPath + 'src/main.ts', },
     output: {
-      path: rootPath + 'dist',
-      filename: 'assets/js/[name].js?v=[contenthash:8]',
+      path: distPath,
+      filename: distPath + '/js/[name].js?v=[contenthash:8]',
       clean: isProductionMode,
     },
     resolve: {
@@ -66,8 +61,8 @@ function config(env: iEnvVariables): Configuration {
     plugins: [
       ...HTMLWebpackPluginPages(rootPath, isProductionMode),
       new MiniCssExtractPlugin({
-        filename: 'assets/css/[name].css?v=[contenthash:8]',
-        chunkFilename: 'assets/css/[name].css?v=[contenthash:8]',
+        filename: distPath + '/css/[name].css?v=[contenthash:8]',
+        chunkFilename: distPath + '/css/[name].css?v=[contenthash:8]',
       }),
       new VueLoaderPlugin(),
       new webpack.DefinePlugin({
@@ -75,13 +70,6 @@ function config(env: iEnvVariables): Configuration {
         __VUE_PROD_DEVTOOLS__: 'false',
         __VUE_PROD_HYDRATION_MISMATCH_DETAILS__: 'false',
       }),
-      // new HTMLWebpackPlugin({
-      //   filename: './test.html',
-      //   template: './src/views/index.tsh',
-      //   scriptLoading: 'blocking',
-      //   inject: 'body',
-      //   minify: false,
-      // }),
     ],
     module: {
       rules: [
@@ -93,14 +81,6 @@ function config(env: iEnvVariables): Configuration {
         ruleImages(),
         ruleStyles(isDevelopmentMode),
         ruleScripts(),
-        // {
-        //   test: /\.tsh$/i,
-        //   loader: 'html-loader',
-        //   options: {
-        //     minimize: false,
-        //     preprocessor: (content: any, loaderContext: any) => tshEngine(content, loaderContext),
-        //   },
-        // },
       ],
     },
     watchOptions,
