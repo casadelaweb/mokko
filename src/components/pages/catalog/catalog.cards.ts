@@ -147,7 +147,7 @@ export class CatalogCards {
 
   private updateLayoutMode(): void {
     let mode: string = 'mode-combined'
-    const buttonLayoutModeActive: HTMLElement = document.body.querySelector(`[${this.selectors.buttonCatalogModeAttribute}].active`)
+    const buttonLayoutModeActive: HTMLElement = document.body.querySelector(`[${ this.selectors.buttonCatalogModeAttribute }].active`)
     if (localStorage.getItem('catalogLayoutMode')) {
       mode = localStorage.getItem('catalogLayoutMode')
     } else if (buttonLayoutModeActive) {
@@ -169,7 +169,7 @@ export class CatalogCards {
   private changeLayoutMode(mode: string): void {
     const body = document.body as HTMLElement
     const buttons: HTMLElement[] = Array.from(
-      body.querySelectorAll(`[${this.selectors.buttonCatalogModeAttribute}]`)
+      body.querySelectorAll(`[${ this.selectors.buttonCatalogModeAttribute }]`)
     )
     buttons.forEach((button: HTMLElement) => {
       if (button.getAttribute(this.selectors.buttonCatalogModeAttribute) === mode) {
@@ -226,8 +226,8 @@ export class CatalogCards {
     const target = event.target as HTMLElement
 
     /** Режим отображения карточек в каталоге */
-    if (target.closest(`[${this.selectors.buttonCatalogModeAttribute}]`)) {
-      const button: HTMLElement = target.closest(`[${this.selectors.buttonCatalogModeAttribute}]`)
+    if (target.closest(`[${ this.selectors.buttonCatalogModeAttribute }]`)) {
+      const button: HTMLElement = target.closest(`[${ this.selectors.buttonCatalogModeAttribute }]`)
       const mode = button.getAttribute(this.selectors.buttonCatalogModeAttribute)
 
       this.changeLayoutMode(mode)

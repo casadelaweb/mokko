@@ -14,7 +14,8 @@ class Router {
 
     $page = '404';
     foreach (self::$list as $route) {
-      if ($route["uri"] == "$query") {
+      $uri = $route["uri"];
+      if ($uri === $query || $uri === "/$query" || $uri === "$query/" || $uri === "/$query/") {
         $page = $query;
       }
     }

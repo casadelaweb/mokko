@@ -1,9 +1,12 @@
 <script lang="ts">
-import {defineComponent} from 'vue'
-import {iQueueItem, iServerResponse} from "src/modules/notificationsQueue/notificationsQueue.types";
+import { defineComponent } from 'vue'
+import {
+  iQueueItem,
+  iServerResponse
+} from 'src/modules/notificationsQueue/notificationsQueue.types'
 
 export default defineComponent({
-  name: "notificationsQueue.vue",
+  name: 'notificationsQueue.vue',
   data: function () {
     return {
       parameters: {
@@ -13,7 +16,7 @@ export default defineComponent({
     }
   },
   mounted() {
-    document.addEventListener('serverResponse', this.handleServerResponse, {passive: true,})
+    document.addEventListener('serverResponse', this.handleServerResponse, { passive: true, })
   },
   methods: {
     handleServerResponse(event: iServerResponse) {

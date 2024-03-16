@@ -6,7 +6,7 @@ function ruleIconfont(): RuleSetRule {
     type: 'asset/resource',
     include: /iconfont|iconfonts/,
     exclude: /fonts|img|images/,
-    generator: { filename: 'assets/iconfont/[name].[contenthash:4][ext]', },
+    generator: { filename: 'iconfont/[name].[contenthash:4][ext]', },
   }
 }
 

@@ -12,15 +12,15 @@ function ruleImages(): RuleSetRule {
         const queries = [
           {
             searchFor: 'src/assets/',
-            replaceWith: 'assets/',
+            replaceWith: '',
           },
           {
             searchFor: 'src/modules/',
-            replaceWith: 'assets/img/',
+            replaceWith: 'img/',
           },
           {
             searchFor: 'src/components/',
-            replaceWith: 'assets/img/',
+            replaceWith: 'img/',
           },
         ]
         queries.forEach((query) => {

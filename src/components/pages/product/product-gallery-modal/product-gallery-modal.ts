@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const catalogGalleryModalSlider: HTMLElement = body.querySelector('.product-gallery-modal-slider .swiper-wrapper')
 
   galleryItems.forEach((galleryItem: HTMLElement, index: number) => {
-    galleryItem.dataset.slideId = `${index}`
+    galleryItem.dataset.slideId = `${ index }`
     //const galleryModalItem: HTMLElement = document.createElement('div')
     //galleryModalItem.classList.add('swiper-slide')
     //galleryModalItem.innerHTML = '<div class="product-gallery-modal-item"></div>'

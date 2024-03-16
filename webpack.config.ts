@@ -27,14 +27,13 @@ function config(env: iEnvVariables): Configuration {
   const isProductionMode: boolean = !isDevelopmentMode
 
   const rootPath: string = path.resolve(__dirname, './') + '/'
-  const distPath = path.resolve(__dirname, './public/assets')
 
   return {
     mode: mode,
     target: 'browserslist',
     devtool: isDevelopmentMode ? 'source-map' : false,
     optimization: {
-      minimize: false,
+      minimize: isProductionMode,
       minimizer: [
         new EsbuildPlugin({
           target: 'es2015',
@@ -45,8 +44,8 @@ function config(env: iEnvVariables): Configuration {
     },
     entry: { main: rootPath + 'src/main.ts', },
     output: {
-      path: distPath,
-      filename: distPath + '/js/[name].js?v=[contenthash:8]',
+      path: rootPath + 'public/assets',
+      filename: 'js/[name].js?v=[contenthash:8]',
       clean: isProductionMode,
     },
     resolve: {
@@ -59,10 +58,10 @@ function config(env: iEnvVariables): Configuration {
       ],
     },
     plugins: [
-      ...HTMLWebpackPluginPages(rootPath, isProductionMode),
+      //...HTMLWebpackPluginPages(rootPath, isProductionMode),
       new MiniCssExtractPlugin({
-        filename: distPath + '/css/[name].css?v=[contenthash:8]',
-        chunkFilename: distPath + '/css/[name].css?v=[contenthash:8]',
+        filename: 'css/[name].css?v=[contenthash:8]',
+        chunkFilename: 'css/[name].css?v=[contenthash:8]',
       }),
       new VueLoaderPlugin(),
       new webpack.DefinePlugin({

@@ -6,7 +6,7 @@ function ruleFonts(): RuleSetRule {
     type: 'asset/resource',
     include: /fonts/,
     exclude: /img|iconfont/,
-    generator: { filename: 'assets/fonts/[name][ext]', },
+    generator: { filename: 'fonts/[name][ext]', },
   }
 }
 
