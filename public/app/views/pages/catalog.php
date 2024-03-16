@@ -28,7 +28,7 @@
           <button class="catalog-more" data-catalog="update" type="button">
             <span>Показать еще</span>
           </button>
-          import @views/catalog/pagination.html;
+          <?php Render::component('catalog/catalogPagination') ?>
         </div>
       </div>
     </div>
