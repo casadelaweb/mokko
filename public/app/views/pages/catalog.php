@@ -1,2 +1,36 @@
 <?php namespace App; ?>
-<h1>catalog</h1>
+
+<main class="main">
+  <?php Render::component('breadcrumbs'); ?>
+
+  <section class="catalog">
+    <div class="catalog-container">
+      <div class="catalog-layout" data-catalog="layout">
+        <?php Render::component('catalog/catalogAside') ?>
+
+        <div class="catalog-main">
+          <div class="catalog-header _mobile">
+            <div class="catalog-title">Каталог</div>
+            <?php Render::component('catalog/catalogFiltersButtons') ?>
+          </div>
+          <div class="catalog-header _desktop" data-catalog="header-desktop">
+            <h1 class="catalog-title">Каталог</h1>
+            <?php Render::component('catalog/catalogFilters') ?>
+            <?php Render::component('catalog/catalogFiltersButtons') ?>
+          </div>
+          <div class="catalog-cards">
+            <div class="catalog-cards-loading">
+              <img alt="loading" class="catalog-cards-loading-img" loading="lazy"
+                   src="src/assets/img/loading.gif">
+            </div>
+            <?php Render::component('catalog/catalogCard'); ?>
+          </div>
+          <button class="catalog-more" data-catalog="update" type="button">
+            <span>Показать еще</span>
+          </button>
+          import @views/catalog/pagination.html;
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
