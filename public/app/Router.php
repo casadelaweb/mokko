@@ -4,7 +4,7 @@ class Router {
   public static string $currentRoute;
   protected static array $routes = [];
 
-  public static function enable(bool $debug = false): string {
+  public static function enable(bool $debug = false): void {
     if ($debug) {
       echo "<pre>";
       var_dump($_SERVER);
@@ -16,8 +16,6 @@ class Router {
     if (!in_array(self::$currentRoute, self::$routes)) {
       self::$currentRoute = '404';
     }
-
-    return self::$currentRoute;
   }
 
   public static function register(string|null $url): void {

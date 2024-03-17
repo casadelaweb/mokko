@@ -16,7 +16,7 @@ $catalog = new Page([
   'parent' => $home,
 ]);
 $product = new Page([
-  'title' => 'Product',
+  'title' => 'Товар',
   'metaDescription' => 'Заполните описание мета',
   'metaKeywords' => 'Заполните ключевые поля мета',
   'url' => '/catalog/product',

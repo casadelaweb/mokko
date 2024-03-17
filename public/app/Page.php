@@ -7,6 +7,7 @@ class Page {
   public string|null $url;
   public string $view;
   public Page|null $parent;
+  public array $parents;
 
   public function __construct(array $props) {
     $this->title = $props['title'];
@@ -15,5 +16,6 @@ class Page {
     $this->url = $props['url'];
     $this->view = $props['view'];
     $this->parent = $props['parent'];
+    // todo: рассчитывать parents рекурсивно
   }
 }
