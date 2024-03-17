@@ -1,8 +1,10 @@
 <?php namespace App;
-/** @var string $page */
+/** @var Page $page */
 require_once "app/helpers.php";
+require_once "app/Page.php";
 require_once "app/Router.php";
 require_once "app/routes.php";
+require_once "app/Pages.php";
 require_once "app/Render.php";
 ?>
 <!doctype html>
@@ -15,7 +17,7 @@ require_once "app/Render.php";
   <meta content="320" name="MobileOptimized">
   <meta content="True" name="HandheldFriendly">
   <?php Render::component('meta/metaMain') ?>
-  <title itemprop="headline"><?= $page ?></title>
+  <title itemprop="headline"><?= $page->title ?></title>
   <?php Render::component('meta/favicon') ?>
   <link rel="stylesheet" href="<?= getFilePathWithHash('/assets/css/main.css'); ?>">
 </head>
@@ -24,7 +26,7 @@ require_once "app/Render.php";
   <?php Render::component('header') ?>
 
   <main class="main">
-    <?php Render::page($page) ?>
+    <?php Render::page($page->view) ?>
   </main>
 
   <?php Render::component('footer') ?>

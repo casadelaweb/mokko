@@ -1,0 +1,275 @@
+<?php namespace App; ?>
+<?php Render::component('breadcrumbs') ?>
+
+<section class="cart">
+  <div class="cart-container">
+    <h1 class="cart-title">Корзина</h1>
+    <div class="cart-layout">
+      <div class="cart-cards">
+
+        <article class="cart-card" data-cart-card="card">
+          <a class="cart-card-img" href="/catalog/product">
+            <img alt="img" loading="lazy" src="src/assets/img/placeholder-product-3.jpeg">
+          </a>
+          <div class="cart-card-body">
+            <div>
+              <h2 class="cart-card-title">
+                <a href="/catalog/product">Плащ с очень длинным названием</a>
+              </h2>
+              <div class="cart-card-article">
+                <span>арт. </span>
+                <span>156653</span>
+              </div>
+            </div>
+            <div class="cart-card-colors">
+              <div class="cart-card-color-name">Длинное название цвета</div>
+              <div class="cart-card-color-circle _blue"></div>
+            </div>
+            <div class="cart-card-size">
+              XXL / 56
+            </div>
+            <div class="cart-card-prices">
+              <div class="cart-card-discount">-30%</div>
+              <div>
+                <div class="cart-card-price-old">
+                  <span data-cart-card="price-old">7 799</span> <span>₽</span>
+                </div>
+                <div class="cart-card-price-current">
+                  <span data-cart-card="price-current">4 123</span> <span>₽</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="cart-card-quantity-wrapper">
+            <div class="cart-card-quantity" data-cart-card="quantity">
+              <button class="cart-card-quantity-button" data-cart-card="quantity-minus"
+                      title="Убрать"
+                      type="button">
+                <span>-</span>
+              </button>
+              <input class="cart-card-quantity-input" data-cart-card="quantity-input"
+                     type="text" value="1">
+              <button class="cart-card-quantity-button" data-cart-card="quantity-plus"
+                      title="Добавить"
+                      type="button">
+                <span>+</span>
+              </button>
+            </div>
+          </div>
+          <div class="cart-card-footer">
+            <button class="cart-card-remove" type="button">
+              <span>Удалить</span>
+              <span class="iconfont icon-close"></span>
+            </button>
+            <button class="cart-card-favourite" type="button">
+              <span class="iconfont icon-heart-fill"></span>
+            </button>
+          </div>
+        </article>
+        <article class="cart-card" data-cart-card="card">
+          <a class="cart-card-img" href="/catalog/product">
+            <img alt="img" loading="lazy" src="src/assets/img/product/product_3.jpg">
+          </a>
+          <div class="cart-card-body">
+            <div>
+              <h2 class="cart-card-title">
+                <a href="/catalog/product">Короткое название товара</a>
+              </h2>
+              <div class="cart-card-article">
+                <span>арт. </span>
+                <span>156653</span>
+              </div>
+            </div>
+            <div class="cart-card-colors">
+              <div class="cart-card-color-name">Бежевый</div>
+              <div class="cart-card-color-circle _beige"></div>
+            </div>
+            <div class="cart-card-size">
+              M / 36
+            </div>
+            <div class="cart-card-prices">
+              <div class="cart-card-discount">-30%</div>
+              <div>
+                <div class="cart-card-price-old">
+                  <span data-cart-card="price-old">7 799</span> <span>₽</span>
+                </div>
+                <div class="cart-card-price-current">
+                  <span data-cart-card="price-current">4 123</span> <span>₽</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="cart-card-quantity-wrapper">
+            <div class="cart-card-quantity" data-cart-card="quantity">
+              <button class="cart-card-quantity-button" data-cart-card="quantity-minus"
+                      title="Убрать"
+                      type="button">
+                <span>-</span>
+              </button>
+              <input class="cart-card-quantity-input" data-cart-card="quantity-input"
+                     type="text" value="1">
+              <button class="cart-card-quantity-button" data-cart-card="quantity-plus"
+                      title="Добавить"
+                      type="button">
+                <span>+</span>
+              </button>
+            </div>
+          </div>
+          <div class="cart-card-footer">
+            <button class="cart-card-remove" type="button">
+              <span>Удалить</span>
+              <span class="iconfont icon-close"></span>
+            </button>
+            <button class="cart-card-favourite" type="button">
+              <span class="iconfont icon-heart-fill"></span>
+            </button>
+          </div>
+        </article>
+        <article class="cart-card" data-cart-card="card">
+          <a class="cart-card-img" href="/catalog/product">
+            <img alt="img" loading="lazy" src="src/assets/img/product/product_3.jpg">
+          </a>
+          <div class="cart-card-body">
+            <div>
+              <h2 class="cart-card-title">
+                <a href="/catalog/product">Короткое название товара</a>
+              </h2>
+              <div class="cart-card-article">
+                <span>арт. </span>
+                <span>156653</span>
+              </div>
+            </div>
+            <div class="cart-card-colors">
+              <div class="cart-card-color-name">Разноцветный</div>
+              <div class="cart-card-color-circle _color"></div>
+            </div>
+            <div class="cart-card-size">
+              M / 36
+            </div>
+            <div class="cart-card-prices">
+              <div class="cart-card-discount">-30%</div>
+              <div>
+                <div class="cart-card-price-old">
+                  <span data-cart-card="price-old">7 799</span> <span>₽</span>
+                </div>
+                <div class="cart-card-price-current">
+                  <span data-cart-card="price-current">4 123</span> <span>₽</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="cart-card-quantity-wrapper">
+            <div class="cart-card-quantity" data-cart-card="quantity">
+              <button class="cart-card-quantity-button" data-cart-card="quantity-minus"
+                      title="Убрать"
+                      type="button">
+                <span>-</span>
+              </button>
+              <input class="cart-card-quantity-input" data-cart-card="quantity-input"
+                     type="text" value="1">
+              <button class="cart-card-quantity-button" data-cart-card="quantity-plus"
+                      title="Добавить"
+                      type="button">
+                <span>+</span>
+              </button>
+            </div>
+          </div>
+          <div class="cart-card-footer">
+            <button class="cart-card-remove" type="button">
+              <span>Удалить</span>
+              <span class="iconfont icon-close"></span>
+            </button>
+            <button class="cart-card-favourite" type="button">
+              <span class="iconfont icon-heart-fill"></span>
+            </button>
+          </div>
+        </article>
+
+      </div>
+      <form class="cart-summary">
+        <div class="cart-summary-header">
+          <div class="cart-summary-row">
+            <h2 class="cart-summary-title">СУММА ЗАКАЗА</h2>
+            <div class="cart-summary-price">
+              <span data-cart="price-raw">18 999</span>
+              <span>₽</span>
+            </div>
+          </div>
+        </div>
+        <div class="cart-summary-body">
+          <label class="cart-summary-label">
+            <span class="cart-summary-label-title">Введите промокод</span>
+            <input autocomplete="off" class="cart-summary-input" name="promocode">
+            <button class="cart-summary-button" type="button">
+              <span class="iconfont icon-arrow-right"></span>
+            </button>
+          </label>
+
+          <div class="cart-summary-promocodes">
+            <div class="cart-summary-promocode">
+              <span class="cart-summary-promocode-name">350Z</span>
+              <button class="cart-summary-promocode-remove" type="button">
+                <span class="iconfont icon-close"></span>
+              </button>
+              <span class="cart-summary-promocode-status">Промокод не найден</span>
+            </div>
+            <div class="cart-summary-promocode">
+              <span class="cart-summary-promocode-name">Eclipse GSX</span>
+              <button class="cart-summary-promocode-remove" type="button">
+                <span class="iconfont icon-close"></span>
+              </button>
+              <span
+                class="cart-summary-promocode-status">Активен и может быть использован</span>
+            </div>
+            <div class="cart-summary-promocode">
+              <span class="cart-summary-promocode-name">Skyline</span>
+              <button class="cart-summary-promocode-remove" type="button">
+                <span class="iconfont icon-close"></span>
+              </button>
+              <span class="cart-summary-promocode-status error">Промокод не найден</span>
+            </div>
+            <div class="cart-summary-promocode">
+              <span class="cart-summary-promocode-name">Supra</span>
+              <button class="cart-summary-promocode-remove" type="button">
+                <span class="iconfont icon-close"></span>
+              </button>
+              <span
+                class="cart-summary-promocode-status error">Время действия промокода истекло</span>
+            </div>
+            <div class="cart-summary-promocode">
+              <span class="cart-summary-promocode-name">RX-7</span>
+              <button class="cart-summary-promocode-remove" type="button">
+                <span class="iconfont icon-close"></span>
+              </button>
+              <span
+                class="cart-summary-promocode-status success">Активен и может быть использован</span>
+            </div>
+          </div>
+
+          <label class="cart-summary-label">
+              <span class="cart-summary-label-title">
+                Баллов доступно: <span class="cart-summary-points"> 1250 </span> <br>
+                Использовать
+              </span>
+            <input autocomplete="off" class="cart-summary-input" name="points">
+            <button class="cart-summary-button" type="button">
+              <span class="iconfont icon-arrow-right"></span>
+            </button>
+          </label>
+          <div class="cart-summary-message"> Стоимость доставки будет учтена при продолжении
+            оформления
+          </div>
+        </div>
+        <div class="cart-summary-footer">
+          <div class="cart-summary-row">
+            <h2 class="cart-summary-title">ИТОГО</h2>
+            <div class="cart-summary-price">18 999 ₽</div>
+          </div>
+          <a class="cart-summary-submit" href="/cart/order">
+            <span>Оформить заказ</span>
+          </a>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
