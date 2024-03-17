@@ -454,7 +454,7 @@
   // для тестирования очереди уведомлений
   // имитируем ответ от сервера
   document.addEventListener('click', (event) => {
-    const {target} = event
+    const { target } = event
 
     // пример успешного добавления в избранное
     if (target.closest('.catalog-card-favourite')) {
@@ -472,10 +472,10 @@
               destination: 'favourite',
             },
             product: {
-              id: `product${Math.random()}`,
+              id: `product${ Math.random() }`,
               url: '/product',
-              title: `Тестовое название продукта ${Math.random()}`,
-              img: {url: '/assets/img/placeholder-product.jpeg',},
+              title: `Тестовое название продукта ${ Math.random() }`,
+              img: { url: '/assets/img/placeholder-product.jpeg', },
               size: '44 | M',
               colorClass: '_color',
             },
@@ -484,5 +484,5 @@
         button.dispatchEvent(customEvent)
       }, 1000)
     }
-  }, {passive: true,})
+  }, { passive: true, })
 </script>

@@ -22,7 +22,8 @@ require_once "app/Render.php";
   <link rel="stylesheet" href="<?= getFilePathWithHash('/assets/css/main.css'); ?>">
 </head>
 <body>
-<div id="app">
+<?php $isHomepage = $page->view == 'home' ?>
+<div id="app" <?= $isHomepage ? 'data-page="index"' : '' ?>>
   <?php Render::component('header') ?>
 
   <main class="main">
