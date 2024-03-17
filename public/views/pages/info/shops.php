@@ -21,7 +21,7 @@
           <br>
           Открыто ежедневно, 10:00–22:00
         </p>
-        <img alt="img" loading="lazy" src="src/assets/img/placeholder-map.jpg"
+        <img alt="img" loading="lazy" src="/assets/img//placeholder-map.jpg"
              style="margin: 20px 0 40px;">
         <p>
           <b>ТРК "Лето" </b>(<a href="http://www.letomall.ru/">www.letomall.ru</a>)<br>
@@ -33,7 +33,7 @@
           Открыто ежедневно, 10:00–22:00
         </p>
 
-        <img alt="img" loading="lazy" src="src/assets/img/placeholder-map.jpg"
+        <img alt="img" loading="lazy" src="/assets/img//placeholder-map.jpg"
              style="margin: 20px 0 40px;">
         <p>
           <b>ТРК "Балкания NOVA"</b>&nbsp;(<a href="http://www.">www.</a><a
@@ -46,7 +46,7 @@
           <br>
           Открыто ежедневно, 10:00–22:00
         </p>
-        <img alt="img" loading="lazy" src="src/assets/img/placeholder-map.jpg"
+        <img alt="img" loading="lazy" src="/assets/img//placeholder-map.jpg"
              style="margin: 20px 0 40px;">
         <p>
           <b>ТК "Электра"</b> (<a href="http://www.">www.</a><a href="http://tc-elektra.ru/"
@@ -58,7 +58,7 @@
           <br>
           Открыто ежедневно, 10:00–22:00
         </p>
-        <img alt="img" loading="lazy" src="src/assets/img/placeholder-map.jpg"
+        <img alt="img" loading="lazy" src="/assets/img//placeholder-map.jpg"
              style="margin: 20px 0 40px;">
 
         <h3>Хабаровск</h3>
@@ -71,7 +71,7 @@
           <br>
           Открыто ежедневно, 10:00–20:00
         </p>
-        <img alt="img" loading="lazy" src="src/assets/img/placeholder-map.jpg"
+        <img alt="img" loading="lazy" src="/assets/img//placeholder-map.jpg"
              style="margin: 20px 0 40px;">
       </div>
     </div>

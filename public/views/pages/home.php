@@ -1,29 +1,6 @@
 <?php namespace App; ?>
 
-<section class="hero">
-  <div class="hero-container">
-    <div class="swiper hero-slider">
-      <div class="swiper-wrapper">
-        repeat 3 times:
-        <div class="swiper-slide">
-          <div class="hero-slide">
-            <picture>
-              <source media="(min-width: 1920px)" srcset="/assets/img/hero/hero-1920.jpg">
-              <source media="(min-width: 1280px)" srcset="/assets/img/hero/hero-1280.jpg">
-              <source media="(min-width: 1024px)" srcset="/assets/img/hero/hero-1024.jpg">
-              <source media="(min-width: 768px)" srcset="/assets/img/hero/hero-768.jpg">
-              <img alt="img" class="hero-slide-img" loading="lazy"
-                   src="/assets/img/hero/hero-320.jpg">
-            </picture>
-            <div class="swiper-lazy-preloader"></div>
-          </div>
-        </div>
-        end;
-      </div>
-      <div class="swiper-pagination"></div>
-    </div>
-  </div>
-</section>
+<?php Render::component('sections/hero') ?>
 <section class="promo">
   <div class="promo-container">
     <div class="promo-main">
@@ -194,36 +171,78 @@
 </div>
 -->
 
-<a class="banner" href="/catalog">
-  <picture>
-    <source media="(min-width: 1920px)" srcset="/assets/img/banners/banner-1-1920.jpg">
-    <source media="(min-width: 1280px)" srcset="/assets/img/banners/banner-1-1280.jpg">
-    <source media="(min-width: 1024px)" srcset="/assets/img/banners/banner-1-1024.jpg">
-    <source media="(min-width: 768px)" srcset="/assets/img/banners/banner-1-768.jpg">
-    <img alt="img" class="banner-img" loading="lazy"
-         src="/assets/img/banners/banner-1-320.jpg">
-  </picture>
-</a>
+<?php Render::component('catalog/banner', [
+  'url' => '/catalog',
+  'images' => [
+    'image' => ['url' => '/assets/img/banners/banner-1-320.jpg',],
+    'sources' => [
+      [
+        'media' => '(min-width: 1920px)',
+        'url' => '/assets/img/banners/banner-1-1920.jpg',
+      ],
+      [
+        'media' => '(min-width: 1280px)',
+        'url' => '/assets/img/banners/banner-1-1280.jpg',
+      ],
+      [
+        'media' => '(min-width: 1024px)',
+        'url' => '/assets/img/banners/banner-1-1024.jpg',
+      ],
+      [
+        'media' => '(min-width: 768px)',
+        'url' => '/assets/img/banners/banner-1-768.jpg',
+      ],
+    ],
+  ],
+]) ?>
 <?php Render::component('catalog/catalogSection') ?>
-<a class="banner" href="/catalog">
-  <picture>
-    <source media="(min-width: 1920px)" srcset="/assets/img/banners/banner-2-1920.jpg">
-    <source media="(min-width: 1280px)" srcset="/assets/img/banners/banner-2-1280.jpg">
-    <source media="(min-width: 1024px)" srcset="/assets/img/banners/banner-2-1024.jpg">
-    <source media="(min-width: 768px)" srcset="/assets/img/banners/banner-2-768.jpg">
-    <img alt="img" class="banner-img" loading="lazy"
-         src="/assets/img/banners/banner-2-320.jpg">
-  </picture>
-</a>
+<?php Render::component('catalog/banner', [
+  'url' => '/catalog',
+  'images' => [
+    'image' => ['url' => '/assets/img/banners/banner-2-320.jpg',],
+    'sources' => [
+      [
+        'media' => '(min-width: 1920px)',
+        'url' => '/assets/img/banners/banner-2-1920.jpg',
+      ],
+      [
+        'media' => '(min-width: 1280px)',
+        'url' => '/assets/img/banners/banner-2-1280.jpg',
+      ],
+      [
+        'media' => '(min-width: 1024px)',
+        'url' => '/assets/img/banners/banner-2-1024.jpg',
+      ],
+      [
+        'media' => '(min-width: 768px)',
+        'url' => '/assets/img/banners/banner-2-768.jpg',
+      ],
+    ],
+  ],
+]) ?>
 <?php Render::component('catalog/catalogSection') ?>
-<a class="banner" href="/catalog">
-  <picture>
-    <source media="(min-width: 1920px)" srcset="/assets/img/banners/banner-3-1920.jpg">
-    <source media="(min-width: 1280px)" srcset="/assets/img/banners/banner-3-1280.jpg">
-    <source media="(min-width: 1024px)" srcset="/assets/img/banners/banner-3-1024.jpg">
-    <source media="(min-width: 768px)" srcset="/assets/img/banners/banner-3-768.jpg">
-    <img alt="img" class="banner-img" loading="lazy"
-         src="/assets/img/banners/banner-3-320.jpg">
-  </picture>
-</a>
+<?php Render::component('catalog/banner', [
+  'url' => '/catalog',
+  'images' => [
+    'image' => ['url' => '/assets/img/banners/banner-3-320.jpg',],
+    'sources' => [
+      [
+        'media' => '(min-width: 1920px)',
+        'url' => '/assets/img/banners/banner-3-1920.jpg',
+      ],
+      [
+        'media' => '(min-width: 1280px)',
+        'url' => '/assets/img/banners/banner-3-1280.jpg',
+      ],
+      [
+        'media' => '(min-width: 1024px)',
+        'url' => '/assets/img/banners/banner-3-1024.jpg',
+      ],
+      [
+        'media' => '(min-width: 768px)',
+        'url' => '/assets/img/banners/banner-3-768.jpg',
+      ],
+    ],
+  ],
+]) ?>
 

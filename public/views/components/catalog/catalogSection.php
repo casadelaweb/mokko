@@ -13,7 +13,6 @@
     </div>
     <div class="swiper section-layout">
       <div class="swiper-wrapper">
-        repeat 2 times:
         <div class="swiper-slide">
           <article class="section-product">
             <button class="section-product-favourite" title="Добавить в избранное"
@@ -65,7 +64,6 @@
             <div class="swiper-lazy-preloader"></div>
           </article>
         </div>
-        end;
       </div>
       <div class="swiper-button-prev">
         <span class="iconfont icon-arrow-left"></span>
@@ -88,7 +86,6 @@
     </div>
     <div class="swiper slider-small">
       <div class="swiper-wrapper">
-        repeat 4 times:
         <div class="swiper-slide">
           <article class="section-product">
             <button class="section-product-favourite" title="Добавить в избранное"
@@ -140,7 +137,6 @@
             <div class="swiper-lazy-preloader"></div>
           </article>
         </div>
-        end;
       </div>
       <div class="swiper-button-prev">
         <span class="iconfont icon-arrow-left"></span>
