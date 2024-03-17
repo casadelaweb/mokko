@@ -1,4 +1,34 @@
-<?php namespace App; ?>
+<?php namespace App;
+
+$products = [
+  [
+    'title' => 'Относительно длинное название товара',
+    'article' => '1234567890',
+    'colorName' => 'Синий',
+    'colorCSSClass' => '_blue',
+    'size' => 'XXL / 56',
+    'discount' => '-30%',
+    'price' => '6 600',
+    'priceOld' => '7 599',
+    'url' => '/catalog/product',
+    'imgUrl' => '/assets/img/placeholder-product.jpeg',
+  ],
+  [
+    'title' => 'Удивительно длинное название товара длиной в несколько строк или немного больше',
+    'article' => '1234567890',
+    'colorName' => 'Разноцветный',
+    'colorCSSClass' => '_color',
+    'size' => 'S / 42',
+    'discount' => null,
+    'price' => '4 400',
+    'priceOld' => null,
+    'url' => '/catalog/product',
+    'imgUrl' => '/assets/img/placeholder-product-2.jpeg',
+  ],
+];
+?>
+
+
 <?php Render::component('breadcrumbs') ?>
 
 <section class="cart">
@@ -6,185 +36,9 @@
     <h1 class="cart-title">Корзина</h1>
     <div class="cart-layout">
       <div class="cart-cards">
-
-        <article class="cart-card" data-cart-card="card">
-          <a class="cart-card-img" href="/catalog/product">
-            <img alt="img" loading="lazy" src="src/assets/img/placeholder-product-3.jpeg">
-          </a>
-          <div class="cart-card-body">
-            <div>
-              <h2 class="cart-card-title">
-                <a href="/catalog/product">Плащ с очень длинным названием</a>
-              </h2>
-              <div class="cart-card-article">
-                <span>арт. </span>
-                <span>156653</span>
-              </div>
-            </div>
-            <div class="cart-card-colors">
-              <div class="cart-card-color-name">Длинное название цвета</div>
-              <div class="cart-card-color-circle _blue"></div>
-            </div>
-            <div class="cart-card-size">
-              XXL / 56
-            </div>
-            <div class="cart-card-prices">
-              <div class="cart-card-discount">-30%</div>
-              <div>
-                <div class="cart-card-price-old">
-                  <span data-cart-card="price-old">7 799</span> <span>₽</span>
-                </div>
-                <div class="cart-card-price-current">
-                  <span data-cart-card="price-current">4 123</span> <span>₽</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="cart-card-quantity-wrapper">
-            <div class="cart-card-quantity" data-cart-card="quantity">
-              <button class="cart-card-quantity-button" data-cart-card="quantity-minus"
-                      title="Убрать"
-                      type="button">
-                <span>-</span>
-              </button>
-              <input class="cart-card-quantity-input" data-cart-card="quantity-input"
-                     type="text" value="1">
-              <button class="cart-card-quantity-button" data-cart-card="quantity-plus"
-                      title="Добавить"
-                      type="button">
-                <span>+</span>
-              </button>
-            </div>
-          </div>
-          <div class="cart-card-footer">
-            <button class="cart-card-remove" type="button">
-              <span>Удалить</span>
-              <span class="iconfont icon-close"></span>
-            </button>
-            <button class="cart-card-favourite" type="button">
-              <span class="iconfont icon-heart-fill"></span>
-            </button>
-          </div>
-        </article>
-        <article class="cart-card" data-cart-card="card">
-          <a class="cart-card-img" href="/catalog/product">
-            <img alt="img" loading="lazy" src="src/assets/img/product/product_3.jpg">
-          </a>
-          <div class="cart-card-body">
-            <div>
-              <h2 class="cart-card-title">
-                <a href="/catalog/product">Короткое название товара</a>
-              </h2>
-              <div class="cart-card-article">
-                <span>арт. </span>
-                <span>156653</span>
-              </div>
-            </div>
-            <div class="cart-card-colors">
-              <div class="cart-card-color-name">Бежевый</div>
-              <div class="cart-card-color-circle _beige"></div>
-            </div>
-            <div class="cart-card-size">
-              M / 36
-            </div>
-            <div class="cart-card-prices">
-              <div class="cart-card-discount">-30%</div>
-              <div>
-                <div class="cart-card-price-old">
-                  <span data-cart-card="price-old">7 799</span> <span>₽</span>
-                </div>
-                <div class="cart-card-price-current">
-                  <span data-cart-card="price-current">4 123</span> <span>₽</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="cart-card-quantity-wrapper">
-            <div class="cart-card-quantity" data-cart-card="quantity">
-              <button class="cart-card-quantity-button" data-cart-card="quantity-minus"
-                      title="Убрать"
-                      type="button">
-                <span>-</span>
-              </button>
-              <input class="cart-card-quantity-input" data-cart-card="quantity-input"
-                     type="text" value="1">
-              <button class="cart-card-quantity-button" data-cart-card="quantity-plus"
-                      title="Добавить"
-                      type="button">
-                <span>+</span>
-              </button>
-            </div>
-          </div>
-          <div class="cart-card-footer">
-            <button class="cart-card-remove" type="button">
-              <span>Удалить</span>
-              <span class="iconfont icon-close"></span>
-            </button>
-            <button class="cart-card-favourite" type="button">
-              <span class="iconfont icon-heart-fill"></span>
-            </button>
-          </div>
-        </article>
-        <article class="cart-card" data-cart-card="card">
-          <a class="cart-card-img" href="/catalog/product">
-            <img alt="img" loading="lazy" src="src/assets/img/product/product_3.jpg">
-          </a>
-          <div class="cart-card-body">
-            <div>
-              <h2 class="cart-card-title">
-                <a href="/catalog/product">Короткое название товара</a>
-              </h2>
-              <div class="cart-card-article">
-                <span>арт. </span>
-                <span>156653</span>
-              </div>
-            </div>
-            <div class="cart-card-colors">
-              <div class="cart-card-color-name">Разноцветный</div>
-              <div class="cart-card-color-circle _color"></div>
-            </div>
-            <div class="cart-card-size">
-              M / 36
-            </div>
-            <div class="cart-card-prices">
-              <div class="cart-card-discount">-30%</div>
-              <div>
-                <div class="cart-card-price-old">
-                  <span data-cart-card="price-old">7 799</span> <span>₽</span>
-                </div>
-                <div class="cart-card-price-current">
-                  <span data-cart-card="price-current">4 123</span> <span>₽</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="cart-card-quantity-wrapper">
-            <div class="cart-card-quantity" data-cart-card="quantity">
-              <button class="cart-card-quantity-button" data-cart-card="quantity-minus"
-                      title="Убрать"
-                      type="button">
-                <span>-</span>
-              </button>
-              <input class="cart-card-quantity-input" data-cart-card="quantity-input"
-                     type="text" value="1">
-              <button class="cart-card-quantity-button" data-cart-card="quantity-plus"
-                      title="Добавить"
-                      type="button">
-                <span>+</span>
-              </button>
-            </div>
-          </div>
-          <div class="cart-card-footer">
-            <button class="cart-card-remove" type="button">
-              <span>Удалить</span>
-              <span class="iconfont icon-close"></span>
-            </button>
-            <button class="cart-card-favourite" type="button">
-              <span class="iconfont icon-heart-fill"></span>
-            </button>
-          </div>
-        </article>
-
+        <?php foreach ($products as $product):
+          Render::component('cardCart', $product);
+        endforeach; ?>
       </div>
       <form class="cart-summary">
         <div class="cart-summary-header">

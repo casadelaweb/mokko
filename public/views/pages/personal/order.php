@@ -124,7 +124,7 @@
               <input autocomplete="off" name="payment" required type="radio">
               <span class="order-label-title">
                     4 платежа по <span>2 040</span> ₽
-                    <img alt="img" loading="lazy" src="src/assets/img/dolyami.png">
+                    <img alt="img" loading="lazy" src="/assets/img/dolyami.png">
                   </span>
             </label>
           </div>

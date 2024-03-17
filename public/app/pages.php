@@ -24,6 +24,24 @@ $product = new Page([
   'parent' => $catalog,
 ]);
 
+// раздел личный кабинет
+$personal = new Page([
+  'title' => 'Личный кабинет',
+  'metaDescription' => 'Заполните описание мета',
+  'metaKeywords' => 'Заполните ключевые поля мета',
+  'url' => '/personal',
+  'view' => 'personal/personal',
+  'parent' => $home,
+]);
+$personalCart = new Page([
+  'title' => 'Корзина',
+  'metaDescription' => 'Заполните описание мета',
+  'metaKeywords' => 'Заполните ключевые поля мета',
+  'url' => '/personal/cart',
+  'view' => 'personal/cart',
+  'parent' => $personal,
+]);
+
 // раздел информация
 $info = new Page([
   'title' => 'Информация',
@@ -57,6 +75,22 @@ $infoOferta = new Page([
   'view' => 'info/oferta',
   'parent' => $info,
 ]);
+$infoPayment = new Page([
+  'title' => 'Оплата',
+  'metaDescription' => 'Заполните описание мета',
+  'metaKeywords' => 'Заполните ключевые поля мета',
+  'url' => '/info/payment',
+  'view' => 'info/payment',
+  'parent' => $info,
+]);
+$infoPolicy = new Page([
+  'title' => 'Политика конфиденциальности',
+  'metaDescription' => 'Заполните описание мета',
+  'metaKeywords' => 'Заполните ключевые поля мета',
+  'url' => '/info/policy',
+  'view' => 'info/policy',
+  'parent' => $info,
+]);
 $infoReviews = new Page([
   'title' => 'Отзывы',
   'metaDescription' => 'Заполните описание мета',
@@ -67,7 +101,8 @@ $infoReviews = new Page([
 ]);
 $pages = [
   $home, $catalog, $product,
-  $info, $infoAppointment, $infoDelivery, $infoOferta, $infoReviews,
+  $personal, $personalCart,
+  $info, $infoAppointment, $infoDelivery, $infoOferta, $infoPayment, $infoPolicy, $infoReviews,
 ];
 
 $pageNotFound = new Page([

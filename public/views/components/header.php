@@ -12,7 +12,7 @@
         <span class="iconfont icon-logo"></span>
       </a>
       <div class="header-buttons">
-        <a class="header-button-purple" href="/info/appointment/">
+        <a class="header-button-purple" href="/info/appointment">
           <span>Записаться к стилисту</span>
         </a>
         <button class="header-button" data-modal-open="search" title="Поиск" type="button">

@@ -3,6 +3,9 @@
 Router::register('/');
 Router::register('/catalog');
 Router::register('/catalog/product');
+// раздел личный кабинет
+Router::register('/personal');
+Router::register('/personal/cart');
 // раздел информация
 Router::register('/info');
 Router::register('/info/appointment');
@@ -17,3 +20,4 @@ Router::register('/info/sizeguide');
 Router::register('/info/wholesale');
 
 Router::enable();
+
