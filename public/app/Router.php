@@ -4,7 +4,7 @@ class Router {
   protected static array $list = [];
   protected static string $query;
 
-  public static function enable(bool $debug = false): string {
+  public static function init(bool $debug = false): string {
     if ($debug) {
       echo "<pre>";
       var_dump(self::$list);
@@ -12,6 +12,7 @@ class Router {
     }
 
     self::$query = $_GET['q'] ?? '/';
+    //self::$query = $_SERVER['REQUEST_URI'] ?? '/';
 
     $page = '404';
     foreach (self::$list as $route) {
