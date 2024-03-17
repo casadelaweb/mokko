@@ -9,5 +9,6 @@ Router::register('catalog/product', 'catalog/product');
 Router::register('info', 'info/info');
 Router::register('info/shops', 'info/shops');
 Router::register('info/reviews', 'info/reviews');
+Router::register('info/appointment', 'info/appointment');
 
 $page = Router::enable();

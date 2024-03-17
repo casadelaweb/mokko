@@ -1,6 +1,5 @@
 <?php namespace App; ?>
 
-
 <?php Render::component('breadcrumbs'); ?>
 
 <section class="catalog">

@@ -195,7 +195,9 @@
     ],
   ],
 ]) ?>
+
 <?php Render::component('catalog/catalogSection') ?>
+
 <?php Render::component('catalog/banner', [
   'url' => '/catalog',
   'images' => [
@@ -220,7 +222,9 @@
     ],
   ],
 ]) ?>
+
 <?php Render::component('catalog/catalogSection') ?>
+
 <?php Render::component('catalog/banner', [
   'url' => '/catalog',
   'images' => [
