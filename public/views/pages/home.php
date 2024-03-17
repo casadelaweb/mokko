@@ -8,12 +8,12 @@
         <div class="swiper-slide">
           <div class="hero-slide">
             <picture>
-              <source media="(min-width: 1920px)" srcset="src/assets/img/hero/hero-1920.jpg">
-              <source media="(min-width: 1280px)" srcset="src/assets/img/hero/hero-1280.jpg">
-              <source media="(min-width: 1024px)" srcset="src/assets/img/hero/hero-1024.jpg">
-              <source media="(min-width: 768px)" srcset="src/assets/img/hero/hero-768.jpg">
+              <source media="(min-width: 1920px)" srcset="/assets/img/hero/hero-1920.jpg">
+              <source media="(min-width: 1280px)" srcset="/assets/img/hero/hero-1280.jpg">
+              <source media="(min-width: 1024px)" srcset="/assets/img/hero/hero-1024.jpg">
+              <source media="(min-width: 768px)" srcset="/assets/img/hero/hero-768.jpg">
               <img alt="img" class="hero-slide-img" loading="lazy"
-                   src="src/assets/img/hero/hero-320.jpg">
+                   src="/assets/img/hero/hero-320.jpg">
             </picture>
             <div class="swiper-lazy-preloader"></div>
           </div>
@@ -44,12 +44,12 @@
 
       <a href="/catalog">
         <picture>
-          <source media="(min-width: 1920px)" srcset="src/assets/img/promo/promo-1920.jpg">
-          <source media="(min-width: 1280px)" srcset="src/assets/img/promo/promo-1280.jpg">
-          <source media="(min-width: 1024px)" srcset="src/assets/img/promo/promo-1024.jpg">
-          <source media="(min-width: 768px)" srcset="src/assets/img/promo/promo-768.jpg">
+          <source media="(min-width: 1920px)" srcset="/assets/img/promo/promo-1920.jpg">
+          <source media="(min-width: 1280px)" srcset="/assets/img/promo/promo-1280.jpg">
+          <source media="(min-width: 1024px)" srcset="/assets/img/promo/promo-1024.jpg">
+          <source media="(min-width: 768px)" srcset="/assets/img/promo/promo-768.jpg">
           <img alt="img" class="promo-img" loading="lazy"
-               src="src/assets/img/promo/promo-320.jpg">
+               src="/assets/img/promo/promo-320.jpg">
         </picture>
       </a>
     </div>
@@ -70,10 +70,10 @@
         <div class="swiper-slide">
           <article class="section-product" data-modal-open="stories">
             <div class="stories-slide-overlay">
-              <img alt="img" loading="lazy" src="src/assets/img/icons/play.png">
+              <img alt="img" loading="lazy" src="/assets/img/icons/play.png">
             </div>
             <img alt="img" class="section-product-img" loading="lazy"
-                 src="src/assets/img/stories/story-1.jpg">
+                 src="/assets/img/stories/story-1.jpg">
             <div class="swiper-lazy-preloader"></div>
           </article>
         </div>
@@ -86,17 +86,17 @@
               </h2>
             </div>
             <img alt="img" class="section-product-img" loading="lazy"
-                 src="src/assets/img/stories/story-2.jpg">
+                 src="/assets/img/stories/story-2.jpg">
             <div class="swiper-lazy-preloader"></div>
           </article>
         </div>
         <div class="swiper-slide">
           <article class="section-product" data-modal-open="stories">
             <div class="stories-slide-overlay">
-              <img alt="img" loading="lazy" src="src/assets/img/icons/play.png">
+              <img alt="img" loading="lazy" src="/assets/img/icons/play.png">
             </div>
             <img alt="img" class="section-product-img" loading="lazy"
-                 src="src/assets/img/stories/story-3.jpg">
+                 src="/assets/img/stories/story-3.jpg">
             <div class="swiper-lazy-preloader"></div>
           </article>
         </div>
@@ -109,7 +109,7 @@
               </h2>
             </div>
             <img alt="img" class="section-product-img" loading="lazy"
-                 src="src/assets/img/stories/story-4.jpg">
+                 src="/assets/img/stories/story-4.jpg">
             <div class="swiper-lazy-preloader"></div>
           </article>
         </div>
@@ -122,7 +122,7 @@
               </h2>
             </div>
             <img alt="img" class="section-product-img" loading="lazy"
-                 src="src/assets/img/stories/story-5.jpg">
+                 src="/assets/img/stories/story-5.jpg">
             <div class="swiper-lazy-preloader"></div>
           </article>
         </div>
@@ -134,7 +134,7 @@
               </h2>
             </div>
             <img alt="img" class="section-product-img" loading="lazy"
-                 src="src/assets/img/stories/story-6.jpg">
+                 src="/assets/img/stories/story-6.jpg">
             <div class="swiper-lazy-preloader"></div>
           </article>
         </div>
@@ -172,15 +172,15 @@
         repeat 3 times:
         <div class="swiper-slide stories-slide">
           <picture>
-            <source media="(min-width: 768px)" srcset="src/assets/img/placeholder-product-3.jpeg" type="image/jpeg">
-            <img alt="img" class="story-img" loading="lazy" src="src/assets/img/placeholder-product-3.jpeg">
+            <source media="(min-width: 768px)" srcset="/assets/img/placeholder-product-3.jpeg" type="image/jpeg">
+            <img alt="img" class="story-img" loading="lazy" src="/assets/img/placeholder-product-3.jpeg">
           </picture>
           <div class="swiper-lazy-preloader"></div>
         </div>
         <div class="swiper-slide stories-slide">
           <picture>
-            <source media="(min-width: 768px)" srcset="src/assets/img/placeholder-product-3.jpeg" type="image/jpeg">
-            <img alt="img" class="story-img" loading="lazy" src="src/assets/img/placeholder-product-3.jpeg">
+            <source media="(min-width: 768px)" srcset="/assets/img/placeholder-product-3.jpeg" type="image/jpeg">
+            <img alt="img" class="story-img" loading="lazy" src="/assets/img/placeholder-product-3.jpeg">
           </picture>
           <div class="swiper-lazy-preloader"></div>
         </div>
@@ -196,34 +196,34 @@
 
 <a class="banner" href="/catalog">
   <picture>
-    <source media="(min-width: 1920px)" srcset="src/assets/img/banners/banner-1-1920.jpg">
-    <source media="(min-width: 1280px)" srcset="src/assets/img/banners/banner-1-1280.jpg">
-    <source media="(min-width: 1024px)" srcset="src/assets/img/banners/banner-1-1024.jpg">
-    <source media="(min-width: 768px)" srcset="src/assets/img/banners/banner-1-768.jpg">
+    <source media="(min-width: 1920px)" srcset="/assets/img/banners/banner-1-1920.jpg">
+    <source media="(min-width: 1280px)" srcset="/assets/img/banners/banner-1-1280.jpg">
+    <source media="(min-width: 1024px)" srcset="/assets/img/banners/banner-1-1024.jpg">
+    <source media="(min-width: 768px)" srcset="/assets/img/banners/banner-1-768.jpg">
     <img alt="img" class="banner-img" loading="lazy"
-         src="src/assets/img/banners/banner-1-320.jpg">
+         src="/assets/img/banners/banner-1-320.jpg">
   </picture>
 </a>
 <?php Render::component('catalog/catalogSection') ?>
 <a class="banner" href="/catalog">
   <picture>
-    <source media="(min-width: 1920px)" srcset="src/assets/img/banners/banner-2-1920.jpg">
-    <source media="(min-width: 1280px)" srcset="src/assets/img/banners/banner-2-1280.jpg">
-    <source media="(min-width: 1024px)" srcset="src/assets/img/banners/banner-2-1024.jpg">
-    <source media="(min-width: 768px)" srcset="src/assets/img/banners/banner-2-768.jpg">
+    <source media="(min-width: 1920px)" srcset="/assets/img/banners/banner-2-1920.jpg">
+    <source media="(min-width: 1280px)" srcset="/assets/img/banners/banner-2-1280.jpg">
+    <source media="(min-width: 1024px)" srcset="/assets/img/banners/banner-2-1024.jpg">
+    <source media="(min-width: 768px)" srcset="/assets/img/banners/banner-2-768.jpg">
     <img alt="img" class="banner-img" loading="lazy"
-         src="src/assets/img/banners/banner-2-320.jpg">
+         src="/assets/img/banners/banner-2-320.jpg">
   </picture>
 </a>
 <?php Render::component('catalog/catalogSection') ?>
 <a class="banner" href="/catalog">
   <picture>
-    <source media="(min-width: 1920px)" srcset="src/assets/img/banners/banner-3-1920.jpg">
-    <source media="(min-width: 1280px)" srcset="src/assets/img/banners/banner-3-1280.jpg">
-    <source media="(min-width: 1024px)" srcset="src/assets/img/banners/banner-3-1024.jpg">
-    <source media="(min-width: 768px)" srcset="src/assets/img/banners/banner-3-768.jpg">
+    <source media="(min-width: 1920px)" srcset="/assets/img/banners/banner-3-1920.jpg">
+    <source media="(min-width: 1280px)" srcset="/assets/img/banners/banner-3-1280.jpg">
+    <source media="(min-width: 1024px)" srcset="/assets/img/banners/banner-3-1024.jpg">
+    <source media="(min-width: 768px)" srcset="/assets/img/banners/banner-3-768.jpg">
     <img alt="img" class="banner-img" loading="lazy"
-         src="src/assets/img/banners/banner-3-320.jpg">
+         src="/assets/img/banners/banner-3-320.jpg">
   </picture>
 </a>
 

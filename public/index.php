@@ -30,6 +30,7 @@ require_once "app/Render.php";
   <?php Render::component('footer') ?>
 
   <div id="modals">
+    <?php Render::component('modals/cookie') ?>
     <?php Render::component('modals/modalMenu') ?>
     <?php Render::component('modals/menuInfo') ?>
     <?php Render::component('modals/modalLogin') ?>

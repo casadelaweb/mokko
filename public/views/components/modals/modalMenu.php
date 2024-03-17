@@ -41,7 +41,7 @@
         <article class="menu-category">
           <a href="/catalog">
             <img alt="Вечерние платья" class="menu-category-img" loading="lazy"
-                 src="src/assets/img/menu/category-1.jpg">
+                 src="/assets/img/menu/category-1.jpg">
           </a>
           <h2 class="menu-category-title">
             <a href="/catalog">Вечерние платья</a>
@@ -50,7 +50,7 @@
         <article class="menu-category">
           <a href="/catalog">
             <img alt="Вечерние платья" class="menu-category-img" loading="lazy"
-                 src="src/assets/img/menu/category-2.jpg">
+                 src="/assets/img/menu/category-2.jpg">
           </a>
           <h2 class="menu-category-title">
             <a href="/catalog">Верхняя одежда</a>

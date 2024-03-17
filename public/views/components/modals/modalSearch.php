@@ -16,7 +16,7 @@
             <span class="iconfont icon-heart-fill"></span>
           </button>
           <a class="search-card-img" href="/catalog/product">
-            <img alt="img" loading="lazy" src="src/assets/img/placeholder-product-3.jpeg">
+            <img alt="img" loading="lazy" src="/assets/img/placeholder-product-3.jpeg">
           </a>
           <h2 class="search-card-title">
             <a href="/catalog/product">Джемпер из шерсти</a>

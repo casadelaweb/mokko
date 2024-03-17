@@ -1,7 +1,13 @@
 <?php namespace App;
 
+// регистрируем пути
 Router::register('/', 'home');
-Router::register('catalog', 'catalog');
-Router::register('product', 'product');
+// раздел каталог
+Router::register('catalog', 'catalog/catalog');
+Router::register('catalog/product', 'catalog/product');
+// раздел информация
+Router::register('info', 'info/info');
+Router::register('info/shops', 'info/shops');
+Router::register('info/reviews', 'info/reviews');
 
 $page = Router::enable();

@@ -23,9 +23,9 @@
             <h2 class="section-product-title">Название продукта</h2>
             <a href="/catalog/product">
               <picture>
-                <source srcset="src/assets/img/placeholder-product.webp" type="image/webp">
+                <source srcset="/assets/img/placeholder-product.webp" type="image/webp">
                 <img alt="img" class="section-product-img" loading="lazy"
-                     src="src/assets/img/placeholder-product.jpeg">
+                     src="/assets/img/placeholder-product.jpeg">
               </picture>
             </a>
             <div class="swiper-lazy-preloader"></div>
@@ -40,9 +40,9 @@
             <h2 class="section-product-title">Название продукта</h2>
             <a href="/catalog/product">
               <picture>
-                <source srcset="src/assets/img/placeholder-product-2.webp" type="image/webp">
+                <source srcset="/assets/img/placeholder-product-2.webp" type="image/webp">
                 <img alt="img" class="section-product-img" loading="lazy"
-                     src="src/assets/img/placeholder-product-2.jpeg">
+                     src="/assets/img/placeholder-product-2.jpeg">
               </picture>
             </a>
             <div class="swiper-lazy-preloader"></div>
@@ -57,9 +57,9 @@
             <h2 class="section-product-title">Название продукта</h2>
             <a href="/catalog/product">
               <picture>
-                <source srcset="src/assets/img/placeholder-product-3.webp" type="image/webp">
+                <source srcset="/assets/img/placeholder-product-3.webp" type="image/webp">
                 <img alt="img" class="section-product-img" loading="lazy"
-                     src="src/assets/img/placeholder-product-3.jpeg">
+                     src="/assets/img/placeholder-product-3.jpeg">
               </picture>
             </a>
             <div class="swiper-lazy-preloader"></div>
@@ -98,9 +98,9 @@
             <h2 class="section-product-title">Название продукта</h2>
             <a href="/catalog/product">
               <picture>
-                <source srcset="src/assets/img/placeholder-product.jpeg" type="image/webp">
+                <source srcset="/assets/img/placeholder-product.jpeg" type="image/webp">
                 <img alt="img" class="section-product-img" loading="lazy"
-                     src="src/assets/img/placeholder-product.jpeg">
+                     src="/assets/img/placeholder-product.jpeg">
               </picture>
             </a>
             <div class="swiper-lazy-preloader"></div>
@@ -115,9 +115,9 @@
             <h2 class="section-product-title">Название продукта</h2>
             <a href="/catalog/product">
               <picture>
-                <source srcset="src/assets/img/placeholder-product-2.webp" type="image/webp">
+                <source srcset="/assets/img/placeholder-product-2.webp" type="image/webp">
                 <img alt="img" class="section-product-img" loading="lazy"
-                     src="src/assets/img/placeholder-product-2.jpeg">
+                     src="/assets/img/placeholder-product-2.jpeg">
               </picture>
             </a>
             <div class="swiper-lazy-preloader"></div>
@@ -132,9 +132,9 @@
             <h2 class="section-product-title">Название продукта</h2>
             <a href="/catalog/product">
               <picture>
-                <source srcset="src/assets/img/placeholder-product-3.webp" type="image/webp">
+                <source srcset="/assets/img/placeholder-product-3.webp" type="image/webp">
                 <img alt="img" class="section-product-img" loading="lazy"
-                     src="src/assets/img/placeholder-product-3.jpeg">
+                     src="/assets/img/placeholder-product-3.jpeg">
               </picture>
             </a>
             <div class="swiper-lazy-preloader"></div>

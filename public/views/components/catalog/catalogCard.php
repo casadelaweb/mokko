@@ -5,7 +5,7 @@
   <!-- https://yandex.ru/support/webmaster/supported-schemas/strict-microdata-offers.html -->
   <meta content="Наименование товара" itemprop="name">
   <meta content="Краткое описание товара" itemprop="description">
-  <link href="src/assets/img/placeholder-product.jpeg" itemprop="image">
+  <link href="/assets/img/placeholder-product.jpeg" itemprop="image">
   <div itemprop="offers" itemscope itemtype="https://schema.org/Offer">
     <meta content="7150.00" itemprop="price">
     <meta content="RUB" itemprop="priceCurrency">
@@ -20,27 +20,27 @@
       <div class="swiper-slide">
         <a href="/catalog/product">
           <picture>
-            <source srcset="src/assets/img/placeholder-product.webp" type="image/webp">
+            <source srcset="/assets/img/placeholder-product.webp" type="image/webp">
             <img alt="img" class="catalog-card-img" loading="lazy"
-                 src="src/assets/img/placeholder-product.jpeg">
+                 src="/assets/img/placeholder-product.jpeg">
           </picture>
         </a>
       </div>
       <div class="swiper-slide">
         <a href="/catalog/product">
           <picture>
-            <source srcset="src/assets/img/placeholder-product-2.webp" type="image/webp">
+            <source srcset="/assets/img/placeholder-product-2.webp" type="image/webp">
             <img alt="img" class="catalog-card-img" loading="lazy"
-                 src="src/assets/img/placeholder-product-2.jpeg">
+                 src="/assets/img/placeholder-product-2.jpeg">
           </picture>
         </a>
       </div>
       <div class="swiper-slide">
         <a href="/catalog/product">
           <picture>
-            <source srcset="src/assets/img/placeholder-product-3.webp" type="image/webp">
+            <source srcset="/assets/img/placeholder-product-3.webp" type="image/webp">
             <img alt="img" class="catalog-card-img" loading="lazy"
-                 src="src/assets/img/placeholder-product-3.jpeg">
+                 src="/assets/img/placeholder-product-3.jpeg">
           </picture>
         </a>
       </div>

@@ -1,12 +1,12 @@
 <?php namespace App;
 
 class Render {
-  public static function component(string $name, bool $once = true): void {
-    if ($once) {
-      include_once "views/components/$name.php";
-    } else {
-      include "views/components/$name.php";
-    }
+  public static function component(string $name, array $props = [],): void {
+    extract($props);
+    ob_start();
+    include "views/components/$name.php";
+    $output = ob_get_clean();
+    echo $output;
   }
 
   public static function page(string $name): void {
