@@ -75,20 +75,28 @@ $infoOferta = new Page([
   'view' => 'info/oferta',
   'parent' => $info,
 ]);
-$infoPayment = new Page([
-  'title' => 'Оплата',
-  'metaDescription' => 'Заполните описание мета',
-  'metaKeywords' => 'Заполните ключевые поля мета',
-  'url' => '/info/payment',
-  'view' => 'info/payment',
-  'parent' => $info,
-]);
 $infoPolicy = new Page([
   'title' => 'Политика конфиденциальности',
   'metaDescription' => 'Заполните описание мета',
   'metaKeywords' => 'Заполните ключевые поля мета',
   'url' => '/info/policy',
   'view' => 'info/policy',
+  'parent' => $info,
+]);
+$infoReturn = new Page([
+  'title' => 'Возврат и обмен',
+  'metaDescription' => 'Заполните описание мета',
+  'metaKeywords' => 'Заполните ключевые поля мета',
+  'url' => '/info/return',
+  'view' => 'info/return',
+  'parent' => $info,
+]);
+$infoPayment = new Page([
+  'title' => 'Оплата',
+  'metaDescription' => 'Заполните описание мета',
+  'metaKeywords' => 'Заполните ключевые поля мета',
+  'url' => '/info/payment',
+  'view' => 'info/payment',
   'parent' => $info,
 ]);
 $infoReviews = new Page([
@@ -99,10 +107,20 @@ $infoReviews = new Page([
   'view' => 'info/reviews',
   'parent' => $info,
 ]);
+$infoSizeguide = new Page([
+  'title' => 'Таблица размеров',
+  'metaDescription' => 'Заполните описание мета',
+  'metaKeywords' => 'Заполните ключевые поля мета',
+  'url' => '/info/sizeguide',
+  'view' => 'info/sizeguide',
+  'parent' => $info,
+]);
 $pages = [
   $home, $catalog, $product,
   $personal, $personalCart,
-  $info, $infoAppointment, $infoDelivery, $infoOferta, $infoPayment, $infoPolicy, $infoReviews,
+  //
+  $info, $infoAppointment, $infoDelivery, $infoOferta, $infoPolicy,
+  $infoPayment, $infoReturn, $infoReviews, $infoSizeguide,
 ];
 
 $pageNotFound = new Page([
