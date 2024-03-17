@@ -1,7 +1,8 @@
 <?php namespace App;
 
 class Router {
-  public static array $list = [];
+  protected static array $list = [];
+  protected static string $query;
 
   public static function enable(bool $debug = false): string {
     if ($debug) {
@@ -10,16 +11,21 @@ class Router {
       echo "</pre>";
     }
 
-    $query = $_GET['q'];
+    self::$query = $_GET['q'] ?? '/';
 
     $page = '404';
     foreach (self::$list as $route) {
       $uri = $route["uri"];
-      if ($uri === $query || $uri === "/$query" || $uri === "$query/" || $uri === "/$query/") {
-        $page = $query;
+      $q = self::$query;
+      if ($uri === $q || $uri === "/$q" || $uri === "$q/" || $uri === "/$q/") {
+        $page = $route["page"];
       }
     }
     return $page;
+  }
+
+  public static function current(): string {
+    return self::$query;
   }
 
   public static function register(string $uri, string $pageName): void {
