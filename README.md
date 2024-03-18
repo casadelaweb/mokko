@@ -1,15 +1,20 @@
-# Фронтенд для mokko-brand.ru WIP
+# frontend для редизайна mokko-brand.ru
+
+`work in progress`
 
 Тест: https://mokko.ninthtown.ru/
 
 ## Общая информация
 
-* node 18+, webpack 5
+* npm 8+, node 18+
+* webpack 5
 * mobile-first
-* html, typescript, scss
-* сборка поддерживает javascript, sass, css. Имейте совесть использовать typescript и scss.
+* php 8.1, html
+* typescript, scss
 
 ## Важно
+
+`docker конфигурации для php и apache/nginx нет (временно).`
 
 * пути для изображений, видео и импортируемых файлов от папки src. Например:
 
@@ -27,8 +32,9 @@ import 'src/scripts/global-scroll-controller'
 
 ## Скрипты
 
-* npm i обновляет node_modules
-* npm start запускает node server и открывает проект в браузере
-* npm run dev собирает проект в папку dist
-* npm run build собирает проект в папку dist и минимизирует стили и скрипты
+`frontend assets собираются в папку public/assets.`
+
+* `npm run dev` собрать frontend
+* `npm run watch` собирать frontend и пересобирать в случае изменений
+* `npm run build` собрать и оптимизировать frontend
 

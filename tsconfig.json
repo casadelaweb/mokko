@@ -6,7 +6,7 @@
         "./src/*"
       ]
     },
-    "outDir": "./dist/",
+    "outDir": "./public/assets",
     "sourceMap": true,
     "noImplicitAny": false,
     "module": "ES2022",
@@ -29,6 +29,7 @@
     "esModuleInterop": true
   },
   "exclude": [
+    "public",
     "node_modules",
     "dist",
     ".idea",

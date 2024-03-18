@@ -15,7 +15,7 @@ module.exports = {
   },
   'rules': {
     'indent': ['error', 2,],
-    'linebreak-style': ['error', 'unix',],
+    'linebreak-style': ['error', 'windows',],
     'quotes': ['error', 'single',],
     'semi': ['error', 'never',],
     'comma-dangle': [
@@ -56,7 +56,7 @@ module.exports = {
         'ObjectExpression': { 'multiline': true, },
         'ObjectPattern': { 'multiline': true, },
         'ImportDeclaration': {
-          'minProperties': 8,
+          'minProperties': 6,
           'multiline': true,
         },
         'ExportDeclaration': { 'minProperties': 3, },
