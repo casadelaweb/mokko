@@ -88,7 +88,7 @@
   }
 }
 
-@mixin scrollbar($orientation:'verical') {
+@mixin scrollbar($orientation:'vertical') {
   $width: 10px;
   $height: 5px;
   $thumbColor: #505050;
