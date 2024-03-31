@@ -1,24 +1,17 @@
-// types
 import type { Configuration } from 'node_modules/webpack'
-import { iEnvVariables, iMode } from './configuration/config.types'
-// node
+import { iEnvVariables, iMode } from './configuration/webpack/config.types'
 import path from 'path'
-// plugins
 import webpack from 'webpack'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
-import HTMLWebpackPluginPages from './configuration/HTMLWebpackPluginPages'
 import { VueLoaderPlugin } from 'vue-loader'
-// rules
-import ruleVue from './configuration/rules/vue'
-import ruleScripts from './configuration/rules/scripts'
-import ruleFavicon from './configuration/rules/favicon'
-import ruleStyles from './configuration/rules/styles'
-import ruleIconfont from './configuration/rules/iconfont'
-import ruleImages from './configuration/rules/images'
-import ruleFonts from './configuration/rules/fonts'
-import ruleHTML from './configuration/rules/html'
-import devServer from './configuration/devServer'
-import watchOptions from './configuration/watchOptions'
+import ruleVue from './configuration/webpack/rules/vue'
+import ruleScripts from './configuration/webpack/rules/scripts'
+import ruleFavicon from './configuration/webpack/rules/favicon'
+import ruleStyles from './configuration/webpack/rules/styles'
+import ruleIconfonts from './configuration/webpack/rules/iconfonts'
+import ruleImages from './configuration/webpack/rules/images'
+import ruleFonts from './configuration/webpack/rules/fonts'
+import watchOptions from './configuration/webpack/watchOptions'
 import { EsbuildPlugin } from 'esbuild-loader'
 
 function config(env: iEnvVariables): Configuration {
@@ -58,7 +51,6 @@ function config(env: iEnvVariables): Configuration {
       ],
     },
     plugins: [
-      //...HTMLWebpackPluginPages(rootPath, isProductionMode),
       new MiniCssExtractPlugin({
         filename: 'css/[name].css?v=[contenthash:8]',
         chunkFilename: 'css/[name].css?v=[contenthash:8]',
@@ -73,9 +65,8 @@ function config(env: iEnvVariables): Configuration {
     module: {
       rules: [
         ruleVue(),
-        ruleHTML(),
         ruleFonts(),
-        ruleIconfont(),
+        ruleIconfonts(),
         ruleFavicon(),
         ruleImages(),
         ruleStyles(isDevelopmentMode),
@@ -83,8 +74,6 @@ function config(env: iEnvVariables): Configuration {
       ],
     },
     watchOptions,
-    // @ts-ignore
-    devServer,
   }
 }
 

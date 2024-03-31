@@ -4,15 +4,9 @@
   "description": "",
   "main": "src/main.ts",
   "scripts": {
-    "open": "start dist/index.html",
-    "start": "webpack serve --progress --env mode=development",
-    "watch": "webpack watch --progress --env mode=development",
+    "start": "webpack watch --progress --env mode=development",
     "dev": "webpack --progress --env mode=development",
-    "build": "webpack --progress --env mode=production",
-    "watch-open": "npm run dev && npm run open && npm run watch",
-    "dev-open": "npm run dev && npm run open",
-    "build-open": "npm run build && npm run open",
-    "lint": "eslint . --ext .ts,.js, --fix --ignore-path .gitignore"
+    "build": "webpack --progress --env mode=production"
   },
   "author": "cdlw.ru",
   "license": "ISC",
