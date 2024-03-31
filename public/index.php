@@ -1,12 +1,13 @@
 <?php namespace App;
-/** @var Page $page */
 require_once "app/helpers.php";
 require_once "app/Page.php";
 require_once "app/Router.php";
 require_once "app/routes.php";
-require_once "app/Pages.php";
+require_once "app/pages.php";
 require_once "app/Render.php";
-?>
+/** @var Page $page */
+$isHomepage = $page->view == 'home' ?>
+
 <!doctype html>
 <html lang="ru">
 <head itemscope itemtype="https://schema.org/WPHeader">
@@ -17,21 +18,19 @@ require_once "app/Render.php";
   <meta content="320" name="MobileOptimized">
   <meta content="True" name="HandheldFriendly">
   <?php Render::component('meta/metaMain') ?>
-  <title itemprop="headline"><?= $page->title ?></title>
+  <title itemprop="headline">
+    <?= $page->title ?>
+  </title>
   <?php Render::component('meta/favicon') ?>
   <link rel="stylesheet" href="<?= getFilePathWithHash('/assets/css/main.css'); ?>">
 </head>
-<body>
-<?php $isHomepage = $page->view == 'home' ?>
-<div id="app" <?= $isHomepage ? 'data-page="index"' : '' ?>>
+<body <?= $isHomepage ? 'data-page="index"' : '' ?>>
+<div id="app">
   <?php Render::component('header') ?>
-
   <main class="main">
     <?php Render::page($page->view) ?>
   </main>
-
   <?php Render::component('footer') ?>
-
   <div id="modals">
     <?php Render::component('modals/cookie') ?>
     <?php Render::component('modals/modalMenu') ?>
@@ -43,7 +42,6 @@ require_once "app/Render.php";
     <div class="modal-overlay" data-modal-overlay></div>
   </div>
 </div>
-
 <script src="<?= getFilePathWithHash('/assets/js/main.js'); ?>"></script>
 </body>
 </html>

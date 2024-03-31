@@ -115,6 +115,7 @@ $infoSizeguide = new Page([
   'view' => 'info/sizeguide',
   'parent' => $info,
 ]);
+
 $pages = [
   $home, $catalog, $product,
   $personal, $personalCart,

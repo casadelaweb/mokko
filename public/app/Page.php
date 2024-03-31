@@ -14,7 +14,7 @@ class Page {
     $this->metaDescription = $props['metaDescription'];
     $this->metaKeywords = $props['metaKeywords'];
     $this->url = $props['url'];
-    $this->view = $props['view'];
+    $this->view = trim($props['view']);
     $this->parent = $props['parent'];
     // todo: рассчитывать parents рекурсивно
   }
