@@ -1,5 +1,4 @@
 <?php namespace App;
-
 $products = [
   [
     'title' => 'Относительно длинное название товара',
@@ -27,10 +26,7 @@ $products = [
   ],
 ];
 ?>
-
-
 <?php Render::component('breadcrumbs') ?>
-
 <section class="cart">
   <div class="cart-container">
     <h1 class="cart-title">Корзина</h1>
@@ -119,7 +115,7 @@ $products = [
             <h2 class="cart-summary-title">ИТОГО</h2>
             <div class="cart-summary-price">18 999 ₽</div>
           </div>
-          <a class="cart-summary-submit" href="/cart/order">
+          <a class="cart-summary-submit" href="/personal/cart/order">
             <span>Оформить заказ</span>
           </a>
         </div>

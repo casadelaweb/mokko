@@ -22,11 +22,11 @@
                 type="button">
           <span class="iconfont icon-person"></span>
         </button>
-        <a class="header-button" href="/lk/favourites" title="Избранное">
+        <a class="header-button" href="/personal/favourites" title="Избранное">
           <span class="header-quantity">5</span>
           <span class="iconfont icon-heart"></span>
         </a>
-        <a class="header-button" href="/cart" title="Корзина">
+        <a class="header-button" href="/personal/cart/" title="Корзина">
           <span class="header-quantity">12</span>
           <span class="iconfont icon-suitcase"></span>
         </a>
@@ -51,11 +51,11 @@
                 type="button">
           <span class="iconfont icon-person"></span>
         </button>
-        <a class="header-mobile-button" href="/lk/favourites" title="Избранное">
+        <a class="header-mobile-button" href="/personal/favourites" title="Избранное">
           <span class="header-quantity">5</span>
           <span class="iconfont icon-heart"></span>
         </a>
-        <a class="header-mobile-button" href="/cart" title="Корзина">
+        <a class="header-mobile-button" href="/personal/cart" title="Корзина">
           <span class="header-quantity">12</span>
           <span class="iconfont icon-suitcase"></span>
         </a>

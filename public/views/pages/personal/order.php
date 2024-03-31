@@ -1,11 +1,8 @@
 <?php namespace App; ?>
 <section class="order">
   <div class="order-container">
-
     <?php Render::component('breadcrumbs') ?>
-
     <h2 class="order-title">Оформление заказа</h2>
-
     <form class="order-layout">
       <div class="order-steps">
         <div class="order-step">

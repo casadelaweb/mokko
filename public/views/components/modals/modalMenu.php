@@ -127,11 +127,11 @@
               <span class="details-summary-link">Личный кабинет</span>
             </summary>
             <div class="details-body" data-details="body">
-              <a class="details-link" href="/lk/orders"> Мои заказы </a>
-              <a class="details-link" href="/lk/favourites"> Избранное </a>
-              <a class="details-link" href="/lk/profile"> Мои данные </a>
-              <a class="details-link" href="/lk/bonuses"> Бонусная программа </a>
-              <a class="details-link" href="/lk/subscriptions"> Управление подписками </a>
+              <a class="details-link" href="/personal/orders"> Мои заказы </a>
+              <a class="details-link" href="/personal/favourites"> Избранное </a>
+              <a class="details-link" href="/personal/profile"> Мои данные </a>
+              <a class="details-link" href="/personal/bonuses"> Бонусная программа </a>
+              <a class="details-link" href="/personal/subscriptions"> Управление подписками </a>
               <a class="details-link" href="/page404"> Выйти </a>
             </div>
           </details>
