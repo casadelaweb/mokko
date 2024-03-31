@@ -2,7 +2,7 @@
 
 <?php Render::component('sections/hero') ?>
 <?php Render::component('sections/promo') ?>
-<?php Render::component('section/stories') ?>
+<?php Render::component('sections/stories') ?>
 <?php Render::component('catalog/banner', [
   'url' => '/catalog',
   'images' => [
