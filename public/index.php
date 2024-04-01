@@ -6,7 +6,9 @@ require_once "app/routes.php";
 require_once "app/pages.php";
 require_once "app/Render.php";
 /** @var Page $page */
-$isHomepage = $page->view == 'home' ?>
+$isHomepage = $page->view == 'home'
+// todo: подготовить контроллеры для тестирования форм
+?>
 
 <!doctype html>
 <html lang="ru">
