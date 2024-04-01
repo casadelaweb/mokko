@@ -1,4 +1,7 @@
 <?php namespace App;
+
+// todo: вынести регистрацию страниц в отдельную middleware
+
 $home = new Page([
   'title' => 'Главная',
   'metaDescription' => 'Заполните описание мета',
